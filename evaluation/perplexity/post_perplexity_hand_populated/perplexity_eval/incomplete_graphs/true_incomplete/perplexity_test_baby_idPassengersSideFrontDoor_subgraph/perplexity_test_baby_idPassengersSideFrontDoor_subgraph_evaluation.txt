@@ -1,0 +1,565 @@
+GRAPH NAME: perplexity_test_baby_idPassengersSideFrontDoor_subgraph
+
++------------------------------------------------------+
+|                  EVALUATION METRICS                  |
++---------------------------------+--------------------+
+| Metric                          | Value              |
++---------------------------------+--------------------+
+| Generated Text Results          | 98                 |
+| Generated Gold Results          | 0                  |
+| Generated Gold Results Coverage | 0.0                |
++---------------------------------+--------------------+
+| Node Count                      | 6                  |
+| Nodes Covered                   | 6                  |
+| Nodes Included                  | 5                  |
++---------------------------------+--------------------+
+| Node Coverage                   | 1.0                |
+| Node Inclusion                  | 0.8333333333333334 |
++---------------------------------+--------------------+
+| Edge Count                      | 6                  |
+| Edges Covered                   | 5                  |
+| Edges Included                  | 5                  |
++---------------------------------+--------------------+
+| Edge Coverage                   | 0.8333333333333334 |
+| Edge Inclusion                  | 0.8333333333333334 |
++---------------------------------+--------------------+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+|                                                               GOLD OUTPUTS                                                              |
++----------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                | Generated? |
++----------------------------------------------------------------------------------------------------------------------------+------------+
+| the unknown passenger side front door on the passenger side on the right east of the closed unknown driver side front door | False      |
++----------------------------------------------------------------------------------------------------------------------------+------------+
+
++-----------------------------------------------------------------------------------------------------------+
+|                                                NODE METRICS                                               |
++---------------------------+--------------+---------------+------------------+-----------------------------+
+| Node                      | Node Covered | Node Included | Coverage Comment | Inclusion Comment           |
++---------------------------+--------------+---------------+------------------+-----------------------------+
+| idPassengersSideFrontDoor | True         | True          | Covered          | Included                    |
+| idPassenger               | True         | False         | Covered          | Successor of failed element |
+| right                     | True         | True          | Covered          | Included                    |
+| true                      | True         | True          | Covered          | Included                    |
+| idDriversSideFrontDoor    | True         | True          | Covered          | Included                    |
+| closed                    | True         | True          | Covered          | Included                    |
++---------------------------+--------------+---------------+------------------+-----------------------------+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                                    EDGE METRICS                                                                                                    |
++------------------------------------------------+---------------------------+------------------------+--------------+---------------+-------------------------------------------+-----------------------------------+
+| Edge                                           | Parent                    | Child                  | Edge Covered | Edge Included | Coverage Comment                          | Inclusion Comment                 |
++------------------------------------------------+---------------------------+------------------------+--------------+---------------+-------------------------------------------+-----------------------------------+
+| idPassengersSideFrontDoor_prop_idCarSide       | idPassengersSideFrontDoor | idPassenger            | False        | False         | 'idCarSide' not in lexicon's edge entries | No SEMENT generated for this edge |
+| idPassengersSideFrontDoor_prop_idLocation_1    | idPassengersSideFrontDoor | right                  | True         | True          | Covered                                   | Included                          |
+| idPassengersSideFrontDoor_prop_idUnknownObject | idPassengersSideFrontDoor | true                   | True         | True          | Covered                                   | Included                          |
+| isEastOf                                       | idPassengersSideFrontDoor | idDriversSideFrontDoor | True         | True          | Covered                                   | Included                          |
+| idDriversSideFrontDoor_prop_idUnknownObject    | idDriversSideFrontDoor    | true                   | True         | True          | Covered                                   | Included                          |
+| idDriversSideFrontDoor_prop_idOpenState        | idDriversSideFrontDoor    | closed                 | True         | True          | Covered                                   | Included                          |
++------------------------------------------------+---------------------------+------------------------+--------------+---------------+-------------------------------------------+-----------------------------------+
+
++--------------------------------------------------------------------------------------------------+
+|                                        GENERATED SEMENTS                                         |
++---------------+----------------------------------------------------------------------------------+
+| Version       | SEMENT                                                                           |
++---------------+----------------------------------------------------------------------------------+
+| Original      | [ TOP: h21797                                                                    |
+|               |   INDEX: x21796                                                                  |
+|               |   RELS: < [ loc_nonsp LBL: h21921 ARG0: e21918 ARG1: u21919 ARG2: x21920 ]       |
+|               |           [ def_implicit_q LBL: h21932 ARG0: x21929 RSTR: h21930 BODY: h21931 ]  |
+|               |           [ _east_a_1 LBL: h21917 ARG0: i21914 ARG1: x21915 ARG2: u21916 ]       |
+|               |           [ def_udef_a_q LBL: h21927 ARG0: x21924 RSTR: h21925 BODY: h21926 ]    |
+|               |           [ _closed_a_1 LBL: h21913 ARG0: e21911 ARG1: u21912 ]                  |
+|               |           [ _un-_a_neg LBL: h21910 ARG0: i21908 ARG1: e21909 ]                   |
+|               |           [ _know_v_1 LBL: h21907 ARG0: e21904 [ e PERF: - ] ARG1: u21905 ARG2:  |
+|               | i21906 ]                                                                         |
+|               |           [ compound LBL: h21895 ARG0: e21892 [ e PROG: - ] ARG1: u21893 ARG2:   |
+|               | u21894 ]                                                                         |
+|               |           [ udef_q LBL: h21890 ARG0: x21887 RSTR: h21888 BODY: h21889 ]          |
+|               |           [ compound LBL: h21886 ARG0: e21883 [ e PROG: - ] ARG1: u21884 ARG2:   |
+|               | u21885 ]                                                                         |
+|               |           [ udef_q LBL: h21881 ARG0: x21878 RSTR: h21879 BODY: h21880 ]          |
+|               |           [ _driver_n_of LBL: h21877 ARG0: x21875 ARG1: i21876 ]                 |
+|               |           [ _side_n_1 LBL: h21874 ARG0: x21873 ]                                 |
+|               |           [ compound LBL: h21872 ARG0: e21869 [ e PROG: - ] ARG1: u21870 ARG2:   |
+|               | u21871 ]                                                                         |
+|               |           [ udef_q LBL: h21867 ARG0: x21864 RSTR: h21865 BODY: h21866 ]          |
+|               |           [ _front_n_1 LBL: h21863 ARG0: x21862 ]                                |
+|               |           [ _door_n_1 LBL: h21861 ARG0: x21860 ]                                 |
+|               |           [ place_n LBL: h21923 ARG0: x21922 ]                                   |
+|               |           [ _un-_a_neg LBL: h21859 ARG0: i21857 ARG1: e21858 ]                   |
+|               |           [ _know_v_1 LBL: h21856 ARG0: e21853 [ e PERF: - ] ARG1: u21854 ARG2:  |
+|               | i21855 ]                                                                         |
+|               |           [ _on_p_loc LBL: h21839 ARG0: e21836 ARG1: u21837 ARG2: u21838 ]       |
+|               |           [ def_udef_a_q LBL: h21843 ARG0: x21840 RSTR: h21841 BODY: h21842 ]    |
+|               |           [ _right_n_of LBL: h21835 ARG0: x21833 ARG1: i21834 ]                  |
+|               |           [ _on_p_loc LBL: h21825 ARG0: e21822 ARG1: u21823 ARG2: u21824 ]       |
+|               |           [ def_udef_a_q LBL: h21829 ARG0: x21826 RSTR: h21827 BODY: h21828 ]    |
+|               |           [ compound LBL: h21821 ARG0: e21818 [ e PROG: - ] ARG1: u21819 ARG2:   |
+|               | u21820 ]                                                                         |
+|               |           [ udef_q LBL: h21816 ARG0: x21813 RSTR: h21814 BODY: h21815 ]          |
+|               |           [ _passenger_n_1 LBL: h21812 ARG0: x21811 ]                            |
+|               |           [ _side_n_1 LBL: h21810 ARG0: x21809 ]                                 |
+|               |           [ compound LBL: h21808 ARG0: e21805 [ e PROG: - ] ARG1: u21806 ARG2:   |
+|               | u21807 ]                                                                         |
+|               |           [ udef_q LBL: h21803 ARG0: x21800 RSTR: h21801 BODY: h21802 ]          |
+|               |           [ _front_n_1 LBL: h21799 ARG0: x21798 ]                                |
+|               |           [ _door_n_1 LBL: h21797 ARG0: x21796 ] >                               |
+|               |   HCONS: < h21879 qeq h21877 h21888 qeq h21874 h21865 qeq h21863 h21925 qeq      |
+|               | h21861 h21930 qeq h21923 h21841 qeq h21835 h21814 qeq h21812 h21827 qeq h21810   |
+|               | h21801 qeq h21799 >                                                              |
+|               |   ICONS: < e21904 topic i21906 e21853 topic i21855 >                             |
+|               |   EQS: < h21910 eq h21907 e21909 eq e21904 x21878 eq x21875 h21886 eq h21882     |
+|               | u21885 eq x21878 h21886 eq h21874 u21884 eq x21873 x21887 eq x21873 h21895 eq    |
+|               | h21891 u21894 eq x21887 x21864 eq x21862 h21872 eq h21868 u21871 eq x21864       |
+|               | h21872 eq h21861 u21870 eq x21860 h21895 eq h21861 u21893 eq x21860 h21907 eq    |
+|               | h21861 i21906 eq x21860 h21913 eq h21861 u21912 eq x21860 x21924 eq x21860       |
+|               | h21917 eq h21928 u21916 eq x21924 h21917 eq h21923 x21915 eq x21922 x21929 eq    |
+|               | x21922 h21921 eq h21933 x21920 eq x21929 h21859 eq h21856 e21858 eq e21853       |
+|               | x21840 eq x21833 h21839 eq h21844 u21838 eq x21840 x21813 eq x21811 h21821 eq    |
+|               | h21817 u21820 eq x21813 h21821 eq h21810 u21819 eq x21809 x21826 eq x21809       |
+|               | h21825 eq h21830 u21824 eq x21826 x21800 eq x21798 h21808 eq h21804 u21807 eq    |
+|               | x21800 h21808 eq h21797 u21806 eq x21796 h21825 eq h21797 u21823 eq x21796       |
+|               | h21839 eq h21797 u21837 eq x21796 h21856 eq h21797 i21855 eq x21796 h21921 eq    |
+|               | h21797 u21919 eq x21796 > ]                                                      |
++---------------+----------------------------------------------------------------------------------+
+| EQs Collapsed | [ TOP: h21797                                                                    |
+|               |   INDEX: x21796                                                                  |
+|               |   RELS: < [ loc_nonsp LBL: h21797 ARG0: e21918 ARG1: x21796 ARG2: x21915 ]       |
+|               |           [ def_implicit_q LBL: h21932 ARG0: x21915 RSTR: h21930 BODY: h21931 ]  |
+|               |           [ _east_a_1 LBL: h21917 ARG0: i21914 ARG1: x21915 ARG2: x21860 ]       |
+|               |           [ def_udef_a_q LBL: h21927 ARG0: x21860 RSTR: h21925 BODY: h21926 ]    |
+|               |           [ _closed_a_1 LBL: h21861 ARG0: e21911 ARG1: x21860 ]                  |
+|               |           [ _un-_a_neg LBL: h21861 ARG0: i21908 ARG1: e21904 [ e PERF: - ] ]     |
+|               |           [ _know_v_1 LBL: h21861 ARG0: e21904 ARG1: u21905 ARG2: x21860 ]       |
+|               |           [ compound LBL: h21861 ARG0: e21892 [ e PROG: - ] ARG1: x21860 ARG2:   |
+|               | x21873 ]                                                                         |
+|               |           [ udef_q LBL: h21890 ARG0: x21873 RSTR: h21888 BODY: h21889 ]          |
+|               |           [ compound LBL: h21874 ARG0: e21883 [ e PROG: - ] ARG1: x21873 ARG2:   |
+|               | x21875 ]                                                                         |
+|               |           [ udef_q LBL: h21881 ARG0: x21875 RSTR: h21879 BODY: h21880 ]          |
+|               |           [ _driver_n_of LBL: h21877 ARG0: x21875 ARG1: i21876 ]                 |
+|               |           [ _side_n_1 LBL: h21874 ARG0: x21873 ]                                 |
+|               |           [ compound LBL: h21861 ARG0: e21869 [ e PROG: - ] ARG1: x21860 ARG2:   |
+|               | x21862 ]                                                                         |
+|               |           [ udef_q LBL: h21867 ARG0: x21862 RSTR: h21865 BODY: h21866 ]          |
+|               |           [ _front_n_1 LBL: h21863 ARG0: x21862 ]                                |
+|               |           [ _door_n_1 LBL: h21861 ARG0: x21860 ]                                 |
+|               |           [ place_n LBL: h21917 ARG0: x21915 ]                                   |
+|               |           [ _un-_a_neg LBL: h21797 ARG0: i21857 ARG1: e21853 [ e PERF: - ] ]     |
+|               |           [ _know_v_1 LBL: h21797 ARG0: e21853 ARG1: u21854 ARG2: x21796 ]       |
+|               |           [ _on_p_loc LBL: h21797 ARG0: e21836 ARG1: x21796 ARG2: x21833 ]       |
+|               |           [ def_udef_a_q LBL: h21843 ARG0: x21833 RSTR: h21841 BODY: h21842 ]    |
+|               |           [ _right_n_of LBL: h21835 ARG0: x21833 ARG1: i21834 ]                  |
+|               |           [ _on_p_loc LBL: h21797 ARG0: e21822 ARG1: x21796 ARG2: x21809 ]       |
+|               |           [ def_udef_a_q LBL: h21829 ARG0: x21809 RSTR: h21827 BODY: h21828 ]    |
+|               |           [ compound LBL: h21810 ARG0: e21818 [ e PROG: - ] ARG1: x21809 ARG2:   |
+|               | x21811 ]                                                                         |
+|               |           [ udef_q LBL: h21816 ARG0: x21811 RSTR: h21814 BODY: h21815 ]          |
+|               |           [ _passenger_n_1 LBL: h21812 ARG0: x21811 ]                            |
+|               |           [ _side_n_1 LBL: h21810 ARG0: x21809 ]                                 |
+|               |           [ compound LBL: h21797 ARG0: e21805 [ e PROG: - ] ARG1: x21796 ARG2:   |
+|               | x21798 ]                                                                         |
+|               |           [ udef_q LBL: h21803 ARG0: x21798 RSTR: h21801 BODY: h21802 ]          |
+|               |           [ _front_n_1 LBL: h21799 ARG0: x21798 ]                                |
+|               |           [ _door_n_1 LBL: h21797 ARG0: x21796 ] >                               |
+|               |   HCONS: < h21879 qeq h21877 h21888 qeq h21874 h21865 qeq h21863 h21925 qeq      |
+|               | h21861 h21930 qeq h21917 h21841 qeq h21835 h21814 qeq h21812 h21827 qeq h21810   |
+|               | h21801 qeq h21799 >                                                              |
+|               |   ICONS: < e21904 topic x21860 e21853 topic x21796 > ]                           |
++---------------+----------------------------------------------------------------------------------+
+| Prepped       | [ TOP: h21942                                                                    |
+|               |   INDEX: e21939                                                                  |
+|               |   RELS: < [ unknown LBL: h21938 ARG: x21796 ARG0: e21939 ]                       |
+|               |           [ def_udef_a_q LBL: h21937 ARG0: x21796 RSTR: h21935 BODY: h21936 ]    |
+|               |           [ loc_nonsp LBL: h21797 ARG0: e21918 ARG1: x21796 ARG2: x21915 ]       |
+|               |           [ def_implicit_q LBL: h21932 ARG0: x21915 RSTR: h21930 BODY: h21931 ]  |
+|               |           [ _east_a_1 LBL: h21917 ARG0: i21914 ARG1: x21915 ARG2: x21860 ]       |
+|               |           [ def_udef_a_q LBL: h21927 ARG0: x21860 RSTR: h21925 BODY: h21926 ]    |
+|               |           [ _closed_a_1 LBL: h21861 ARG0: e21911 ARG1: x21860 ]                  |
+|               |           [ _un-_a_neg LBL: h21861 ARG0: i21908 ARG1: e21904 [ e PERF: - ] ]     |
+|               |           [ _know_v_1 LBL: h21861 ARG0: e21904 ARG1: u21905 ARG2: x21860 ]       |
+|               |           [ compound LBL: h21861 ARG0: e21892 [ e PROG: - ] ARG1: x21860 ARG2:   |
+|               | x21873 ]                                                                         |
+|               |           [ udef_q LBL: h21890 ARG0: x21873 RSTR: h21888 BODY: h21889 ]          |
+|               |           [ compound LBL: h21874 ARG0: e21883 [ e PROG: - ] ARG1: x21873 ARG2:   |
+|               | x21875 ]                                                                         |
+|               |           [ udef_q LBL: h21881 ARG0: x21875 RSTR: h21879 BODY: h21880 ]          |
+|               |           [ _driver_n_of LBL: h21877 ARG0: x21875 ARG1: i21876 ]                 |
+|               |           [ _side_n_1 LBL: h21874 ARG0: x21873 ]                                 |
+|               |           [ compound LBL: h21861 ARG0: e21869 [ e PROG: - ] ARG1: x21860 ARG2:   |
+|               | x21862 ]                                                                         |
+|               |           [ udef_q LBL: h21867 ARG0: x21862 RSTR: h21865 BODY: h21866 ]          |
+|               |           [ _front_n_1 LBL: h21863 ARG0: x21862 ]                                |
+|               |           [ _door_n_1 LBL: h21861 ARG0: x21860 ]                                 |
+|               |           [ place_n LBL: h21917 ARG0: x21915 ]                                   |
+|               |           [ _un-_a_neg LBL: h21797 ARG0: i21857 ARG1: e21853 [ e PERF: - ] ]     |
+|               |           [ _know_v_1 LBL: h21797 ARG0: e21853 ARG1: u21854 ARG2: x21796 ]       |
+|               |           [ _on_p_loc LBL: h21797 ARG0: e21836 ARG1: x21796 ARG2: x21833 ]       |
+|               |           [ def_udef_a_q LBL: h21843 ARG0: x21833 RSTR: h21841 BODY: h21842 ]    |
+|               |           [ _right_n_of LBL: h21835 ARG0: x21833 ARG1: i21834 ]                  |
+|               |           [ _on_p_loc LBL: h21797 ARG0: e21822 ARG1: x21796 ARG2: x21809 ]       |
+|               |           [ def_udef_a_q LBL: h21829 ARG0: x21809 RSTR: h21827 BODY: h21828 ]    |
+|               |           [ compound LBL: h21810 ARG0: e21818 [ e PROG: - ] ARG1: x21809 ARG2:   |
+|               | x21811 ]                                                                         |
+|               |           [ udef_q LBL: h21816 ARG0: x21811 RSTR: h21814 BODY: h21815 ]          |
+|               |           [ _passenger_n_1 LBL: h21812 ARG0: x21811 ]                            |
+|               |           [ _side_n_1 LBL: h21810 ARG0: x21809 ]                                 |
+|               |           [ compound LBL: h21797 ARG0: e21805 [ e PROG: - ] ARG1: x21796 ARG2:   |
+|               | x21798 ]                                                                         |
+|               |           [ udef_q LBL: h21803 ARG0: x21798 RSTR: h21801 BODY: h21802 ]          |
+|               |           [ _front_n_1 LBL: h21799 ARG0: x21798 ]                                |
+|               |           [ _door_n_1 LBL: h21797 ARG0: x21796 ] >                               |
+|               |   HCONS: < h21879 qeq h21877 h21888 qeq h21874 h21865 qeq h21863 h21925 qeq      |
+|               | h21861 h21930 qeq h21917 h21841 qeq h21835 h21814 qeq h21812 h21827 qeq h21810   |
+|               | h21801 qeq h21799 h21935 qeq h21797 h21942 qeq h21938 >                          |
+|               |   ICONS: < e21904 topic x21860 e21853 topic x21796 > ]                           |
++---------------+----------------------------------------------------------------------------------+
+
++--------------------------------------------------------------------------------------------------------------+
+|                                                 NODE SEMENTS                                                 |
++---------------------------+----------------------------------------------------------------------------------+
+| Node                      | Generated SEMENT                                                                 |
++---------------------------+----------------------------------------------------------------------------------+
+| idPassengersSideFrontDoor | [ TOP: h21797                                                                    |
+|                           |   INDEX: x21796                                                                  |
+|                           |   RELS: < [ _on_p_loc LBL: h21825 ARG0: e21822 ARG1: u21823 ARG2: u21824 ]       |
+|                           |           [ def_udef_a_q LBL: h21829 ARG0: x21826 RSTR: h21827 BODY: h21828 ]    |
+|                           |           [ compound LBL: h21821 ARG0: e21818 [ e PROG: - ] ARG1: u21819 ARG2:   |
+|                           | u21820 ]                                                                         |
+|                           |           [ udef_q LBL: h21816 ARG0: x21813 RSTR: h21814 BODY: h21815 ]          |
+|                           |           [ _passenger_n_1 LBL: h21812 ARG0: x21811 ]                            |
+|                           |           [ _side_n_1 LBL: h21810 ARG0: x21809 ]                                 |
+|                           |           [ compound LBL: h21808 ARG0: e21805 [ e PROG: - ] ARG1: u21806 ARG2:   |
+|                           | u21807 ]                                                                         |
+|                           |           [ udef_q LBL: h21803 ARG0: x21800 RSTR: h21801 BODY: h21802 ]          |
+|                           |           [ _front_n_1 LBL: h21799 ARG0: x21798 ]                                |
+|                           |           [ _door_n_1 LBL: h21797 ARG0: x21796 ] >                               |
+|                           |   HCONS: < h21814 qeq h21812 h21827 qeq h21810 h21801 qeq h21799 >               |
+|                           |   EQS: < x21813 eq x21811 h21821 eq h21817 u21820 eq x21813 h21821 eq h21810     |
+|                           | u21819 eq x21809 x21826 eq x21809 h21825 eq h21830 u21824 eq x21826 x21800 eq    |
+|                           | x21798 h21808 eq h21804 u21807 eq x21800 h21808 eq h21797 u21806 eq x21796       |
+|                           | h21825 eq h21797 u21823 eq x21796 > ]                                            |
++---------------------------+----------------------------------------------------------------------------------+
+| idPassenger               | [ TOP: h21832                                                                    |
+|                           |   INDEX: x21831                                                                  |
+|                           |   RELS: < [ _passenger_n_1 LBL: h21832 ARG0: x21831 ] > ]                        |
++---------------------------+----------------------------------------------------------------------------------+
+| right                     | [ TOP: h21835                                                                    |
+|                           |   INDEX: x21833                                                                  |
+|                           |   RELS: < [ _right_n_of LBL: h21835 ARG0: x21833 ARG1: i21834 ] >                |
+|                           |   SLOTS: < ARG1: i21834 > ]                                                      |
++---------------------------+----------------------------------------------------------------------------------+
+| true                      | [ TOP: h21899                                                                    |
+|                           |   INDEX: e21896                                                                  |
+|                           |   RELS: < [ _true_a_of LBL: h21899 ARG0: e21896 ARG1: u21897 ARG2: u21898 ] >    |
+|                           |   SLOTS: < ARG1: u21897 ARG2: u21898 > ]                                         |
++---------------------------+----------------------------------------------------------------------------------+
+| idDriversSideFrontDoor    | [ TOP: h21861                                                                    |
+|                           |   INDEX: x21860                                                                  |
+|                           |   RELS: < [ compound LBL: h21895 ARG0: e21892 [ e PROG: - ] ARG1: u21893 ARG2:   |
+|                           | u21894 ]                                                                         |
+|                           |           [ udef_q LBL: h21890 ARG0: x21887 RSTR: h21888 BODY: h21889 ]          |
+|                           |           [ compound LBL: h21886 ARG0: e21883 [ e PROG: - ] ARG1: u21884 ARG2:   |
+|                           | u21885 ]                                                                         |
+|                           |           [ udef_q LBL: h21881 ARG0: x21878 RSTR: h21879 BODY: h21880 ]          |
+|                           |           [ _driver_n_of LBL: h21877 ARG0: x21875 ARG1: i21876 ]                 |
+|                           |           [ _side_n_1 LBL: h21874 ARG0: x21873 ]                                 |
+|                           |           [ compound LBL: h21872 ARG0: e21869 [ e PROG: - ] ARG1: u21870 ARG2:   |
+|                           | u21871 ]                                                                         |
+|                           |           [ udef_q LBL: h21867 ARG0: x21864 RSTR: h21865 BODY: h21866 ]          |
+|                           |           [ _front_n_1 LBL: h21863 ARG0: x21862 ]                                |
+|                           |           [ _door_n_1 LBL: h21861 ARG0: x21860 ] >                               |
+|                           |   HCONS: < h21879 qeq h21877 h21888 qeq h21874 h21865 qeq h21863 >               |
+|                           |   EQS: < x21878 eq x21875 h21886 eq h21882 u21885 eq x21878 h21886 eq h21874     |
+|                           | u21884 eq x21873 x21887 eq x21873 h21895 eq h21891 u21894 eq x21887 x21864 eq    |
+|                           | x21862 h21872 eq h21868 u21871 eq x21864 h21872 eq h21861 u21870 eq x21860       |
+|                           | h21895 eq h21861 u21893 eq x21860 > ]                                            |
++---------------------------+----------------------------------------------------------------------------------+
+| closed                    | [ TOP: h21913                                                                    |
+|                           |   INDEX: e21911                                                                  |
+|                           |   RELS: < [ _closed_a_1 LBL: h21913 ARG0: e21911 ARG1: u21912 ] >                |
+|                           |   SLOTS: < ARG1: u21912 > ]                                                      |
++---------------------------+----------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                      EDGE SEMENTS                                                                                      |
++------------------------------------------------+---------------------------+------------------------+----------------------------------------------------------------------------------+
+| Edge                                           | Parent                    | Child                  | Generated SEMENT                                                                 |
++------------------------------------------------+---------------------------+------------------------+----------------------------------------------------------------------------------+
+| idPassengersSideFrontDoor_prop_idCarSide       | idPassengersSideFrontDoor | idPassenger            | None                                                                             |
++------------------------------------------------+---------------------------+------------------------+----------------------------------------------------------------------------------+
+| idPassengersSideFrontDoor_prop_idLocation_1    | idPassengersSideFrontDoor | right                  | [ TOP: h21797                                                                    |
+|                                                |                           |                        |   INDEX: x21796                                                                  |
+|                                                |                           |                        |   RELS: < [ _on_p_loc LBL: h21839 ARG0: e21836 ARG1: u21837 ARG2: u21838 ]       |
+|                                                |                           |                        |           [ def_udef_a_q LBL: h21843 ARG0: x21840 RSTR: h21841 BODY: h21842 ]    |
+|                                                |                           |                        |           [ _right_n_of LBL: h21835 ARG0: x21833 ARG1: i21834 ]                  |
+|                                                |                           |                        |           [ _on_p_loc LBL: h21825 ARG0: e21822 ARG1: u21823 ARG2: u21824 ]       |
+|                                                |                           |                        |           [ def_udef_a_q LBL: h21829 ARG0: x21826 RSTR: h21827 BODY: h21828 ]    |
+|                                                |                           |                        |           [ compound LBL: h21821 ARG0: e21818 [ e PROG: - ] ARG1: u21819 ARG2:   |
+|                                                |                           |                        | u21820 ]                                                                         |
+|                                                |                           |                        |           [ udef_q LBL: h21816 ARG0: x21813 RSTR: h21814 BODY: h21815 ]          |
+|                                                |                           |                        |           [ _passenger_n_1 LBL: h21812 ARG0: x21811 ]                            |
+|                                                |                           |                        |           [ _side_n_1 LBL: h21810 ARG0: x21809 ]                                 |
+|                                                |                           |                        |           [ compound LBL: h21808 ARG0: e21805 [ e PROG: - ] ARG1: u21806 ARG2:   |
+|                                                |                           |                        | u21807 ]                                                                         |
+|                                                |                           |                        |           [ udef_q LBL: h21803 ARG0: x21800 RSTR: h21801 BODY: h21802 ]          |
+|                                                |                           |                        |           [ _front_n_1 LBL: h21799 ARG0: x21798 ]                                |
+|                                                |                           |                        |           [ _door_n_1 LBL: h21797 ARG0: x21796 ] >                               |
+|                                                |                           |                        |   HCONS: < h21841 qeq h21835 h21814 qeq h21812 h21827 qeq h21810 h21801 qeq      |
+|                                                |                           |                        | h21799 >                                                                         |
+|                                                |                           |                        |   EQS: < x21840 eq x21833 h21839 eq h21844 u21838 eq x21840 x21813 eq x21811     |
+|                                                |                           |                        | h21821 eq h21817 u21820 eq x21813 h21821 eq h21810 u21819 eq x21809 x21826 eq    |
+|                                                |                           |                        | x21809 h21825 eq h21830 u21824 eq x21826 x21800 eq x21798 h21808 eq h21804       |
+|                                                |                           |                        | u21807 eq x21800 h21808 eq h21797 u21806 eq x21796 h21825 eq h21797 u21823 eq    |
+|                                                |                           |                        | x21796 h21839 eq h21797 u21837 eq x21796 > ]                                     |
++------------------------------------------------+---------------------------+------------------------+----------------------------------------------------------------------------------+
+| idPassengersSideFrontDoor_prop_idUnknownObject | idPassengersSideFrontDoor | true                   | [ TOP: h21797                                                                    |
+|                                                |                           |                        |   INDEX: x21796                                                                  |
+|                                                |                           |                        |   RELS: < [ _un-_a_neg LBL: h21859 ARG0: i21857 ARG1: e21858 ]                   |
+|                                                |                           |                        |           [ _know_v_1 LBL: h21856 ARG0: e21853 [ e PERF: - ] ARG1: u21854 ARG2:  |
+|                                                |                           |                        | i21855 ]                                                                         |
+|                                                |                           |                        |           [ _on_p_loc LBL: h21839 ARG0: e21836 ARG1: u21837 ARG2: u21838 ]       |
+|                                                |                           |                        |           [ def_udef_a_q LBL: h21843 ARG0: x21840 RSTR: h21841 BODY: h21842 ]    |
+|                                                |                           |                        |           [ _right_n_of LBL: h21835 ARG0: x21833 ARG1: i21834 ]                  |
+|                                                |                           |                        |           [ _on_p_loc LBL: h21825 ARG0: e21822 ARG1: u21823 ARG2: u21824 ]       |
+|                                                |                           |                        |           [ def_udef_a_q LBL: h21829 ARG0: x21826 RSTR: h21827 BODY: h21828 ]    |
+|                                                |                           |                        |           [ compound LBL: h21821 ARG0: e21818 [ e PROG: - ] ARG1: u21819 ARG2:   |
+|                                                |                           |                        | u21820 ]                                                                         |
+|                                                |                           |                        |           [ udef_q LBL: h21816 ARG0: x21813 RSTR: h21814 BODY: h21815 ]          |
+|                                                |                           |                        |           [ _passenger_n_1 LBL: h21812 ARG0: x21811 ]                            |
+|                                                |                           |                        |           [ _side_n_1 LBL: h21810 ARG0: x21809 ]                                 |
+|                                                |                           |                        |           [ compound LBL: h21808 ARG0: e21805 [ e PROG: - ] ARG1: u21806 ARG2:   |
+|                                                |                           |                        | u21807 ]                                                                         |
+|                                                |                           |                        |           [ udef_q LBL: h21803 ARG0: x21800 RSTR: h21801 BODY: h21802 ]          |
+|                                                |                           |                        |           [ _front_n_1 LBL: h21799 ARG0: x21798 ]                                |
+|                                                |                           |                        |           [ _door_n_1 LBL: h21797 ARG0: x21796 ] >                               |
+|                                                |                           |                        |   HCONS: < h21841 qeq h21835 h21814 qeq h21812 h21827 qeq h21810 h21801 qeq      |
+|                                                |                           |                        | h21799 >                                                                         |
+|                                                |                           |                        |   ICONS: < e21853 topic i21855 >                                                 |
+|                                                |                           |                        |   EQS: < h21859 eq h21856 e21858 eq e21853 x21840 eq x21833 h21839 eq h21844     |
+|                                                |                           |                        | u21838 eq x21840 x21813 eq x21811 h21821 eq h21817 u21820 eq x21813 h21821 eq    |
+|                                                |                           |                        | h21810 u21819 eq x21809 x21826 eq x21809 h21825 eq h21830 u21824 eq x21826       |
+|                                                |                           |                        | x21800 eq x21798 h21808 eq h21804 u21807 eq x21800 h21808 eq h21797 u21806 eq    |
+|                                                |                           |                        | x21796 h21825 eq h21797 u21823 eq x21796 h21839 eq h21797 u21837 eq x21796       |
+|                                                |                           |                        | h21856 eq h21797 i21855 eq x21796 > ]                                            |
++------------------------------------------------+---------------------------+------------------------+----------------------------------------------------------------------------------+
+| isEastOf                                       | idPassengersSideFrontDoor | idDriversSideFrontDoor | [ TOP: h21797                                                                    |
+|                                                |                           |                        |   INDEX: x21796                                                                  |
+|                                                |                           |                        |   RELS: < [ loc_nonsp LBL: h21921 ARG0: e21918 ARG1: u21919 ARG2: x21920 ]       |
+|                                                |                           |                        |           [ def_implicit_q LBL: h21932 ARG0: x21929 RSTR: h21930 BODY: h21931 ]  |
+|                                                |                           |                        |           [ _east_a_1 LBL: h21917 ARG0: i21914 ARG1: x21915 ARG2: u21916 ]       |
+|                                                |                           |                        |           [ def_udef_a_q LBL: h21927 ARG0: x21924 RSTR: h21925 BODY: h21926 ]    |
+|                                                |                           |                        |           [ _closed_a_1 LBL: h21913 ARG0: e21911 ARG1: u21912 ]                  |
+|                                                |                           |                        |           [ _un-_a_neg LBL: h21910 ARG0: i21908 ARG1: e21909 ]                   |
+|                                                |                           |                        |           [ _know_v_1 LBL: h21907 ARG0: e21904 [ e PERF: - ] ARG1: u21905 ARG2:  |
+|                                                |                           |                        | i21906 ]                                                                         |
+|                                                |                           |                        |           [ compound LBL: h21895 ARG0: e21892 [ e PROG: - ] ARG1: u21893 ARG2:   |
+|                                                |                           |                        | u21894 ]                                                                         |
+|                                                |                           |                        |           [ udef_q LBL: h21890 ARG0: x21887 RSTR: h21888 BODY: h21889 ]          |
+|                                                |                           |                        |           [ compound LBL: h21886 ARG0: e21883 [ e PROG: - ] ARG1: u21884 ARG2:   |
+|                                                |                           |                        | u21885 ]                                                                         |
+|                                                |                           |                        |           [ udef_q LBL: h21881 ARG0: x21878 RSTR: h21879 BODY: h21880 ]          |
+|                                                |                           |                        |           [ _driver_n_of LBL: h21877 ARG0: x21875 ARG1: i21876 ]                 |
+|                                                |                           |                        |           [ _side_n_1 LBL: h21874 ARG0: x21873 ]                                 |
+|                                                |                           |                        |           [ compound LBL: h21872 ARG0: e21869 [ e PROG: - ] ARG1: u21870 ARG2:   |
+|                                                |                           |                        | u21871 ]                                                                         |
+|                                                |                           |                        |           [ udef_q LBL: h21867 ARG0: x21864 RSTR: h21865 BODY: h21866 ]          |
+|                                                |                           |                        |           [ _front_n_1 LBL: h21863 ARG0: x21862 ]                                |
+|                                                |                           |                        |           [ _door_n_1 LBL: h21861 ARG0: x21860 ]                                 |
+|                                                |                           |                        |           [ place_n LBL: h21923 ARG0: x21922 ]                                   |
+|                                                |                           |                        |           [ _un-_a_neg LBL: h21859 ARG0: i21857 ARG1: e21858 ]                   |
+|                                                |                           |                        |           [ _know_v_1 LBL: h21856 ARG0: e21853 [ e PERF: - ] ARG1: u21854 ARG2:  |
+|                                                |                           |                        | i21855 ]                                                                         |
+|                                                |                           |                        |           [ _on_p_loc LBL: h21839 ARG0: e21836 ARG1: u21837 ARG2: u21838 ]       |
+|                                                |                           |                        |           [ def_udef_a_q LBL: h21843 ARG0: x21840 RSTR: h21841 BODY: h21842 ]    |
+|                                                |                           |                        |           [ _right_n_of LBL: h21835 ARG0: x21833 ARG1: i21834 ]                  |
+|                                                |                           |                        |           [ _on_p_loc LBL: h21825 ARG0: e21822 ARG1: u21823 ARG2: u21824 ]       |
+|                                                |                           |                        |           [ def_udef_a_q LBL: h21829 ARG0: x21826 RSTR: h21827 BODY: h21828 ]    |
+|                                                |                           |                        |           [ compound LBL: h21821 ARG0: e21818 [ e PROG: - ] ARG1: u21819 ARG2:   |
+|                                                |                           |                        | u21820 ]                                                                         |
+|                                                |                           |                        |           [ udef_q LBL: h21816 ARG0: x21813 RSTR: h21814 BODY: h21815 ]          |
+|                                                |                           |                        |           [ _passenger_n_1 LBL: h21812 ARG0: x21811 ]                            |
+|                                                |                           |                        |           [ _side_n_1 LBL: h21810 ARG0: x21809 ]                                 |
+|                                                |                           |                        |           [ compound LBL: h21808 ARG0: e21805 [ e PROG: - ] ARG1: u21806 ARG2:   |
+|                                                |                           |                        | u21807 ]                                                                         |
+|                                                |                           |                        |           [ udef_q LBL: h21803 ARG0: x21800 RSTR: h21801 BODY: h21802 ]          |
+|                                                |                           |                        |           [ _front_n_1 LBL: h21799 ARG0: x21798 ]                                |
+|                                                |                           |                        |           [ _door_n_1 LBL: h21797 ARG0: x21796 ] >                               |
+|                                                |                           |                        |   HCONS: < h21879 qeq h21877 h21888 qeq h21874 h21865 qeq h21863 h21925 qeq      |
+|                                                |                           |                        | h21861 h21930 qeq h21923 h21841 qeq h21835 h21814 qeq h21812 h21827 qeq h21810   |
+|                                                |                           |                        | h21801 qeq h21799 >                                                              |
+|                                                |                           |                        |   ICONS: < e21904 topic i21906 e21853 topic i21855 >                             |
+|                                                |                           |                        |   EQS: < h21910 eq h21907 e21909 eq e21904 x21878 eq x21875 h21886 eq h21882     |
+|                                                |                           |                        | u21885 eq x21878 h21886 eq h21874 u21884 eq x21873 x21887 eq x21873 h21895 eq    |
+|                                                |                           |                        | h21891 u21894 eq x21887 x21864 eq x21862 h21872 eq h21868 u21871 eq x21864       |
+|                                                |                           |                        | h21872 eq h21861 u21870 eq x21860 h21895 eq h21861 u21893 eq x21860 h21907 eq    |
+|                                                |                           |                        | h21861 i21906 eq x21860 h21913 eq h21861 u21912 eq x21860 x21924 eq x21860       |
+|                                                |                           |                        | h21917 eq h21928 u21916 eq x21924 h21917 eq h21923 x21915 eq x21922 x21929 eq    |
+|                                                |                           |                        | x21922 h21921 eq h21933 x21920 eq x21929 h21859 eq h21856 e21858 eq e21853       |
+|                                                |                           |                        | x21840 eq x21833 h21839 eq h21844 u21838 eq x21840 x21813 eq x21811 h21821 eq    |
+|                                                |                           |                        | h21817 u21820 eq x21813 h21821 eq h21810 u21819 eq x21809 x21826 eq x21809       |
+|                                                |                           |                        | h21825 eq h21830 u21824 eq x21826 x21800 eq x21798 h21808 eq h21804 u21807 eq    |
+|                                                |                           |                        | x21800 h21808 eq h21797 u21806 eq x21796 h21825 eq h21797 u21823 eq x21796       |
+|                                                |                           |                        | h21839 eq h21797 u21837 eq x21796 h21856 eq h21797 i21855 eq x21796 h21921 eq    |
+|                                                |                           |                        | h21797 u21919 eq x21796 > ]                                                      |
++------------------------------------------------+---------------------------+------------------------+----------------------------------------------------------------------------------+
+| idDriversSideFrontDoor_prop_idUnknownObject    | idDriversSideFrontDoor    | true                   | [ TOP: h21861                                                                    |
+|                                                |                           |                        |   INDEX: x21860                                                                  |
+|                                                |                           |                        |   RELS: < [ _un-_a_neg LBL: h21910 ARG0: i21908 ARG1: e21909 ]                   |
+|                                                |                           |                        |           [ _know_v_1 LBL: h21907 ARG0: e21904 [ e PERF: - ] ARG1: u21905 ARG2:  |
+|                                                |                           |                        | i21906 ]                                                                         |
+|                                                |                           |                        |           [ compound LBL: h21895 ARG0: e21892 [ e PROG: - ] ARG1: u21893 ARG2:   |
+|                                                |                           |                        | u21894 ]                                                                         |
+|                                                |                           |                        |           [ udef_q LBL: h21890 ARG0: x21887 RSTR: h21888 BODY: h21889 ]          |
+|                                                |                           |                        |           [ compound LBL: h21886 ARG0: e21883 [ e PROG: - ] ARG1: u21884 ARG2:   |
+|                                                |                           |                        | u21885 ]                                                                         |
+|                                                |                           |                        |           [ udef_q LBL: h21881 ARG0: x21878 RSTR: h21879 BODY: h21880 ]          |
+|                                                |                           |                        |           [ _driver_n_of LBL: h21877 ARG0: x21875 ARG1: i21876 ]                 |
+|                                                |                           |                        |           [ _side_n_1 LBL: h21874 ARG0: x21873 ]                                 |
+|                                                |                           |                        |           [ compound LBL: h21872 ARG0: e21869 [ e PROG: - ] ARG1: u21870 ARG2:   |
+|                                                |                           |                        | u21871 ]                                                                         |
+|                                                |                           |                        |           [ udef_q LBL: h21867 ARG0: x21864 RSTR: h21865 BODY: h21866 ]          |
+|                                                |                           |                        |           [ _front_n_1 LBL: h21863 ARG0: x21862 ]                                |
+|                                                |                           |                        |           [ _door_n_1 LBL: h21861 ARG0: x21860 ] >                               |
+|                                                |                           |                        |   HCONS: < h21879 qeq h21877 h21888 qeq h21874 h21865 qeq h21863 >               |
+|                                                |                           |                        |   ICONS: < e21904 topic i21906 >                                                 |
+|                                                |                           |                        |   EQS: < h21910 eq h21907 e21909 eq e21904 x21878 eq x21875 h21886 eq h21882     |
+|                                                |                           |                        | u21885 eq x21878 h21886 eq h21874 u21884 eq x21873 x21887 eq x21873 h21895 eq    |
+|                                                |                           |                        | h21891 u21894 eq x21887 x21864 eq x21862 h21872 eq h21868 u21871 eq x21864       |
+|                                                |                           |                        | h21872 eq h21861 u21870 eq x21860 h21895 eq h21861 u21893 eq x21860 h21907 eq    |
+|                                                |                           |                        | h21861 i21906 eq x21860 > ]                                                      |
++------------------------------------------------+---------------------------+------------------------+----------------------------------------------------------------------------------+
+| idDriversSideFrontDoor_prop_idOpenState        | idDriversSideFrontDoor    | closed                 | [ TOP: h21861                                                                    |
+|                                                |                           |                        |   INDEX: x21860                                                                  |
+|                                                |                           |                        |   RELS: < [ _closed_a_1 LBL: h21913 ARG0: e21911 ARG1: u21912 ]                  |
+|                                                |                           |                        |           [ _un-_a_neg LBL: h21910 ARG0: i21908 ARG1: e21909 ]                   |
+|                                                |                           |                        |           [ _know_v_1 LBL: h21907 ARG0: e21904 [ e PERF: - ] ARG1: u21905 ARG2:  |
+|                                                |                           |                        | i21906 ]                                                                         |
+|                                                |                           |                        |           [ compound LBL: h21895 ARG0: e21892 [ e PROG: - ] ARG1: u21893 ARG2:   |
+|                                                |                           |                        | u21894 ]                                                                         |
+|                                                |                           |                        |           [ udef_q LBL: h21890 ARG0: x21887 RSTR: h21888 BODY: h21889 ]          |
+|                                                |                           |                        |           [ compound LBL: h21886 ARG0: e21883 [ e PROG: - ] ARG1: u21884 ARG2:   |
+|                                                |                           |                        | u21885 ]                                                                         |
+|                                                |                           |                        |           [ udef_q LBL: h21881 ARG0: x21878 RSTR: h21879 BODY: h21880 ]          |
+|                                                |                           |                        |           [ _driver_n_of LBL: h21877 ARG0: x21875 ARG1: i21876 ]                 |
+|                                                |                           |                        |           [ _side_n_1 LBL: h21874 ARG0: x21873 ]                                 |
+|                                                |                           |                        |           [ compound LBL: h21872 ARG0: e21869 [ e PROG: - ] ARG1: u21870 ARG2:   |
+|                                                |                           |                        | u21871 ]                                                                         |
+|                                                |                           |                        |           [ udef_q LBL: h21867 ARG0: x21864 RSTR: h21865 BODY: h21866 ]          |
+|                                                |                           |                        |           [ _front_n_1 LBL: h21863 ARG0: x21862 ]                                |
+|                                                |                           |                        |           [ _door_n_1 LBL: h21861 ARG0: x21860 ] >                               |
+|                                                |                           |                        |   HCONS: < h21879 qeq h21877 h21888 qeq h21874 h21865 qeq h21863 >               |
+|                                                |                           |                        |   ICONS: < e21904 topic i21906 >                                                 |
+|                                                |                           |                        |   EQS: < h21910 eq h21907 e21909 eq e21904 x21878 eq x21875 h21886 eq h21882     |
+|                                                |                           |                        | u21885 eq x21878 h21886 eq h21874 u21884 eq x21873 x21887 eq x21873 h21895 eq    |
+|                                                |                           |                        | h21891 u21894 eq x21887 x21864 eq x21862 h21872 eq h21868 u21871 eq x21864       |
+|                                                |                           |                        | h21872 eq h21861 u21870 eq x21860 h21895 eq h21861 u21893 eq x21860 h21907 eq    |
+|                                                |                           |                        | h21861 i21906 eq x21860 h21913 eq h21861 u21912 eq x21860 > ]                    |
++------------------------------------------------+---------------------------+------------------------+----------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------------+
+|                                                GENERATED ENGLISH TEXT                                               |
++----+----------------------------------------------------------------------------------------------------------------+
+| #  | Generated Text                                                                                                 |
++----+----------------------------------------------------------------------------------------------------------------+
+| 1  | The unknown front door on the passenger side east of the driver side fronts closed unknown doors on the rights |
+| 2  | The unknown front door on the passenger side east of the driver sides closed unknown front door on the rights  |
+| 3  | Unknown front doors on a passenger side on the right east of the driver side fronts closed unknown doors       |
+| 4  | Unknown front doors on a passenger side on the right east of the driver sides closed unknown front door        |
+| 5  | Unknown front doors on a passenger side on the right east of the driver sides unknown closed front door        |
+| 6  | Unknown front doors on a passenger side on the rights east of a closed unknown driver side front door          |
+| 7  | Unknown front doors on a passenger side on the rights east of a driver sides closed unknown front door         |
+| 8  | Unknown front doors on a passenger side on the rights east of a driver sides unknown closed front door         |
+| 9  | Unknown front doors on a passenger side on the rights east of an unknown closed driver side front door         |
+| 10 | Unknown front doors on a passenger side on the rights east of an unknown driver sides closed front door        |
+| 11 | Unknown front doors on a passenger side on the rights east of the closed unknown driver side front door        |
+| 12 | Unknown front doors on a passenger side on the rights east of the closed unknown front driver side doors       |
+| 13 | Unknown front doors on a passenger side on the rights east of the driver side fronts closed unknown door       |
+| 14 | Unknown front doors on a passenger side on the rights east of the driver side fronts closed unknown doors      |
+| 15 | Unknown front doors on a passenger side on the rights east of the driver sides closed unknown front door       |
+| 16 | Unknown front doors on a passenger side on the rights east of the driver sides unknown closed front door       |
+| 17 | Unknown front doors on a passenger side on the rights east of the front driver sides closed unknown door       |
+| 18 | Unknown front doors on a passenger side on the rights east of the front driver sides closed unknown doors      |
+| 19 | Unknown front doors on rights on a passenger side east of the driver side fronts closed unknown doors          |
+| 20 | Unknown front doors on rights on the passenger side east of the driver side fronts closed unknown doors        |
+| 21 | Unknown front doors on rights on the passenger side east of the driver sides closed unknown front door         |
+| 22 | Unknown front doors on rights on the passenger side east of the driver sides unknown closed front door         |
+| 23 | Unknown front doors on the passenger side on the right east of a closed unknown driver side front door         |
+| 24 | Unknown front doors on the passenger side on the right east of a driver sides closed unknown front door        |
+| 25 | Unknown front doors on the passenger side on the right east of the driver side fronts closed unknown door      |
+| 26 | Unknown front doors on the passenger side on the right east of the driver side fronts closed unknown doors     |
+| 27 | Unknown front doors on the passenger side on the right east of the driver sides closed unknown front door      |
+| 28 | Unknown front doors on the passenger side on the right east of the driver sides unknown closed front door      |
+| 29 | Unknown front doors on the passenger side on the right east of the front driver sides closed unknown doors     |
+| 30 | Unknown front doors on the passenger side on the rights east of a closed driver sides unknown front door       |
+| 31 | Unknown front doors on the passenger side on the rights east of a closed unknown driver side front door        |
+| 32 | Unknown front doors on the passenger side on the rights east of a closed unknown front driver side door        |
+| 33 | Unknown front doors on the passenger side on the rights east of a driver sides closed unknown front door       |
+| 34 | Unknown front doors on the passenger side on the rights east of a driver sides unknown closed front door       |
+| 35 | Unknown front doors on the passenger side on the rights east of an unknown closed driver side front door       |
+| 36 | Unknown front doors on the passenger side on the rights east of an unknown driver sides closed front door      |
+| 37 | Unknown front doors on the passenger side on the rights east of an unknown front driver sides closed door      |
+| 38 | Unknown front doors on the passenger side on the rights east of the closed unknown driver side front door      |
+| 39 | Unknown front doors on the passenger side on the rights east of the closed unknown front driver side doors     |
+| 40 | Unknown front doors on the passenger side on the rights east of the driver side fronts closed unknown door     |
+| 41 | Unknown front doors on the passenger side on the rights east of the driver side fronts closed unknown doors    |
+| 42 | Unknown front doors on the passenger side on the rights east of the driver sides closed unknown front door     |
+| 43 | Unknown front doors on the passenger side on the rights east of the driver sides closed unknown front doors    |
+| 44 | Unknown front doors on the passenger side on the rights east of the driver sides unknown closed front door     |
+| 45 | Unknown front doors on the passenger side on the rights east of the front driver sides closed unknown door     |
+| 46 | Unknown front doors on the passenger side on the rights east of the front driver sides closed unknown doors    |
+| 47 | Unknown front doors on the passenger side on the rights east of the fronts closed unknown driver side door     |
+| 48 | Unknown front doors on the passenger side on the rights east of the fronts closed unknown driver side doors    |
+| 49 | Unknown front doors on the passenger side on the rights east of the fronts unknown closed driver side door     |
+| 50 | Unknown front doors on the passenger side on the rights east of the unknown closed driver side front door      |
+| 51 | Unknown front doors on the passenger side on the rights east of the unknown closed front driver side doors     |
+| 52 | Unknown front doors on the passenger side on the rights east of the unknown driver sides closed front door     |
+| 53 | Unknown front doors on the right on a passenger side east of the driver side fronts closed unknown doors       |
+| 54 | Unknown front doors on the right on a passenger side east of the driver sides closed unknown front door        |
+| 55 | Unknown front doors on the right on a passenger side east of the driver sides unknown closed front door        |
+| 56 | Unknown front doors on the right on the passenger side east of a closed unknown driver side front door         |
+| 57 | Unknown front doors on the right on the passenger side east of a driver sides closed unknown front door        |
+| 58 | Unknown front doors on the right on the passenger side east of the driver side fronts closed unknown door      |
+| 59 | Unknown front doors on the right on the passenger side east of the driver side fronts closed unknown doors     |
+| 60 | Unknown front doors on the right on the passenger side east of the driver sides closed unknown front door      |
+| 61 | Unknown front doors on the right on the passenger side east of the driver sides unknown closed front door      |
+| 62 | Unknown front doors on the right on the passenger side east of the front driver sides closed unknown doors     |
+| 63 | Unknown front doors on the rights on a passenger side east of a closed unknown driver side front door          |
+| 64 | Unknown front doors on the rights on a passenger side east of a driver sides closed unknown front door         |
+| 65 | Unknown front doors on the rights on a passenger side east of a driver sides unknown closed front door         |
+| 66 | Unknown front doors on the rights on a passenger side east of an unknown closed driver side front door         |
+| 67 | Unknown front doors on the rights on a passenger side east of an unknown driver sides closed front door        |
+| 68 | Unknown front doors on the rights on a passenger side east of the closed unknown driver side front door        |
+| 69 | Unknown front doors on the rights on a passenger side east of the closed unknown front driver side doors       |
+| 70 | Unknown front doors on the rights on a passenger side east of the driver side fronts closed unknown door       |
+| 71 | Unknown front doors on the rights on a passenger side east of the driver side fronts closed unknown doors      |
+| 72 | Unknown front doors on the rights on a passenger side east of the driver sides closed unknown front door       |
+| 73 | Unknown front doors on the rights on a passenger side east of the driver sides unknown closed front door       |
+| 74 | Unknown front doors on the rights on a passenger side east of the front driver sides closed unknown door       |
+| 75 | Unknown front doors on the rights on a passenger side east of the front driver sides closed unknown doors      |
+| 76 | Unknown front doors on the rights on the passenger side east of a closed driver sides unknown front door       |
+| 77 | Unknown front doors on the rights on the passenger side east of a closed unknown driver side front door        |
+| 78 | Unknown front doors on the rights on the passenger side east of a closed unknown front driver side door        |
+| 79 | Unknown front doors on the rights on the passenger side east of a driver sides closed unknown front door       |
+| 80 | Unknown front doors on the rights on the passenger side east of a driver sides unknown closed front door       |
+| 81 | Unknown front doors on the rights on the passenger side east of an unknown closed driver side front door       |
+| 82 | Unknown front doors on the rights on the passenger side east of an unknown driver sides closed front door      |
+| 83 | Unknown front doors on the rights on the passenger side east of an unknown front driver sides closed door      |
+| 84 | Unknown front doors on the rights on the passenger side east of the closed unknown driver side front door      |
+| 85 | Unknown front doors on the rights on the passenger side east of the closed unknown front driver side doors     |
+| 86 | Unknown front doors on the rights on the passenger side east of the driver side fronts closed unknown door     |
+| 87 | Unknown front doors on the rights on the passenger side east of the driver side fronts closed unknown doors    |
+| 88 | Unknown front doors on the rights on the passenger side east of the driver sides closed unknown front door     |
+| 89 | Unknown front doors on the rights on the passenger side east of the driver sides closed unknown front doors    |
+| 90 | Unknown front doors on the rights on the passenger side east of the driver sides unknown closed front door     |
+| 91 | Unknown front doors on the rights on the passenger side east of the front driver sides closed unknown door     |
+| 92 | Unknown front doors on the rights on the passenger side east of the front driver sides closed unknown doors    |
+| 93 | Unknown front doors on the rights on the passenger side east of the fronts closed unknown driver side door     |
+| 94 | Unknown front doors on the rights on the passenger side east of the fronts closed unknown driver side doors    |
+| 95 | Unknown front doors on the rights on the passenger side east of the fronts unknown closed driver side door     |
+| 96 | Unknown front doors on the rights on the passenger side east of the unknown closed driver side front door      |
+| 97 | Unknown front doors on the rights on the passenger side east of the unknown closed front driver side doors     |
+| 98 | Unknown front doors on the rights on the passenger side east of the unknown driver sides closed front door     |
++----+----------------------------------------------------------------------------------------------------------------+
+

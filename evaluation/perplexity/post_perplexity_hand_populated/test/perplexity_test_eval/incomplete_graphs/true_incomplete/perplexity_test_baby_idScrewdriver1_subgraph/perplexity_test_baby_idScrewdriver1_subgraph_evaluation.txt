@@ -1,0 +1,317 @@
+GRAPH NAME: perplexity_test_baby_idScrewdriver1_subgraph
+
++-----------------------------------------+
+|            EVALUATION METRICS           |
++---------------------------------+-------+
+| Metric                          | Value |
++---------------------------------+-------+
+| Generated Text Results          | 120   |
+| Generated Gold Results          | 0     |
+| Generated Gold Results Coverage | 0.0   |
++---------------------------------+-------+
+| Node Count                      | 4     |
+| Nodes Covered                   | 3     |
+| Nodes Included                  | 3     |
++---------------------------------+-------+
+| Node Coverage                   | 0.75  |
+| Node Inclusion                  | 0.75  |
++---------------------------------+-------+
+| Edge Count                      | 4     |
+| Edges Covered                   | 3     |
+| Edges Included                  | 3     |
++---------------------------------+-------+
+| Edge Coverage                   | 0.75  |
+| Edge Inclusion                  | 0.75  |
++---------------------------------+-------+
+
++---------------------------------------------------------------------------+
+|                                GOLD OUTPUTS                               |
++--------------------------------------------------------------+------------+
+| Gold Output                                                  | Generated? |
++--------------------------------------------------------------+------------+
+| the unknown pointy screwdriver south of the unknown backyard | False      |
++--------------------------------------------------------------+------------+
+
++----------------------------------------------------------------------------------------------------------------------------+
+|                                                        NODE METRICS                                                        |
++----------------+--------------+---------------+----------------------------------------+-----------------------------------+
+| Node           | Node Covered | Node Included | Coverage Comment                       | Inclusion Comment                 |
++----------------+--------------+---------------+----------------------------------------+-----------------------------------+
+| idScrewdriver1 | True         | True          | Covered                                | Included                          |
+| pointy         | False        | False         | 'pointy' not in lexicon's node entries | No SEMENT generated for this node |
+| true           | True         | True          | Covered                                | Included                          |
+| idBackyard1    | True         | True          | Covered                                | Included                          |
++----------------+--------------+---------------+----------------------------------------+-----------------------------------+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                               EDGE METRICS                                                                               |
++-------------------------------------+----------------+-------------+--------------+---------------+----------------------------------+-----------------------------------+
+| Edge                                | Parent         | Child       | Edge Covered | Edge Included | Coverage Comment                 | Inclusion Comment                 |
++-------------------------------------+----------------+-------------+--------------+---------------+----------------------------------+-----------------------------------+
+| idScrewdriver1_prop_idShape         | idScrewdriver1 | pointy      | False        | False         | child of 'idShape' has no SEMENT | No SEMENT generated for this edge |
+| idScrewdriver1_prop_idUnknownObject | idScrewdriver1 | true        | True         | True          | Covered                          | Included                          |
+| isSouthOf                           | idScrewdriver1 | idBackyard1 | True         | True          | Covered                          | Included                          |
+| idBackyard1_prop_idUnknownObject    | idBackyard1    | true        | True         | True          | Covered                          | Included                          |
++-------------------------------------+----------------+-------------+--------------+---------------+----------------------------------+-----------------------------------+
+
++--------------------------------------------------------------------------------------------------+
+|                                        GENERATED SEMENTS                                         |
++---------------+----------------------------------------------------------------------------------+
+| Version       | SEMENT                                                                           |
++---------------+----------------------------------------------------------------------------------+
+| Original      | [ TOP: h18537                                                                    |
+|               |   INDEX: x18536                                                                  |
+|               |   RELS: < [ loc_nonsp LBL: h18577 ARG0: e18574 ARG1: u18575 ARG2: x18576 ]       |
+|               |           [ def_implicit_q LBL: h18588 ARG0: x18585 RSTR: h18586 BODY: h18587 ]  |
+|               |           [ _south_a_1 LBL: h18573 ARG0: i18570 ARG1: x18571 ARG2: u18572 ]      |
+|               |           [ def_udef_a_q LBL: h18583 ARG0: x18580 RSTR: h18581 BODY: h18582 ]    |
+|               |           [ _un-_a_neg LBL: h18569 ARG0: i18567 ARG1: e18568 ]                   |
+|               |           [ _know_v_1 LBL: h18566 ARG0: e18563 [ e PERF: - ] ARG1: u18564 ARG2:  |
+|               | i18565 ]                                                                         |
+|               |           [ _backyard_n_1 LBL: h18554 ARG0: x18553 ]                             |
+|               |           [ place_n LBL: h18579 ARG0: x18578 ]                                   |
+|               |           [ _un-_a_neg LBL: h18552 ARG0: i18550 ARG1: e18551 ]                   |
+|               |           [ _know_v_1 LBL: h18549 ARG0: e18546 [ e PERF: - ] ARG1: u18547 ARG2:  |
+|               | i18548 ]                                                                         |
+|               |           [ _screwdriver_n_1 LBL: h18537 ARG0: x18536 ] >                        |
+|               |   HCONS: < h18581 qeq h18554 h18586 qeq h18579 >                                 |
+|               |   ICONS: < e18563 topic i18565 e18546 topic i18548 >                             |
+|               |   EQS: < h18569 eq h18566 e18568 eq e18563 h18566 eq h18554 i18565 eq x18553     |
+|               | x18580 eq x18553 h18573 eq h18584 u18572 eq x18580 h18573 eq h18579 x18571 eq    |
+|               | x18578 x18585 eq x18578 h18577 eq h18589 x18576 eq x18585 h18552 eq h18549       |
+|               | e18551 eq e18546 h18549 eq h18537 i18548 eq x18536 h18577 eq h18537 u18575 eq    |
+|               | x18536 > ]                                                                       |
++---------------+----------------------------------------------------------------------------------+
+| EQs Collapsed | [ TOP: h18537                                                                    |
+|               |   INDEX: x18536                                                                  |
+|               |   RELS: < [ loc_nonsp LBL: h18537 ARG0: e18574 ARG1: x18536 ARG2: x18571 ]       |
+|               |           [ def_implicit_q LBL: h18588 ARG0: x18571 RSTR: h18586 BODY: h18587 ]  |
+|               |           [ _south_a_1 LBL: h18573 ARG0: i18570 ARG1: x18571 ARG2: x18553 ]      |
+|               |           [ def_udef_a_q LBL: h18583 ARG0: x18553 RSTR: h18581 BODY: h18582 ]    |
+|               |           [ _un-_a_neg LBL: h18554 ARG0: i18567 ARG1: e18563 [ e PERF: - ] ]     |
+|               |           [ _know_v_1 LBL: h18554 ARG0: e18563 ARG1: u18564 ARG2: x18553 ]       |
+|               |           [ _backyard_n_1 LBL: h18554 ARG0: x18553 ]                             |
+|               |           [ place_n LBL: h18573 ARG0: x18571 ]                                   |
+|               |           [ _un-_a_neg LBL: h18537 ARG0: i18550 ARG1: e18546 [ e PERF: - ] ]     |
+|               |           [ _know_v_1 LBL: h18537 ARG0: e18546 ARG1: u18547 ARG2: x18536 ]       |
+|               |           [ _screwdriver_n_1 LBL: h18537 ARG0: x18536 ] >                        |
+|               |   HCONS: < h18581 qeq h18554 h18586 qeq h18573 >                                 |
+|               |   ICONS: < e18563 topic x18553 e18546 topic x18536 > ]                           |
++---------------+----------------------------------------------------------------------------------+
+| Prepped       | [ TOP: h18598                                                                    |
+|               |   INDEX: e18595                                                                  |
+|               |   RELS: < [ unknown LBL: h18594 ARG: x18536 ARG0: e18595 ]                       |
+|               |           [ def_udef_a_q LBL: h18593 ARG0: x18536 RSTR: h18591 BODY: h18592 ]    |
+|               |           [ loc_nonsp LBL: h18537 ARG0: e18574 ARG1: x18536 ARG2: x18571 ]       |
+|               |           [ def_implicit_q LBL: h18588 ARG0: x18571 RSTR: h18586 BODY: h18587 ]  |
+|               |           [ _south_a_1 LBL: h18573 ARG0: i18570 ARG1: x18571 ARG2: x18553 ]      |
+|               |           [ def_udef_a_q LBL: h18583 ARG0: x18553 RSTR: h18581 BODY: h18582 ]    |
+|               |           [ _un-_a_neg LBL: h18554 ARG0: i18567 ARG1: e18563 [ e PERF: - ] ]     |
+|               |           [ _know_v_1 LBL: h18554 ARG0: e18563 ARG1: u18564 ARG2: x18553 ]       |
+|               |           [ _backyard_n_1 LBL: h18554 ARG0: x18553 ]                             |
+|               |           [ place_n LBL: h18573 ARG0: x18571 ]                                   |
+|               |           [ _un-_a_neg LBL: h18537 ARG0: i18550 ARG1: e18546 [ e PERF: - ] ]     |
+|               |           [ _know_v_1 LBL: h18537 ARG0: e18546 ARG1: u18547 ARG2: x18536 ]       |
+|               |           [ _screwdriver_n_1 LBL: h18537 ARG0: x18536 ] >                        |
+|               |   HCONS: < h18581 qeq h18554 h18586 qeq h18573 h18591 qeq h18537 h18598 qeq      |
+|               | h18594 >                                                                         |
+|               |   ICONS: < e18563 topic x18553 e18546 topic x18536 > ]                           |
++---------------+----------------------------------------------------------------------------------+
+
++------------------------------------------------------------------------------------------------+
+|                                          NODE SEMENTS                                          |
++----------------+-------------------------------------------------------------------------------+
+| Node           | Generated SEMENT                                                              |
++----------------+-------------------------------------------------------------------------------+
+| idScrewdriver1 | [ TOP: h18537                                                                 |
+|                |   INDEX: x18536                                                               |
+|                |   RELS: < [ _screwdriver_n_1 LBL: h18537 ARG0: x18536 ] > ]                   |
++----------------+-------------------------------------------------------------------------------+
+| pointy         | None                                                                          |
++----------------+-------------------------------------------------------------------------------+
+| true           | [ TOP: h18558                                                                 |
+|                |   INDEX: e18555                                                               |
+|                |   RELS: < [ _true_a_of LBL: h18558 ARG0: e18555 ARG1: u18556 ARG2: u18557 ] > |
+|                |   SLOTS: < ARG1: u18556 ARG2: u18557 > ]                                      |
++----------------+-------------------------------------------------------------------------------+
+| idBackyard1    | [ TOP: h18554                                                                 |
+|                |   INDEX: x18553                                                               |
+|                |   RELS: < [ _backyard_n_1 LBL: h18554 ARG0: x18553 ] > ]                      |
++----------------+-------------------------------------------------------------------------------+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                      EDGE SEMENTS                                                                     |
++-------------------------------------+----------------+-------------+----------------------------------------------------------------------------------+
+| Edge                                | Parent         | Child       | Generated SEMENT                                                                 |
++-------------------------------------+----------------+-------------+----------------------------------------------------------------------------------+
+| idScrewdriver1_prop_idShape         | idScrewdriver1 | pointy      | None                                                                             |
++-------------------------------------+----------------+-------------+----------------------------------------------------------------------------------+
+| idScrewdriver1_prop_idUnknownObject | idScrewdriver1 | true        | [ TOP: h18537                                                                    |
+|                                     |                |             |   INDEX: x18536                                                                  |
+|                                     |                |             |   RELS: < [ _un-_a_neg LBL: h18552 ARG0: i18550 ARG1: e18551 ]                   |
+|                                     |                |             |           [ _know_v_1 LBL: h18549 ARG0: e18546 [ e PERF: - ] ARG1: u18547 ARG2:  |
+|                                     |                |             | i18548 ]                                                                         |
+|                                     |                |             |           [ _screwdriver_n_1 LBL: h18537 ARG0: x18536 ] >                        |
+|                                     |                |             |   ICONS: < e18546 topic i18548 >                                                 |
+|                                     |                |             |   EQS: < h18552 eq h18549 e18551 eq e18546 h18549 eq h18537 i18548 eq x18536 > ] |
++-------------------------------------+----------------+-------------+----------------------------------------------------------------------------------+
+| isSouthOf                           | idScrewdriver1 | idBackyard1 | [ TOP: h18537                                                                    |
+|                                     |                |             |   INDEX: x18536                                                                  |
+|                                     |                |             |   RELS: < [ loc_nonsp LBL: h18577 ARG0: e18574 ARG1: u18575 ARG2: x18576 ]       |
+|                                     |                |             |           [ def_implicit_q LBL: h18588 ARG0: x18585 RSTR: h18586 BODY: h18587 ]  |
+|                                     |                |             |           [ _south_a_1 LBL: h18573 ARG0: i18570 ARG1: x18571 ARG2: u18572 ]      |
+|                                     |                |             |           [ def_udef_a_q LBL: h18583 ARG0: x18580 RSTR: h18581 BODY: h18582 ]    |
+|                                     |                |             |           [ _un-_a_neg LBL: h18569 ARG0: i18567 ARG1: e18568 ]                   |
+|                                     |                |             |           [ _know_v_1 LBL: h18566 ARG0: e18563 [ e PERF: - ] ARG1: u18564 ARG2:  |
+|                                     |                |             | i18565 ]                                                                         |
+|                                     |                |             |           [ _backyard_n_1 LBL: h18554 ARG0: x18553 ]                             |
+|                                     |                |             |           [ place_n LBL: h18579 ARG0: x18578 ]                                   |
+|                                     |                |             |           [ _un-_a_neg LBL: h18552 ARG0: i18550 ARG1: e18551 ]                   |
+|                                     |                |             |           [ _know_v_1 LBL: h18549 ARG0: e18546 [ e PERF: - ] ARG1: u18547 ARG2:  |
+|                                     |                |             | i18548 ]                                                                         |
+|                                     |                |             |           [ _screwdriver_n_1 LBL: h18537 ARG0: x18536 ] >                        |
+|                                     |                |             |   HCONS: < h18581 qeq h18554 h18586 qeq h18579 >                                 |
+|                                     |                |             |   ICONS: < e18563 topic i18565 e18546 topic i18548 >                             |
+|                                     |                |             |   EQS: < h18569 eq h18566 e18568 eq e18563 h18566 eq h18554 i18565 eq x18553     |
+|                                     |                |             | x18580 eq x18553 h18573 eq h18584 u18572 eq x18580 h18573 eq h18579 x18571 eq    |
+|                                     |                |             | x18578 x18585 eq x18578 h18577 eq h18589 x18576 eq x18585 h18552 eq h18549       |
+|                                     |                |             | e18551 eq e18546 h18549 eq h18537 i18548 eq x18536 h18577 eq h18537 u18575 eq    |
+|                                     |                |             | x18536 > ]                                                                       |
++-------------------------------------+----------------+-------------+----------------------------------------------------------------------------------+
+| idBackyard1_prop_idUnknownObject    | idBackyard1    | true        | [ TOP: h18554                                                                    |
+|                                     |                |             |   INDEX: x18553                                                                  |
+|                                     |                |             |   RELS: < [ _un-_a_neg LBL: h18569 ARG0: i18567 ARG1: e18568 ]                   |
+|                                     |                |             |           [ _know_v_1 LBL: h18566 ARG0: e18563 [ e PERF: - ] ARG1: u18564 ARG2:  |
+|                                     |                |             | i18565 ]                                                                         |
+|                                     |                |             |           [ _backyard_n_1 LBL: h18554 ARG0: x18553 ] >                           |
+|                                     |                |             |   ICONS: < e18563 topic i18565 >                                                 |
+|                                     |                |             |   EQS: < h18569 eq h18566 e18568 eq e18563 h18566 eq h18554 i18565 eq x18553 > ] |
++-------------------------------------+----------------+-------------+----------------------------------------------------------------------------------+
+
++-----------------------------------------------------------------+
+|                      GENERATED ENGLISH TEXT                     |
++-----+-----------------------------------------------------------+
+| #   | Generated Text                                            |
++-----+-----------------------------------------------------------+
+| 1   | An unknown screwdriver south of an unknown back yard      |
+| 2   | An unknown screwdriver south of an unknown back yard.     |
+| 3   | An unknown screwdriver south of an unknown backyard       |
+| 4   | An unknown screwdriver south of an unknown backyard.      |
+| 5   | An unknown screwdriver south of the unknown back yard     |
+| 6   | An unknown screwdriver south of the unknown back yard.    |
+| 7   | An unknown screwdriver south of the unknown back yards    |
+| 8   | An unknown screwdriver south of the unknown back yards.   |
+| 9   | An unknown screwdriver south of the unknown backyard      |
+| 10  | An unknown screwdriver south of the unknown backyard.     |
+| 11  | An unknown screwdriver south of the unknown backyards     |
+| 12  | An unknown screwdriver south of the unknown backyards.    |
+| 13  | An unknown screwdriver south of unknown back yards        |
+| 14  | An unknown screwdriver south of unknown back yards.       |
+| 15  | An unknown screwdriver south of unknown backyards         |
+| 16  | An unknown screwdriver south of unknown backyards.        |
+| 17  | An unknown screwdriver, south of an unknown back yard     |
+| 18  | An unknown screwdriver, south of an unknown backyard      |
+| 19  | An unknown screwdriver, south of the unknown back yard    |
+| 20  | An unknown screwdriver, south of the unknown back yards   |
+| 21  | An unknown screwdriver, south of the unknown backyard     |
+| 22  | An unknown screwdriver, south of the unknown backyards    |
+| 23  | An unknown screwdriver, south of unknown back yards       |
+| 24  | An unknown screwdriver, south of unknown backyards        |
+| 25  | The unknown screwdriver south of an unknown back yard     |
+| 26  | The unknown screwdriver south of an unknown back yard.    |
+| 27  | The unknown screwdriver south of an unknown backyard      |
+| 28  | The unknown screwdriver south of an unknown backyard.     |
+| 29  | The unknown screwdriver south of the unknown back yard    |
+| 30  | The unknown screwdriver south of the unknown back yard.   |
+| 31  | The unknown screwdriver south of the unknown back yards   |
+| 32  | The unknown screwdriver south of the unknown back yards.  |
+| 33  | The unknown screwdriver south of the unknown backyard     |
+| 34  | The unknown screwdriver south of the unknown backyard.    |
+| 35  | The unknown screwdriver south of the unknown backyards    |
+| 36  | The unknown screwdriver south of the unknown backyards.   |
+| 37  | The unknown screwdriver south of unknown back yards       |
+| 38  | The unknown screwdriver south of unknown back yards.      |
+| 39  | The unknown screwdriver south of unknown backyards        |
+| 40  | The unknown screwdriver south of unknown backyards.       |
+| 41  | The unknown screwdriver, south of an unknown back yard    |
+| 42  | The unknown screwdriver, south of an unknown backyard     |
+| 43  | The unknown screwdriver, south of the unknown back yard   |
+| 44  | The unknown screwdriver, south of the unknown back yards  |
+| 45  | The unknown screwdriver, south of the unknown backyard    |
+| 46  | The unknown screwdriver, south of the unknown backyards   |
+| 47  | The unknown screwdriver, south of unknown back yards      |
+| 48  | The unknown screwdriver, south of unknown backyards       |
+| 49  | The unknown screwdrivers south of an unknown back yard    |
+| 50  | The unknown screwdrivers south of an unknown back yard.   |
+| 51  | The unknown screwdrivers south of an unknown backyard     |
+| 52  | The unknown screwdrivers south of an unknown backyard.    |
+| 53  | The unknown screwdrivers south of the unknown back yard   |
+| 54  | The unknown screwdrivers south of the unknown back yard.  |
+| 55  | The unknown screwdrivers south of the unknown back yards  |
+| 56  | The unknown screwdrivers south of the unknown back yards. |
+| 57  | The unknown screwdrivers south of the unknown backyard    |
+| 58  | The unknown screwdrivers south of the unknown backyard.   |
+| 59  | The unknown screwdrivers south of the unknown backyards   |
+| 60  | The unknown screwdrivers south of the unknown backyards.  |
+| 61  | The unknown screwdrivers south of unknown back yards      |
+| 62  | The unknown screwdrivers south of unknown back yards.     |
+| 63  | The unknown screwdrivers south of unknown backyards       |
+| 64  | The unknown screwdrivers south of unknown backyards.      |
+| 65  | The unknown screwdrivers, south of an unknown back yard   |
+| 66  | The unknown screwdrivers, south of an unknown backyard    |
+| 67  | The unknown screwdrivers, south of the unknown back yard  |
+| 68  | The unknown screwdrivers, south of the unknown back yards |
+| 69  | The unknown screwdrivers, south of the unknown backyard   |
+| 70  | The unknown screwdrivers, south of the unknown backyards  |
+| 71  | The unknown screwdrivers, south of unknown back yards     |
+| 72  | The unknown screwdrivers, south of unknown backyards      |
+| 73  | Unknown screwdriver south of an unknown back yard         |
+| 74  | Unknown screwdriver south of an unknown back yard.        |
+| 75  | Unknown screwdriver south of an unknown backyard          |
+| 76  | Unknown screwdriver south of an unknown backyard.         |
+| 77  | Unknown screwdriver south of the unknown back yard        |
+| 78  | Unknown screwdriver south of the unknown back yard.       |
+| 79  | Unknown screwdriver south of the unknown back yards       |
+| 80  | Unknown screwdriver south of the unknown back yards.      |
+| 81  | Unknown screwdriver south of the unknown backyard         |
+| 82  | Unknown screwdriver south of the unknown backyard.        |
+| 83  | Unknown screwdriver south of the unknown backyards        |
+| 84  | Unknown screwdriver south of the unknown backyards.       |
+| 85  | Unknown screwdriver south of unknown back yards           |
+| 86  | Unknown screwdriver south of unknown back yards.          |
+| 87  | Unknown screwdriver south of unknown backyards            |
+| 88  | Unknown screwdriver south of unknown backyards.           |
+| 89  | Unknown screwdriver, south of an unknown back yard        |
+| 90  | Unknown screwdriver, south of an unknown backyard         |
+| 91  | Unknown screwdriver, south of the unknown back yard       |
+| 92  | Unknown screwdriver, south of the unknown back yards      |
+| 93  | Unknown screwdriver, south of the unknown backyard        |
+| 94  | Unknown screwdriver, south of the unknown backyards       |
+| 95  | Unknown screwdriver, south of unknown back yards          |
+| 96  | Unknown screwdriver, south of unknown backyards           |
+| 97  | Unknown screwdrivers south of an unknown back yard        |
+| 98  | Unknown screwdrivers south of an unknown back yard.       |
+| 99  | Unknown screwdrivers south of an unknown backyard         |
+| 100 | Unknown screwdrivers south of an unknown backyard.        |
+| 101 | Unknown screwdrivers south of the unknown back yard       |
+| 102 | Unknown screwdrivers south of the unknown back yard.      |
+| 103 | Unknown screwdrivers south of the unknown back yards      |
+| 104 | Unknown screwdrivers south of the unknown back yards.     |
+| 105 | Unknown screwdrivers south of the unknown backyard        |
+| 106 | Unknown screwdrivers south of the unknown backyard.       |
+| 107 | Unknown screwdrivers south of the unknown backyards       |
+| 108 | Unknown screwdrivers south of the unknown backyards.      |
+| 109 | Unknown screwdrivers south of unknown back yards          |
+| 110 | Unknown screwdrivers south of unknown back yards.         |
+| 111 | Unknown screwdrivers south of unknown backyards           |
+| 112 | Unknown screwdrivers south of unknown backyards.          |
+| 113 | Unknown screwdrivers, south of an unknown back yard       |
+| 114 | Unknown screwdrivers, south of an unknown backyard        |
+| 115 | Unknown screwdrivers, south of the unknown back yard      |
+| 116 | Unknown screwdrivers, south of the unknown back yards     |
+| 117 | Unknown screwdrivers, south of the unknown backyard       |
+| 118 | Unknown screwdrivers, south of the unknown backyards      |
+| 119 | Unknown screwdrivers, south of unknown back yards         |
+| 120 | Unknown screwdrivers, south of unknown backyards          |
++-----+-----------------------------------------------------------+
+

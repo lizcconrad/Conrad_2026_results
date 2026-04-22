@@ -1,0 +1,202 @@
+GRAPH NAME: perplexity_test_AtomicCity_idElevator1_subgraph
+
++------------------------------------------------------+
+|                  EVALUATION METRICS                  |
++---------------------------------+--------------------+
+| Metric                          | Value              |
++---------------------------------+--------------------+
+| Generated Text Results          | 60                 |
+| Generated Gold Results          | 0                  |
+| Generated Gold Results Coverage | 0.0                |
++---------------------------------+--------------------+
+| Node Count                      | 3                  |
+| Nodes Covered                   | 2                  |
+| Nodes Included                  | 2                  |
++---------------------------------+--------------------+
+| Node Coverage                   | 0.6666666666666666 |
+| Node Inclusion                  | 0.6666666666666666 |
++---------------------------------+--------------------+
+| Edge Count                      | 2                  |
+| Edges Covered                   | 1                  |
+| Edges Included                  | 1                  |
++---------------------------------+--------------------+
+| Edge Coverage                   | 0.5                |
+| Edge Inclusion                  | 0.5                |
++---------------------------------+--------------------+
+
++-----------------------------------------+
+|               GOLD OUTPUTS              |
++----------------------------+------------+
+| Gold Output                | Generated? |
++----------------------------+------------+
+| the elevator south of Adam | False      |
++----------------------------+------------+
+
++---------------------------------------------------------------------------------------------------------------------------+
+|                                                        NODE METRICS                                                       |
++-------------+--------------+---------------+------------------------------------------+-----------------------------------+
+| Node        | Node Covered | Node Included | Coverage Comment                         | Inclusion Comment                 |
++-------------+--------------+---------------+------------------------------------------+-----------------------------------+
+| idElevator1 | True         | True          | Covered                                  | Included                          |
+| idButton1   | False        | False         | 'idButton' not in lexicon's node entries | No SEMENT generated for this node |
+| idAdam      | True         | True          | Covered                                  | Included                          |
++-------------+--------------+---------------+------------------------------------------+-----------------------------------+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                              EDGE METRICS                                                                              |
++---------------------------------+-------------+-----------+--------------+---------------+-----------------------------------------+-----------------------------------+
+| Edge                            | Parent      | Child     | Edge Covered | Edge Included | Coverage Comment                        | Inclusion Comment                 |
++---------------------------------+-------------+-----------+--------------+---------------+-----------------------------------------+-----------------------------------+
+| idElevator1_prop_idCurrentLevel | idElevator1 | idButton1 | False        | False         | child of 'idCurrentLevel' has no SEMENT | No SEMENT generated for this edge |
+| isSouthOf                       | idElevator1 | idAdam    | True         | True          | Covered                                 | Included                          |
++---------------------------------+-------------+-----------+--------------+---------------+-----------------------------------------+-----------------------------------+
+
++--------------------------------------------------------------------------------------------------+
+|                                        GENERATED SEMENTS                                         |
++---------------+----------------------------------------------------------------------------------+
+| Version       | SEMENT                                                                           |
++---------------+----------------------------------------------------------------------------------+
+| Original      | [ TOP: h3884                                                                     |
+|               |   INDEX: x3883                                                                   |
+|               |   RELS: < [ loc_nonsp LBL: h3894 ARG0: e3891 ARG1: u3892 ARG2: x3893 ]           |
+|               |           [ def_implicit_q LBL: h3905 ARG0: x3902 RSTR: h3903 BODY: h3904 ]      |
+|               |           [ _south_a_1 LBL: h3890 ARG0: i3887 ARG1: x3888 ARG2: u3889 ]          |
+|               |           [ def_udef_a_q LBL: h3900 ARG0: x3897 RSTR: h3898 BODY: h3899 ]        |
+|               |           [ named LBL: h3886 ARG0: x3885 CARG: "Adam" ]                          |
+|               |           [ place_n LBL: h3896 ARG0: x3895 ]                                     |
+|               |           [ _elevator_n_1 LBL: h3884 ARG0: x3883 ] >                             |
+|               |   HCONS: < h3898 qeq h3886 h3903 qeq h3896 >                                     |
+|               |   EQS: < x3897 eq x3885 h3890 eq h3901 u3889 eq x3897 h3890 eq h3896 x3888 eq    |
+|               | x3895 x3902 eq x3895 h3894 eq h3906 x3893 eq x3902 h3894 eq h3884 u3892 eq x3883 |
+|               | > ]                                                                              |
++---------------+----------------------------------------------------------------------------------+
+| EQs Collapsed | [ TOP: h3884                                                                     |
+|               |   INDEX: x3883                                                                   |
+|               |   RELS: < [ loc_nonsp LBL: h3884 ARG0: e3891 ARG1: x3883 ARG2: x3888 ]           |
+|               |           [ def_implicit_q LBL: h3905 ARG0: x3888 RSTR: h3903 BODY: h3904 ]      |
+|               |           [ _south_a_1 LBL: h3890 ARG0: i3887 ARG1: x3888 ARG2: x3885 ]          |
+|               |           [ def_udef_a_q LBL: h3900 ARG0: x3885 RSTR: h3898 BODY: h3899 ]        |
+|               |           [ named LBL: h3886 ARG0: x3885 CARG: "Adam" ]                          |
+|               |           [ place_n LBL: h3890 ARG0: x3888 ]                                     |
+|               |           [ _elevator_n_1 LBL: h3884 ARG0: x3883 ] >                             |
+|               |   HCONS: < h3898 qeq h3886 h3903 qeq h3890 > ]                                   |
++---------------+----------------------------------------------------------------------------------+
+| Prepped       | [ TOP: h3915                                                                     |
+|               |   INDEX: e3912                                                                   |
+|               |   RELS: < [ unknown LBL: h3911 ARG: x3883 ARG0: e3912 ]                          |
+|               |           [ def_udef_a_q LBL: h3910 ARG0: x3883 RSTR: h3908 BODY: h3909 ]        |
+|               |           [ loc_nonsp LBL: h3884 ARG0: e3891 ARG1: x3883 ARG2: x3888 ]           |
+|               |           [ def_implicit_q LBL: h3905 ARG0: x3888 RSTR: h3903 BODY: h3904 ]      |
+|               |           [ _south_a_1 LBL: h3890 ARG0: i3887 ARG1: x3888 ARG2: x3885 ]          |
+|               |           [ def_udef_a_q LBL: h3900 ARG0: x3885 RSTR: h3898 BODY: h3899 ]        |
+|               |           [ named LBL: h3886 ARG0: x3885 CARG: "Adam" ]                          |
+|               |           [ place_n LBL: h3890 ARG0: x3888 ]                                     |
+|               |           [ _elevator_n_1 LBL: h3884 ARG0: x3883 ] >                             |
+|               |   HCONS: < h3898 qeq h3886 h3903 qeq h3890 h3908 qeq h3884 h3915 qeq h3911 > ]   |
++---------------+----------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------+
+|                                NODE SEMENTS                               |
++-------------+-------------------------------------------------------------+
+| Node        | Generated SEMENT                                            |
++-------------+-------------------------------------------------------------+
+| idElevator1 | [ TOP: h3884                                                |
+|             |   INDEX: x3883                                              |
+|             |   RELS: < [ _elevator_n_1 LBL: h3884 ARG0: x3883 ] > ]      |
++-------------+-------------------------------------------------------------+
+| idButton1   | None                                                        |
++-------------+-------------------------------------------------------------+
+| idAdam      | [ TOP: h3886                                                |
+|             |   INDEX: x3885                                              |
+|             |   RELS: < [ named LBL: h3886 ARG0: x3885 CARG: "Adam" ] > ] |
++-------------+-------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                 EDGE SEMENTS                                                                 |
++---------------------------------+-------------+-----------+----------------------------------------------------------------------------------+
+| Edge                            | Parent      | Child     | Generated SEMENT                                                                 |
++---------------------------------+-------------+-----------+----------------------------------------------------------------------------------+
+| idElevator1_prop_idCurrentLevel | idElevator1 | idButton1 | None                                                                             |
++---------------------------------+-------------+-----------+----------------------------------------------------------------------------------+
+| isSouthOf                       | idElevator1 | idAdam    | [ TOP: h3884                                                                     |
+|                                 |             |           |   INDEX: x3883                                                                   |
+|                                 |             |           |   RELS: < [ loc_nonsp LBL: h3894 ARG0: e3891 ARG1: u3892 ARG2: x3893 ]           |
+|                                 |             |           |           [ def_implicit_q LBL: h3905 ARG0: x3902 RSTR: h3903 BODY: h3904 ]      |
+|                                 |             |           |           [ _south_a_1 LBL: h3890 ARG0: i3887 ARG1: x3888 ARG2: u3889 ]          |
+|                                 |             |           |           [ def_udef_a_q LBL: h3900 ARG0: x3897 RSTR: h3898 BODY: h3899 ]        |
+|                                 |             |           |           [ named LBL: h3886 ARG0: x3885 CARG: "Adam" ]                          |
+|                                 |             |           |           [ place_n LBL: h3896 ARG0: x3895 ]                                     |
+|                                 |             |           |           [ _elevator_n_1 LBL: h3884 ARG0: x3883 ] >                             |
+|                                 |             |           |   HCONS: < h3898 qeq h3886 h3903 qeq h3896 >                                     |
+|                                 |             |           |   EQS: < x3897 eq x3885 h3890 eq h3901 u3889 eq x3897 h3890 eq h3896 x3888 eq    |
+|                                 |             |           | x3895 x3902 eq x3895 h3894 eq h3906 x3893 eq x3902 h3894 eq h3884 u3892 eq x3883 |
+|                                 |             |           | > ]                                                                              |
++---------------------------------+-------------+-----------+----------------------------------------------------------------------------------+
+
++----------------------------------------+
+|         GENERATED ENGLISH TEXT         |
++----+-----------------------------------+
+| #  | Generated Text                    |
++----+-----------------------------------+
+| 1  | An elevator south of Adams        |
+| 2  | An elevator south of Adams.       |
+| 3  | An elevator south of an Adam      |
+| 4  | An elevator south of an Adam.     |
+| 5  | An elevator south of the Adam     |
+| 6  | An elevator south of the Adam.    |
+| 7  | An elevator south of the Adams    |
+| 8  | An elevator south of the Adams.   |
+| 9  | An elevator, south of Adams       |
+| 10 | An elevator, south of an Adam     |
+| 11 | An elevator, south of the Adam    |
+| 12 | An elevator, south of the Adams   |
+| 13 | Elevator south of Adams           |
+| 14 | Elevator south of Adams.          |
+| 15 | Elevator south of an Adam         |
+| 16 | Elevator south of an Adam.        |
+| 17 | Elevator south of the Adam        |
+| 18 | Elevator south of the Adam.       |
+| 19 | Elevator south of the Adams       |
+| 20 | Elevator south of the Adams.      |
+| 21 | Elevator, south of Adams          |
+| 22 | Elevator, south of an Adam        |
+| 23 | Elevator, south of the Adam       |
+| 24 | Elevator, south of the Adams      |
+| 25 | Elevators south of Adams          |
+| 26 | Elevators south of Adams.         |
+| 27 | Elevators south of an Adam        |
+| 28 | Elevators south of an Adam.       |
+| 29 | Elevators south of the Adam       |
+| 30 | Elevators south of the Adam.      |
+| 31 | Elevators south of the Adams      |
+| 32 | Elevators south of the Adams.     |
+| 33 | Elevators, south of Adams         |
+| 34 | Elevators, south of an Adam       |
+| 35 | Elevators, south of the Adam      |
+| 36 | Elevators, south of the Adams     |
+| 37 | The elevator south of Adams       |
+| 38 | The elevator south of Adams.      |
+| 39 | The elevator south of an Adam     |
+| 40 | The elevator south of an Adam.    |
+| 41 | The elevator south of the Adam    |
+| 42 | The elevator south of the Adam.   |
+| 43 | The elevator south of the Adams   |
+| 44 | The elevator south of the Adams.  |
+| 45 | The elevator, south of Adams      |
+| 46 | The elevator, south of an Adam    |
+| 47 | The elevator, south of the Adam   |
+| 48 | The elevator, south of the Adams  |
+| 49 | The elevators south of Adams      |
+| 50 | The elevators south of Adams.     |
+| 51 | The elevators south of an Adam    |
+| 52 | The elevators south of an Adam.   |
+| 53 | The elevators south of the Adam   |
+| 54 | The elevators south of the Adam.  |
+| 55 | The elevators south of the Adams  |
+| 56 | The elevators south of the Adams. |
+| 57 | The elevators, south of Adams     |
+| 58 | The elevators, south of an Adam   |
+| 59 | The elevators, south of the Adam  |
+| 60 | The elevators, south of the Adams |
++----+-----------------------------------+
+
