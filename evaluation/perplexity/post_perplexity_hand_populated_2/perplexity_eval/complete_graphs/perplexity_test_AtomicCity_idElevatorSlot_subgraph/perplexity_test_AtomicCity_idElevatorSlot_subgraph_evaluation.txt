@@ -1,0 +1,500 @@
+GRAPH NAME: perplexity_test_AtomicCity_idElevatorSlot_subgraph
+
++-----------------------------------------+
+|            EVALUATION METRICS           |
++---------------------------------+-------+
+| Metric                          | Value |
++---------------------------------+-------+
+| Generated Text Results          | 240   |
+| Generated Gold Results          | 1     |
+| Generated Gold Results Coverage | 1.0   |
++---------------------------------+-------+
+| Node Count                      | 3     |
+| Nodes Covered                   | 3     |
+| Nodes Included                  | 3     |
++---------------------------------+-------+
+| Node Coverage                   | 1.0   |
+| Node Inclusion                  | 1.0   |
++---------------------------------+-------+
+| Edge Count                      | 2     |
+| Edges Covered                   | 2     |
+| Edges Included                  | 2     |
++---------------------------------+-------+
+| Edge Coverage                   | 1.0   |
+| Edge Inclusion                  | 1.0   |
++---------------------------------+-------+
+
++---------------------------------------------------------------------------+
+|                                GOLD OUTPUTS                               |
++--------------------------------------------------------------+------------+
+| Gold Output                                                  | Generated? |
++--------------------------------------------------------------+------------+
+| the elevator slot near the elevator slot's locked face plate | True       |
++--------------------------------------------------------------+------------+
+
++-----------------------------------------------------------------------------------------------+
+|                                          NODE METRICS                                         |
++-------------------------+--------------+---------------+------------------+-------------------+
+| Node                    | Node Covered | Node Included | Coverage Comment | Inclusion Comment |
++-------------------------+--------------+---------------+------------------+-------------------+
+| idElevatorSlot          | True         | True          | Covered          | Included          |
+| idElevatorSlotFacePlate | True         | True          | Covered          | Included          |
+| locked                  | True         | True          | Covered          | Included          |
++-------------------------+--------------+---------------+------------------+-------------------+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                             EDGE METRICS                                                                             |
++--------------------------------------------+-------------------------+-------------------------+--------------+---------------+------------------+-------------------+
+| Edge                                       | Parent                  | Child                   | Edge Covered | Edge Included | Coverage Comment | Inclusion Comment |
++--------------------------------------------+-------------------------+-------------------------+--------------+---------------+------------------+-------------------+
+| isNear                                     | idElevatorSlot          | idElevatorSlotFacePlate | True         | True          | Covered          | Included          |
+| idElevatorSlotFacePlate_prop_idLockedState | idElevatorSlotFacePlate | locked                  | True         | True          | Covered          | Included          |
++--------------------------------------------+-------------------------+-------------------------+--------------+---------------+------------------+-------------------+
+
++--------------------------------------------------------------------------------------------------+
+|                                        GENERATED SEMENTS                                         |
++---------------+----------------------------------------------------------------------------------+
+| Version       | SEMENT                                                                           |
++---------------+----------------------------------------------------------------------------------+
+| Original      | [ TOP: h4200                                                                     |
+|               |   INDEX: x4199                                                                   |
+|               |   RELS: < [ _near_p LBL: h4255 ARG0: e4252 ARG1: u4253 ARG2: i4254 ]             |
+|               |           [ def_udef_a_q LBL: h4259 ARG0: x4256 RSTR: h4257 BODY: h4258 ]        |
+|               |           [ _lock_v_cause LBL: h4251 ARG0: e4248 [ e PERF: - ] ARG1: i4249 ARG2: |
+|               | i4250 ]                                                                          |
+|               |           [ poss LBL: h4247 ARG0: e4244 ARG1: x4245 ARG2: i4246 ]                |
+|               |           [ def_udef_a_q LBL: h4242 ARG0: x4239 RSTR: h4240 BODY: h4241 ]        |
+|               |           [ compound LBL: h4224 ARG0: e4221 [ e PROG: - ] ARG1: u4222 ARG2:      |
+|               | u4223 ]                                                                          |
+|               |           [ udef_q LBL: h4219 ARG0: x4216 RSTR: h4217 BODY: h4218 ]              |
+|               |           [ _elevator_n_1 LBL: h4215 ARG0: x4214 ]                               |
+|               |           [ _slot_n_1 LBL: h4213 ARG0: x4212 ]                                   |
+|               |           [ compound LBL: h4238 ARG0: e4235 [ e PROG: - ] ARG1: u4236 ARG2:      |
+|               | u4237 ]                                                                          |
+|               |           [ udef_q LBL: h4233 ARG0: x4230 RSTR: h4231 BODY: h4232 ]              |
+|               |           [ _face_n_1 LBL: h4229 ARG0: x4228 ]                                   |
+|               |           [ _plate_n_of LBL: h4227 ARG0: x4225 ARG1: i4226 ]                     |
+|               |           [ compound LBL: h4211 ARG0: e4208 [ e PROG: - ] ARG1: u4209 ARG2:      |
+|               | u4210 ]                                                                          |
+|               |           [ udef_q LBL: h4206 ARG0: x4203 RSTR: h4204 BODY: h4205 ]              |
+|               |           [ _elevator_n_1 LBL: h4202 ARG0: x4201 ]                               |
+|               |           [ _slot_n_1 LBL: h4200 ARG0: x4199 ] >                                 |
+|               |   HCONS: < h4217 qeq h4215 h4240 qeq h4213 h4231 qeq h4229 h4257 qeq h4227 h4204 |
+|               | qeq h4202 >                                                                      |
+|               |   ICONS: < e4248 topic i4250 >                                                   |
+|               |   EQS: < x4216 eq x4214 h4224 eq h4220 u4223 eq x4216 h4224 eq h4213 u4222 eq    |
+|               | x4212 x4239 eq x4212 h4247 eq h4243 i4246 eq x4239 x4230 eq x4228 h4238 eq h4234 |
+|               | u4237 eq x4230 h4238 eq h4227 u4236 eq x4225 h4247 eq h4227 x4245 eq x4225 h4251 |
+|               | eq h4227 i4250 eq x4225 x4256 eq x4225 h4255 eq h4260 i4254 eq x4256 x4203 eq    |
+|               | x4201 h4211 eq h4207 u4210 eq x4203 h4211 eq h4200 u4209 eq x4199 h4255 eq h4200 |
+|               | u4253 eq x4199 > ]                                                               |
++---------------+----------------------------------------------------------------------------------+
+| EQs Collapsed | [ TOP: h4200                                                                     |
+|               |   INDEX: x4199                                                                   |
+|               |   RELS: < [ _near_p LBL: h4200 ARG0: e4252 ARG1: x4199 ARG2: x4225 ]             |
+|               |           [ def_udef_a_q LBL: h4259 ARG0: x4225 RSTR: h4257 BODY: h4258 ]        |
+|               |           [ _lock_v_cause LBL: h4227 ARG0: e4248 [ e PERF: - ] ARG1: i4249 ARG2: |
+|               | x4225 ]                                                                          |
+|               |           [ poss LBL: h4227 ARG0: e4244 ARG1: x4225 ARG2: x4212 ]                |
+|               |           [ def_udef_a_q LBL: h4242 ARG0: x4212 RSTR: h4240 BODY: h4241 ]        |
+|               |           [ compound LBL: h4213 ARG0: e4221 [ e PROG: - ] ARG1: x4212 ARG2:      |
+|               | x4214 ]                                                                          |
+|               |           [ udef_q LBL: h4219 ARG0: x4214 RSTR: h4217 BODY: h4218 ]              |
+|               |           [ _elevator_n_1 LBL: h4215 ARG0: x4214 ]                               |
+|               |           [ _slot_n_1 LBL: h4213 ARG0: x4212 ]                                   |
+|               |           [ compound LBL: h4227 ARG0: e4235 [ e PROG: - ] ARG1: x4225 ARG2:      |
+|               | x4228 ]                                                                          |
+|               |           [ udef_q LBL: h4233 ARG0: x4228 RSTR: h4231 BODY: h4232 ]              |
+|               |           [ _face_n_1 LBL: h4229 ARG0: x4228 ]                                   |
+|               |           [ _plate_n_of LBL: h4227 ARG0: x4225 ARG1: i4226 ]                     |
+|               |           [ compound LBL: h4200 ARG0: e4208 [ e PROG: - ] ARG1: x4199 ARG2:      |
+|               | x4201 ]                                                                          |
+|               |           [ udef_q LBL: h4206 ARG0: x4201 RSTR: h4204 BODY: h4205 ]              |
+|               |           [ _elevator_n_1 LBL: h4202 ARG0: x4201 ]                               |
+|               |           [ _slot_n_1 LBL: h4200 ARG0: x4199 ] >                                 |
+|               |   HCONS: < h4217 qeq h4215 h4240 qeq h4213 h4231 qeq h4229 h4257 qeq h4227 h4204 |
+|               | qeq h4202 >                                                                      |
+|               |   ICONS: < e4248 topic x4225 > ]                                                 |
++---------------+----------------------------------------------------------------------------------+
+| Prepped       | [ TOP: h4269                                                                     |
+|               |   INDEX: e4266                                                                   |
+|               |   RELS: < [ unknown LBL: h4265 ARG: x4199 ARG0: e4266 ]                          |
+|               |           [ def_udef_a_q LBL: h4264 ARG0: x4199 RSTR: h4262 BODY: h4263 ]        |
+|               |           [ _near_p LBL: h4200 ARG0: e4252 ARG1: x4199 ARG2: x4225 ]             |
+|               |           [ def_udef_a_q LBL: h4259 ARG0: x4225 RSTR: h4257 BODY: h4258 ]        |
+|               |           [ _lock_v_cause LBL: h4227 ARG0: e4248 [ e PERF: - ] ARG1: i4249 ARG2: |
+|               | x4225 ]                                                                          |
+|               |           [ poss LBL: h4227 ARG0: e4244 ARG1: x4225 ARG2: x4212 ]                |
+|               |           [ def_udef_a_q LBL: h4242 ARG0: x4212 RSTR: h4240 BODY: h4241 ]        |
+|               |           [ compound LBL: h4213 ARG0: e4221 [ e PROG: - ] ARG1: x4212 ARG2:      |
+|               | x4214 ]                                                                          |
+|               |           [ udef_q LBL: h4219 ARG0: x4214 RSTR: h4217 BODY: h4218 ]              |
+|               |           [ _elevator_n_1 LBL: h4215 ARG0: x4214 ]                               |
+|               |           [ _slot_n_1 LBL: h4213 ARG0: x4212 ]                                   |
+|               |           [ compound LBL: h4227 ARG0: e4235 [ e PROG: - ] ARG1: x4225 ARG2:      |
+|               | x4228 ]                                                                          |
+|               |           [ udef_q LBL: h4233 ARG0: x4228 RSTR: h4231 BODY: h4232 ]              |
+|               |           [ _face_n_1 LBL: h4229 ARG0: x4228 ]                                   |
+|               |           [ _plate_n_of LBL: h4227 ARG0: x4225 ARG1: i4226 ]                     |
+|               |           [ compound LBL: h4200 ARG0: e4208 [ e PROG: - ] ARG1: x4199 ARG2:      |
+|               | x4201 ]                                                                          |
+|               |           [ udef_q LBL: h4206 ARG0: x4201 RSTR: h4204 BODY: h4205 ]              |
+|               |           [ _elevator_n_1 LBL: h4202 ARG0: x4201 ]                               |
+|               |           [ _slot_n_1 LBL: h4200 ARG0: x4199 ] >                                 |
+|               |   HCONS: < h4217 qeq h4215 h4240 qeq h4213 h4231 qeq h4229 h4257 qeq h4227 h4204 |
+|               | qeq h4202 h4262 qeq h4200 h4269 qeq h4265 >                                      |
+|               |   ICONS: < e4248 topic x4225 > ]                                                 |
++---------------+----------------------------------------------------------------------------------+
+
++------------------------------------------------------------------------------------------------------------+
+|                                                NODE SEMENTS                                                |
++-------------------------+----------------------------------------------------------------------------------+
+| Node                    | Generated SEMENT                                                                 |
++-------------------------+----------------------------------------------------------------------------------+
+| idElevatorSlot          | [ TOP: h4200                                                                     |
+|                         |   INDEX: x4199                                                                   |
+|                         |   RELS: < [ compound LBL: h4211 ARG0: e4208 [ e PROG: - ] ARG1: u4209 ARG2:      |
+|                         | u4210 ]                                                                          |
+|                         |           [ udef_q LBL: h4206 ARG0: x4203 RSTR: h4204 BODY: h4205 ]              |
+|                         |           [ _elevator_n_1 LBL: h4202 ARG0: x4201 ]                               |
+|                         |           [ _slot_n_1 LBL: h4200 ARG0: x4199 ] >                                 |
+|                         |   HCONS: < h4204 qeq h4202 >                                                     |
+|                         |   EQS: < x4203 eq x4201 h4211 eq h4207 u4210 eq x4203 h4211 eq h4200 u4209 eq    |
+|                         | x4199 > ]                                                                        |
++-------------------------+----------------------------------------------------------------------------------+
+| idElevatorSlotFacePlate | [ TOP: h4227                                                                     |
+|                         |   INDEX: x4225                                                                   |
+|                         |   RELS: < [ poss LBL: h4247 ARG0: e4244 ARG1: x4245 ARG2: i4246 ]                |
+|                         |           [ def_udef_a_q LBL: h4242 ARG0: x4239 RSTR: h4240 BODY: h4241 ]        |
+|                         |           [ compound LBL: h4224 ARG0: e4221 [ e PROG: - ] ARG1: u4222 ARG2:      |
+|                         | u4223 ]                                                                          |
+|                         |           [ udef_q LBL: h4219 ARG0: x4216 RSTR: h4217 BODY: h4218 ]              |
+|                         |           [ _elevator_n_1 LBL: h4215 ARG0: x4214 ]                               |
+|                         |           [ _slot_n_1 LBL: h4213 ARG0: x4212 ]                                   |
+|                         |           [ compound LBL: h4238 ARG0: e4235 [ e PROG: - ] ARG1: u4236 ARG2:      |
+|                         | u4237 ]                                                                          |
+|                         |           [ udef_q LBL: h4233 ARG0: x4230 RSTR: h4231 BODY: h4232 ]              |
+|                         |           [ _face_n_1 LBL: h4229 ARG0: x4228 ]                                   |
+|                         |           [ _plate_n_of LBL: h4227 ARG0: x4225 ARG1: i4226 ] >                   |
+|                         |   HCONS: < h4217 qeq h4215 h4240 qeq h4213 h4231 qeq h4229 >                     |
+|                         |   EQS: < x4216 eq x4214 h4224 eq h4220 u4223 eq x4216 h4224 eq h4213 u4222 eq    |
+|                         | x4212 x4239 eq x4212 h4247 eq h4243 i4246 eq x4239 x4230 eq x4228 h4238 eq h4234 |
+|                         | u4237 eq x4230 h4238 eq h4227 u4236 eq x4225 h4247 eq h4227 x4245 eq x4225 >     |
+|                         |   SLOTS: < ARG1: i4226 > ]                                                       |
++-------------------------+----------------------------------------------------------------------------------+
+| locked                  | [ TOP: h4251                                                                     |
+|                         |   INDEX: e4248                                                                   |
+|                         |   RELS: < [ _lock_v_cause LBL: h4251 ARG0: e4248 ARG1: i4249 ARG2: i4250 ] >     |
+|                         |   SLOTS: < ARG1: i4249 ARG2: i4250 > ]                                           |
++-------------------------+----------------------------------------------------------------------------------+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                    EDGE SEMENTS                                                                                   |
++--------------------------------------------+-------------------------+-------------------------+----------------------------------------------------------------------------------+
+| Edge                                       | Parent                  | Child                   | Generated SEMENT                                                                 |
++--------------------------------------------+-------------------------+-------------------------+----------------------------------------------------------------------------------+
+| isNear                                     | idElevatorSlot          | idElevatorSlotFacePlate | [ TOP: h4200                                                                     |
+|                                            |                         |                         |   INDEX: x4199                                                                   |
+|                                            |                         |                         |   RELS: < [ _near_p LBL: h4255 ARG0: e4252 ARG1: u4253 ARG2: i4254 ]             |
+|                                            |                         |                         |           [ def_udef_a_q LBL: h4259 ARG0: x4256 RSTR: h4257 BODY: h4258 ]        |
+|                                            |                         |                         |           [ _lock_v_cause LBL: h4251 ARG0: e4248 [ e PERF: - ] ARG1: i4249 ARG2: |
+|                                            |                         |                         | i4250 ]                                                                          |
+|                                            |                         |                         |           [ poss LBL: h4247 ARG0: e4244 ARG1: x4245 ARG2: i4246 ]                |
+|                                            |                         |                         |           [ def_udef_a_q LBL: h4242 ARG0: x4239 RSTR: h4240 BODY: h4241 ]        |
+|                                            |                         |                         |           [ compound LBL: h4224 ARG0: e4221 [ e PROG: - ] ARG1: u4222 ARG2:      |
+|                                            |                         |                         | u4223 ]                                                                          |
+|                                            |                         |                         |           [ udef_q LBL: h4219 ARG0: x4216 RSTR: h4217 BODY: h4218 ]              |
+|                                            |                         |                         |           [ _elevator_n_1 LBL: h4215 ARG0: x4214 ]                               |
+|                                            |                         |                         |           [ _slot_n_1 LBL: h4213 ARG0: x4212 ]                                   |
+|                                            |                         |                         |           [ compound LBL: h4238 ARG0: e4235 [ e PROG: - ] ARG1: u4236 ARG2:      |
+|                                            |                         |                         | u4237 ]                                                                          |
+|                                            |                         |                         |           [ udef_q LBL: h4233 ARG0: x4230 RSTR: h4231 BODY: h4232 ]              |
+|                                            |                         |                         |           [ _face_n_1 LBL: h4229 ARG0: x4228 ]                                   |
+|                                            |                         |                         |           [ _plate_n_of LBL: h4227 ARG0: x4225 ARG1: i4226 ]                     |
+|                                            |                         |                         |           [ compound LBL: h4211 ARG0: e4208 [ e PROG: - ] ARG1: u4209 ARG2:      |
+|                                            |                         |                         | u4210 ]                                                                          |
+|                                            |                         |                         |           [ udef_q LBL: h4206 ARG0: x4203 RSTR: h4204 BODY: h4205 ]              |
+|                                            |                         |                         |           [ _elevator_n_1 LBL: h4202 ARG0: x4201 ]                               |
+|                                            |                         |                         |           [ _slot_n_1 LBL: h4200 ARG0: x4199 ] >                                 |
+|                                            |                         |                         |   HCONS: < h4217 qeq h4215 h4240 qeq h4213 h4231 qeq h4229 h4257 qeq h4227 h4204 |
+|                                            |                         |                         | qeq h4202 >                                                                      |
+|                                            |                         |                         |   ICONS: < e4248 topic i4250 >                                                   |
+|                                            |                         |                         |   EQS: < x4216 eq x4214 h4224 eq h4220 u4223 eq x4216 h4224 eq h4213 u4222 eq    |
+|                                            |                         |                         | x4212 x4239 eq x4212 h4247 eq h4243 i4246 eq x4239 x4230 eq x4228 h4238 eq h4234 |
+|                                            |                         |                         | u4237 eq x4230 h4238 eq h4227 u4236 eq x4225 h4247 eq h4227 x4245 eq x4225 h4251 |
+|                                            |                         |                         | eq h4227 i4250 eq x4225 x4256 eq x4225 h4255 eq h4260 i4254 eq x4256 x4203 eq    |
+|                                            |                         |                         | x4201 h4211 eq h4207 u4210 eq x4203 h4211 eq h4200 u4209 eq x4199 h4255 eq h4200 |
+|                                            |                         |                         | u4253 eq x4199 > ]                                                               |
++--------------------------------------------+-------------------------+-------------------------+----------------------------------------------------------------------------------+
+| idElevatorSlotFacePlate_prop_idLockedState | idElevatorSlotFacePlate | locked                  | [ TOP: h4227                                                                     |
+|                                            |                         |                         |   INDEX: x4225                                                                   |
+|                                            |                         |                         |   RELS: < [ _lock_v_cause LBL: h4251 ARG0: e4248 [ e PERF: - ] ARG1: i4249 ARG2: |
+|                                            |                         |                         | i4250 ]                                                                          |
+|                                            |                         |                         |           [ poss LBL: h4247 ARG0: e4244 ARG1: x4245 ARG2: i4246 ]                |
+|                                            |                         |                         |           [ def_udef_a_q LBL: h4242 ARG0: x4239 RSTR: h4240 BODY: h4241 ]        |
+|                                            |                         |                         |           [ compound LBL: h4224 ARG0: e4221 [ e PROG: - ] ARG1: u4222 ARG2:      |
+|                                            |                         |                         | u4223 ]                                                                          |
+|                                            |                         |                         |           [ udef_q LBL: h4219 ARG0: x4216 RSTR: h4217 BODY: h4218 ]              |
+|                                            |                         |                         |           [ _elevator_n_1 LBL: h4215 ARG0: x4214 ]                               |
+|                                            |                         |                         |           [ _slot_n_1 LBL: h4213 ARG0: x4212 ]                                   |
+|                                            |                         |                         |           [ compound LBL: h4238 ARG0: e4235 [ e PROG: - ] ARG1: u4236 ARG2:      |
+|                                            |                         |                         | u4237 ]                                                                          |
+|                                            |                         |                         |           [ udef_q LBL: h4233 ARG0: x4230 RSTR: h4231 BODY: h4232 ]              |
+|                                            |                         |                         |           [ _face_n_1 LBL: h4229 ARG0: x4228 ]                                   |
+|                                            |                         |                         |           [ _plate_n_of LBL: h4227 ARG0: x4225 ARG1: i4226 ] >                   |
+|                                            |                         |                         |   HCONS: < h4217 qeq h4215 h4240 qeq h4213 h4231 qeq h4229 >                     |
+|                                            |                         |                         |   ICONS: < e4248 topic i4250 >                                                   |
+|                                            |                         |                         |   EQS: < x4216 eq x4214 h4224 eq h4220 u4223 eq x4216 h4224 eq h4213 u4222 eq    |
+|                                            |                         |                         | x4212 x4239 eq x4212 h4247 eq h4243 i4246 eq x4239 x4230 eq x4228 h4238 eq h4234 |
+|                                            |                         |                         | u4237 eq x4230 h4238 eq h4227 u4236 eq x4225 h4247 eq h4227 x4245 eq x4225 h4251 |
+|                                            |                         |                         | eq h4227 i4250 eq x4225 >                                                        |
+|                                            |                         |                         |   SLOTS: < ARG1: i4226 > ]                                                       |
++--------------------------------------------+-------------------------+-------------------------+----------------------------------------------------------------------------------+
+
++------------------------------------------------------------------------+
+|                         GENERATED ENGLISH TEXT                         |
++-----+------------------------------------------------------------------+
+| #   | Generated Text                                                   |
++-----+------------------------------------------------------------------+
+| 1   | An elevator slot near an elevator slot's faces locked plate      |
+| 2   | An elevator slot near an elevator slot's faces locked plate.     |
+| 3   | An elevator slot near an elevator slot's faces locked plates     |
+| 4   | An elevator slot near an elevator slot's faces locked plates.    |
+| 5   | An elevator slot near an elevator slot's locked face plate       |
+| 6   | An elevator slot near an elevator slot's locked face plate.      |
+| 7   | An elevator slot near an elevator slot's locked face plates      |
+| 8   | An elevator slot near an elevator slot's locked face plates.     |
+| 9   | An elevator slot near elevator slots' faces locked plate         |
+| 10  | An elevator slot near elevator slots' faces locked plate.        |
+| 11  | An elevator slot near elevator slots' faces locked plates        |
+| 12  | An elevator slot near elevator slots' faces locked plates.       |
+| 13  | An elevator slot near elevator slots' locked face plate          |
+| 14  | An elevator slot near elevator slots' locked face plate.         |
+| 15  | An elevator slot near elevator slots' locked face plates         |
+| 16  | An elevator slot near elevator slots' locked face plates.        |
+| 17  | An elevator slot near the elevator slot's faces locked plate     |
+| 18  | An elevator slot near the elevator slot's faces locked plate.    |
+| 19  | An elevator slot near the elevator slot's faces locked plates    |
+| 20  | An elevator slot near the elevator slot's faces locked plates.   |
+| 21  | An elevator slot near the elevator slot's locked face plate      |
+| 22  | An elevator slot near the elevator slot's locked face plate.     |
+| 23  | An elevator slot near the elevator slot's locked face plates     |
+| 24  | An elevator slot near the elevator slot's locked face plates.    |
+| 25  | An elevator slot near the elevator slots' faces locked plate     |
+| 26  | An elevator slot near the elevator slots' faces locked plate.    |
+| 27  | An elevator slot near the elevator slots' faces locked plates    |
+| 28  | An elevator slot near the elevator slots' faces locked plates.   |
+| 29  | An elevator slot near the elevator slots' locked face plate      |
+| 30  | An elevator slot near the elevator slots' locked face plate.     |
+| 31  | An elevator slot near the elevator slots' locked face plates     |
+| 32  | An elevator slot near the elevator slots' locked face plates.    |
+| 33  | An elevator slot, near an elevator slot's faces locked plate     |
+| 34  | An elevator slot, near an elevator slot's faces locked plates    |
+| 35  | An elevator slot, near an elevator slot's locked face plate      |
+| 36  | An elevator slot, near an elevator slot's locked face plates     |
+| 37  | An elevator slot, near elevator slots' faces locked plate        |
+| 38  | An elevator slot, near elevator slots' faces locked plates       |
+| 39  | An elevator slot, near elevator slots' locked face plate         |
+| 40  | An elevator slot, near elevator slots' locked face plates        |
+| 41  | An elevator slot, near the elevator slot's faces locked plate    |
+| 42  | An elevator slot, near the elevator slot's faces locked plates   |
+| 43  | An elevator slot, near the elevator slot's locked face plate     |
+| 44  | An elevator slot, near the elevator slot's locked face plates    |
+| 45  | An elevator slot, near the elevator slots' faces locked plate    |
+| 46  | An elevator slot, near the elevator slots' faces locked plates   |
+| 47  | An elevator slot, near the elevator slots' locked face plate     |
+| 48  | An elevator slot, near the elevator slots' locked face plates    |
+| 49  | Elevator slot near an elevator slot's faces locked plate         |
+| 50  | Elevator slot near an elevator slot's faces locked plate.        |
+| 51  | Elevator slot near an elevator slot's faces locked plates        |
+| 52  | Elevator slot near an elevator slot's faces locked plates.       |
+| 53  | Elevator slot near an elevator slot's locked face plate          |
+| 54  | Elevator slot near an elevator slot's locked face plate.         |
+| 55  | Elevator slot near an elevator slot's locked face plates         |
+| 56  | Elevator slot near an elevator slot's locked face plates.        |
+| 57  | Elevator slot near elevator slots' faces locked plate            |
+| 58  | Elevator slot near elevator slots' faces locked plate.           |
+| 59  | Elevator slot near elevator slots' faces locked plates           |
+| 60  | Elevator slot near elevator slots' faces locked plates.          |
+| 61  | Elevator slot near elevator slots' locked face plate             |
+| 62  | Elevator slot near elevator slots' locked face plate.            |
+| 63  | Elevator slot near elevator slots' locked face plates            |
+| 64  | Elevator slot near elevator slots' locked face plates.           |
+| 65  | Elevator slot near the elevator slot's faces locked plate        |
+| 66  | Elevator slot near the elevator slot's faces locked plate.       |
+| 67  | Elevator slot near the elevator slot's faces locked plates       |
+| 68  | Elevator slot near the elevator slot's faces locked plates.      |
+| 69  | Elevator slot near the elevator slot's locked face plate         |
+| 70  | Elevator slot near the elevator slot's locked face plate.        |
+| 71  | Elevator slot near the elevator slot's locked face plates        |
+| 72  | Elevator slot near the elevator slot's locked face plates.       |
+| 73  | Elevator slot near the elevator slots' faces locked plate        |
+| 74  | Elevator slot near the elevator slots' faces locked plate.       |
+| 75  | Elevator slot near the elevator slots' faces locked plates       |
+| 76  | Elevator slot near the elevator slots' faces locked plates.      |
+| 77  | Elevator slot near the elevator slots' locked face plate         |
+| 78  | Elevator slot near the elevator slots' locked face plate.        |
+| 79  | Elevator slot near the elevator slots' locked face plates        |
+| 80  | Elevator slot near the elevator slots' locked face plates.       |
+| 81  | Elevator slot, near an elevator slot's faces locked plate        |
+| 82  | Elevator slot, near an elevator slot's faces locked plates       |
+| 83  | Elevator slot, near an elevator slot's locked face plate         |
+| 84  | Elevator slot, near an elevator slot's locked face plates        |
+| 85  | Elevator slot, near elevator slots' faces locked plate           |
+| 86  | Elevator slot, near elevator slots' faces locked plates          |
+| 87  | Elevator slot, near elevator slots' locked face plate            |
+| 88  | Elevator slot, near elevator slots' locked face plates           |
+| 89  | Elevator slot, near the elevator slot's faces locked plate       |
+| 90  | Elevator slot, near the elevator slot's faces locked plates      |
+| 91  | Elevator slot, near the elevator slot's locked face plate        |
+| 92  | Elevator slot, near the elevator slot's locked face plates       |
+| 93  | Elevator slot, near the elevator slots' faces locked plate       |
+| 94  | Elevator slot, near the elevator slots' faces locked plates      |
+| 95  | Elevator slot, near the elevator slots' locked face plate        |
+| 96  | Elevator slot, near the elevator slots' locked face plates       |
+| 97  | Elevator slots near an elevator slot's faces locked plate        |
+| 98  | Elevator slots near an elevator slot's faces locked plate.       |
+| 99  | Elevator slots near an elevator slot's faces locked plates       |
+| 100 | Elevator slots near an elevator slot's faces locked plates.      |
+| 101 | Elevator slots near an elevator slot's locked face plate         |
+| 102 | Elevator slots near an elevator slot's locked face plate.        |
+| 103 | Elevator slots near an elevator slot's locked face plates        |
+| 104 | Elevator slots near an elevator slot's locked face plates.       |
+| 105 | Elevator slots near elevator slots' faces locked plate           |
+| 106 | Elevator slots near elevator slots' faces locked plate.          |
+| 107 | Elevator slots near elevator slots' faces locked plates          |
+| 108 | Elevator slots near elevator slots' faces locked plates.         |
+| 109 | Elevator slots near elevator slots' locked face plate            |
+| 110 | Elevator slots near elevator slots' locked face plate.           |
+| 111 | Elevator slots near elevator slots' locked face plates           |
+| 112 | Elevator slots near elevator slots' locked face plates.          |
+| 113 | Elevator slots near the elevator slot's faces locked plate       |
+| 114 | Elevator slots near the elevator slot's faces locked plate.      |
+| 115 | Elevator slots near the elevator slot's faces locked plates      |
+| 116 | Elevator slots near the elevator slot's faces locked plates.     |
+| 117 | Elevator slots near the elevator slot's locked face plate        |
+| 118 | Elevator slots near the elevator slot's locked face plate.       |
+| 119 | Elevator slots near the elevator slot's locked face plates       |
+| 120 | Elevator slots near the elevator slot's locked face plates.      |
+| 121 | Elevator slots near the elevator slots' faces locked plate       |
+| 122 | Elevator slots near the elevator slots' faces locked plate.      |
+| 123 | Elevator slots near the elevator slots' faces locked plates      |
+| 124 | Elevator slots near the elevator slots' faces locked plates.     |
+| 125 | Elevator slots near the elevator slots' locked face plate        |
+| 126 | Elevator slots near the elevator slots' locked face plate.       |
+| 127 | Elevator slots near the elevator slots' locked face plates       |
+| 128 | Elevator slots near the elevator slots' locked face plates.      |
+| 129 | Elevator slots, near an elevator slot's faces locked plate       |
+| 130 | Elevator slots, near an elevator slot's faces locked plates      |
+| 131 | Elevator slots, near an elevator slot's locked face plate        |
+| 132 | Elevator slots, near an elevator slot's locked face plates       |
+| 133 | Elevator slots, near elevator slots' faces locked plate          |
+| 134 | Elevator slots, near elevator slots' faces locked plates         |
+| 135 | Elevator slots, near elevator slots' locked face plate           |
+| 136 | Elevator slots, near elevator slots' locked face plates          |
+| 137 | Elevator slots, near the elevator slot's faces locked plate      |
+| 138 | Elevator slots, near the elevator slot's faces locked plates     |
+| 139 | Elevator slots, near the elevator slot's locked face plate       |
+| 140 | Elevator slots, near the elevator slot's locked face plates      |
+| 141 | Elevator slots, near the elevator slots' faces locked plate      |
+| 142 | Elevator slots, near the elevator slots' faces locked plates     |
+| 143 | Elevator slots, near the elevator slots' locked face plate       |
+| 144 | Elevator slots, near the elevator slots' locked face plates      |
+| 145 | The elevator slot near an elevator slot's faces locked plate     |
+| 146 | The elevator slot near an elevator slot's faces locked plate.    |
+| 147 | The elevator slot near an elevator slot's faces locked plates    |
+| 148 | The elevator slot near an elevator slot's faces locked plates.   |
+| 149 | The elevator slot near an elevator slot's locked face plate      |
+| 150 | The elevator slot near an elevator slot's locked face plate.     |
+| 151 | The elevator slot near an elevator slot's locked face plates     |
+| 152 | The elevator slot near an elevator slot's locked face plates.    |
+| 153 | The elevator slot near elevator slots' faces locked plate        |
+| 154 | The elevator slot near elevator slots' faces locked plate.       |
+| 155 | The elevator slot near elevator slots' faces locked plates       |
+| 156 | The elevator slot near elevator slots' faces locked plates.      |
+| 157 | The elevator slot near elevator slots' locked face plate         |
+| 158 | The elevator slot near elevator slots' locked face plate.        |
+| 159 | The elevator slot near elevator slots' locked face plates        |
+| 160 | The elevator slot near elevator slots' locked face plates.       |
+| 161 | The elevator slot near the elevator slot's faces locked plate    |
+| 162 | The elevator slot near the elevator slot's faces locked plate.   |
+| 163 | The elevator slot near the elevator slot's faces locked plates   |
+| 164 | The elevator slot near the elevator slot's faces locked plates.  |
+| 165 | The elevator slot near the elevator slot's locked face plate     |
+| 166 | The elevator slot near the elevator slot's locked face plate.    |
+| 167 | The elevator slot near the elevator slot's locked face plates    |
+| 168 | The elevator slot near the elevator slot's locked face plates.   |
+| 169 | The elevator slot near the elevator slots' faces locked plate    |
+| 170 | The elevator slot near the elevator slots' faces locked plate.   |
+| 171 | The elevator slot near the elevator slots' faces locked plates   |
+| 172 | The elevator slot near the elevator slots' faces locked plates.  |
+| 173 | The elevator slot near the elevator slots' locked face plate     |
+| 174 | The elevator slot near the elevator slots' locked face plate.    |
+| 175 | The elevator slot near the elevator slots' locked face plates    |
+| 176 | The elevator slot near the elevator slots' locked face plates.   |
+| 177 | The elevator slot, near an elevator slot's faces locked plate    |
+| 178 | The elevator slot, near an elevator slot's faces locked plates   |
+| 179 | The elevator slot, near an elevator slot's locked face plate     |
+| 180 | The elevator slot, near an elevator slot's locked face plates    |
+| 181 | The elevator slot, near elevator slots' faces locked plate       |
+| 182 | The elevator slot, near elevator slots' faces locked plates      |
+| 183 | The elevator slot, near elevator slots' locked face plate        |
+| 184 | The elevator slot, near elevator slots' locked face plates       |
+| 185 | The elevator slot, near the elevator slot's faces locked plate   |
+| 186 | The elevator slot, near the elevator slot's faces locked plates  |
+| 187 | The elevator slot, near the elevator slot's locked face plate    |
+| 188 | The elevator slot, near the elevator slot's locked face plates   |
+| 189 | The elevator slot, near the elevator slots' faces locked plate   |
+| 190 | The elevator slot, near the elevator slots' faces locked plates  |
+| 191 | The elevator slot, near the elevator slots' locked face plate    |
+| 192 | The elevator slot, near the elevator slots' locked face plates   |
+| 193 | The elevator slots near an elevator slot's faces locked plate    |
+| 194 | The elevator slots near an elevator slot's faces locked plate.   |
+| 195 | The elevator slots near an elevator slot's faces locked plates   |
+| 196 | The elevator slots near an elevator slot's faces locked plates.  |
+| 197 | The elevator slots near an elevator slot's locked face plate     |
+| 198 | The elevator slots near an elevator slot's locked face plate.    |
+| 199 | The elevator slots near an elevator slot's locked face plates    |
+| 200 | The elevator slots near an elevator slot's locked face plates.   |
+| 201 | The elevator slots near elevator slots' faces locked plate       |
+| 202 | The elevator slots near elevator slots' faces locked plate.      |
+| 203 | The elevator slots near elevator slots' faces locked plates      |
+| 204 | The elevator slots near elevator slots' faces locked plates.     |
+| 205 | The elevator slots near elevator slots' locked face plate        |
+| 206 | The elevator slots near elevator slots' locked face plate.       |
+| 207 | The elevator slots near elevator slots' locked face plates       |
+| 208 | The elevator slots near elevator slots' locked face plates.      |
+| 209 | The elevator slots near the elevator slot's faces locked plate   |
+| 210 | The elevator slots near the elevator slot's faces locked plate.  |
+| 211 | The elevator slots near the elevator slot's faces locked plates  |
+| 212 | The elevator slots near the elevator slot's faces locked plates. |
+| 213 | The elevator slots near the elevator slot's locked face plate    |
+| 214 | The elevator slots near the elevator slot's locked face plate.   |
+| 215 | The elevator slots near the elevator slot's locked face plates   |
+| 216 | The elevator slots near the elevator slot's locked face plates.  |
+| 217 | The elevator slots near the elevator slots' faces locked plate   |
+| 218 | The elevator slots near the elevator slots' faces locked plate.  |
+| 219 | The elevator slots near the elevator slots' faces locked plates  |
+| 220 | The elevator slots near the elevator slots' faces locked plates. |
+| 221 | The elevator slots near the elevator slots' locked face plate    |
+| 222 | The elevator slots near the elevator slots' locked face plate.   |
+| 223 | The elevator slots near the elevator slots' locked face plates   |
+| 224 | The elevator slots near the elevator slots' locked face plates.  |
+| 225 | The elevator slots, near an elevator slot's faces locked plate   |
+| 226 | The elevator slots, near an elevator slot's faces locked plates  |
+| 227 | The elevator slots, near an elevator slot's locked face plate    |
+| 228 | The elevator slots, near an elevator slot's locked face plates   |
+| 229 | The elevator slots, near elevator slots' faces locked plate      |
+| 230 | The elevator slots, near elevator slots' faces locked plates     |
+| 231 | The elevator slots, near elevator slots' locked face plate       |
+| 232 | The elevator slots, near elevator slots' locked face plates      |
+| 233 | The elevator slots, near the elevator slot's faces locked plate  |
+| 234 | The elevator slots, near the elevator slot's faces locked plates |
+| 235 | The elevator slots, near the elevator slot's locked face plate   |
+| 236 | The elevator slots, near the elevator slot's locked face plates  |
+| 237 | The elevator slots, near the elevator slots' faces locked plate  |
+| 238 | The elevator slots, near the elevator slots' faces locked plates |
+| 239 | The elevator slots, near the elevator slots' locked face plate   |
+| 240 | The elevator slots, near the elevator slots' locked face plates  |
++-----+------------------------------------------------------------------+
+
