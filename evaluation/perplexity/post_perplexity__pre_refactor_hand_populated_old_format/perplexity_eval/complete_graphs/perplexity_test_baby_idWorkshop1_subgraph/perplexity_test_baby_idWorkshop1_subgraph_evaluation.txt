@@ -1,0 +1,229 @@
+GRAPH NAME: perplexity_test_baby_idWorkshop1_subgraph
+
++-----------------------------------------+
+|            EVALUATION METRICS           |
++---------------------------------+-------+
+| Metric                          | Value |
++---------------------------------+-------+
+| Generated Text Results          | 60    |
+| Generated Gold Results          | 1     |
+| Generated Gold Results Coverage | 1.0   |
++---------------------------------+-------+
+| Node Count                      | 3     |
+| Nodes Covered                   | 3     |
+| Nodes Included                  | 3     |
++---------------------------------+-------+
+| Node Coverage                   | 1.0   |
+| Node Inclusion                  | 1.0   |
++---------------------------------+-------+
+| Edge Count                      | 2     |
+| Edges Covered                   | 2     |
+| Edges Included                  | 2     |
++---------------------------------+-------+
+| Edge Coverage                   | 1.0   |
+| Edge Inclusion                  | 1.0   |
++---------------------------------+-------+
+
++-------------------------------------------------------+
+|                      GOLD OUTPUTS                     |
++------------------------------------------+------------+
+| Gold Output                              | Generated? |
++------------------------------------------+------------+
+| the unknown workshop east of the bedroom | True       |
++------------------------------------------+------------+
+
++-----------------------------------------------------------------------------------+
+|                                    NODE METRICS                                   |
++-------------+--------------+---------------+------------------+-------------------+
+| Node        | Node Covered | Node Included | Coverage Comment | Inclusion Comment |
++-------------+--------------+---------------+------------------+-------------------+
+| idWorkshop1 | True         | True          | Covered          | Included          |
+| true        | True         | True          | Covered          | Included          |
+| idBedroom1  | True         | True          | Covered          | Included          |
++-------------+--------------+---------------+------------------+-------------------+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+|                                                            EDGE METRICS                                                           |
++----------------------------------+-------------+------------+--------------+---------------+------------------+-------------------+
+| Edge                             | Parent      | Child      | Edge Covered | Edge Included | Coverage Comment | Inclusion Comment |
++----------------------------------+-------------+------------+--------------+---------------+------------------+-------------------+
+| idWorkshop1_prop_idUnknownObject | idWorkshop1 | true       | True         | True          | Covered          | Included          |
+| isEastOf                         | idWorkshop1 | idBedroom1 | True         | True          | Covered          | Included          |
++----------------------------------+-------------+------------+--------------+---------------+------------------+-------------------+
+
++--------------------------------------------------------------------------------------------------+
+|                                        GENERATED SEMENTS                                         |
++---------------+----------------------------------------------------------------------------------+
+| Version       | SEMENT                                                                           |
++---------------+----------------------------------------------------------------------------------+
+| Original      | [ TOP: h19993                                                                    |
+|               |   INDEX: x19992                                                                  |
+|               |   RELS: < [ loc_nonsp LBL: h20018 ARG0: e20015 ARG1: u20016 ARG2: x20017 ]       |
+|               |           [ def_implicit_q LBL: h20029 ARG0: x20026 RSTR: h20027 BODY: h20028 ]  |
+|               |           [ _east_a_1 LBL: h20014 ARG0: i20011 ARG1: x20012 ARG2: u20013 ]       |
+|               |           [ def_udef_a_q LBL: h20024 ARG0: x20021 RSTR: h20022 BODY: h20023 ]    |
+|               |           [ _bedroom_n_1 LBL: h20010 ARG0: x20009 ]                              |
+|               |           [ place_n LBL: h20020 ARG0: x20019 ]                                   |
+|               |           [ _un-_a_neg LBL: h20008 ARG0: i20006 ARG1: e20007 ]                   |
+|               |           [ _know_v_1 LBL: h20005 ARG0: e20002 [ e PERF: - ] ARG1: u20003 ARG2:  |
+|               | i20004 ]                                                                         |
+|               |           [ _workshop_n_1 LBL: h19993 ARG0: x19992 ] >                           |
+|               |   HCONS: < h20022 qeq h20010 h20027 qeq h20020 >                                 |
+|               |   ICONS: < e20002 topic i20004 >                                                 |
+|               |   EQS: < x20021 eq x20009 h20014 eq h20025 u20013 eq x20021 h20014 eq h20020     |
+|               | x20012 eq x20019 x20026 eq x20019 h20018 eq h20030 x20017 eq x20026 h20008 eq    |
+|               | h20005 e20007 eq e20002 h20005 eq h19993 i20004 eq x19992 h20018 eq h19993       |
+|               | u20016 eq x19992 > ]                                                             |
++---------------+----------------------------------------------------------------------------------+
+| EQs Collapsed | [ TOP: h19993                                                                    |
+|               |   INDEX: x19992                                                                  |
+|               |   RELS: < [ loc_nonsp LBL: h19993 ARG0: e20015 ARG1: x19992 ARG2: x20012 ]       |
+|               |           [ def_implicit_q LBL: h20029 ARG0: x20012 RSTR: h20027 BODY: h20028 ]  |
+|               |           [ _east_a_1 LBL: h20014 ARG0: i20011 ARG1: x20012 ARG2: x20009 ]       |
+|               |           [ def_udef_a_q LBL: h20024 ARG0: x20009 RSTR: h20022 BODY: h20023 ]    |
+|               |           [ _bedroom_n_1 LBL: h20010 ARG0: x20009 ]                              |
+|               |           [ place_n LBL: h20014 ARG0: x20012 ]                                   |
+|               |           [ _un-_a_neg LBL: h19993 ARG0: i20006 ARG1: e20002 [ e PERF: - ] ]     |
+|               |           [ _know_v_1 LBL: h19993 ARG0: e20002 ARG1: u20003 ARG2: x19992 ]       |
+|               |           [ _workshop_n_1 LBL: h19993 ARG0: x19992 ] >                           |
+|               |   HCONS: < h20022 qeq h20010 h20027 qeq h20014 >                                 |
+|               |   ICONS: < e20002 topic x19992 > ]                                               |
++---------------+----------------------------------------------------------------------------------+
+| Prepped       | [ TOP: h20039                                                                    |
+|               |   INDEX: e20036                                                                  |
+|               |   RELS: < [ unknown LBL: h20035 ARG: x19992 ARG0: e20036 ]                       |
+|               |           [ def_udef_a_q LBL: h20034 ARG0: x19992 RSTR: h20032 BODY: h20033 ]    |
+|               |           [ loc_nonsp LBL: h19993 ARG0: e20015 ARG1: x19992 ARG2: x20012 ]       |
+|               |           [ def_implicit_q LBL: h20029 ARG0: x20012 RSTR: h20027 BODY: h20028 ]  |
+|               |           [ _east_a_1 LBL: h20014 ARG0: i20011 ARG1: x20012 ARG2: x20009 ]       |
+|               |           [ def_udef_a_q LBL: h20024 ARG0: x20009 RSTR: h20022 BODY: h20023 ]    |
+|               |           [ _bedroom_n_1 LBL: h20010 ARG0: x20009 ]                              |
+|               |           [ place_n LBL: h20014 ARG0: x20012 ]                                   |
+|               |           [ _un-_a_neg LBL: h19993 ARG0: i20006 ARG1: e20002 [ e PERF: - ] ]     |
+|               |           [ _know_v_1 LBL: h19993 ARG0: e20002 ARG1: u20003 ARG2: x19992 ]       |
+|               |           [ _workshop_n_1 LBL: h19993 ARG0: x19992 ] >                           |
+|               |   HCONS: < h20022 qeq h20010 h20027 qeq h20014 h20032 qeq h19993 h20039 qeq      |
+|               | h20035 >                                                                         |
+|               |   ICONS: < e20002 topic x19992 > ]                                               |
++---------------+----------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------+
+|                                         NODE SEMENTS                                        |
++-------------+-------------------------------------------------------------------------------+
+| Node        | Generated SEMENT                                                              |
++-------------+-------------------------------------------------------------------------------+
+| idWorkshop1 | [ TOP: h19993                                                                 |
+|             |   INDEX: x19992                                                               |
+|             |   RELS: < [ _workshop_n_1 LBL: h19993 ARG0: x19992 ] > ]                      |
++-------------+-------------------------------------------------------------------------------+
+| true        | [ TOP: h19997                                                                 |
+|             |   INDEX: e19994                                                               |
+|             |   RELS: < [ _true_a_of LBL: h19997 ARG0: e19994 ARG1: u19995 ARG2: u19996 ] > |
+|             |   SLOTS: < ARG1: u19995 ARG2: u19996 > ]                                      |
++-------------+-------------------------------------------------------------------------------+
+| idBedroom1  | [ TOP: h20010                                                                 |
+|             |   INDEX: x20009                                                               |
+|             |   RELS: < [ _bedroom_n_1 LBL: h20010 ARG0: x20009 ] > ]                       |
++-------------+-------------------------------------------------------------------------------+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                  EDGE SEMENTS                                                                  |
++----------------------------------+-------------+------------+----------------------------------------------------------------------------------+
+| Edge                             | Parent      | Child      | Generated SEMENT                                                                 |
++----------------------------------+-------------+------------+----------------------------------------------------------------------------------+
+| idWorkshop1_prop_idUnknownObject | idWorkshop1 | true       | [ TOP: h19993                                                                    |
+|                                  |             |            |   INDEX: x19992                                                                  |
+|                                  |             |            |   RELS: < [ _un-_a_neg LBL: h20008 ARG0: i20006 ARG1: e20007 ]                   |
+|                                  |             |            |           [ _know_v_1 LBL: h20005 ARG0: e20002 [ e PERF: - ] ARG1: u20003 ARG2:  |
+|                                  |             |            | i20004 ]                                                                         |
+|                                  |             |            |           [ _workshop_n_1 LBL: h19993 ARG0: x19992 ] >                           |
+|                                  |             |            |   ICONS: < e20002 topic i20004 >                                                 |
+|                                  |             |            |   EQS: < h20008 eq h20005 e20007 eq e20002 h20005 eq h19993 i20004 eq x19992 > ] |
++----------------------------------+-------------+------------+----------------------------------------------------------------------------------+
+| isEastOf                         | idWorkshop1 | idBedroom1 | [ TOP: h19993                                                                    |
+|                                  |             |            |   INDEX: x19992                                                                  |
+|                                  |             |            |   RELS: < [ loc_nonsp LBL: h20018 ARG0: e20015 ARG1: u20016 ARG2: x20017 ]       |
+|                                  |             |            |           [ def_implicit_q LBL: h20029 ARG0: x20026 RSTR: h20027 BODY: h20028 ]  |
+|                                  |             |            |           [ _east_a_1 LBL: h20014 ARG0: i20011 ARG1: x20012 ARG2: u20013 ]       |
+|                                  |             |            |           [ def_udef_a_q LBL: h20024 ARG0: x20021 RSTR: h20022 BODY: h20023 ]    |
+|                                  |             |            |           [ _bedroom_n_1 LBL: h20010 ARG0: x20009 ]                              |
+|                                  |             |            |           [ place_n LBL: h20020 ARG0: x20019 ]                                   |
+|                                  |             |            |           [ _un-_a_neg LBL: h20008 ARG0: i20006 ARG1: e20007 ]                   |
+|                                  |             |            |           [ _know_v_1 LBL: h20005 ARG0: e20002 [ e PERF: - ] ARG1: u20003 ARG2:  |
+|                                  |             |            | i20004 ]                                                                         |
+|                                  |             |            |           [ _workshop_n_1 LBL: h19993 ARG0: x19992 ] >                           |
+|                                  |             |            |   HCONS: < h20022 qeq h20010 h20027 qeq h20020 >                                 |
+|                                  |             |            |   ICONS: < e20002 topic i20004 >                                                 |
+|                                  |             |            |   EQS: < x20021 eq x20009 h20014 eq h20025 u20013 eq x20021 h20014 eq h20020     |
+|                                  |             |            | x20012 eq x20019 x20026 eq x20019 h20018 eq h20030 x20017 eq x20026 h20008 eq    |
+|                                  |             |            | h20005 e20007 eq e20002 h20005 eq h19993 i20004 eq x19992 h20018 eq h19993       |
+|                                  |             |            | u20016 eq x19992 > ]                                                             |
++----------------------------------+-------------+------------+----------------------------------------------------------------------------------+
+
++--------------------------------------------------+
+|              GENERATED ENGLISH TEXT              |
++----+---------------------------------------------+
+| #  | Generated Text                              |
++----+---------------------------------------------+
+| 1  | An unknown workshop east of a bedroom       |
+| 2  | An unknown workshop east of a bedroom.      |
+| 3  | An unknown workshop east of bedrooms        |
+| 4  | An unknown workshop east of bedrooms.       |
+| 5  | An unknown workshop east of the bedroom     |
+| 6  | An unknown workshop east of the bedroom.    |
+| 7  | An unknown workshop east of the bedrooms    |
+| 8  | An unknown workshop east of the bedrooms.   |
+| 9  | An unknown workshop, east of a bedroom      |
+| 10 | An unknown workshop, east of bedrooms       |
+| 11 | An unknown workshop, east of the bedroom    |
+| 12 | An unknown workshop, east of the bedrooms   |
+| 13 | The unknown workshop east of a bedroom      |
+| 14 | The unknown workshop east of a bedroom.     |
+| 15 | The unknown workshop east of bedrooms       |
+| 16 | The unknown workshop east of bedrooms.      |
+| 17 | The unknown workshop east of the bedroom    |
+| 18 | The unknown workshop east of the bedroom.   |
+| 19 | The unknown workshop east of the bedrooms   |
+| 20 | The unknown workshop east of the bedrooms.  |
+| 21 | The unknown workshop, east of a bedroom     |
+| 22 | The unknown workshop, east of bedrooms      |
+| 23 | The unknown workshop, east of the bedroom   |
+| 24 | The unknown workshop, east of the bedrooms  |
+| 25 | The unknown workshops east of a bedroom     |
+| 26 | The unknown workshops east of a bedroom.    |
+| 27 | The unknown workshops east of bedrooms      |
+| 28 | The unknown workshops east of bedrooms.     |
+| 29 | The unknown workshops east of the bedroom   |
+| 30 | The unknown workshops east of the bedroom.  |
+| 31 | The unknown workshops east of the bedrooms  |
+| 32 | The unknown workshops east of the bedrooms. |
+| 33 | The unknown workshops, east of a bedroom    |
+| 34 | The unknown workshops, east of bedrooms     |
+| 35 | The unknown workshops, east of the bedroom  |
+| 36 | The unknown workshops, east of the bedrooms |
+| 37 | Unknown workshop east of a bedroom          |
+| 38 | Unknown workshop east of a bedroom.         |
+| 39 | Unknown workshop east of bedrooms           |
+| 40 | Unknown workshop east of bedrooms.          |
+| 41 | Unknown workshop east of the bedroom        |
+| 42 | Unknown workshop east of the bedroom.       |
+| 43 | Unknown workshop east of the bedrooms       |
+| 44 | Unknown workshop east of the bedrooms.      |
+| 45 | Unknown workshop, east of a bedroom         |
+| 46 | Unknown workshop, east of bedrooms          |
+| 47 | Unknown workshop, east of the bedroom       |
+| 48 | Unknown workshop, east of the bedrooms      |
+| 49 | Unknown workshops east of a bedroom         |
+| 50 | Unknown workshops east of a bedroom.        |
+| 51 | Unknown workshops east of bedrooms          |
+| 52 | Unknown workshops east of bedrooms.         |
+| 53 | Unknown workshops east of the bedroom       |
+| 54 | Unknown workshops east of the bedroom.      |
+| 55 | Unknown workshops east of the bedrooms      |
+| 56 | Unknown workshops east of the bedrooms.     |
+| 57 | Unknown workshops, east of a bedroom        |
+| 58 | Unknown workshops, east of bedrooms         |
+| 59 | Unknown workshops, east of the bedroom      |
+| 60 | Unknown workshops, east of the bedrooms     |
++----+---------------------------------------------+
+

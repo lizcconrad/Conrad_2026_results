@@ -1,0 +1,253 @@
+GRAPH NAME: perplexity_test_kidneykwest_idPlayer_subgraph
+
++-----------------------------------------+
+|            EVALUATION METRICS           |
++---------------------------------+-------+
+| Metric                          | Value |
++---------------------------------+-------+
+| Generated Text Results          | 60    |
+| Generated Gold Results          | 0     |
+| Generated Gold Results Coverage | 0.0   |
++---------------------------------+-------+
+| Node Count                      | 5     |
+| Nodes Covered                   | 5     |
+| Nodes Included                  | 2     |
++---------------------------------+-------+
+| Node Coverage                   | 1.0   |
+| Node Inclusion                  | 0.4   |
++---------------------------------+-------+
+| Edge Count                      | 4     |
+| Edges Covered                   | 1     |
+| Edges Included                  | 1     |
++---------------------------------+-------+
+| Edge Coverage                   | 0.25  |
+| Edge Inclusion                  | 0.25  |
++---------------------------------+-------+
+
++-------------------------------------------------------------------------------------------------------------------+
+|                                                    GOLD OUTPUTS                                                   |
++------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                          | Generated? |
++------------------------------------------------------------------------------------------------------+------------+
+| the player who hasn't taken their binder who hasn't eaten in three turns south of the costume closet | False      |
++------------------------------------------------------------------------------------------------------+------------+
+
++--------------------------------------------------------------------------------------------------+
+|                                           NODE METRICS                                           |
++------------------+--------------+---------------+------------------+-----------------------------+
+| Node             | Node Covered | Node Included | Coverage Comment | Inclusion Comment           |
++------------------+--------------+---------------+------------------+-----------------------------+
+| idPlayer         | True         | True          | Covered          | Included                    |
+| 0                | True         | False         | Covered          | Successor of failed element |
+| 3                | True         | False         | Covered          | Successor of failed element |
+| 1                | True         | False         | Covered          | Successor of failed element |
+| idCostumeCloset1 | True         | True          | Covered          | Included                    |
++------------------+--------------+---------------+------------------+-----------------------------+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                      EDGE METRICS                                                                                      |
++----------------------------------+----------+------------------+--------------+---------------+----------------------------------------------------+-----------------------------------+
+| Edge                             | Parent   | Child            | Edge Covered | Edge Included | Coverage Comment                                   | Inclusion Comment                 |
++----------------------------------+----------+------------------+--------------+---------------+----------------------------------------------------+-----------------------------------+
+| idPlayer_prop_idBinderTakenTurns | idPlayer | 0                | False        | False         | 'idBinderTakenTurns' not in lexicon's edge entries | No SEMENT generated for this edge |
+| idPlayer_prop_idTurnsSinceFood   | idPlayer | 3                | False        | False         | 'idTurnsSinceFood' not in lexicon's edge entries   | No SEMENT generated for this edge |
+| idPlayer_prop_idMapY             | idPlayer | 1                | False        | False         | 'idMapY' not in lexicon's edge entries             | No SEMENT generated for this edge |
+| isSouthOf                        | idPlayer | idCostumeCloset1 | True         | True          | Covered                                            | Included                          |
++----------------------------------+----------+------------------+--------------+---------------+----------------------------------------------------+-----------------------------------+
+
++--------------------------------------------------------------------------------------------------+
+|                                        GENERATED SEMENTS                                         |
++---------------+----------------------------------------------------------------------------------+
+| Version       | SEMENT                                                                           |
++---------------+----------------------------------------------------------------------------------+
+| Original      | [ TOP: h26854                                                                    |
+|               |   INDEX: x26852                                                                  |
+|               |   RELS: < [ loc_nonsp LBL: h26884 ARG0: e26881 ARG1: u26882 ARG2: x26883 ]       |
+|               |           [ def_implicit_q LBL: h26895 ARG0: x26892 RSTR: h26893 BODY: h26894 ]  |
+|               |           [ _south_a_1 LBL: h26880 ARG0: i26877 ARG1: x26878 ARG2: u26879 ]      |
+|               |           [ def_udef_a_q LBL: h26890 ARG0: x26887 RSTR: h26888 BODY: h26889 ]    |
+|               |           [ compound LBL: h26876 ARG0: e26873 [ e PROG: - ] ARG1: u26874 ARG2:   |
+|               | u26875 ]                                                                         |
+|               |           [ udef_q LBL: h26871 ARG0: x26868 RSTR: h26869 BODY: h26870 ]          |
+|               |           [ _costume_n_1 LBL: h26867 ARG0: x26866 ]                              |
+|               |           [ _closet_n_1 LBL: h26865 ARG0: x26864 ]                               |
+|               |           [ place_n LBL: h26886 ARG0: x26885 ]                                   |
+|               |           [ _player_n_of LBL: h26854 ARG0: x26852 ARG1: i26853 ] >               |
+|               |   HCONS: < h26869 qeq h26867 h26888 qeq h26865 h26893 qeq h26886 >               |
+|               |   EQS: < x26868 eq x26866 h26876 eq h26872 u26875 eq x26868 h26876 eq h26865     |
+|               | u26874 eq x26864 x26887 eq x26864 h26880 eq h26891 u26879 eq x26887 h26880 eq    |
+|               | h26886 x26878 eq x26885 x26892 eq x26885 h26884 eq h26896 x26883 eq x26892       |
+|               | h26884 eq h26854 u26882 eq x26852 >                                              |
+|               |   SLOTS: < ARG1: i26853 > ]                                                      |
++---------------+----------------------------------------------------------------------------------+
+| EQs Collapsed | [ TOP: h26854                                                                    |
+|               |   INDEX: x26852                                                                  |
+|               |   RELS: < [ loc_nonsp LBL: h26854 ARG0: e26881 ARG1: x26852 ARG2: x26878 ]       |
+|               |           [ def_implicit_q LBL: h26895 ARG0: x26878 RSTR: h26893 BODY: h26894 ]  |
+|               |           [ _south_a_1 LBL: h26880 ARG0: i26877 ARG1: x26878 ARG2: x26864 ]      |
+|               |           [ def_udef_a_q LBL: h26890 ARG0: x26864 RSTR: h26888 BODY: h26889 ]    |
+|               |           [ compound LBL: h26865 ARG0: e26873 [ e PROG: - ] ARG1: x26864 ARG2:   |
+|               | x26866 ]                                                                         |
+|               |           [ udef_q LBL: h26871 ARG0: x26866 RSTR: h26869 BODY: h26870 ]          |
+|               |           [ _costume_n_1 LBL: h26867 ARG0: x26866 ]                              |
+|               |           [ _closet_n_1 LBL: h26865 ARG0: x26864 ]                               |
+|               |           [ place_n LBL: h26880 ARG0: x26878 ]                                   |
+|               |           [ _player_n_of LBL: h26854 ARG0: x26852 ARG1: i26853 ] >               |
+|               |   HCONS: < h26869 qeq h26867 h26888 qeq h26865 h26893 qeq h26880 >               |
+|               |   SLOTS: < ARG1: i26853 > ]                                                      |
++---------------+----------------------------------------------------------------------------------+
+| Prepped       | [ TOP: h26905                                                                    |
+|               |   INDEX: e26902                                                                  |
+|               |   RELS: < [ unknown LBL: h26901 ARG: x26852 ARG0: e26902 ]                       |
+|               |           [ def_udef_a_q LBL: h26900 ARG0: x26852 RSTR: h26898 BODY: h26899 ]    |
+|               |           [ loc_nonsp LBL: h26854 ARG0: e26881 ARG1: x26852 ARG2: x26878 ]       |
+|               |           [ def_implicit_q LBL: h26895 ARG0: x26878 RSTR: h26893 BODY: h26894 ]  |
+|               |           [ _south_a_1 LBL: h26880 ARG0: i26877 ARG1: x26878 ARG2: x26864 ]      |
+|               |           [ def_udef_a_q LBL: h26890 ARG0: x26864 RSTR: h26888 BODY: h26889 ]    |
+|               |           [ compound LBL: h26865 ARG0: e26873 [ e PROG: - ] ARG1: x26864 ARG2:   |
+|               | x26866 ]                                                                         |
+|               |           [ udef_q LBL: h26871 ARG0: x26866 RSTR: h26869 BODY: h26870 ]          |
+|               |           [ _costume_n_1 LBL: h26867 ARG0: x26866 ]                              |
+|               |           [ _closet_n_1 LBL: h26865 ARG0: x26864 ]                               |
+|               |           [ place_n LBL: h26880 ARG0: x26878 ]                                   |
+|               |           [ _player_n_of LBL: h26854 ARG0: x26852 ARG1: i26853 ] >               |
+|               |   HCONS: < h26869 qeq h26867 h26888 qeq h26865 h26893 qeq h26880 h26898 qeq      |
+|               | h26854 h26905 qeq h26901 > ]                                                     |
++---------------+----------------------------------------------------------------------------------+
+
++-----------------------------------------------------------------------------------------------------+
+|                                             NODE SEMENTS                                            |
++------------------+----------------------------------------------------------------------------------+
+| Node             | Generated SEMENT                                                                 |
++------------------+----------------------------------------------------------------------------------+
+| idPlayer         | [ TOP: h26854                                                                    |
+|                  |   INDEX: x26852                                                                  |
+|                  |   RELS: < [ _player_n_of LBL: h26854 ARG0: x26852 ARG1: i26853 ] >               |
+|                  |   SLOTS: < ARG1: i26853 > ]                                                      |
++------------------+----------------------------------------------------------------------------------+
+| 0                | [ TOP: h26857                                                                    |
+|                  |   INDEX: i26855                                                                  |
+|                  |   RELS: < [ card LBL: h26857 ARG0: i26855 ARG1: u26856 CARG: "0" ] >             |
+|                  |   SLOTS: < ARG1: u26856 > ]                                                      |
++------------------+----------------------------------------------------------------------------------+
+| 3                | [ TOP: h26860                                                                    |
+|                  |   INDEX: i26858                                                                  |
+|                  |   RELS: < [ card LBL: h26860 ARG0: i26858 ARG1: u26859 CARG: "3" ] >             |
+|                  |   SLOTS: < ARG1: u26859 > ]                                                      |
++------------------+----------------------------------------------------------------------------------+
+| 1                | [ TOP: h26863                                                                    |
+|                  |   INDEX: i26861                                                                  |
+|                  |   RELS: < [ card LBL: h26863 ARG0: i26861 ARG1: u26862 CARG: "1" ] >             |
+|                  |   SLOTS: < ARG1: u26862 > ]                                                      |
++------------------+----------------------------------------------------------------------------------+
+| idCostumeCloset1 | [ TOP: h26865                                                                    |
+|                  |   INDEX: x26864                                                                  |
+|                  |   RELS: < [ compound LBL: h26876 ARG0: e26873 [ e PROG: - ] ARG1: u26874 ARG2:   |
+|                  | u26875 ]                                                                         |
+|                  |           [ udef_q LBL: h26871 ARG0: x26868 RSTR: h26869 BODY: h26870 ]          |
+|                  |           [ _costume_n_1 LBL: h26867 ARG0: x26866 ]                              |
+|                  |           [ _closet_n_1 LBL: h26865 ARG0: x26864 ] >                             |
+|                  |   HCONS: < h26869 qeq h26867 >                                                   |
+|                  |   EQS: < x26868 eq x26866 h26876 eq h26872 u26875 eq x26868 h26876 eq h26865     |
+|                  | u26874 eq x26864 > ]                                                             |
++------------------+----------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                    EDGE SEMENTS                                                                   |
++----------------------------------+----------+------------------+----------------------------------------------------------------------------------+
+| Edge                             | Parent   | Child            | Generated SEMENT                                                                 |
++----------------------------------+----------+------------------+----------------------------------------------------------------------------------+
+| idPlayer_prop_idBinderTakenTurns | idPlayer | 0                | None                                                                             |
++----------------------------------+----------+------------------+----------------------------------------------------------------------------------+
+| idPlayer_prop_idTurnsSinceFood   | idPlayer | 3                | None                                                                             |
++----------------------------------+----------+------------------+----------------------------------------------------------------------------------+
+| idPlayer_prop_idMapY             | idPlayer | 1                | None                                                                             |
++----------------------------------+----------+------------------+----------------------------------------------------------------------------------+
+| isSouthOf                        | idPlayer | idCostumeCloset1 | [ TOP: h26854                                                                    |
+|                                  |          |                  |   INDEX: x26852                                                                  |
+|                                  |          |                  |   RELS: < [ loc_nonsp LBL: h26884 ARG0: e26881 ARG1: u26882 ARG2: x26883 ]       |
+|                                  |          |                  |           [ def_implicit_q LBL: h26895 ARG0: x26892 RSTR: h26893 BODY: h26894 ]  |
+|                                  |          |                  |           [ _south_a_1 LBL: h26880 ARG0: i26877 ARG1: x26878 ARG2: u26879 ]      |
+|                                  |          |                  |           [ def_udef_a_q LBL: h26890 ARG0: x26887 RSTR: h26888 BODY: h26889 ]    |
+|                                  |          |                  |           [ compound LBL: h26876 ARG0: e26873 [ e PROG: - ] ARG1: u26874 ARG2:   |
+|                                  |          |                  | u26875 ]                                                                         |
+|                                  |          |                  |           [ udef_q LBL: h26871 ARG0: x26868 RSTR: h26869 BODY: h26870 ]          |
+|                                  |          |                  |           [ _costume_n_1 LBL: h26867 ARG0: x26866 ]                              |
+|                                  |          |                  |           [ _closet_n_1 LBL: h26865 ARG0: x26864 ]                               |
+|                                  |          |                  |           [ place_n LBL: h26886 ARG0: x26885 ]                                   |
+|                                  |          |                  |           [ _player_n_of LBL: h26854 ARG0: x26852 ARG1: i26853 ] >               |
+|                                  |          |                  |   HCONS: < h26869 qeq h26867 h26888 qeq h26865 h26893 qeq h26886 >               |
+|                                  |          |                  |   EQS: < x26868 eq x26866 h26876 eq h26872 u26875 eq x26868 h26876 eq h26865     |
+|                                  |          |                  | u26874 eq x26864 x26887 eq x26864 h26880 eq h26891 u26879 eq x26887 h26880 eq    |
+|                                  |          |                  | h26886 x26878 eq x26885 x26892 eq x26885 h26884 eq h26896 x26883 eq x26892       |
+|                                  |          |                  | h26884 eq h26854 u26882 eq x26852 >                                              |
+|                                  |          |                  |   SLOTS: < ARG1: i26853 > ]                                                      |
++----------------------------------+----------+------------------+----------------------------------------------------------------------------------+
+
++------------------------------------------------+
+|             GENERATED ENGLISH TEXT             |
++----+-------------------------------------------+
+| #  | Generated Text                            |
++----+-------------------------------------------+
+| 1  | A player south of a costume closet        |
+| 2  | A player south of a costume closet.       |
+| 3  | A player south of costume closets         |
+| 4  | A player south of costume closets.        |
+| 5  | A player south of the costume closet      |
+| 6  | A player south of the costume closet.     |
+| 7  | A player south of the costume closets     |
+| 8  | A player south of the costume closets.    |
+| 9  | A player, south of a costume closet       |
+| 10 | A player, south of costume closets        |
+| 11 | A player, south of the costume closet     |
+| 12 | A player, south of the costume closets    |
+| 13 | Player south of a costume closet          |
+| 14 | Player south of a costume closet.         |
+| 15 | Player south of costume closets           |
+| 16 | Player south of costume closets.          |
+| 17 | Player south of the costume closet        |
+| 18 | Player south of the costume closet.       |
+| 19 | Player south of the costume closets       |
+| 20 | Player south of the costume closets.      |
+| 21 | Player, south of a costume closet         |
+| 22 | Player, south of costume closets          |
+| 23 | Player, south of the costume closet       |
+| 24 | Player, south of the costume closets      |
+| 25 | Players south of a costume closet         |
+| 26 | Players south of a costume closet.        |
+| 27 | Players south of costume closets          |
+| 28 | Players south of costume closets.         |
+| 29 | Players south of the costume closet       |
+| 30 | Players south of the costume closet.      |
+| 31 | Players south of the costume closets      |
+| 32 | Players south of the costume closets.     |
+| 33 | Players, south of a costume closet        |
+| 34 | Players, south of costume closets         |
+| 35 | Players, south of the costume closet      |
+| 36 | Players, south of the costume closets     |
+| 37 | The player south of a costume closet      |
+| 38 | The player south of a costume closet.     |
+| 39 | The player south of costume closets       |
+| 40 | The player south of costume closets.      |
+| 41 | The player south of the costume closet    |
+| 42 | The player south of the costume closet.   |
+| 43 | The player south of the costume closets   |
+| 44 | The player south of the costume closets.  |
+| 45 | The player, south of a costume closet     |
+| 46 | The player, south of costume closets      |
+| 47 | The player, south of the costume closet   |
+| 48 | The player, south of the costume closets  |
+| 49 | The players south of a costume closet     |
+| 50 | The players south of a costume closet.    |
+| 51 | The players south of costume closets      |
+| 52 | The players south of costume closets.     |
+| 53 | The players south of the costume closet   |
+| 54 | The players south of the costume closet.  |
+| 55 | The players south of the costume closets  |
+| 56 | The players south of the costume closets. |
+| 57 | The players, south of a costume closet    |
+| 58 | The players, south of costume closets     |
+| 59 | The players, south of the costume closet  |
+| 60 | The players, south of the costume closets |
++----+-------------------------------------------+
+

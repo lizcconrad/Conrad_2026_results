@@ -1,0 +1,3 @@
+- perplexity
+  - post_perplexity_hand_populated -- run on perplexity dataset after finishing semantic development for perplexity dataset
+  - post_perplexity_hand_populated -- fixed some incorrect entries in the lexicon and reran on perplexity dataset
