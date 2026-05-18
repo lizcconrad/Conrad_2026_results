@@ -1,0 +1,343 @@
+GRAPH NAME: perplexity_test_HealTheFlashback_idWater1_subgraph_12
+
++------------------------------------------------------+
+|                  EVALUATION METRICS                  |
++---------------------------------+--------------------+
+| Metric                          | Value              |
++---------------------------------+--------------------+
+| Generated Text Results          | 144                |
+| Generated Gold Results          | 1                  |
+| Generated Gold Results Coverage | 1.0                |
++---------------------------------+--------------------+
+| Node Count                      | 6                  |
+| Nodes Covered                   | 5                  |
+| Nodes Included                  | 5                  |
++---------------------------------+--------------------+
+| Node Coverage                   | 0.8333333333333334 |
+| Node Inclusion                  | 0.8333333333333334 |
++---------------------------------+--------------------+
+| Edge Count                      | 5                  |
+| Edges Covered                   | 4                  |
+| Edges Included                  | 4                  |
++---------------------------------+--------------------+
+| Edge Coverage                   | 0.8                |
+| Edge Inclusion                  | 0.8                |
++---------------------------------+--------------------+
+
++--------------------------------------------------------------+
+|                         GOLD OUTPUTS                         |
++-------------------------------------------------+------------+
+| Gold Output                                     | Generated? |
++-------------------------------------------------+------------+
+| the dirty blue water west of the green painting | True       |
++-------------------------------------------------+------------+
+
++------------------------------------------------------------------------------------------------------------------------------+
+|                                                         NODE METRICS                                                         |
++-------------+--------------+---------------+---------------------------------------------+-----------------------------------+
+| Node        | Node Covered | Node Included | Coverage Comment                            | Inclusion Comment                 |
++-------------+--------------+---------------+---------------------------------------------+-----------------------------------+
+| idWater1    | True         | True          | Covered                                     | Included                          |
+| dirty       | True         | True          | Covered                                     | Included                          |
+| blue        | True         | True          | Covered                                     | Included                          |
+| uncountable | False        | False         | 'uncountable' not in lexicon's node entries | No SEMENT generated for this node |
+| idPainting1 | True         | True          | Covered                                     | Included                          |
+| green       | True         | True          | Covered                                     | Included                          |
++-------------+--------------+---------------+---------------------------------------------+-----------------------------------+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                             EDGE METRICS                                                                            |
++-----------------------------+-------------+-------------+--------------+---------------+----------------------------------------+-----------------------------------+
+| Edge                        | Parent      | Child       | Edge Covered | Edge Included | Coverage Comment                       | Inclusion Comment                 |
++-----------------------------+-------------+-------------+--------------+---------------+----------------------------------------+-----------------------------------+
+| idWater1_prop_idDescriptor  | idWater1    | dirty       | True         | True          | Covered                                | Included                          |
+| idWater1_prop_idColor       | idWater1    | blue        | True         | True          | Covered                                | Included                          |
+| idWater1_prop_idArticleType | idWater1    | uncountable | False        | False         | child of 'idArticleType' has no SEMENT | No SEMENT generated for this edge |
+| isWestOf                    | idWater1    | idPainting1 | True         | True          | Covered                                | Included                          |
+| idPainting1_prop_idColor    | idPainting1 | green       | True         | True          | Covered                                | Included                          |
++-----------------------------+-------------+-------------+--------------+---------------+----------------------------------------+-----------------------------------+
+
++--------------------------------------------------------------------------------------------------+
+|                                        GENERATED SEMENTS                                         |
++---------------+----------------------------------------------------------------------------------+
+| Version       | SEMENT                                                                           |
++---------------+----------------------------------------------------------------------------------+
+| Original      | [ TOP: h10589                                                                    |
+|               |   INDEX: x10588                                                                  |
+|               |   RELS: < [ loc_nonsp LBL: h10609 ARG0: e10606 ARG1: u10607 ARG2: x10608 ]       |
+|               |           [ def_implicit_q LBL: h10620 ARG0: x10617 RSTR: h10618 BODY: h10619 ]  |
+|               |           [ _west_a_1 LBL: h10605 ARG0: i10602 ARG1: x10603 ARG2: u10604 ]       |
+|               |           [ def_udef_a_q LBL: h10615 ARG0: x10612 RSTR: h10613 BODY: h10614 ]    |
+|               |           [ _green_a_2 LBL: h10601 ARG0: i10599 ARG1: i10600 ]                   |
+|               |           [ _painting_n_of LBL: h10598 ARG0: x10596 ARG1: i10597 ]               |
+|               |           [ place_n LBL: h10611 ARG0: x10610 ]                                   |
+|               |           [ _blue_a_1 LBL: h10595 ARG0: i10593 ARG1: i10594 ]                    |
+|               |           [ _dirty_a_1 LBL: h10592 ARG0: e10590 ARG1: u10591 ]                   |
+|               |           [ _water_n_1 LBL: h10589 ARG0: x10588 ] >                              |
+|               |   HCONS: < h10613 qeq h10598 h10618 qeq h10611 >                                 |
+|               |   EQS: < h10601 eq h10598 i10600 eq x10596 x10612 eq x10596 h10605 eq h10616     |
+|               | u10604 eq x10612 h10605 eq h10611 x10603 eq x10610 x10617 eq x10610 h10609 eq    |
+|               | h10621 x10608 eq x10617 h10592 eq h10589 u10591 eq x10588 h10595 eq h10589       |
+|               | i10594 eq x10588 h10609 eq h10589 u10607 eq x10588 > ]                           |
++---------------+----------------------------------------------------------------------------------+
+| EQs Collapsed | [ TOP: h10589                                                                    |
+|               |   INDEX: x10588                                                                  |
+|               |   RELS: < [ loc_nonsp LBL: h10589 ARG0: e10606 ARG1: x10588 ARG2: x10603 ]       |
+|               |           [ def_implicit_q LBL: h10620 ARG0: x10603 RSTR: h10618 BODY: h10619 ]  |
+|               |           [ _west_a_1 LBL: h10605 ARG0: i10602 ARG1: x10603 ARG2: x10596 ]       |
+|               |           [ def_udef_a_q LBL: h10615 ARG0: x10596 RSTR: h10613 BODY: h10614 ]    |
+|               |           [ _green_a_2 LBL: h10598 ARG0: i10599 ARG1: x10596 ]                   |
+|               |           [ _painting_n_of LBL: h10598 ARG0: x10596 ARG1: i10597 ]               |
+|               |           [ place_n LBL: h10605 ARG0: x10603 ]                                   |
+|               |           [ _blue_a_1 LBL: h10589 ARG0: i10593 ARG1: x10588 ]                    |
+|               |           [ _dirty_a_1 LBL: h10589 ARG0: e10590 ARG1: x10588 ]                   |
+|               |           [ _water_n_1 LBL: h10589 ARG0: x10588 ] >                              |
+|               |   HCONS: < h10613 qeq h10598 h10618 qeq h10605 > ]                               |
++---------------+----------------------------------------------------------------------------------+
+| Prepped       | [ TOP: h10630                                                                    |
+|               |   INDEX: e10627                                                                  |
+|               |   RELS: < [ unknown LBL: h10626 ARG: x10588 ARG0: e10627 ]                       |
+|               |           [ def_udef_a_q LBL: h10625 ARG0: x10588 RSTR: h10623 BODY: h10624 ]    |
+|               |           [ loc_nonsp LBL: h10589 ARG0: e10606 ARG1: x10588 ARG2: x10603 ]       |
+|               |           [ def_implicit_q LBL: h10620 ARG0: x10603 RSTR: h10618 BODY: h10619 ]  |
+|               |           [ _west_a_1 LBL: h10605 ARG0: i10602 ARG1: x10603 ARG2: x10596 ]       |
+|               |           [ def_udef_a_q LBL: h10615 ARG0: x10596 RSTR: h10613 BODY: h10614 ]    |
+|               |           [ _green_a_2 LBL: h10598 ARG0: i10599 ARG1: x10596 ]                   |
+|               |           [ _painting_n_of LBL: h10598 ARG0: x10596 ARG1: i10597 ]               |
+|               |           [ place_n LBL: h10605 ARG0: x10603 ]                                   |
+|               |           [ _blue_a_1 LBL: h10589 ARG0: i10593 ARG1: x10588 ]                    |
+|               |           [ _dirty_a_1 LBL: h10589 ARG0: e10590 ARG1: x10588 ]                   |
+|               |           [ _water_n_1 LBL: h10589 ARG0: x10588 ] >                              |
+|               |   HCONS: < h10613 qeq h10598 h10618 qeq h10605 h10623 qeq h10589 h10630 qeq      |
+|               | h10626 > ]                                                                       |
++---------------+----------------------------------------------------------------------------------+
+
++------------------------------------------------------------------------------------+
+|                                    NODE SEMENTS                                    |
++-------------+----------------------------------------------------------------------+
+| Node        | Generated SEMENT                                                     |
++-------------+----------------------------------------------------------------------+
+| idWater1    | [ TOP: h10589                                                        |
+|             |   INDEX: x10588                                                      |
+|             |   RELS: < [ _water_n_1 LBL: h10589 ARG0: x10588 ] > ]                |
++-------------+----------------------------------------------------------------------+
+| dirty       | [ TOP: h10592                                                        |
+|             |   INDEX: e10590                                                      |
+|             |   RELS: < [ _dirty_a_1 LBL: h10592 ARG0: e10590 ARG1: u10591 ] >     |
+|             |   SLOTS: < ARG1: u10591 > ]                                          |
++-------------+----------------------------------------------------------------------+
+| blue        | [ TOP: h10595                                                        |
+|             |   INDEX: i10593                                                      |
+|             |   RELS: < [ _blue_a_1 LBL: h10595 ARG0: i10593 ARG1: i10594 ] >      |
+|             |   SLOTS: < ARG1: i10594 > ]                                          |
++-------------+----------------------------------------------------------------------+
+| uncountable | None                                                                 |
++-------------+----------------------------------------------------------------------+
+| idPainting1 | [ TOP: h10598                                                        |
+|             |   INDEX: x10596                                                      |
+|             |   RELS: < [ _painting_n_of LBL: h10598 ARG0: x10596 ARG1: i10597 ] > |
+|             |   SLOTS: < ARG1: i10597 > ]                                          |
++-------------+----------------------------------------------------------------------+
+| green       | [ TOP: h10601                                                        |
+|             |   INDEX: i10599                                                      |
+|             |   RELS: < [ _green_a_2 LBL: h10601 ARG0: i10599 ARG1: i10600 ] >     |
+|             |   SLOTS: < ARG1: i10600 > ]                                          |
++-------------+----------------------------------------------------------------------+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                EDGE SEMENTS                                                                |
++-----------------------------+-------------+-------------+----------------------------------------------------------------------------------+
+| Edge                        | Parent      | Child       | Generated SEMENT                                                                 |
++-----------------------------+-------------+-------------+----------------------------------------------------------------------------------+
+| idWater1_prop_idDescriptor  | idWater1    | dirty       | [ TOP: h10589                                                                    |
+|                             |             |             |   INDEX: x10588                                                                  |
+|                             |             |             |   RELS: < [ _dirty_a_1 LBL: h10592 ARG0: e10590 ARG1: u10591 ]                   |
+|                             |             |             |           [ _water_n_1 LBL: h10589 ARG0: x10588 ] >                              |
+|                             |             |             |   EQS: < h10592 eq h10589 u10591 eq x10588 > ]                                   |
++-----------------------------+-------------+-------------+----------------------------------------------------------------------------------+
+| idWater1_prop_idColor       | idWater1    | blue        | [ TOP: h10589                                                                    |
+|                             |             |             |   INDEX: x10588                                                                  |
+|                             |             |             |   RELS: < [ _blue_a_1 LBL: h10595 ARG0: i10593 ARG1: i10594 ]                    |
+|                             |             |             |           [ _dirty_a_1 LBL: h10592 ARG0: e10590 ARG1: u10591 ]                   |
+|                             |             |             |           [ _water_n_1 LBL: h10589 ARG0: x10588 ] >                              |
+|                             |             |             |   EQS: < h10592 eq h10589 u10591 eq x10588 h10595 eq h10589 i10594 eq x10588 > ] |
++-----------------------------+-------------+-------------+----------------------------------------------------------------------------------+
+| idWater1_prop_idArticleType | idWater1    | uncountable | None                                                                             |
++-----------------------------+-------------+-------------+----------------------------------------------------------------------------------+
+| isWestOf                    | idWater1    | idPainting1 | [ TOP: h10589                                                                    |
+|                             |             |             |   INDEX: x10588                                                                  |
+|                             |             |             |   RELS: < [ loc_nonsp LBL: h10609 ARG0: e10606 ARG1: u10607 ARG2: x10608 ]       |
+|                             |             |             |           [ def_implicit_q LBL: h10620 ARG0: x10617 RSTR: h10618 BODY: h10619 ]  |
+|                             |             |             |           [ _west_a_1 LBL: h10605 ARG0: i10602 ARG1: x10603 ARG2: u10604 ]       |
+|                             |             |             |           [ def_udef_a_q LBL: h10615 ARG0: x10612 RSTR: h10613 BODY: h10614 ]    |
+|                             |             |             |           [ _green_a_2 LBL: h10601 ARG0: i10599 ARG1: i10600 ]                   |
+|                             |             |             |           [ _painting_n_of LBL: h10598 ARG0: x10596 ARG1: i10597 ]               |
+|                             |             |             |           [ place_n LBL: h10611 ARG0: x10610 ]                                   |
+|                             |             |             |           [ _blue_a_1 LBL: h10595 ARG0: i10593 ARG1: i10594 ]                    |
+|                             |             |             |           [ _dirty_a_1 LBL: h10592 ARG0: e10590 ARG1: u10591 ]                   |
+|                             |             |             |           [ _water_n_1 LBL: h10589 ARG0: x10588 ] >                              |
+|                             |             |             |   HCONS: < h10613 qeq h10598 h10618 qeq h10611 >                                 |
+|                             |             |             |   EQS: < h10601 eq h10598 i10600 eq x10596 x10612 eq x10596 h10605 eq h10616     |
+|                             |             |             | u10604 eq x10612 h10605 eq h10611 x10603 eq x10610 x10617 eq x10610 h10609 eq    |
+|                             |             |             | h10621 x10608 eq x10617 h10592 eq h10589 u10591 eq x10588 h10595 eq h10589       |
+|                             |             |             | i10594 eq x10588 h10609 eq h10589 u10607 eq x10588 > ]                           |
++-----------------------------+-------------+-------------+----------------------------------------------------------------------------------+
+| idPainting1_prop_idColor    | idPainting1 | green       | [ TOP: h10598                                                                    |
+|                             |             |             |   INDEX: x10596                                                                  |
+|                             |             |             |   RELS: < [ _green_a_2 LBL: h10601 ARG0: i10599 ARG1: i10600 ]                   |
+|                             |             |             |           [ _painting_n_of LBL: h10598 ARG0: x10596 ARG1: i10597 ] >             |
+|                             |             |             |   EQS: < h10601 eq h10598 i10600 eq x10596 >                                     |
+|                             |             |             |   SLOTS: < ARG1: i10597 > ]                                                      |
++-----------------------------+-------------+-------------+----------------------------------------------------------------------------------+
+
++----------------------------------------------------------+
+|                  GENERATED ENGLISH TEXT                  |
++-----+----------------------------------------------------+
+| #   | Generated Text                                     |
++-----+----------------------------------------------------+
+| 1   | A blue dirty water west of a green painting        |
+| 2   | A blue dirty water west of a green painting.       |
+| 3   | A blue dirty water west of green paintings         |
+| 4   | A blue dirty water west of green paintings.        |
+| 5   | A blue dirty water west of the green painting      |
+| 6   | A blue dirty water west of the green painting.     |
+| 7   | A blue dirty water west of the green paintings     |
+| 8   | A blue dirty water west of the green paintings.    |
+| 9   | A blue dirty water, west of a green painting       |
+| 10  | A blue dirty water, west of green paintings        |
+| 11  | A blue dirty water, west of the green painting     |
+| 12  | A blue dirty water, west of the green paintings    |
+| 13  | A dirty blue water west of a green painting        |
+| 14  | A dirty blue water west of a green painting.       |
+| 15  | A dirty blue water west of green paintings         |
+| 16  | A dirty blue water west of green paintings.        |
+| 17  | A dirty blue water west of the green painting      |
+| 18  | A dirty blue water west of the green painting.     |
+| 19  | A dirty blue water west of the green paintings     |
+| 20  | A dirty blue water west of the green paintings.    |
+| 21  | A dirty blue water, west of a green painting       |
+| 22  | A dirty blue water, west of green paintings        |
+| 23  | A dirty blue water, west of the green painting     |
+| 24  | A dirty blue water, west of the green paintings    |
+| 25  | Blue dirty water west of a green painting          |
+| 26  | Blue dirty water west of a green painting          |
+| 27  | Blue dirty water west of a green painting.         |
+| 28  | Blue dirty water west of a green painting.         |
+| 29  | Blue dirty water west of green paintings           |
+| 30  | Blue dirty water west of green paintings           |
+| 31  | Blue dirty water west of green paintings.          |
+| 32  | Blue dirty water west of green paintings.          |
+| 33  | Blue dirty water west of the green painting        |
+| 34  | Blue dirty water west of the green painting        |
+| 35  | Blue dirty water west of the green painting.       |
+| 36  | Blue dirty water west of the green painting.       |
+| 37  | Blue dirty water west of the green paintings       |
+| 38  | Blue dirty water west of the green paintings       |
+| 39  | Blue dirty water west of the green paintings.      |
+| 40  | Blue dirty water west of the green paintings.      |
+| 41  | Blue dirty water, west of a green painting         |
+| 42  | Blue dirty water, west of a green painting         |
+| 43  | Blue dirty water, west of green paintings          |
+| 44  | Blue dirty water, west of green paintings          |
+| 45  | Blue dirty water, west of the green painting       |
+| 46  | Blue dirty water, west of the green painting       |
+| 47  | Blue dirty water, west of the green paintings      |
+| 48  | Blue dirty water, west of the green paintings      |
+| 49  | Blue dirty waters west of a green painting         |
+| 50  | Blue dirty waters west of a green painting.        |
+| 51  | Blue dirty waters west of green paintings          |
+| 52  | Blue dirty waters west of green paintings.         |
+| 53  | Blue dirty waters west of the green painting       |
+| 54  | Blue dirty waters west of the green painting.      |
+| 55  | Blue dirty waters west of the green paintings      |
+| 56  | Blue dirty waters west of the green paintings.     |
+| 57  | Blue dirty waters, west of a green painting        |
+| 58  | Blue dirty waters, west of green paintings         |
+| 59  | Blue dirty waters, west of the green painting      |
+| 60  | Blue dirty waters, west of the green paintings     |
+| 61  | Dirty blue water west of a green painting          |
+| 62  | Dirty blue water west of a green painting          |
+| 63  | Dirty blue water west of a green painting.         |
+| 64  | Dirty blue water west of a green painting.         |
+| 65  | Dirty blue water west of green paintings           |
+| 66  | Dirty blue water west of green paintings           |
+| 67  | Dirty blue water west of green paintings.          |
+| 68  | Dirty blue water west of green paintings.          |
+| 69  | Dirty blue water west of the green painting        |
+| 70  | Dirty blue water west of the green painting        |
+| 71  | Dirty blue water west of the green painting.       |
+| 72  | Dirty blue water west of the green painting.       |
+| 73  | Dirty blue water west of the green paintings       |
+| 74  | Dirty blue water west of the green paintings       |
+| 75  | Dirty blue water west of the green paintings.      |
+| 76  | Dirty blue water west of the green paintings.      |
+| 77  | Dirty blue water, west of a green painting         |
+| 78  | Dirty blue water, west of a green painting         |
+| 79  | Dirty blue water, west of green paintings          |
+| 80  | Dirty blue water, west of green paintings          |
+| 81  | Dirty blue water, west of the green painting       |
+| 82  | Dirty blue water, west of the green painting       |
+| 83  | Dirty blue water, west of the green paintings      |
+| 84  | Dirty blue water, west of the green paintings      |
+| 85  | Dirty blue waters west of a green painting         |
+| 86  | Dirty blue waters west of a green painting.        |
+| 87  | Dirty blue waters west of green paintings          |
+| 88  | Dirty blue waters west of green paintings.         |
+| 89  | Dirty blue waters west of the green painting       |
+| 90  | Dirty blue waters west of the green painting.      |
+| 91  | Dirty blue waters west of the green paintings      |
+| 92  | Dirty blue waters west of the green paintings.     |
+| 93  | Dirty blue waters, west of a green painting        |
+| 94  | Dirty blue waters, west of green paintings         |
+| 95  | Dirty blue waters, west of the green painting      |
+| 96  | Dirty blue waters, west of the green paintings     |
+| 97  | The blue dirty water west of a green painting      |
+| 98  | The blue dirty water west of a green painting.     |
+| 99  | The blue dirty water west of green paintings       |
+| 100 | The blue dirty water west of green paintings.      |
+| 101 | The blue dirty water west of the green painting    |
+| 102 | The blue dirty water west of the green painting.   |
+| 103 | The blue dirty water west of the green paintings   |
+| 104 | The blue dirty water west of the green paintings.  |
+| 105 | The blue dirty water, west of a green painting     |
+| 106 | The blue dirty water, west of green paintings      |
+| 107 | The blue dirty water, west of the green painting   |
+| 108 | The blue dirty water, west of the green paintings  |
+| 109 | The blue dirty waters west of a green painting     |
+| 110 | The blue dirty waters west of a green painting.    |
+| 111 | The blue dirty waters west of green paintings      |
+| 112 | The blue dirty waters west of green paintings.     |
+| 113 | The blue dirty waters west of the green painting   |
+| 114 | The blue dirty waters west of the green painting.  |
+| 115 | The blue dirty waters west of the green paintings  |
+| 116 | The blue dirty waters west of the green paintings. |
+| 117 | The blue dirty waters, west of a green painting    |
+| 118 | The blue dirty waters, west of green paintings     |
+| 119 | The blue dirty waters, west of the green painting  |
+| 120 | The blue dirty waters, west of the green paintings |
+| 121 | The dirty blue water west of a green painting      |
+| 122 | The dirty blue water west of a green painting.     |
+| 123 | The dirty blue water west of green paintings       |
+| 124 | The dirty blue water west of green paintings.      |
+| 125 | The dirty blue water west of the green painting    |
+| 126 | The dirty blue water west of the green painting.   |
+| 127 | The dirty blue water west of the green paintings   |
+| 128 | The dirty blue water west of the green paintings.  |
+| 129 | The dirty blue water, west of a green painting     |
+| 130 | The dirty blue water, west of green paintings      |
+| 131 | The dirty blue water, west of the green painting   |
+| 132 | The dirty blue water, west of the green paintings  |
+| 133 | The dirty blue waters west of a green painting     |
+| 134 | The dirty blue waters west of a green painting.    |
+| 135 | The dirty blue waters west of green paintings      |
+| 136 | The dirty blue waters west of green paintings.     |
+| 137 | The dirty blue waters west of the green painting   |
+| 138 | The dirty blue waters west of the green painting.  |
+| 139 | The dirty blue waters west of the green paintings  |
+| 140 | The dirty blue waters west of the green paintings. |
+| 141 | The dirty blue waters, west of a green painting    |
+| 142 | The dirty blue waters, west of green paintings     |
+| 143 | The dirty blue waters, west of the green painting  |
+| 144 | The dirty blue waters, west of the green paintings |
++-----+----------------------------------------------------+
+
