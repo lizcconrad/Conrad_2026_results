@@ -12,8 +12,9 @@ While full detailed diffs of the results of these runs are not available, there 
 
 [^1]: The one exception to this is `post_perplexity__original` which had a few missed nodes/edges due to a bug in the lexicon. After fixing this bug I re-ran the algorithm on the dataset without refactoring any of the code so the first "official" run for the refactoring is `post_perplexity__pre_lex_refactor`
 
-| Run name | Description |
-| -------- | ----------- | 
-| post_perplexity__original | original run on perplexity dataset after finishing semantic development for this dataset |
-| post_perplexity__pre_lex_refactor | fixed some incorrect entries in the lexicon and reran on perplexity dataset |
-| post_perplexity__lex_refactor | run after lexicon refactoring | 
+| Run name                          | Description                                                                              |
+|-----------------------------------|------------------------------------------------------------------------------------------| 
+| post_perplexity__original         | original run on perplexity dataset after finishing semantic development for this dataset |
+| post_perplexity__pre_lex_refactor | fixed some incorrect entries in the lexicon and reran on perplexity dataset              |
+| post_perplexity__lex_refactor     | run after lexicon refactoring                                                            | 
+| post_perplexity__eval_refactor    | run after evaluation refactoring                                                         | 
