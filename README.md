@@ -18,3 +18,4 @@ While full detailed diffs of the results of these runs are not available, there 
 | post_perplexity__pre_lex_refactor | fixed some incorrect entries in the lexicon and reran on perplexity dataset              |
 | post_perplexity__lex_refactor     | run after lexicon refactoring                                                            | 
 | post_perplexity__eval_refactor    | run after evaluation refactoring                                                         | 
+| post_perplexity__divide_repos     | run after moving Semantic Composition to a separate repository                           | 
