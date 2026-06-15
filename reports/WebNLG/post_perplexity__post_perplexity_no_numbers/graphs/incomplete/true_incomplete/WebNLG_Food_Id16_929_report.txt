@@ -1,0 +1,140 @@
+GRAPH NAME: WebNLG_dev_3triples_Food_Food_Id16_32
+
++-----------------------------------------+
+|            EVALUATION METRICS           |
++---------------------------------+-------+
+| Metric                          | Value |
++---------------------------------+-------+
+| Generated Text Results          | 10    |
+| Generated Gold Results          | 0     |
+| Generated Gold Results Coverage | 0.0   |
++---------------------------------+-------+
+| Node Count                      | 4     |
+| Nodes Covered                   | 1     |
+| Nodes Included                  | 1     |
++---------------------------------+-------+
+| Node Coverage                   | 0.25  |
+| Node Inclusion                  | 0.25  |
++---------------------------------+-------+
+| Edge Count                      | 3     |
+| Edges Covered                   | 0     |
+| Edges Included                  | 0     |
++---------------------------------+-------+
+| Edge Coverage                   | 0.0   |
+| Edge Inclusion                  | 0.0   |
++---------------------------------+-------+
+
++----------------------------------------------------------------------------------------------------------------------+
+|                                                     GOLD OUTPUTS                                                     |
++---------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                             | Generated? |
++---------------------------------------------------------------------------------------------------------+------------+
+| Bacon sandwiches are variations of BLT and come from the U.K. Condiments are found in these sandwiches. | False      |
+| The UK dish, the bacon sandwich uses condiments as an ingredient and has the variation BLT.             | False      |
+| The bacon sandwich, a variation of the BLT, comes from the UK and contains condiments.                  | False      |
++---------------------------------------------------------------------------------------------------------+------------+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+|                                                            NODE METRICS                                                            |
++----------------+--------------+---------------+------------------------------------------------+-----------------------------------+
+| Node           | Node Covered | Node Included | Coverage Comment                               | Inclusion Comment                 |
++----------------+--------------+---------------+------------------------------------------------+-----------------------------------+
+| Bacon_sandwich | True         | True          | Covered                                        | Included                          |
+| BLT            | False        | False         | 'BLT' not in lexicon's node entries            | No SEMENT generated for this node |
+| United_Kingdom | False        | False         | 'United_Kingdom' not in lexicon's node entries | No SEMENT generated for this node |
+| Condiment      | False        | False         | 'Condiment' not in lexicon's node entries      | No SEMENT generated for this node |
++----------------+--------------+---------------+------------------------------------------------+-----------------------------------+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                         EDGE METRICS                                                                        |
++---------------+----------------+----------------+--------------+---------------+----------------------------------------+-----------------------------------+
+| Edge          | Parent         | Child          | Edge Covered | Edge Included | Coverage Comment                       | Inclusion Comment                 |
++---------------+----------------+----------------+--------------+---------------+----------------------------------------+-----------------------------------+
+| dishVariation | Bacon_sandwich | BLT            | False        | False         | child of 'dishVariation' has no SEMENT | No SEMENT generated for this edge |
+| country       | Bacon_sandwich | United_Kingdom | False        | False         | child of 'country' has no SEMENT       | No SEMENT generated for this edge |
+| ingredient    | Bacon_sandwich | Condiment      | False        | False         | child of 'ingredient' has no SEMENT    | No SEMENT generated for this edge |
++---------------+----------------+----------------+--------------+---------------+----------------------------------------+-----------------------------------+
+
++-------------------------------------------------------------------------------------------------+
+|                                        GENERATED SEMENTS                                        |
++---------------+---------------------------------------------------------------------------------+
+| Version       | SEMENT                                                                          |
++---------------+---------------------------------------------------------------------------------+
+| Original      | [ TOP: h122                                                                     |
+|               |   INDEX: x121                                                                   |
+|               |   RELS: < [ compound LBL: h133 ARG0: e130 [ e PROG: - ] ARG1: u131 ARG2: u132 ] |
+|               |           [ udef_q LBL: h128 ARG0: x125 RSTR: h126 BODY: h127 ]                 |
+|               |           [ _bacon_n_1 LBL: h124 ARG0: x123 ]                                   |
+|               |           [ _sandwich_n_1 LBL: h122 ARG0: x121 ] >                              |
+|               |   HCONS: < h126 qeq h124 >                                                      |
+|               |   EQS: < x125 eq x123 h133 eq h129 u132 eq x125 h133 eq h122 u131 eq x121 > ]   |
++---------------+---------------------------------------------------------------------------------+
+| EQs Collapsed | [ TOP: h122                                                                     |
+|               |   INDEX: x121                                                                   |
+|               |   RELS: < [ compound LBL: h122 ARG0: e130 [ e PROG: - ] ARG1: x121 ARG2: x123 ] |
+|               |           [ udef_q LBL: h128 ARG0: x123 RSTR: h126 BODY: h127 ]                 |
+|               |           [ _bacon_n_1 LBL: h124 ARG0: x123 ]                                   |
+|               |           [ _sandwich_n_1 LBL: h122 ARG0: x121 ] >                              |
+|               |   HCONS: < h126 qeq h124 > ]                                                    |
++---------------+---------------------------------------------------------------------------------+
+| Prepped       | [ TOP: h142                                                                     |
+|               |   INDEX: e139                                                                   |
+|               |   RELS: < [ unknown LBL: h138 ARG: x121 ARG0: e139 ]                            |
+|               |           [ def_udef_a_q LBL: h137 ARG0: x121 RSTR: h135 BODY: h136 ]           |
+|               |           [ compound LBL: h122 ARG0: e130 [ e PROG: - ] ARG1: x121 ARG2: x123 ] |
+|               |           [ udef_q LBL: h128 ARG0: x123 RSTR: h126 BODY: h127 ]                 |
+|               |           [ _bacon_n_1 LBL: h124 ARG0: x123 ]                                   |
+|               |           [ _sandwich_n_1 LBL: h122 ARG0: x121 ] >                              |
+|               |   HCONS: < h126 qeq h124 h135 qeq h122 h142 qeq h138 > ]                        |
++---------------+---------------------------------------------------------------------------------+
+
++--------------------------------------------------------------------------------------------------+
+|                                           NODE SEMENTS                                           |
++----------------+---------------------------------------------------------------------------------+
+| Node           | Generated SEMENT                                                                |
++----------------+---------------------------------------------------------------------------------+
+| Bacon_sandwich | [ TOP: h122                                                                     |
+|                |   INDEX: x121                                                                   |
+|                |   RELS: < [ compound LBL: h133 ARG0: e130 [ e PROG: - ] ARG1: u131 ARG2: u132 ] |
+|                |           [ udef_q LBL: h128 ARG0: x125 RSTR: h126 BODY: h127 ]                 |
+|                |           [ _bacon_n_1 LBL: h124 ARG0: x123 ]                                   |
+|                |           [ _sandwich_n_1 LBL: h122 ARG0: x121 ] >                              |
+|                |   HCONS: < h126 qeq h124 >                                                      |
+|                |   EQS: < x125 eq x123 h133 eq h129 u132 eq x125 h133 eq h122 u131 eq x121 > ]   |
++----------------+---------------------------------------------------------------------------------+
+| BLT            | None                                                                            |
++----------------+---------------------------------------------------------------------------------+
+| United_Kingdom | None                                                                            |
++----------------+---------------------------------------------------------------------------------+
+| Condiment      | None                                                                            |
++----------------+---------------------------------------------------------------------------------+
+
++--------------------------------------------------------------------+
+|                            EDGE SEMENTS                            |
++---------------+----------------+----------------+------------------+
+| Edge          | Parent         | Child          | Generated SEMENT |
++---------------+----------------+----------------+------------------+
+| dishVariation | Bacon_sandwich | BLT            | None             |
++---------------+----------------+----------------+------------------+
+| country       | Bacon_sandwich | United_Kingdom | None             |
++---------------+----------------+----------------+------------------+
+| ingredient    | Bacon_sandwich | Condiment      | None             |
++---------------+----------------+----------------+------------------+
+
++----------------------------+
+|   GENERATED ENGLISH TEXT   |
++----+-----------------------+
+| #  | Generated Text        |
++----+-----------------------+
+| 1  | A bacon sandwich      |
+| 2  | A bacon sandwich.     |
+| 3  | Bacon sandwich        |
+| 4  | Bacon sandwich.       |
+| 5  | Bacon sandwiches      |
+| 6  | Bacon sandwiches.     |
+| 7  | The bacon sandwich    |
+| 8  | The bacon sandwich.   |
+| 9  | The bacon sandwiches  |
+| 10 | The bacon sandwiches. |
++----+-----------------------+
+

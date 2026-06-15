@@ -1,0 +1,117 @@
+GRAPH NAME: WebNLG_dev_3triples_Artist_Artist_Id7_22
+
++-----------------------------------------+
+|            EVALUATION METRICS           |
++---------------------------------+-------+
+| Metric                          | Value |
++---------------------------------+-------+
+| Generated Text Results          | 0     |
+| Generated Gold Results          | 0     |
+| Generated Gold Results Coverage | 0.0   |
++---------------------------------+-------+
+| Node Count                      | 4     |
+| Nodes Covered                   | 3     |
+| Nodes Included                  | 0     |
++---------------------------------+-------+
+| Node Coverage                   | 0.75  |
+| Node Inclusion                  | 0.0   |
++---------------------------------+-------+
+| Edge Count                      | 3     |
+| Edges Covered                   | 0     |
+| Edges Included                  | 0     |
++---------------------------------+-------+
+| Edge Coverage                   | 0.0   |
+| Edge Inclusion                  | 0.0   |
++---------------------------------+-------+
+
++-------------------------------------------------------------------------------------------------------------------------+
+|                                                       GOLD OUTPUTS                                                      |
++------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                | Generated? |
++------------------------------------------------------------------------------------------------------------+------------+
+| Aaron Turner plays electric guitar in the Black Metal genre. Death metal is a fusion of black metal.       | False      |
+| Death metal is a musical fusion of black metal, the music played by electric guitarist, Aaron Turner.      | False      |
+| Death metal is a musical fusion of the black metal music performed by Aaron Turner on the electric guitar. | False      |
++------------------------------------------------------------------------------------------------------------+------------+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+|                                                            NODE METRICS                                                           |
++-----------------+--------------+---------------+----------------------------------------------+-----------------------------------+
+| Node            | Node Covered | Node Included | Coverage Comment                             | Inclusion Comment                 |
++-----------------+--------------+---------------+----------------------------------------------+-----------------------------------+
+| Aaron_Turner    | False        | False         | 'Aaron_Turner' not in lexicon's node entries | No SEMENT generated for this node |
+| Black_metal     | True         | False         | Covered                                      | Successor of failed element       |
+| Electric_guitar | True         | False         | Covered                                      | Successor of failed element       |
+| Death_metal     | True         | False         | Covered                                      | Successor of failed element       |
++-----------------+--------------+---------------+----------------------------------------------+-----------------------------------+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                               EDGE METRICS                                                                              |
++------------------+--------------+-----------------+--------------+---------------+--------------------------------------------------+-----------------------------------+
+| Edge             | Parent       | Child           | Edge Covered | Edge Included | Coverage Comment                                 | Inclusion Comment                 |
++------------------+--------------+-----------------+--------------+---------------+--------------------------------------------------+-----------------------------------+
+| genre            | Aaron_Turner | Black_metal     | False        | False         | parent of 'genre' has no SEMENT                  | No SEMENT generated for this edge |
+| instrument       | Aaron_Turner | Electric_guitar | False        | False         | parent of 'instrument' has no SEMENT             | No SEMENT generated for this edge |
+| musicFusionGenre | Black_metal  | Death_metal     | False        | False         | 'musicFusionGenre' not in lexicon's edge entries | No SEMENT generated for this edge |
++------------------+--------------+-----------------+--------------+---------------+--------------------------------------------------+-----------------------------------+
+
++------------------------+
+|   GENERATED SEMENTS    |
++---------------+--------+
+| Version       | SEMENT |
++---------------+--------+
+| Original      | None   |
++---------------+--------+
+| EQs Collapsed | None   |
++---------------+--------+
+| Prepped       | None   |
++---------------+--------+
+
++---------------------------------------------------------------------------------------------------+
+|                                            NODE SEMENTS                                           |
++-----------------+---------------------------------------------------------------------------------+
+| Node            | Generated SEMENT                                                                |
++-----------------+---------------------------------------------------------------------------------+
+| Aaron_Turner    | None                                                                            |
++-----------------+---------------------------------------------------------------------------------+
+| Black_metal     | [ TOP: h190                                                                     |
+|                 |   INDEX: x189                                                                   |
+|                 |   RELS: < [ _black_a_1 LBL: h188 ARG0: i186 ARG1: i187 ]                        |
+|                 |           [ _metal_n_1 LBL: h190 ARG0: x189 ] >                                 |
+|                 |   EQS: < h188 eq h190 i187 eq x189 > ]                                          |
++-----------------+---------------------------------------------------------------------------------+
+| Electric_guitar | [ TOP: h208                                                                     |
+|                 |   INDEX: x207                                                                   |
+|                 |   RELS: < [ _electric_a_1 LBL: h206 ARG0: e204 ARG1: u205 ]                     |
+|                 |           [ _guitar_n_1 LBL: h208 ARG0: x207 ] >                                |
+|                 |   EQS: < h206 eq h208 u205 eq x207 > ]                                          |
++-----------------+---------------------------------------------------------------------------------+
+| Death_metal     | [ TOP: h192                                                                     |
+|                 |   INDEX: x191                                                                   |
+|                 |   RELS: < [ compound LBL: h203 ARG0: e200 [ e PROG: - ] ARG1: u201 ARG2: u202 ] |
+|                 |           [ udef_q LBL: h198 ARG0: x195 RSTR: h196 BODY: h197 ]                 |
+|                 |           [ _death_n_1 LBL: h194 ARG0: x193 ]                                   |
+|                 |           [ _metal_n_1 LBL: h192 ARG0: x191 ] >                                 |
+|                 |   HCONS: < h196 qeq h194 >                                                      |
+|                 |   EQS: < x195 eq x193 h203 eq h199 u202 eq x195 h203 eq h192 u201 eq x191 > ]   |
++-----------------+---------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------+
+|                             EDGE SEMENTS                             |
++------------------+--------------+-----------------+------------------+
+| Edge             | Parent       | Child           | Generated SEMENT |
++------------------+--------------+-----------------+------------------+
+| genre            | Aaron_Turner | Black_metal     | None             |
++------------------+--------------+-----------------+------------------+
+| instrument       | Aaron_Turner | Electric_guitar | None             |
++------------------+--------------+-----------------+------------------+
+| musicFusionGenre | Black_metal  | Death_metal     | None             |
++------------------+--------------+-----------------+------------------+
+
++------------------------+
+| GENERATED ENGLISH TEXT |
++---+--------------------+
+| # | Generated Text     |
++---+--------------------+
++---+--------------------+
+

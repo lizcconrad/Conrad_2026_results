@@ -1,0 +1,108 @@
+GRAPH NAME: WebNLG_dev_3triples_Food_Food_Id32_12
+
++-----------------------------------------+
+|            EVALUATION METRICS           |
++---------------------------------+-------+
+| Metric                          | Value |
++---------------------------------+-------+
+| Generated Text Results          | 0     |
+| Generated Gold Results          | 0     |
+| Generated Gold Results Coverage | 0.0   |
++---------------------------------+-------+
+| Node Count                      | 4     |
+| Nodes Covered                   | 2     |
+| Nodes Included                  | 0     |
++---------------------------------+-------+
+| Node Coverage                   | 0.5   |
+| Node Inclusion                  | 0.0   |
++---------------------------------+-------+
+| Edge Count                      | 3     |
+| Edges Covered                   | 0     |
+| Edges Included                  | 0     |
++---------------------------------+-------+
+| Edge Coverage                   | 0.0   |
+| Edge Inclusion                  | 0.0   |
++---------------------------------+-------+
+
++------------------------------------------------------------------------------------------------+
+|                                          GOLD OUTPUTS                                          |
++-----------------------------------------------------------------------------------+------------+
+| Gold Output                                                                       | Generated? |
++-----------------------------------------------------------------------------------+------------+
+| Bionico is a dessert containing sour cream from Mexico.                           | False      |
+| Sour cream is an ingredient of Bionico, that is a dessert course found in Mexico. | False      |
+| Sour cream is used to serve Bionico, a dessert food found in Mexico.              | False      |
++-----------------------------------------------------------------------------------+------------+
+
++-------------------------------------------------------------------------------------------------------------------------+
+|                                                       NODE METRICS                                                      |
++------------+--------------+---------------+-----------------------------------------+-----------------------------------+
+| Node       | Node Covered | Node Included | Coverage Comment                        | Inclusion Comment                 |
++------------+--------------+---------------+-----------------------------------------+-----------------------------------+
+| Bionico    | False        | False         | 'Bionico' not in lexicon's node entries | No SEMENT generated for this node |
+| Mexico     | False        | False         | 'Mexico' not in lexicon's node entries  | No SEMENT generated for this node |
+| Dessert    | True         | False         | Covered                                 | Successor of failed element       |
+| Sour_cream | True         | False         | Covered                                 | Successor of failed element       |
++------------+--------------+---------------+-----------------------------------------+-----------------------------------+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                 EDGE METRICS                                                                |
++------------+---------+------------+--------------+---------------+--------------------------------------+-----------------------------------+
+| Edge       | Parent  | Child      | Edge Covered | Edge Included | Coverage Comment                     | Inclusion Comment                 |
++------------+---------+------------+--------------+---------------+--------------------------------------+-----------------------------------+
+| country    | Bionico | Mexico     | False        | False         | parent of 'country' has no SEMENT    | No SEMENT generated for this edge |
+| course     | Bionico | Dessert    | False        | False         | parent of 'course' has no SEMENT     | No SEMENT generated for this edge |
+| ingredient | Bionico | Sour_cream | False        | False         | parent of 'ingredient' has no SEMENT | No SEMENT generated for this edge |
++------------+---------+------------+--------------+---------------+--------------------------------------+-----------------------------------+
+
++------------------------+
+|   GENERATED SEMENTS    |
++---------------+--------+
+| Version       | SEMENT |
++---------------+--------+
+| Original      | None   |
++---------------+--------+
+| EQs Collapsed | None   |
++---------------+--------+
+| Prepped       | None   |
++---------------+--------+
+
++-------------------------------------------------------------------+
+|                            NODE SEMENTS                           |
++------------+------------------------------------------------------+
+| Node       | Generated SEMENT                                     |
++------------+------------------------------------------------------+
+| Bionico    | None                                                 |
++------------+------------------------------------------------------+
+| Mexico     | None                                                 |
++------------+------------------------------------------------------+
+| Dessert    | [ TOP: h34                                           |
+|            |   INDEX: x33                                         |
+|            |   RELS: < [ _dessert_n_1 LBL: h34 ARG0: x33 ] > ]    |
++------------+------------------------------------------------------+
+| Sour_cream | [ TOP: h39                                           |
+|            |   INDEX: x38                                         |
+|            |   RELS: < [ _sour_a_1 LBL: h37 ARG0: e35 ARG1: u36 ] |
+|            |           [ _cream_n_1 LBL: h39 ARG0: x38 ] >        |
+|            |   EQS: < h37 eq h39 u36 eq x38 > ]                   |
++------------+------------------------------------------------------+
+
++------------------------------------------------------+
+|                     EDGE SEMENTS                     |
++------------+---------+------------+------------------+
+| Edge       | Parent  | Child      | Generated SEMENT |
++------------+---------+------------+------------------+
+| country    | Bionico | Mexico     | None             |
++------------+---------+------------+------------------+
+| course     | Bionico | Dessert    | None             |
++------------+---------+------------+------------------+
+| ingredient | Bionico | Sour_cream | None             |
++------------+---------+------------+------------------+
+
++------------------------+
+| GENERATED ENGLISH TEXT |
++---+--------------------+
+| # | Generated Text     |
++---+--------------------+
++---+--------------------+
+

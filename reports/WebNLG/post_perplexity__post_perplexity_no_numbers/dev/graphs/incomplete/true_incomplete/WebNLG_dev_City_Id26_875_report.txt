@@ -1,0 +1,106 @@
+GRAPH NAME: WebNLG_dev_3triples_City_City_Id26_27
+
++-----------------------------------------+
+|            EVALUATION METRICS           |
++---------------------------------+-------+
+| Metric                          | Value |
++---------------------------------+-------+
+| Generated Text Results          | 0     |
+| Generated Gold Results          | 0     |
+| Generated Gold Results Coverage | 0.0   |
++---------------------------------+-------+
+| Node Count                      | 4     |
+| Nodes Covered                   | 1     |
+| Nodes Included                  | 0     |
++---------------------------------+-------+
+| Node Coverage                   | 0.25  |
+| Node Inclusion                  | 0.0   |
++---------------------------------+-------+
+| Edge Count                      | 3     |
+| Edges Covered                   | 0     |
+| Edges Included                  | 0     |
++---------------------------------+-------+
+| Edge Coverage                   | 0.0   |
+| Edge Inclusion                  | 0.0   |
++---------------------------------+-------+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                            GOLD OUTPUTS                                                                            |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                           | Generated? |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Albuquerque, New Mexico is in the United States, where English is the official language and Africann Americans are one of the country's ethnic group. | False      |
+| Albuquerque, New Mexico, is in the, English speaking, United States, where African Americans are an ethnic group.                                     | False      |
+| The United States include the ethnic group of African Americans, uses the English language, and is the location of Albuquerque in New Mexico.         | False      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                     NODE METRICS                                                                     |
++-------------------------+--------------+---------------+---------------------------------------------------------+-----------------------------------+
+| Node                    | Node Covered | Node Included | Coverage Comment                                        | Inclusion Comment                 |
++-------------------------+--------------+---------------+---------------------------------------------------------+-----------------------------------+
+| United_States           | False        | False         | 'United_States' not in lexicon's node entries           | No SEMENT generated for this node |
+| African_Americans       | True         | False         | Covered                                                 | Successor of failed element       |
+| English_language        | False        | False         | 'English_language' not in lexicon's node entries        | No SEMENT generated for this node |
+| Albuquerque,_New_Mexico | False        | False         | 'Albuquerque,_New_Mexico' not in lexicon's node entries | No SEMENT generated for this node |
++-------------------------+--------------+---------------+---------------------------------------------------------+-----------------------------------+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                             EDGE METRICS                                                                             |
++-------------+-------------------------+-------------------+--------------+---------------+---------------------------------------+-----------------------------------+
+| Edge        | Parent                  | Child             | Edge Covered | Edge Included | Coverage Comment                      | Inclusion Comment                 |
++-------------+-------------------------+-------------------+--------------+---------------+---------------------------------------+-----------------------------------+
+| ethnicGroup | United_States           | African_Americans | False        | False         | parent of 'ethnicGroup' has no SEMENT | No SEMENT generated for this edge |
+| language    | United_States           | English_language  | False        | False         | parent of 'language' has no SEMENT    | No SEMENT generated for this edge |
+| country     | Albuquerque,_New_Mexico | United_States     | False        | False         | parent of 'country' has no SEMENT     | No SEMENT generated for this edge |
++-------------+-------------------------+-------------------+--------------+---------------+---------------------------------------+-----------------------------------+
+
++------------------------+
+|   GENERATED SEMENTS    |
++---------------+--------+
+| Version       | SEMENT |
++---------------+--------+
+| Original      | None   |
++---------------+--------+
+| EQs Collapsed | None   |
++---------------+--------+
+| Prepped       | None   |
++---------------+--------+
+
++-----------------------------------------------------------------------------------+
+|                                    NODE SEMENTS                                   |
++-------------------------+---------------------------------------------------------+
+| Node                    | Generated SEMENT                                        |
++-------------------------+---------------------------------------------------------+
+| United_States           | None                                                    |
++-------------------------+---------------------------------------------------------+
+| African_Americans       | [ TOP: h37                                              |
+|                         |   INDEX: x36                                            |
+|                         |   RELS: < [ _african_a_1 LBL: h35 ARG0: e33 ARG1: u34 ] |
+|                         |           [ _american_n_1 LBL: h37 ARG0: x36 ] >        |
+|                         |   EQS: < h35 eq h37 u34 eq x36 > ]                      |
++-------------------------+---------------------------------------------------------+
+| English_language        | None                                                    |
++-------------------------+---------------------------------------------------------+
+| Albuquerque,_New_Mexico | None                                                    |
++-------------------------+---------------------------------------------------------+
+
++------------------------------------------------------------------------------+
+|                                 EDGE SEMENTS                                 |
++-------------+-------------------------+-------------------+------------------+
+| Edge        | Parent                  | Child             | Generated SEMENT |
++-------------+-------------------------+-------------------+------------------+
+| ethnicGroup | United_States           | African_Americans | None             |
++-------------+-------------------------+-------------------+------------------+
+| language    | United_States           | English_language  | None             |
++-------------+-------------------------+-------------------+------------------+
+| country     | Albuquerque,_New_Mexico | United_States     | None             |
++-------------+-------------------------+-------------------+------------------+
+
++------------------------+
+| GENERATED ENGLISH TEXT |
++---+--------------------+
+| # | Generated Text     |
++---+--------------------+
++---+--------------------+
+

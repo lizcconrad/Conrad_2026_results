@@ -1,0 +1,109 @@
+GRAPH NAME: WebNLG_dev_3triples_Artist_Artist_Id4_8
+
++-----------------------------------------+
+|            EVALUATION METRICS           |
++---------------------------------+-------+
+| Metric                          | Value |
++---------------------------------+-------+
+| Generated Text Results          | 0     |
+| Generated Gold Results          | 0     |
+| Generated Gold Results Coverage | 0.0   |
++---------------------------------+-------+
+| Node Count                      | 4     |
+| Nodes Covered                   | 1     |
+| Nodes Included                  | 0     |
++---------------------------------+-------+
+| Node Coverage                   | 0.25  |
+| Node Inclusion                  | 0.0   |
++---------------------------------+-------+
+| Edge Count                      | 3     |
+| Edges Covered                   | 0     |
+| Edges Included                  | 0     |
++---------------------------------+-------+
+| Edge Coverage                   | 0.0   |
+| Edge Inclusion                  | 0.0   |
++---------------------------------+-------+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                               GOLD OUTPUTS                                                               |
++-----------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                 | Generated? |
++-----------------------------------------------------------------------------------------------------------------------------+------------+
+| Aaron Turner played with the band Twilight, is associated with the group Greymachine, and plays drone music.                | False      |
+| Aaron Turner plays drone music and played with the bands Twilight and Greymachine.                                          | False      |
+| Aaron Turner; played with the band Twilight, is part of the drone music genre and is associated with the group Greymachine. | False      |
++-----------------------------------------------------------------------------------------------------------------------------+------------+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+|                                                             NODE METRICS                                                             |
++-----------------+--------------+---------------+-------------------------------------------------+-----------------------------------+
+| Node            | Node Covered | Node Included | Coverage Comment                                | Inclusion Comment                 |
++-----------------+--------------+---------------+-------------------------------------------------+-----------------------------------+
+| Aaron_Turner    | False        | False         | 'Aaron_Turner' not in lexicon's node entries    | No SEMENT generated for this node |
+| Twilight_(band) | False        | False         | 'Twilight_(band)' not in lexicon's node entries | No SEMENT generated for this node |
+| Greymachine     | False        | False         | 'Greymachine' not in lexicon's node entries     | No SEMENT generated for this node |
+| Drone_music     | True         | False         | Covered                                         | Successor of failed element       |
++-----------------+--------------+---------------+-------------------------------------------------+-----------------------------------+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                                  EDGE METRICS                                                                                                 |
++----------------------------------------+--------------+-----------------+--------------+---------------+------------------------------------------------------------------+-----------------------------------+
+| Edge                                   | Parent       | Child           | Edge Covered | Edge Included | Coverage Comment                                                 | Inclusion Comment                 |
++----------------------------------------+--------------+-----------------+--------------+---------------+------------------------------------------------------------------+-----------------------------------+
+| associatedBand/associatedMusicalArtist | Aaron_Turner | Twilight_(band) | False        | False         | parent of 'associatedBand/associatedMusicalArtist' has no SEMENT | No SEMENT generated for this edge |
+| associatedBand/associatedMusicalArtist | Aaron_Turner | Greymachine     | False        | False         | parent of 'associatedBand/associatedMusicalArtist' has no SEMENT | No SEMENT generated for this edge |
+| genre                                  | Aaron_Turner | Drone_music     | False        | False         | parent of 'genre' has no SEMENT                                  | No SEMENT generated for this edge |
++----------------------------------------+--------------+-----------------+--------------+---------------+------------------------------------------------------------------+-----------------------------------+
+
++------------------------+
+|   GENERATED SEMENTS    |
++---------------+--------+
+| Version       | SEMENT |
++---------------+--------+
+| Original      | None   |
++---------------+--------+
+| EQs Collapsed | None   |
++---------------+--------+
+| Prepped       | None   |
++---------------+--------+
+
++-----------------------------------------------------------------------------------------------+
+|                                          NODE SEMENTS                                         |
++-----------------+-----------------------------------------------------------------------------+
+| Node            | Generated SEMENT                                                            |
++-----------------+-----------------------------------------------------------------------------+
+| Aaron_Turner    | None                                                                        |
++-----------------+-----------------------------------------------------------------------------+
+| Twilight_(band) | None                                                                        |
++-----------------+-----------------------------------------------------------------------------+
+| Greymachine     | None                                                                        |
++-----------------+-----------------------------------------------------------------------------+
+| Drone_music     | [ TOP: h55                                                                  |
+|                 |   INDEX: x54                                                                |
+|                 |   RELS: < [ compound LBL: h66 ARG0: e63 [ e PROG: - ] ARG1: u64 ARG2: u65 ] |
+|                 |           [ udef_q LBL: h61 ARG0: x58 RSTR: h59 BODY: h60 ]                 |
+|                 |           [ _drone_n_1 LBL: h57 ARG0: x56 ]                                 |
+|                 |           [ _music_n_1 LBL: h55 ARG0: x54 ] >                               |
+|                 |   HCONS: < h59 qeq h57 >                                                    |
+|                 |   EQS: < x58 eq x56 h66 eq h62 u65 eq x58 h66 eq h55 u64 eq x54 > ]         |
++-----------------+-----------------------------------------------------------------------------+
+
++--------------------------------------------------------------------------------------------+
+|                                        EDGE SEMENTS                                        |
++----------------------------------------+--------------+-----------------+------------------+
+| Edge                                   | Parent       | Child           | Generated SEMENT |
++----------------------------------------+--------------+-----------------+------------------+
+| associatedBand/associatedMusicalArtist | Aaron_Turner | Twilight_(band) | None             |
++----------------------------------------+--------------+-----------------+------------------+
+| associatedBand/associatedMusicalArtist | Aaron_Turner | Greymachine     | None             |
++----------------------------------------+--------------+-----------------+------------------+
+| genre                                  | Aaron_Turner | Drone_music     | None             |
++----------------------------------------+--------------+-----------------+------------------+
+
++------------------------+
+| GENERATED ENGLISH TEXT |
++---+--------------------+
+| # | Generated Text     |
++---+--------------------+
++---+--------------------+
+

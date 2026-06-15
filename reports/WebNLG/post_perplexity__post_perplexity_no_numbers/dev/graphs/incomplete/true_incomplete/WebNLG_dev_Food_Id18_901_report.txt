@@ -1,0 +1,109 @@
+GRAPH NAME: WebNLG_dev_3triples_Food_Food_Id18_4
+
++-----------------------------------------+
+|            EVALUATION METRICS           |
++---------------------------------+-------+
+| Metric                          | Value |
++---------------------------------+-------+
+| Generated Text Results          | 0     |
+| Generated Gold Results          | 0     |
+| Generated Gold Results Coverage | 0.0   |
++---------------------------------+-------+
+| Node Count                      | 4     |
+| Nodes Covered                   | 1     |
+| Nodes Included                  | 0     |
++---------------------------------+-------+
+| Node Coverage                   | 0.25  |
+| Node Inclusion                  | 0.0   |
++---------------------------------+-------+
+| Edge Count                      | 3     |
+| Edges Covered                   | 0     |
+| Edges Included                  | 0     |
++---------------------------------+-------+
+| Edge Coverage                   | 0.0   |
+| Edge Inclusion                  | 0.0   |
++---------------------------------+-------+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+|                                                             GOLD OUTPUTS                                                            |
++------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                            | Generated? |
++------------------------------------------------------------------------------------------------------------------------+------------+
+| An ingredient of baked Alaska is sponge cake, the dish originates from New York, USA.                                  | False      |
+| Sponge cake is an ingredient of Baked Alaska, which comes from the region of New York and can be found in the U.S.     | False      |
+| Sponge cake is one of the ingredients in Baked Alaska, a dish from the New York region and found in the United States. | False      |
++------------------------------------------------------------------------------------------------------------------------+------------+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+|                                                           NODE METRICS                                                           |
++---------------+--------------+---------------+-----------------------------------------------+-----------------------------------+
+| Node          | Node Covered | Node Included | Coverage Comment                              | Inclusion Comment                 |
++---------------+--------------+---------------+-----------------------------------------------+-----------------------------------+
+| Baked_Alaska  | False        | False         | 'Baked_Alaska' not in lexicon's node entries  | No SEMENT generated for this node |
+| United_States | False        | False         | 'United_States' not in lexicon's node entries | No SEMENT generated for this node |
+| New_York      | False        | False         | 'New_York' not in lexicon's node entries      | No SEMENT generated for this node |
+| Sponge_cake   | True         | False         | Covered                                       | Successor of failed element       |
++---------------+--------------+---------------+-----------------------------------------------+-----------------------------------+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                     EDGE METRICS                                                                    |
++------------+--------------+---------------+--------------+---------------+--------------------------------------+-----------------------------------+
+| Edge       | Parent       | Child         | Edge Covered | Edge Included | Coverage Comment                     | Inclusion Comment                 |
++------------+--------------+---------------+--------------+---------------+--------------------------------------+-----------------------------------+
+| country    | Baked_Alaska | United_States | False        | False         | parent of 'country' has no SEMENT    | No SEMENT generated for this edge |
+| region     | Baked_Alaska | New_York      | False        | False         | parent of 'region' has no SEMENT     | No SEMENT generated for this edge |
+| ingredient | Baked_Alaska | Sponge_cake   | False        | False         | parent of 'ingredient' has no SEMENT | No SEMENT generated for this edge |
++------------+--------------+---------------+--------------+---------------+--------------------------------------+-----------------------------------+
+
++------------------------+
+|   GENERATED SEMENTS    |
++---------------+--------+
+| Version       | SEMENT |
++---------------+--------+
+| Original      | None   |
++---------------+--------+
+| EQs Collapsed | None   |
++---------------+--------+
+| Prepped       | None   |
++---------------+--------+
+
++---------------------------------------------------------------------------------------------+
+|                                         NODE SEMENTS                                        |
++---------------+-----------------------------------------------------------------------------+
+| Node          | Generated SEMENT                                                            |
++---------------+-----------------------------------------------------------------------------+
+| Baked_Alaska  | None                                                                        |
++---------------+-----------------------------------------------------------------------------+
+| United_States | None                                                                        |
++---------------+-----------------------------------------------------------------------------+
+| New_York      | None                                                                        |
++---------------+-----------------------------------------------------------------------------+
+| Sponge_cake   | [ TOP: h4                                                                   |
+|               |   INDEX: x3                                                                 |
+|               |   RELS: < [ compound LBL: h15 ARG0: e12 [ e PROG: - ] ARG1: u13 ARG2: u14 ] |
+|               |           [ udef_q LBL: h10 ARG0: x7 RSTR: h8 BODY: h9 ]                    |
+|               |           [ _sponge_n_1 LBL: h6 ARG0: x5 ]                                  |
+|               |           [ _cake_n_1 LBL: h4 ARG0: x3 ] >                                  |
+|               |   HCONS: < h8 qeq h6 >                                                      |
+|               |   EQS: < x7 eq x5 h15 eq h11 u14 eq x7 h15 eq h4 u13 eq x3 > ]              |
++---------------+-----------------------------------------------------------------------------+
+
++--------------------------------------------------------------+
+|                         EDGE SEMENTS                         |
++------------+--------------+---------------+------------------+
+| Edge       | Parent       | Child         | Generated SEMENT |
++------------+--------------+---------------+------------------+
+| country    | Baked_Alaska | United_States | None             |
++------------+--------------+---------------+------------------+
+| region     | Baked_Alaska | New_York      | None             |
++------------+--------------+---------------+------------------+
+| ingredient | Baked_Alaska | Sponge_cake   | None             |
++------------+--------------+---------------+------------------+
+
++------------------------+
+| GENERATED ENGLISH TEXT |
++---+--------------------+
+| # | Generated Text     |
++---+--------------------+
++---+--------------------+
+

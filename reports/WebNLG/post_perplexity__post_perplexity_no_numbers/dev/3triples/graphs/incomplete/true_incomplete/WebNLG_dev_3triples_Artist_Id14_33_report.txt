@@ -1,0 +1,123 @@
+GRAPH NAME: WebNLG_dev_3triples_Artist_Artist_Id14_9
+
++-----------------------------------------+
+|            EVALUATION METRICS           |
++---------------------------------+-------+
+| Metric                          | Value |
++---------------------------------+-------+
+| Generated Text Results          | 0     |
+| Generated Gold Results          | 0     |
+| Generated Gold Results Coverage | 0.0   |
++---------------------------------+-------+
+| Node Count                      | 4     |
+| Nodes Covered                   | 3     |
+| Nodes Included                  | 0     |
++---------------------------------+-------+
+| Node Coverage                   | 0.75  |
+| Node Inclusion                  | 0.0   |
++---------------------------------+-------+
+| Edge Count                      | 3     |
+| Edges Covered                   | 0     |
+| Edges Included                  | 0     |
++---------------------------------+-------+
+| Edge Coverage                   | 0.0   |
+| Edge Inclusion                  | 0.0   |
++---------------------------------+-------+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                GOLD OUTPUTS                                                                |
++-------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                   | Generated? |
++-------------------------------------------------------------------------------------------------------------------------------+------------+
+| Alan Frew's genre is Rock music. It originated from country music and has its stylistic origins in folk music.                | False      |
+| Alan Frews' musical genre is rock music. The genre originated from country music and has its stylistic origins in folk music. | False      |
+| Rock music is performed by Alan Frew and originated from folk music and country music.                                        | False      |
++-------------------------------------------------------------------------------------------------------------------------------+------------+
+
++------------------------------------------------------------------------------------------------------------------------------+
+|                                                         NODE METRICS                                                         |
++---------------+--------------+---------------+-------------------------------------------+-----------------------------------+
+| Node          | Node Covered | Node Included | Coverage Comment                          | Inclusion Comment                 |
++---------------+--------------+---------------+-------------------------------------------+-----------------------------------+
+| Alan_Frew     | False        | False         | 'Alan_Frew' not in lexicon's node entries | No SEMENT generated for this node |
+| Rock_music    | True         | False         | Covered                                   | Successor of failed element       |
+| Country_music | True         | False         | Covered                                   | Successor of failed element       |
+| Folk_music    | True         | False         | Covered                                   | Successor of failed element       |
++---------------+--------------+---------------+-------------------------------------------+-----------------------------------+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                            EDGE METRICS                                                                           |
++-----------------+------------+---------------+--------------+---------------+-------------------------------------------------+-----------------------------------+
+| Edge            | Parent     | Child         | Edge Covered | Edge Included | Coverage Comment                                | Inclusion Comment                 |
++-----------------+------------+---------------+--------------+---------------+-------------------------------------------------+-----------------------------------+
+| genre           | Alan_Frew  | Rock_music    | False        | False         | parent of 'genre' has no SEMENT                 | No SEMENT generated for this edge |
+| stylisticOrigin | Rock_music | Country_music | False        | False         | 'stylisticOrigin' not in lexicon's edge entries | No SEMENT generated for this edge |
+| stylisticOrigin | Rock_music | Folk_music    | False        | False         | 'stylisticOrigin' not in lexicon's edge entries | No SEMENT generated for this edge |
++-----------------+------------+---------------+--------------+---------------+-------------------------------------------------+-----------------------------------+
+
++------------------------+
+|   GENERATED SEMENTS    |
++---------------+--------+
+| Version       | SEMENT |
++---------------+--------+
+| Original      | None   |
++---------------+--------+
+| EQs Collapsed | None   |
++---------------+--------+
+| Prepped       | None   |
++---------------+--------+
+
++-------------------------------------------------------------------------------------------------+
+|                                           NODE SEMENTS                                          |
++---------------+---------------------------------------------------------------------------------+
+| Node          | Generated SEMENT                                                                |
++---------------+---------------------------------------------------------------------------------+
+| Alan_Frew     | None                                                                            |
++---------------+---------------------------------------------------------------------------------+
+| Rock_music    | [ TOP: h68                                                                      |
+|               |   INDEX: x67                                                                    |
+|               |   RELS: < [ compound LBL: h79 ARG0: e76 [ e PROG: - ] ARG1: u77 ARG2: u78 ]     |
+|               |           [ udef_q LBL: h74 ARG0: x71 RSTR: h72 BODY: h73 ]                     |
+|               |           [ _rock_n_1 LBL: h70 ARG0: x69 ]                                      |
+|               |           [ _music_n_1 LBL: h68 ARG0: x67 ] >                                   |
+|               |   HCONS: < h72 qeq h70 >                                                        |
+|               |   EQS: < x71 eq x69 h79 eq h75 u78 eq x71 h79 eq h68 u77 eq x67 > ]             |
++---------------+---------------------------------------------------------------------------------+
+| Country_music | [ TOP: h81                                                                      |
+|               |   INDEX: x80                                                                    |
+|               |   RELS: < [ compound LBL: h93 ARG0: e90 [ e PROG: - ] ARG1: u91 ARG2: u92 ]     |
+|               |           [ udef_q LBL: h88 ARG0: x85 RSTR: h86 BODY: h87 ]                     |
+|               |           [ _country_n_of LBL: h84 ARG0: x82 ARG1: i83 ]                        |
+|               |           [ _music_n_1 LBL: h81 ARG0: x80 ] >                                   |
+|               |   HCONS: < h86 qeq h84 >                                                        |
+|               |   EQS: < x85 eq x82 h93 eq h89 u92 eq x85 h93 eq h81 u91 eq x80 > ]             |
++---------------+---------------------------------------------------------------------------------+
+| Folk_music    | [ TOP: h95                                                                      |
+|               |   INDEX: x94                                                                    |
+|               |   RELS: < [ compound LBL: h106 ARG0: e103 [ e PROG: - ] ARG1: u104 ARG2: u105 ] |
+|               |           [ udef_q LBL: h101 ARG0: x98 RSTR: h99 BODY: h100 ]                   |
+|               |           [ _folk_n_1 LBL: h97 ARG0: x96 ]                                      |
+|               |           [ _music_n_1 LBL: h95 ARG0: x94 ] >                                   |
+|               |   HCONS: < h99 qeq h97 >                                                        |
+|               |   EQS: < x98 eq x96 h106 eq h102 u105 eq x98 h106 eq h95 u104 eq x94 > ]        |
++---------------+---------------------------------------------------------------------------------+
+
++-----------------------------------------------------------------+
+|                           EDGE SEMENTS                          |
++-----------------+------------+---------------+------------------+
+| Edge            | Parent     | Child         | Generated SEMENT |
++-----------------+------------+---------------+------------------+
+| genre           | Alan_Frew  | Rock_music    | None             |
++-----------------+------------+---------------+------------------+
+| stylisticOrigin | Rock_music | Country_music | None             |
++-----------------+------------+---------------+------------------+
+| stylisticOrigin | Rock_music | Folk_music    | None             |
++-----------------+------------+---------------+------------------+
+
++------------------------+
+| GENERATED ENGLISH TEXT |
++---+--------------------+
+| # | Generated Text     |
++---+--------------------+
++---+--------------------+
+

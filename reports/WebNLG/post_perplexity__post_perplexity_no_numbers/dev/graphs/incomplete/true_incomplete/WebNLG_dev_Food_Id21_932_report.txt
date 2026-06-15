@@ -1,0 +1,113 @@
+GRAPH NAME: WebNLG_dev_3triples_Food_Food_Id21_35
+
++-----------------------------------------+
+|            EVALUATION METRICS           |
++---------------------------------+-------+
+| Metric                          | Value |
++---------------------------------+-------+
+| Generated Text Results          | 0     |
+| Generated Gold Results          | 0     |
+| Generated Gold Results Coverage | 0.0   |
++---------------------------------+-------+
+| Node Count                      | 4     |
+| Nodes Covered                   | 2     |
+| Nodes Included                  | 0     |
++---------------------------------+-------+
+| Node Coverage                   | 0.5   |
+| Node Inclusion                  | 0.0   |
++---------------------------------+-------+
+| Edge Count                      | 3     |
+| Edges Covered                   | 0     |
+| Edges Included                  | 0     |
++---------------------------------+-------+
+| Edge Coverage                   | 0.0   |
+| Edge Inclusion                  | 0.0   |
++---------------------------------+-------+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                   GOLD OUTPUTS                                                                  |
++------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                        | Generated? |
++------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Bandeja paisa, which contains kidney beans, is a traditional dish found in the Antioquia Department of Colombia.                   | False      |
+| Kidney beans are an ingredient of Bandeja paisa which is a Colombian dish from the Antioquia department.                           | False      |
+| Part of Colombian cuisine, Bandeja paisa (which has kidney beans as one of the ingredients), comes from Antioquia Department area. | False      |
++------------------------------------------------------------------------------------------------------------------------------------+------------+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                  NODE METRICS                                                                  |
++----------------------+--------------+---------------+------------------------------------------------------+-----------------------------------+
+| Node                 | Node Covered | Node Included | Coverage Comment                                     | Inclusion Comment                 |
++----------------------+--------------+---------------+------------------------------------------------------+-----------------------------------+
+| Bandeja_paisa        | False        | False         | 'Bandeja_paisa' not in lexicon's node entries        | No SEMENT generated for this node |
+| Colombian_cuisine    | True         | False         | Covered                                              | Successor of failed element       |
+| Kidney_bean          | True         | False         | Covered                                              | Successor of failed element       |
+| Antioquia_Department | False        | False         | 'Antioquia_Department' not in lexicon's node entries | No SEMENT generated for this node |
++----------------------+--------------+---------------+------------------------------------------------------+-----------------------------------+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                         EDGE METRICS                                                                        |
++------------+---------------+----------------------+--------------+---------------+--------------------------------------+-----------------------------------+
+| Edge       | Parent        | Child                | Edge Covered | Edge Included | Coverage Comment                     | Inclusion Comment                 |
++------------+---------------+----------------------+--------------+---------------+--------------------------------------+-----------------------------------+
+| country    | Bandeja_paisa | Colombian_cuisine    | False        | False         | parent of 'country' has no SEMENT    | No SEMENT generated for this edge |
+| ingredient | Bandeja_paisa | Kidney_bean          | False        | False         | parent of 'ingredient' has no SEMENT | No SEMENT generated for this edge |
+| region     | Bandeja_paisa | Antioquia_Department | False        | False         | parent of 'region' has no SEMENT     | No SEMENT generated for this edge |
++------------+---------------+----------------------+--------------+---------------+--------------------------------------+-----------------------------------+
+
++------------------------+
+|   GENERATED SEMENTS    |
++---------------+--------+
+| Version       | SEMENT |
++---------------+--------+
+| Original      | None   |
++---------------+--------+
+| EQs Collapsed | None   |
++---------------+--------+
+| Prepped       | None   |
++---------------+--------+
+
++--------------------------------------------------------------------------------------------------------+
+|                                              NODE SEMENTS                                              |
++----------------------+---------------------------------------------------------------------------------+
+| Node                 | Generated SEMENT                                                                |
++----------------------+---------------------------------------------------------------------------------+
+| Bandeja_paisa        | None                                                                            |
++----------------------+---------------------------------------------------------------------------------+
+| Colombian_cuisine    | [ TOP: h149                                                                     |
+|                      |   INDEX: x148                                                                   |
+|                      |   RELS: < [ _colombian_a_1 LBL: h147 ARG0: e145 ARG1: u146 ]                    |
+|                      |           [ _cuisine_n_1 LBL: h149 ARG0: x148 ] >                               |
+|                      |   EQS: < h147 eq h149 u146 eq x148 > ]                                          |
++----------------------+---------------------------------------------------------------------------------+
+| Kidney_bean          | [ TOP: h151                                                                     |
+|                      |   INDEX: x150                                                                   |
+|                      |   RELS: < [ compound LBL: h162 ARG0: e159 [ e PROG: - ] ARG1: u160 ARG2: u161 ] |
+|                      |           [ udef_q LBL: h157 ARG0: x154 RSTR: h155 BODY: h156 ]                 |
+|                      |           [ _kidney_n_1 LBL: h153 ARG0: x152 ]                                  |
+|                      |           [ _bean_n_1 LBL: h151 ARG0: x150 ] >                                  |
+|                      |   HCONS: < h155 qeq h153 >                                                      |
+|                      |   EQS: < x154 eq x152 h162 eq h158 u161 eq x154 h162 eq h151 u160 eq x150 > ]   |
++----------------------+---------------------------------------------------------------------------------+
+| Antioquia_Department | None                                                                            |
++----------------------+---------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------+
+|                             EDGE SEMENTS                             |
++------------+---------------+----------------------+------------------+
+| Edge       | Parent        | Child                | Generated SEMENT |
++------------+---------------+----------------------+------------------+
+| country    | Bandeja_paisa | Colombian_cuisine    | None             |
++------------+---------------+----------------------+------------------+
+| ingredient | Bandeja_paisa | Kidney_bean          | None             |
++------------+---------------+----------------------+------------------+
+| region     | Bandeja_paisa | Antioquia_Department | None             |
++------------+---------------+----------------------+------------------+
+
++------------------------+
+| GENERATED ENGLISH TEXT |
++---+--------------------+
+| # | Generated Text     |
++---+--------------------+
++---+--------------------+
+
