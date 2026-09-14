@@ -1,0 +1,165 @@
+GRAPH NAME: WebNLG_dev_3triples_Building_Building_Id6_21
+
++-----------------------------------------+
+|            EVALUATION METRICS           |
++---------------------------------+-------+
+| Metric                          | Value |
++---------------------------------+-------+
+| Generated Text Results          | 0     |
+| Generated Gold Results          | 0     |
+| Generated Gold Results Coverage | 0.0   |
++---------------------------------+-------+
+| Node Count                      | 4     |
+| Nodes Covered                   | 4     |
+| Nodes Included                  | 4     |
++---------------------------------+-------+
+| Node Coverage                   | 1.0   |
+| Node Inclusion                  | 1.0   |
++---------------------------------+-------+
+| Edge Count                      | 3     |
+| Edges Covered                   | 3     |
+| Edges Included                  | 3     |
++---------------------------------+-------+
+| Edge Coverage                   | 1.0   |
+| Edge Inclusion                  | 1.0   |
++---------------------------------+-------+
+
++------------------------------------------------------------------------------------------------------------+
+|                                                GOLD OUTPUTS                                                |
++-----------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                   | Generated? |
++-----------------------------------------------------------------------------------------------+------------+
+| 300 North LaSalle is located in Chicago (the leader of which is Rahm Emanuel), United States. | False      |
+| 300 North Lasalle is in Chicago, U.S. Rahm Emanuel leads Chicago.                             | False      |
+| Rahm Emanuel is a leader in Chicago, US where 300 North LaSalle is located.                   | False      |
++-----------------------------------------------------------------------------------------------+------------+
+
++-----------------------------------------------------------------------------------------+
+|                                       NODE METRICS                                      |
++-------------------+--------------+---------------+------------------+-------------------+
+| Node              | Node Covered | Node Included | Coverage Comment | Inclusion Comment |
++-------------------+--------------+---------------+------------------+-------------------+
+| 300_North_LaSalle | True         | True          | Covered          | Included          |
+| Chicago           | True         | True          | Covered          | Included          |
+| Rahm_Emanuel      | True         | True          | Covered          | Included          |
+| United_States     | True         | True          | Covered          | Included          |
++-------------------+--------------+---------------+------------------+-------------------+
+
++--------------------------------------------------------------------------------------------------------------------+
+|                                                    EDGE METRICS                                                    |
++----------+-------------------+---------------+--------------+---------------+------------------+-------------------+
+| Edge     | Parent            | Child         | Edge Covered | Edge Included | Coverage Comment | Inclusion Comment |
++----------+-------------------+---------------+--------------+---------------+------------------+-------------------+
+| location | 300_North_LaSalle | Chicago       | True         | True          | Covered          | Included          |
+| leader   | Chicago           | Rahm_Emanuel  | True         | True          | Covered          | Included          |
+| country  | Chicago           | United_States | True         | True          | Covered          | Included          |
++----------+-------------------+---------------+--------------+---------------+------------------+-------------------+
+
++--------------------------------------------------------------------------------------------------+
+|                                        GENERATED SEMENTS                                         |
++---------------+----------------------------------------------------------------------------------+
+| Version       | SEMENT                                                                           |
++---------------+----------------------------------------------------------------------------------+
+| Original      | [ TOP: h1350                                                                     |
+|               |   INDEX: e1348 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _located_a_1 LBL: h1350 ARG0: e1348 ARG1: u1349 ]                    |
+|               |           [ explicit_or_proper_q LBL: h1354 ARG0: x1351 RSTR: h1352 BODY: h1353  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1316 ARG0: x1315 CARG: "300 North LaSalle" ] >           |
+|               |   HCONS: < h1352 qeq h1316 >                                                     |
+|               |   EQS: < x1351 eq x1315 h1350 eq h1355 u1349 eq x1351 > ]                        |
++---------------+----------------------------------------------------------------------------------+
+| EQs Collapsed | [ TOP: h1350                                                                     |
+|               |   INDEX: e1348 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _located_a_1 LBL: h1350 ARG0: e1348 ARG1: x1315 ]                    |
+|               |           [ explicit_or_proper_q LBL: h1354 ARG0: x1315 RSTR: h1352 BODY: h1353  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1316 ARG0: x1315 CARG: "300 North LaSalle" ] >           |
+|               |   HCONS: < h1352 qeq h1316 > ]                                                   |
++---------------+----------------------------------------------------------------------------------+
+| Prepped       | [ TOP: h1356                                                                     |
+|               |   INDEX: e1348 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _located_a_1 LBL: h1350 ARG0: e1348 ARG1: x1315 ]                    |
+|               |           [ explicit_or_proper_q LBL: h1354 ARG0: x1315 RSTR: h1352 BODY: h1353  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1316 ARG0: x1315 CARG: "300 North LaSalle" ] >           |
+|               |   HCONS: < h1352 qeq h1316 h1356 qeq h1350 > ]                                   |
++---------------+----------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+|                                         NODE SEMENTS                                         |
++-------------------+--------------------------------------------------------------------------+
+| Node              | Generated SEMENT                                                         |
++-------------------+--------------------------------------------------------------------------+
+| 300_North_LaSalle | [ TOP: h1316                                                             |
+|                   |   INDEX: x1315                                                           |
+|                   |   RELS: < [ named LBL: h1316 ARG0: x1315 CARG: "300 North LaSalle" ] > ] |
++-------------------+--------------------------------------------------------------------------+
+| Chicago           | [ TOP: h1318                                                             |
+|                   |   INDEX: x1317                                                           |
+|                   |   RELS: < [ named LBL: h1318 ARG0: x1317 CARG: "Chicago" ] > ]           |
++-------------------+--------------------------------------------------------------------------+
+| Rahm_Emanuel      | [ TOP: h1320                                                             |
+|                   |   INDEX: x1319                                                           |
+|                   |   RELS: < [ named LBL: h1320 ARG0: x1319 CARG: "Rahm Emanuel" ] > ]      |
++-------------------+--------------------------------------------------------------------------+
+| United_States     | [ TOP: h1344                                                             |
+|                   |   INDEX: x1343 [ x NUM: pl ]                                             |
+|                   |   RELS: < [ named_pl LBL: h1344 ARG0: x1343 CARG: "United States" ] > ]  |
++-------------------+--------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+|                                                           EDGE SEMENTS                                                          |
++----------+-------------------+---------------+----------------------------------------------------------------------------------+
+| Edge     | Parent            | Child         | Generated SEMENT                                                                 |
++----------+-------------------+---------------+----------------------------------------------------------------------------------+
+| location | 300_North_LaSalle | Chicago       | [ TOP: h1350                                                                     |
+|          |                   |               |   INDEX: e1348 [ e TENSE: tensed ]                                               |
+|          |                   |               |   RELS: < [ _located_a_1 LBL: h1350 ARG0: e1348 ARG1: u1349 ]                    |
+|          |                   |               |           [ explicit_or_proper_q LBL: h1354 ARG0: x1351 RSTR: h1352 BODY: h1353  |
+|          |                   |               | ]                                                                                |
+|          |                   |               |           [ named LBL: h1316 ARG0: x1315 CARG: "300 North LaSalle" ] >           |
+|          |                   |               |   HCONS: < h1352 qeq h1316 >                                                     |
+|          |                   |               |   EQS: < x1351 eq x1315 h1350 eq h1355 u1349 eq x1351 > ]                        |
++----------+-------------------+---------------+----------------------------------------------------------------------------------+
+| leader   | Chicago           | Rahm_Emanuel  | [ TOP: h1332                                                                     |
+|          |                   |               |   INDEX: e1329 [ e SF: prop TENSE: tensed ]                                      |
+|          |                   |               |   RELS: < [ _be_v_id LBL: h1332 ARG0: e1329 ARG1: p1330 ARG2: i1331 ]            |
+|          |                   |               |           [ explicit_or_proper_q LBL: h1341 ARG0: x1338 RSTR: h1339 BODY: h1340  |
+|          |                   |               | ]                                                                                |
+|          |                   |               |           [ named LBL: h1320 ARG0: x1319 CARG: "Rahm Emanuel" ]                  |
+|          |                   |               |           [ def_udef_a_q LBL: h1336 ARG0: x1333 RSTR: h1334 BODY: h1335 ]        |
+|          |                   |               |           [ _leader_n_of LBL: h1323 ARG0: x1321 ARG1: i1322 ]                    |
+|          |                   |               |           [ explicit_or_proper_q LBL: h1327 ARG0: x1324 RSTR: h1325 BODY: h1326  |
+|          |                   |               | ]                                                                                |
+|          |                   |               |           [ named LBL: h1318 ARG0: x1317 CARG: "Chicago" ] >                     |
+|          |                   |               |   HCONS: < h1339 qeq h1320 h1325 qeq h1318 h1334 qeq h1323 >                     |
+|          |                   |               |   EQS: < x1338 eq x1319 h1332 eq h1342 i1331 eq x1338 x1324 eq x1317 h1323 eq    |
+|          |                   |               | h1328 i1322 eq x1324 x1333 eq x1321 h1332 eq h1337 p1330 eq x1333 > ]            |
++----------+-------------------+---------------+----------------------------------------------------------------------------------+
+| country  | Chicago           | United_States | [ TOP: h1347                                                                     |
+|          |                   |               |   INDEX: e1345 [ e TENSE: tensed ]                                               |
+|          |                   |               |   RELS: < [ _located_a_1 LBL: h1347 ARG0: e1345 ARG1: u1346 ]                    |
+|          |                   |               |           [ _be_v_id LBL: h1332 ARG0: e1329 [ e SF: prop TENSE: tensed ] ARG1:   |
+|          |                   |               | p1330 ARG2: i1331 ]                                                              |
+|          |                   |               |           [ explicit_or_proper_q LBL: h1341 ARG0: x1338 RSTR: h1339 BODY: h1340  |
+|          |                   |               | ]                                                                                |
+|          |                   |               |           [ named LBL: h1320 ARG0: x1319 CARG: "Rahm Emanuel" ]                  |
+|          |                   |               |           [ def_udef_a_q LBL: h1336 ARG0: x1333 RSTR: h1334 BODY: h1335 ]        |
+|          |                   |               |           [ _leader_n_of LBL: h1323 ARG0: x1321 ARG1: i1322 ]                    |
+|          |                   |               |           [ explicit_or_proper_q LBL: h1327 ARG0: x1324 RSTR: h1325 BODY: h1326  |
+|          |                   |               | ]                                                                                |
+|          |                   |               |           [ named LBL: h1318 ARG0: x1317 CARG: "Chicago" ] >                     |
+|          |                   |               |   HCONS: < h1339 qeq h1320 h1325 qeq h1318 h1334 qeq h1323 >                     |
+|          |                   |               |   EQS: < x1338 eq x1319 h1332 eq h1342 i1331 eq x1338 x1324 eq x1317 h1323 eq    |
+|          |                   |               | h1328 i1322 eq x1324 x1333 eq x1321 h1332 eq h1337 p1330 eq x1333 h1347 eq h1332 |
+|          |                   |               | u1346 eq e1329 > ]                                                               |
++----------+-------------------+---------------+----------------------------------------------------------------------------------+
+
++------------------------+
+| GENERATED ENGLISH TEXT |
++---+--------------------+
+| # | Generated Text     |
++---+--------------------+
++---+--------------------+
+

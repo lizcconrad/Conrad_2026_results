@@ -1,0 +1,168 @@
+GRAPH NAME: WebNLG_dev_3triples_Food_Food_Id15_9
+
++-----------------------------------------+
+|            EVALUATION METRICS           |
++---------------------------------+-------+
+| Metric                          | Value |
++---------------------------------+-------+
+| Generated Text Results          | 0     |
+| Generated Gold Results          | 0     |
+| Generated Gold Results Coverage | 0.0   |
++---------------------------------+-------+
+| Node Count                      | 4     |
+| Nodes Covered                   | 4     |
+| Nodes Included                  | 4     |
++---------------------------------+-------+
+| Node Coverage                   | 1.0   |
+| Node Inclusion                  | 1.0   |
++---------------------------------+-------+
+| Edge Count                      | 3     |
+| Edges Covered                   | 3     |
+| Edges Included                  | 3     |
++---------------------------------+-------+
+| Edge Coverage                   | 1.0   |
+| Edge Inclusion                  | 1.0   |
++---------------------------------+-------+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                 GOLD OUTPUTS                                                                |
++--------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                    | Generated? |
++--------------------------------------------------------------------------------------------------------------------------------+------------+
+| Bacon Explosion comes from the United States where African Americans are an ethnic group and John Roberts is a leader.         | False      |
+| The Bacon Explosion originated in the United States, where African Americans are an ethnic group and John Roberts is a leader. | False      |
++--------------------------------------------------------------------------------------------------------------------------------+------------+
+
++-----------------------------------------------------------------------------------------+
+|                                       NODE METRICS                                      |
++-------------------+--------------+---------------+------------------+-------------------+
+| Node              | Node Covered | Node Included | Coverage Comment | Inclusion Comment |
++-------------------+--------------+---------------+------------------+-------------------+
+| Bacon_Explosion   | True         | True          | Covered          | Included          |
+| United_States     | True         | True          | Covered          | Included          |
+| John_Roberts      | True         | True          | Covered          | Included          |
+| African_Americans | True         | True          | Covered          | Included          |
++-------------------+--------------+---------------+------------------+-------------------+
+
++-------------------------------------------------------------------------------------------------------------------------+
+|                                                       EDGE METRICS                                                      |
++-------------+-----------------+-------------------+--------------+---------------+------------------+-------------------+
+| Edge        | Parent          | Child             | Edge Covered | Edge Included | Coverage Comment | Inclusion Comment |
++-------------+-----------------+-------------------+--------------+---------------+------------------+-------------------+
+| country     | Bacon_Explosion | United_States     | True         | True          | Covered          | Included          |
+| leader      | United_States   | John_Roberts      | True         | True          | Covered          | Included          |
+| ethnicGroup | United_States   | African_Americans | True         | True          | Covered          | Included          |
++-------------+-----------------+-------------------+--------------+---------------+------------------+-------------------+
+
++-----------------------------------------------------------------------------------------------+
+|                                       GENERATED SEMENTS                                       |
++---------------+-------------------------------------------------------------------------------+
+| Version       | SEMENT                                                                        |
++---------------+-------------------------------------------------------------------------------+
+| Original      | [ TOP: h669                                                                   |
+|               |   INDEX: e667 [ e TENSE: tensed ]                                             |
+|               |   RELS: < [ _located_a_1 LBL: h669 ARG0: e667 ARG1: u668 ]                    |
+|               |           [ explicit_or_proper_q LBL: h673 ARG0: x670 RSTR: h671 BODY: h672 ] |
+|               |           [ named LBL: h612 ARG0: x611 CARG: "Bacon Explosion" ] >            |
+|               |   HCONS: < h671 qeq h612 >                                                    |
+|               |   EQS: < x670 eq x611 h669 eq h674 u668 eq x670 > ]                           |
++---------------+-------------------------------------------------------------------------------+
+| EQs Collapsed | [ TOP: h669                                                                   |
+|               |   INDEX: e667 [ e TENSE: tensed ]                                             |
+|               |   RELS: < [ _located_a_1 LBL: h669 ARG0: e667 ARG1: x611 ]                    |
+|               |           [ explicit_or_proper_q LBL: h673 ARG0: x611 RSTR: h671 BODY: h672 ] |
+|               |           [ named LBL: h612 ARG0: x611 CARG: "Bacon Explosion" ] >            |
+|               |   HCONS: < h671 qeq h612 > ]                                                  |
++---------------+-------------------------------------------------------------------------------+
+| Prepped       | [ TOP: h675                                                                   |
+|               |   INDEX: e667 [ e TENSE: tensed ]                                             |
+|               |   RELS: < [ _located_a_1 LBL: h669 ARG0: e667 ARG1: x611 ]                    |
+|               |           [ explicit_or_proper_q LBL: h673 ARG0: x611 RSTR: h671 BODY: h672 ] |
+|               |           [ named LBL: h612 ARG0: x611 CARG: "Bacon Explosion" ] >            |
+|               |   HCONS: < h671 qeq h612 h675 qeq h669 > ]                                    |
++---------------+-------------------------------------------------------------------------------+
+
++-------------------------------------------------------------------------------------------+
+|                                        NODE SEMENTS                                       |
++-------------------+-----------------------------------------------------------------------+
+| Node              | Generated SEMENT                                                      |
++-------------------+-----------------------------------------------------------------------+
+| Bacon_Explosion   | [ TOP: h612                                                           |
+|                   |   INDEX: x611                                                         |
+|                   |   RELS: < [ named LBL: h612 ARG0: x611 CARG: "Bacon Explosion" ] > ]  |
++-------------------+-----------------------------------------------------------------------+
+| United_States     | [ TOP: h614                                                           |
+|                   |   INDEX: x613 [ x NUM: pl ]                                           |
+|                   |   RELS: < [ named_pl LBL: h614 ARG0: x613 CARG: "United States" ] > ] |
++-------------------+-----------------------------------------------------------------------+
+| John_Roberts      | [ TOP: h616                                                           |
+|                   |   INDEX: x615                                                         |
+|                   |   RELS: < [ named LBL: h616 ARG0: x615 CARG: "John Roberts" ] > ]     |
++-------------------+-----------------------------------------------------------------------+
+| African_Americans | [ TOP: h643                                                           |
+|                   |   INDEX: x642 [ x NUM: pl ]                                           |
+|                   |   RELS: < [ _african_a_1 LBL: h641 ARG0: e639 ARG1: u640 ]            |
+|                   |           [ _american_n_1 LBL: h643 ARG0: x642 ] >                    |
+|                   |   EQS: < h641 eq h643 u640 eq x642 > ]                                |
++-------------------+-----------------------------------------------------------------------+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+|                                                             EDGE SEMENTS                                                             |
++-------------+-----------------+-------------------+----------------------------------------------------------------------------------+
+| Edge        | Parent          | Child             | Generated SEMENT                                                                 |
++-------------+-----------------+-------------------+----------------------------------------------------------------------------------+
+| country     | Bacon_Explosion | United_States     | [ TOP: h669                                                                      |
+|             |                 |                   |   INDEX: e667 [ e TENSE: tensed ]                                                |
+|             |                 |                   |   RELS: < [ _located_a_1 LBL: h669 ARG0: e667 ARG1: u668 ]                       |
+|             |                 |                   |           [ explicit_or_proper_q LBL: h673 ARG0: x670 RSTR: h671 BODY: h672 ]    |
+|             |                 |                   |           [ named LBL: h612 ARG0: x611 CARG: "Bacon Explosion" ] >               |
+|             |                 |                   |   HCONS: < h671 qeq h612 >                                                       |
+|             |                 |                   |   EQS: < x670 eq x611 h669 eq h674 u668 eq x670 > ]                              |
++-------------+-----------------+-------------------+----------------------------------------------------------------------------------+
+| leader      | United_States   | John_Roberts      | [ TOP: h628                                                                      |
+|             |                 |                   |   INDEX: e625 [ e SF: prop TENSE: tensed ]                                       |
+|             |                 |                   |   RELS: < [ _be_v_id LBL: h628 ARG0: e625 ARG1: p626 ARG2: i627 ]                |
+|             |                 |                   |           [ explicit_or_proper_q LBL: h637 ARG0: x634 RSTR: h635 BODY: h636 ]    |
+|             |                 |                   |           [ named LBL: h616 ARG0: x615 CARG: "John Roberts" ]                    |
+|             |                 |                   |           [ def_udef_a_q LBL: h632 ARG0: x629 RSTR: h630 BODY: h631 ]            |
+|             |                 |                   |           [ _leader_n_of LBL: h619 ARG0: x617 ARG1: i618 ]                       |
+|             |                 |                   |           [ explicit_or_proper_q LBL: h623 ARG0: x620 RSTR: h621 BODY: h622 ]    |
+|             |                 |                   |           [ named_pl LBL: h614 ARG0: x613 [ x NUM: pl ] CARG: "United States" ]  |
+|             |                 |                   | >                                                                                |
+|             |                 |                   |   HCONS: < h635 qeq h616 h621 qeq h614 h630 qeq h619 >                           |
+|             |                 |                   |   EQS: < x634 eq x615 h628 eq h638 i627 eq x634 x620 eq x613 h619 eq h624 i618   |
+|             |                 |                   | eq x620 x629 eq x617 h628 eq h633 p626 eq x629 > ]                               |
++-------------+-----------------+-------------------+----------------------------------------------------------------------------------+
+| ethnicGroup | United_States   | African_Americans | [ TOP: h656                                                                      |
+|             |                 |                   |   INDEX: e653 [ e SF: prop TENSE: tensed ]                                       |
+|             |                 |                   |   RELS: < [ _be_v_id LBL: h656 ARG0: e653 ARG1: p654 ARG2: i655 ]                |
+|             |                 |                   |           [ def_udef_a_q LBL: h665 ARG0: x662 RSTR: h663 BODY: h664 ]            |
+|             |                 |                   |           [ _in_p_loc LBL: h647 ARG0: e644 ARG1: u645 ARG2: u646 ]               |
+|             |                 |                   |           [ _be_v_id LBL: h628 ARG0: e625 [ e SF: prop TENSE: tensed ] ARG1:     |
+|             |                 |                   | p626 ARG2: i627 ]                                                                |
+|             |                 |                   |           [ explicit_or_proper_q LBL: h637 ARG0: x634 RSTR: h635 BODY: h636 ]    |
+|             |                 |                   |           [ named LBL: h616 ARG0: x615 CARG: "John Roberts" ]                    |
+|             |                 |                   |           [ def_udef_a_q LBL: h632 ARG0: x629 RSTR: h630 BODY: h631 ]            |
+|             |                 |                   |           [ _leader_n_of LBL: h619 ARG0: x617 ARG1: i618 ]                       |
+|             |                 |                   |           [ explicit_or_proper_q LBL: h623 ARG0: x620 RSTR: h621 BODY: h622 ]    |
+|             |                 |                   |           [ named_pl LBL: h614 ARG0: x613 [ x NUM: pl ] CARG: "United States" ]  |
+|             |                 |                   |           [ _ethnic_a_1 LBL: h650 ARG0: e648 ARG1: u649 ]                        |
+|             |                 |                   |           [ _group_n_of LBL: h652 ARG0: x651 ]                                   |
+|             |                 |                   |           [ def_udef_a_q LBL: h660 ARG0: x657 RSTR: h658 BODY: h659 ]            |
+|             |                 |                   |           [ _african_a_1 LBL: h641 ARG0: e639 ARG1: u640 ]                       |
+|             |                 |                   |           [ _american_n_1 LBL: h643 ARG0: x642 [ x NUM: pl ] ] >                 |
+|             |                 |                   |   HCONS: < h635 qeq h616 h621 qeq h614 h630 qeq h619 h663 qeq h652 h658 qeq h643 |
+|             |                 |                   | >                                                                                |
+|             |                 |                   |   EQS: < x634 eq x615 h628 eq h638 i627 eq x634 x620 eq x613 h619 eq h624 i618   |
+|             |                 |                   | eq x620 x629 eq x617 h628 eq h633 p626 eq x629 h647 eq h628 u646 eq e625 h650 eq |
+|             |                 |                   | h652 u649 eq x651 h647 eq h652 u645 eq x651 x662 eq x651 h656 eq h666 i655 eq    |
+|             |                 |                   | x662 h641 eq h643 u640 eq x642 x657 eq x642 h656 eq h661 p654 eq x657 > ]        |
++-------------+-----------------+-------------------+----------------------------------------------------------------------------------+
+
++------------------------+
+| GENERATED ENGLISH TEXT |
++---+--------------------+
+| # | Generated Text     |
++---+--------------------+
++---+--------------------+
+

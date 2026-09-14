@@ -1,0 +1,209 @@
+GRAPH NAME: WebNLG_dev_3triples_Artist_Artist_Id25_7
+
++------------------------------------------------------+
+|                  EVALUATION METRICS                  |
++---------------------------------+--------------------+
+| Metric                          | Value              |
++---------------------------------+--------------------+
+| Generated Text Results          | 0                  |
+| Generated Gold Results          | 0                  |
+| Generated Gold Results Coverage | 0.0                |
++---------------------------------+--------------------+
+| Node Count                      | 4                  |
+| Nodes Covered                   | 3                  |
+| Nodes Included                  | 3                  |
++---------------------------------+--------------------+
+| Node Coverage                   | 0.75               |
+| Node Inclusion                  | 0.75               |
++---------------------------------+--------------------+
+| Edge Count                      | 3                  |
+| Edges Covered                   | 2                  |
+| Edges Included                  | 2                  |
++---------------------------------+--------------------+
+| Edge Coverage                   | 0.6666666666666666 |
+| Edge Inclusion                  | 0.6666666666666666 |
++---------------------------------+--------------------+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                     GOLD OUTPUTS                                                                     |
++-----------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                             | Generated? |
++-----------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Allen Forrest was born in Fort Campbell, KY and was raised in Dothan, AL. He was originally a solo singer and now plays acoustic music. | False      |
+| Allen Forrest was born in Fort Campbell, Kentucky but was raised in Dothan, Alabama. He plays acoustic music and was a solo singer.     | False      |
+| Allen Forrest, a solo singer who performs acoustic music, was born in Fort Campbell, KY and was raised in the town of Dothan, AL.       | False      |
++-----------------------------------------------------------------------------------------------------------------------------------------+------------+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                       NODE METRICS                                                                                       |
++-------------------------------------------+--------------+---------------+---------------------------------------------------------------------------+-----------------------------------+
+| Node                                      | Node Covered | Node Included | Coverage Comment                                                          | Inclusion Comment                 |
++-------------------------------------------+--------------+---------------+---------------------------------------------------------------------------+-----------------------------------+
+| Allen_Forrest                             | True         | True          | Covered                                                                   | Included                          |
+| Acoustic_music                            | True         | True          | Covered                                                                   | Included                          |
+| "Fort Campbell, KY, raised in Dothan, AL" | False        | False         | '"Fort Campbell, KY, raised in Dothan, AL"' not in lexicon's node entries | No SEMENT generated for this node |
+| "solo_singer"                             | True         | True          | Covered                                                                   | Included                          |
++-------------------------------------------+--------------+---------------+---------------------------------------------------------------------------+-----------------------------------+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                   EDGE METRICS                                                                                  |
++------------+---------------+-------------------------------------------+--------------+---------------+-------------------------------------+-----------------------------------+
+| Edge       | Parent        | Child                                     | Edge Covered | Edge Included | Coverage Comment                    | Inclusion Comment                 |
++------------+---------------+-------------------------------------------+--------------+---------------+-------------------------------------+-----------------------------------+
+| genre      | Allen_Forrest | Acoustic_music                            | True         | True          | Covered                             | Included                          |
+| birthPlace | Allen_Forrest | "Fort Campbell, KY, raised in Dothan, AL" | False        | False         | child of 'birthPlace' has no SEMENT | No SEMENT generated for this edge |
+| background | Allen_Forrest | "solo_singer"                             | True         | True          | Covered                             | Included                          |
++------------+---------------+-------------------------------------------+--------------+---------------+-------------------------------------+-----------------------------------+
+
++--------------------------------------------------------------------------------------------------+
+|                                        GENERATED SEMENTS                                         |
++---------------+----------------------------------------------------------------------------------+
+| Version       | SEMENT                                                                           |
++---------------+----------------------------------------------------------------------------------+
+| Original      | [ TOP: h521                                                                      |
+|               |   INDEX: e518 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _have_v_1 LBL: h521 ARG0: e518 ARG1: i519 ARG2: i520 ]               |
+|               |           [ def_udef_a_q LBL: h536 ARG0: x533 RSTR: h534 BODY: h535 ]            |
+|               |           [ _as_p LBL: h525 ARG0: e522 ARG1: u523 ARG2: u524 ]                   |
+|               |           [ def_udef_a_q LBL: h531 ARG0: x528 RSTR: h529 BODY: h530 ]            |
+|               |           [ compound LBL: h512 ARG0: e509 ARG1: u510 ARG2: u511 ]                |
+|               |           [ existential_q LBL: h516 ARG0: x513 RSTR: h514 BODY: h515 ]           |
+|               |           [ _solo_n_1 LBL: h508 ARG0: x507 [ x NUM: sg ] ]                       |
+|               |           [ _singer_n_1 LBL: h506 ARG0: x505 ]                                   |
+|               |           [ _background_n_1 LBL: h527 ARG0: x526 ]                               |
+|               |           [ _perform_v_1 LBL: h494 ARG0: e491 [ e TENSE: tensed ] ARG1: i492     |
+|               | ARG2: i493 ]                                                                     |
+|               |           [ def_udef_a_q LBL: h503 ARG0: x500 RSTR: h501 BODY: h502 ]            |
+|               |           [ _acoustic_a_1 LBL: h488 ARG0: e486 ARG1: u487 ]                      |
+|               |           [ _music_n_1 LBL: h490 ARG0: x489 ]                                    |
+|               |           [ explicit_or_proper_q LBL: h498 ARG0: x495 RSTR: h496 BODY: h497 ]    |
+|               |           [ named LBL: h485 ARG0: x484 CARG: "Allen Forrest" ] >                 |
+|               |   HCONS: < h514 qeq h508 h529 qeq h506 h534 qeq h527 h501 qeq h490 h496 qeq h485 |
+|               | >                                                                                |
+|               |   EQS: < x513 eq x507 h512 eq h517 u511 eq x513 h512 eq h506 u510 eq x505 x528   |
+|               | eq x505 h525 eq h532 u524 eq x528 h525 eq h527 u523 eq x526 x533 eq x526 h521 eq |
+|               | h537 i520 eq x533 h488 eq h490 u487 eq x489 x500 eq x489 h494 eq h504 i493 eq    |
+|               | x500 x495 eq x484 h494 eq h499 i492 eq x495 h521 eq h494 i519 eq e491 > ]        |
++---------------+----------------------------------------------------------------------------------+
+| EQs Collapsed | [ TOP: h494                                                                      |
+|               |   INDEX: e518 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _have_v_1 LBL: h494 ARG0: e518 ARG1: e491 [ e TENSE: tensed ] ARG2:  |
+|               | x526 ]                                                                           |
+|               |           [ def_udef_a_q LBL: h536 ARG0: x526 RSTR: h534 BODY: h535 ]            |
+|               |           [ _as_p LBL: h525 ARG0: e522 ARG1: x526 ARG2: x505 ]                   |
+|               |           [ def_udef_a_q LBL: h531 ARG0: x505 RSTR: h529 BODY: h530 ]            |
+|               |           [ compound LBL: h506 ARG0: e509 ARG1: x505 ARG2: x507 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h516 ARG0: x507 RSTR: h514 BODY: h515 ]           |
+|               |           [ _solo_n_1 LBL: h508 ARG0: x507 ]                                     |
+|               |           [ _singer_n_1 LBL: h506 ARG0: x505 ]                                   |
+|               |           [ _background_n_1 LBL: h525 ARG0: x526 ]                               |
+|               |           [ _perform_v_1 LBL: h494 ARG0: e491 ARG1: x484 ARG2: x489 ]            |
+|               |           [ def_udef_a_q LBL: h503 ARG0: x489 RSTR: h501 BODY: h502 ]            |
+|               |           [ _acoustic_a_1 LBL: h488 ARG0: e486 ARG1: x489 ]                      |
+|               |           [ _music_n_1 LBL: h488 ARG0: x489 ]                                    |
+|               |           [ explicit_or_proper_q LBL: h498 ARG0: x484 RSTR: h496 BODY: h497 ]    |
+|               |           [ named LBL: h485 ARG0: x484 CARG: "Allen Forrest" ] >                 |
+|               |   HCONS: < h514 qeq h508 h529 qeq h506 h534 qeq h525 h501 qeq h488 h496 qeq h485 |
+|               | > ]                                                                              |
++---------------+----------------------------------------------------------------------------------+
+| Prepped       | [ TOP: h538                                                                      |
+|               |   INDEX: e518 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _have_v_1 LBL: h494 ARG0: e518 ARG1: e491 [ e TENSE: tensed ] ARG2:  |
+|               | x526 ]                                                                           |
+|               |           [ def_udef_a_q LBL: h536 ARG0: x526 RSTR: h534 BODY: h535 ]            |
+|               |           [ _as_p LBL: h525 ARG0: e522 ARG1: x526 ARG2: x505 ]                   |
+|               |           [ def_udef_a_q LBL: h531 ARG0: x505 RSTR: h529 BODY: h530 ]            |
+|               |           [ compound LBL: h506 ARG0: e509 ARG1: x505 ARG2: x507 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h516 ARG0: x507 RSTR: h514 BODY: h515 ]           |
+|               |           [ _solo_n_1 LBL: h508 ARG0: x507 ]                                     |
+|               |           [ _singer_n_1 LBL: h506 ARG0: x505 ]                                   |
+|               |           [ _background_n_1 LBL: h525 ARG0: x526 ]                               |
+|               |           [ _perform_v_1 LBL: h494 ARG0: e491 ARG1: x484 ARG2: x489 ]            |
+|               |           [ def_udef_a_q LBL: h503 ARG0: x489 RSTR: h501 BODY: h502 ]            |
+|               |           [ _acoustic_a_1 LBL: h488 ARG0: e486 ARG1: x489 ]                      |
+|               |           [ _music_n_1 LBL: h488 ARG0: x489 ]                                    |
+|               |           [ explicit_or_proper_q LBL: h498 ARG0: x484 RSTR: h496 BODY: h497 ]    |
+|               |           [ named LBL: h485 ARG0: x484 CARG: "Allen Forrest" ] >                 |
+|               |   HCONS: < h514 qeq h508 h529 qeq h506 h534 qeq h525 h501 qeq h488 h496 qeq h485 |
+|               | h538 qeq h494 > ]                                                                |
++---------------+----------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------------------+
+|                                                        NODE SEMENTS                                                       |
++-------------------------------------------+-------------------------------------------------------------------------------+
+| Node                                      | Generated SEMENT                                                              |
++-------------------------------------------+-------------------------------------------------------------------------------+
+| Allen_Forrest                             | [ TOP: h485                                                                   |
+|                                           |   INDEX: x484                                                                 |
+|                                           |   RELS: < [ named LBL: h485 ARG0: x484 CARG: "Allen Forrest" ] > ]            |
++-------------------------------------------+-------------------------------------------------------------------------------+
+| Acoustic_music                            | [ TOP: h490                                                                   |
+|                                           |   INDEX: x489                                                                 |
+|                                           |   RELS: < [ _acoustic_a_1 LBL: h488 ARG0: e486 ARG1: u487 ]                   |
+|                                           |           [ _music_n_1 LBL: h490 ARG0: x489 ] >                               |
+|                                           |   EQS: < h488 eq h490 u487 eq x489 > ]                                        |
++-------------------------------------------+-------------------------------------------------------------------------------+
+| "Fort Campbell, KY, raised in Dothan, AL" | None                                                                          |
++-------------------------------------------+-------------------------------------------------------------------------------+
+| "solo_singer"                             | [ TOP: h506                                                                   |
+|                                           |   INDEX: x505                                                                 |
+|                                           |   RELS: < [ compound LBL: h512 ARG0: e509 ARG1: u510 ARG2: u511 ]             |
+|                                           |           [ existential_q LBL: h516 ARG0: x513 RSTR: h514 BODY: h515 ]        |
+|                                           |           [ _solo_n_1 LBL: h508 ARG0: x507 [ x NUM: sg ] ]                    |
+|                                           |           [ _singer_n_1 LBL: h506 ARG0: x505 ] >                              |
+|                                           |   HCONS: < h514 qeq h508 >                                                    |
+|                                           |   EQS: < x513 eq x507 h512 eq h517 u511 eq x513 h512 eq h506 u510 eq x505 > ] |
++-------------------------------------------+-------------------------------------------------------------------------------+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                        EDGE SEMENTS                                                                       |
++------------+---------------+-------------------------------------------+----------------------------------------------------------------------------------+
+| Edge       | Parent        | Child                                     | Generated SEMENT                                                                 |
++------------+---------------+-------------------------------------------+----------------------------------------------------------------------------------+
+| genre      | Allen_Forrest | Acoustic_music                            | [ TOP: h494                                                                      |
+|            |               |                                           |   INDEX: e491 [ e TENSE: tensed ]                                                |
+|            |               |                                           |   RELS: < [ _perform_v_1 LBL: h494 ARG0: e491 ARG1: i492 ARG2: i493 ]            |
+|            |               |                                           |           [ def_udef_a_q LBL: h503 ARG0: x500 RSTR: h501 BODY: h502 ]            |
+|            |               |                                           |           [ _acoustic_a_1 LBL: h488 ARG0: e486 ARG1: u487 ]                      |
+|            |               |                                           |           [ _music_n_1 LBL: h490 ARG0: x489 ]                                    |
+|            |               |                                           |           [ explicit_or_proper_q LBL: h498 ARG0: x495 RSTR: h496 BODY: h497 ]    |
+|            |               |                                           |           [ named LBL: h485 ARG0: x484 CARG: "Allen Forrest" ] >                 |
+|            |               |                                           |   HCONS: < h501 qeq h490 h496 qeq h485 >                                         |
+|            |               |                                           |   EQS: < h488 eq h490 u487 eq x489 x500 eq x489 h494 eq h504 i493 eq x500 x495   |
+|            |               |                                           | eq x484 h494 eq h499 i492 eq x495 > ]                                            |
++------------+---------------+-------------------------------------------+----------------------------------------------------------------------------------+
+| birthPlace | Allen_Forrest | "Fort Campbell, KY, raised in Dothan, AL" | None                                                                             |
++------------+---------------+-------------------------------------------+----------------------------------------------------------------------------------+
+| background | Allen_Forrest | "solo_singer"                             | [ TOP: h521                                                                      |
+|            |               |                                           |   INDEX: e518 [ e TENSE: tensed ]                                                |
+|            |               |                                           |   RELS: < [ _have_v_1 LBL: h521 ARG0: e518 ARG1: i519 ARG2: i520 ]               |
+|            |               |                                           |           [ def_udef_a_q LBL: h536 ARG0: x533 RSTR: h534 BODY: h535 ]            |
+|            |               |                                           |           [ _as_p LBL: h525 ARG0: e522 ARG1: u523 ARG2: u524 ]                   |
+|            |               |                                           |           [ def_udef_a_q LBL: h531 ARG0: x528 RSTR: h529 BODY: h530 ]            |
+|            |               |                                           |           [ compound LBL: h512 ARG0: e509 ARG1: u510 ARG2: u511 ]                |
+|            |               |                                           |           [ existential_q LBL: h516 ARG0: x513 RSTR: h514 BODY: h515 ]           |
+|            |               |                                           |           [ _solo_n_1 LBL: h508 ARG0: x507 [ x NUM: sg ] ]                       |
+|            |               |                                           |           [ _singer_n_1 LBL: h506 ARG0: x505 ]                                   |
+|            |               |                                           |           [ _background_n_1 LBL: h527 ARG0: x526 ]                               |
+|            |               |                                           |           [ _perform_v_1 LBL: h494 ARG0: e491 [ e TENSE: tensed ] ARG1: i492     |
+|            |               |                                           | ARG2: i493 ]                                                                     |
+|            |               |                                           |           [ def_udef_a_q LBL: h503 ARG0: x500 RSTR: h501 BODY: h502 ]            |
+|            |               |                                           |           [ _acoustic_a_1 LBL: h488 ARG0: e486 ARG1: u487 ]                      |
+|            |               |                                           |           [ _music_n_1 LBL: h490 ARG0: x489 ]                                    |
+|            |               |                                           |           [ explicit_or_proper_q LBL: h498 ARG0: x495 RSTR: h496 BODY: h497 ]    |
+|            |               |                                           |           [ named LBL: h485 ARG0: x484 CARG: "Allen Forrest" ] >                 |
+|            |               |                                           |   HCONS: < h514 qeq h508 h529 qeq h506 h534 qeq h527 h501 qeq h490 h496 qeq h485 |
+|            |               |                                           | >                                                                                |
+|            |               |                                           |   EQS: < x513 eq x507 h512 eq h517 u511 eq x513 h512 eq h506 u510 eq x505 x528   |
+|            |               |                                           | eq x505 h525 eq h532 u524 eq x528 h525 eq h527 u523 eq x526 x533 eq x526 h521 eq |
+|            |               |                                           | h537 i520 eq x533 h488 eq h490 u487 eq x489 x500 eq x489 h494 eq h504 i493 eq    |
+|            |               |                                           | x500 x495 eq x484 h494 eq h499 i492 eq x495 h521 eq h494 i519 eq e491 > ]        |
++------------+---------------+-------------------------------------------+----------------------------------------------------------------------------------+
+
++------------------------+
+| GENERATED ENGLISH TEXT |
++---+--------------------+
+| # | Generated Text     |
++---+--------------------+
++---+--------------------+
+

@@ -1,0 +1,257 @@
+GRAPH NAME: WebNLG_dev_3triples_Astronaut_Astronaut_Id2_1
+
++-----------------------------------------+
+|            EVALUATION METRICS           |
++---------------------------------+-------+
+| Metric                          | Value |
++---------------------------------+-------+
+| Generated Text Results          | 0     |
+| Generated Gold Results          | 0     |
+| Generated Gold Results Coverage | 0.0   |
++---------------------------------+-------+
+| Node Count                      | 4     |
+| Nodes Covered                   | 4     |
+| Nodes Included                  | 4     |
++---------------------------------+-------+
+| Node Coverage                   | 1.0   |
+| Node Inclusion                  | 1.0   |
++---------------------------------+-------+
+| Edge Count                      | 3     |
+| Edges Covered                   | 3     |
+| Edges Included                  | 3     |
++---------------------------------+-------+
+| Edge Coverage                   | 1.0   |
+| Edge Inclusion                  | 1.0   |
++---------------------------------+-------+
+
++--------------------------------------------------------------------------------------------------------------+
+|                                                 GOLD OUTPUTS                                                 |
++-------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                     | Generated? |
++-------------------------------------------------------------------------------------------------+------------+
+| Alan Shepard died on the 21st of July, 1998 in California (whose Senator was Dianne Feinstein). | False      |
+| Dianne Feinstein is a senator in California where Alan Shepard died on July 21 1998.            | False      |
++-------------------------------------------------------------------------------------------------+------------+
+
++----------------------------------------------------------------------------------------+
+|                                      NODE METRICS                                      |
++------------------+--------------+---------------+------------------+-------------------+
+| Node             | Node Covered | Node Included | Coverage Comment | Inclusion Comment |
++------------------+--------------+---------------+------------------+-------------------+
+| Alan_Shepard     | True         | True          | Covered          | Included          |
+| "1998-07-21"     | True         | True          | Covered          | Included          |
+| California       | True         | True          | Covered          | Included          |
+| Dianne_Feinstein | True         | True          | Covered          | Included          |
++------------------+--------------+---------------+------------------+-------------------+
+
++--------------------------------------------------------------------------------------------------------------------+
+|                                                    EDGE METRICS                                                    |
++------------+--------------+------------------+--------------+---------------+------------------+-------------------+
+| Edge       | Parent       | Child            | Edge Covered | Edge Included | Coverage Comment | Inclusion Comment |
++------------+--------------+------------------+--------------+---------------+------------------+-------------------+
+| deathDate  | Alan_Shepard | "1998-07-21"     | True         | True          | Covered          | Included          |
+| deathPlace | Alan_Shepard | California       | True         | True          | Covered          | Included          |
+| senators   | California   | Dianne_Feinstein | True         | True          | Covered          | Included          |
++------------+--------------+------------------+--------------+---------------+------------------+-------------------+
+
++--------------------------------------------------------------------------------------------------+
+|                                        GENERATED SEMENTS                                         |
++---------------+----------------------------------------------------------------------------------+
+| Version       | SEMENT                                                                           |
++---------------+----------------------------------------------------------------------------------+
+| Original      | [ TOP: h138                                                                      |
+|               |   INDEX: e136 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_state LBL: h135 ARG0: e132 ARG1: u133 ARG2: u134 ]             |
+|               |           [ _be_v_id LBL: h121 ARG0: e118 [ e SF: prop TENSE: tensed ] ARG1:     |
+|               | p119 ARG2: i120 ]                                                                |
+|               |           [ def_udef_a_q LBL: h130 ARG0: x127 RSTR: h128 BODY: h129 ]            |
+|               |           [ _from_p LBL: h110 ARG0: e107 ARG1: u108 ARG2: u109 ]                 |
+|               |           [ explicit_or_proper_q LBL: h116 ARG0: x113 RSTR: h114 BODY: h115 ]    |
+|               |           [ named LBL: h104 ARG0: x103 CARG: "California" ]                      |
+|               |           [ _senator_n_1 LBL: h112 ARG0: x111 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h125 ARG0: x122 RSTR: h123 BODY: h124 ]    |
+|               |           [ named LBL: h106 ARG0: x105 CARG: "Dianne Feinstein" ]                |
+|               |           [ _die_v_1 LBL: h138 ARG0: e136 ARG1: i137 ]                           |
+|               |           [ _on_p_temp LBL: h89 ARG0: e86 ARG1: u87 ARG2: i88 ]                  |
+|               |           [ def_udef_a_q LBL: h93 ARG0: x90 RSTR: h91 BODY: h92 ]                |
+|               |           [ of_p LBL: h80 ARG0: e77 ARG1: x78 ARG2: x79 ]                        |
+|               |           [ def_implicit_q LBL: h84 ARG0: x81 RSTR: h82 BODY: h83 ]              |
+|               |           [ mofy LBL: h69 ARG0: x67 [ x NUM: sg ] ARG1: i68 CARG: "Jul" ]        |
+|               |           [ dofm LBL: h66 ARG0: x64 ARG1: i65 CARG: "21st" ]                     |
+|               |           [ proper_q LBL: h75 ARG0: x72 RSTR: h73 BODY: h74 ]                    |
+|               |           [ yofc LBL: h71 ARG0: x70 CARG: "1998" ]                               |
+|               |           [ _die_v_1 LBL: h97 ARG0: e95 [ e TENSE: tensed ] ARG1: i96 ]          |
+|               |           [ explicit_or_proper_q LBL: h101 ARG0: x98 RSTR: h99 BODY: h100 ]      |
+|               |           [ named LBL: h63 ARG0: x62 CARG: "Alan Shepard" ] >                    |
+|               |   HCONS: < h114 qeq h104 h128 qeq h112 h123 qeq h106 h82 qeq h69 h73 qeq h71 h91 |
+|               | qeq h66 h99 qeq h63 >                                                            |
+|               |   EQS: < x113 eq x103 h110 eq h117 u109 eq x113 h110 eq h112 u108 eq x111 x127   |
+|               | eq x111 h121 eq h131 i120 eq x127 x122 eq x105 h121 eq h126 p119 eq x122 h135 eq |
+|               | h121 u134 eq e118 x81 eq x67 h80 eq h85 x79 eq x81 x72 eq x70 h66 eq h76 i65 eq  |
+|               | x72 h80 eq h66 x78 eq x64 x90 eq x64 h89 eq h94 i88 eq x90 x98 eq x62 h97 eq     |
+|               | h102 i96 eq x98 h89 eq h97 u87 eq e95 h138 eq h97 i137 eq e95 h135 eq h138 u133  |
+|               | eq e136 > ]                                                                      |
++---------------+----------------------------------------------------------------------------------+
+| EQs Collapsed | [ TOP: h102                                                                      |
+|               |   INDEX: e136 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_state LBL: h102 ARG0: e132 ARG1: e136 ARG2: e118 [ e SF: prop  |
+|               | TENSE: tensed ] ]                                                                |
+|               |           [ _be_v_id LBL: h102 ARG0: e118 ARG1: x105 ARG2: x111 ]                |
+|               |           [ def_udef_a_q LBL: h130 ARG0: x111 RSTR: h128 BODY: h129 ]            |
+|               |           [ _from_p LBL: h110 ARG0: e107 ARG1: x111 ARG2: x103 ]                 |
+|               |           [ explicit_or_proper_q LBL: h116 ARG0: x103 RSTR: h114 BODY: h115 ]    |
+|               |           [ named LBL: h104 ARG0: x103 CARG: "California" ]                      |
+|               |           [ _senator_n_1 LBL: h110 ARG0: x111 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h125 ARG0: x105 RSTR: h123 BODY: h124 ]    |
+|               |           [ named LBL: h106 ARG0: x105 CARG: "Dianne Feinstein" ]                |
+|               |           [ _die_v_1 LBL: h102 ARG0: e136 ARG1: e95 [ e TENSE: tensed ] ]        |
+|               |           [ _on_p_temp LBL: h102 ARG0: e86 ARG1: e95 ARG2: x64 ]                 |
+|               |           [ def_udef_a_q LBL: h93 ARG0: x64 RSTR: h91 BODY: h92 ]                |
+|               |           [ of_p LBL: h66 ARG0: e77 ARG1: x64 ARG2: x67 [ x NUM: sg ] ]          |
+|               |           [ def_implicit_q LBL: h84 ARG0: x67 RSTR: h82 BODY: h83 ]              |
+|               |           [ mofy LBL: h69 ARG0: x67 ARG1: i68 CARG: "Jul" ]                      |
+|               |           [ dofm LBL: h66 ARG0: x64 ARG1: x70 CARG: "21st" ]                     |
+|               |           [ proper_q LBL: h75 ARG0: x70 RSTR: h73 BODY: h74 ]                    |
+|               |           [ yofc LBL: h71 ARG0: x70 CARG: "1998" ]                               |
+|               |           [ _die_v_1 LBL: h102 ARG0: e95 ARG1: x62 ]                             |
+|               |           [ explicit_or_proper_q LBL: h101 ARG0: x62 RSTR: h99 BODY: h100 ]      |
+|               |           [ named LBL: h63 ARG0: x62 CARG: "Alan Shepard" ] >                    |
+|               |   HCONS: < h114 qeq h104 h128 qeq h110 h123 qeq h106 h82 qeq h69 h73 qeq h71 h91 |
+|               | qeq h66 h99 qeq h63 > ]                                                          |
++---------------+----------------------------------------------------------------------------------+
+| Prepped       | [ TOP: h139                                                                      |
+|               |   INDEX: e136 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_state LBL: h102 ARG0: e132 ARG1: e136 ARG2: e118 [ e SF: prop  |
+|               | TENSE: tensed ] ]                                                                |
+|               |           [ _be_v_id LBL: h102 ARG0: e118 ARG1: x105 ARG2: x111 ]                |
+|               |           [ def_udef_a_q LBL: h130 ARG0: x111 RSTR: h128 BODY: h129 ]            |
+|               |           [ _from_p LBL: h110 ARG0: e107 ARG1: x111 ARG2: x103 ]                 |
+|               |           [ explicit_or_proper_q LBL: h116 ARG0: x103 RSTR: h114 BODY: h115 ]    |
+|               |           [ named LBL: h104 ARG0: x103 CARG: "California" ]                      |
+|               |           [ _senator_n_1 LBL: h110 ARG0: x111 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h125 ARG0: x105 RSTR: h123 BODY: h124 ]    |
+|               |           [ named LBL: h106 ARG0: x105 CARG: "Dianne Feinstein" ]                |
+|               |           [ _die_v_1 LBL: h102 ARG0: e136 ARG1: e95 [ e TENSE: tensed ] ]        |
+|               |           [ _on_p_temp LBL: h102 ARG0: e86 ARG1: e95 ARG2: x64 ]                 |
+|               |           [ def_udef_a_q LBL: h93 ARG0: x64 RSTR: h91 BODY: h92 ]                |
+|               |           [ of_p LBL: h66 ARG0: e77 ARG1: x64 ARG2: x67 [ x NUM: sg ] ]          |
+|               |           [ def_implicit_q LBL: h84 ARG0: x67 RSTR: h82 BODY: h83 ]              |
+|               |           [ mofy LBL: h69 ARG0: x67 ARG1: i68 CARG: "Jul" ]                      |
+|               |           [ dofm LBL: h66 ARG0: x64 ARG1: x70 CARG: "21st" ]                     |
+|               |           [ proper_q LBL: h75 ARG0: x70 RSTR: h73 BODY: h74 ]                    |
+|               |           [ yofc LBL: h71 ARG0: x70 CARG: "1998" ]                               |
+|               |           [ _die_v_1 LBL: h102 ARG0: e95 ARG1: x62 ]                             |
+|               |           [ explicit_or_proper_q LBL: h101 ARG0: x62 RSTR: h99 BODY: h100 ]      |
+|               |           [ named LBL: h63 ARG0: x62 CARG: "Alan Shepard" ] >                    |
+|               |   HCONS: < h114 qeq h104 h128 qeq h110 h123 qeq h106 h82 qeq h69 h73 qeq h71 h91 |
+|               | qeq h66 h99 qeq h63 h139 qeq h102 > ]                                            |
++---------------+----------------------------------------------------------------------------------+
+
++-----------------------------------------------------------------------------------------------------+
+|                                             NODE SEMENTS                                            |
++------------------+----------------------------------------------------------------------------------+
+| Node             | Generated SEMENT                                                                 |
++------------------+----------------------------------------------------------------------------------+
+| Alan_Shepard     | [ TOP: h63                                                                       |
+|                  |   INDEX: x62                                                                     |
+|                  |   RELS: < [ named LBL: h63 ARG0: x62 CARG: "Alan Shepard" ] > ]                  |
++------------------+----------------------------------------------------------------------------------+
+| "1998-07-21"     | [ TOP: h66                                                                       |
+|                  |   INDEX: x64                                                                     |
+|                  |   RELS: < [ of_p LBL: h80 ARG0: e77 ARG1: x78 ARG2: x79 ]                        |
+|                  |           [ def_implicit_q LBL: h84 ARG0: x81 RSTR: h82 BODY: h83 ]              |
+|                  |           [ mofy LBL: h69 ARG0: x67 [ x NUM: sg ] ARG1: i68 CARG: "Jul" ]        |
+|                  |           [ dofm LBL: h66 ARG0: x64 ARG1: i65 CARG: "21st" ]                     |
+|                  |           [ proper_q LBL: h75 ARG0: x72 RSTR: h73 BODY: h74 ]                    |
+|                  |           [ yofc LBL: h71 ARG0: x70 CARG: "1998" ] >                             |
+|                  |   HCONS: < h82 qeq h69 h73 qeq h71 >                                             |
+|                  |   EQS: < x81 eq x67 h80 eq h85 x79 eq x81 x72 eq x70 h66 eq h76 i65 eq x72 h80   |
+|                  | eq h66 x78 eq x64 > ]                                                            |
++------------------+----------------------------------------------------------------------------------+
+| California       | [ TOP: h104                                                                      |
+|                  |   INDEX: x103                                                                    |
+|                  |   RELS: < [ named LBL: h104 ARG0: x103 CARG: "California" ] > ]                  |
++------------------+----------------------------------------------------------------------------------+
+| Dianne_Feinstein | [ TOP: h106                                                                      |
+|                  |   INDEX: x105                                                                    |
+|                  |   RELS: < [ named LBL: h106 ARG0: x105 CARG: "Dianne Feinstein" ] > ]            |
++------------------+----------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+|                                                           EDGE SEMENTS                                                          |
++------------+--------------+------------------+----------------------------------------------------------------------------------+
+| Edge       | Parent       | Child            | Generated SEMENT                                                                 |
++------------+--------------+------------------+----------------------------------------------------------------------------------+
+| deathDate  | Alan_Shepard | "1998-07-21"     | [ TOP: h97                                                                       |
+|            |              |                  |   INDEX: e95 [ e TENSE: tensed ]                                                 |
+|            |              |                  |   RELS: < [ _on_p_temp LBL: h89 ARG0: e86 ARG1: u87 ARG2: i88 ]                  |
+|            |              |                  |           [ def_udef_a_q LBL: h93 ARG0: x90 RSTR: h91 BODY: h92 ]                |
+|            |              |                  |           [ of_p LBL: h80 ARG0: e77 ARG1: x78 ARG2: x79 ]                        |
+|            |              |                  |           [ def_implicit_q LBL: h84 ARG0: x81 RSTR: h82 BODY: h83 ]              |
+|            |              |                  |           [ mofy LBL: h69 ARG0: x67 [ x NUM: sg ] ARG1: i68 CARG: "Jul" ]        |
+|            |              |                  |           [ dofm LBL: h66 ARG0: x64 ARG1: i65 CARG: "21st" ]                     |
+|            |              |                  |           [ proper_q LBL: h75 ARG0: x72 RSTR: h73 BODY: h74 ]                    |
+|            |              |                  |           [ yofc LBL: h71 ARG0: x70 CARG: "1998" ]                               |
+|            |              |                  |           [ _die_v_1 LBL: h97 ARG0: e95 ARG1: i96 ]                              |
+|            |              |                  |           [ explicit_or_proper_q LBL: h101 ARG0: x98 RSTR: h99 BODY: h100 ]      |
+|            |              |                  |           [ named LBL: h63 ARG0: x62 CARG: "Alan Shepard" ] >                    |
+|            |              |                  |   HCONS: < h82 qeq h69 h73 qeq h71 h91 qeq h66 h99 qeq h63 >                     |
+|            |              |                  |   EQS: < x81 eq x67 h80 eq h85 x79 eq x81 x72 eq x70 h66 eq h76 i65 eq x72 h80   |
+|            |              |                  | eq h66 x78 eq x64 x90 eq x64 h89 eq h94 i88 eq x90 x98 eq x62 h97 eq h102 i96 eq |
+|            |              |                  | x98 h89 eq h97 u87 eq e95 > ]                                                    |
++------------+--------------+------------------+----------------------------------------------------------------------------------+
+| deathPlace | Alan_Shepard | California       | [ TOP: h138                                                                      |
+|            |              |                  |   INDEX: e136 [ e TENSE: tensed ]                                                |
+|            |              |                  |   RELS: < [ _in_p_state LBL: h135 ARG0: e132 ARG1: u133 ARG2: u134 ]             |
+|            |              |                  |           [ _be_v_id LBL: h121 ARG0: e118 [ e SF: prop TENSE: tensed ] ARG1:     |
+|            |              |                  | p119 ARG2: i120 ]                                                                |
+|            |              |                  |           [ def_udef_a_q LBL: h130 ARG0: x127 RSTR: h128 BODY: h129 ]            |
+|            |              |                  |           [ _from_p LBL: h110 ARG0: e107 ARG1: u108 ARG2: u109 ]                 |
+|            |              |                  |           [ explicit_or_proper_q LBL: h116 ARG0: x113 RSTR: h114 BODY: h115 ]    |
+|            |              |                  |           [ named LBL: h104 ARG0: x103 CARG: "California" ]                      |
+|            |              |                  |           [ _senator_n_1 LBL: h112 ARG0: x111 ]                                  |
+|            |              |                  |           [ explicit_or_proper_q LBL: h125 ARG0: x122 RSTR: h123 BODY: h124 ]    |
+|            |              |                  |           [ named LBL: h106 ARG0: x105 CARG: "Dianne Feinstein" ]                |
+|            |              |                  |           [ _die_v_1 LBL: h138 ARG0: e136 ARG1: i137 ]                           |
+|            |              |                  |           [ _on_p_temp LBL: h89 ARG0: e86 ARG1: u87 ARG2: i88 ]                  |
+|            |              |                  |           [ def_udef_a_q LBL: h93 ARG0: x90 RSTR: h91 BODY: h92 ]                |
+|            |              |                  |           [ of_p LBL: h80 ARG0: e77 ARG1: x78 ARG2: x79 ]                        |
+|            |              |                  |           [ def_implicit_q LBL: h84 ARG0: x81 RSTR: h82 BODY: h83 ]              |
+|            |              |                  |           [ mofy LBL: h69 ARG0: x67 [ x NUM: sg ] ARG1: i68 CARG: "Jul" ]        |
+|            |              |                  |           [ dofm LBL: h66 ARG0: x64 ARG1: i65 CARG: "21st" ]                     |
+|            |              |                  |           [ proper_q LBL: h75 ARG0: x72 RSTR: h73 BODY: h74 ]                    |
+|            |              |                  |           [ yofc LBL: h71 ARG0: x70 CARG: "1998" ]                               |
+|            |              |                  |           [ _die_v_1 LBL: h97 ARG0: e95 [ e TENSE: tensed ] ARG1: i96 ]          |
+|            |              |                  |           [ explicit_or_proper_q LBL: h101 ARG0: x98 RSTR: h99 BODY: h100 ]      |
+|            |              |                  |           [ named LBL: h63 ARG0: x62 CARG: "Alan Shepard" ] >                    |
+|            |              |                  |   HCONS: < h114 qeq h104 h128 qeq h112 h123 qeq h106 h82 qeq h69 h73 qeq h71 h91 |
+|            |              |                  | qeq h66 h99 qeq h63 >                                                            |
+|            |              |                  |   EQS: < x113 eq x103 h110 eq h117 u109 eq x113 h110 eq h112 u108 eq x111 x127   |
+|            |              |                  | eq x111 h121 eq h131 i120 eq x127 x122 eq x105 h121 eq h126 p119 eq x122 h135 eq |
+|            |              |                  | h121 u134 eq e118 x81 eq x67 h80 eq h85 x79 eq x81 x72 eq x70 h66 eq h76 i65 eq  |
+|            |              |                  | x72 h80 eq h66 x78 eq x64 x90 eq x64 h89 eq h94 i88 eq x90 x98 eq x62 h97 eq     |
+|            |              |                  | h102 i96 eq x98 h89 eq h97 u87 eq e95 h138 eq h97 i137 eq e95 h135 eq h138 u133  |
+|            |              |                  | eq e136 > ]                                                                      |
++------------+--------------+------------------+----------------------------------------------------------------------------------+
+| senators   | California   | Dianne_Feinstein | [ TOP: h121                                                                      |
+|            |              |                  |   INDEX: e118 [ e SF: prop TENSE: tensed ]                                       |
+|            |              |                  |   RELS: < [ _be_v_id LBL: h121 ARG0: e118 ARG1: p119 ARG2: i120 ]                |
+|            |              |                  |           [ def_udef_a_q LBL: h130 ARG0: x127 RSTR: h128 BODY: h129 ]            |
+|            |              |                  |           [ _from_p LBL: h110 ARG0: e107 ARG1: u108 ARG2: u109 ]                 |
+|            |              |                  |           [ explicit_or_proper_q LBL: h116 ARG0: x113 RSTR: h114 BODY: h115 ]    |
+|            |              |                  |           [ named LBL: h104 ARG0: x103 CARG: "California" ]                      |
+|            |              |                  |           [ _senator_n_1 LBL: h112 ARG0: x111 ]                                  |
+|            |              |                  |           [ explicit_or_proper_q LBL: h125 ARG0: x122 RSTR: h123 BODY: h124 ]    |
+|            |              |                  |           [ named LBL: h106 ARG0: x105 CARG: "Dianne Feinstein" ] >              |
+|            |              |                  |   HCONS: < h114 qeq h104 h128 qeq h112 h123 qeq h106 >                           |
+|            |              |                  |   EQS: < x113 eq x103 h110 eq h117 u109 eq x113 h110 eq h112 u108 eq x111 x127   |
+|            |              |                  | eq x111 h121 eq h131 i120 eq x127 x122 eq x105 h121 eq h126 p119 eq x122 > ]     |
++------------+--------------+------------------+----------------------------------------------------------------------------------+
+
++------------------------+
+| GENERATED ENGLISH TEXT |
++---+--------------------+
+| # | Generated Text     |
++---+--------------------+
++---+--------------------+
+
