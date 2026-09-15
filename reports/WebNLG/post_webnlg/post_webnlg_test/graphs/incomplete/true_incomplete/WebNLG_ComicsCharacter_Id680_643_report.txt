@@ -1,0 +1,152 @@
+GRAPH NAME: WebNLG_test_2triples_ComicsCharacter_Id680_274
+
++------------------------------------------------------+
+|                  EVALUATION METRICS                  |
++---------------------------------+--------------------+
+| Metric                          | Value              |
++---------------------------------+--------------------+
+| Generated Text Results          | 15                 |
+| Generated Gold Results          | 0                  |
+| Generated Gold Results Coverage | 0                  |
++---------------------------------+--------------------+
+| Node Count                      | 3                  |
+| Nodes Covered                   | 2                  |
+| Nodes Included                  | 2                  |
++---------------------------------+--------------------+
+| Node Coverage                   | 0.6666666666666666 |
+| Node Inclusion                  | 0.6666666666666666 |
++---------------------------------+--------------------+
+| Edge Count                      | 2                  |
+| Edges Covered                   | 1                  |
+| Edges Included                  | 1                  |
++---------------------------------+--------------------+
+| Edge Coverage                   | 0.5                |
+| Edge Inclusion                  | 0.5                |
++---------------------------------+--------------------+
+
++--------------------------+
+|       GOLD OUTPUTS       |
++-------------+------------+
+| Gold Output | Generated? |
++-------------+------------+
++-------------+------------+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+|                                                          NODE METRICS                                                          |
++--------------+--------------+---------------+----------------------------------------------+-----------------------------------+
+| Node         | Node Covered | Node Included | Coverage Comment                             | Inclusion Comment                 |
++--------------+--------------+---------------+----------------------------------------------+-----------------------------------+
+| Bananaman    | True         | True          | Covered                                      | Included                          |
+| "1986-04-15" | False        | False         | '"1986-04-15"' not in lexicon's node entries | No SEMENT generated for this node |
+| BBC          | True         | True          | Covered                                      | Included                          |
++--------------+--------------+---------------+----------------------------------------------+-----------------------------------+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                   EDGE METRICS                                                                   |
++---------------+-----------+--------------+--------------+---------------+------------------------------------+-----------------------------------+
+| Edge          | Parent    | Child        | Edge Covered | Edge Included | Coverage Comment                   | Inclusion Comment                 |
++---------------+-----------+--------------+--------------+---------------+------------------------------------+-----------------------------------+
+| lastAired     | Bananaman | "1986-04-15" | False        | False         | child of 'lastAired' has no SEMENT | No SEMENT generated for this edge |
+| broadcastedBy | Bananaman | BBC          | True         | True          | Covered                            | Included                          |
++---------------+-----------+--------------+--------------+---------------+------------------------------------+-----------------------------------+
+
++--------------------------------------------------------------------------------------------------+
+|                                        GENERATED SEMENTS                                         |
++---------------+----------------------------------------------------------------------------------+
+| Version       | SEMENT                                                                           |
++---------------+----------------------------------------------------------------------------------+
+| Original      | [ TOP: h3002                                                                     |
+|               |   INDEX: e2999 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _broadcast_v_to LBL: h3002 ARG0: e2999 ARG1: i3000 ARG2: i3001 ]     |
+|               |           [ explicit_or_proper_q LBL: h3011 ARG0: x3008 RSTR: h3009 BODY: h3010  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2996 ARG0: x2995 CARG: "Bananaman" ]                     |
+|               |           [ explicit_or_proper_q LBL: h3006 ARG0: x3003 RSTR: h3004 BODY: h3005  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2998 ARG0: x2997 CARG: "BBC" ] >                         |
+|               |   HCONS: < h3009 qeq h2996 h3004 qeq h2998 >                                     |
+|               |   EQS: < x3008 eq x2995 h3002 eq h3012 i3001 eq x3008 x3003 eq x2997 h3002 eq    |
+|               | h3007 i3000 eq x3003 > ]                                                         |
++---------------+----------------------------------------------------------------------------------+
+| EQs Collapsed | [ TOP: h3002                                                                     |
+|               |   INDEX: e2999 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _broadcast_v_to LBL: h3002 ARG0: e2999 ARG1: x2997 ARG2: x2995 ]     |
+|               |           [ explicit_or_proper_q LBL: h3011 ARG0: x2995 RSTR: h3009 BODY: h3010  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2996 ARG0: x2995 CARG: "Bananaman" ]                     |
+|               |           [ explicit_or_proper_q LBL: h3006 ARG0: x2997 RSTR: h3004 BODY: h3005  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2998 ARG0: x2997 CARG: "BBC" ] >                         |
+|               |   HCONS: < h3009 qeq h2996 h3004 qeq h2998 > ]                                   |
++---------------+----------------------------------------------------------------------------------+
+| Prepped       | [ TOP: h3013                                                                     |
+|               |   INDEX: e2999 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _broadcast_v_to LBL: h3002 ARG0: e2999 ARG1: x2997 ARG2: x2995 ]     |
+|               |           [ explicit_or_proper_q LBL: h3011 ARG0: x2995 RSTR: h3009 BODY: h3010  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2996 ARG0: x2995 CARG: "Bananaman" ]                     |
+|               |           [ explicit_or_proper_q LBL: h3006 ARG0: x2997 RSTR: h3004 BODY: h3005  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2998 ARG0: x2997 CARG: "BBC" ] >                         |
+|               |   HCONS: < h3009 qeq h2996 h3004 qeq h2998 h3013 qeq h3002 > ]                   |
++---------------+----------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------+
+|                                   NODE SEMENTS                                  |
++--------------+------------------------------------------------------------------+
+| Node         | Generated SEMENT                                                 |
++--------------+------------------------------------------------------------------+
+| Bananaman    | [ TOP: h2996                                                     |
+|              |   INDEX: x2995                                                   |
+|              |   RELS: < [ named LBL: h2996 ARG0: x2995 CARG: "Bananaman" ] > ] |
++--------------+------------------------------------------------------------------+
+| "1986-04-15" | None                                                             |
++--------------+------------------------------------------------------------------+
+| BBC          | [ TOP: h2998                                                     |
+|              |   INDEX: x2997                                                   |
+|              |   RELS: < [ named LBL: h2998 ARG0: x2997 CARG: "BBC" ] > ]       |
++--------------+------------------------------------------------------------------+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+|                                                         EDGE SEMENTS                                                        |
++---------------+-----------+--------------+----------------------------------------------------------------------------------+
+| Edge          | Parent    | Child        | Generated SEMENT                                                                 |
++---------------+-----------+--------------+----------------------------------------------------------------------------------+
+| lastAired     | Bananaman | "1986-04-15" | None                                                                             |
++---------------+-----------+--------------+----------------------------------------------------------------------------------+
+| broadcastedBy | Bananaman | BBC          | [ TOP: h3002                                                                     |
+|               |           |              |   INDEX: e2999 [ e TENSE: tensed ]                                               |
+|               |           |              |   RELS: < [ _broadcast_v_to LBL: h3002 ARG0: e2999 ARG1: i3000 ARG2: i3001 ]     |
+|               |           |              |           [ explicit_or_proper_q LBL: h3011 ARG0: x3008 RSTR: h3009 BODY: h3010  |
+|               |           |              | ]                                                                                |
+|               |           |              |           [ named LBL: h2996 ARG0: x2995 CARG: "Bananaman" ]                     |
+|               |           |              |           [ explicit_or_proper_q LBL: h3006 ARG0: x3003 RSTR: h3004 BODY: h3005  |
+|               |           |              | ]                                                                                |
+|               |           |              |           [ named LBL: h2998 ARG0: x2997 CARG: "BBC" ] >                         |
+|               |           |              |   HCONS: < h3009 qeq h2996 h3004 qeq h2998 >                                     |
+|               |           |              |   EQS: < x3008 eq x2995 h3002 eq h3012 i3001 eq x3008 x3003 eq x2997 h3002 eq    |
+|               |           |              | h3007 i3000 eq x3003 > ]                                                         |
++---------------+-----------+--------------+----------------------------------------------------------------------------------+
+
++----------------------------------------------+
+|            GENERATED ENGLISH TEXT            |
++----+-----------------------------------------+
+| #  | Generated Text                          |
++----+-----------------------------------------+
+| 1  | The BBC broadcast Bananaman.            |
+| 2  | The BBC broadcast the Bananaman.        |
+| 3  | The BBC broadcast the Bananamans.       |
+| 4  | The BBC broadcasts Bananaman.           |
+| 5  | The BBC broadcasts the Bananaman.       |
+| 6  | The BBC broadcasts the Bananamans.      |
+| 7  | The BBC will broadcast Bananaman.       |
+| 8  | The BBC will broadcast the Bananaman.   |
+| 9  | The BBC will broadcast the Bananamans.  |
+| 10 | The BBCs broadcast Bananaman.           |
+| 11 | The BBCs broadcast the Bananaman.       |
+| 12 | The BBCs broadcast the Bananamans.      |
+| 13 | The BBCs will broadcast Bananaman.      |
+| 14 | The BBCs will broadcast the Bananaman.  |
+| 15 | The BBCs will broadcast the Bananamans. |
++----+-----------------------------------------+
+
