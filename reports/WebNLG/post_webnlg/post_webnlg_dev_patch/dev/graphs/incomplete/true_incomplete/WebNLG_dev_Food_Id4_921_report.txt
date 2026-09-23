@@ -1,0 +1,194 @@
+GRAPH NAME: WebNLG_dev_3triples_Food_Food_Id4_24
+
++------------------------------------------------------+
+|                  EVALUATION METRICS                  |
++---------------------------------+--------------------+
+| Metric                          | Value              |
++---------------------------------+--------------------+
+| Generated Text Results          | 0                  |
+| Generated Gold Results          | 0                  |
+| Generated Gold Results Coverage | 0.0                |
++---------------------------------+--------------------+
+| Node Count                      | 4                  |
+| Nodes Covered                   | 3                  |
+| Nodes Included                  | 3                  |
++---------------------------------+--------------------+
+| Node Coverage                   | 0.75               |
+| Node Inclusion                  | 0.75               |
++---------------------------------+--------------------+
+| Edge Count                      | 3                  |
+| Edges Covered                   | 2                  |
+| Edges Included                  | 2                  |
++---------------------------------+--------------------+
+| Edge Coverage                   | 0.6666666666666666 |
+| Edge Inclusion                  | 0.6666666666666666 |
++---------------------------------+--------------------+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                            GOLD OUTPUTS                                                                           |
++------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                          | Generated? |
++------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Arem-arem is a food found nationwide in Indonesia, but is more specific to Java. Jusuf Kalla is the leader of Indonesia.                             | False      |
+| Jusuf Kalla is a leader in Indonesia, where the dish arem-arem is found nationwide, though it is more specific to Java.                              | False      |
+| Jusuf Kalla is the leader of Indonesia, the country which serves Arem-arem. While Arem-arem is nationwide in Indonesia, it is more specific to Java. | False      |
++------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                                  NODE METRICS                                                                                                  |
++------------------------------------------------------+--------------+---------------+--------------------------------------------------------------------------------------+-----------------------------------+
+| Node                                                 | Node Covered | Node Included | Coverage Comment                                                                     | Inclusion Comment                 |
++------------------------------------------------------+--------------+---------------+--------------------------------------------------------------------------------------+-----------------------------------+
+| Arem-arem                                            | True         | True          | Covered                                                                              | Included                          |
+| Indonesia                                            | True         | True          | Covered                                                                              | Included                          |
+| Jusuf_Kalla                                          | True         | True          | Covered                                                                              | Included                          |
+| "Nationwide in Indonesia, but more specific to Java" | False        | False         | '"Nationwide in Indonesia, but more specific to Java"' not in lexicon's node entries | No SEMENT generated for this node |
++------------------------------------------------------+--------------+---------------+--------------------------------------------------------------------------------------+-----------------------------------+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                   EDGE METRICS                                                                                  |
++---------+-----------+------------------------------------------------------+--------------+---------------+---------------------------------+-----------------------------------+
+| Edge    | Parent    | Child                                                | Edge Covered | Edge Included | Coverage Comment                | Inclusion Comment                 |
++---------+-----------+------------------------------------------------------+--------------+---------------+---------------------------------+-----------------------------------+
+| country | Arem-arem | Indonesia                                            | True         | True          | Covered                         | Included                          |
+| region  | Arem-arem | "Nationwide in Indonesia, but more specific to Java" | False        | False         | child of 'region' has no SEMENT | No SEMENT generated for this edge |
+| leader  | Indonesia | Jusuf_Kalla                                          | True         | True          | Covered                         | Included                          |
++---------+-----------+------------------------------------------------------+--------------+---------------+---------------------------------+-----------------------------------+
+
++--------------------------------------------------------------------------------------------------+
+|                                        GENERATED SEMENTS                                         |
++---------------+----------------------------------------------------------------------------------+
+| Version       | SEMENT                                                                           |
++---------------+----------------------------------------------------------------------------------+
+| Original      | [ TOP: h1804                                                                     |
+|               |   INDEX: e1802 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_loc LBL: h1801 ARG0: e1798 ARG1: u1799 ARG2: u1800 ]           |
+|               |           [ _be_v_id LBL: h1787 ARG0: e1784 [ e SF: prop TENSE: tensed ] ARG1:   |
+|               | p1785 ARG2: i1786 ]                                                              |
+|               |           [ explicit_or_proper_q LBL: h1796 ARG0: x1793 RSTR: h1794 BODY: h1795  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1775 ARG0: x1774 CARG: "Jusuf Kalla" ]                   |
+|               |           [ def_udef_a_q LBL: h1791 ARG0: x1788 RSTR: h1789 BODY: h1790 ]        |
+|               |           [ _leader_n_of LBL: h1778 ARG0: x1776 ARG1: i1777 ]                    |
+|               |           [ explicit_or_proper_q LBL: h1782 ARG0: x1779 RSTR: h1780 BODY: h1781  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1773 ARG0: x1772 CARG: "Indonesia" ]                     |
+|               |           [ _located_a_1 LBL: h1804 ARG0: e1802 ARG1: u1803 ]                    |
+|               |           [ def_udef_a_q LBL: h1808 ARG0: x1805 RSTR: h1806 BODY: h1807 ]        |
+|               |           [ unk_n LBL: h1771 ARG0: x1770 [ x IND: - ] CARG: "arem-arem" ] >      |
+|               |   HCONS: < h1794 qeq h1775 h1780 qeq h1773 h1789 qeq h1778 h1806 qeq h1771 >     |
+|               |   EQS: < x1793 eq x1774 h1787 eq h1797 i1786 eq x1793 x1779 eq x1772 h1778 eq    |
+|               | h1783 i1777 eq x1779 x1788 eq x1776 h1787 eq h1792 p1785 eq x1788 h1801 eq h1787 |
+|               | u1800 eq e1784 x1805 eq x1770 h1804 eq h1809 u1803 eq x1805 h1801 eq h1804 u1799 |
+|               | eq e1802 > ]                                                                     |
++---------------+----------------------------------------------------------------------------------+
+| EQs Collapsed | [ TOP: h1787                                                                     |
+|               |   INDEX: e1802 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_loc LBL: h1787 ARG0: e1798 ARG1: e1802 ARG2: e1784 [ e SF:     |
+|               | prop TENSE: tensed ] ]                                                           |
+|               |           [ _be_v_id LBL: h1787 ARG0: e1784 ARG1: x1776 ARG2: x1774 ]            |
+|               |           [ explicit_or_proper_q LBL: h1796 ARG0: x1774 RSTR: h1794 BODY: h1795  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1775 ARG0: x1774 CARG: "Jusuf Kalla" ]                   |
+|               |           [ def_udef_a_q LBL: h1791 ARG0: x1776 RSTR: h1789 BODY: h1790 ]        |
+|               |           [ _leader_n_of LBL: h1778 ARG0: x1776 ARG1: x1772 ]                    |
+|               |           [ explicit_or_proper_q LBL: h1782 ARG0: x1772 RSTR: h1780 BODY: h1781  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1773 ARG0: x1772 CARG: "Indonesia" ]                     |
+|               |           [ _located_a_1 LBL: h1787 ARG0: e1802 ARG1: x1770 [ x IND: - ] ]       |
+|               |           [ def_udef_a_q LBL: h1808 ARG0: x1770 RSTR: h1806 BODY: h1807 ]        |
+|               |           [ unk_n LBL: h1771 ARG0: x1770 CARG: "arem-arem" ] >                   |
+|               |   HCONS: < h1794 qeq h1775 h1780 qeq h1773 h1789 qeq h1778 h1806 qeq h1771 > ]   |
++---------------+----------------------------------------------------------------------------------+
+| Prepped       | [ TOP: h1810                                                                     |
+|               |   INDEX: e1802 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_loc LBL: h1787 ARG0: e1798 ARG1: e1802 ARG2: e1784 [ e SF:     |
+|               | prop TENSE: tensed ] ]                                                           |
+|               |           [ _be_v_id LBL: h1787 ARG0: e1784 ARG1: x1776 ARG2: x1774 ]            |
+|               |           [ explicit_or_proper_q LBL: h1796 ARG0: x1774 RSTR: h1794 BODY: h1795  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1775 ARG0: x1774 CARG: "Jusuf Kalla" ]                   |
+|               |           [ def_udef_a_q LBL: h1791 ARG0: x1776 RSTR: h1789 BODY: h1790 ]        |
+|               |           [ _leader_n_of LBL: h1778 ARG0: x1776 ARG1: x1772 ]                    |
+|               |           [ explicit_or_proper_q LBL: h1782 ARG0: x1772 RSTR: h1780 BODY: h1781  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1773 ARG0: x1772 CARG: "Indonesia" ]                     |
+|               |           [ _located_a_1 LBL: h1787 ARG0: e1802 ARG1: x1770 [ x IND: - ] ]       |
+|               |           [ def_udef_a_q LBL: h1808 ARG0: x1770 RSTR: h1806 BODY: h1807 ]        |
+|               |           [ unk_n LBL: h1771 ARG0: x1770 CARG: "arem-arem" ] >                   |
+|               |   HCONS: < h1794 qeq h1775 h1780 qeq h1773 h1789 qeq h1778 h1806 qeq h1771 h1810 |
+|               | qeq h1787 > ]                                                                    |
++---------------+----------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------------------+
+|                                                        NODE SEMENTS                                                       |
++------------------------------------------------------+--------------------------------------------------------------------+
+| Node                                                 | Generated SEMENT                                                   |
++------------------------------------------------------+--------------------------------------------------------------------+
+| Arem-arem                                            | [ TOP: h1771                                                       |
+|                                                      |   INDEX: x1770 [ x IND: - ]                                        |
+|                                                      |   RELS: < [ unk_n LBL: h1771 ARG0: x1770 CARG: "arem-arem" ] > ]   |
++------------------------------------------------------+--------------------------------------------------------------------+
+| Indonesia                                            | [ TOP: h1773                                                       |
+|                                                      |   INDEX: x1772                                                     |
+|                                                      |   RELS: < [ named LBL: h1773 ARG0: x1772 CARG: "Indonesia" ] > ]   |
++------------------------------------------------------+--------------------------------------------------------------------+
+| Jusuf_Kalla                                          | [ TOP: h1775                                                       |
+|                                                      |   INDEX: x1774                                                     |
+|                                                      |   RELS: < [ named LBL: h1775 ARG0: x1774 CARG: "Jusuf Kalla" ] > ] |
++------------------------------------------------------+--------------------------------------------------------------------+
+| "Nationwide in Indonesia, but more specific to Java" | None                                                               |
++------------------------------------------------------+--------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                          EDGE SEMENTS                                                                         |
++---------+-----------+------------------------------------------------------+----------------------------------------------------------------------------------+
+| Edge    | Parent    | Child                                                | Generated SEMENT                                                                 |
++---------+-----------+------------------------------------------------------+----------------------------------------------------------------------------------+
+| country | Arem-arem | Indonesia                                            | [ TOP: h1804                                                                     |
+|         |           |                                                      |   INDEX: e1802 [ e TENSE: tensed ]                                               |
+|         |           |                                                      |   RELS: < [ _in_p_loc LBL: h1801 ARG0: e1798 ARG1: u1799 ARG2: u1800 ]           |
+|         |           |                                                      |           [ _be_v_id LBL: h1787 ARG0: e1784 [ e SF: prop TENSE: tensed ] ARG1:   |
+|         |           |                                                      | p1785 ARG2: i1786 ]                                                              |
+|         |           |                                                      |           [ explicit_or_proper_q LBL: h1796 ARG0: x1793 RSTR: h1794 BODY: h1795  |
+|         |           |                                                      | ]                                                                                |
+|         |           |                                                      |           [ named LBL: h1775 ARG0: x1774 CARG: "Jusuf Kalla" ]                   |
+|         |           |                                                      |           [ def_udef_a_q LBL: h1791 ARG0: x1788 RSTR: h1789 BODY: h1790 ]        |
+|         |           |                                                      |           [ _leader_n_of LBL: h1778 ARG0: x1776 ARG1: i1777 ]                    |
+|         |           |                                                      |           [ explicit_or_proper_q LBL: h1782 ARG0: x1779 RSTR: h1780 BODY: h1781  |
+|         |           |                                                      | ]                                                                                |
+|         |           |                                                      |           [ named LBL: h1773 ARG0: x1772 CARG: "Indonesia" ]                     |
+|         |           |                                                      |           [ _located_a_1 LBL: h1804 ARG0: e1802 ARG1: u1803 ]                    |
+|         |           |                                                      |           [ def_udef_a_q LBL: h1808 ARG0: x1805 RSTR: h1806 BODY: h1807 ]        |
+|         |           |                                                      |           [ unk_n LBL: h1771 ARG0: x1770 [ x IND: - ] CARG: "arem-arem" ] >      |
+|         |           |                                                      |   HCONS: < h1794 qeq h1775 h1780 qeq h1773 h1789 qeq h1778 h1806 qeq h1771 >     |
+|         |           |                                                      |   EQS: < x1793 eq x1774 h1787 eq h1797 i1786 eq x1793 x1779 eq x1772 h1778 eq    |
+|         |           |                                                      | h1783 i1777 eq x1779 x1788 eq x1776 h1787 eq h1792 p1785 eq x1788 h1801 eq h1787 |
+|         |           |                                                      | u1800 eq e1784 x1805 eq x1770 h1804 eq h1809 u1803 eq x1805 h1801 eq h1804 u1799 |
+|         |           |                                                      | eq e1802 > ]                                                                     |
++---------+-----------+------------------------------------------------------+----------------------------------------------------------------------------------+
+| region  | Arem-arem | "Nationwide in Indonesia, but more specific to Java" | None                                                                             |
++---------+-----------+------------------------------------------------------+----------------------------------------------------------------------------------+
+| leader  | Indonesia | Jusuf_Kalla                                          | [ TOP: h1787                                                                     |
+|         |           |                                                      |   INDEX: e1784 [ e SF: prop TENSE: tensed ]                                      |
+|         |           |                                                      |   RELS: < [ _be_v_id LBL: h1787 ARG0: e1784 ARG1: p1785 ARG2: i1786 ]            |
+|         |           |                                                      |           [ explicit_or_proper_q LBL: h1796 ARG0: x1793 RSTR: h1794 BODY: h1795  |
+|         |           |                                                      | ]                                                                                |
+|         |           |                                                      |           [ named LBL: h1775 ARG0: x1774 CARG: "Jusuf Kalla" ]                   |
+|         |           |                                                      |           [ def_udef_a_q LBL: h1791 ARG0: x1788 RSTR: h1789 BODY: h1790 ]        |
+|         |           |                                                      |           [ _leader_n_of LBL: h1778 ARG0: x1776 ARG1: i1777 ]                    |
+|         |           |                                                      |           [ explicit_or_proper_q LBL: h1782 ARG0: x1779 RSTR: h1780 BODY: h1781  |
+|         |           |                                                      | ]                                                                                |
+|         |           |                                                      |           [ named LBL: h1773 ARG0: x1772 CARG: "Indonesia" ] >                   |
+|         |           |                                                      |   HCONS: < h1794 qeq h1775 h1780 qeq h1773 h1789 qeq h1778 >                     |
+|         |           |                                                      |   EQS: < x1793 eq x1774 h1787 eq h1797 i1786 eq x1793 x1779 eq x1772 h1778 eq    |
+|         |           |                                                      | h1783 i1777 eq x1779 x1788 eq x1776 h1787 eq h1792 p1785 eq x1788 > ]            |
++---------+-----------+------------------------------------------------------+----------------------------------------------------------------------------------+
+
++------------------------+
+| GENERATED ENGLISH TEXT |
++---+--------------------+
+| # | Generated Text     |
++---+--------------------+
++---+--------------------+
+

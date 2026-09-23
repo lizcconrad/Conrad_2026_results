@@ -1,0 +1,276 @@
+GRAPH NAME: WebNLG_dev_3triples_Athlete_Athlete_Id24_16
+
++-----------------------------------------+
+|            EVALUATION METRICS           |
++---------------------------------+-------+
+| Metric                          | Value |
++---------------------------------+-------+
+| Generated Text Results          | 0     |
+| Generated Gold Results          | 0     |
+| Generated Gold Results Coverage | 0.0   |
++---------------------------------+-------+
+| Node Count                      | 4     |
+| Nodes Covered                   | 4     |
+| Nodes Included                  | 4     |
++---------------------------------+-------+
+| Node Coverage                   | 1.0   |
+| Node Inclusion                  | 1.0   |
++---------------------------------+-------+
+| Edge Count                      | 3     |
+| Edges Covered                   | 3     |
+| Edges Included                  | 3     |
++---------------------------------+-------+
+| Edge Coverage                   | 1.0   |
+| Edge Inclusion                  | 1.0   |
++---------------------------------+-------+
+
++---------------------------------------------------------------------------------------------------------------------------+
+|                                                        GOLD OUTPUTS                                                       |
++--------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                  | Generated? |
++--------------------------------------------------------------------------------------------------------------+------------+
+| Alex Plante was born in Canada, where the leader is Elizabeth II and the national anthem is O Canada.        | False      |
+| Alex Plante was born in Canada; where the national anthem is O Canada and the leader is, Elizabeth II.       | False      |
+| Canada, the birthplace of Alex Plante, is led by Elizabeth II and has a national anthem known as "O Canada". | False      |
++--------------------------------------------------------------------------------------------------------------+------------+
+
++------------------------------------------------------------------------------------+
+|                                    NODE METRICS                                    |
++--------------+--------------+---------------+------------------+-------------------+
+| Node         | Node Covered | Node Included | Coverage Comment | Inclusion Comment |
++--------------+--------------+---------------+------------------+-------------------+
+| Canada       | True         | True          | Covered          | Included          |
+| O_Canada     | True         | True          | Covered          | Included          |
+| Elizabeth_II | True         | True          | Covered          | Included          |
+| Alex_Plante  | True         | True          | Covered          | Included          |
++--------------+--------------+---------------+------------------+-------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+|                                                  EDGE METRICS                                                 |
++------------+-------------+--------------+--------------+---------------+------------------+-------------------+
+| Edge       | Parent      | Child        | Edge Covered | Edge Included | Coverage Comment | Inclusion Comment |
++------------+-------------+--------------+--------------+---------------+------------------+-------------------+
+| anthem     | Canada      | O_Canada     | True         | True          | Covered          | Included          |
+| leader     | Canada      | Elizabeth_II | True         | True          | Covered          | Included          |
+| birthPlace | Alex_Plante | Canada       | True         | True          | Covered          | Included          |
++------------+-------------+--------------+--------------+---------------+------------------+-------------------+
+
++--------------------------------------------------------------------------------------------------+
+|                                        GENERATED SEMENTS                                         |
++---------------+----------------------------------------------------------------------------------+
+| Version       | SEMENT                                                                           |
++---------------+----------------------------------------------------------------------------------+
+| Original      | [ TOP: h1206                                                                     |
+|               |   INDEX: e1203 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_state LBL: h1202 ARG0: e1199 ARG1: u1200 ARG2: u1201 ]         |
+|               |           [ _be_v_id LBL: h1188 ARG0: e1185 [ e SF: prop TENSE: tensed ] ARG1:   |
+|               | p1186 ARG2: i1187 ]                                                              |
+|               |           [ explicit_or_proper_q LBL: h1197 ARG0: x1194 RSTR: h1195 BODY: h1196  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1181 ARG0: x1180 CARG: "Elizabeth II" ]                  |
+|               |           [ def_udef_a_q LBL: h1192 ARG0: x1189 RSTR: h1190 BODY: h1191 ]        |
+|               |           [ _leader_n_of LBL: h1184 ARG0: x1182 ARG1: i1183 ]                    |
+|               |           [ _be_v_id LBL: h1169 ARG0: e1166 [ e SF: prop TENSE: tensed ] ARG1:   |
+|               | p1167 ARG2: i1168 ]                                                              |
+|               |           [ explicit_or_proper_q LBL: h1178 ARG0: x1175 RSTR: h1176 BODY: h1177  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1151 ARG0: x1150 CARG: "O Canada" ]                      |
+|               |           [ def_udef_a_q LBL: h1173 ARG0: x1170 RSTR: h1171 BODY: h1172 ]        |
+|               |           [ _of_p LBL: h1155 ARG0: e1152 ARG1: u1153 ARG2: i1154 ]               |
+|               |           [ explicit_or_proper_q LBL: h1164 ARG0: x1161 RSTR: h1162 BODY: h1163  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1149 ARG0: x1148 CARG: "Canada" ]                        |
+|               |           [ _national_a_1 LBL: h1158 ARG0: e1156 ARG1: u1157 ]                   |
+|               |           [ _anthem_n_1 LBL: h1160 ARG0: x1159 ]                                 |
+|               |           [ _born_a_of LBL: h1206 ARG0: e1203 ARG1: u1204 ARG2: u1205 ]          |
+|               |           [ explicit_or_proper_q LBL: h1210 ARG0: x1207 RSTR: h1208 BODY: h1209  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1147 ARG0: x1146 CARG: "Alex Plante" ] >                 |
+|               |   HCONS: < h1195 qeq h1181 h1176 qeq h1151 h1162 qeq h1149 h1171 qeq h1160 h1190 |
+|               | qeq h1184 h1208 qeq h1147 >                                                      |
+|               |   EQS: < x1194 eq x1180 h1188 eq h1198 i1187 eq x1194 x1175 eq x1150 h1169 eq    |
+|               | h1179 i1168 eq x1175 x1161 eq x1148 h1155 eq h1165 i1154 eq x1161 h1158 eq h1160 |
+|               | u1157 eq x1159 h1155 eq h1160 u1153 eq x1159 x1170 eq x1159 h1169 eq h1174 p1167 |
+|               | eq x1170 h1184 eq h1169 i1183 eq e1166 x1189 eq x1182 h1188 eq h1193 p1186 eq    |
+|               | x1189 h1202 eq h1188 u1201 eq e1185 x1207 eq x1146 h1206 eq h1211 u1204 eq x1207 |
+|               | h1202 eq h1206 u1200 eq e1203 >                                                  |
+|               |   SLOTS: < ARG2: u1205 > ]                                                       |
++---------------+----------------------------------------------------------------------------------+
+| EQs Collapsed | [ TOP: h1188                                                                     |
+|               |   INDEX: e1203 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_state LBL: h1188 ARG0: e1199 ARG1: e1203 ARG2: e1185 [ e SF:   |
+|               | prop TENSE: tensed ] ]                                                           |
+|               |           [ _be_v_id LBL: h1188 ARG0: e1185 ARG1: x1182 ARG2: x1180 ]            |
+|               |           [ explicit_or_proper_q LBL: h1197 ARG0: x1180 RSTR: h1195 BODY: h1196  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1181 ARG0: x1180 CARG: "Elizabeth II" ]                  |
+|               |           [ def_udef_a_q LBL: h1192 ARG0: x1182 RSTR: h1190 BODY: h1191 ]        |
+|               |           [ _leader_n_of LBL: h1169 ARG0: x1182 ARG1: e1166 [ e SF: prop TENSE:  |
+|               | tensed ] ]                                                                       |
+|               |           [ _be_v_id LBL: h1169 ARG0: e1166 ARG1: x1159 ARG2: x1150 ]            |
+|               |           [ explicit_or_proper_q LBL: h1178 ARG0: x1150 RSTR: h1176 BODY: h1177  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1151 ARG0: x1150 CARG: "O Canada" ]                      |
+|               |           [ def_udef_a_q LBL: h1173 ARG0: x1159 RSTR: h1171 BODY: h1172 ]        |
+|               |           [ _of_p LBL: h1155 ARG0: e1152 ARG1: x1159 ARG2: x1148 ]               |
+|               |           [ explicit_or_proper_q LBL: h1164 ARG0: x1148 RSTR: h1162 BODY: h1163  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1149 ARG0: x1148 CARG: "Canada" ]                        |
+|               |           [ _national_a_1 LBL: h1155 ARG0: e1156 ARG1: x1159 ]                   |
+|               |           [ _anthem_n_1 LBL: h1155 ARG0: x1159 ]                                 |
+|               |           [ _born_a_of LBL: h1188 ARG0: e1203 ARG1: x1146 ARG2: u1205 ]          |
+|               |           [ explicit_or_proper_q LBL: h1210 ARG0: x1146 RSTR: h1208 BODY: h1209  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1147 ARG0: x1146 CARG: "Alex Plante" ] >                 |
+|               |   HCONS: < h1195 qeq h1181 h1176 qeq h1151 h1162 qeq h1149 h1171 qeq h1155 h1190 |
+|               | qeq h1169 h1208 qeq h1147 >                                                      |
+|               |   SLOTS: < ARG2: u1205 > ]                                                       |
++---------------+----------------------------------------------------------------------------------+
+| Prepped       | [ TOP: h1212                                                                     |
+|               |   INDEX: e1203 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_state LBL: h1188 ARG0: e1199 ARG1: e1203 ARG2: e1185 [ e SF:   |
+|               | prop TENSE: tensed ] ]                                                           |
+|               |           [ _be_v_id LBL: h1188 ARG0: e1185 ARG1: x1182 ARG2: x1180 ]            |
+|               |           [ explicit_or_proper_q LBL: h1197 ARG0: x1180 RSTR: h1195 BODY: h1196  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1181 ARG0: x1180 CARG: "Elizabeth II" ]                  |
+|               |           [ def_udef_a_q LBL: h1192 ARG0: x1182 RSTR: h1190 BODY: h1191 ]        |
+|               |           [ _leader_n_of LBL: h1169 ARG0: x1182 ARG1: e1166 [ e SF: prop TENSE:  |
+|               | tensed ] ]                                                                       |
+|               |           [ _be_v_id LBL: h1169 ARG0: e1166 ARG1: x1159 ARG2: x1150 ]            |
+|               |           [ explicit_or_proper_q LBL: h1178 ARG0: x1150 RSTR: h1176 BODY: h1177  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1151 ARG0: x1150 CARG: "O Canada" ]                      |
+|               |           [ def_udef_a_q LBL: h1173 ARG0: x1159 RSTR: h1171 BODY: h1172 ]        |
+|               |           [ _of_p LBL: h1155 ARG0: e1152 ARG1: x1159 ARG2: x1148 ]               |
+|               |           [ explicit_or_proper_q LBL: h1164 ARG0: x1148 RSTR: h1162 BODY: h1163  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1149 ARG0: x1148 CARG: "Canada" ]                        |
+|               |           [ _national_a_1 LBL: h1155 ARG0: e1156 ARG1: x1159 ]                   |
+|               |           [ _anthem_n_1 LBL: h1155 ARG0: x1159 ]                                 |
+|               |           [ _born_a_of LBL: h1188 ARG0: e1203 ARG1: x1146 ARG2: u1205 ]          |
+|               |           [ explicit_or_proper_q LBL: h1210 ARG0: x1146 RSTR: h1208 BODY: h1209  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1147 ARG0: x1146 CARG: "Alex Plante" ] >                 |
+|               |   HCONS: < h1195 qeq h1181 h1176 qeq h1151 h1162 qeq h1149 h1171 qeq h1155 h1190 |
+|               | qeq h1169 h1208 qeq h1147 h1212 qeq h1188 >                                      |
+|               |   SLOTS: < ARG2: u1205 > ]                                                       |
++---------------+----------------------------------------------------------------------------------+
+
++------------------------------------------------------------------------------------+
+|                                    NODE SEMENTS                                    |
++--------------+---------------------------------------------------------------------+
+| Node         | Generated SEMENT                                                    |
++--------------+---------------------------------------------------------------------+
+| Canada       | [ TOP: h1149                                                        |
+|              |   INDEX: x1148                                                      |
+|              |   RELS: < [ named LBL: h1149 ARG0: x1148 CARG: "Canada" ] > ]       |
++--------------+---------------------------------------------------------------------+
+| O_Canada     | [ TOP: h1151                                                        |
+|              |   INDEX: x1150                                                      |
+|              |   RELS: < [ named LBL: h1151 ARG0: x1150 CARG: "O Canada" ] > ]     |
++--------------+---------------------------------------------------------------------+
+| Elizabeth_II | [ TOP: h1181                                                        |
+|              |   INDEX: x1180                                                      |
+|              |   RELS: < [ named LBL: h1181 ARG0: x1180 CARG: "Elizabeth II" ] > ] |
++--------------+---------------------------------------------------------------------+
+| Alex_Plante  | [ TOP: h1147                                                        |
+|              |   INDEX: x1146                                                      |
+|              |   RELS: < [ named LBL: h1147 ARG0: x1146 CARG: "Alex Plante" ] > ]  |
++--------------+---------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------------------------------------+
+|                                                        EDGE SEMENTS                                                        |
++------------+-------------+--------------+----------------------------------------------------------------------------------+
+| Edge       | Parent      | Child        | Generated SEMENT                                                                 |
++------------+-------------+--------------+----------------------------------------------------------------------------------+
+| anthem     | Canada      | O_Canada     | [ TOP: h1169                                                                     |
+|            |             |              |   INDEX: e1166 [ e SF: prop TENSE: tensed ]                                      |
+|            |             |              |   RELS: < [ _be_v_id LBL: h1169 ARG0: e1166 ARG1: p1167 ARG2: i1168 ]            |
+|            |             |              |           [ explicit_or_proper_q LBL: h1178 ARG0: x1175 RSTR: h1176 BODY: h1177  |
+|            |             |              | ]                                                                                |
+|            |             |              |           [ named LBL: h1151 ARG0: x1150 CARG: "O Canada" ]                      |
+|            |             |              |           [ def_udef_a_q LBL: h1173 ARG0: x1170 RSTR: h1171 BODY: h1172 ]        |
+|            |             |              |           [ _of_p LBL: h1155 ARG0: e1152 ARG1: u1153 ARG2: i1154 ]               |
+|            |             |              |           [ explicit_or_proper_q LBL: h1164 ARG0: x1161 RSTR: h1162 BODY: h1163  |
+|            |             |              | ]                                                                                |
+|            |             |              |           [ named LBL: h1149 ARG0: x1148 CARG: "Canada" ]                        |
+|            |             |              |           [ _national_a_1 LBL: h1158 ARG0: e1156 ARG1: u1157 ]                   |
+|            |             |              |           [ _anthem_n_1 LBL: h1160 ARG0: x1159 ] >                               |
+|            |             |              |   HCONS: < h1176 qeq h1151 h1162 qeq h1149 h1171 qeq h1160 >                     |
+|            |             |              |   EQS: < x1175 eq x1150 h1169 eq h1179 i1168 eq x1175 x1161 eq x1148 h1155 eq    |
+|            |             |              | h1165 i1154 eq x1161 h1158 eq h1160 u1157 eq x1159 h1155 eq h1160 u1153 eq x1159 |
+|            |             |              | x1170 eq x1159 h1169 eq h1174 p1167 eq x1170 > ]                                 |
++------------+-------------+--------------+----------------------------------------------------------------------------------+
+| leader     | Canada      | Elizabeth_II | [ TOP: h1188                                                                     |
+|            |             |              |   INDEX: e1185 [ e SF: prop TENSE: tensed ]                                      |
+|            |             |              |   RELS: < [ _be_v_id LBL: h1188 ARG0: e1185 ARG1: p1186 ARG2: i1187 ]            |
+|            |             |              |           [ explicit_or_proper_q LBL: h1197 ARG0: x1194 RSTR: h1195 BODY: h1196  |
+|            |             |              | ]                                                                                |
+|            |             |              |           [ named LBL: h1181 ARG0: x1180 CARG: "Elizabeth II" ]                  |
+|            |             |              |           [ def_udef_a_q LBL: h1192 ARG0: x1189 RSTR: h1190 BODY: h1191 ]        |
+|            |             |              |           [ _leader_n_of LBL: h1184 ARG0: x1182 ARG1: i1183 ]                    |
+|            |             |              |           [ _be_v_id LBL: h1169 ARG0: e1166 [ e SF: prop TENSE: tensed ] ARG1:   |
+|            |             |              | p1167 ARG2: i1168 ]                                                              |
+|            |             |              |           [ explicit_or_proper_q LBL: h1178 ARG0: x1175 RSTR: h1176 BODY: h1177  |
+|            |             |              | ]                                                                                |
+|            |             |              |           [ named LBL: h1151 ARG0: x1150 CARG: "O Canada" ]                      |
+|            |             |              |           [ def_udef_a_q LBL: h1173 ARG0: x1170 RSTR: h1171 BODY: h1172 ]        |
+|            |             |              |           [ _of_p LBL: h1155 ARG0: e1152 ARG1: u1153 ARG2: i1154 ]               |
+|            |             |              |           [ explicit_or_proper_q LBL: h1164 ARG0: x1161 RSTR: h1162 BODY: h1163  |
+|            |             |              | ]                                                                                |
+|            |             |              |           [ named LBL: h1149 ARG0: x1148 CARG: "Canada" ]                        |
+|            |             |              |           [ _national_a_1 LBL: h1158 ARG0: e1156 ARG1: u1157 ]                   |
+|            |             |              |           [ _anthem_n_1 LBL: h1160 ARG0: x1159 ] >                               |
+|            |             |              |   HCONS: < h1195 qeq h1181 h1176 qeq h1151 h1162 qeq h1149 h1171 qeq h1160 h1190 |
+|            |             |              | qeq h1184 >                                                                      |
+|            |             |              |   EQS: < x1194 eq x1180 h1188 eq h1198 i1187 eq x1194 x1175 eq x1150 h1169 eq    |
+|            |             |              | h1179 i1168 eq x1175 x1161 eq x1148 h1155 eq h1165 i1154 eq x1161 h1158 eq h1160 |
+|            |             |              | u1157 eq x1159 h1155 eq h1160 u1153 eq x1159 x1170 eq x1159 h1169 eq h1174 p1167 |
+|            |             |              | eq x1170 h1184 eq h1169 i1183 eq e1166 x1189 eq x1182 h1188 eq h1193 p1186 eq    |
+|            |             |              | x1189 > ]                                                                        |
++------------+-------------+--------------+----------------------------------------------------------------------------------+
+| birthPlace | Alex_Plante | Canada       | [ TOP: h1206                                                                     |
+|            |             |              |   INDEX: e1203 [ e TENSE: tensed ]                                               |
+|            |             |              |   RELS: < [ _in_p_state LBL: h1202 ARG0: e1199 ARG1: u1200 ARG2: u1201 ]         |
+|            |             |              |           [ _be_v_id LBL: h1188 ARG0: e1185 [ e SF: prop TENSE: tensed ] ARG1:   |
+|            |             |              | p1186 ARG2: i1187 ]                                                              |
+|            |             |              |           [ explicit_or_proper_q LBL: h1197 ARG0: x1194 RSTR: h1195 BODY: h1196  |
+|            |             |              | ]                                                                                |
+|            |             |              |           [ named LBL: h1181 ARG0: x1180 CARG: "Elizabeth II" ]                  |
+|            |             |              |           [ def_udef_a_q LBL: h1192 ARG0: x1189 RSTR: h1190 BODY: h1191 ]        |
+|            |             |              |           [ _leader_n_of LBL: h1184 ARG0: x1182 ARG1: i1183 ]                    |
+|            |             |              |           [ _be_v_id LBL: h1169 ARG0: e1166 [ e SF: prop TENSE: tensed ] ARG1:   |
+|            |             |              | p1167 ARG2: i1168 ]                                                              |
+|            |             |              |           [ explicit_or_proper_q LBL: h1178 ARG0: x1175 RSTR: h1176 BODY: h1177  |
+|            |             |              | ]                                                                                |
+|            |             |              |           [ named LBL: h1151 ARG0: x1150 CARG: "O Canada" ]                      |
+|            |             |              |           [ def_udef_a_q LBL: h1173 ARG0: x1170 RSTR: h1171 BODY: h1172 ]        |
+|            |             |              |           [ _of_p LBL: h1155 ARG0: e1152 ARG1: u1153 ARG2: i1154 ]               |
+|            |             |              |           [ explicit_or_proper_q LBL: h1164 ARG0: x1161 RSTR: h1162 BODY: h1163  |
+|            |             |              | ]                                                                                |
+|            |             |              |           [ named LBL: h1149 ARG0: x1148 CARG: "Canada" ]                        |
+|            |             |              |           [ _national_a_1 LBL: h1158 ARG0: e1156 ARG1: u1157 ]                   |
+|            |             |              |           [ _anthem_n_1 LBL: h1160 ARG0: x1159 ]                                 |
+|            |             |              |           [ _born_a_of LBL: h1206 ARG0: e1203 ARG1: u1204 ARG2: u1205 ]          |
+|            |             |              |           [ explicit_or_proper_q LBL: h1210 ARG0: x1207 RSTR: h1208 BODY: h1209  |
+|            |             |              | ]                                                                                |
+|            |             |              |           [ named LBL: h1147 ARG0: x1146 CARG: "Alex Plante" ] >                 |
+|            |             |              |   HCONS: < h1195 qeq h1181 h1176 qeq h1151 h1162 qeq h1149 h1171 qeq h1160 h1190 |
+|            |             |              | qeq h1184 h1208 qeq h1147 >                                                      |
+|            |             |              |   EQS: < x1194 eq x1180 h1188 eq h1198 i1187 eq x1194 x1175 eq x1150 h1169 eq    |
+|            |             |              | h1179 i1168 eq x1175 x1161 eq x1148 h1155 eq h1165 i1154 eq x1161 h1158 eq h1160 |
+|            |             |              | u1157 eq x1159 h1155 eq h1160 u1153 eq x1159 x1170 eq x1159 h1169 eq h1174 p1167 |
+|            |             |              | eq x1170 h1184 eq h1169 i1183 eq e1166 x1189 eq x1182 h1188 eq h1193 p1186 eq    |
+|            |             |              | x1189 h1202 eq h1188 u1201 eq e1185 x1207 eq x1146 h1206 eq h1211 u1204 eq x1207 |
+|            |             |              | h1202 eq h1206 u1200 eq e1203 >                                                  |
+|            |             |              |   SLOTS: < ARG2: u1205 > ]                                                       |
++------------+-------------+--------------+----------------------------------------------------------------------------------+
+
++------------------------+
+| GENERATED ENGLISH TEXT |
++---+--------------------+
+| # | Generated Text     |
++---+--------------------+
++---+--------------------+
+

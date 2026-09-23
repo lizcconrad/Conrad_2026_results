@@ -1,0 +1,490 @@
+GRAPH NAME: WebNLG_dev_2triples_MeanOfTransportation_MeanOfTransportation_Id26_3_7
+
++-----------------------------------------+
+|            EVALUATION METRICS           |
++---------------------------------+-------+
+| Metric                          | Value |
++---------------------------------+-------+
+| Generated Text Results          | 360   |
+| Generated Gold Results          | 0     |
+| Generated Gold Results Coverage | 0.0   |
++---------------------------------+-------+
+| Node Count                      | 2     |
+| Nodes Covered                   | 2     |
+| Nodes Included                  | 2     |
++---------------------------------+-------+
+| Node Coverage                   | 1.0   |
+| Node Inclusion                  | 1.0   |
++---------------------------------+-------+
+| Edge Count                      | 1     |
+| Edges Covered                   | 1     |
+| Edges Included                  | 1     |
++---------------------------------+-------+
+| Edge Coverage                   | 1.0   |
+| Edge Inclusion                  | 1.0   |
++---------------------------------+-------+
+
++------------------------------------------------------------------------------------------------------------------------------+
+|                                                         GOLD OUTPUTS                                                         |
++-----------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                     | Generated? |
++-----------------------------------------------------------------------------------------------------------------+------------+
+| The Audi A1, which is manufactured by Audi, and the Seat Ibiza are similar means of transport.                  | False      |
+| The Seat Ibiza and the Audi A1, built by Audi, are both cars.                                                   | False      |
+| The Seat Ibiza and the Audi manufactured Audi A1 are both cars and therefore a related means of transportation. | False      |
++-----------------------------------------------------------------------------------------------------------------+------------+
+
++----------------------------------------------------------------------------------+
+|                                   NODE METRICS                                   |
++------------+--------------+---------------+------------------+-------------------+
+| Node       | Node Covered | Node Included | Coverage Comment | Inclusion Comment |
++------------+--------------+---------------+------------------+-------------------+
+| Audi_A1    | True         | True          | Covered          | Included          |
+| SEAT_Ibiza | True         | True          | Covered          | Included          |
++------------+--------------+---------------+------------------+-------------------+
+
++--------------------------------------------------------------------------------------------------------------------------+
+|                                                       EDGE METRICS                                                       |
++-----------------------------+---------+------------+--------------+---------------+------------------+-------------------+
+| Edge                        | Parent  | Child      | Edge Covered | Edge Included | Coverage Comment | Inclusion Comment |
++-----------------------------+---------+------------+--------------+---------------+------------------+-------------------+
+| relatedMeanOfTransportation | Audi_A1 | SEAT_Ibiza | True         | True          | Covered          | Included          |
++-----------------------------+---------+------------+--------------+---------------+------------------+-------------------+
+
++--------------------------------------------------------------------------------------------------+
+|                                        GENERATED SEMENTS                                         |
++---------------+----------------------------------------------------------------------------------+
+| Version       | SEMENT                                                                           |
++---------------+----------------------------------------------------------------------------------+
+| Original      | [ TOP: h173                                                                      |
+|               |   INDEX: e169 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _relate_v_to LBL: h173 ARG0: e169 ARG1: i170 ARG2: p171 ARG3: i172 ] |
+|               |           [ def_udef_a_q LBL: h177 ARG0: x174 RSTR: h175 BODY: h176 ]            |
+|               |           [ named LBL: h166 ARG0: x165 CARG: "Audi A1" ]                         |
+|               |           [ def_udef_a_q LBL: h182 ARG0: x179 RSTR: h180 BODY: h181 ]            |
+|               |           [ named LBL: h168 ARG0: x167 CARG: "SEAT Ibiza" ] >                    |
+|               |   HCONS: < h175 qeq h166 h180 qeq h168 >                                         |
+|               |   EQS: < x174 eq x165 h173 eq h178 p171 eq x174 x179 eq x167 h173 eq h183 i172   |
+|               | eq x179 >                                                                        |
+|               |   SLOTS: < ARG1: i170 > ]                                                        |
++---------------+----------------------------------------------------------------------------------+
+| EQs Collapsed | [ TOP: h173                                                                      |
+|               |   INDEX: e169 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _relate_v_to LBL: h173 ARG0: e169 ARG1: i170 ARG2: x165 ARG3: x167 ] |
+|               |           [ def_udef_a_q LBL: h177 ARG0: x165 RSTR: h175 BODY: h176 ]            |
+|               |           [ named LBL: h166 ARG0: x165 CARG: "Audi A1" ]                         |
+|               |           [ def_udef_a_q LBL: h182 ARG0: x167 RSTR: h180 BODY: h181 ]            |
+|               |           [ named LBL: h168 ARG0: x167 CARG: "SEAT Ibiza" ] >                    |
+|               |   HCONS: < h175 qeq h166 h180 qeq h168 >                                         |
+|               |   SLOTS: < ARG1: i170 > ]                                                        |
++---------------+----------------------------------------------------------------------------------+
+| Prepped       | [ TOP: h184                                                                      |
+|               |   INDEX: e169 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _relate_v_to LBL: h173 ARG0: e169 ARG1: i170 ARG2: x165 ARG3: x167 ] |
+|               |           [ def_udef_a_q LBL: h177 ARG0: x165 RSTR: h175 BODY: h176 ]            |
+|               |           [ named LBL: h166 ARG0: x165 CARG: "Audi A1" ]                         |
+|               |           [ def_udef_a_q LBL: h182 ARG0: x167 RSTR: h180 BODY: h181 ]            |
+|               |           [ named LBL: h168 ARG0: x167 CARG: "SEAT Ibiza" ] >                    |
+|               |   HCONS: < h175 qeq h166 h180 qeq h168 h184 qeq h173 >                           |
+|               |   SLOTS: < ARG1: i170 > ]                                                        |
++---------------+----------------------------------------------------------------------------------+
+
++------------------------------------------------------------------------------+
+|                                 NODE SEMENTS                                 |
++------------+-----------------------------------------------------------------+
+| Node       | Generated SEMENT                                                |
++------------+-----------------------------------------------------------------+
+| Audi_A1    | [ TOP: h166                                                     |
+|            |   INDEX: x165 [ x QUANT: def_udef_a_q ]                         |
+|            |   RELS: < [ named LBL: h166 ARG0: x165 CARG: "Audi A1" ] > ]    |
++------------+-----------------------------------------------------------------+
+| SEAT_Ibiza | [ TOP: h168                                                     |
+|            |   INDEX: x167 [ x QUANT: def_udef_a_q ]                         |
+|            |   RELS: < [ named LBL: h168 ARG0: x167 CARG: "SEAT Ibiza" ] > ] |
++------------+-----------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+|                                                              EDGE SEMENTS                                                             |
++-----------------------------+---------+------------+----------------------------------------------------------------------------------+
+| Edge                        | Parent  | Child      | Generated SEMENT                                                                 |
++-----------------------------+---------+------------+----------------------------------------------------------------------------------+
+| relatedMeanOfTransportation | Audi_A1 | SEAT_Ibiza | [ TOP: h173                                                                      |
+|                             |         |            |   INDEX: e169 [ e TENSE: tensed ]                                                |
+|                             |         |            |   RELS: < [ _relate_v_to LBL: h173 ARG0: e169 ARG1: i170 ARG2: p171 ARG3: i172 ] |
+|                             |         |            |           [ def_udef_a_q LBL: h177 ARG0: x174 RSTR: h175 BODY: h176 ]            |
+|                             |         |            |           [ named LBL: h166 ARG0: x165 CARG: "Audi A1" ]                         |
+|                             |         |            |           [ def_udef_a_q LBL: h182 ARG0: x179 RSTR: h180 BODY: h181 ]            |
+|                             |         |            |           [ named LBL: h168 ARG0: x167 CARG: "SEAT Ibiza" ] >                    |
+|                             |         |            |   HCONS: < h175 qeq h166 h180 qeq h168 >                                         |
+|                             |         |            |   EQS: < x174 eq x165 h173 eq h178 p171 eq x174 x179 eq x167 h173 eq h183 i172   |
+|                             |         |            | eq x179 >                                                                        |
+|                             |         |            |   SLOTS: < ARG1: i170 > ]                                                        |
++-----------------------------+---------+------------+----------------------------------------------------------------------------------+
+
++--------------------------------------------------------+
+|                 GENERATED ENGLISH TEXT                 |
++-----+--------------------------------------------------+
+| #   | Generated Text                                   |
++-----+--------------------------------------------------+
+| 1   | A Audi A1 is related to SEAT Ibizas.             |
+| 2   | A Audi A1 is related to a SEAT Ibiza.            |
+| 3   | A Audi A1 is related to an SEAT Ibiza.           |
+| 4   | A Audi A1 is related to the SEAT Ibiza.          |
+| 5   | A Audi A1 is related to the SEAT Ibizas.         |
+| 6   | A Audi A1 was related to SEAT Ibizas.            |
+| 7   | A Audi A1 was related to a SEAT Ibiza.           |
+| 8   | A Audi A1 was related to an SEAT Ibiza.          |
+| 9   | A Audi A1 was related to the SEAT Ibiza.         |
+| 10  | A Audi A1 was related to the SEAT Ibizas.        |
+| 11  | A Audi A1 will be related to SEAT Ibizas.        |
+| 12  | A Audi A1 will be related to a SEAT Ibiza.       |
+| 13  | A Audi A1 will be related to an SEAT Ibiza.      |
+| 14  | A Audi A1 will be related to the SEAT Ibiza.     |
+| 15  | A Audi A1 will be related to the SEAT Ibizas.    |
+| 16  | A SEAT Ibiza is related a Audi A1 to.            |
+| 17  | A SEAT Ibiza is related an Audi A1 to.           |
+| 18  | A SEAT Ibiza is related the Audi A1 to.          |
+| 19  | A SEAT Ibiza was related a Audi A1 to.           |
+| 20  | A SEAT Ibiza was related an Audi A1 to.          |
+| 21  | A SEAT Ibiza was related the Audi A1 to.         |
+| 22  | A SEAT Ibiza will be related a Audi A1 to.       |
+| 23  | A SEAT Ibiza will be related an Audi A1 to.      |
+| 24  | A SEAT Ibiza will be related the Audi A1 to.     |
+| 25  | A SEAT Ibiza, a Audi A1 is related to.           |
+| 26  | A SEAT Ibiza, a Audi A1 was related to.          |
+| 27  | A SEAT Ibiza, a Audi A1 will be related to.      |
+| 28  | A SEAT Ibiza, an Audi A1 is related to.          |
+| 29  | A SEAT Ibiza, an Audi A1 was related to.         |
+| 30  | A SEAT Ibiza, an Audi A1 will be related to.     |
+| 31  | A SEAT Ibiza, the Audi A1 is related to.         |
+| 32  | A SEAT Ibiza, the Audi A1 was related to.        |
+| 33  | A SEAT Ibiza, the Audi A1 will be related to.    |
+| 34  | An Audi A1 is related to SEAT Ibizas.            |
+| 35  | An Audi A1 is related to a SEAT Ibiza.           |
+| 36  | An Audi A1 is related to an SEAT Ibiza.          |
+| 37  | An Audi A1 is related to the SEAT Ibiza.         |
+| 38  | An Audi A1 is related to the SEAT Ibizas.        |
+| 39  | An Audi A1 was related to SEAT Ibizas.           |
+| 40  | An Audi A1 was related to a SEAT Ibiza.          |
+| 41  | An Audi A1 was related to an SEAT Ibiza.         |
+| 42  | An Audi A1 was related to the SEAT Ibiza.        |
+| 43  | An Audi A1 was related to the SEAT Ibizas.       |
+| 44  | An Audi A1 will be related to SEAT Ibizas.       |
+| 45  | An Audi A1 will be related to a SEAT Ibiza.      |
+| 46  | An Audi A1 will be related to an SEAT Ibiza.     |
+| 47  | An Audi A1 will be related to the SEAT Ibiza.    |
+| 48  | An Audi A1 will be related to the SEAT Ibizas.   |
+| 49  | An SEAT Ibiza is related a Audi A1 to.           |
+| 50  | An SEAT Ibiza is related an Audi A1 to.          |
+| 51  | An SEAT Ibiza is related the Audi A1 to.         |
+| 52  | An SEAT Ibiza was related a Audi A1 to.          |
+| 53  | An SEAT Ibiza was related an Audi A1 to.         |
+| 54  | An SEAT Ibiza was related the Audi A1 to.        |
+| 55  | An SEAT Ibiza will be related a Audi A1 to.      |
+| 56  | An SEAT Ibiza will be related an Audi A1 to.     |
+| 57  | An SEAT Ibiza will be related the Audi A1 to.    |
+| 58  | An SEAT Ibiza, a Audi A1 is related to.          |
+| 59  | An SEAT Ibiza, a Audi A1 was related to.         |
+| 60  | An SEAT Ibiza, a Audi A1 will be related to.     |
+| 61  | An SEAT Ibiza, an Audi A1 is related to.         |
+| 62  | An SEAT Ibiza, an Audi A1 was related to.        |
+| 63  | An SEAT Ibiza, an Audi A1 will be related to.    |
+| 64  | An SEAT Ibiza, the Audi A1 is related to.        |
+| 65  | An SEAT Ibiza, the Audi A1 was related to.       |
+| 66  | An SEAT Ibiza, the Audi A1 will be related to.   |
+| 67  | Related a Audi A1 to, SEAT Ibizas are.           |
+| 68  | Related a Audi A1 to, SEAT Ibizas were.          |
+| 69  | Related a Audi A1 to, SEAT Ibizas will be.       |
+| 70  | Related a Audi A1 to, a SEAT Ibiza is.           |
+| 71  | Related a Audi A1 to, a SEAT Ibiza was.          |
+| 72  | Related a Audi A1 to, a SEAT Ibiza will be.      |
+| 73  | Related a Audi A1 to, an SEAT Ibiza is.          |
+| 74  | Related a Audi A1 to, an SEAT Ibiza was.         |
+| 75  | Related a Audi A1 to, an SEAT Ibiza will be.     |
+| 76  | Related a Audi A1 to, the SEAT Ibiza is.         |
+| 77  | Related a Audi A1 to, the SEAT Ibiza was.        |
+| 78  | Related a Audi A1 to, the SEAT Ibiza will be.    |
+| 79  | Related a Audi A1 to, the SEAT Ibizas are.       |
+| 80  | Related a Audi A1 to, the SEAT Ibizas were.      |
+| 81  | Related a Audi A1 to, the SEAT Ibizas will be.   |
+| 82  | Related an Audi A1 to, SEAT Ibizas are.          |
+| 83  | Related an Audi A1 to, SEAT Ibizas were.         |
+| 84  | Related an Audi A1 to, SEAT Ibizas will be.      |
+| 85  | Related an Audi A1 to, a SEAT Ibiza is.          |
+| 86  | Related an Audi A1 to, a SEAT Ibiza was.         |
+| 87  | Related an Audi A1 to, a SEAT Ibiza will be.     |
+| 88  | Related an Audi A1 to, an SEAT Ibiza is.         |
+| 89  | Related an Audi A1 to, an SEAT Ibiza was.        |
+| 90  | Related an Audi A1 to, an SEAT Ibiza will be.    |
+| 91  | Related an Audi A1 to, the SEAT Ibiza is.        |
+| 92  | Related an Audi A1 to, the SEAT Ibiza was.       |
+| 93  | Related an Audi A1 to, the SEAT Ibiza will be.   |
+| 94  | Related an Audi A1 to, the SEAT Ibizas are.      |
+| 95  | Related an Audi A1 to, the SEAT Ibizas were.     |
+| 96  | Related an Audi A1 to, the SEAT Ibizas will be.  |
+| 97  | Related the Audi A1 to, SEAT Ibizas are.         |
+| 98  | Related the Audi A1 to, SEAT Ibizas were.        |
+| 99  | Related the Audi A1 to, SEAT Ibizas will be.     |
+| 100 | Related the Audi A1 to, a SEAT Ibiza is.         |
+| 101 | Related the Audi A1 to, a SEAT Ibiza was.        |
+| 102 | Related the Audi A1 to, a SEAT Ibiza will be.    |
+| 103 | Related the Audi A1 to, an SEAT Ibiza is.        |
+| 104 | Related the Audi A1 to, an SEAT Ibiza was.       |
+| 105 | Related the Audi A1 to, an SEAT Ibiza will be.   |
+| 106 | Related the Audi A1 to, the SEAT Ibiza is.       |
+| 107 | Related the Audi A1 to, the SEAT Ibiza was.      |
+| 108 | Related the Audi A1 to, the SEAT Ibiza will be.  |
+| 109 | Related the Audi A1 to, the SEAT Ibizas are.     |
+| 110 | Related the Audi A1 to, the SEAT Ibizas were.    |
+| 111 | Related the Audi A1 to, the SEAT Ibizas will be. |
+| 112 | Related to SEAT Ibizas, a Audi A1 is.            |
+| 113 | Related to SEAT Ibizas, a Audi A1 was.           |
+| 114 | Related to SEAT Ibizas, a Audi A1 will be.       |
+| 115 | Related to SEAT Ibizas, an Audi A1 is.           |
+| 116 | Related to SEAT Ibizas, an Audi A1 was.          |
+| 117 | Related to SEAT Ibizas, an Audi A1 will be.      |
+| 118 | Related to SEAT Ibizas, the Audi A1 is.          |
+| 119 | Related to SEAT Ibizas, the Audi A1 was.         |
+| 120 | Related to SEAT Ibizas, the Audi A1 will be.     |
+| 121 | Related to a SEAT Ibiza, a Audi A1 is.           |
+| 122 | Related to a SEAT Ibiza, a Audi A1 was.          |
+| 123 | Related to a SEAT Ibiza, a Audi A1 will be.      |
+| 124 | Related to a SEAT Ibiza, an Audi A1 is.          |
+| 125 | Related to a SEAT Ibiza, an Audi A1 was.         |
+| 126 | Related to a SEAT Ibiza, an Audi A1 will be.     |
+| 127 | Related to a SEAT Ibiza, the Audi A1 is.         |
+| 128 | Related to a SEAT Ibiza, the Audi A1 was.        |
+| 129 | Related to a SEAT Ibiza, the Audi A1 will be.    |
+| 130 | Related to an SEAT Ibiza, a Audi A1 is.          |
+| 131 | Related to an SEAT Ibiza, a Audi A1 was.         |
+| 132 | Related to an SEAT Ibiza, a Audi A1 will be.     |
+| 133 | Related to an SEAT Ibiza, an Audi A1 is.         |
+| 134 | Related to an SEAT Ibiza, an Audi A1 was.        |
+| 135 | Related to an SEAT Ibiza, an Audi A1 will be.    |
+| 136 | Related to an SEAT Ibiza, the Audi A1 is.        |
+| 137 | Related to an SEAT Ibiza, the Audi A1 was.       |
+| 138 | Related to an SEAT Ibiza, the Audi A1 will be.   |
+| 139 | Related to the SEAT Ibiza, a Audi A1 is.         |
+| 140 | Related to the SEAT Ibiza, a Audi A1 was.        |
+| 141 | Related to the SEAT Ibiza, a Audi A1 will be.    |
+| 142 | Related to the SEAT Ibiza, an Audi A1 is.        |
+| 143 | Related to the SEAT Ibiza, an Audi A1 was.       |
+| 144 | Related to the SEAT Ibiza, an Audi A1 will be.   |
+| 145 | Related to the SEAT Ibiza, the Audi A1 is.       |
+| 146 | Related to the SEAT Ibiza, the Audi A1 was.      |
+| 147 | Related to the SEAT Ibiza, the Audi A1 will be.  |
+| 148 | Related to the SEAT Ibizas, a Audi A1 is.        |
+| 149 | Related to the SEAT Ibizas, a Audi A1 was.       |
+| 150 | Related to the SEAT Ibizas, a Audi A1 will be.   |
+| 151 | Related to the SEAT Ibizas, an Audi A1 is.       |
+| 152 | Related to the SEAT Ibizas, an Audi A1 was.      |
+| 153 | Related to the SEAT Ibizas, an Audi A1 will be.  |
+| 154 | Related to the SEAT Ibizas, the Audi A1 is.      |
+| 155 | Related to the SEAT Ibizas, the Audi A1 was.     |
+| 156 | Related to the SEAT Ibizas, the Audi A1 will be. |
+| 157 | SEAT Ibizas are related a Audi A1 to.            |
+| 158 | SEAT Ibizas are related an Audi A1 to.           |
+| 159 | SEAT Ibizas are related the Audi A1 to.          |
+| 160 | SEAT Ibizas were related a Audi A1 to.           |
+| 161 | SEAT Ibizas were related an Audi A1 to.          |
+| 162 | SEAT Ibizas were related the Audi A1 to.         |
+| 163 | SEAT Ibizas will be related a Audi A1 to.        |
+| 164 | SEAT Ibizas will be related an Audi A1 to.       |
+| 165 | SEAT Ibizas will be related the Audi A1 to.      |
+| 166 | SEAT Ibizas, a Audi A1 is related to.            |
+| 167 | SEAT Ibizas, a Audi A1 was related to.           |
+| 168 | SEAT Ibizas, a Audi A1 will be related to.       |
+| 169 | SEAT Ibizas, an Audi A1 is related to.           |
+| 170 | SEAT Ibizas, an Audi A1 was related to.          |
+| 171 | SEAT Ibizas, an Audi A1 will be related to.      |
+| 172 | SEAT Ibizas, the Audi A1 is related to.          |
+| 173 | SEAT Ibizas, the Audi A1 was related to.         |
+| 174 | SEAT Ibizas, the Audi A1 will be related to.     |
+| 175 | The Audi A1 is related to SEAT Ibizas.           |
+| 176 | The Audi A1 is related to a SEAT Ibiza.          |
+| 177 | The Audi A1 is related to an SEAT Ibiza.         |
+| 178 | The Audi A1 is related to the SEAT Ibiza.        |
+| 179 | The Audi A1 is related to the SEAT Ibizas.       |
+| 180 | The Audi A1 was related to SEAT Ibizas.          |
+| 181 | The Audi A1 was related to a SEAT Ibiza.         |
+| 182 | The Audi A1 was related to an SEAT Ibiza.        |
+| 183 | The Audi A1 was related to the SEAT Ibiza.       |
+| 184 | The Audi A1 was related to the SEAT Ibizas.      |
+| 185 | The Audi A1 will be related to SEAT Ibizas.      |
+| 186 | The Audi A1 will be related to a SEAT Ibiza.     |
+| 187 | The Audi A1 will be related to an SEAT Ibiza.    |
+| 188 | The Audi A1 will be related to the SEAT Ibiza.   |
+| 189 | The Audi A1 will be related to the SEAT Ibizas.  |
+| 190 | The SEAT Ibiza is related a Audi A1 to.          |
+| 191 | The SEAT Ibiza is related an Audi A1 to.         |
+| 192 | The SEAT Ibiza is related the Audi A1 to.        |
+| 193 | The SEAT Ibiza was related a Audi A1 to.         |
+| 194 | The SEAT Ibiza was related an Audi A1 to.        |
+| 195 | The SEAT Ibiza was related the Audi A1 to.       |
+| 196 | The SEAT Ibiza will be related a Audi A1 to.     |
+| 197 | The SEAT Ibiza will be related an Audi A1 to.    |
+| 198 | The SEAT Ibiza will be related the Audi A1 to.   |
+| 199 | The SEAT Ibiza, a Audi A1 is related to.         |
+| 200 | The SEAT Ibiza, a Audi A1 was related to.        |
+| 201 | The SEAT Ibiza, a Audi A1 will be related to.    |
+| 202 | The SEAT Ibiza, an Audi A1 is related to.        |
+| 203 | The SEAT Ibiza, an Audi A1 was related to.       |
+| 204 | The SEAT Ibiza, an Audi A1 will be related to.   |
+| 205 | The SEAT Ibiza, the Audi A1 is related to.       |
+| 206 | The SEAT Ibiza, the Audi A1 was related to.      |
+| 207 | The SEAT Ibiza, the Audi A1 will be related to.  |
+| 208 | The SEAT Ibizas are related a Audi A1 to.        |
+| 209 | The SEAT Ibizas are related an Audi A1 to.       |
+| 210 | The SEAT Ibizas are related the Audi A1 to.      |
+| 211 | The SEAT Ibizas were related a Audi A1 to.       |
+| 212 | The SEAT Ibizas were related an Audi A1 to.      |
+| 213 | The SEAT Ibizas were related the Audi A1 to.     |
+| 214 | The SEAT Ibizas will be related a Audi A1 to.    |
+| 215 | The SEAT Ibizas will be related an Audi A1 to.   |
+| 216 | The SEAT Ibizas will be related the Audi A1 to.  |
+| 217 | The SEAT Ibizas, a Audi A1 is related to.        |
+| 218 | The SEAT Ibizas, a Audi A1 was related to.       |
+| 219 | The SEAT Ibizas, a Audi A1 will be related to.   |
+| 220 | The SEAT Ibizas, an Audi A1 is related to.       |
+| 221 | The SEAT Ibizas, an Audi A1 was related to.      |
+| 222 | The SEAT Ibizas, an Audi A1 will be related to.  |
+| 223 | The SEAT Ibizas, the Audi A1 is related to.      |
+| 224 | The SEAT Ibizas, the Audi A1 was related to.     |
+| 225 | The SEAT Ibizas, the Audi A1 will be related to. |
+| 226 | To SEAT Ibizas is a Audi A1 related.             |
+| 227 | To SEAT Ibizas is an Audi A1 related.            |
+| 228 | To SEAT Ibizas is the Audi A1 related.           |
+| 229 | To SEAT Ibizas was a Audi A1 related.            |
+| 230 | To SEAT Ibizas was an Audi A1 related.           |
+| 231 | To SEAT Ibizas was the Audi A1 related.          |
+| 232 | To SEAT Ibizas will a Audi A1 be related.        |
+| 233 | To SEAT Ibizas will an Audi A1 be related.       |
+| 234 | To SEAT Ibizas will the Audi A1 be related.      |
+| 235 | To SEAT Ibizas, a Audi A1 is related.            |
+| 236 | To SEAT Ibizas, a Audi A1 was related.           |
+| 237 | To SEAT Ibizas, a Audi A1 will be related.       |
+| 238 | To SEAT Ibizas, an Audi A1 is related.           |
+| 239 | To SEAT Ibizas, an Audi A1 was related.          |
+| 240 | To SEAT Ibizas, an Audi A1 will be related.      |
+| 241 | To SEAT Ibizas, is a Audi A1 related.            |
+| 242 | To SEAT Ibizas, is an Audi A1 related.           |
+| 243 | To SEAT Ibizas, is the Audi A1 related.          |
+| 244 | To SEAT Ibizas, the Audi A1 is related.          |
+| 245 | To SEAT Ibizas, the Audi A1 was related.         |
+| 246 | To SEAT Ibizas, the Audi A1 will be related.     |
+| 247 | To SEAT Ibizas, was a Audi A1 related.           |
+| 248 | To SEAT Ibizas, was an Audi A1 related.          |
+| 249 | To SEAT Ibizas, was the Audi A1 related.         |
+| 250 | To SEAT Ibizas, will a Audi A1 be related.       |
+| 251 | To SEAT Ibizas, will an Audi A1 be related.      |
+| 252 | To SEAT Ibizas, will the Audi A1 be related.     |
+| 253 | To a SEAT Ibiza is a Audi A1 related.            |
+| 254 | To a SEAT Ibiza is an Audi A1 related.           |
+| 255 | To a SEAT Ibiza is the Audi A1 related.          |
+| 256 | To a SEAT Ibiza was a Audi A1 related.           |
+| 257 | To a SEAT Ibiza was an Audi A1 related.          |
+| 258 | To a SEAT Ibiza was the Audi A1 related.         |
+| 259 | To a SEAT Ibiza will a Audi A1 be related.       |
+| 260 | To a SEAT Ibiza will an Audi A1 be related.      |
+| 261 | To a SEAT Ibiza will the Audi A1 be related.     |
+| 262 | To a SEAT Ibiza, a Audi A1 is related.           |
+| 263 | To a SEAT Ibiza, a Audi A1 was related.          |
+| 264 | To a SEAT Ibiza, a Audi A1 will be related.      |
+| 265 | To a SEAT Ibiza, an Audi A1 is related.          |
+| 266 | To a SEAT Ibiza, an Audi A1 was related.         |
+| 267 | To a SEAT Ibiza, an Audi A1 will be related.     |
+| 268 | To a SEAT Ibiza, is a Audi A1 related.           |
+| 269 | To a SEAT Ibiza, is an Audi A1 related.          |
+| 270 | To a SEAT Ibiza, is the Audi A1 related.         |
+| 271 | To a SEAT Ibiza, the Audi A1 is related.         |
+| 272 | To a SEAT Ibiza, the Audi A1 was related.        |
+| 273 | To a SEAT Ibiza, the Audi A1 will be related.    |
+| 274 | To a SEAT Ibiza, was a Audi A1 related.          |
+| 275 | To a SEAT Ibiza, was an Audi A1 related.         |
+| 276 | To a SEAT Ibiza, was the Audi A1 related.        |
+| 277 | To a SEAT Ibiza, will a Audi A1 be related.      |
+| 278 | To a SEAT Ibiza, will an Audi A1 be related.     |
+| 279 | To a SEAT Ibiza, will the Audi A1 be related.    |
+| 280 | To an SEAT Ibiza is a Audi A1 related.           |
+| 281 | To an SEAT Ibiza is an Audi A1 related.          |
+| 282 | To an SEAT Ibiza is the Audi A1 related.         |
+| 283 | To an SEAT Ibiza was a Audi A1 related.          |
+| 284 | To an SEAT Ibiza was an Audi A1 related.         |
+| 285 | To an SEAT Ibiza was the Audi A1 related.        |
+| 286 | To an SEAT Ibiza will a Audi A1 be related.      |
+| 287 | To an SEAT Ibiza will an Audi A1 be related.     |
+| 288 | To an SEAT Ibiza will the Audi A1 be related.    |
+| 289 | To an SEAT Ibiza, a Audi A1 is related.          |
+| 290 | To an SEAT Ibiza, a Audi A1 was related.         |
+| 291 | To an SEAT Ibiza, a Audi A1 will be related.     |
+| 292 | To an SEAT Ibiza, an Audi A1 is related.         |
+| 293 | To an SEAT Ibiza, an Audi A1 was related.        |
+| 294 | To an SEAT Ibiza, an Audi A1 will be related.    |
+| 295 | To an SEAT Ibiza, is a Audi A1 related.          |
+| 296 | To an SEAT Ibiza, is an Audi A1 related.         |
+| 297 | To an SEAT Ibiza, is the Audi A1 related.        |
+| 298 | To an SEAT Ibiza, the Audi A1 is related.        |
+| 299 | To an SEAT Ibiza, the Audi A1 was related.       |
+| 300 | To an SEAT Ibiza, the Audi A1 will be related.   |
+| 301 | To an SEAT Ibiza, was a Audi A1 related.         |
+| 302 | To an SEAT Ibiza, was an Audi A1 related.        |
+| 303 | To an SEAT Ibiza, was the Audi A1 related.       |
+| 304 | To an SEAT Ibiza, will a Audi A1 be related.     |
+| 305 | To an SEAT Ibiza, will an Audi A1 be related.    |
+| 306 | To an SEAT Ibiza, will the Audi A1 be related.   |
+| 307 | To the SEAT Ibiza is a Audi A1 related.          |
+| 308 | To the SEAT Ibiza is an Audi A1 related.         |
+| 309 | To the SEAT Ibiza is the Audi A1 related.        |
+| 310 | To the SEAT Ibiza was a Audi A1 related.         |
+| 311 | To the SEAT Ibiza was an Audi A1 related.        |
+| 312 | To the SEAT Ibiza was the Audi A1 related.       |
+| 313 | To the SEAT Ibiza will a Audi A1 be related.     |
+| 314 | To the SEAT Ibiza will an Audi A1 be related.    |
+| 315 | To the SEAT Ibiza will the Audi A1 be related.   |
+| 316 | To the SEAT Ibiza, a Audi A1 is related.         |
+| 317 | To the SEAT Ibiza, a Audi A1 was related.        |
+| 318 | To the SEAT Ibiza, a Audi A1 will be related.    |
+| 319 | To the SEAT Ibiza, an Audi A1 is related.        |
+| 320 | To the SEAT Ibiza, an Audi A1 was related.       |
+| 321 | To the SEAT Ibiza, an Audi A1 will be related.   |
+| 322 | To the SEAT Ibiza, is a Audi A1 related.         |
+| 323 | To the SEAT Ibiza, is an Audi A1 related.        |
+| 324 | To the SEAT Ibiza, is the Audi A1 related.       |
+| 325 | To the SEAT Ibiza, the Audi A1 is related.       |
+| 326 | To the SEAT Ibiza, the Audi A1 was related.      |
+| 327 | To the SEAT Ibiza, the Audi A1 will be related.  |
+| 328 | To the SEAT Ibiza, was a Audi A1 related.        |
+| 329 | To the SEAT Ibiza, was an Audi A1 related.       |
+| 330 | To the SEAT Ibiza, was the Audi A1 related.      |
+| 331 | To the SEAT Ibiza, will a Audi A1 be related.    |
+| 332 | To the SEAT Ibiza, will an Audi A1 be related.   |
+| 333 | To the SEAT Ibiza, will the Audi A1 be related.  |
+| 334 | To the SEAT Ibizas is a Audi A1 related.         |
+| 335 | To the SEAT Ibizas is an Audi A1 related.        |
+| 336 | To the SEAT Ibizas is the Audi A1 related.       |
+| 337 | To the SEAT Ibizas was a Audi A1 related.        |
+| 338 | To the SEAT Ibizas was an Audi A1 related.       |
+| 339 | To the SEAT Ibizas was the Audi A1 related.      |
+| 340 | To the SEAT Ibizas will a Audi A1 be related.    |
+| 341 | To the SEAT Ibizas will an Audi A1 be related.   |
+| 342 | To the SEAT Ibizas will the Audi A1 be related.  |
+| 343 | To the SEAT Ibizas, a Audi A1 is related.        |
+| 344 | To the SEAT Ibizas, a Audi A1 was related.       |
+| 345 | To the SEAT Ibizas, a Audi A1 will be related.   |
+| 346 | To the SEAT Ibizas, an Audi A1 is related.       |
+| 347 | To the SEAT Ibizas, an Audi A1 was related.      |
+| 348 | To the SEAT Ibizas, an Audi A1 will be related.  |
+| 349 | To the SEAT Ibizas, is a Audi A1 related.        |
+| 350 | To the SEAT Ibizas, is an Audi A1 related.       |
+| 351 | To the SEAT Ibizas, is the Audi A1 related.      |
+| 352 | To the SEAT Ibizas, the Audi A1 is related.      |
+| 353 | To the SEAT Ibizas, the Audi A1 was related.     |
+| 354 | To the SEAT Ibizas, the Audi A1 will be related. |
+| 355 | To the SEAT Ibizas, was a Audi A1 related.       |
+| 356 | To the SEAT Ibizas, was an Audi A1 related.      |
+| 357 | To the SEAT Ibizas, was the Audi A1 related.     |
+| 358 | To the SEAT Ibizas, will a Audi A1 be related.   |
+| 359 | To the SEAT Ibizas, will an Audi A1 be related.  |
+| 360 | To the SEAT Ibizas, will the Audi A1 be related. |
++-----+--------------------------------------------------+
+

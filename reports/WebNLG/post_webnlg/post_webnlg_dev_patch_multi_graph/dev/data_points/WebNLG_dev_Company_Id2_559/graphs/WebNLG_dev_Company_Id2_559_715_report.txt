@@ -1,0 +1,137 @@
+GRAPH NAME: WebNLG_dev_2triples_Company_Company_Id2_4_8
+
++-----------------------------------------+
+|            EVALUATION METRICS           |
++---------------------------------+-------+
+| Metric                          | Value |
++---------------------------------+-------+
+| Generated Text Results          | 9     |
+| Generated Gold Results          | 0     |
+| Generated Gold Results Coverage | 0.0   |
++---------------------------------+-------+
+| Node Count                      | 2     |
+| Nodes Covered                   | 2     |
+| Nodes Included                  | 2     |
++---------------------------------+-------+
+| Node Coverage                   | 1.0   |
+| Node Inclusion                  | 1.0   |
++---------------------------------+-------+
+| Edge Count                      | 1     |
+| Edges Covered                   | 1     |
+| Edges Included                  | 1     |
++---------------------------------+-------+
+| Edge Coverage                   | 1.0   |
+| Edge Inclusion                  | 1.0   |
++---------------------------------+-------+
+
++----------------------------------------------------------------------------------------------------------------------+
+|                                                     GOLD OUTPUTS                                                     |
++---------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                             | Generated? |
++---------------------------------------------------------------------------------------------------------+------------+
+| AmeriGas is a company in the energy industry, and they serve all regions of the United States.          | False      |
+| AmeriGas is in the energy business and is located in the United States where its services are provided. | False      |
+| AmeriGas's industry is classified as the energy industry. They serve the United States.                 | False      |
++---------------------------------------------------------------------------------------------------------+------------+
+
++-------------------------------------------------------------------------------------+
+|                                     NODE METRICS                                    |
++---------------+--------------+---------------+------------------+-------------------+
+| Node          | Node Covered | Node Included | Coverage Comment | Inclusion Comment |
++---------------+--------------+---------------+------------------+-------------------+
+| AmeriGas      | True         | True          | Covered          | Included          |
+| United_States | True         | True          | Covered          | Included          |
++---------------+--------------+---------------+------------------+-------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+|                                                  EDGE METRICS                                                 |
++--------------+----------+---------------+--------------+---------------+------------------+-------------------+
+| Edge         | Parent   | Child         | Edge Covered | Edge Included | Coverage Comment | Inclusion Comment |
++--------------+----------+---------------+--------------+---------------+------------------+-------------------+
+| regionServed | AmeriGas | United_States | True         | True          | Covered          | Included          |
++--------------+----------+---------------+--------------+---------------+------------------+-------------------+
+
++--------------------------------------------------------------------------------------------------+
+|                                        GENERATED SEMENTS                                         |
++---------------+----------------------------------------------------------------------------------+
+| Version       | SEMENT                                                                           |
++---------------+----------------------------------------------------------------------------------+
+| Original      | [ TOP: h235                                                                      |
+|               |   INDEX: e232 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _serve_v_1 LBL: h235 ARG0: e232 ARG1: i233 ARG2: i234 ]              |
+|               |           [ explicit_or_proper_q LBL: h244 ARG0: x241 RSTR: h242 BODY: h243 ]    |
+|               |           [ named_pl LBL: h231 ARG0: x230 [ x NUM: pl ] CARG: "United States" ]  |
+|               |           [ explicit_or_proper_q LBL: h239 ARG0: x236 RSTR: h237 BODY: h238 ]    |
+|               |           [ named LBL: h229 ARG0: x228 CARG: "AmeriGas" ] >                      |
+|               |   HCONS: < h242 qeq h231 h237 qeq h229 >                                         |
+|               |   EQS: < x241 eq x230 h235 eq h245 i234 eq x241 x236 eq x228 h235 eq h240 i233   |
+|               | eq x236 > ]                                                                      |
++---------------+----------------------------------------------------------------------------------+
+| EQs Collapsed | [ TOP: h235                                                                      |
+|               |   INDEX: e232 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _serve_v_1 LBL: h235 ARG0: e232 ARG1: x228 ARG2: x230 [ x NUM: pl ]  |
+|               | ]                                                                                |
+|               |           [ explicit_or_proper_q LBL: h244 ARG0: x230 RSTR: h242 BODY: h243 ]    |
+|               |           [ named_pl LBL: h231 ARG0: x230 CARG: "United States" ]                |
+|               |           [ explicit_or_proper_q LBL: h239 ARG0: x228 RSTR: h237 BODY: h238 ]    |
+|               |           [ named LBL: h229 ARG0: x228 CARG: "AmeriGas" ] >                      |
+|               |   HCONS: < h242 qeq h231 h237 qeq h229 > ]                                       |
++---------------+----------------------------------------------------------------------------------+
+| Prepped       | [ TOP: h246                                                                      |
+|               |   INDEX: e232 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _serve_v_1 LBL: h235 ARG0: e232 ARG1: x228 ARG2: x230 [ x NUM: pl ]  |
+|               | ]                                                                                |
+|               |           [ explicit_or_proper_q LBL: h244 ARG0: x230 RSTR: h242 BODY: h243 ]    |
+|               |           [ named_pl LBL: h231 ARG0: x230 CARG: "United States" ]                |
+|               |           [ explicit_or_proper_q LBL: h239 ARG0: x228 RSTR: h237 BODY: h238 ]    |
+|               |           [ named LBL: h229 ARG0: x228 CARG: "AmeriGas" ] >                      |
+|               |   HCONS: < h242 qeq h231 h237 qeq h229 h246 qeq h235 > ]                         |
++---------------+----------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------+
+|                                      NODE SEMENTS                                     |
++---------------+-----------------------------------------------------------------------+
+| Node          | Generated SEMENT                                                      |
++---------------+-----------------------------------------------------------------------+
+| AmeriGas      | [ TOP: h229                                                           |
+|               |   INDEX: x228                                                         |
+|               |   RELS: < [ named LBL: h229 ARG0: x228 CARG: "AmeriGas" ] > ]         |
++---------------+-----------------------------------------------------------------------+
+| United_States | [ TOP: h231                                                           |
+|               |   INDEX: x230 [ x NUM: pl ]                                           |
+|               |   RELS: < [ named_pl LBL: h231 ARG0: x230 CARG: "United States" ] > ] |
++---------------+-----------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------------------------------------+
+|                                                        EDGE SEMENTS                                                        |
++--------------+----------+---------------+----------------------------------------------------------------------------------+
+| Edge         | Parent   | Child         | Generated SEMENT                                                                 |
++--------------+----------+---------------+----------------------------------------------------------------------------------+
+| regionServed | AmeriGas | United_States | [ TOP: h235                                                                      |
+|              |          |               |   INDEX: e232 [ e TENSE: tensed ]                                                |
+|              |          |               |   RELS: < [ _serve_v_1 LBL: h235 ARG0: e232 ARG1: i233 ARG2: i234 ]              |
+|              |          |               |           [ explicit_or_proper_q LBL: h244 ARG0: x241 RSTR: h242 BODY: h243 ]    |
+|              |          |               |           [ named_pl LBL: h231 ARG0: x230 [ x NUM: pl ] CARG: "United States" ]  |
+|              |          |               |           [ explicit_or_proper_q LBL: h239 ARG0: x236 RSTR: h237 BODY: h238 ]    |
+|              |          |               |           [ named LBL: h229 ARG0: x228 CARG: "AmeriGas" ] >                      |
+|              |          |               |   HCONS: < h242 qeq h231 h237 qeq h229 >                                         |
+|              |          |               |   EQS: < x241 eq x230 h235 eq h245 i234 eq x241 x236 eq x228 h235 eq h240 i233   |
+|              |          |               | eq x236 > ]                                                                      |
++--------------+----------+---------------+----------------------------------------------------------------------------------+
+
++---------------------------------------------------+
+|               GENERATED ENGLISH TEXT              |
++---+-----------------------------------------------+
+| # | Generated Text                                |
++---+-----------------------------------------------+
+| 1 | AmeriGas served the United States.            |
+| 2 | AmeriGas serves the United States.            |
+| 3 | AmeriGas will serve the United States.        |
+| 4 | The AmeriGas served the United States.        |
+| 5 | The AmeriGas serves the United States.        |
+| 6 | The AmeriGas will serve the United States.    |
+| 7 | The AmeriGasses serve the United States.      |
+| 8 | The AmeriGasses served the United States.     |
+| 9 | The AmeriGasses will serve the United States. |
++---+-----------------------------------------------+
+

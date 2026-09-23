@@ -1,0 +1,131 @@
+GRAPH NAME: WebNLG_dev_2triples_Astronaut_Astronaut_Id3_0_1
+
++-----------------------------------------+
+|            EVALUATION METRICS           |
++---------------------------------+-------+
+| Metric                          | Value |
++---------------------------------+-------+
+| Generated Text Results          | 9     |
+| Generated Gold Results          | 0     |
+| Generated Gold Results Coverage | 0.0   |
++---------------------------------+-------+
+| Node Count                      | 2     |
+| Nodes Covered                   | 2     |
+| Nodes Included                  | 2     |
++---------------------------------+-------+
+| Node Coverage                   | 1.0   |
+| Node Inclusion                  | 1.0   |
++---------------------------------+-------+
+| Edge Count                      | 1     |
+| Edges Covered                   | 1     |
+| Edges Included                  | 1     |
++---------------------------------+-------+
+| Edge Coverage                   | 1.0   |
+| Edge Inclusion                  | 1.0   |
++---------------------------------+-------+
+
++-----------------------------------------------------------------------------------+
+|                                    GOLD OUTPUTS                                   |
++----------------------------------------------------------------------+------------+
+| Gold Output                                                          | Generated? |
++----------------------------------------------------------------------+------------+
+| Buzz Aldrin has since retired but he once served as a fighter pilot. | False      |
+| Buzz Aldrin is now retired but he was once a fighter pilot.          | False      |
+| Buzz Aldrin served as a fighter pilot and is now retired.            | False      |
+| Retiree Buzz Aldrin is a former fighter pilot.                       | False      |
++----------------------------------------------------------------------+------------+
+
++-----------------------------------------------------------------------------------+
+|                                    NODE METRICS                                   |
++-------------+--------------+---------------+------------------+-------------------+
+| Node        | Node Covered | Node Included | Coverage Comment | Inclusion Comment |
++-------------+--------------+---------------+------------------+-------------------+
+| Buzz_Aldrin | True         | True          | Covered          | Included          |
+| "Retired"   | True         | True          | Covered          | Included          |
++-------------+--------------+---------------+------------------+-------------------+
+
++--------------------------------------------------------------------------------------------------------+
+|                                              EDGE METRICS                                              |
++--------+-------------+-----------+--------------+---------------+------------------+-------------------+
+| Edge   | Parent      | Child     | Edge Covered | Edge Included | Coverage Comment | Inclusion Comment |
++--------+-------------+-----------+--------------+---------------+------------------+-------------------+
+| status | Buzz_Aldrin | "Retired" | True         | True          | Covered          | Included          |
++--------+-------------+-----------+--------------+---------------+------------------+-------------------+
+
++-------------------------------------------------------------------------------------------+
+|                                     GENERATED SEMENTS                                     |
++---------------+---------------------------------------------------------------------------+
+| Version       | SEMENT                                                                    |
++---------------+---------------------------------------------------------------------------+
+| Original      | [ TOP: h37                                                                |
+|               |   INDEX: e34 [ e TENSE: tensed ]                                          |
+|               |   RELS: < [ _retire_v_1 LBL: h37 ARG0: e34 ARG1: i35 ARG2: i36 ]          |
+|               |           [ explicit_or_proper_q LBL: h41 ARG0: x38 RSTR: h39 BODY: h40 ] |
+|               |           [ named LBL: h33 ARG0: x32 CARG: "Buzz Aldrin" ] >              |
+|               |   HCONS: < h39 qeq h33 >                                                  |
+|               |   EQS: < x38 eq x32 h37 eq h42 i35 eq x38 >                               |
+|               |   SLOTS: < ARG2: i36 > ]                                                  |
++---------------+---------------------------------------------------------------------------+
+| EQs Collapsed | [ TOP: h37                                                                |
+|               |   INDEX: e34 [ e TENSE: tensed ]                                          |
+|               |   RELS: < [ _retire_v_1 LBL: h37 ARG0: e34 ARG1: x32 ARG2: i36 ]          |
+|               |           [ explicit_or_proper_q LBL: h41 ARG0: x32 RSTR: h39 BODY: h40 ] |
+|               |           [ named LBL: h33 ARG0: x32 CARG: "Buzz Aldrin" ] >              |
+|               |   HCONS: < h39 qeq h33 >                                                  |
+|               |   SLOTS: < ARG2: i36 > ]                                                  |
++---------------+---------------------------------------------------------------------------+
+| Prepped       | [ TOP: h43                                                                |
+|               |   INDEX: e34 [ e TENSE: tensed ]                                          |
+|               |   RELS: < [ _retire_v_1 LBL: h37 ARG0: e34 ARG1: x32 ARG2: i36 ]          |
+|               |           [ explicit_or_proper_q LBL: h41 ARG0: x32 RSTR: h39 BODY: h40 ] |
+|               |           [ named LBL: h33 ARG0: x32 CARG: "Buzz Aldrin" ] >              |
+|               |   HCONS: < h39 qeq h33 h43 qeq h37 >                                      |
+|               |   SLOTS: < ARG2: i36 > ]                                                  |
++---------------+---------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------+
+|                                   NODE SEMENTS                                   |
++-------------+--------------------------------------------------------------------+
+| Node        | Generated SEMENT                                                   |
++-------------+--------------------------------------------------------------------+
+| Buzz_Aldrin | [ TOP: h33                                                         |
+|             |   INDEX: x32                                                       |
+|             |   RELS: < [ named LBL: h33 ARG0: x32 CARG: "Buzz Aldrin" ] > ]     |
++-------------+--------------------------------------------------------------------+
+| "Retired"   | [ TOP: h37                                                         |
+|             |   INDEX: e34                                                       |
+|             |   RELS: < [ _retire_v_1 LBL: h37 ARG0: e34 ARG1: i35 ARG2: i36 ] > |
+|             |   SLOTS: < ARG1: i35 ARG2: i36 > ]                                 |
++-------------+--------------------------------------------------------------------+
+
++--------------------------------------------------------------------------------------------------------------+
+|                                                 EDGE SEMENTS                                                 |
++--------+-------------+-----------+---------------------------------------------------------------------------+
+| Edge   | Parent      | Child     | Generated SEMENT                                                          |
++--------+-------------+-----------+---------------------------------------------------------------------------+
+| status | Buzz_Aldrin | "Retired" | [ TOP: h37                                                                |
+|        |             |           |   INDEX: e34 [ e TENSE: tensed ]                                          |
+|        |             |           |   RELS: < [ _retire_v_1 LBL: h37 ARG0: e34 ARG1: i35 ARG2: i36 ]          |
+|        |             |           |           [ explicit_or_proper_q LBL: h41 ARG0: x38 RSTR: h39 BODY: h40 ] |
+|        |             |           |           [ named LBL: h33 ARG0: x32 CARG: "Buzz Aldrin" ] >              |
+|        |             |           |   HCONS: < h39 qeq h33 >                                                  |
+|        |             |           |   EQS: < x38 eq x32 h37 eq h42 i35 eq x38 >                               |
+|        |             |           |   SLOTS: < ARG2: i36 > ]                                                  |
++--------+-------------+-----------+---------------------------------------------------------------------------+
+
++-----------------------------------+
+|       GENERATED ENGLISH TEXT      |
++---+-------------------------------+
+| # | Generated Text                |
++---+-------------------------------+
+| 1 | Buzz Aldrin retired.          |
+| 2 | Buzz Aldrin retires.          |
+| 3 | Buzz Aldrin will retire.      |
+| 4 | The Buzz Aldrin retired.      |
+| 5 | The Buzz Aldrin retires.      |
+| 6 | The Buzz Aldrin will retire.  |
+| 7 | The Buzz Aldrins retire.      |
+| 8 | The Buzz Aldrins retired.     |
+| 9 | The Buzz Aldrins will retire. |
++---+-------------------------------+
+
