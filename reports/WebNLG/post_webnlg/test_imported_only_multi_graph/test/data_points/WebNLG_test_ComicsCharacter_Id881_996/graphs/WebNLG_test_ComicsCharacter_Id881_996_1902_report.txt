@@ -1,0 +1,141 @@
+GRAPH NAME: WebNLG_test_2triples_ComicsCharacter_Id861_51_103
+
++-----------------------------------------+
+|            EVALUATION METRICS           |
++---------------------------------+-------+
+| Metric                          | Value |
++---------------------------------+-------+
+| Generated Text Results          | 15    |
+| Generated Gold Results          | 0     |
+| Generated Gold Results Coverage | 0.0   |
++---------------------------------+-------+
+| Node Count                      | 2     |
+| Nodes Covered                   | 2     |
+| Nodes Included                  | 2     |
++---------------------------------+-------+
+| Node Coverage                   | 1.0   |
+| Node Inclusion                  | 1.0   |
++---------------------------------+-------+
+| Edge Count                      | 1     |
+| Edges Covered                   | 1     |
+| Edges Included                  | 1     |
++---------------------------------+-------+
+| Edge Coverage                   | 1.0   |
+| Edge Inclusion                  | 1.0   |
++---------------------------------+-------+
+
++-----------------------------------------------------------------------------------------------------------+
+|                                                GOLD OUTPUTS                                               |
++----------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                  | Generated? |
++----------------------------------------------------------------------------------------------+------------+
+| John Reith, 1st Baron Reith, founded BBC, which broadcasted Bananaman.                       | False      |
+| The BBC, which showed Bananaman the TV series, was founded by John Reith, First Baron Reith. | False      |
+| The BBC, which was founded by 1st Baron, John Reith, broadcasted Bananaman.                  | False      |
++----------------------------------------------------------------------------------------------+------------+
+
++---------------------------------------------------------------------------------+
+|                                   NODE METRICS                                  |
++-----------+--------------+---------------+------------------+-------------------+
+| Node      | Node Covered | Node Included | Coverage Comment | Inclusion Comment |
++-----------+--------------+---------------+------------------+-------------------+
+| Bananaman | True         | True          | Covered          | Included          |
+| BBC       | True         | True          | Covered          | Included          |
++-----------+--------------+---------------+------------------+-------------------+
+
++---------------------------------------------------------------------------------------------------------+
+|                                               EDGE METRICS                                              |
++---------------+-----------+-------+--------------+---------------+------------------+-------------------+
+| Edge          | Parent    | Child | Edge Covered | Edge Included | Coverage Comment | Inclusion Comment |
++---------------+-----------+-------+--------------+---------------+------------------+-------------------+
+| broadcastedBy | Bananaman | BBC   | True         | True          | Covered          | Included          |
++---------------+-----------+-------+--------------+---------------+------------------+-------------------+
+
++--------------------------------------------------------------------------------------------------+
+|                                        GENERATED SEMENTS                                         |
++---------------+----------------------------------------------------------------------------------+
+| Version       | SEMENT                                                                           |
++---------------+----------------------------------------------------------------------------------+
+| Original      | [ TOP: h645                                                                      |
+|               |   INDEX: e642 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _broadcast_v_to LBL: h645 ARG0: e642 ARG1: i643 ARG2: i644 ]         |
+|               |           [ explicit_or_proper_q LBL: h654 ARG0: x651 RSTR: h652 BODY: h653 ]    |
+|               |           [ named LBL: h639 ARG0: x638 CARG: "Bananaman" ]                       |
+|               |           [ explicit_or_proper_q LBL: h649 ARG0: x646 RSTR: h647 BODY: h648 ]    |
+|               |           [ named LBL: h641 ARG0: x640 CARG: "BBC" ] >                           |
+|               |   HCONS: < h652 qeq h639 h647 qeq h641 >                                         |
+|               |   EQS: < x651 eq x638 h645 eq h655 i644 eq x651 x646 eq x640 h645 eq h650 i643   |
+|               | eq x646 > ]                                                                      |
++---------------+----------------------------------------------------------------------------------+
+| EQs Collapsed | [ TOP: h645                                                                      |
+|               |   INDEX: e642 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _broadcast_v_to LBL: h645 ARG0: e642 ARG1: x640 ARG2: x638 ]         |
+|               |           [ explicit_or_proper_q LBL: h654 ARG0: x638 RSTR: h652 BODY: h653 ]    |
+|               |           [ named LBL: h639 ARG0: x638 CARG: "Bananaman" ]                       |
+|               |           [ explicit_or_proper_q LBL: h649 ARG0: x640 RSTR: h647 BODY: h648 ]    |
+|               |           [ named LBL: h641 ARG0: x640 CARG: "BBC" ] >                           |
+|               |   HCONS: < h652 qeq h639 h647 qeq h641 > ]                                       |
++---------------+----------------------------------------------------------------------------------+
+| Prepped       | [ TOP: h656                                                                      |
+|               |   INDEX: e642 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _broadcast_v_to LBL: h645 ARG0: e642 ARG1: x640 ARG2: x638 ]         |
+|               |           [ explicit_or_proper_q LBL: h654 ARG0: x638 RSTR: h652 BODY: h653 ]    |
+|               |           [ named LBL: h639 ARG0: x638 CARG: "Bananaman" ]                       |
+|               |           [ explicit_or_proper_q LBL: h649 ARG0: x640 RSTR: h647 BODY: h648 ]    |
+|               |           [ named LBL: h641 ARG0: x640 CARG: "BBC" ] >                           |
+|               |   HCONS: < h652 qeq h639 h647 qeq h641 h656 qeq h645 > ]                         |
++---------------+----------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------+
+|                                NODE SEMENTS                                |
++-----------+----------------------------------------------------------------+
+| Node      | Generated SEMENT                                               |
++-----------+----------------------------------------------------------------+
+| Bananaman | [ TOP: h639                                                    |
+|           |   INDEX: x638                                                  |
+|           |   RELS: < [ named LBL: h639 ARG0: x638 CARG: "Bananaman" ] > ] |
++-----------+----------------------------------------------------------------+
+| BBC       | [ TOP: h641                                                    |
+|           |   INDEX: x640                                                  |
+|           |   RELS: < [ named LBL: h641 ARG0: x640 CARG: "BBC" ] > ]       |
++-----------+----------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------------------------------+
+|                                                     EDGE SEMENTS                                                     |
++---------------+-----------+-------+----------------------------------------------------------------------------------+
+| Edge          | Parent    | Child | Generated SEMENT                                                                 |
++---------------+-----------+-------+----------------------------------------------------------------------------------+
+| broadcastedBy | Bananaman | BBC   | [ TOP: h645                                                                      |
+|               |           |       |   INDEX: e642 [ e TENSE: tensed ]                                                |
+|               |           |       |   RELS: < [ _broadcast_v_to LBL: h645 ARG0: e642 ARG1: i643 ARG2: i644 ]         |
+|               |           |       |           [ explicit_or_proper_q LBL: h654 ARG0: x651 RSTR: h652 BODY: h653 ]    |
+|               |           |       |           [ named LBL: h639 ARG0: x638 CARG: "Bananaman" ]                       |
+|               |           |       |           [ explicit_or_proper_q LBL: h649 ARG0: x646 RSTR: h647 BODY: h648 ]    |
+|               |           |       |           [ named LBL: h641 ARG0: x640 CARG: "BBC" ] >                           |
+|               |           |       |   HCONS: < h652 qeq h639 h647 qeq h641 >                                         |
+|               |           |       |   EQS: < x651 eq x638 h645 eq h655 i644 eq x651 x646 eq x640 h645 eq h650 i643   |
+|               |           |       | eq x646 > ]                                                                      |
++---------------+-----------+-------+----------------------------------------------------------------------------------+
+
++----------------------------------------------+
+|            GENERATED ENGLISH TEXT            |
++----+-----------------------------------------+
+| #  | Generated Text                          |
++----+-----------------------------------------+
+| 1  | The BBC broadcast Bananaman.            |
+| 2  | The BBC broadcast the Bananaman.        |
+| 3  | The BBC broadcast the Bananamans.       |
+| 4  | The BBC broadcasts Bananaman.           |
+| 5  | The BBC broadcasts the Bananaman.       |
+| 6  | The BBC broadcasts the Bananamans.      |
+| 7  | The BBC will broadcast Bananaman.       |
+| 8  | The BBC will broadcast the Bananaman.   |
+| 9  | The BBC will broadcast the Bananamans.  |
+| 10 | The BBCs broadcast Bananaman.           |
+| 11 | The BBCs broadcast the Bananaman.       |
+| 12 | The BBCs broadcast the Bananamans.      |
+| 13 | The BBCs will broadcast Bananaman.      |
+| 14 | The BBCs will broadcast the Bananaman.  |
+| 15 | The BBCs will broadcast the Bananamans. |
++----+-----------------------------------------+
+
