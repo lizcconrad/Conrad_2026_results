@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_Scientist_Id1773_200_400
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+------------------------------------------------------------------------------------------------------------------------------+
-|                                                         GOLD OUTPUTS                                                         |
-+-----------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                     | Generated? |
-+-----------------------------------------------------------------------------------------------------------------+------------+
-| Darinka Dentcheva is a US citizen and a mathematician working in the field of mathematical optimization.        | False      |
-| Darinka Dentcheva is a citizen of the United States who works in the field of Mathematical optimization.        | False      |
-| Darinka Dentcheva, a citizen of the United States, is a professional in the field of mathematical optimization. | False      |
-+-----------------------------------------------------------------------------------------------------------------+------------+
++---------------------------------------------------------------------------------------+
+|                                      GOLD OUTPUTS                                     |
++--------------------------------------------------------------------------+------------+
+| Gold Output                                                              | Generated? |
++--------------------------------------------------------------------------+------------+
+| Darinka Dentcheva, a United States citizen, was born on January 1, 1958. | False      |
+| Darinka Dentcheva, born January 1, 1958, is a United states Citizen.     | False      |
+| Darinka Dentcheva, born on January 1st,1958, is a US citizen.            | False      |
++--------------------------------------------------------------------------+------------+
 
 +-----------------------------------------------------------------------------------------+
 |                                       NODE METRICS                                      |
@@ -56,92 +56,89 @@ GRAPH NAME: WebNLG_test_2triples_Scientist_Id1773_200_400
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h13148                                                                    |
-|               |   INDEX: e13145 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h13148 ARG0: e13145 ARG1: p13146 ARG2: i13147 ]        |
-|               |           [ def_udef_a_q LBL: h13157 ARG0: x13154 RSTR: h13155 BODY: h13156 ]    |
-|               |           [ _of_p LBL: h13137 ARG0: e13134 ARG1: u13135 ARG2: i13136 ]           |
-|               |           [ explicit_or_proper_q LBL: h13143 ARG0: x13140 RSTR: h13141 BODY:     |
-|               | h13142 ]                                                                         |
-|               |           [ named_pl LBL: h13133 ARG0: x13132 [ x NUM: pl ] CARG: "United        |
-|               | States" ]                                                                        |
-|               |           [ _citizen_n_1 LBL: h13139 ARG0: x13138 ]                              |
-|               |           [ explicit_or_proper_q LBL: h13152 ARG0: x13149 RSTR: h13150 BODY:     |
-|               | h13151 ]                                                                         |
-|               |           [ named LBL: h13131 ARG0: x13130 CARG: "Darinka Dentcheva" ] >         |
-|               |   HCONS: < h13141 qeq h13133 h13155 qeq h13139 h13150 qeq h13131 >               |
-|               |   EQS: < x13140 eq x13132 h13137 eq h13144 i13136 eq x13140 h13137 eq h13139     |
-|               | u13135 eq x13138 x13154 eq x13138 h13148 eq h13158 i13147 eq x13154 x13149 eq    |
-|               | x13130 h13148 eq h13153 p13146 eq x13149 > ]                                     |
+| Original      | [ TOP: h5386                                                                     |
+|               |   INDEX: e5383 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h5386 ARG0: e5383 ARG1: p5384 ARG2: i5385 ]            |
+|               |           [ def_udef_a_q LBL: h5395 ARG0: x5392 RSTR: h5393 BODY: h5394 ]        |
+|               |           [ _of_p LBL: h5375 ARG0: e5372 ARG1: u5373 ARG2: i5374 ]               |
+|               |           [ explicit_or_proper_q LBL: h5381 ARG0: x5378 RSTR: h5379 BODY: h5380  |
+|               | ]                                                                                |
+|               |           [ named_pl LBL: h5371 ARG0: x5370 [ x NUM: pl ] CARG: "United States"  |
+|               | ]                                                                                |
+|               |           [ _citizen_n_1 LBL: h5377 ARG0: x5376 ]                                |
+|               |           [ explicit_or_proper_q LBL: h5390 ARG0: x5387 RSTR: h5388 BODY: h5389  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5369 ARG0: x5368 CARG: "Darinka Dentcheva" ] >           |
+|               |   HCONS: < h5379 qeq h5371 h5393 qeq h5377 h5388 qeq h5369 >                     |
+|               |   EQS: < x5378 eq x5370 h5375 eq h5382 i5374 eq x5378 h5375 eq h5377 u5373 eq    |
+|               | x5376 x5392 eq x5376 h5386 eq h5396 i5385 eq x5392 x5387 eq x5368 h5386 eq h5391 |
+|               | p5384 eq x5387 > ]                                                               |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h13148                                                                    |
-|               |   INDEX: e13145 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h13148 ARG0: e13145 ARG1: x13130 ARG2: x13138 ]        |
-|               |           [ def_udef_a_q LBL: h13157 ARG0: x13138 RSTR: h13155 BODY: h13156 ]    |
-|               |           [ _of_p LBL: h13137 ARG0: e13134 ARG1: x13138 ARG2: x13132 [ x NUM: pl |
-|               | ] ]                                                                              |
-|               |           [ explicit_or_proper_q LBL: h13143 ARG0: x13132 RSTR: h13141 BODY:     |
-|               | h13142 ]                                                                         |
-|               |           [ named_pl LBL: h13133 ARG0: x13132 CARG: "United States" ]            |
-|               |           [ _citizen_n_1 LBL: h13137 ARG0: x13138 ]                              |
-|               |           [ explicit_or_proper_q LBL: h13152 ARG0: x13130 RSTR: h13150 BODY:     |
-|               | h13151 ]                                                                         |
-|               |           [ named LBL: h13131 ARG0: x13130 CARG: "Darinka Dentcheva" ] >         |
-|               |   HCONS: < h13141 qeq h13133 h13155 qeq h13137 h13150 qeq h13131 > ]             |
+| EQs Collapsed | [ TOP: h5386                                                                     |
+|               |   INDEX: e5383 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h5386 ARG0: e5383 ARG1: x5368 ARG2: x5376 ]            |
+|               |           [ def_udef_a_q LBL: h5395 ARG0: x5376 RSTR: h5393 BODY: h5394 ]        |
+|               |           [ _of_p LBL: h5375 ARG0: e5372 ARG1: x5376 ARG2: x5370 [ x NUM: pl ] ] |
+|               |           [ explicit_or_proper_q LBL: h5381 ARG0: x5370 RSTR: h5379 BODY: h5380  |
+|               | ]                                                                                |
+|               |           [ named_pl LBL: h5371 ARG0: x5370 CARG: "United States" ]              |
+|               |           [ _citizen_n_1 LBL: h5375 ARG0: x5376 ]                                |
+|               |           [ explicit_or_proper_q LBL: h5390 ARG0: x5368 RSTR: h5388 BODY: h5389  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5369 ARG0: x5368 CARG: "Darinka Dentcheva" ] >           |
+|               |   HCONS: < h5379 qeq h5371 h5393 qeq h5375 h5388 qeq h5369 > ]                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h13159                                                                    |
-|               |   INDEX: e13145 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h13148 ARG0: e13145 ARG1: x13130 ARG2: x13138 ]        |
-|               |           [ def_udef_a_q LBL: h13157 ARG0: x13138 RSTR: h13155 BODY: h13156 ]    |
-|               |           [ _of_p LBL: h13137 ARG0: e13134 ARG1: x13138 ARG2: x13132 [ x NUM: pl |
-|               | ] ]                                                                              |
-|               |           [ explicit_or_proper_q LBL: h13143 ARG0: x13132 RSTR: h13141 BODY:     |
-|               | h13142 ]                                                                         |
-|               |           [ named_pl LBL: h13133 ARG0: x13132 CARG: "United States" ]            |
-|               |           [ _citizen_n_1 LBL: h13137 ARG0: x13138 ]                              |
-|               |           [ explicit_or_proper_q LBL: h13152 ARG0: x13130 RSTR: h13150 BODY:     |
-|               | h13151 ]                                                                         |
-|               |           [ named LBL: h13131 ARG0: x13130 CARG: "Darinka Dentcheva" ] >         |
-|               |   HCONS: < h13141 qeq h13133 h13155 qeq h13137 h13150 qeq h13131 h13159 qeq      |
-|               | h13148 > ]                                                                       |
+| Prepped       | [ TOP: h5397                                                                     |
+|               |   INDEX: e5383 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h5386 ARG0: e5383 ARG1: x5368 ARG2: x5376 ]            |
+|               |           [ def_udef_a_q LBL: h5395 ARG0: x5376 RSTR: h5393 BODY: h5394 ]        |
+|               |           [ _of_p LBL: h5375 ARG0: e5372 ARG1: x5376 ARG2: x5370 [ x NUM: pl ] ] |
+|               |           [ explicit_or_proper_q LBL: h5381 ARG0: x5370 RSTR: h5379 BODY: h5380  |
+|               | ]                                                                                |
+|               |           [ named_pl LBL: h5371 ARG0: x5370 CARG: "United States" ]              |
+|               |           [ _citizen_n_1 LBL: h5375 ARG0: x5376 ]                                |
+|               |           [ explicit_or_proper_q LBL: h5390 ARG0: x5368 RSTR: h5388 BODY: h5389  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5369 ARG0: x5368 CARG: "Darinka Dentcheva" ] >           |
+|               |   HCONS: < h5379 qeq h5371 h5393 qeq h5375 h5388 qeq h5369 h5397 qeq h5386 > ]   |
 +---------------+----------------------------------------------------------------------------------+
 
-+------------------------------------------------------------------------------------------------+
-|                                          NODE SEMENTS                                          |
-+-------------------+----------------------------------------------------------------------------+
-| Node              | Generated SEMENT                                                           |
-+-------------------+----------------------------------------------------------------------------+
-| Darinka_Dentcheva | [ TOP: h13131                                                              |
-|                   |   INDEX: x13130                                                            |
-|                   |   RELS: < [ named LBL: h13131 ARG0: x13130 CARG: "Darinka Dentcheva" ] > ] |
-+-------------------+----------------------------------------------------------------------------+
-| United_States     | [ TOP: h13133                                                              |
-|                   |   INDEX: x13132 [ x NUM: pl ]                                              |
-|                   |   RELS: < [ named_pl LBL: h13133 ARG0: x13132 CARG: "United States" ] > ]  |
-+-------------------+----------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------+
+|                                         NODE SEMENTS                                         |
++-------------------+--------------------------------------------------------------------------+
+| Node              | Generated SEMENT                                                         |
++-------------------+--------------------------------------------------------------------------+
+| Darinka_Dentcheva | [ TOP: h5369                                                             |
+|                   |   INDEX: x5368                                                           |
+|                   |   RELS: < [ named LBL: h5369 ARG0: x5368 CARG: "Darinka Dentcheva" ] > ] |
++-------------------+--------------------------------------------------------------------------+
+| United_States     | [ TOP: h5371                                                             |
+|                   |   INDEX: x5370 [ x NUM: pl ]                                             |
+|                   |   RELS: < [ named_pl LBL: h5371 ARG0: x5370 CARG: "United States" ] > ]  |
++-------------------+--------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------------------------------------------+
 |                                                            EDGE SEMENTS                                                            |
 +-------------+-------------------+---------------+----------------------------------------------------------------------------------+
 | Edge        | Parent            | Child         | Generated SEMENT                                                                 |
 +-------------+-------------------+---------------+----------------------------------------------------------------------------------+
-| citizenship | Darinka_Dentcheva | United_States | [ TOP: h13148                                                                    |
-|             |                   |               |   INDEX: e13145 [ e SF: prop TENSE: tensed ]                                     |
-|             |                   |               |   RELS: < [ _be_v_id LBL: h13148 ARG0: e13145 ARG1: p13146 ARG2: i13147 ]        |
-|             |                   |               |           [ def_udef_a_q LBL: h13157 ARG0: x13154 RSTR: h13155 BODY: h13156 ]    |
-|             |                   |               |           [ _of_p LBL: h13137 ARG0: e13134 ARG1: u13135 ARG2: i13136 ]           |
-|             |                   |               |           [ explicit_or_proper_q LBL: h13143 ARG0: x13140 RSTR: h13141 BODY:     |
-|             |                   |               | h13142 ]                                                                         |
-|             |                   |               |           [ named_pl LBL: h13133 ARG0: x13132 [ x NUM: pl ] CARG: "United        |
-|             |                   |               | States" ]                                                                        |
-|             |                   |               |           [ _citizen_n_1 LBL: h13139 ARG0: x13138 ]                              |
-|             |                   |               |           [ explicit_or_proper_q LBL: h13152 ARG0: x13149 RSTR: h13150 BODY:     |
-|             |                   |               | h13151 ]                                                                         |
-|             |                   |               |           [ named LBL: h13131 ARG0: x13130 CARG: "Darinka Dentcheva" ] >         |
-|             |                   |               |   HCONS: < h13141 qeq h13133 h13155 qeq h13139 h13150 qeq h13131 >               |
-|             |                   |               |   EQS: < x13140 eq x13132 h13137 eq h13144 i13136 eq x13140 h13137 eq h13139     |
-|             |                   |               | u13135 eq x13138 x13154 eq x13138 h13148 eq h13158 i13147 eq x13154 x13149 eq    |
-|             |                   |               | x13130 h13148 eq h13153 p13146 eq x13149 > ]                                     |
+| citizenship | Darinka_Dentcheva | United_States | [ TOP: h5386                                                                     |
+|             |                   |               |   INDEX: e5383 [ e SF: prop TENSE: tensed ]                                      |
+|             |                   |               |   RELS: < [ _be_v_id LBL: h5386 ARG0: e5383 ARG1: p5384 ARG2: i5385 ]            |
+|             |                   |               |           [ def_udef_a_q LBL: h5395 ARG0: x5392 RSTR: h5393 BODY: h5394 ]        |
+|             |                   |               |           [ _of_p LBL: h5375 ARG0: e5372 ARG1: u5373 ARG2: i5374 ]               |
+|             |                   |               |           [ explicit_or_proper_q LBL: h5381 ARG0: x5378 RSTR: h5379 BODY: h5380  |
+|             |                   |               | ]                                                                                |
+|             |                   |               |           [ named_pl LBL: h5371 ARG0: x5370 [ x NUM: pl ] CARG: "United States"  |
+|             |                   |               | ]                                                                                |
+|             |                   |               |           [ _citizen_n_1 LBL: h5377 ARG0: x5376 ]                                |
+|             |                   |               |           [ explicit_or_proper_q LBL: h5390 ARG0: x5387 RSTR: h5388 BODY: h5389  |
+|             |                   |               | ]                                                                                |
+|             |                   |               |           [ named LBL: h5369 ARG0: x5368 CARG: "Darinka Dentcheva" ] >           |
+|             |                   |               |   HCONS: < h5379 qeq h5371 h5393 qeq h5377 h5388 qeq h5369 >                     |
+|             |                   |               |   EQS: < x5378 eq x5370 h5375 eq h5382 i5374 eq x5378 h5375 eq h5377 u5373 eq    |
+|             |                   |               | x5376 x5392 eq x5376 h5386 eq h5396 i5385 eq x5392 x5387 eq x5368 h5386 eq h5391 |
+|             |                   |               | p5384 eq x5387 > ]                                                               |
 +-------------+-------------------+---------------+----------------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------+

@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id1002_56_170
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                                  GOLD OUTPUTS                                                                                  |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                                       | Generated? |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Lady Anne Monson is from the Kingdom of England. She resided in India and was married to George Monson.                                                           | False      |
-| Lady Anne Monson, an Englishwoman residing in India, is married to George Monson.                                                                                 | False      |
-| Lady Anne Monson, spouse of George Monson, lived in the Kingdom of England at one point and held British nationality, despite residing in India most of her life. | False      |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                 GOLD OUTPUTS                                                                |
++--------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                    | Generated? |
++--------------------------------------------------------------------------------------------------------------------------------+------------+
+| George Monson was married to Lady Anne Monson, a botanist, who died on February 18, 1776.                                      | False      |
+| Lady Anne Monson is the spouse of George Monson. Her professional field of study was botany, and she died on 18 February 1776. | False      |
+| Lady Anne Monson, a professional botanist who was married to George Monson, died on February 18th, 1776.                       | False      |
++--------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------+
 |                                      NODE METRICS                                      |
@@ -56,103 +56,92 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id1002_56_170
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h5810                                                                     |
-|               |   INDEX: e5807 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _to_p_state LBL: h5801 ARG0: e5798 ARG1: u5799 ARG2: i5800 ]         |
-|               |           [ explicit_or_proper_q LBL: h5805 ARG0: x5802 RSTR: h5803 BODY: h5804  |
-|               | ]                                                                                |
-|               |           [ named LBL: h5797 ARG0: x5796 CARG: "George Monson" ]                 |
-|               |           [ _marry_v_1 LBL: h5810 ARG0: e5807 ARG1: i5808 ARG2: i5809 ]          |
-|               |           [ explicit_or_proper_q LBL: h5814 ARG0: x5811 RSTR: h5812 BODY: h5813  |
-|               | ]                                                                                |
-|               |           [ compound LBL: h5790 ARG0: e5787 ARG1: u5788 ARG2: u5789 ]            |
-|               |           [ existential_q LBL: h5794 ARG0: x5791 RSTR: h5792 BODY: h5793 ]       |
-|               |           [ _lady_n_1 LBL: h5786 ARG0: x5785 [ x NUM: sg ] ]                     |
-|               |           [ named LBL: h5784 ARG0: x5783 CARG: "Anne Monson" ] >                 |
-|               |   HCONS: < h5803 qeq h5797 h5792 qeq h5786 h5812 qeq h5784 >                     |
-|               |   EQS: < x5802 eq x5796 h5801 eq h5806 i5800 eq x5802 x5791 eq x5785 h5790 eq    |
-|               | h5795 u5789 eq x5791 h5790 eq h5784 u5788 eq x5783 x5811 eq x5783 h5810 eq h5815 |
-|               | i5809 eq x5811 h5801 eq h5810 u5799 eq e5807 >                                   |
-|               |   SLOTS: < ARG1: i5808 > ]                                                       |
+| Original      | [ TOP: h646                                                                      |
+|               |   INDEX: e643 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _to_p_state LBL: h637 ARG0: e634 ARG1: u635 ARG2: i636 ]             |
+|               |           [ explicit_or_proper_q LBL: h641 ARG0: x638 RSTR: h639 BODY: h640 ]    |
+|               |           [ named LBL: h633 ARG0: x632 CARG: "George Monson" ]                   |
+|               |           [ _marry_v_1 LBL: h646 ARG0: e643 ARG1: i644 ARG2: i645 ]              |
+|               |           [ explicit_or_proper_q LBL: h650 ARG0: x647 RSTR: h648 BODY: h649 ]    |
+|               |           [ compound LBL: h626 ARG0: e623 ARG1: u624 ARG2: u625 ]                |
+|               |           [ existential_q LBL: h630 ARG0: x627 RSTR: h628 BODY: h629 ]           |
+|               |           [ _lady_n_1 LBL: h622 ARG0: x621 [ x NUM: sg ] ]                       |
+|               |           [ named LBL: h620 ARG0: x619 CARG: "Anne Monson" ] >                   |
+|               |   HCONS: < h639 qeq h633 h628 qeq h622 h648 qeq h620 >                           |
+|               |   EQS: < x638 eq x632 h637 eq h642 i636 eq x638 x627 eq x621 h626 eq h631 u625   |
+|               | eq x627 h626 eq h620 u624 eq x619 x647 eq x619 h646 eq h651 i645 eq x647 h637 eq |
+|               | h646 u635 eq e643 >                                                              |
+|               |   SLOTS: < ARG1: i644 > ]                                                        |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h5801                                                                     |
-|               |   INDEX: e5807 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _to_p_state LBL: h5801 ARG0: e5798 ARG1: e5807 ARG2: x5796 ]         |
-|               |           [ explicit_or_proper_q LBL: h5805 ARG0: x5796 RSTR: h5803 BODY: h5804  |
-|               | ]                                                                                |
-|               |           [ named LBL: h5797 ARG0: x5796 CARG: "George Monson" ]                 |
-|               |           [ _marry_v_1 LBL: h5801 ARG0: e5807 ARG1: i5808 ARG2: x5783 ]          |
-|               |           [ explicit_or_proper_q LBL: h5814 ARG0: x5783 RSTR: h5812 BODY: h5813  |
-|               | ]                                                                                |
-|               |           [ compound LBL: h5784 ARG0: e5787 ARG1: x5783 ARG2: x5785 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ existential_q LBL: h5794 ARG0: x5785 RSTR: h5792 BODY: h5793 ]       |
-|               |           [ _lady_n_1 LBL: h5786 ARG0: x5785 ]                                   |
-|               |           [ named LBL: h5784 ARG0: x5783 CARG: "Anne Monson" ] >                 |
-|               |   HCONS: < h5803 qeq h5797 h5792 qeq h5786 h5812 qeq h5784 >                     |
-|               |   SLOTS: < ARG1: i5808 > ]                                                       |
+| EQs Collapsed | [ TOP: h637                                                                      |
+|               |   INDEX: e643 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _to_p_state LBL: h637 ARG0: e634 ARG1: e643 ARG2: x632 ]             |
+|               |           [ explicit_or_proper_q LBL: h641 ARG0: x632 RSTR: h639 BODY: h640 ]    |
+|               |           [ named LBL: h633 ARG0: x632 CARG: "George Monson" ]                   |
+|               |           [ _marry_v_1 LBL: h637 ARG0: e643 ARG1: i644 ARG2: x619 ]              |
+|               |           [ explicit_or_proper_q LBL: h650 ARG0: x619 RSTR: h648 BODY: h649 ]    |
+|               |           [ compound LBL: h620 ARG0: e623 ARG1: x619 ARG2: x621 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h630 ARG0: x621 RSTR: h628 BODY: h629 ]           |
+|               |           [ _lady_n_1 LBL: h622 ARG0: x621 ]                                     |
+|               |           [ named LBL: h620 ARG0: x619 CARG: "Anne Monson" ] >                   |
+|               |   HCONS: < h639 qeq h633 h628 qeq h622 h648 qeq h620 >                           |
+|               |   SLOTS: < ARG1: i644 > ]                                                        |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h5816                                                                     |
-|               |   INDEX: e5807 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _to_p_state LBL: h5801 ARG0: e5798 ARG1: e5807 ARG2: x5796 ]         |
-|               |           [ explicit_or_proper_q LBL: h5805 ARG0: x5796 RSTR: h5803 BODY: h5804  |
-|               | ]                                                                                |
-|               |           [ named LBL: h5797 ARG0: x5796 CARG: "George Monson" ]                 |
-|               |           [ _marry_v_1 LBL: h5801 ARG0: e5807 ARG1: i5808 ARG2: x5783 ]          |
-|               |           [ explicit_or_proper_q LBL: h5814 ARG0: x5783 RSTR: h5812 BODY: h5813  |
-|               | ]                                                                                |
-|               |           [ compound LBL: h5784 ARG0: e5787 ARG1: x5783 ARG2: x5785 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ existential_q LBL: h5794 ARG0: x5785 RSTR: h5792 BODY: h5793 ]       |
-|               |           [ _lady_n_1 LBL: h5786 ARG0: x5785 ]                                   |
-|               |           [ named LBL: h5784 ARG0: x5783 CARG: "Anne Monson" ] >                 |
-|               |   HCONS: < h5803 qeq h5797 h5792 qeq h5786 h5812 qeq h5784 h5816 qeq h5801 >     |
-|               |   SLOTS: < ARG1: i5808 > ]                                                       |
+| Prepped       | [ TOP: h652                                                                      |
+|               |   INDEX: e643 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _to_p_state LBL: h637 ARG0: e634 ARG1: e643 ARG2: x632 ]             |
+|               |           [ explicit_or_proper_q LBL: h641 ARG0: x632 RSTR: h639 BODY: h640 ]    |
+|               |           [ named LBL: h633 ARG0: x632 CARG: "George Monson" ]                   |
+|               |           [ _marry_v_1 LBL: h637 ARG0: e643 ARG1: i644 ARG2: x619 ]              |
+|               |           [ explicit_or_proper_q LBL: h650 ARG0: x619 RSTR: h648 BODY: h649 ]    |
+|               |           [ compound LBL: h620 ARG0: e623 ARG1: x619 ARG2: x621 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h630 ARG0: x621 RSTR: h628 BODY: h629 ]           |
+|               |           [ _lady_n_1 LBL: h622 ARG0: x621 ]                                     |
+|               |           [ named LBL: h620 ARG0: x619 CARG: "Anne Monson" ] >                   |
+|               |   HCONS: < h639 qeq h633 h628 qeq h622 h648 qeq h620 h652 qeq h637 >             |
+|               |   SLOTS: < ARG1: i644 > ]                                                        |
 +---------------+----------------------------------------------------------------------------------+
 
-+-----------------------------------------------------------------------------------------------------+
-|                                             NODE SEMENTS                                            |
-+------------------+----------------------------------------------------------------------------------+
-| Node             | Generated SEMENT                                                                 |
-+------------------+----------------------------------------------------------------------------------+
-| Lady_Anne_Monson | [ TOP: h5784                                                                     |
-|                  |   INDEX: x5783                                                                   |
-|                  |   RELS: < [ compound LBL: h5790 ARG0: e5787 ARG1: u5788 ARG2: u5789 ]            |
-|                  |           [ existential_q LBL: h5794 ARG0: x5791 RSTR: h5792 BODY: h5793 ]       |
-|                  |           [ _lady_n_1 LBL: h5786 ARG0: x5785 [ x NUM: sg ] ]                     |
-|                  |           [ named LBL: h5784 ARG0: x5783 CARG: "Anne Monson" ] >                 |
-|                  |   HCONS: < h5792 qeq h5786 >                                                     |
-|                  |   EQS: < x5791 eq x5785 h5790 eq h5795 u5789 eq x5791 h5790 eq h5784 u5788 eq    |
-|                  | x5783 > ]                                                                        |
-+------------------+----------------------------------------------------------------------------------+
-| George_Monson    | [ TOP: h5797                                                                     |
-|                  |   INDEX: x5796                                                                   |
-|                  |   RELS: < [ named LBL: h5797 ARG0: x5796 CARG: "George Monson" ] > ]             |
-+------------------+----------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------+
+|                                           NODE SEMENTS                                           |
++------------------+-------------------------------------------------------------------------------+
+| Node             | Generated SEMENT                                                              |
++------------------+-------------------------------------------------------------------------------+
+| Lady_Anne_Monson | [ TOP: h620                                                                   |
+|                  |   INDEX: x619                                                                 |
+|                  |   RELS: < [ compound LBL: h626 ARG0: e623 ARG1: u624 ARG2: u625 ]             |
+|                  |           [ existential_q LBL: h630 ARG0: x627 RSTR: h628 BODY: h629 ]        |
+|                  |           [ _lady_n_1 LBL: h622 ARG0: x621 [ x NUM: sg ] ]                    |
+|                  |           [ named LBL: h620 ARG0: x619 CARG: "Anne Monson" ] >                |
+|                  |   HCONS: < h628 qeq h622 >                                                    |
+|                  |   EQS: < x627 eq x621 h626 eq h631 u625 eq x627 h626 eq h620 u624 eq x619 > ] |
++------------------+-------------------------------------------------------------------------------+
+| George_Monson    | [ TOP: h633                                                                   |
+|                  |   INDEX: x632                                                                 |
+|                  |   RELS: < [ named LBL: h633 ARG0: x632 CARG: "George Monson" ] > ]            |
++------------------+-------------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------------------------------------+
 |                                                         EDGE SEMENTS                                                         |
 +--------+------------------+---------------+----------------------------------------------------------------------------------+
 | Edge   | Parent           | Child         | Generated SEMENT                                                                 |
 +--------+------------------+---------------+----------------------------------------------------------------------------------+
-| spouse | Lady_Anne_Monson | George_Monson | [ TOP: h5810                                                                     |
-|        |                  |               |   INDEX: e5807 [ e TENSE: tensed ]                                               |
-|        |                  |               |   RELS: < [ _to_p_state LBL: h5801 ARG0: e5798 ARG1: u5799 ARG2: i5800 ]         |
-|        |                  |               |           [ explicit_or_proper_q LBL: h5805 ARG0: x5802 RSTR: h5803 BODY: h5804  |
-|        |                  |               | ]                                                                                |
-|        |                  |               |           [ named LBL: h5797 ARG0: x5796 CARG: "George Monson" ]                 |
-|        |                  |               |           [ _marry_v_1 LBL: h5810 ARG0: e5807 ARG1: i5808 ARG2: i5809 ]          |
-|        |                  |               |           [ explicit_or_proper_q LBL: h5814 ARG0: x5811 RSTR: h5812 BODY: h5813  |
-|        |                  |               | ]                                                                                |
-|        |                  |               |           [ compound LBL: h5790 ARG0: e5787 ARG1: u5788 ARG2: u5789 ]            |
-|        |                  |               |           [ existential_q LBL: h5794 ARG0: x5791 RSTR: h5792 BODY: h5793 ]       |
-|        |                  |               |           [ _lady_n_1 LBL: h5786 ARG0: x5785 [ x NUM: sg ] ]                     |
-|        |                  |               |           [ named LBL: h5784 ARG0: x5783 CARG: "Anne Monson" ] >                 |
-|        |                  |               |   HCONS: < h5803 qeq h5797 h5792 qeq h5786 h5812 qeq h5784 >                     |
-|        |                  |               |   EQS: < x5802 eq x5796 h5801 eq h5806 i5800 eq x5802 x5791 eq x5785 h5790 eq    |
-|        |                  |               | h5795 u5789 eq x5791 h5790 eq h5784 u5788 eq x5783 x5811 eq x5783 h5810 eq h5815 |
-|        |                  |               | i5809 eq x5811 h5801 eq h5810 u5799 eq e5807 >                                   |
-|        |                  |               |   SLOTS: < ARG1: i5808 > ]                                                       |
+| spouse | Lady_Anne_Monson | George_Monson | [ TOP: h646                                                                      |
+|        |                  |               |   INDEX: e643 [ e TENSE: tensed ]                                                |
+|        |                  |               |   RELS: < [ _to_p_state LBL: h637 ARG0: e634 ARG1: u635 ARG2: i636 ]             |
+|        |                  |               |           [ explicit_or_proper_q LBL: h641 ARG0: x638 RSTR: h639 BODY: h640 ]    |
+|        |                  |               |           [ named LBL: h633 ARG0: x632 CARG: "George Monson" ]                   |
+|        |                  |               |           [ _marry_v_1 LBL: h646 ARG0: e643 ARG1: i644 ARG2: i645 ]              |
+|        |                  |               |           [ explicit_or_proper_q LBL: h650 ARG0: x647 RSTR: h648 BODY: h649 ]    |
+|        |                  |               |           [ compound LBL: h626 ARG0: e623 ARG1: u624 ARG2: u625 ]                |
+|        |                  |               |           [ existential_q LBL: h630 ARG0: x627 RSTR: h628 BODY: h629 ]           |
+|        |                  |               |           [ _lady_n_1 LBL: h622 ARG0: x621 [ x NUM: sg ] ]                       |
+|        |                  |               |           [ named LBL: h620 ARG0: x619 CARG: "Anne Monson" ] >                   |
+|        |                  |               |   HCONS: < h639 qeq h633 h628 qeq h622 h648 qeq h620 >                           |
+|        |                  |               |   EQS: < x638 eq x632 h637 eq h642 i636 eq x638 x627 eq x621 h626 eq h631 u625   |
+|        |                  |               | eq x627 h626 eq h620 u624 eq x619 x647 eq x619 h646 eq h651 i645 eq x647 h637 eq |
+|        |                  |               | h646 u635 eq e643 >                                                              |
+|        |                  |               |   SLOTS: < ARG1: i644 > ]                                                        |
 +--------+------------------+---------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------+

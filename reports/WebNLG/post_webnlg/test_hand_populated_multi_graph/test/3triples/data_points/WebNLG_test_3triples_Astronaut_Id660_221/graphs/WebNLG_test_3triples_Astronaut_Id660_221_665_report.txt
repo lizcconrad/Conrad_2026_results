@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Astronaut_Id660_221_665
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-------------------------------------------------------------------------------------------------+
-|                                           GOLD OUTPUTS                                          |
-+------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                        | Generated? |
-+------------------------------------------------------------------------------------+------------+
-| Born in Zaoyang, Hubei, Nie Haisheng participated in the Shenzhou 10 mission.      | False      |
-| Nie Haisheng born in Zaoyang, Hubei Province took part in the Shenzhou 10 mission. | False      |
-| Nie Haisheng was born in Zaoyang, Hubei and he was part of Shenzhou 10 mission.    | False      |
-+------------------------------------------------------------------------------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                      GOLD OUTPUTS                                                                      |
++-------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                               | Generated? |
++-------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Chinese national Nie Haisheng participated in Shenzhou 6 and Shenzhou 10.                                                                 | False      |
+| Nie Haisheng is from the People's Republic of China, and he was part of the mission Shenzhou 10, now took part in the Shenzhou 6 mission. | False      |
+| Nie Haisheng was part of Shenzhou 10 mission, took part in the Shenzhou 6 mission, and he is from the People's Republic of China.         | False      |
++-------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +------------------------------------------------------------------------------------+
 |                                    NODE METRICS                                    |
@@ -56,103 +56,98 @@ GRAPH NAME: WebNLG_test_3triples_Astronaut_Id660_221_665
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h22487                                                                    |
-|               |   INDEX: e22484 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _serve_v_as LBL: h22487 ARG0: e22484 ARG1: i22485 ARG2: i22486 ]     |
-|               |           [ def_udef_a_q LBL: h22516 ARG0: x22513 RSTR: h22514 BODY: h22515 ]    |
-|               |           [ compound LBL: h22502 ARG0: e22499 ARG1: u22500 ARG2: u22501 ]        |
-|               |           [ existential_q LBL: h22506 ARG0: x22503 RSTR: h22504 BODY: h22505 ]   |
-|               |           [ _crew_n_of LBL: h22498 ARG0: x22496 [ x NUM: sg ] ARG1: i22497 ]     |
-|               |           [ _member_n_of LBL: h22490 ARG0: x22488 ARG1: i22489 ]                 |
-|               |           [ explicit_or_proper_q LBL: h22494 ARG0: x22491 RSTR: h22492 BODY:     |
-|               | h22493 ]                                                                         |
-|               |           [ named LBL: h22483 ARG0: x22482 CARG: "Shenzhou 10" ]                 |
-|               |           [ explicit_or_proper_q LBL: h22511 ARG0: x22508 RSTR: h22509 BODY:     |
-|               | h22510 ]                                                                         |
-|               |           [ named LBL: h22481 ARG0: x22480 CARG: "Nie Haisheng" ] >              |
-|               |   HCONS: < h22504 qeq h22498 h22492 qeq h22483 h22514 qeq h22490 h22509 qeq      |
-|               | h22481 >                                                                         |
-|               |   EQS: < x22503 eq x22496 h22502 eq h22507 u22501 eq x22503 x22491 eq x22482     |
-|               | h22490 eq h22495 i22489 eq x22491 h22502 eq h22490 u22500 eq x22488 x22513 eq    |
-|               | x22488 h22487 eq h22517 i22486 eq x22513 x22508 eq x22480 h22487 eq h22512       |
-|               | i22485 eq x22508 > ]                                                             |
+| Original      | [ TOP: h3933                                                                     |
+|               |   INDEX: e3930 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _serve_v_as LBL: h3933 ARG0: e3930 ARG1: i3931 ARG2: i3932 ]         |
+|               |           [ def_udef_a_q LBL: h3962 ARG0: x3959 RSTR: h3960 BODY: h3961 ]        |
+|               |           [ compound LBL: h3948 ARG0: e3945 ARG1: u3946 ARG2: u3947 ]            |
+|               |           [ existential_q LBL: h3952 ARG0: x3949 RSTR: h3950 BODY: h3951 ]       |
+|               |           [ _crew_n_of LBL: h3944 ARG0: x3942 [ x NUM: sg ] ARG1: i3943 ]        |
+|               |           [ _member_n_of LBL: h3936 ARG0: x3934 ARG1: i3935 ]                    |
+|               |           [ explicit_or_proper_q LBL: h3940 ARG0: x3937 RSTR: h3938 BODY: h3939  |
+|               | ]                                                                                |
+|               |           [ named LBL: h3929 ARG0: x3928 CARG: "Shenzhou 10" ]                   |
+|               |           [ explicit_or_proper_q LBL: h3957 ARG0: x3954 RSTR: h3955 BODY: h3956  |
+|               | ]                                                                                |
+|               |           [ named LBL: h3927 ARG0: x3926 CARG: "Nie Haisheng" ] >                |
+|               |   HCONS: < h3950 qeq h3944 h3938 qeq h3929 h3960 qeq h3936 h3955 qeq h3927 >     |
+|               |   EQS: < x3949 eq x3942 h3948 eq h3953 u3947 eq x3949 x3937 eq x3928 h3936 eq    |
+|               | h3941 i3935 eq x3937 h3948 eq h3936 u3946 eq x3934 x3959 eq x3934 h3933 eq h3963 |
+|               | i3932 eq x3959 x3954 eq x3926 h3933 eq h3958 i3931 eq x3954 > ]                  |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h22487                                                                    |
-|               |   INDEX: e22484 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _serve_v_as LBL: h22487 ARG0: e22484 ARG1: x22480 ARG2: x22488 ]     |
-|               |           [ def_udef_a_q LBL: h22516 ARG0: x22488 RSTR: h22514 BODY: h22515 ]    |
-|               |           [ compound LBL: h22490 ARG0: e22499 ARG1: x22488 ARG2: x22496 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h22506 ARG0: x22496 RSTR: h22504 BODY: h22505 ]   |
-|               |           [ _crew_n_of LBL: h22498 ARG0: x22496 ARG1: i22497 ]                   |
-|               |           [ _member_n_of LBL: h22490 ARG0: x22488 ARG1: x22482 ]                 |
-|               |           [ explicit_or_proper_q LBL: h22494 ARG0: x22482 RSTR: h22492 BODY:     |
-|               | h22493 ]                                                                         |
-|               |           [ named LBL: h22483 ARG0: x22482 CARG: "Shenzhou 10" ]                 |
-|               |           [ explicit_or_proper_q LBL: h22511 ARG0: x22480 RSTR: h22509 BODY:     |
-|               | h22510 ]                                                                         |
-|               |           [ named LBL: h22481 ARG0: x22480 CARG: "Nie Haisheng" ] >              |
-|               |   HCONS: < h22504 qeq h22498 h22492 qeq h22483 h22514 qeq h22490 h22509 qeq      |
-|               | h22481 > ]                                                                       |
+| EQs Collapsed | [ TOP: h3933                                                                     |
+|               |   INDEX: e3930 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _serve_v_as LBL: h3933 ARG0: e3930 ARG1: x3926 ARG2: x3934 ]         |
+|               |           [ def_udef_a_q LBL: h3962 ARG0: x3934 RSTR: h3960 BODY: h3961 ]        |
+|               |           [ compound LBL: h3936 ARG0: e3945 ARG1: x3934 ARG2: x3942 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h3952 ARG0: x3942 RSTR: h3950 BODY: h3951 ]       |
+|               |           [ _crew_n_of LBL: h3944 ARG0: x3942 ARG1: i3943 ]                      |
+|               |           [ _member_n_of LBL: h3936 ARG0: x3934 ARG1: x3928 ]                    |
+|               |           [ explicit_or_proper_q LBL: h3940 ARG0: x3928 RSTR: h3938 BODY: h3939  |
+|               | ]                                                                                |
+|               |           [ named LBL: h3929 ARG0: x3928 CARG: "Shenzhou 10" ]                   |
+|               |           [ explicit_or_proper_q LBL: h3957 ARG0: x3926 RSTR: h3955 BODY: h3956  |
+|               | ]                                                                                |
+|               |           [ named LBL: h3927 ARG0: x3926 CARG: "Nie Haisheng" ] >                |
+|               |   HCONS: < h3950 qeq h3944 h3938 qeq h3929 h3960 qeq h3936 h3955 qeq h3927 > ]   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h22518                                                                    |
-|               |   INDEX: e22484 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _serve_v_as LBL: h22487 ARG0: e22484 ARG1: x22480 ARG2: x22488 ]     |
-|               |           [ def_udef_a_q LBL: h22516 ARG0: x22488 RSTR: h22514 BODY: h22515 ]    |
-|               |           [ compound LBL: h22490 ARG0: e22499 ARG1: x22488 ARG2: x22496 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h22506 ARG0: x22496 RSTR: h22504 BODY: h22505 ]   |
-|               |           [ _crew_n_of LBL: h22498 ARG0: x22496 ARG1: i22497 ]                   |
-|               |           [ _member_n_of LBL: h22490 ARG0: x22488 ARG1: x22482 ]                 |
-|               |           [ explicit_or_proper_q LBL: h22494 ARG0: x22482 RSTR: h22492 BODY:     |
-|               | h22493 ]                                                                         |
-|               |           [ named LBL: h22483 ARG0: x22482 CARG: "Shenzhou 10" ]                 |
-|               |           [ explicit_or_proper_q LBL: h22511 ARG0: x22480 RSTR: h22509 BODY:     |
-|               | h22510 ]                                                                         |
-|               |           [ named LBL: h22481 ARG0: x22480 CARG: "Nie Haisheng" ] >              |
-|               |   HCONS: < h22504 qeq h22498 h22492 qeq h22483 h22514 qeq h22490 h22509 qeq      |
-|               | h22481 h22518 qeq h22487 > ]                                                     |
+| Prepped       | [ TOP: h3964                                                                     |
+|               |   INDEX: e3930 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _serve_v_as LBL: h3933 ARG0: e3930 ARG1: x3926 ARG2: x3934 ]         |
+|               |           [ def_udef_a_q LBL: h3962 ARG0: x3934 RSTR: h3960 BODY: h3961 ]        |
+|               |           [ compound LBL: h3936 ARG0: e3945 ARG1: x3934 ARG2: x3942 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h3952 ARG0: x3942 RSTR: h3950 BODY: h3951 ]       |
+|               |           [ _crew_n_of LBL: h3944 ARG0: x3942 ARG1: i3943 ]                      |
+|               |           [ _member_n_of LBL: h3936 ARG0: x3934 ARG1: x3928 ]                    |
+|               |           [ explicit_or_proper_q LBL: h3940 ARG0: x3928 RSTR: h3938 BODY: h3939  |
+|               | ]                                                                                |
+|               |           [ named LBL: h3929 ARG0: x3928 CARG: "Shenzhou 10" ]                   |
+|               |           [ explicit_or_proper_q LBL: h3957 ARG0: x3926 RSTR: h3955 BODY: h3956  |
+|               | ]                                                                                |
+|               |           [ named LBL: h3927 ARG0: x3926 CARG: "Nie Haisheng" ] >                |
+|               |   HCONS: < h3950 qeq h3944 h3938 qeq h3929 h3960 qeq h3936 h3955 qeq h3927 h3964 |
+|               | qeq h3933 > ]                                                                    |
 +---------------+----------------------------------------------------------------------------------+
 
-+--------------------------------------------------------------------------------------+
-|                                     NODE SEMENTS                                     |
-+--------------+-----------------------------------------------------------------------+
-| Node         | Generated SEMENT                                                      |
-+--------------+-----------------------------------------------------------------------+
-| Nie_Haisheng | [ TOP: h22481                                                         |
-|              |   INDEX: x22480                                                       |
-|              |   RELS: < [ named LBL: h22481 ARG0: x22480 CARG: "Nie Haisheng" ] > ] |
-+--------------+-----------------------------------------------------------------------+
-| Shenzhou_10  | [ TOP: h22483                                                         |
-|              |   INDEX: x22482                                                       |
-|              |   RELS: < [ named LBL: h22483 ARG0: x22482 CARG: "Shenzhou 10" ] > ]  |
-+--------------+-----------------------------------------------------------------------+
++------------------------------------------------------------------------------------+
+|                                    NODE SEMENTS                                    |
++--------------+---------------------------------------------------------------------+
+| Node         | Generated SEMENT                                                    |
++--------------+---------------------------------------------------------------------+
+| Nie_Haisheng | [ TOP: h3927                                                        |
+|              |   INDEX: x3926                                                      |
+|              |   RELS: < [ named LBL: h3927 ARG0: x3926 CARG: "Nie Haisheng" ] > ] |
++--------------+---------------------------------------------------------------------+
+| Shenzhou_10  | [ TOP: h3929                                                        |
+|              |   INDEX: x3928                                                      |
+|              |   RELS: < [ named LBL: h3929 ARG0: x3928 CARG: "Shenzhou 10" ] > ]  |
++--------------+---------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------------------------------+
 |                                                       EDGE SEMENTS                                                      |
 +---------+--------------+-------------+----------------------------------------------------------------------------------+
 | Edge    | Parent       | Child       | Generated SEMENT                                                                 |
 +---------+--------------+-------------+----------------------------------------------------------------------------------+
-| mission | Nie_Haisheng | Shenzhou_10 | [ TOP: h22487                                                                    |
-|         |              |             |   INDEX: e22484 [ e TENSE: tensed ]                                              |
-|         |              |             |   RELS: < [ _serve_v_as LBL: h22487 ARG0: e22484 ARG1: i22485 ARG2: i22486 ]     |
-|         |              |             |           [ def_udef_a_q LBL: h22516 ARG0: x22513 RSTR: h22514 BODY: h22515 ]    |
-|         |              |             |           [ compound LBL: h22502 ARG0: e22499 ARG1: u22500 ARG2: u22501 ]        |
-|         |              |             |           [ existential_q LBL: h22506 ARG0: x22503 RSTR: h22504 BODY: h22505 ]   |
-|         |              |             |           [ _crew_n_of LBL: h22498 ARG0: x22496 [ x NUM: sg ] ARG1: i22497 ]     |
-|         |              |             |           [ _member_n_of LBL: h22490 ARG0: x22488 ARG1: i22489 ]                 |
-|         |              |             |           [ explicit_or_proper_q LBL: h22494 ARG0: x22491 RSTR: h22492 BODY:     |
-|         |              |             | h22493 ]                                                                         |
-|         |              |             |           [ named LBL: h22483 ARG0: x22482 CARG: "Shenzhou 10" ]                 |
-|         |              |             |           [ explicit_or_proper_q LBL: h22511 ARG0: x22508 RSTR: h22509 BODY:     |
-|         |              |             | h22510 ]                                                                         |
-|         |              |             |           [ named LBL: h22481 ARG0: x22480 CARG: "Nie Haisheng" ] >              |
-|         |              |             |   HCONS: < h22504 qeq h22498 h22492 qeq h22483 h22514 qeq h22490 h22509 qeq      |
-|         |              |             | h22481 >                                                                         |
-|         |              |             |   EQS: < x22503 eq x22496 h22502 eq h22507 u22501 eq x22503 x22491 eq x22482     |
-|         |              |             | h22490 eq h22495 i22489 eq x22491 h22502 eq h22490 u22500 eq x22488 x22513 eq    |
-|         |              |             | x22488 h22487 eq h22517 i22486 eq x22513 x22508 eq x22480 h22487 eq h22512       |
-|         |              |             | i22485 eq x22508 > ]                                                             |
+| mission | Nie_Haisheng | Shenzhou_10 | [ TOP: h3933                                                                     |
+|         |              |             |   INDEX: e3930 [ e TENSE: tensed ]                                               |
+|         |              |             |   RELS: < [ _serve_v_as LBL: h3933 ARG0: e3930 ARG1: i3931 ARG2: i3932 ]         |
+|         |              |             |           [ def_udef_a_q LBL: h3962 ARG0: x3959 RSTR: h3960 BODY: h3961 ]        |
+|         |              |             |           [ compound LBL: h3948 ARG0: e3945 ARG1: u3946 ARG2: u3947 ]            |
+|         |              |             |           [ existential_q LBL: h3952 ARG0: x3949 RSTR: h3950 BODY: h3951 ]       |
+|         |              |             |           [ _crew_n_of LBL: h3944 ARG0: x3942 [ x NUM: sg ] ARG1: i3943 ]        |
+|         |              |             |           [ _member_n_of LBL: h3936 ARG0: x3934 ARG1: i3935 ]                    |
+|         |              |             |           [ explicit_or_proper_q LBL: h3940 ARG0: x3937 RSTR: h3938 BODY: h3939  |
+|         |              |             | ]                                                                                |
+|         |              |             |           [ named LBL: h3929 ARG0: x3928 CARG: "Shenzhou 10" ]                   |
+|         |              |             |           [ explicit_or_proper_q LBL: h3957 ARG0: x3954 RSTR: h3955 BODY: h3956  |
+|         |              |             | ]                                                                                |
+|         |              |             |           [ named LBL: h3927 ARG0: x3926 CARG: "Nie Haisheng" ] >                |
+|         |              |             |   HCONS: < h3950 qeq h3944 h3938 qeq h3929 h3960 qeq h3936 h3955 qeq h3927 >     |
+|         |              |             |   EQS: < x3949 eq x3942 h3948 eq h3953 u3947 eq x3949 x3937 eq x3928 h3936 eq    |
+|         |              |             | h3941 i3935 eq x3937 h3948 eq h3936 u3946 eq x3934 x3959 eq x3934 h3933 eq h3963 |
+|         |              |             | i3932 eq x3959 x3954 eq x3926 h3933 eq h3958 i3931 eq x3954 > ]                  |
 +---------+--------------+-------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------+

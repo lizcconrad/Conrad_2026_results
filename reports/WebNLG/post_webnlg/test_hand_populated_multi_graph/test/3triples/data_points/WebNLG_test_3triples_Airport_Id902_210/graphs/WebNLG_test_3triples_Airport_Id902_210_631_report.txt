@@ -24,15 +24,14 @@ GRAPH NAME: WebNLG_test_3triples_Airport_Id902_210_631
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                                   GOLD OUTPUTS                                                                                   |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                                         | Generated? |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| ENAIRE is the operating organisation for Adolfo Suarez Madrid-Barajas airport. This airport is situated 610 meters above sea level and has a runway length of 3500. | False      |
-| The Adolfo Suárez Madrid–Barajas Airport is operated by ENAIRE. The airport has a runway length of 3,500 and is 610.0 metres above sea level.                       | False      |
-| The runway length at Adolfo Suarez Madrid-Barajas airport, which is run by ENAIRE, is 3500 and the airport is 610 metres above sea level.                           | False      |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                            GOLD OUTPUTS                                                                            |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                           | Generated? |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| ENAIRE, which is located in Madrid, is the operating organisation for Adolfo Suarez Madrid-Barajas airport. This airport has a runway length of 3500. | False      |
+| The Adolfo Suárez Madrid–Barajas Airport is operated by ENAIRE which is located in the city of Madrid. The runway length of the airport is 3,500.     | False      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +------------------------------------------------------------------------------------------------------------+
 |                                                NODE METRICS                                                |
@@ -56,62 +55,59 @@ GRAPH NAME: WebNLG_test_3triples_Airport_Id902_210_631
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h21268                                                                    |
-|               |   INDEX: e21265 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h21268 ARG0: e21265 ARG1: p21266 ARG2: i21267 ]        |
-|               |           [ number_q LBL: h21277 ARG0: x21274 RSTR: h21275 BODY: h21276 ]        |
-|               |           [ card LBL: h21245 ARG0: i21243 ARG1: u21244 CARG: "3500.0" ]          |
-|               |           [ def_udef_a_q LBL: h21272 ARG0: x21269 RSTR: h21270 BODY: h21271 ]    |
-|               |           [ compound LBL: h21259 ARG0: e21256 ARG1: u21257 ARG2: u21258 ]        |
-|               |           [ existential_q LBL: h21263 ARG0: x21260 RSTR: h21261 BODY: h21262 ]   |
-|               |           [ _runway_n_1 LBL: h21255 ARG0: x21254 [ x NUM: sg ] ]                 |
-|               |           [ _length_n_of LBL: h21248 ARG0: x21246 ARG1: i21247 ]                 |
-|               |           [ explicit_or_proper_q LBL: h21252 ARG0: x21249 RSTR: h21250 BODY:     |
-|               | h21251 ]                                                                         |
-|               |           [ named LBL: h21242 ARG0: x21241 CARG: "Adolfo Suárez Madrid–Barajas   |
+| Original      | [ TOP: h7775                                                                     |
+|               |   INDEX: e7772 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h7775 ARG0: e7772 ARG1: p7773 ARG2: i7774 ]            |
+|               |           [ number_q LBL: h7784 ARG0: x7781 RSTR: h7782 BODY: h7783 ]            |
+|               |           [ card LBL: h7752 ARG0: i7750 ARG1: u7751 CARG: "3500.0" ]             |
+|               |           [ def_udef_a_q LBL: h7779 ARG0: x7776 RSTR: h7777 BODY: h7778 ]        |
+|               |           [ compound LBL: h7766 ARG0: e7763 ARG1: u7764 ARG2: u7765 ]            |
+|               |           [ existential_q LBL: h7770 ARG0: x7767 RSTR: h7768 BODY: h7769 ]       |
+|               |           [ _runway_n_1 LBL: h7762 ARG0: x7761 [ x NUM: sg ] ]                   |
+|               |           [ _length_n_of LBL: h7755 ARG0: x7753 ARG1: i7754 ]                    |
+|               |           [ explicit_or_proper_q LBL: h7759 ARG0: x7756 RSTR: h7757 BODY: h7758  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7749 ARG0: x7748 CARG: "Adolfo Suárez Madrid–Barajas     |
 |               | Airport" ] >                                                                     |
-|               |   HCONS: < h21275 qeq h21245 h21261 qeq h21255 h21250 qeq h21242 h21270 qeq      |
-|               | h21248 >                                                                         |
-|               |   EQS: < x21274 eq i21243 h21268 eq h21278 i21267 eq x21274 x21260 eq x21254     |
-|               | h21259 eq h21264 u21258 eq x21260 x21249 eq x21241 h21248 eq h21253 i21247 eq    |
-|               | x21249 h21259 eq h21248 u21257 eq x21246 x21269 eq x21246 h21268 eq h21273       |
-|               | p21266 eq x21269 > ]                                                             |
+|               |   HCONS: < h7782 qeq h7752 h7768 qeq h7762 h7757 qeq h7749 h7777 qeq h7755 >     |
+|               |   EQS: < x7781 eq i7750 h7775 eq h7785 i7774 eq x7781 x7767 eq x7761 h7766 eq    |
+|               | h7771 u7765 eq x7767 x7756 eq x7748 h7755 eq h7760 i7754 eq x7756 h7766 eq h7755 |
+|               | u7764 eq x7753 x7776 eq x7753 h7775 eq h7780 p7773 eq x7776 > ]                  |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h21268                                                                    |
-|               |   INDEX: e21265 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h21268 ARG0: e21265 ARG1: x21246 ARG2: x21274 ]        |
-|               |           [ number_q LBL: h21277 ARG0: x21274 RSTR: h21275 BODY: h21276 ]        |
-|               |           [ card LBL: h21245 ARG0: x21274 ARG1: u21244 CARG: "3500.0" ]          |
-|               |           [ def_udef_a_q LBL: h21272 ARG0: x21246 RSTR: h21270 BODY: h21271 ]    |
-|               |           [ compound LBL: h21248 ARG0: e21256 ARG1: x21246 ARG2: x21254 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h21263 ARG0: x21254 RSTR: h21261 BODY: h21262 ]   |
-|               |           [ _runway_n_1 LBL: h21255 ARG0: x21254 ]                               |
-|               |           [ _length_n_of LBL: h21248 ARG0: x21246 ARG1: x21241 ]                 |
-|               |           [ explicit_or_proper_q LBL: h21252 ARG0: x21241 RSTR: h21250 BODY:     |
-|               | h21251 ]                                                                         |
-|               |           [ named LBL: h21242 ARG0: x21241 CARG: "Adolfo Suárez Madrid–Barajas   |
+| EQs Collapsed | [ TOP: h7775                                                                     |
+|               |   INDEX: e7772 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h7775 ARG0: e7772 ARG1: x7753 ARG2: x7781 ]            |
+|               |           [ number_q LBL: h7784 ARG0: x7781 RSTR: h7782 BODY: h7783 ]            |
+|               |           [ card LBL: h7752 ARG0: x7781 ARG1: u7751 CARG: "3500.0" ]             |
+|               |           [ def_udef_a_q LBL: h7779 ARG0: x7753 RSTR: h7777 BODY: h7778 ]        |
+|               |           [ compound LBL: h7755 ARG0: e7763 ARG1: x7753 ARG2: x7761 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h7770 ARG0: x7761 RSTR: h7768 BODY: h7769 ]       |
+|               |           [ _runway_n_1 LBL: h7762 ARG0: x7761 ]                                 |
+|               |           [ _length_n_of LBL: h7755 ARG0: x7753 ARG1: x7748 ]                    |
+|               |           [ explicit_or_proper_q LBL: h7759 ARG0: x7748 RSTR: h7757 BODY: h7758  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7749 ARG0: x7748 CARG: "Adolfo Suárez Madrid–Barajas     |
 |               | Airport" ] >                                                                     |
-|               |   HCONS: < h21275 qeq h21245 h21261 qeq h21255 h21250 qeq h21242 h21270 qeq      |
-|               | h21248 > ]                                                                       |
+|               |   HCONS: < h7782 qeq h7752 h7768 qeq h7762 h7757 qeq h7749 h7777 qeq h7755 > ]   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h21279                                                                    |
-|               |   INDEX: e21265 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h21268 ARG0: e21265 ARG1: x21246 ARG2: x21274 ]        |
-|               |           [ number_q LBL: h21277 ARG0: x21274 RSTR: h21275 BODY: h21276 ]        |
-|               |           [ card LBL: h21245 ARG0: x21274 ARG1: u21244 CARG: "3500.0" ]          |
-|               |           [ def_udef_a_q LBL: h21272 ARG0: x21246 RSTR: h21270 BODY: h21271 ]    |
-|               |           [ compound LBL: h21248 ARG0: e21256 ARG1: x21246 ARG2: x21254 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h21263 ARG0: x21254 RSTR: h21261 BODY: h21262 ]   |
-|               |           [ _runway_n_1 LBL: h21255 ARG0: x21254 ]                               |
-|               |           [ _length_n_of LBL: h21248 ARG0: x21246 ARG1: x21241 ]                 |
-|               |           [ explicit_or_proper_q LBL: h21252 ARG0: x21241 RSTR: h21250 BODY:     |
-|               | h21251 ]                                                                         |
-|               |           [ named LBL: h21242 ARG0: x21241 CARG: "Adolfo Suárez Madrid–Barajas   |
+| Prepped       | [ TOP: h7786                                                                     |
+|               |   INDEX: e7772 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h7775 ARG0: e7772 ARG1: x7753 ARG2: x7781 ]            |
+|               |           [ number_q LBL: h7784 ARG0: x7781 RSTR: h7782 BODY: h7783 ]            |
+|               |           [ card LBL: h7752 ARG0: x7781 ARG1: u7751 CARG: "3500.0" ]             |
+|               |           [ def_udef_a_q LBL: h7779 ARG0: x7753 RSTR: h7777 BODY: h7778 ]        |
+|               |           [ compound LBL: h7755 ARG0: e7763 ARG1: x7753 ARG2: x7761 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h7770 ARG0: x7761 RSTR: h7768 BODY: h7769 ]       |
+|               |           [ _runway_n_1 LBL: h7762 ARG0: x7761 ]                                 |
+|               |           [ _length_n_of LBL: h7755 ARG0: x7753 ARG1: x7748 ]                    |
+|               |           [ explicit_or_proper_q LBL: h7759 ARG0: x7748 RSTR: h7757 BODY: h7758  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7749 ARG0: x7748 CARG: "Adolfo Suárez Madrid–Barajas     |
 |               | Airport" ] >                                                                     |
-|               |   HCONS: < h21275 qeq h21245 h21261 qeq h21255 h21250 qeq h21242 h21270 qeq      |
-|               | h21248 h21279 qeq h21268 > ]                                                     |
+|               |   HCONS: < h7782 qeq h7752 h7768 qeq h7762 h7757 qeq h7749 h7777 qeq h7755 h7786 |
+|               | qeq h7775 > ]                                                                    |
 +---------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------------------------------+
@@ -119,15 +115,15 @@ GRAPH NAME: WebNLG_test_3triples_Airport_Id902_210_631
 +--------------------------------------+----------------------------------------------------------------------------------+
 | Node                                 | Generated SEMENT                                                                 |
 +--------------------------------------+----------------------------------------------------------------------------------+
-| Adolfo_Suárez_Madrid–Barajas_Airport | [ TOP: h21242                                                                    |
-|                                      |   INDEX: x21241                                                                  |
-|                                      |   RELS: < [ named LBL: h21242 ARG0: x21241 CARG: "Adolfo Suárez Madrid–Barajas   |
+| Adolfo_Suárez_Madrid–Barajas_Airport | [ TOP: h7749                                                                     |
+|                                      |   INDEX: x7748                                                                   |
+|                                      |   RELS: < [ named LBL: h7749 ARG0: x7748 CARG: "Adolfo Suárez Madrid–Barajas     |
 |                                      | Airport" ] > ]                                                                   |
 +--------------------------------------+----------------------------------------------------------------------------------+
-| 3500.0                               | [ TOP: h21245                                                                    |
-|                                      |   INDEX: i21243                                                                  |
-|                                      |   RELS: < [ card LBL: h21245 ARG0: i21243 ARG1: u21244 CARG: "3500.0" ] >        |
-|                                      |   SLOTS: < ARG1: u21244 > ]                                                      |
+| 3500.0                               | [ TOP: h7752                                                                     |
+|                                      |   INDEX: i7750                                                                   |
+|                                      |   RELS: < [ card LBL: h7752 ARG0: i7750 ARG1: u7751 CARG: "3500.0" ] >           |
+|                                      |   SLOTS: < ARG1: u7751 > ]                                                       |
 +--------------------------------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -135,26 +131,24 @@ GRAPH NAME: WebNLG_test_3triples_Airport_Id902_210_631
 +--------------+--------------------------------------+--------+----------------------------------------------------------------------------------+
 | Edge         | Parent                               | Child  | Generated SEMENT                                                                 |
 +--------------+--------------------------------------+--------+----------------------------------------------------------------------------------+
-| runwayLength | Adolfo_Suárez_Madrid–Barajas_Airport | 3500.0 | [ TOP: h21268                                                                    |
-|              |                                      |        |   INDEX: e21265 [ e SF: prop TENSE: tensed ]                                     |
-|              |                                      |        |   RELS: < [ _be_v_id LBL: h21268 ARG0: e21265 ARG1: p21266 ARG2: i21267 ]        |
-|              |                                      |        |           [ number_q LBL: h21277 ARG0: x21274 RSTR: h21275 BODY: h21276 ]        |
-|              |                                      |        |           [ card LBL: h21245 ARG0: i21243 ARG1: u21244 CARG: "3500.0" ]          |
-|              |                                      |        |           [ def_udef_a_q LBL: h21272 ARG0: x21269 RSTR: h21270 BODY: h21271 ]    |
-|              |                                      |        |           [ compound LBL: h21259 ARG0: e21256 ARG1: u21257 ARG2: u21258 ]        |
-|              |                                      |        |           [ existential_q LBL: h21263 ARG0: x21260 RSTR: h21261 BODY: h21262 ]   |
-|              |                                      |        |           [ _runway_n_1 LBL: h21255 ARG0: x21254 [ x NUM: sg ] ]                 |
-|              |                                      |        |           [ _length_n_of LBL: h21248 ARG0: x21246 ARG1: i21247 ]                 |
-|              |                                      |        |           [ explicit_or_proper_q LBL: h21252 ARG0: x21249 RSTR: h21250 BODY:     |
-|              |                                      |        | h21251 ]                                                                         |
-|              |                                      |        |           [ named LBL: h21242 ARG0: x21241 CARG: "Adolfo Suárez Madrid–Barajas   |
+| runwayLength | Adolfo_Suárez_Madrid–Barajas_Airport | 3500.0 | [ TOP: h7775                                                                     |
+|              |                                      |        |   INDEX: e7772 [ e SF: prop TENSE: tensed ]                                      |
+|              |                                      |        |   RELS: < [ _be_v_id LBL: h7775 ARG0: e7772 ARG1: p7773 ARG2: i7774 ]            |
+|              |                                      |        |           [ number_q LBL: h7784 ARG0: x7781 RSTR: h7782 BODY: h7783 ]            |
+|              |                                      |        |           [ card LBL: h7752 ARG0: i7750 ARG1: u7751 CARG: "3500.0" ]             |
+|              |                                      |        |           [ def_udef_a_q LBL: h7779 ARG0: x7776 RSTR: h7777 BODY: h7778 ]        |
+|              |                                      |        |           [ compound LBL: h7766 ARG0: e7763 ARG1: u7764 ARG2: u7765 ]            |
+|              |                                      |        |           [ existential_q LBL: h7770 ARG0: x7767 RSTR: h7768 BODY: h7769 ]       |
+|              |                                      |        |           [ _runway_n_1 LBL: h7762 ARG0: x7761 [ x NUM: sg ] ]                   |
+|              |                                      |        |           [ _length_n_of LBL: h7755 ARG0: x7753 ARG1: i7754 ]                    |
+|              |                                      |        |           [ explicit_or_proper_q LBL: h7759 ARG0: x7756 RSTR: h7757 BODY: h7758  |
+|              |                                      |        | ]                                                                                |
+|              |                                      |        |           [ named LBL: h7749 ARG0: x7748 CARG: "Adolfo Suárez Madrid–Barajas     |
 |              |                                      |        | Airport" ] >                                                                     |
-|              |                                      |        |   HCONS: < h21275 qeq h21245 h21261 qeq h21255 h21250 qeq h21242 h21270 qeq      |
-|              |                                      |        | h21248 >                                                                         |
-|              |                                      |        |   EQS: < x21274 eq i21243 h21268 eq h21278 i21267 eq x21274 x21260 eq x21254     |
-|              |                                      |        | h21259 eq h21264 u21258 eq x21260 x21249 eq x21241 h21248 eq h21253 i21247 eq    |
-|              |                                      |        | x21249 h21259 eq h21248 u21257 eq x21246 x21269 eq x21246 h21268 eq h21273       |
-|              |                                      |        | p21266 eq x21269 > ]                                                             |
+|              |                                      |        |   HCONS: < h7782 qeq h7752 h7768 qeq h7762 h7757 qeq h7749 h7777 qeq h7755 >     |
+|              |                                      |        |   EQS: < x7781 eq i7750 h7775 eq h7785 i7774 eq x7781 x7767 eq x7761 h7766 eq    |
+|              |                                      |        | h7771 u7765 eq x7767 x7756 eq x7748 h7755 eq h7760 i7754 eq x7756 h7766 eq h7755 |
+|              |                                      |        | u7764 eq x7753 x7776 eq x7753 h7775 eq h7780 p7773 eq x7776 > ]                  |
 +--------------+--------------------------------------+--------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------+

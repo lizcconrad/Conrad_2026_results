@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Company_Id1552_77_232
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+--------------------------------------------------------------------------------------------------------------------------------+
-|                                                          GOLD OUTPUTS                                                          |
-+-------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                       | Generated? |
-+-------------------------------------------------------------------------------------------------------------------+------------+
-| Hypermarcas, a type of S.A. (corporation), was founded on January 1, 2001, and has a subsidiary called Mantecorp. | False      |
-| Mantecorp is a subsidiary of Hypermarcas, which is an S.A. corporation founded on January 1, 2001.                | False      |
-| S.A. corporation Hypermarcas, which was founded on January 1st, 2001, has a subsidiary called Mantecorp.          | False      |
-+-------------------------------------------------------------------------------------------------------------------+------------+
++---------------------------------------------------------------------------------------------------------------+
+|                                                  GOLD OUTPUTS                                                 |
++--------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                      | Generated? |
++--------------------------------------------------------------------------------------------------+------------+
+| Hypermarcas is a S.A pharmaceutical corporation that produces cosmetics.                         | False      |
+| Hypermarcas is an S.A. corporation in the pharmaceutical industry that makes cosmetics products. | False      |
+| S.A. Corporation, Hypermarcas is a pharmaceutical company that also sells cosmetics.             | False      |
++--------------------------------------------------------------------------------------------------+------------+
 
 +------------------------------------------------------------------------------------------+
 |                                       NODE METRICS                                       |
@@ -56,50 +56,43 @@ GRAPH NAME: WebNLG_test_3triples_Company_Id1552_77_232
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h1817                                                                     |
-|               |   INDEX: e1814 [ e SF: prop TENSE: tensed ]                                      |
-|               |   RELS: < [ _be_v_id LBL: h1817 ARG0: e1814 ARG1: p1815 ARG2: i1816 ]            |
-|               |           [ appos LBL: h1803 ARG0: e1800 ARG1: x1801 ARG2: i1802 ]               |
-|               |           [ def_udef_a_q LBL: h1812 ARG0: x1809 RSTR: h1810 BODY: h1811 ]        |
-|               |           [ _corporation_n_1 LBL: h1799 ARG0: x1798 ]                            |
-|               |           [ explicit_or_proper_q LBL: h1807 ARG0: x1804 RSTR: h1805 BODY: h1806  |
-|               | ]                                                                                |
-|               |           [ named LBL: h1797 ARG0: x1796 CARG: "S.A." ]                          |
-|               |           [ explicit_or_proper_q LBL: h1821 ARG0: x1818 RSTR: h1819 BODY: h1820  |
-|               | ]                                                                                |
-|               |           [ named LBL: h1795 ARG0: x1794 CARG: "Hypermarcas" ] >                 |
-|               |   HCONS: < h1810 qeq h1799 h1805 qeq h1797 h1819 qeq h1795 >                     |
-|               |   EQS: < x1809 eq x1798 h1803 eq h1813 i1802 eq x1809 x1804 eq x1796 h1803 eq    |
-|               | h1808 x1801 eq x1804 h1817 eq h1808 i1816 eq x1804 x1818 eq x1794 h1817 eq h1822 |
-|               | p1815 eq x1818 > ]                                                               |
+| Original      | [ TOP: h517                                                                      |
+|               |   INDEX: e514 [ e SF: prop TENSE: tensed ]                                       |
+|               |   RELS: < [ _be_v_id LBL: h517 ARG0: e514 ARG1: p515 ARG2: i516 ]                |
+|               |           [ appos LBL: h503 ARG0: e500 ARG1: x501 ARG2: i502 ]                   |
+|               |           [ def_udef_a_q LBL: h512 ARG0: x509 RSTR: h510 BODY: h511 ]            |
+|               |           [ _corporation_n_1 LBL: h499 ARG0: x498 ]                              |
+|               |           [ explicit_or_proper_q LBL: h507 ARG0: x504 RSTR: h505 BODY: h506 ]    |
+|               |           [ named LBL: h497 ARG0: x496 CARG: "S.A." ]                            |
+|               |           [ explicit_or_proper_q LBL: h521 ARG0: x518 RSTR: h519 BODY: h520 ]    |
+|               |           [ named LBL: h495 ARG0: x494 CARG: "Hypermarcas" ] >                   |
+|               |   HCONS: < h510 qeq h499 h505 qeq h497 h519 qeq h495 >                           |
+|               |   EQS: < x509 eq x498 h503 eq h513 i502 eq x509 x504 eq x496 h503 eq h508 x501   |
+|               | eq x504 h517 eq h508 i516 eq x504 x518 eq x494 h517 eq h522 p515 eq x518 > ]     |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h1803                                                                     |
-|               |   INDEX: e1814 [ e SF: prop TENSE: tensed ]                                      |
-|               |   RELS: < [ _be_v_id LBL: h1803 ARG0: e1814 ARG1: x1794 ARG2: x1796 ]            |
-|               |           [ appos LBL: h1803 ARG0: e1800 ARG1: x1796 ARG2: x1798 ]               |
-|               |           [ def_udef_a_q LBL: h1812 ARG0: x1798 RSTR: h1810 BODY: h1811 ]        |
-|               |           [ _corporation_n_1 LBL: h1799 ARG0: x1798 ]                            |
-|               |           [ explicit_or_proper_q LBL: h1807 ARG0: x1796 RSTR: h1805 BODY: h1806  |
-|               | ]                                                                                |
-|               |           [ named LBL: h1797 ARG0: x1796 CARG: "S.A." ]                          |
-|               |           [ explicit_or_proper_q LBL: h1821 ARG0: x1794 RSTR: h1819 BODY: h1820  |
-|               | ]                                                                                |
-|               |           [ named LBL: h1795 ARG0: x1794 CARG: "Hypermarcas" ] >                 |
-|               |   HCONS: < h1810 qeq h1799 h1805 qeq h1797 h1819 qeq h1795 > ]                   |
+| EQs Collapsed | [ TOP: h503                                                                      |
+|               |   INDEX: e514 [ e SF: prop TENSE: tensed ]                                       |
+|               |   RELS: < [ _be_v_id LBL: h503 ARG0: e514 ARG1: x494 ARG2: x496 ]                |
+|               |           [ appos LBL: h503 ARG0: e500 ARG1: x496 ARG2: x498 ]                   |
+|               |           [ def_udef_a_q LBL: h512 ARG0: x498 RSTR: h510 BODY: h511 ]            |
+|               |           [ _corporation_n_1 LBL: h499 ARG0: x498 ]                              |
+|               |           [ explicit_or_proper_q LBL: h507 ARG0: x496 RSTR: h505 BODY: h506 ]    |
+|               |           [ named LBL: h497 ARG0: x496 CARG: "S.A." ]                            |
+|               |           [ explicit_or_proper_q LBL: h521 ARG0: x494 RSTR: h519 BODY: h520 ]    |
+|               |           [ named LBL: h495 ARG0: x494 CARG: "Hypermarcas" ] >                   |
+|               |   HCONS: < h510 qeq h499 h505 qeq h497 h519 qeq h495 > ]                         |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h1823                                                                     |
-|               |   INDEX: e1814 [ e SF: prop TENSE: tensed ]                                      |
-|               |   RELS: < [ _be_v_id LBL: h1803 ARG0: e1814 ARG1: x1794 ARG2: x1796 ]            |
-|               |           [ appos LBL: h1803 ARG0: e1800 ARG1: x1796 ARG2: x1798 ]               |
-|               |           [ def_udef_a_q LBL: h1812 ARG0: x1798 RSTR: h1810 BODY: h1811 ]        |
-|               |           [ _corporation_n_1 LBL: h1799 ARG0: x1798 ]                            |
-|               |           [ explicit_or_proper_q LBL: h1807 ARG0: x1796 RSTR: h1805 BODY: h1806  |
-|               | ]                                                                                |
-|               |           [ named LBL: h1797 ARG0: x1796 CARG: "S.A." ]                          |
-|               |           [ explicit_or_proper_q LBL: h1821 ARG0: x1794 RSTR: h1819 BODY: h1820  |
-|               | ]                                                                                |
-|               |           [ named LBL: h1795 ARG0: x1794 CARG: "Hypermarcas" ] >                 |
-|               |   HCONS: < h1810 qeq h1799 h1805 qeq h1797 h1819 qeq h1795 h1823 qeq h1803 > ]   |
+| Prepped       | [ TOP: h523                                                                      |
+|               |   INDEX: e514 [ e SF: prop TENSE: tensed ]                                       |
+|               |   RELS: < [ _be_v_id LBL: h503 ARG0: e514 ARG1: x494 ARG2: x496 ]                |
+|               |           [ appos LBL: h503 ARG0: e500 ARG1: x496 ARG2: x498 ]                   |
+|               |           [ def_udef_a_q LBL: h512 ARG0: x498 RSTR: h510 BODY: h511 ]            |
+|               |           [ _corporation_n_1 LBL: h499 ARG0: x498 ]                              |
+|               |           [ explicit_or_proper_q LBL: h507 ARG0: x496 RSTR: h505 BODY: h506 ]    |
+|               |           [ named LBL: h497 ARG0: x496 CARG: "S.A." ]                            |
+|               |           [ explicit_or_proper_q LBL: h521 ARG0: x494 RSTR: h519 BODY: h520 ]    |
+|               |           [ named LBL: h495 ARG0: x494 CARG: "Hypermarcas" ] >                   |
+|               |   HCONS: < h510 qeq h499 h505 qeq h497 h519 qeq h495 h523 qeq h503 > ]           |
 +---------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------------+
@@ -107,22 +100,21 @@ GRAPH NAME: WebNLG_test_3triples_Company_Id1552_77_232
 +--------------------+----------------------------------------------------------------------------------+
 | Node               | Generated SEMENT                                                                 |
 +--------------------+----------------------------------------------------------------------------------+
-| Hypermarcas        | [ TOP: h1795                                                                     |
-|                    |   INDEX: x1794                                                                   |
-|                    |   RELS: < [ named LBL: h1795 ARG0: x1794 CARG: "Hypermarcas" ] > ]               |
+| Hypermarcas        | [ TOP: h495                                                                      |
+|                    |   INDEX: x494                                                                    |
+|                    |   RELS: < [ named LBL: h495 ARG0: x494 CARG: "Hypermarcas" ] > ]                 |
 +--------------------+----------------------------------------------------------------------------------+
-| S.A._(corporation) | [ TOP: h1808                                                                     |
-|                    |   INDEX: x1804                                                                   |
-|                    |   RELS: < [ appos LBL: h1803 ARG0: e1800 ARG1: x1801 ARG2: i1802 ]               |
-|                    |           [ def_udef_a_q LBL: h1812 ARG0: x1809 RSTR: h1810 BODY: h1811 ]        |
-|                    |           [ _corporation_n_1 LBL: h1799 ARG0: x1798 ]                            |
-|                    |           [ explicit_or_proper_q LBL: h1807 ARG0: x1804 RSTR: h1805 BODY: h1806  |
-|                    | ]                                                                                |
-|                    |           [ named LBL: h1797 ARG0: x1796 CARG: "S.A." ] >                        |
-|                    |   HCONS: < h1810 qeq h1799 h1805 qeq h1797 >                                     |
-|                    |   EQS: < x1809 eq x1798 h1803 eq h1813 i1802 eq x1809 x1804 eq x1796 h1803 eq    |
-|                    | h1808 x1801 eq x1804 >                                                           |
-|                    |   SLOTS: < BODY: h1806 > ]                                                       |
+| S.A._(corporation) | [ TOP: h508                                                                      |
+|                    |   INDEX: x504                                                                    |
+|                    |   RELS: < [ appos LBL: h503 ARG0: e500 ARG1: x501 ARG2: i502 ]                   |
+|                    |           [ def_udef_a_q LBL: h512 ARG0: x509 RSTR: h510 BODY: h511 ]            |
+|                    |           [ _corporation_n_1 LBL: h499 ARG0: x498 ]                              |
+|                    |           [ explicit_or_proper_q LBL: h507 ARG0: x504 RSTR: h505 BODY: h506 ]    |
+|                    |           [ named LBL: h497 ARG0: x496 CARG: "S.A." ] >                          |
+|                    |   HCONS: < h510 qeq h499 h505 qeq h497 >                                         |
+|                    |   EQS: < x509 eq x498 h503 eq h513 i502 eq x509 x504 eq x496 h503 eq h508 x501   |
+|                    | eq x504 >                                                                        |
+|                    |   SLOTS: < BODY: h506 > ]                                                        |
 +--------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------+
@@ -130,22 +122,19 @@ GRAPH NAME: WebNLG_test_3triples_Company_Id1552_77_232
 +------+-------------+--------------------+----------------------------------------------------------------------------------+
 | Edge | Parent      | Child              | Generated SEMENT                                                                 |
 +------+-------------+--------------------+----------------------------------------------------------------------------------+
-| type | Hypermarcas | S.A._(corporation) | [ TOP: h1817                                                                     |
-|      |             |                    |   INDEX: e1814 [ e SF: prop TENSE: tensed ]                                      |
-|      |             |                    |   RELS: < [ _be_v_id LBL: h1817 ARG0: e1814 ARG1: p1815 ARG2: i1816 ]            |
-|      |             |                    |           [ appos LBL: h1803 ARG0: e1800 ARG1: x1801 ARG2: i1802 ]               |
-|      |             |                    |           [ def_udef_a_q LBL: h1812 ARG0: x1809 RSTR: h1810 BODY: h1811 ]        |
-|      |             |                    |           [ _corporation_n_1 LBL: h1799 ARG0: x1798 ]                            |
-|      |             |                    |           [ explicit_or_proper_q LBL: h1807 ARG0: x1804 RSTR: h1805 BODY: h1806  |
-|      |             |                    | ]                                                                                |
-|      |             |                    |           [ named LBL: h1797 ARG0: x1796 CARG: "S.A." ]                          |
-|      |             |                    |           [ explicit_or_proper_q LBL: h1821 ARG0: x1818 RSTR: h1819 BODY: h1820  |
-|      |             |                    | ]                                                                                |
-|      |             |                    |           [ named LBL: h1795 ARG0: x1794 CARG: "Hypermarcas" ] >                 |
-|      |             |                    |   HCONS: < h1810 qeq h1799 h1805 qeq h1797 h1819 qeq h1795 >                     |
-|      |             |                    |   EQS: < x1809 eq x1798 h1803 eq h1813 i1802 eq x1809 x1804 eq x1796 h1803 eq    |
-|      |             |                    | h1808 x1801 eq x1804 h1817 eq h1808 i1816 eq x1804 x1818 eq x1794 h1817 eq h1822 |
-|      |             |                    | p1815 eq x1818 > ]                                                               |
+| type | Hypermarcas | S.A._(corporation) | [ TOP: h517                                                                      |
+|      |             |                    |   INDEX: e514 [ e SF: prop TENSE: tensed ]                                       |
+|      |             |                    |   RELS: < [ _be_v_id LBL: h517 ARG0: e514 ARG1: p515 ARG2: i516 ]                |
+|      |             |                    |           [ appos LBL: h503 ARG0: e500 ARG1: x501 ARG2: i502 ]                   |
+|      |             |                    |           [ def_udef_a_q LBL: h512 ARG0: x509 RSTR: h510 BODY: h511 ]            |
+|      |             |                    |           [ _corporation_n_1 LBL: h499 ARG0: x498 ]                              |
+|      |             |                    |           [ explicit_or_proper_q LBL: h507 ARG0: x504 RSTR: h505 BODY: h506 ]    |
+|      |             |                    |           [ named LBL: h497 ARG0: x496 CARG: "S.A." ]                            |
+|      |             |                    |           [ explicit_or_proper_q LBL: h521 ARG0: x518 RSTR: h519 BODY: h520 ]    |
+|      |             |                    |           [ named LBL: h495 ARG0: x494 CARG: "Hypermarcas" ] >                   |
+|      |             |                    |   HCONS: < h510 qeq h499 h505 qeq h497 h519 qeq h495 >                           |
+|      |             |                    |   EQS: < x509 eq x498 h503 eq h513 i502 eq x509 x504 eq x496 h503 eq h508 x501   |
+|      |             |                    | eq x504 h517 eq h508 i516 eq x504 x518 eq x494 h517 eq h522 p515 eq x518 > ]     |
 +------+-------------+--------------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------+

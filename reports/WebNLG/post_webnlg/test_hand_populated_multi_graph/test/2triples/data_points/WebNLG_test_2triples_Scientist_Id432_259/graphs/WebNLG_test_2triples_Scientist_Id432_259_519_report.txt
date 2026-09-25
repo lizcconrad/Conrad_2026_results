@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_Scientist_Id432_259_519
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+------------------------------------------------------------------------------------------------------------------------------+
-|                                                         GOLD OUTPUTS                                                         |
-+-----------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                     | Generated? |
-+-----------------------------------------------------------------------------------------------------------------+------------+
-| Darinka Dentcheva is a citizen of the United States, the country where John Roberts is one of the leaders.      | False      |
-| Darinka Dentcheva is a citizen of the United States, where John Roberts serves as one of the countries leaders. | False      |
-| John Roberts is a leader in the United States, where Darinka Dentcheva is a citizen.                            | False      |
-+-----------------------------------------------------------------------------------------------------------------+------------+
++--------------------------------------------------------------------------------------------------------------------------+
+|                                                       GOLD OUTPUTS                                                       |
++-------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                 | Generated? |
++-------------------------------------------------------------------------------------------------------------+------------+
+| Darinka Dentcheva's current residence is in the United States with one of its leaders John Roberts.         | False      |
+| Darinka Dentcheva's current residence is lead in part by John Roberts in the United States.                 | False      |
+| John Roberts is a leader in the United States, whereas Darinka Dentcheva only resides in the United States. | False      |
++-------------------------------------------------------------------------------------------------------------+------------+
 
 +-------------------------------------------------------------------------------------+
 |                                     NODE METRICS                                    |
@@ -56,86 +56,75 @@ GRAPH NAME: WebNLG_test_2triples_Scientist_Id432_259_519
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h16893                                                                    |
-|               |   INDEX: e16890 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h16893 ARG0: e16890 ARG1: p16891 ARG2: i16892 ]        |
-|               |           [ explicit_or_proper_q LBL: h16902 ARG0: x16899 RSTR: h16900 BODY:     |
-|               | h16901 ]                                                                         |
-|               |           [ named LBL: h16881 ARG0: x16880 CARG: "John Roberts" ]                |
-|               |           [ def_udef_a_q LBL: h16897 ARG0: x16894 RSTR: h16895 BODY: h16896 ]    |
-|               |           [ _leader_n_of LBL: h16884 ARG0: x16882 ARG1: i16883 ]                 |
-|               |           [ explicit_or_proper_q LBL: h16888 ARG0: x16885 RSTR: h16886 BODY:     |
-|               | h16887 ]                                                                         |
-|               |           [ named_pl LBL: h16879 ARG0: x16878 [ x NUM: pl ] CARG: "United        |
-|               | States" ] >                                                                      |
-|               |   HCONS: < h16900 qeq h16881 h16886 qeq h16879 h16895 qeq h16884 >               |
-|               |   EQS: < x16899 eq x16880 h16893 eq h16903 i16892 eq x16899 x16885 eq x16878     |
-|               | h16884 eq h16889 i16883 eq x16885 x16894 eq x16882 h16893 eq h16898 p16891 eq    |
-|               | x16894 > ]                                                                       |
+| Original      | [ TOP: h420                                                                      |
+|               |   INDEX: e417 [ e SF: prop TENSE: tensed ]                                       |
+|               |   RELS: < [ _be_v_id LBL: h420 ARG0: e417 ARG1: p418 ARG2: i419 ]                |
+|               |           [ explicit_or_proper_q LBL: h429 ARG0: x426 RSTR: h427 BODY: h428 ]    |
+|               |           [ named LBL: h408 ARG0: x407 CARG: "John Roberts" ]                    |
+|               |           [ def_udef_a_q LBL: h424 ARG0: x421 RSTR: h422 BODY: h423 ]            |
+|               |           [ _leader_n_of LBL: h411 ARG0: x409 ARG1: i410 ]                       |
+|               |           [ explicit_or_proper_q LBL: h415 ARG0: x412 RSTR: h413 BODY: h414 ]    |
+|               |           [ named_pl LBL: h406 ARG0: x405 [ x NUM: pl ] CARG: "United States" ]  |
+|               | >                                                                                |
+|               |   HCONS: < h427 qeq h408 h413 qeq h406 h422 qeq h411 >                           |
+|               |   EQS: < x426 eq x407 h420 eq h430 i419 eq x426 x412 eq x405 h411 eq h416 i410   |
+|               | eq x412 x421 eq x409 h420 eq h425 p418 eq x421 > ]                               |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h16893                                                                    |
-|               |   INDEX: e16890 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h16893 ARG0: e16890 ARG1: x16882 ARG2: x16880 ]        |
-|               |           [ explicit_or_proper_q LBL: h16902 ARG0: x16880 RSTR: h16900 BODY:     |
-|               | h16901 ]                                                                         |
-|               |           [ named LBL: h16881 ARG0: x16880 CARG: "John Roberts" ]                |
-|               |           [ def_udef_a_q LBL: h16897 ARG0: x16882 RSTR: h16895 BODY: h16896 ]    |
-|               |           [ _leader_n_of LBL: h16884 ARG0: x16882 ARG1: x16878 [ x NUM: pl ] ]   |
-|               |           [ explicit_or_proper_q LBL: h16888 ARG0: x16878 RSTR: h16886 BODY:     |
-|               | h16887 ]                                                                         |
-|               |           [ named_pl LBL: h16879 ARG0: x16878 CARG: "United States" ] >          |
-|               |   HCONS: < h16900 qeq h16881 h16886 qeq h16879 h16895 qeq h16884 > ]             |
+| EQs Collapsed | [ TOP: h420                                                                      |
+|               |   INDEX: e417 [ e SF: prop TENSE: tensed ]                                       |
+|               |   RELS: < [ _be_v_id LBL: h420 ARG0: e417 ARG1: x409 ARG2: x407 ]                |
+|               |           [ explicit_or_proper_q LBL: h429 ARG0: x407 RSTR: h427 BODY: h428 ]    |
+|               |           [ named LBL: h408 ARG0: x407 CARG: "John Roberts" ]                    |
+|               |           [ def_udef_a_q LBL: h424 ARG0: x409 RSTR: h422 BODY: h423 ]            |
+|               |           [ _leader_n_of LBL: h411 ARG0: x409 ARG1: x405 [ x NUM: pl ] ]         |
+|               |           [ explicit_or_proper_q LBL: h415 ARG0: x405 RSTR: h413 BODY: h414 ]    |
+|               |           [ named_pl LBL: h406 ARG0: x405 CARG: "United States" ] >              |
+|               |   HCONS: < h427 qeq h408 h413 qeq h406 h422 qeq h411 > ]                         |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h16904                                                                    |
-|               |   INDEX: e16890 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h16893 ARG0: e16890 ARG1: x16882 ARG2: x16880 ]        |
-|               |           [ explicit_or_proper_q LBL: h16902 ARG0: x16880 RSTR: h16900 BODY:     |
-|               | h16901 ]                                                                         |
-|               |           [ named LBL: h16881 ARG0: x16880 CARG: "John Roberts" ]                |
-|               |           [ def_udef_a_q LBL: h16897 ARG0: x16882 RSTR: h16895 BODY: h16896 ]    |
-|               |           [ _leader_n_of LBL: h16884 ARG0: x16882 ARG1: x16878 [ x NUM: pl ] ]   |
-|               |           [ explicit_or_proper_q LBL: h16888 ARG0: x16878 RSTR: h16886 BODY:     |
-|               | h16887 ]                                                                         |
-|               |           [ named_pl LBL: h16879 ARG0: x16878 CARG: "United States" ] >          |
-|               |   HCONS: < h16900 qeq h16881 h16886 qeq h16879 h16895 qeq h16884 h16904 qeq      |
-|               | h16893 > ]                                                                       |
+| Prepped       | [ TOP: h431                                                                      |
+|               |   INDEX: e417 [ e SF: prop TENSE: tensed ]                                       |
+|               |   RELS: < [ _be_v_id LBL: h420 ARG0: e417 ARG1: x409 ARG2: x407 ]                |
+|               |           [ explicit_or_proper_q LBL: h429 ARG0: x407 RSTR: h427 BODY: h428 ]    |
+|               |           [ named LBL: h408 ARG0: x407 CARG: "John Roberts" ]                    |
+|               |           [ def_udef_a_q LBL: h424 ARG0: x409 RSTR: h422 BODY: h423 ]            |
+|               |           [ _leader_n_of LBL: h411 ARG0: x409 ARG1: x405 [ x NUM: pl ] ]         |
+|               |           [ explicit_or_proper_q LBL: h415 ARG0: x405 RSTR: h413 BODY: h414 ]    |
+|               |           [ named_pl LBL: h406 ARG0: x405 CARG: "United States" ] >              |
+|               |   HCONS: < h427 qeq h408 h413 qeq h406 h422 qeq h411 h431 qeq h420 > ]           |
 +---------------+----------------------------------------------------------------------------------+
 
-+-------------------------------------------------------------------------------------------+
-|                                        NODE SEMENTS                                       |
-+---------------+---------------------------------------------------------------------------+
-| Node          | Generated SEMENT                                                          |
-+---------------+---------------------------------------------------------------------------+
-| United_States | [ TOP: h16879                                                             |
-|               |   INDEX: x16878 [ x NUM: pl ]                                             |
-|               |   RELS: < [ named_pl LBL: h16879 ARG0: x16878 CARG: "United States" ] > ] |
-+---------------+---------------------------------------------------------------------------+
-| John_Roberts  | [ TOP: h16881                                                             |
-|               |   INDEX: x16880                                                           |
-|               |   RELS: < [ named LBL: h16881 ARG0: x16880 CARG: "John Roberts" ] > ]     |
-+---------------+---------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------+
+|                                      NODE SEMENTS                                     |
++---------------+-----------------------------------------------------------------------+
+| Node          | Generated SEMENT                                                      |
++---------------+-----------------------------------------------------------------------+
+| United_States | [ TOP: h406                                                           |
+|               |   INDEX: x405 [ x NUM: pl ]                                           |
+|               |   RELS: < [ named_pl LBL: h406 ARG0: x405 CARG: "United States" ] > ] |
++---------------+-----------------------------------------------------------------------+
+| John_Roberts  | [ TOP: h408                                                           |
+|               |   INDEX: x407                                                         |
+|               |   RELS: < [ named LBL: h408 ARG0: x407 CARG: "John Roberts" ] > ]     |
++---------------+-----------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------------------------------------------+
 |                                                       EDGE SEMENTS                                                       |
 +--------+---------------+--------------+----------------------------------------------------------------------------------+
 | Edge   | Parent        | Child        | Generated SEMENT                                                                 |
 +--------+---------------+--------------+----------------------------------------------------------------------------------+
-| leader | United_States | John_Roberts | [ TOP: h16893                                                                    |
-|        |               |              |   INDEX: e16890 [ e SF: prop TENSE: tensed ]                                     |
-|        |               |              |   RELS: < [ _be_v_id LBL: h16893 ARG0: e16890 ARG1: p16891 ARG2: i16892 ]        |
-|        |               |              |           [ explicit_or_proper_q LBL: h16902 ARG0: x16899 RSTR: h16900 BODY:     |
-|        |               |              | h16901 ]                                                                         |
-|        |               |              |           [ named LBL: h16881 ARG0: x16880 CARG: "John Roberts" ]                |
-|        |               |              |           [ def_udef_a_q LBL: h16897 ARG0: x16894 RSTR: h16895 BODY: h16896 ]    |
-|        |               |              |           [ _leader_n_of LBL: h16884 ARG0: x16882 ARG1: i16883 ]                 |
-|        |               |              |           [ explicit_or_proper_q LBL: h16888 ARG0: x16885 RSTR: h16886 BODY:     |
-|        |               |              | h16887 ]                                                                         |
-|        |               |              |           [ named_pl LBL: h16879 ARG0: x16878 [ x NUM: pl ] CARG: "United        |
-|        |               |              | States" ] >                                                                      |
-|        |               |              |   HCONS: < h16900 qeq h16881 h16886 qeq h16879 h16895 qeq h16884 >               |
-|        |               |              |   EQS: < x16899 eq x16880 h16893 eq h16903 i16892 eq x16899 x16885 eq x16878     |
-|        |               |              | h16884 eq h16889 i16883 eq x16885 x16894 eq x16882 h16893 eq h16898 p16891 eq    |
-|        |               |              | x16894 > ]                                                                       |
+| leader | United_States | John_Roberts | [ TOP: h420                                                                      |
+|        |               |              |   INDEX: e417 [ e SF: prop TENSE: tensed ]                                       |
+|        |               |              |   RELS: < [ _be_v_id LBL: h420 ARG0: e417 ARG1: p418 ARG2: i419 ]                |
+|        |               |              |           [ explicit_or_proper_q LBL: h429 ARG0: x426 RSTR: h427 BODY: h428 ]    |
+|        |               |              |           [ named LBL: h408 ARG0: x407 CARG: "John Roberts" ]                    |
+|        |               |              |           [ def_udef_a_q LBL: h424 ARG0: x421 RSTR: h422 BODY: h423 ]            |
+|        |               |              |           [ _leader_n_of LBL: h411 ARG0: x409 ARG1: i410 ]                       |
+|        |               |              |           [ explicit_or_proper_q LBL: h415 ARG0: x412 RSTR: h413 BODY: h414 ]    |
+|        |               |              |           [ named_pl LBL: h406 ARG0: x405 [ x NUM: pl ] CARG: "United States" ]  |
+|        |               |              | >                                                                                |
+|        |               |              |   HCONS: < h427 qeq h408 h413 qeq h406 h422 qeq h411 >                           |
+|        |               |              |   EQS: < x426 eq x407 h420 eq h430 i419 eq x426 x412 eq x405 h411 eq h416 i410   |
+|        |               |              | eq x412 x421 eq x409 h420 eq h425 p418 eq x421 > ]                               |
 +--------+---------------+--------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------+

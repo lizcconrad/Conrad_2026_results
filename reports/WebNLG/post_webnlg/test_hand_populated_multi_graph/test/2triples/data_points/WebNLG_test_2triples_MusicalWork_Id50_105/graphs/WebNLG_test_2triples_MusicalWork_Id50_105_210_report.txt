@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_MusicalWork_Id50_105_210
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+--------------------------------------------------------------------------------------------------------------------+
-|                                                    GOLD OUTPUTS                                                    |
-+-------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                           | Generated? |
-+-------------------------------------------------------------------------------------------------------+------------+
-| Live at Roadburn 2008 was preceded by the album Nord played by Year of No Light.                      | False      |
-| The Year of No Light album Live at Roadburn 2008 was followed by their album Nord.                    | False      |
-| Year of No Light, who released the album Nord, followed this up with the album Live at Roadburn 2008. | False      |
-+-------------------------------------------------------------------------------------------------------+------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                               GOLD OUTPUTS                                                               |
++-----------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                 | Generated? |
++-----------------------------------------------------------------------------------------------------------------------------+------------+
+| The Year of No Light album Nord, self-produced by the band, was followed by Year of No Light's album Live at Roadburn 2008. | False      |
+| Year of No Light created the album Live at Roadburn 2008, which was preceded by band’s self-produced album Nord.            | False      |
+| Year of No Light followed their album Nord, which they also produced, with the album Live at Roadburn 2008.                 | False      |
++-----------------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------------------------------------+
 |                                                     NODE METRICS                                                     |
@@ -56,89 +56,76 @@ GRAPH NAME: WebNLG_test_2triples_MusicalWork_Id50_105_210
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h6891                                                                     |
-|               |   INDEX: e6888 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _follow_v_1 LBL: h6891 ARG0: e6888 ARG1: i6889 ARG2: i6890 ]         |
-|               |           [ appos LBL: h6848 ARG0: e6845 ARG1: x6846 ARG2: i6847 ]               |
-|               |           [ def_udef_a_q LBL: h6857 ARG0: x6854 RSTR: h6855 BODY: h6856 ]        |
-|               |           [ compound LBL: h6839 ARG0: e6836 ARG1: u6837 ARG2: u6838 ]            |
-|               |           [ existential_q LBL: h6843 ARG0: x6840 RSTR: h6841 BODY: h6842 ]       |
-|               |           [ named LBL: h6835 ARG0: x6834 [ x NUM: sg ] CARG: "Year of No Light"  |
-|               | ]                                                                                |
-|               |           [ _album_n_1 LBL: h6833 ARG0: x6832 ]                                  |
-|               |           [ explicit_or_proper_q LBL: h6852 ARG0: x6849 RSTR: h6850 BODY: h6851  |
-|               | ]                                                                                |
-|               |           [ named LBL: h6831 ARG0: x6830 CARG: "Nord" ]                          |
-|               |           [ appos LBL: h6877 ARG0: e6874 ARG1: x6875 ARG2: i6876 ]               |
-|               |           [ def_udef_a_q LBL: h6886 ARG0: x6883 RSTR: h6884 BODY: h6885 ]        |
-|               |           [ compound LBL: h6868 ARG0: e6865 ARG1: u6866 ARG2: u6867 ]            |
-|               |           [ existential_q LBL: h6872 ARG0: x6869 RSTR: h6870 BODY: h6871 ]       |
-|               |           [ named LBL: h6864 ARG0: x6863 [ x NUM: sg ] CARG: "Year of No Light"  |
-|               | ]                                                                                |
-|               |           [ _album_n_1 LBL: h6862 ARG0: x6861 ]                                  |
-|               |           [ explicit_or_proper_q LBL: h6881 ARG0: x6878 RSTR: h6879 BODY: h6880  |
-|               | ]                                                                                |
-|               |           [ named LBL: h6860 ARG0: x6859 CARG: "Live at Roadburn 2008" ] >       |
-|               |   HCONS: < h6841 qeq h6835 h6855 qeq h6833 h6850 qeq h6831 h6870 qeq h6864 h6884 |
-|               | qeq h6862 h6879 qeq h6860 >                                                      |
-|               |   EQS: < x6840 eq x6834 h6839 eq h6844 u6838 eq x6840 h6839 eq h6833 u6837 eq    |
-|               | x6832 x6854 eq x6832 h6848 eq h6858 i6847 eq x6854 x6849 eq x6830 h6848 eq h6853 |
-|               | x6846 eq x6849 h6891 eq h6853 i6890 eq x6849 x6869 eq x6863 h6868 eq h6873 u6867 |
-|               | eq x6869 h6868 eq h6862 u6866 eq x6861 x6883 eq x6861 h6877 eq h6887 i6876 eq    |
-|               | x6883 x6878 eq x6859 h6877 eq h6882 x6875 eq x6878 h6891 eq h6882 i6889 eq x6878 |
-|               | > ]                                                                              |
+| Original      | [ TOP: h667                                                                      |
+|               |   INDEX: e664 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _follow_v_1 LBL: h667 ARG0: e664 ARG1: i665 ARG2: i666 ]             |
+|               |           [ appos LBL: h624 ARG0: e621 ARG1: x622 ARG2: i623 ]                   |
+|               |           [ def_udef_a_q LBL: h633 ARG0: x630 RSTR: h631 BODY: h632 ]            |
+|               |           [ compound LBL: h615 ARG0: e612 ARG1: u613 ARG2: u614 ]                |
+|               |           [ existential_q LBL: h619 ARG0: x616 RSTR: h617 BODY: h618 ]           |
+|               |           [ named LBL: h611 ARG0: x610 [ x NUM: sg ] CARG: "Year of No Light" ]  |
+|               |           [ _album_n_1 LBL: h609 ARG0: x608 ]                                    |
+|               |           [ explicit_or_proper_q LBL: h628 ARG0: x625 RSTR: h626 BODY: h627 ]    |
+|               |           [ named LBL: h607 ARG0: x606 CARG: "Nord" ]                            |
+|               |           [ appos LBL: h653 ARG0: e650 ARG1: x651 ARG2: i652 ]                   |
+|               |           [ def_udef_a_q LBL: h662 ARG0: x659 RSTR: h660 BODY: h661 ]            |
+|               |           [ compound LBL: h644 ARG0: e641 ARG1: u642 ARG2: u643 ]                |
+|               |           [ existential_q LBL: h648 ARG0: x645 RSTR: h646 BODY: h647 ]           |
+|               |           [ named LBL: h640 ARG0: x639 [ x NUM: sg ] CARG: "Year of No Light" ]  |
+|               |           [ _album_n_1 LBL: h638 ARG0: x637 ]                                    |
+|               |           [ explicit_or_proper_q LBL: h657 ARG0: x654 RSTR: h655 BODY: h656 ]    |
+|               |           [ named LBL: h636 ARG0: x635 CARG: "Live at Roadburn 2008" ] >         |
+|               |   HCONS: < h617 qeq h611 h631 qeq h609 h626 qeq h607 h646 qeq h640 h660 qeq h638 |
+|               | h655 qeq h636 >                                                                  |
+|               |   EQS: < x616 eq x610 h615 eq h620 u614 eq x616 h615 eq h609 u613 eq x608 x630   |
+|               | eq x608 h624 eq h634 i623 eq x630 x625 eq x606 h624 eq h629 x622 eq x625 h667 eq |
+|               | h629 i666 eq x625 x645 eq x639 h644 eq h649 u643 eq x645 h644 eq h638 u642 eq    |
+|               | x637 x659 eq x637 h653 eq h663 i652 eq x659 x654 eq x635 h653 eq h658 x651 eq    |
+|               | x654 h667 eq h658 i665 eq x654 > ]                                               |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h6848                                                                     |
-|               |   INDEX: e6888 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _follow_v_1 LBL: h6848 ARG0: e6888 ARG1: x6859 ARG2: x6830 ]         |
-|               |           [ appos LBL: h6848 ARG0: e6845 ARG1: x6830 ARG2: x6832 ]               |
-|               |           [ def_udef_a_q LBL: h6857 ARG0: x6832 RSTR: h6855 BODY: h6856 ]        |
-|               |           [ compound LBL: h6833 ARG0: e6836 ARG1: x6832 ARG2: x6834 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ existential_q LBL: h6843 ARG0: x6834 RSTR: h6841 BODY: h6842 ]       |
-|               |           [ named LBL: h6835 ARG0: x6834 CARG: "Year of No Light" ]              |
-|               |           [ _album_n_1 LBL: h6833 ARG0: x6832 ]                                  |
-|               |           [ explicit_or_proper_q LBL: h6852 ARG0: x6830 RSTR: h6850 BODY: h6851  |
-|               | ]                                                                                |
-|               |           [ named LBL: h6831 ARG0: x6830 CARG: "Nord" ]                          |
-|               |           [ appos LBL: h6848 ARG0: e6874 ARG1: x6859 ARG2: x6861 ]               |
-|               |           [ def_udef_a_q LBL: h6886 ARG0: x6861 RSTR: h6884 BODY: h6885 ]        |
-|               |           [ compound LBL: h6862 ARG0: e6865 ARG1: x6861 ARG2: x6863 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ existential_q LBL: h6872 ARG0: x6863 RSTR: h6870 BODY: h6871 ]       |
-|               |           [ named LBL: h6864 ARG0: x6863 CARG: "Year of No Light" ]              |
-|               |           [ _album_n_1 LBL: h6862 ARG0: x6861 ]                                  |
-|               |           [ explicit_or_proper_q LBL: h6881 ARG0: x6859 RSTR: h6879 BODY: h6880  |
-|               | ]                                                                                |
-|               |           [ named LBL: h6860 ARG0: x6859 CARG: "Live at Roadburn 2008" ] >       |
-|               |   HCONS: < h6841 qeq h6835 h6855 qeq h6833 h6850 qeq h6831 h6870 qeq h6864 h6884 |
-|               | qeq h6862 h6879 qeq h6860 > ]                                                    |
+| EQs Collapsed | [ TOP: h624                                                                      |
+|               |   INDEX: e664 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _follow_v_1 LBL: h624 ARG0: e664 ARG1: x635 ARG2: x606 ]             |
+|               |           [ appos LBL: h624 ARG0: e621 ARG1: x606 ARG2: x608 ]                   |
+|               |           [ def_udef_a_q LBL: h633 ARG0: x608 RSTR: h631 BODY: h632 ]            |
+|               |           [ compound LBL: h609 ARG0: e612 ARG1: x608 ARG2: x610 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h619 ARG0: x610 RSTR: h617 BODY: h618 ]           |
+|               |           [ named LBL: h611 ARG0: x610 CARG: "Year of No Light" ]                |
+|               |           [ _album_n_1 LBL: h609 ARG0: x608 ]                                    |
+|               |           [ explicit_or_proper_q LBL: h628 ARG0: x606 RSTR: h626 BODY: h627 ]    |
+|               |           [ named LBL: h607 ARG0: x606 CARG: "Nord" ]                            |
+|               |           [ appos LBL: h624 ARG0: e650 ARG1: x635 ARG2: x637 ]                   |
+|               |           [ def_udef_a_q LBL: h662 ARG0: x637 RSTR: h660 BODY: h661 ]            |
+|               |           [ compound LBL: h638 ARG0: e641 ARG1: x637 ARG2: x639 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h648 ARG0: x639 RSTR: h646 BODY: h647 ]           |
+|               |           [ named LBL: h640 ARG0: x639 CARG: "Year of No Light" ]                |
+|               |           [ _album_n_1 LBL: h638 ARG0: x637 ]                                    |
+|               |           [ explicit_or_proper_q LBL: h657 ARG0: x635 RSTR: h655 BODY: h656 ]    |
+|               |           [ named LBL: h636 ARG0: x635 CARG: "Live at Roadburn 2008" ] >         |
+|               |   HCONS: < h617 qeq h611 h631 qeq h609 h626 qeq h607 h646 qeq h640 h660 qeq h638 |
+|               | h655 qeq h636 > ]                                                                |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h6892                                                                     |
-|               |   INDEX: e6888 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _follow_v_1 LBL: h6848 ARG0: e6888 ARG1: x6859 ARG2: x6830 ]         |
-|               |           [ appos LBL: h6848 ARG0: e6845 ARG1: x6830 ARG2: x6832 ]               |
-|               |           [ def_udef_a_q LBL: h6857 ARG0: x6832 RSTR: h6855 BODY: h6856 ]        |
-|               |           [ compound LBL: h6833 ARG0: e6836 ARG1: x6832 ARG2: x6834 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ existential_q LBL: h6843 ARG0: x6834 RSTR: h6841 BODY: h6842 ]       |
-|               |           [ named LBL: h6835 ARG0: x6834 CARG: "Year of No Light" ]              |
-|               |           [ _album_n_1 LBL: h6833 ARG0: x6832 ]                                  |
-|               |           [ explicit_or_proper_q LBL: h6852 ARG0: x6830 RSTR: h6850 BODY: h6851  |
-|               | ]                                                                                |
-|               |           [ named LBL: h6831 ARG0: x6830 CARG: "Nord" ]                          |
-|               |           [ appos LBL: h6848 ARG0: e6874 ARG1: x6859 ARG2: x6861 ]               |
-|               |           [ def_udef_a_q LBL: h6886 ARG0: x6861 RSTR: h6884 BODY: h6885 ]        |
-|               |           [ compound LBL: h6862 ARG0: e6865 ARG1: x6861 ARG2: x6863 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ existential_q LBL: h6872 ARG0: x6863 RSTR: h6870 BODY: h6871 ]       |
-|               |           [ named LBL: h6864 ARG0: x6863 CARG: "Year of No Light" ]              |
-|               |           [ _album_n_1 LBL: h6862 ARG0: x6861 ]                                  |
-|               |           [ explicit_or_proper_q LBL: h6881 ARG0: x6859 RSTR: h6879 BODY: h6880  |
-|               | ]                                                                                |
-|               |           [ named LBL: h6860 ARG0: x6859 CARG: "Live at Roadburn 2008" ] >       |
-|               |   HCONS: < h6841 qeq h6835 h6855 qeq h6833 h6850 qeq h6831 h6870 qeq h6864 h6884 |
-|               | qeq h6862 h6879 qeq h6860 h6892 qeq h6848 > ]                                    |
+| Prepped       | [ TOP: h668                                                                      |
+|               |   INDEX: e664 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _follow_v_1 LBL: h624 ARG0: e664 ARG1: x635 ARG2: x606 ]             |
+|               |           [ appos LBL: h624 ARG0: e621 ARG1: x606 ARG2: x608 ]                   |
+|               |           [ def_udef_a_q LBL: h633 ARG0: x608 RSTR: h631 BODY: h632 ]            |
+|               |           [ compound LBL: h609 ARG0: e612 ARG1: x608 ARG2: x610 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h619 ARG0: x610 RSTR: h617 BODY: h618 ]           |
+|               |           [ named LBL: h611 ARG0: x610 CARG: "Year of No Light" ]                |
+|               |           [ _album_n_1 LBL: h609 ARG0: x608 ]                                    |
+|               |           [ explicit_or_proper_q LBL: h628 ARG0: x606 RSTR: h626 BODY: h627 ]    |
+|               |           [ named LBL: h607 ARG0: x606 CARG: "Nord" ]                            |
+|               |           [ appos LBL: h624 ARG0: e650 ARG1: x635 ARG2: x637 ]                   |
+|               |           [ def_udef_a_q LBL: h662 ARG0: x637 RSTR: h660 BODY: h661 ]            |
+|               |           [ compound LBL: h638 ARG0: e641 ARG1: x637 ARG2: x639 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h648 ARG0: x639 RSTR: h646 BODY: h647 ]           |
+|               |           [ named LBL: h640 ARG0: x639 CARG: "Year of No Light" ]                |
+|               |           [ _album_n_1 LBL: h638 ARG0: x637 ]                                    |
+|               |           [ explicit_or_proper_q LBL: h657 ARG0: x635 RSTR: h655 BODY: h656 ]    |
+|               |           [ named LBL: h636 ARG0: x635 CARG: "Live at Roadburn 2008" ] >         |
+|               |   HCONS: < h617 qeq h611 h631 qeq h609 h626 qeq h607 h646 qeq h640 h660 qeq h638 |
+|               | h655 qeq h636 h668 qeq h624 > ]                                                  |
 +---------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
@@ -146,41 +133,35 @@ GRAPH NAME: WebNLG_test_2triples_MusicalWork_Id50_105_210
 +------------------------------------------------+----------------------------------------------------------------------------------+
 | Node                                           | Generated SEMENT                                                                 |
 +------------------------------------------------+----------------------------------------------------------------------------------+
-| Nord_(Year_of_No_Light_album)                  | [ TOP: h6853                                                                     |
-|                                                |   INDEX: x6849                                                                   |
-|                                                |   RELS: < [ appos LBL: h6848 ARG0: e6845 ARG1: x6846 ARG2: i6847 ]               |
-|                                                |           [ def_udef_a_q LBL: h6857 ARG0: x6854 RSTR: h6855 BODY: h6856 ]        |
-|                                                |           [ compound LBL: h6839 ARG0: e6836 ARG1: u6837 ARG2: u6838 ]            |
-|                                                |           [ existential_q LBL: h6843 ARG0: x6840 RSTR: h6841 BODY: h6842 ]       |
-|                                                |           [ named LBL: h6835 ARG0: x6834 [ x NUM: sg ] CARG: "Year of No Light"  |
-|                                                | ]                                                                                |
-|                                                |           [ _album_n_1 LBL: h6833 ARG0: x6832 ]                                  |
-|                                                |           [ explicit_or_proper_q LBL: h6852 ARG0: x6849 RSTR: h6850 BODY: h6851  |
-|                                                | ]                                                                                |
-|                                                |           [ named LBL: h6831 ARG0: x6830 CARG: "Nord" ] >                        |
-|                                                |   HCONS: < h6841 qeq h6835 h6855 qeq h6833 h6850 qeq h6831 >                     |
-|                                                |   EQS: < x6840 eq x6834 h6839 eq h6844 u6838 eq x6840 h6839 eq h6833 u6837 eq    |
-|                                                | x6832 x6854 eq x6832 h6848 eq h6858 i6847 eq x6854 x6849 eq x6830 h6848 eq h6853 |
-|                                                | x6846 eq x6849 >                                                                 |
-|                                                |   SLOTS: < BODY: h6851 > ]                                                       |
+| Nord_(Year_of_No_Light_album)                  | [ TOP: h629                                                                      |
+|                                                |   INDEX: x625                                                                    |
+|                                                |   RELS: < [ appos LBL: h624 ARG0: e621 ARG1: x622 ARG2: i623 ]                   |
+|                                                |           [ def_udef_a_q LBL: h633 ARG0: x630 RSTR: h631 BODY: h632 ]            |
+|                                                |           [ compound LBL: h615 ARG0: e612 ARG1: u613 ARG2: u614 ]                |
+|                                                |           [ existential_q LBL: h619 ARG0: x616 RSTR: h617 BODY: h618 ]           |
+|                                                |           [ named LBL: h611 ARG0: x610 [ x NUM: sg ] CARG: "Year of No Light" ]  |
+|                                                |           [ _album_n_1 LBL: h609 ARG0: x608 ]                                    |
+|                                                |           [ explicit_or_proper_q LBL: h628 ARG0: x625 RSTR: h626 BODY: h627 ]    |
+|                                                |           [ named LBL: h607 ARG0: x606 CARG: "Nord" ] >                          |
+|                                                |   HCONS: < h617 qeq h611 h631 qeq h609 h626 qeq h607 >                           |
+|                                                |   EQS: < x616 eq x610 h615 eq h620 u614 eq x616 h615 eq h609 u613 eq x608 x630   |
+|                                                | eq x608 h624 eq h634 i623 eq x630 x625 eq x606 h624 eq h629 x622 eq x625 >       |
+|                                                |   SLOTS: < BODY: h627 > ]                                                        |
 +------------------------------------------------+----------------------------------------------------------------------------------+
-| Live_at_Roadburn_2008_(Year_of_No_Light_album) | [ TOP: h6882                                                                     |
-|                                                |   INDEX: x6878                                                                   |
-|                                                |   RELS: < [ appos LBL: h6877 ARG0: e6874 ARG1: x6875 ARG2: i6876 ]               |
-|                                                |           [ def_udef_a_q LBL: h6886 ARG0: x6883 RSTR: h6884 BODY: h6885 ]        |
-|                                                |           [ compound LBL: h6868 ARG0: e6865 ARG1: u6866 ARG2: u6867 ]            |
-|                                                |           [ existential_q LBL: h6872 ARG0: x6869 RSTR: h6870 BODY: h6871 ]       |
-|                                                |           [ named LBL: h6864 ARG0: x6863 [ x NUM: sg ] CARG: "Year of No Light"  |
-|                                                | ]                                                                                |
-|                                                |           [ _album_n_1 LBL: h6862 ARG0: x6861 ]                                  |
-|                                                |           [ explicit_or_proper_q LBL: h6881 ARG0: x6878 RSTR: h6879 BODY: h6880  |
-|                                                | ]                                                                                |
-|                                                |           [ named LBL: h6860 ARG0: x6859 CARG: "Live at Roadburn 2008" ] >       |
-|                                                |   HCONS: < h6870 qeq h6864 h6884 qeq h6862 h6879 qeq h6860 >                     |
-|                                                |   EQS: < x6869 eq x6863 h6868 eq h6873 u6867 eq x6869 h6868 eq h6862 u6866 eq    |
-|                                                | x6861 x6883 eq x6861 h6877 eq h6887 i6876 eq x6883 x6878 eq x6859 h6877 eq h6882 |
-|                                                | x6875 eq x6878 >                                                                 |
-|                                                |   SLOTS: < BODY: h6880 > ]                                                       |
+| Live_at_Roadburn_2008_(Year_of_No_Light_album) | [ TOP: h658                                                                      |
+|                                                |   INDEX: x654                                                                    |
+|                                                |   RELS: < [ appos LBL: h653 ARG0: e650 ARG1: x651 ARG2: i652 ]                   |
+|                                                |           [ def_udef_a_q LBL: h662 ARG0: x659 RSTR: h660 BODY: h661 ]            |
+|                                                |           [ compound LBL: h644 ARG0: e641 ARG1: u642 ARG2: u643 ]                |
+|                                                |           [ existential_q LBL: h648 ARG0: x645 RSTR: h646 BODY: h647 ]           |
+|                                                |           [ named LBL: h640 ARG0: x639 [ x NUM: sg ] CARG: "Year of No Light" ]  |
+|                                                |           [ _album_n_1 LBL: h638 ARG0: x637 ]                                    |
+|                                                |           [ explicit_or_proper_q LBL: h657 ARG0: x654 RSTR: h655 BODY: h656 ]    |
+|                                                |           [ named LBL: h636 ARG0: x635 CARG: "Live at Roadburn 2008" ] >         |
+|                                                |   HCONS: < h646 qeq h640 h660 qeq h638 h655 qeq h636 >                           |
+|                                                |   EQS: < x645 eq x639 h644 eq h649 u643 eq x645 h644 eq h638 u642 eq x637 x659   |
+|                                                | eq x637 h653 eq h663 i652 eq x659 x654 eq x635 h653 eq h658 x651 eq x654 >       |
+|                                                |   SLOTS: < BODY: h656 > ]                                                        |
 +------------------------------------------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -188,37 +169,32 @@ GRAPH NAME: WebNLG_test_2triples_MusicalWork_Id50_105_210
 +------------+-------------------------------+------------------------------------------------+----------------------------------------------------------------------------------+
 | Edge       | Parent                        | Child                                          | Generated SEMENT                                                                 |
 +------------+-------------------------------+------------------------------------------------+----------------------------------------------------------------------------------+
-| followedBy | Nord_(Year_of_No_Light_album) | Live_at_Roadburn_2008_(Year_of_No_Light_album) | [ TOP: h6891                                                                     |
-|            |                               |                                                |   INDEX: e6888 [ e TENSE: tensed ]                                               |
-|            |                               |                                                |   RELS: < [ _follow_v_1 LBL: h6891 ARG0: e6888 ARG1: i6889 ARG2: i6890 ]         |
-|            |                               |                                                |           [ appos LBL: h6848 ARG0: e6845 ARG1: x6846 ARG2: i6847 ]               |
-|            |                               |                                                |           [ def_udef_a_q LBL: h6857 ARG0: x6854 RSTR: h6855 BODY: h6856 ]        |
-|            |                               |                                                |           [ compound LBL: h6839 ARG0: e6836 ARG1: u6837 ARG2: u6838 ]            |
-|            |                               |                                                |           [ existential_q LBL: h6843 ARG0: x6840 RSTR: h6841 BODY: h6842 ]       |
-|            |                               |                                                |           [ named LBL: h6835 ARG0: x6834 [ x NUM: sg ] CARG: "Year of No Light"  |
-|            |                               |                                                | ]                                                                                |
-|            |                               |                                                |           [ _album_n_1 LBL: h6833 ARG0: x6832 ]                                  |
-|            |                               |                                                |           [ explicit_or_proper_q LBL: h6852 ARG0: x6849 RSTR: h6850 BODY: h6851  |
-|            |                               |                                                | ]                                                                                |
-|            |                               |                                                |           [ named LBL: h6831 ARG0: x6830 CARG: "Nord" ]                          |
-|            |                               |                                                |           [ appos LBL: h6877 ARG0: e6874 ARG1: x6875 ARG2: i6876 ]               |
-|            |                               |                                                |           [ def_udef_a_q LBL: h6886 ARG0: x6883 RSTR: h6884 BODY: h6885 ]        |
-|            |                               |                                                |           [ compound LBL: h6868 ARG0: e6865 ARG1: u6866 ARG2: u6867 ]            |
-|            |                               |                                                |           [ existential_q LBL: h6872 ARG0: x6869 RSTR: h6870 BODY: h6871 ]       |
-|            |                               |                                                |           [ named LBL: h6864 ARG0: x6863 [ x NUM: sg ] CARG: "Year of No Light"  |
-|            |                               |                                                | ]                                                                                |
-|            |                               |                                                |           [ _album_n_1 LBL: h6862 ARG0: x6861 ]                                  |
-|            |                               |                                                |           [ explicit_or_proper_q LBL: h6881 ARG0: x6878 RSTR: h6879 BODY: h6880  |
-|            |                               |                                                | ]                                                                                |
-|            |                               |                                                |           [ named LBL: h6860 ARG0: x6859 CARG: "Live at Roadburn 2008" ] >       |
-|            |                               |                                                |   HCONS: < h6841 qeq h6835 h6855 qeq h6833 h6850 qeq h6831 h6870 qeq h6864 h6884 |
-|            |                               |                                                | qeq h6862 h6879 qeq h6860 >                                                      |
-|            |                               |                                                |   EQS: < x6840 eq x6834 h6839 eq h6844 u6838 eq x6840 h6839 eq h6833 u6837 eq    |
-|            |                               |                                                | x6832 x6854 eq x6832 h6848 eq h6858 i6847 eq x6854 x6849 eq x6830 h6848 eq h6853 |
-|            |                               |                                                | x6846 eq x6849 h6891 eq h6853 i6890 eq x6849 x6869 eq x6863 h6868 eq h6873 u6867 |
-|            |                               |                                                | eq x6869 h6868 eq h6862 u6866 eq x6861 x6883 eq x6861 h6877 eq h6887 i6876 eq    |
-|            |                               |                                                | x6883 x6878 eq x6859 h6877 eq h6882 x6875 eq x6878 h6891 eq h6882 i6889 eq x6878 |
-|            |                               |                                                | > ]                                                                              |
+| followedBy | Nord_(Year_of_No_Light_album) | Live_at_Roadburn_2008_(Year_of_No_Light_album) | [ TOP: h667                                                                      |
+|            |                               |                                                |   INDEX: e664 [ e TENSE: tensed ]                                                |
+|            |                               |                                                |   RELS: < [ _follow_v_1 LBL: h667 ARG0: e664 ARG1: i665 ARG2: i666 ]             |
+|            |                               |                                                |           [ appos LBL: h624 ARG0: e621 ARG1: x622 ARG2: i623 ]                   |
+|            |                               |                                                |           [ def_udef_a_q LBL: h633 ARG0: x630 RSTR: h631 BODY: h632 ]            |
+|            |                               |                                                |           [ compound LBL: h615 ARG0: e612 ARG1: u613 ARG2: u614 ]                |
+|            |                               |                                                |           [ existential_q LBL: h619 ARG0: x616 RSTR: h617 BODY: h618 ]           |
+|            |                               |                                                |           [ named LBL: h611 ARG0: x610 [ x NUM: sg ] CARG: "Year of No Light" ]  |
+|            |                               |                                                |           [ _album_n_1 LBL: h609 ARG0: x608 ]                                    |
+|            |                               |                                                |           [ explicit_or_proper_q LBL: h628 ARG0: x625 RSTR: h626 BODY: h627 ]    |
+|            |                               |                                                |           [ named LBL: h607 ARG0: x606 CARG: "Nord" ]                            |
+|            |                               |                                                |           [ appos LBL: h653 ARG0: e650 ARG1: x651 ARG2: i652 ]                   |
+|            |                               |                                                |           [ def_udef_a_q LBL: h662 ARG0: x659 RSTR: h660 BODY: h661 ]            |
+|            |                               |                                                |           [ compound LBL: h644 ARG0: e641 ARG1: u642 ARG2: u643 ]                |
+|            |                               |                                                |           [ existential_q LBL: h648 ARG0: x645 RSTR: h646 BODY: h647 ]           |
+|            |                               |                                                |           [ named LBL: h640 ARG0: x639 [ x NUM: sg ] CARG: "Year of No Light" ]  |
+|            |                               |                                                |           [ _album_n_1 LBL: h638 ARG0: x637 ]                                    |
+|            |                               |                                                |           [ explicit_or_proper_q LBL: h657 ARG0: x654 RSTR: h655 BODY: h656 ]    |
+|            |                               |                                                |           [ named LBL: h636 ARG0: x635 CARG: "Live at Roadburn 2008" ] >         |
+|            |                               |                                                |   HCONS: < h617 qeq h611 h631 qeq h609 h626 qeq h607 h646 qeq h640 h660 qeq h638 |
+|            |                               |                                                | h655 qeq h636 >                                                                  |
+|            |                               |                                                |   EQS: < x616 eq x610 h615 eq h620 u614 eq x616 h615 eq h609 u613 eq x608 x630   |
+|            |                               |                                                | eq x608 h624 eq h634 i623 eq x630 x625 eq x606 h624 eq h629 x622 eq x625 h667 eq |
+|            |                               |                                                | h629 i666 eq x625 x645 eq x639 h644 eq h649 u643 eq x645 h644 eq h638 u642 eq    |
+|            |                               |                                                | x637 x659 eq x637 h653 eq h663 i652 eq x659 x654 eq x635 h653 eq h658 x651 eq    |
+|            |                               |                                                | x654 h667 eq h658 i665 eq x654 > ]                                               |
 +------------+-------------------------------+------------------------------------------------+----------------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------------------+

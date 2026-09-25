@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_Scientist_Id459_211_422
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-----------------------------------------------------------------------------------------------------------------+
-|                                                   GOLD OUTPUTS                                                  |
-+----------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                        | Generated? |
-+----------------------------------------------------------------------------------------------------+------------+
-| Lady Anne Monson was born in the Kingdom of England, which has a unitary state form of government. | False      |
-| Lady Anne Monson’s Kingdom of England birthplace used a unitary state form of government.          | False      |
-| The Kingdom of England, the place where Lady Anne Monson was born, was a unitary state.            | False      |
-+----------------------------------------------------------------------------------------------------+------------+
++-----------------------------------------------------------------------------------------------------+
+|                                             GOLD OUTPUTS                                            |
++----------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                            | Generated? |
++----------------------------------------------------------------------------------------+------------+
+| Lady Anne Monson was born in Darlington in the Kingdom of England.                     | False      |
+| Lady Anne Monson was born in Darlington which is also known as the Kingdom of England. | False      |
+| Lady Anne Monson was born in Darlington which is located in Kingdom of England.        | False      |
++----------------------------------------------------------------------------------------+------------+
 
 +------------------------------------------------------------------------------------------+
 |                                       NODE METRICS                                       |
@@ -56,59 +56,58 @@ GRAPH NAME: WebNLG_test_2triples_Scientist_Id459_211_422
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h13942                                                                    |
-|               |   INDEX: e13939 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h13933 ARG0: e13930 ARG1: u13931 ARG2: u13932 ]     |
-|               |           [ explicit_or_proper_q LBL: h13937 ARG0: x13934 RSTR: h13935 BODY:     |
-|               | h13936 ]                                                                         |
-|               |           [ named LBL: h13929 ARG0: x13928 CARG: "Kingdom of England" ]          |
-|               |           [ _born_a_of LBL: h13942 ARG0: e13939 ARG1: u13940 ARG2: u13941 ]      |
-|               |           [ explicit_or_proper_q LBL: h13946 ARG0: x13943 RSTR: h13944 BODY:     |
-|               | h13945 ]                                                                         |
-|               |           [ compound LBL: h13922 ARG0: e13919 ARG1: u13920 ARG2: u13921 ]        |
-|               |           [ existential_q LBL: h13926 ARG0: x13923 RSTR: h13924 BODY: h13925 ]   |
-|               |           [ _lady_n_1 LBL: h13918 ARG0: x13917 [ x NUM: sg ] ]                   |
-|               |           [ named LBL: h13916 ARG0: x13915 CARG: "Anne Monson" ] >               |
-|               |   HCONS: < h13935 qeq h13929 h13924 qeq h13918 h13944 qeq h13916 >               |
-|               |   EQS: < x13934 eq x13928 h13933 eq h13938 u13932 eq x13934 x13923 eq x13917     |
-|               | h13922 eq h13927 u13921 eq x13923 h13922 eq h13916 u13920 eq x13915 x13943 eq    |
-|               | x13915 h13942 eq h13947 u13940 eq x13943 h13933 eq h13942 u13931 eq e13939 >     |
-|               |   SLOTS: < ARG2: u13941 > ]                                                      |
+| Original      | [ TOP: h6273                                                                     |
+|               |   INDEX: e6270 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_state LBL: h6264 ARG0: e6261 ARG1: u6262 ARG2: u6263 ]         |
+|               |           [ explicit_or_proper_q LBL: h6268 ARG0: x6265 RSTR: h6266 BODY: h6267  |
+|               | ]                                                                                |
+|               |           [ named LBL: h6260 ARG0: x6259 CARG: "Kingdom of England" ]            |
+|               |           [ _born_a_of LBL: h6273 ARG0: e6270 ARG1: u6271 ARG2: u6272 ]          |
+|               |           [ explicit_or_proper_q LBL: h6277 ARG0: x6274 RSTR: h6275 BODY: h6276  |
+|               | ]                                                                                |
+|               |           [ compound LBL: h6253 ARG0: e6250 ARG1: u6251 ARG2: u6252 ]            |
+|               |           [ existential_q LBL: h6257 ARG0: x6254 RSTR: h6255 BODY: h6256 ]       |
+|               |           [ _lady_n_1 LBL: h6249 ARG0: x6248 [ x NUM: sg ] ]                     |
+|               |           [ named LBL: h6247 ARG0: x6246 CARG: "Anne Monson" ] >                 |
+|               |   HCONS: < h6266 qeq h6260 h6255 qeq h6249 h6275 qeq h6247 >                     |
+|               |   EQS: < x6265 eq x6259 h6264 eq h6269 u6263 eq x6265 x6254 eq x6248 h6253 eq    |
+|               | h6258 u6252 eq x6254 h6253 eq h6247 u6251 eq x6246 x6274 eq x6246 h6273 eq h6278 |
+|               | u6271 eq x6274 h6264 eq h6273 u6262 eq e6270 >                                   |
+|               |   SLOTS: < ARG2: u6272 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h13933                                                                    |
-|               |   INDEX: e13939 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h13933 ARG0: e13930 ARG1: e13939 ARG2: x13928 ]     |
-|               |           [ explicit_or_proper_q LBL: h13937 ARG0: x13928 RSTR: h13935 BODY:     |
-|               | h13936 ]                                                                         |
-|               |           [ named LBL: h13929 ARG0: x13928 CARG: "Kingdom of England" ]          |
-|               |           [ _born_a_of LBL: h13933 ARG0: e13939 ARG1: x13915 ARG2: u13941 ]      |
-|               |           [ explicit_or_proper_q LBL: h13946 ARG0: x13915 RSTR: h13944 BODY:     |
-|               | h13945 ]                                                                         |
-|               |           [ compound LBL: h13916 ARG0: e13919 ARG1: x13915 ARG2: x13917 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h13926 ARG0: x13917 RSTR: h13924 BODY: h13925 ]   |
-|               |           [ _lady_n_1 LBL: h13918 ARG0: x13917 ]                                 |
-|               |           [ named LBL: h13916 ARG0: x13915 CARG: "Anne Monson" ] >               |
-|               |   HCONS: < h13935 qeq h13929 h13924 qeq h13918 h13944 qeq h13916 >               |
-|               |   SLOTS: < ARG2: u13941 > ]                                                      |
+| EQs Collapsed | [ TOP: h6264                                                                     |
+|               |   INDEX: e6270 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_state LBL: h6264 ARG0: e6261 ARG1: e6270 ARG2: x6259 ]         |
+|               |           [ explicit_or_proper_q LBL: h6268 ARG0: x6259 RSTR: h6266 BODY: h6267  |
+|               | ]                                                                                |
+|               |           [ named LBL: h6260 ARG0: x6259 CARG: "Kingdom of England" ]            |
+|               |           [ _born_a_of LBL: h6264 ARG0: e6270 ARG1: x6246 ARG2: u6272 ]          |
+|               |           [ explicit_or_proper_q LBL: h6277 ARG0: x6246 RSTR: h6275 BODY: h6276  |
+|               | ]                                                                                |
+|               |           [ compound LBL: h6247 ARG0: e6250 ARG1: x6246 ARG2: x6248 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h6257 ARG0: x6248 RSTR: h6255 BODY: h6256 ]       |
+|               |           [ _lady_n_1 LBL: h6249 ARG0: x6248 ]                                   |
+|               |           [ named LBL: h6247 ARG0: x6246 CARG: "Anne Monson" ] >                 |
+|               |   HCONS: < h6266 qeq h6260 h6255 qeq h6249 h6275 qeq h6247 >                     |
+|               |   SLOTS: < ARG2: u6272 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h13948                                                                    |
-|               |   INDEX: e13939 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h13933 ARG0: e13930 ARG1: e13939 ARG2: x13928 ]     |
-|               |           [ explicit_or_proper_q LBL: h13937 ARG0: x13928 RSTR: h13935 BODY:     |
-|               | h13936 ]                                                                         |
-|               |           [ named LBL: h13929 ARG0: x13928 CARG: "Kingdom of England" ]          |
-|               |           [ _born_a_of LBL: h13933 ARG0: e13939 ARG1: x13915 ARG2: u13941 ]      |
-|               |           [ explicit_or_proper_q LBL: h13946 ARG0: x13915 RSTR: h13944 BODY:     |
-|               | h13945 ]                                                                         |
-|               |           [ compound LBL: h13916 ARG0: e13919 ARG1: x13915 ARG2: x13917 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h13926 ARG0: x13917 RSTR: h13924 BODY: h13925 ]   |
-|               |           [ _lady_n_1 LBL: h13918 ARG0: x13917 ]                                 |
-|               |           [ named LBL: h13916 ARG0: x13915 CARG: "Anne Monson" ] >               |
-|               |   HCONS: < h13935 qeq h13929 h13924 qeq h13918 h13944 qeq h13916 h13948 qeq      |
-|               | h13933 >                                                                         |
-|               |   SLOTS: < ARG2: u13941 > ]                                                      |
+| Prepped       | [ TOP: h6279                                                                     |
+|               |   INDEX: e6270 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_state LBL: h6264 ARG0: e6261 ARG1: e6270 ARG2: x6259 ]         |
+|               |           [ explicit_or_proper_q LBL: h6268 ARG0: x6259 RSTR: h6266 BODY: h6267  |
+|               | ]                                                                                |
+|               |           [ named LBL: h6260 ARG0: x6259 CARG: "Kingdom of England" ]            |
+|               |           [ _born_a_of LBL: h6264 ARG0: e6270 ARG1: x6246 ARG2: u6272 ]          |
+|               |           [ explicit_or_proper_q LBL: h6277 ARG0: x6246 RSTR: h6275 BODY: h6276  |
+|               | ]                                                                                |
+|               |           [ compound LBL: h6247 ARG0: e6250 ARG1: x6246 ARG2: x6248 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h6257 ARG0: x6248 RSTR: h6255 BODY: h6256 ]       |
+|               |           [ _lady_n_1 LBL: h6249 ARG0: x6248 ]                                   |
+|               |           [ named LBL: h6247 ARG0: x6246 CARG: "Anne Monson" ] >                 |
+|               |   HCONS: < h6266 qeq h6260 h6255 qeq h6249 h6275 qeq h6247 h6279 qeq h6264 >     |
+|               |   SLOTS: < ARG2: u6272 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------------+
@@ -116,19 +115,19 @@ GRAPH NAME: WebNLG_test_2triples_Scientist_Id459_211_422
 +--------------------+----------------------------------------------------------------------------------+
 | Node               | Generated SEMENT                                                                 |
 +--------------------+----------------------------------------------------------------------------------+
-| Lady_Anne_Monson   | [ TOP: h13916                                                                    |
-|                    |   INDEX: x13915                                                                  |
-|                    |   RELS: < [ compound LBL: h13922 ARG0: e13919 ARG1: u13920 ARG2: u13921 ]        |
-|                    |           [ existential_q LBL: h13926 ARG0: x13923 RSTR: h13924 BODY: h13925 ]   |
-|                    |           [ _lady_n_1 LBL: h13918 ARG0: x13917 [ x NUM: sg ] ]                   |
-|                    |           [ named LBL: h13916 ARG0: x13915 CARG: "Anne Monson" ] >               |
-|                    |   HCONS: < h13924 qeq h13918 >                                                   |
-|                    |   EQS: < x13923 eq x13917 h13922 eq h13927 u13921 eq x13923 h13922 eq h13916     |
-|                    | u13920 eq x13915 > ]                                                             |
+| Lady_Anne_Monson   | [ TOP: h6247                                                                     |
+|                    |   INDEX: x6246                                                                   |
+|                    |   RELS: < [ compound LBL: h6253 ARG0: e6250 ARG1: u6251 ARG2: u6252 ]            |
+|                    |           [ existential_q LBL: h6257 ARG0: x6254 RSTR: h6255 BODY: h6256 ]       |
+|                    |           [ _lady_n_1 LBL: h6249 ARG0: x6248 [ x NUM: sg ] ]                     |
+|                    |           [ named LBL: h6247 ARG0: x6246 CARG: "Anne Monson" ] >                 |
+|                    |   HCONS: < h6255 qeq h6249 >                                                     |
+|                    |   EQS: < x6254 eq x6248 h6253 eq h6258 u6252 eq x6254 h6253 eq h6247 u6251 eq    |
+|                    | x6246 > ]                                                                        |
 +--------------------+----------------------------------------------------------------------------------+
-| Kingdom_of_England | [ TOP: h13929                                                                    |
-|                    |   INDEX: x13928                                                                  |
-|                    |   RELS: < [ named LBL: h13929 ARG0: x13928 CARG: "Kingdom of England" ] > ]      |
+| Kingdom_of_England | [ TOP: h6260                                                                     |
+|                    |   INDEX: x6259                                                                   |
+|                    |   RELS: < [ named LBL: h6260 ARG0: x6259 CARG: "Kingdom of England" ] > ]        |
 +--------------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------------------------------+
@@ -136,24 +135,24 @@ GRAPH NAME: WebNLG_test_2triples_Scientist_Id459_211_422
 +------------+------------------+--------------------+----------------------------------------------------------------------------------+
 | Edge       | Parent           | Child              | Generated SEMENT                                                                 |
 +------------+------------------+--------------------+----------------------------------------------------------------------------------+
-| birthPlace | Lady_Anne_Monson | Kingdom_of_England | [ TOP: h13942                                                                    |
-|            |                  |                    |   INDEX: e13939 [ e TENSE: tensed ]                                              |
-|            |                  |                    |   RELS: < [ _in_p_state LBL: h13933 ARG0: e13930 ARG1: u13931 ARG2: u13932 ]     |
-|            |                  |                    |           [ explicit_or_proper_q LBL: h13937 ARG0: x13934 RSTR: h13935 BODY:     |
-|            |                  |                    | h13936 ]                                                                         |
-|            |                  |                    |           [ named LBL: h13929 ARG0: x13928 CARG: "Kingdom of England" ]          |
-|            |                  |                    |           [ _born_a_of LBL: h13942 ARG0: e13939 ARG1: u13940 ARG2: u13941 ]      |
-|            |                  |                    |           [ explicit_or_proper_q LBL: h13946 ARG0: x13943 RSTR: h13944 BODY:     |
-|            |                  |                    | h13945 ]                                                                         |
-|            |                  |                    |           [ compound LBL: h13922 ARG0: e13919 ARG1: u13920 ARG2: u13921 ]        |
-|            |                  |                    |           [ existential_q LBL: h13926 ARG0: x13923 RSTR: h13924 BODY: h13925 ]   |
-|            |                  |                    |           [ _lady_n_1 LBL: h13918 ARG0: x13917 [ x NUM: sg ] ]                   |
-|            |                  |                    |           [ named LBL: h13916 ARG0: x13915 CARG: "Anne Monson" ] >               |
-|            |                  |                    |   HCONS: < h13935 qeq h13929 h13924 qeq h13918 h13944 qeq h13916 >               |
-|            |                  |                    |   EQS: < x13934 eq x13928 h13933 eq h13938 u13932 eq x13934 x13923 eq x13917     |
-|            |                  |                    | h13922 eq h13927 u13921 eq x13923 h13922 eq h13916 u13920 eq x13915 x13943 eq    |
-|            |                  |                    | x13915 h13942 eq h13947 u13940 eq x13943 h13933 eq h13942 u13931 eq e13939 >     |
-|            |                  |                    |   SLOTS: < ARG2: u13941 > ]                                                      |
+| birthPlace | Lady_Anne_Monson | Kingdom_of_England | [ TOP: h6273                                                                     |
+|            |                  |                    |   INDEX: e6270 [ e TENSE: tensed ]                                               |
+|            |                  |                    |   RELS: < [ _in_p_state LBL: h6264 ARG0: e6261 ARG1: u6262 ARG2: u6263 ]         |
+|            |                  |                    |           [ explicit_or_proper_q LBL: h6268 ARG0: x6265 RSTR: h6266 BODY: h6267  |
+|            |                  |                    | ]                                                                                |
+|            |                  |                    |           [ named LBL: h6260 ARG0: x6259 CARG: "Kingdom of England" ]            |
+|            |                  |                    |           [ _born_a_of LBL: h6273 ARG0: e6270 ARG1: u6271 ARG2: u6272 ]          |
+|            |                  |                    |           [ explicit_or_proper_q LBL: h6277 ARG0: x6274 RSTR: h6275 BODY: h6276  |
+|            |                  |                    | ]                                                                                |
+|            |                  |                    |           [ compound LBL: h6253 ARG0: e6250 ARG1: u6251 ARG2: u6252 ]            |
+|            |                  |                    |           [ existential_q LBL: h6257 ARG0: x6254 RSTR: h6255 BODY: h6256 ]       |
+|            |                  |                    |           [ _lady_n_1 LBL: h6249 ARG0: x6248 [ x NUM: sg ] ]                     |
+|            |                  |                    |           [ named LBL: h6247 ARG0: x6246 CARG: "Anne Monson" ] >                 |
+|            |                  |                    |   HCONS: < h6266 qeq h6260 h6255 qeq h6249 h6275 qeq h6247 >                     |
+|            |                  |                    |   EQS: < x6265 eq x6259 h6264 eq h6269 u6263 eq x6265 x6254 eq x6248 h6253 eq    |
+|            |                  |                    | h6258 u6252 eq x6254 h6253 eq h6247 u6251 eq x6246 x6274 eq x6246 h6273 eq h6278 |
+|            |                  |                    | u6271 eq x6274 h6264 eq h6273 u6262 eq e6270 >                                   |
+|            |                  |                    |   SLOTS: < ARG2: u6272 > ]                                                       |
 +------------+------------------+--------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------+

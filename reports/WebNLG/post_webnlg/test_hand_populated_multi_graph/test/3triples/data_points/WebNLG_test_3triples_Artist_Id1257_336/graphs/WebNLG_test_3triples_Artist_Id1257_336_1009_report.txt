@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Artist_Id1257_336_1009
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                        GOLD OUTPUTS                                                                       |
-+----------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                  | Generated? |
-+----------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Liselotte Grschebina was born in the German Empire, attended the school of Applied Arts in Stuttgart and died in Petah Tikva.                | False      |
-| Liselotte Grschebina was born in the German Empire. She did her studies at the School of Applied Arts in Stuttgart and died in Petah Tikva.  | False      |
-| Liselotte Grschebina was born within the German Empire and died in Petah Tikva. Grschebina attended the school of Applied Arts in Stuttgart. | False      |
-+----------------------------------------------------------------------------------------------------------------------------------------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                    GOLD OUTPUTS                                                                   |
++--------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                          | Generated? |
++--------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Born in the German Empire, professional photographer Liselotte Grschebina studied at the school of Applied Arts in Stuttgart.        | False      |
+| Liselotte Grschebina , a professional photographer born in German Empire did her studies at the School of Applied Arts in Stuttgart. | False      |
+| Liselotte Grschebina was a photographer who studied at the School of Applied Arts in Stuttgart. She was born in the German Empire.   | False      |
++--------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +-----------------------------------------------------------------------------------------------------------+
 |                                                NODE METRICS                                               |
@@ -56,60 +56,59 @@ GRAPH NAME: WebNLG_test_3triples_Artist_Id1257_336_1009
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h33643                                                                    |
-|               |   INDEX: e33640 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _at_p_state LBL: h33634 ARG0: e33631 ARG1: u33632 ARG2: i33633 ]     |
-|               |           [ explicit_or_proper_q LBL: h33638 ARG0: x33635 RSTR: h33636 BODY:     |
-|               | h33637 ]                                                                         |
-|               |           [ _in_p_loc LBL: h33621 ARG0: e33618 ARG1: u33619 ARG2: u33620 ]       |
-|               |           [ explicit_or_proper_q LBL: h33629 ARG0: x33626 RSTR: h33627 BODY:     |
-|               | h33628 ]                                                                         |
-|               |           [ named LBL: h33625 ARG0: x33624 CARG: "Stuttgart" ]                   |
-|               |           [ named LBL: h33623 ARG0: x33622 CARG: "School of Applied Arts" ]      |
-|               |           [ _study_v_1 LBL: h33643 ARG0: e33640 ARG1: i33641 ARG2: i33642 ]      |
-|               |           [ explicit_or_proper_q LBL: h33647 ARG0: x33644 RSTR: h33645 BODY:     |
-|               | h33646 ]                                                                         |
-|               |           [ named LBL: h33617 ARG0: x33616 CARG: "Liselotte Grschebina" ] >      |
-|               |   HCONS: < h33627 qeq h33625 h33636 qeq h33623 h33645 qeq h33617 >               |
-|               |   EQS: < x33626 eq x33624 h33621 eq h33630 u33620 eq x33626 h33621 eq h33623     |
-|               | u33619 eq x33622 x33635 eq x33622 h33634 eq h33639 i33633 eq x33635 x33644 eq    |
-|               | x33616 h33643 eq h33648 i33641 eq x33644 h33634 eq h33643 u33632 eq e33640 >     |
-|               |   SLOTS: < ARG2: i33642 > ]                                                      |
+| Original      | [ TOP: h1616                                                                     |
+|               |   INDEX: e1613 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _at_p_state LBL: h1607 ARG0: e1604 ARG1: u1605 ARG2: i1606 ]         |
+|               |           [ explicit_or_proper_q LBL: h1611 ARG0: x1608 RSTR: h1609 BODY: h1610  |
+|               | ]                                                                                |
+|               |           [ _in_p_loc LBL: h1594 ARG0: e1591 ARG1: u1592 ARG2: u1593 ]           |
+|               |           [ explicit_or_proper_q LBL: h1602 ARG0: x1599 RSTR: h1600 BODY: h1601  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1598 ARG0: x1597 CARG: "Stuttgart" ]                     |
+|               |           [ named LBL: h1596 ARG0: x1595 CARG: "School of Applied Arts" ]        |
+|               |           [ _study_v_1 LBL: h1616 ARG0: e1613 ARG1: i1614 ARG2: i1615 ]          |
+|               |           [ explicit_or_proper_q LBL: h1620 ARG0: x1617 RSTR: h1618 BODY: h1619  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1590 ARG0: x1589 CARG: "Liselotte Grschebina" ] >        |
+|               |   HCONS: < h1600 qeq h1598 h1609 qeq h1596 h1618 qeq h1590 >                     |
+|               |   EQS: < x1599 eq x1597 h1594 eq h1603 u1593 eq x1599 h1594 eq h1596 u1592 eq    |
+|               | x1595 x1608 eq x1595 h1607 eq h1612 i1606 eq x1608 x1617 eq x1589 h1616 eq h1621 |
+|               | i1614 eq x1617 h1607 eq h1616 u1605 eq e1613 >                                   |
+|               |   SLOTS: < ARG2: i1615 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h33634                                                                    |
-|               |   INDEX: e33640 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _at_p_state LBL: h33634 ARG0: e33631 ARG1: e33640 ARG2: x33622 ]     |
-|               |           [ explicit_or_proper_q LBL: h33638 ARG0: x33622 RSTR: h33636 BODY:     |
-|               | h33637 ]                                                                         |
-|               |           [ _in_p_loc LBL: h33621 ARG0: e33618 ARG1: x33622 ARG2: x33624 ]       |
-|               |           [ explicit_or_proper_q LBL: h33629 ARG0: x33624 RSTR: h33627 BODY:     |
-|               | h33628 ]                                                                         |
-|               |           [ named LBL: h33625 ARG0: x33624 CARG: "Stuttgart" ]                   |
-|               |           [ named LBL: h33621 ARG0: x33622 CARG: "School of Applied Arts" ]      |
-|               |           [ _study_v_1 LBL: h33634 ARG0: e33640 ARG1: x33616 ARG2: i33642 ]      |
-|               |           [ explicit_or_proper_q LBL: h33647 ARG0: x33616 RSTR: h33645 BODY:     |
-|               | h33646 ]                                                                         |
-|               |           [ named LBL: h33617 ARG0: x33616 CARG: "Liselotte Grschebina" ] >      |
-|               |   HCONS: < h33627 qeq h33625 h33636 qeq h33621 h33645 qeq h33617 >               |
-|               |   SLOTS: < ARG2: i33642 > ]                                                      |
+| EQs Collapsed | [ TOP: h1607                                                                     |
+|               |   INDEX: e1613 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _at_p_state LBL: h1607 ARG0: e1604 ARG1: e1613 ARG2: x1595 ]         |
+|               |           [ explicit_or_proper_q LBL: h1611 ARG0: x1595 RSTR: h1609 BODY: h1610  |
+|               | ]                                                                                |
+|               |           [ _in_p_loc LBL: h1594 ARG0: e1591 ARG1: x1595 ARG2: x1597 ]           |
+|               |           [ explicit_or_proper_q LBL: h1602 ARG0: x1597 RSTR: h1600 BODY: h1601  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1598 ARG0: x1597 CARG: "Stuttgart" ]                     |
+|               |           [ named LBL: h1594 ARG0: x1595 CARG: "School of Applied Arts" ]        |
+|               |           [ _study_v_1 LBL: h1607 ARG0: e1613 ARG1: x1589 ARG2: i1615 ]          |
+|               |           [ explicit_or_proper_q LBL: h1620 ARG0: x1589 RSTR: h1618 BODY: h1619  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1590 ARG0: x1589 CARG: "Liselotte Grschebina" ] >        |
+|               |   HCONS: < h1600 qeq h1598 h1609 qeq h1594 h1618 qeq h1590 >                     |
+|               |   SLOTS: < ARG2: i1615 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h33649                                                                    |
-|               |   INDEX: e33640 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _at_p_state LBL: h33634 ARG0: e33631 ARG1: e33640 ARG2: x33622 ]     |
-|               |           [ explicit_or_proper_q LBL: h33638 ARG0: x33622 RSTR: h33636 BODY:     |
-|               | h33637 ]                                                                         |
-|               |           [ _in_p_loc LBL: h33621 ARG0: e33618 ARG1: x33622 ARG2: x33624 ]       |
-|               |           [ explicit_or_proper_q LBL: h33629 ARG0: x33624 RSTR: h33627 BODY:     |
-|               | h33628 ]                                                                         |
-|               |           [ named LBL: h33625 ARG0: x33624 CARG: "Stuttgart" ]                   |
-|               |           [ named LBL: h33621 ARG0: x33622 CARG: "School of Applied Arts" ]      |
-|               |           [ _study_v_1 LBL: h33634 ARG0: e33640 ARG1: x33616 ARG2: i33642 ]      |
-|               |           [ explicit_or_proper_q LBL: h33647 ARG0: x33616 RSTR: h33645 BODY:     |
-|               | h33646 ]                                                                         |
-|               |           [ named LBL: h33617 ARG0: x33616 CARG: "Liselotte Grschebina" ] >      |
-|               |   HCONS: < h33627 qeq h33625 h33636 qeq h33621 h33645 qeq h33617 h33649 qeq      |
-|               | h33634 >                                                                         |
-|               |   SLOTS: < ARG2: i33642 > ]                                                      |
+| Prepped       | [ TOP: h1622                                                                     |
+|               |   INDEX: e1613 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _at_p_state LBL: h1607 ARG0: e1604 ARG1: e1613 ARG2: x1595 ]         |
+|               |           [ explicit_or_proper_q LBL: h1611 ARG0: x1595 RSTR: h1609 BODY: h1610  |
+|               | ]                                                                                |
+|               |           [ _in_p_loc LBL: h1594 ARG0: e1591 ARG1: x1595 ARG2: x1597 ]           |
+|               |           [ explicit_or_proper_q LBL: h1602 ARG0: x1597 RSTR: h1600 BODY: h1601  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1598 ARG0: x1597 CARG: "Stuttgart" ]                     |
+|               |           [ named LBL: h1594 ARG0: x1595 CARG: "School of Applied Arts" ]        |
+|               |           [ _study_v_1 LBL: h1607 ARG0: e1613 ARG1: x1589 ARG2: i1615 ]          |
+|               |           [ explicit_or_proper_q LBL: h1620 ARG0: x1589 RSTR: h1618 BODY: h1619  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1590 ARG0: x1589 CARG: "Liselotte Grschebina" ] >        |
+|               |   HCONS: < h1600 qeq h1598 h1609 qeq h1594 h1618 qeq h1590 h1622 qeq h1607 >     |
+|               |   SLOTS: < ARG2: i1615 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------------------------------+
@@ -117,20 +116,20 @@ GRAPH NAME: WebNLG_test_3triples_Artist_Id1257_336_1009
 +-------------------------------------+----------------------------------------------------------------------------------+
 | Node                                | Generated SEMENT                                                                 |
 +-------------------------------------+----------------------------------------------------------------------------------+
-| Liselotte_Grschebina                | [ TOP: h33617                                                                    |
-|                                     |   INDEX: x33616                                                                  |
-|                                     |   RELS: < [ named LBL: h33617 ARG0: x33616 CARG: "Liselotte Grschebina" ] > ]    |
+| Liselotte_Grschebina                | [ TOP: h1590                                                                     |
+|                                     |   INDEX: x1589                                                                   |
+|                                     |   RELS: < [ named LBL: h1590 ARG0: x1589 CARG: "Liselotte Grschebina" ] > ]      |
 +-------------------------------------+----------------------------------------------------------------------------------+
-| School_of_Applied_Arts_in_Stuttgart | [ TOP: h33623                                                                    |
-|                                     |   INDEX: x33622                                                                  |
-|                                     |   RELS: < [ _in_p_loc LBL: h33621 ARG0: e33618 ARG1: u33619 ARG2: u33620 ]       |
-|                                     |           [ explicit_or_proper_q LBL: h33629 ARG0: x33626 RSTR: h33627 BODY:     |
-|                                     | h33628 ]                                                                         |
-|                                     |           [ named LBL: h33625 ARG0: x33624 CARG: "Stuttgart" ]                   |
-|                                     |           [ named LBL: h33623 ARG0: x33622 CARG: "School of Applied Arts" ] >    |
-|                                     |   HCONS: < h33627 qeq h33625 >                                                   |
-|                                     |   EQS: < x33626 eq x33624 h33621 eq h33630 u33620 eq x33626 h33621 eq h33623     |
-|                                     | u33619 eq x33622 > ]                                                             |
+| School_of_Applied_Arts_in_Stuttgart | [ TOP: h1596                                                                     |
+|                                     |   INDEX: x1595                                                                   |
+|                                     |   RELS: < [ _in_p_loc LBL: h1594 ARG0: e1591 ARG1: u1592 ARG2: u1593 ]           |
+|                                     |           [ explicit_or_proper_q LBL: h1602 ARG0: x1599 RSTR: h1600 BODY: h1601  |
+|                                     | ]                                                                                |
+|                                     |           [ named LBL: h1598 ARG0: x1597 CARG: "Stuttgart" ]                     |
+|                                     |           [ named LBL: h1596 ARG0: x1595 CARG: "School of Applied Arts" ] >      |
+|                                     |   HCONS: < h1600 qeq h1598 >                                                     |
+|                                     |   EQS: < x1599 eq x1597 h1594 eq h1603 u1593 eq x1599 h1594 eq h1596 u1592 eq    |
+|                                     | x1595 > ]                                                                        |
 +-------------------------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -138,25 +137,25 @@ GRAPH NAME: WebNLG_test_3triples_Artist_Id1257_336_1009
 +----------+----------------------+-------------------------------------+----------------------------------------------------------------------------------+
 | Edge     | Parent               | Child                               | Generated SEMENT                                                                 |
 +----------+----------------------+-------------------------------------+----------------------------------------------------------------------------------+
-| training | Liselotte_Grschebina | School_of_Applied_Arts_in_Stuttgart | [ TOP: h33643                                                                    |
-|          |                      |                                     |   INDEX: e33640 [ e TENSE: tensed ]                                              |
-|          |                      |                                     |   RELS: < [ _at_p_state LBL: h33634 ARG0: e33631 ARG1: u33632 ARG2: i33633 ]     |
-|          |                      |                                     |           [ explicit_or_proper_q LBL: h33638 ARG0: x33635 RSTR: h33636 BODY:     |
-|          |                      |                                     | h33637 ]                                                                         |
-|          |                      |                                     |           [ _in_p_loc LBL: h33621 ARG0: e33618 ARG1: u33619 ARG2: u33620 ]       |
-|          |                      |                                     |           [ explicit_or_proper_q LBL: h33629 ARG0: x33626 RSTR: h33627 BODY:     |
-|          |                      |                                     | h33628 ]                                                                         |
-|          |                      |                                     |           [ named LBL: h33625 ARG0: x33624 CARG: "Stuttgart" ]                   |
-|          |                      |                                     |           [ named LBL: h33623 ARG0: x33622 CARG: "School of Applied Arts" ]      |
-|          |                      |                                     |           [ _study_v_1 LBL: h33643 ARG0: e33640 ARG1: i33641 ARG2: i33642 ]      |
-|          |                      |                                     |           [ explicit_or_proper_q LBL: h33647 ARG0: x33644 RSTR: h33645 BODY:     |
-|          |                      |                                     | h33646 ]                                                                         |
-|          |                      |                                     |           [ named LBL: h33617 ARG0: x33616 CARG: "Liselotte Grschebina" ] >      |
-|          |                      |                                     |   HCONS: < h33627 qeq h33625 h33636 qeq h33623 h33645 qeq h33617 >               |
-|          |                      |                                     |   EQS: < x33626 eq x33624 h33621 eq h33630 u33620 eq x33626 h33621 eq h33623     |
-|          |                      |                                     | u33619 eq x33622 x33635 eq x33622 h33634 eq h33639 i33633 eq x33635 x33644 eq    |
-|          |                      |                                     | x33616 h33643 eq h33648 i33641 eq x33644 h33634 eq h33643 u33632 eq e33640 >     |
-|          |                      |                                     |   SLOTS: < ARG2: i33642 > ]                                                      |
+| training | Liselotte_Grschebina | School_of_Applied_Arts_in_Stuttgart | [ TOP: h1616                                                                     |
+|          |                      |                                     |   INDEX: e1613 [ e TENSE: tensed ]                                               |
+|          |                      |                                     |   RELS: < [ _at_p_state LBL: h1607 ARG0: e1604 ARG1: u1605 ARG2: i1606 ]         |
+|          |                      |                                     |           [ explicit_or_proper_q LBL: h1611 ARG0: x1608 RSTR: h1609 BODY: h1610  |
+|          |                      |                                     | ]                                                                                |
+|          |                      |                                     |           [ _in_p_loc LBL: h1594 ARG0: e1591 ARG1: u1592 ARG2: u1593 ]           |
+|          |                      |                                     |           [ explicit_or_proper_q LBL: h1602 ARG0: x1599 RSTR: h1600 BODY: h1601  |
+|          |                      |                                     | ]                                                                                |
+|          |                      |                                     |           [ named LBL: h1598 ARG0: x1597 CARG: "Stuttgart" ]                     |
+|          |                      |                                     |           [ named LBL: h1596 ARG0: x1595 CARG: "School of Applied Arts" ]        |
+|          |                      |                                     |           [ _study_v_1 LBL: h1616 ARG0: e1613 ARG1: i1614 ARG2: i1615 ]          |
+|          |                      |                                     |           [ explicit_or_proper_q LBL: h1620 ARG0: x1617 RSTR: h1618 BODY: h1619  |
+|          |                      |                                     | ]                                                                                |
+|          |                      |                                     |           [ named LBL: h1590 ARG0: x1589 CARG: "Liselotte Grschebina" ] >        |
+|          |                      |                                     |   HCONS: < h1600 qeq h1598 h1609 qeq h1596 h1618 qeq h1590 >                     |
+|          |                      |                                     |   EQS: < x1599 eq x1597 h1594 eq h1603 u1593 eq x1599 h1594 eq h1596 u1592 eq    |
+|          |                      |                                     | x1595 x1608 eq x1595 h1607 eq h1612 i1606 eq x1608 x1617 eq x1589 h1616 eq h1621 |
+|          |                      |                                     | i1614 eq x1617 h1607 eq h1616 u1605 eq e1613 >                                   |
+|          |                      |                                     |   SLOTS: < ARG2: i1615 > ]                                                       |
 +----------+----------------------+-------------------------------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------+

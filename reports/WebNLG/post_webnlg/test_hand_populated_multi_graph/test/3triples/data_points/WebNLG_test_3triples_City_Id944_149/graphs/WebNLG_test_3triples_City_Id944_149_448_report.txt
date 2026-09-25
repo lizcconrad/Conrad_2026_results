@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_City_Id944_149_448
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                                 GOLD OUTPUTS                                                                                 |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                                     | Generated? |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Ciudad Ayala city has a population density of 1604.0 and uses a type of government called council-manager government where the leader is called the governator. | False      |
-| Ciudad Ayala government type in the city is council-manager and has a leader called the Governator. The population density in Ciudad Ayala is 1604.             | False      |
-| The population density of Ciudad Ayala is 1604.0 which uses a council-manager government where the leader is called the governator.                             | False      |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------+
+|                                                          GOLD OUTPUTS                                                          |
++-------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                       | Generated? |
++-------------------------------------------------------------------------------------------------------------------+------------+
+| Ciudad Ayala city has a population density of 1604.0 uses a type of government called council-manager government. | False      |
+| Ciudad Ayala is a city with a population density of 1604.0 and a council-manager government.                      | False      |
+| Ciudad Ayala is a city with the population density of 1604 and has a council-manager as their government type.    | False      |
++-------------------------------------------------------------------------------------------------------------------+------------+
 
 +------------------------------------------------------------------------------------+
 |                                    NODE METRICS                                    |
@@ -56,104 +56,101 @@ GRAPH NAME: WebNLG_test_3triples_City_Id944_149_448
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h15072                                                                    |
-|               |   INDEX: e15069 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h15072 ARG0: e15069 ARG1: p15070 ARG2: i15071 ]        |
-|               |           [ number_q LBL: h15081 ARG0: x15078 RSTR: h15079 BODY: h15080 ]        |
-|               |           [ card LBL: h15046 ARG0: i15044 ARG1: u15045 CARG: "1604.0" ]          |
-|               |           [ def_udef_a_q LBL: h15076 ARG0: x15073 RSTR: h15074 BODY: h15075 ]    |
-|               |           [ _of_p LBL: h15050 ARG0: e15047 ARG1: u15048 ARG2: i15049 ]           |
-|               |           [ explicit_or_proper_q LBL: h15054 ARG0: x15051 RSTR: h15052 BODY:     |
-|               | h15053 ]                                                                         |
-|               |           [ named LBL: h15043 ARG0: x15042 CARG: "Ciudad Ayala" ]                |
-|               |           [ compound LBL: h15063 ARG0: e15060 ARG1: u15061 ARG2: u15062 ]        |
-|               |           [ existential_q LBL: h15067 ARG0: x15064 RSTR: h15065 BODY: h15066 ]   |
-|               |           [ _population_n_1 LBL: h15059 ARG0: x15058 [ x NUM: sg ] ]             |
-|               |           [ _density_n_1 LBL: h15057 ARG0: x15056 ] >                            |
-|               |   HCONS: < h15079 qeq h15046 h15052 qeq h15043 h15065 qeq h15059 h15074 qeq      |
-|               | h15057 >                                                                         |
-|               |   EQS: < x15078 eq i15044 h15072 eq h15082 i15071 eq x15078 x15051 eq x15042     |
-|               | h15050 eq h15055 i15049 eq x15051 x15064 eq x15058 h15063 eq h15068 u15062 eq    |
-|               | x15064 h15063 eq h15057 u15061 eq x15056 h15050 eq h15057 u15048 eq x15056       |
-|               | x15073 eq x15056 h15072 eq h15077 p15070 eq x15073 > ]                           |
+| Original      | [ TOP: h1437                                                                     |
+|               |   INDEX: e1434 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h1437 ARG0: e1434 ARG1: p1435 ARG2: i1436 ]            |
+|               |           [ number_q LBL: h1446 ARG0: x1443 RSTR: h1444 BODY: h1445 ]            |
+|               |           [ card LBL: h1411 ARG0: i1409 ARG1: u1410 CARG: "1604.0" ]             |
+|               |           [ def_udef_a_q LBL: h1441 ARG0: x1438 RSTR: h1439 BODY: h1440 ]        |
+|               |           [ _of_p LBL: h1415 ARG0: e1412 ARG1: u1413 ARG2: i1414 ]               |
+|               |           [ explicit_or_proper_q LBL: h1419 ARG0: x1416 RSTR: h1417 BODY: h1418  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1408 ARG0: x1407 CARG: "Ciudad Ayala" ]                  |
+|               |           [ compound LBL: h1428 ARG0: e1425 ARG1: u1426 ARG2: u1427 ]            |
+|               |           [ existential_q LBL: h1432 ARG0: x1429 RSTR: h1430 BODY: h1431 ]       |
+|               |           [ _population_n_1 LBL: h1424 ARG0: x1423 [ x NUM: sg ] ]               |
+|               |           [ _density_n_1 LBL: h1422 ARG0: x1421 ] >                              |
+|               |   HCONS: < h1444 qeq h1411 h1417 qeq h1408 h1430 qeq h1424 h1439 qeq h1422 >     |
+|               |   EQS: < x1443 eq i1409 h1437 eq h1447 i1436 eq x1443 x1416 eq x1407 h1415 eq    |
+|               | h1420 i1414 eq x1416 x1429 eq x1423 h1428 eq h1433 u1427 eq x1429 h1428 eq h1422 |
+|               | u1426 eq x1421 h1415 eq h1422 u1413 eq x1421 x1438 eq x1421 h1437 eq h1442 p1435 |
+|               | eq x1438 > ]                                                                     |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h15072                                                                    |
-|               |   INDEX: e15069 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h15072 ARG0: e15069 ARG1: x15056 ARG2: x15078 ]        |
-|               |           [ number_q LBL: h15081 ARG0: x15078 RSTR: h15079 BODY: h15080 ]        |
-|               |           [ card LBL: h15046 ARG0: x15078 ARG1: u15045 CARG: "1604.0" ]          |
-|               |           [ def_udef_a_q LBL: h15076 ARG0: x15056 RSTR: h15074 BODY: h15075 ]    |
-|               |           [ _of_p LBL: h15050 ARG0: e15047 ARG1: x15056 ARG2: x15042 ]           |
-|               |           [ explicit_or_proper_q LBL: h15054 ARG0: x15042 RSTR: h15052 BODY:     |
-|               | h15053 ]                                                                         |
-|               |           [ named LBL: h15043 ARG0: x15042 CARG: "Ciudad Ayala" ]                |
-|               |           [ compound LBL: h15050 ARG0: e15060 ARG1: x15056 ARG2: x15058 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h15067 ARG0: x15058 RSTR: h15065 BODY: h15066 ]   |
-|               |           [ _population_n_1 LBL: h15059 ARG0: x15058 ]                           |
-|               |           [ _density_n_1 LBL: h15050 ARG0: x15056 ] >                            |
-|               |   HCONS: < h15079 qeq h15046 h15052 qeq h15043 h15065 qeq h15059 h15074 qeq      |
-|               | h15050 > ]                                                                       |
+| EQs Collapsed | [ TOP: h1437                                                                     |
+|               |   INDEX: e1434 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h1437 ARG0: e1434 ARG1: x1421 ARG2: x1443 ]            |
+|               |           [ number_q LBL: h1446 ARG0: x1443 RSTR: h1444 BODY: h1445 ]            |
+|               |           [ card LBL: h1411 ARG0: x1443 ARG1: u1410 CARG: "1604.0" ]             |
+|               |           [ def_udef_a_q LBL: h1441 ARG0: x1421 RSTR: h1439 BODY: h1440 ]        |
+|               |           [ _of_p LBL: h1415 ARG0: e1412 ARG1: x1421 ARG2: x1407 ]               |
+|               |           [ explicit_or_proper_q LBL: h1419 ARG0: x1407 RSTR: h1417 BODY: h1418  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1408 ARG0: x1407 CARG: "Ciudad Ayala" ]                  |
+|               |           [ compound LBL: h1415 ARG0: e1425 ARG1: x1421 ARG2: x1423 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h1432 ARG0: x1423 RSTR: h1430 BODY: h1431 ]       |
+|               |           [ _population_n_1 LBL: h1424 ARG0: x1423 ]                             |
+|               |           [ _density_n_1 LBL: h1415 ARG0: x1421 ] >                              |
+|               |   HCONS: < h1444 qeq h1411 h1417 qeq h1408 h1430 qeq h1424 h1439 qeq h1415 > ]   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h15083                                                                    |
-|               |   INDEX: e15069 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h15072 ARG0: e15069 ARG1: x15056 ARG2: x15078 ]        |
-|               |           [ number_q LBL: h15081 ARG0: x15078 RSTR: h15079 BODY: h15080 ]        |
-|               |           [ card LBL: h15046 ARG0: x15078 ARG1: u15045 CARG: "1604.0" ]          |
-|               |           [ def_udef_a_q LBL: h15076 ARG0: x15056 RSTR: h15074 BODY: h15075 ]    |
-|               |           [ _of_p LBL: h15050 ARG0: e15047 ARG1: x15056 ARG2: x15042 ]           |
-|               |           [ explicit_or_proper_q LBL: h15054 ARG0: x15042 RSTR: h15052 BODY:     |
-|               | h15053 ]                                                                         |
-|               |           [ named LBL: h15043 ARG0: x15042 CARG: "Ciudad Ayala" ]                |
-|               |           [ compound LBL: h15050 ARG0: e15060 ARG1: x15056 ARG2: x15058 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h15067 ARG0: x15058 RSTR: h15065 BODY: h15066 ]   |
-|               |           [ _population_n_1 LBL: h15059 ARG0: x15058 ]                           |
-|               |           [ _density_n_1 LBL: h15050 ARG0: x15056 ] >                            |
-|               |   HCONS: < h15079 qeq h15046 h15052 qeq h15043 h15065 qeq h15059 h15074 qeq      |
-|               | h15050 h15083 qeq h15072 > ]                                                     |
+| Prepped       | [ TOP: h1448                                                                     |
+|               |   INDEX: e1434 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h1437 ARG0: e1434 ARG1: x1421 ARG2: x1443 ]            |
+|               |           [ number_q LBL: h1446 ARG0: x1443 RSTR: h1444 BODY: h1445 ]            |
+|               |           [ card LBL: h1411 ARG0: x1443 ARG1: u1410 CARG: "1604.0" ]             |
+|               |           [ def_udef_a_q LBL: h1441 ARG0: x1421 RSTR: h1439 BODY: h1440 ]        |
+|               |           [ _of_p LBL: h1415 ARG0: e1412 ARG1: x1421 ARG2: x1407 ]               |
+|               |           [ explicit_or_proper_q LBL: h1419 ARG0: x1407 RSTR: h1417 BODY: h1418  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1408 ARG0: x1407 CARG: "Ciudad Ayala" ]                  |
+|               |           [ compound LBL: h1415 ARG0: e1425 ARG1: x1421 ARG2: x1423 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h1432 ARG0: x1423 RSTR: h1430 BODY: h1431 ]       |
+|               |           [ _population_n_1 LBL: h1424 ARG0: x1423 ]                             |
+|               |           [ _density_n_1 LBL: h1415 ARG0: x1421 ] >                              |
+|               |   HCONS: < h1444 qeq h1411 h1417 qeq h1408 h1430 qeq h1424 h1439 qeq h1415 h1448 |
+|               | qeq h1437 > ]                                                                    |
 +---------------+----------------------------------------------------------------------------------+
 
-+------------------------------------------------------------------------------------------+
-|                                       NODE SEMENTS                                       |
-+--------------+---------------------------------------------------------------------------+
-| Node         | Generated SEMENT                                                          |
-+--------------+---------------------------------------------------------------------------+
-| Ciudad_Ayala | [ TOP: h15043                                                             |
-|              |   INDEX: x15042                                                           |
-|              |   RELS: < [ named LBL: h15043 ARG0: x15042 CARG: "Ciudad Ayala" ] > ]     |
-+--------------+---------------------------------------------------------------------------+
-| 1604.0       | [ TOP: h15046                                                             |
-|              |   INDEX: i15044                                                           |
-|              |   RELS: < [ card LBL: h15046 ARG0: i15044 ARG1: u15045 CARG: "1604.0" ] > |
-|              |   SLOTS: < ARG1: u15045 > ]                                               |
-+--------------+---------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------+
+|                                      NODE SEMENTS                                     |
++--------------+------------------------------------------------------------------------+
+| Node         | Generated SEMENT                                                       |
++--------------+------------------------------------------------------------------------+
+| Ciudad_Ayala | [ TOP: h1408                                                           |
+|              |   INDEX: x1407                                                         |
+|              |   RELS: < [ named LBL: h1408 ARG0: x1407 CARG: "Ciudad Ayala" ] > ]    |
++--------------+------------------------------------------------------------------------+
+| 1604.0       | [ TOP: h1411                                                           |
+|              |   INDEX: i1409                                                         |
+|              |   RELS: < [ card LBL: h1411 ARG0: i1409 ARG1: u1410 CARG: "1604.0" ] > |
+|              |   SLOTS: < ARG1: u1410 > ]                                             |
++--------------+------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------------------------------------+
 |                                                         EDGE SEMENTS                                                         |
 +-------------------+--------------+--------+----------------------------------------------------------------------------------+
 | Edge              | Parent       | Child  | Generated SEMENT                                                                 |
 +-------------------+--------------+--------+----------------------------------------------------------------------------------+
-| populationDensity | Ciudad_Ayala | 1604.0 | [ TOP: h15072                                                                    |
-|                   |              |        |   INDEX: e15069 [ e SF: prop TENSE: tensed ]                                     |
-|                   |              |        |   RELS: < [ _be_v_id LBL: h15072 ARG0: e15069 ARG1: p15070 ARG2: i15071 ]        |
-|                   |              |        |           [ number_q LBL: h15081 ARG0: x15078 RSTR: h15079 BODY: h15080 ]        |
-|                   |              |        |           [ card LBL: h15046 ARG0: i15044 ARG1: u15045 CARG: "1604.0" ]          |
-|                   |              |        |           [ def_udef_a_q LBL: h15076 ARG0: x15073 RSTR: h15074 BODY: h15075 ]    |
-|                   |              |        |           [ _of_p LBL: h15050 ARG0: e15047 ARG1: u15048 ARG2: i15049 ]           |
-|                   |              |        |           [ explicit_or_proper_q LBL: h15054 ARG0: x15051 RSTR: h15052 BODY:     |
-|                   |              |        | h15053 ]                                                                         |
-|                   |              |        |           [ named LBL: h15043 ARG0: x15042 CARG: "Ciudad Ayala" ]                |
-|                   |              |        |           [ compound LBL: h15063 ARG0: e15060 ARG1: u15061 ARG2: u15062 ]        |
-|                   |              |        |           [ existential_q LBL: h15067 ARG0: x15064 RSTR: h15065 BODY: h15066 ]   |
-|                   |              |        |           [ _population_n_1 LBL: h15059 ARG0: x15058 [ x NUM: sg ] ]             |
-|                   |              |        |           [ _density_n_1 LBL: h15057 ARG0: x15056 ] >                            |
-|                   |              |        |   HCONS: < h15079 qeq h15046 h15052 qeq h15043 h15065 qeq h15059 h15074 qeq      |
-|                   |              |        | h15057 >                                                                         |
-|                   |              |        |   EQS: < x15078 eq i15044 h15072 eq h15082 i15071 eq x15078 x15051 eq x15042     |
-|                   |              |        | h15050 eq h15055 i15049 eq x15051 x15064 eq x15058 h15063 eq h15068 u15062 eq    |
-|                   |              |        | x15064 h15063 eq h15057 u15061 eq x15056 h15050 eq h15057 u15048 eq x15056       |
-|                   |              |        | x15073 eq x15056 h15072 eq h15077 p15070 eq x15073 > ]                           |
+| populationDensity | Ciudad_Ayala | 1604.0 | [ TOP: h1437                                                                     |
+|                   |              |        |   INDEX: e1434 [ e SF: prop TENSE: tensed ]                                      |
+|                   |              |        |   RELS: < [ _be_v_id LBL: h1437 ARG0: e1434 ARG1: p1435 ARG2: i1436 ]            |
+|                   |              |        |           [ number_q LBL: h1446 ARG0: x1443 RSTR: h1444 BODY: h1445 ]            |
+|                   |              |        |           [ card LBL: h1411 ARG0: i1409 ARG1: u1410 CARG: "1604.0" ]             |
+|                   |              |        |           [ def_udef_a_q LBL: h1441 ARG0: x1438 RSTR: h1439 BODY: h1440 ]        |
+|                   |              |        |           [ _of_p LBL: h1415 ARG0: e1412 ARG1: u1413 ARG2: i1414 ]               |
+|                   |              |        |           [ explicit_or_proper_q LBL: h1419 ARG0: x1416 RSTR: h1417 BODY: h1418  |
+|                   |              |        | ]                                                                                |
+|                   |              |        |           [ named LBL: h1408 ARG0: x1407 CARG: "Ciudad Ayala" ]                  |
+|                   |              |        |           [ compound LBL: h1428 ARG0: e1425 ARG1: u1426 ARG2: u1427 ]            |
+|                   |              |        |           [ existential_q LBL: h1432 ARG0: x1429 RSTR: h1430 BODY: h1431 ]       |
+|                   |              |        |           [ _population_n_1 LBL: h1424 ARG0: x1423 [ x NUM: sg ] ]               |
+|                   |              |        |           [ _density_n_1 LBL: h1422 ARG0: x1421 ] >                              |
+|                   |              |        |   HCONS: < h1444 qeq h1411 h1417 qeq h1408 h1430 qeq h1424 h1439 qeq h1422 >     |
+|                   |              |        |   EQS: < x1443 eq i1409 h1437 eq h1447 i1436 eq x1443 x1416 eq x1407 h1415 eq    |
+|                   |              |        | h1420 i1414 eq x1416 x1429 eq x1423 h1428 eq h1433 u1427 eq x1429 h1428 eq h1422 |
+|                   |              |        | u1426 eq x1421 h1415 eq h1422 u1413 eq x1421 x1438 eq x1421 h1437 eq h1442 p1435 |
+|                   |              |        | eq x1438 > ]                                                                     |
 +-------------------+--------------+--------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------+

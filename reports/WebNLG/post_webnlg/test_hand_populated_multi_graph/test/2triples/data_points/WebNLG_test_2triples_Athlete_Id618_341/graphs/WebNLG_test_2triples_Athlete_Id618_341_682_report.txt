@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_Athlete_Id618_341_682
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-----------------------------------------------------------------------------------------+
-|                                       GOLD OUTPUTS                                      |
-+----------------------------------------------------------------------------+------------+
-| Gold Output                                                                | Generated? |
-+----------------------------------------------------------------------------+------------+
-| Piotr Hallmann was born in August 25th, 1987 and weighs 70.308kgs.         | False      |
-| Piotr Hallmann was born on August 25, 1987 and he weighs 70.308 kilograms. | False      |
-| Piotr Hallmann was born on August 25, 1987 and weighs 70.308 kg.           | False      |
-+----------------------------------------------------------------------------+------------+
++-------------------------------------------------------------------------------------+
+|                                     GOLD OUTPUTS                                    |
++------------------------------------------------------------------------+------------+
+| Gold Output                                                            | Generated? |
++------------------------------------------------------------------------+------------+
+| Piotr Hallmann was born in Gdynia, Poland and weighs 70.308 kilograms. | False      |
+| Piotr Hallmann was born in Gdynia, Poland and weighs 70.308kg.         | False      |
+| Piotr Hallmann weighs 70.308 kg and was born in Gdynia, Poland.        | False      |
++------------------------------------------------------------------------+------------+
 
 +--------------------------------------------------------------------------------------+
 |                                     NODE METRICS                                     |
@@ -56,70 +56,66 @@ GRAPH NAME: WebNLG_test_2triples_Athlete_Id618_341_682
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h21913                                                                    |
-|               |   INDEX: e21910 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _weigh_v_1 LBL: h21913 ARG0: e21910 ARG1: i21911 ARG2: i21912 ]      |
-|               |           [ number_q LBL: h21922 ARG0: x21919 RSTR: h21920 BODY: h21921 ]        |
-|               |           [ card LBL: h21909 ARG0: i21907 ARG1: u21908 CARG: "70.308" ]          |
-|               |           [ explicit_or_proper_q LBL: h21917 ARG0: x21914 RSTR: h21915 BODY:     |
-|               | h21916 ]                                                                         |
-|               |           [ named LBL: h21906 ARG0: x21905 CARG: "Piotr Hallmann" ] >            |
-|               |   HCONS: < h21920 qeq h21909 h21915 qeq h21906 >                                 |
-|               |   EQS: < x21919 eq i21907 h21913 eq h21923 i21912 eq x21919 x21914 eq x21905     |
-|               | h21913 eq h21918 i21911 eq x21914 > ]                                            |
+| Original      | [ TOP: h232                                                                      |
+|               |   INDEX: e229 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _weigh_v_1 LBL: h232 ARG0: e229 ARG1: i230 ARG2: i231 ]              |
+|               |           [ number_q LBL: h241 ARG0: x238 RSTR: h239 BODY: h240 ]                |
+|               |           [ card LBL: h228 ARG0: i226 ARG1: u227 CARG: "70.308" ]                |
+|               |           [ explicit_or_proper_q LBL: h236 ARG0: x233 RSTR: h234 BODY: h235 ]    |
+|               |           [ named LBL: h225 ARG0: x224 CARG: "Piotr Hallmann" ] >                |
+|               |   HCONS: < h239 qeq h228 h234 qeq h225 >                                         |
+|               |   EQS: < x238 eq i226 h232 eq h242 i231 eq x238 x233 eq x224 h232 eq h237 i230   |
+|               | eq x233 > ]                                                                      |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h21913                                                                    |
-|               |   INDEX: e21910 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _weigh_v_1 LBL: h21913 ARG0: e21910 ARG1: x21905 ARG2: x21919 ]      |
-|               |           [ number_q LBL: h21922 ARG0: x21919 RSTR: h21920 BODY: h21921 ]        |
-|               |           [ card LBL: h21909 ARG0: x21919 ARG1: u21908 CARG: "70.308" ]          |
-|               |           [ explicit_or_proper_q LBL: h21917 ARG0: x21905 RSTR: h21915 BODY:     |
-|               | h21916 ]                                                                         |
-|               |           [ named LBL: h21906 ARG0: x21905 CARG: "Piotr Hallmann" ] >            |
-|               |   HCONS: < h21920 qeq h21909 h21915 qeq h21906 > ]                               |
+| EQs Collapsed | [ TOP: h232                                                                      |
+|               |   INDEX: e229 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _weigh_v_1 LBL: h232 ARG0: e229 ARG1: x224 ARG2: x238 ]              |
+|               |           [ number_q LBL: h241 ARG0: x238 RSTR: h239 BODY: h240 ]                |
+|               |           [ card LBL: h228 ARG0: x238 ARG1: u227 CARG: "70.308" ]                |
+|               |           [ explicit_or_proper_q LBL: h236 ARG0: x224 RSTR: h234 BODY: h235 ]    |
+|               |           [ named LBL: h225 ARG0: x224 CARG: "Piotr Hallmann" ] >                |
+|               |   HCONS: < h239 qeq h228 h234 qeq h225 > ]                                       |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h21924                                                                    |
-|               |   INDEX: e21910 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _weigh_v_1 LBL: h21913 ARG0: e21910 ARG1: x21905 ARG2: x21919 ]      |
-|               |           [ number_q LBL: h21922 ARG0: x21919 RSTR: h21920 BODY: h21921 ]        |
-|               |           [ card LBL: h21909 ARG0: x21919 ARG1: u21908 CARG: "70.308" ]          |
-|               |           [ explicit_or_proper_q LBL: h21917 ARG0: x21905 RSTR: h21915 BODY:     |
-|               | h21916 ]                                                                         |
-|               |           [ named LBL: h21906 ARG0: x21905 CARG: "Piotr Hallmann" ] >            |
-|               |   HCONS: < h21920 qeq h21909 h21915 qeq h21906 h21924 qeq h21913 > ]             |
+| Prepped       | [ TOP: h243                                                                      |
+|               |   INDEX: e229 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _weigh_v_1 LBL: h232 ARG0: e229 ARG1: x224 ARG2: x238 ]              |
+|               |           [ number_q LBL: h241 ARG0: x238 RSTR: h239 BODY: h240 ]                |
+|               |           [ card LBL: h228 ARG0: x238 ARG1: u227 CARG: "70.308" ]                |
+|               |           [ explicit_or_proper_q LBL: h236 ARG0: x224 RSTR: h234 BODY: h235 ]    |
+|               |           [ named LBL: h225 ARG0: x224 CARG: "Piotr Hallmann" ] >                |
+|               |   HCONS: < h239 qeq h228 h234 qeq h225 h243 qeq h232 > ]                         |
 +---------------+----------------------------------------------------------------------------------+
 
-+--------------------------------------------------------------------------------------------+
-|                                        NODE SEMENTS                                        |
-+----------------+---------------------------------------------------------------------------+
-| Node           | Generated SEMENT                                                          |
-+----------------+---------------------------------------------------------------------------+
-| Piotr_Hallmann | [ TOP: h21906                                                             |
-|                |   INDEX: x21905                                                           |
-|                |   RELS: < [ named LBL: h21906 ARG0: x21905 CARG: "Piotr Hallmann" ] > ]   |
-+----------------+---------------------------------------------------------------------------+
-| 70.308         | [ TOP: h21909                                                             |
-|                |   INDEX: i21907                                                           |
-|                |   RELS: < [ card LBL: h21909 ARG0: i21907 ARG1: u21908 CARG: "70.308" ] > |
-|                |   SLOTS: < ARG1: u21908 > ]                                               |
-+----------------+---------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------+
+|                                     NODE SEMENTS                                     |
++----------------+---------------------------------------------------------------------+
+| Node           | Generated SEMENT                                                    |
++----------------+---------------------------------------------------------------------+
+| Piotr_Hallmann | [ TOP: h225                                                         |
+|                |   INDEX: x224                                                       |
+|                |   RELS: < [ named LBL: h225 ARG0: x224 CARG: "Piotr Hallmann" ] > ] |
++----------------+---------------------------------------------------------------------+
+| 70.308         | [ TOP: h228                                                         |
+|                |   INDEX: i226                                                       |
+|                |   RELS: < [ card LBL: h228 ARG0: i226 ARG1: u227 CARG: "70.308" ] > |
+|                |   SLOTS: < ARG1: u227 > ]                                           |
++----------------+---------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------------+
 |                                                     EDGE SEMENTS                                                    |
 +--------+----------------+--------+----------------------------------------------------------------------------------+
 | Edge   | Parent         | Child  | Generated SEMENT                                                                 |
 +--------+----------------+--------+----------------------------------------------------------------------------------+
-| weight | Piotr_Hallmann | 70.308 | [ TOP: h21913                                                                    |
-|        |                |        |   INDEX: e21910 [ e TENSE: tensed ]                                              |
-|        |                |        |   RELS: < [ _weigh_v_1 LBL: h21913 ARG0: e21910 ARG1: i21911 ARG2: i21912 ]      |
-|        |                |        |           [ number_q LBL: h21922 ARG0: x21919 RSTR: h21920 BODY: h21921 ]        |
-|        |                |        |           [ card LBL: h21909 ARG0: i21907 ARG1: u21908 CARG: "70.308" ]          |
-|        |                |        |           [ explicit_or_proper_q LBL: h21917 ARG0: x21914 RSTR: h21915 BODY:     |
-|        |                |        | h21916 ]                                                                         |
-|        |                |        |           [ named LBL: h21906 ARG0: x21905 CARG: "Piotr Hallmann" ] >            |
-|        |                |        |   HCONS: < h21920 qeq h21909 h21915 qeq h21906 >                                 |
-|        |                |        |   EQS: < x21919 eq i21907 h21913 eq h21923 i21912 eq x21919 x21914 eq x21905     |
-|        |                |        | h21913 eq h21918 i21911 eq x21914 > ]                                            |
+| weight | Piotr_Hallmann | 70.308 | [ TOP: h232                                                                      |
+|        |                |        |   INDEX: e229 [ e TENSE: tensed ]                                                |
+|        |                |        |   RELS: < [ _weigh_v_1 LBL: h232 ARG0: e229 ARG1: i230 ARG2: i231 ]              |
+|        |                |        |           [ number_q LBL: h241 ARG0: x238 RSTR: h239 BODY: h240 ]                |
+|        |                |        |           [ card LBL: h228 ARG0: i226 ARG1: u227 CARG: "70.308" ]                |
+|        |                |        |           [ explicit_or_proper_q LBL: h236 ARG0: x233 RSTR: h234 BODY: h235 ]    |
+|        |                |        |           [ named LBL: h225 ARG0: x224 CARG: "Piotr Hallmann" ] >                |
+|        |                |        |   HCONS: < h239 qeq h228 h234 qeq h225 >                                         |
+|        |                |        |   EQS: < x238 eq i226 h232 eq h242 i231 eq x238 x233 eq x224 h232 eq h237 i230   |
+|        |                |        | eq x233 > ]                                                                      |
 +--------+----------------+--------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------+

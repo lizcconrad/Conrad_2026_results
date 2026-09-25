@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_City_Id360_174_348
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+---------------------------------------------------------------------------------------------------------------+
-|                                                  GOLD OUTPUTS                                                 |
-+--------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                      | Generated? |
-+--------------------------------------------------------------------------------------------------+------------+
-| Ciudad Ayala is a part of Morelos that is led by the Governor.                                   | False      |
-| Ciudad Ayala is part of Morelos, and the Governor is one of the leaders of the state of Morelos. | False      |
-| The governor leads Ciudad Ayala in Morelos.                                                      | False      |
-+--------------------------------------------------------------------------------------------------+------------+
++------------------------------------------------------------------------------+
+|                                 GOLD OUTPUTS                                 |
++-----------------------------------------------------------------+------------+
+| Gold Output                                                     | Generated? |
++-----------------------------------------------------------------+------------+
+| Ciudad Ayala, which has a UTC offset of -6, is part of Morelos. | False      |
+| Morelos, in Ciudad Ayala, is in the UTC offset -6 timezone.     | False      |
+| The UTC offset of Ciudad Ayala which is part of Morelos is -6.  | False      |
++-----------------------------------------------------------------+------------+
 
 +------------------------------------------------------------------------------------+
 |                                    NODE METRICS                                    |
@@ -56,84 +56,81 @@ GRAPH NAME: WebNLG_test_2triples_City_Id360_174_348
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h11502                                                                    |
-|               |   INDEX: e11499 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h11502 ARG0: e11499 ARG1: p11500 ARG2: i11501 ]        |
-|               |           [ _part_q LBL: h11511 ARG0: x11508 RSTR: h11509 BODY: h11510 ]         |
-|               |           [ part_of LBL: h11493 ARG0: x11491 ARG1: i11492 ]                      |
-|               |           [ explicit_or_proper_q LBL: h11497 ARG0: x11494 RSTR: h11495 BODY:     |
-|               | h11496 ]                                                                         |
-|               |           [ named LBL: h11490 ARG0: x11489 CARG: "Morelos" ]                     |
-|               |           [ explicit_or_proper_q LBL: h11506 ARG0: x11503 RSTR: h11504 BODY:     |
-|               | h11505 ]                                                                         |
-|               |           [ named LBL: h11488 ARG0: x11487 CARG: "Ciudad Ayala" ] >              |
-|               |   HCONS: < h11495 qeq h11490 h11509 qeq h11493 h11504 qeq h11488 >               |
-|               |   EQS: < x11494 eq x11489 h11493 eq h11498 i11492 eq x11494 x11508 eq x11491     |
-|               | h11502 eq h11512 i11501 eq x11508 x11503 eq x11487 h11502 eq h11507 p11500 eq    |
-|               | x11503 > ]                                                                       |
+| Original      | [ TOP: h5080                                                                     |
+|               |   INDEX: e5077 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h5080 ARG0: e5077 ARG1: p5078 ARG2: i5079 ]            |
+|               |           [ _part_q LBL: h5089 ARG0: x5086 RSTR: h5087 BODY: h5088 ]             |
+|               |           [ part_of LBL: h5071 ARG0: x5069 ARG1: i5070 ]                         |
+|               |           [ explicit_or_proper_q LBL: h5075 ARG0: x5072 RSTR: h5073 BODY: h5074  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5068 ARG0: x5067 CARG: "Morelos" ]                       |
+|               |           [ explicit_or_proper_q LBL: h5084 ARG0: x5081 RSTR: h5082 BODY: h5083  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5066 ARG0: x5065 CARG: "Ciudad Ayala" ] >                |
+|               |   HCONS: < h5073 qeq h5068 h5087 qeq h5071 h5082 qeq h5066 >                     |
+|               |   EQS: < x5072 eq x5067 h5071 eq h5076 i5070 eq x5072 x5086 eq x5069 h5080 eq    |
+|               | h5090 i5079 eq x5086 x5081 eq x5065 h5080 eq h5085 p5078 eq x5081 > ]            |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h11502                                                                    |
-|               |   INDEX: e11499 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h11502 ARG0: e11499 ARG1: x11487 ARG2: x11491 ]        |
-|               |           [ _part_q LBL: h11511 ARG0: x11491 RSTR: h11509 BODY: h11510 ]         |
-|               |           [ part_of LBL: h11493 ARG0: x11491 ARG1: x11489 ]                      |
-|               |           [ explicit_or_proper_q LBL: h11497 ARG0: x11489 RSTR: h11495 BODY:     |
-|               | h11496 ]                                                                         |
-|               |           [ named LBL: h11490 ARG0: x11489 CARG: "Morelos" ]                     |
-|               |           [ explicit_or_proper_q LBL: h11506 ARG0: x11487 RSTR: h11504 BODY:     |
-|               | h11505 ]                                                                         |
-|               |           [ named LBL: h11488 ARG0: x11487 CARG: "Ciudad Ayala" ] >              |
-|               |   HCONS: < h11495 qeq h11490 h11509 qeq h11493 h11504 qeq h11488 > ]             |
+| EQs Collapsed | [ TOP: h5080                                                                     |
+|               |   INDEX: e5077 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h5080 ARG0: e5077 ARG1: x5065 ARG2: x5069 ]            |
+|               |           [ _part_q LBL: h5089 ARG0: x5069 RSTR: h5087 BODY: h5088 ]             |
+|               |           [ part_of LBL: h5071 ARG0: x5069 ARG1: x5067 ]                         |
+|               |           [ explicit_or_proper_q LBL: h5075 ARG0: x5067 RSTR: h5073 BODY: h5074  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5068 ARG0: x5067 CARG: "Morelos" ]                       |
+|               |           [ explicit_or_proper_q LBL: h5084 ARG0: x5065 RSTR: h5082 BODY: h5083  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5066 ARG0: x5065 CARG: "Ciudad Ayala" ] >                |
+|               |   HCONS: < h5073 qeq h5068 h5087 qeq h5071 h5082 qeq h5066 > ]                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h11513                                                                    |
-|               |   INDEX: e11499 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h11502 ARG0: e11499 ARG1: x11487 ARG2: x11491 ]        |
-|               |           [ _part_q LBL: h11511 ARG0: x11491 RSTR: h11509 BODY: h11510 ]         |
-|               |           [ part_of LBL: h11493 ARG0: x11491 ARG1: x11489 ]                      |
-|               |           [ explicit_or_proper_q LBL: h11497 ARG0: x11489 RSTR: h11495 BODY:     |
-|               | h11496 ]                                                                         |
-|               |           [ named LBL: h11490 ARG0: x11489 CARG: "Morelos" ]                     |
-|               |           [ explicit_or_proper_q LBL: h11506 ARG0: x11487 RSTR: h11504 BODY:     |
-|               | h11505 ]                                                                         |
-|               |           [ named LBL: h11488 ARG0: x11487 CARG: "Ciudad Ayala" ] >              |
-|               |   HCONS: < h11495 qeq h11490 h11509 qeq h11493 h11504 qeq h11488 h11513 qeq      |
-|               | h11502 > ]                                                                       |
+| Prepped       | [ TOP: h5091                                                                     |
+|               |   INDEX: e5077 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h5080 ARG0: e5077 ARG1: x5065 ARG2: x5069 ]            |
+|               |           [ _part_q LBL: h5089 ARG0: x5069 RSTR: h5087 BODY: h5088 ]             |
+|               |           [ part_of LBL: h5071 ARG0: x5069 ARG1: x5067 ]                         |
+|               |           [ explicit_or_proper_q LBL: h5075 ARG0: x5067 RSTR: h5073 BODY: h5074  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5068 ARG0: x5067 CARG: "Morelos" ]                       |
+|               |           [ explicit_or_proper_q LBL: h5084 ARG0: x5065 RSTR: h5082 BODY: h5083  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5066 ARG0: x5065 CARG: "Ciudad Ayala" ] >                |
+|               |   HCONS: < h5073 qeq h5068 h5087 qeq h5071 h5082 qeq h5066 h5091 qeq h5080 > ]   |
 +---------------+----------------------------------------------------------------------------------+
 
-+--------------------------------------------------------------------------------------+
-|                                     NODE SEMENTS                                     |
-+--------------+-----------------------------------------------------------------------+
-| Node         | Generated SEMENT                                                      |
-+--------------+-----------------------------------------------------------------------+
-| Ciudad_Ayala | [ TOP: h11488                                                         |
-|              |   INDEX: x11487                                                       |
-|              |   RELS: < [ named LBL: h11488 ARG0: x11487 CARG: "Ciudad Ayala" ] > ] |
-+--------------+-----------------------------------------------------------------------+
-| Morelos      | [ TOP: h11490                                                         |
-|              |   INDEX: x11489                                                       |
-|              |   RELS: < [ named LBL: h11490 ARG0: x11489 CARG: "Morelos" ] > ]      |
-+--------------+-----------------------------------------------------------------------+
++------------------------------------------------------------------------------------+
+|                                    NODE SEMENTS                                    |
++--------------+---------------------------------------------------------------------+
+| Node         | Generated SEMENT                                                    |
++--------------+---------------------------------------------------------------------+
+| Ciudad_Ayala | [ TOP: h5066                                                        |
+|              |   INDEX: x5065                                                      |
+|              |   RELS: < [ named LBL: h5066 ARG0: x5065 CARG: "Ciudad Ayala" ] > ] |
++--------------+---------------------------------------------------------------------+
+| Morelos      | [ TOP: h5068                                                        |
+|              |   INDEX: x5067                                                      |
+|              |   RELS: < [ named LBL: h5068 ARG0: x5067 CARG: "Morelos" ] > ]      |
++--------------+---------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------+
 |                                                     EDGE SEMENTS                                                     |
 +----------+--------------+---------+----------------------------------------------------------------------------------+
 | Edge     | Parent       | Child   | Generated SEMENT                                                                 |
 +----------+--------------+---------+----------------------------------------------------------------------------------+
-| isPartOf | Ciudad_Ayala | Morelos | [ TOP: h11502                                                                    |
-|          |              |         |   INDEX: e11499 [ e SF: prop TENSE: tensed ]                                     |
-|          |              |         |   RELS: < [ _be_v_id LBL: h11502 ARG0: e11499 ARG1: p11500 ARG2: i11501 ]        |
-|          |              |         |           [ _part_q LBL: h11511 ARG0: x11508 RSTR: h11509 BODY: h11510 ]         |
-|          |              |         |           [ part_of LBL: h11493 ARG0: x11491 ARG1: i11492 ]                      |
-|          |              |         |           [ explicit_or_proper_q LBL: h11497 ARG0: x11494 RSTR: h11495 BODY:     |
-|          |              |         | h11496 ]                                                                         |
-|          |              |         |           [ named LBL: h11490 ARG0: x11489 CARG: "Morelos" ]                     |
-|          |              |         |           [ explicit_or_proper_q LBL: h11506 ARG0: x11503 RSTR: h11504 BODY:     |
-|          |              |         | h11505 ]                                                                         |
-|          |              |         |           [ named LBL: h11488 ARG0: x11487 CARG: "Ciudad Ayala" ] >              |
-|          |              |         |   HCONS: < h11495 qeq h11490 h11509 qeq h11493 h11504 qeq h11488 >               |
-|          |              |         |   EQS: < x11494 eq x11489 h11493 eq h11498 i11492 eq x11494 x11508 eq x11491     |
-|          |              |         | h11502 eq h11512 i11501 eq x11508 x11503 eq x11487 h11502 eq h11507 p11500 eq    |
-|          |              |         | x11503 > ]                                                                       |
+| isPartOf | Ciudad_Ayala | Morelos | [ TOP: h5080                                                                     |
+|          |              |         |   INDEX: e5077 [ e SF: prop TENSE: tensed ]                                      |
+|          |              |         |   RELS: < [ _be_v_id LBL: h5080 ARG0: e5077 ARG1: p5078 ARG2: i5079 ]            |
+|          |              |         |           [ _part_q LBL: h5089 ARG0: x5086 RSTR: h5087 BODY: h5088 ]             |
+|          |              |         |           [ part_of LBL: h5071 ARG0: x5069 ARG1: i5070 ]                         |
+|          |              |         |           [ explicit_or_proper_q LBL: h5075 ARG0: x5072 RSTR: h5073 BODY: h5074  |
+|          |              |         | ]                                                                                |
+|          |              |         |           [ named LBL: h5068 ARG0: x5067 CARG: "Morelos" ]                       |
+|          |              |         |           [ explicit_or_proper_q LBL: h5084 ARG0: x5081 RSTR: h5082 BODY: h5083  |
+|          |              |         | ]                                                                                |
+|          |              |         |           [ named LBL: h5066 ARG0: x5065 CARG: "Ciudad Ayala" ] >                |
+|          |              |         |   HCONS: < h5073 qeq h5068 h5087 qeq h5071 h5082 qeq h5066 >                     |
+|          |              |         |   EQS: < x5072 eq x5067 h5071 eq h5076 i5070 eq x5072 x5086 eq x5069 h5080 eq    |
+|          |              |         | h5090 i5079 eq x5086 x5081 eq x5065 h5080 eq h5085 p5078 eq x5081 > ]            |
 +----------+--------------+---------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------+

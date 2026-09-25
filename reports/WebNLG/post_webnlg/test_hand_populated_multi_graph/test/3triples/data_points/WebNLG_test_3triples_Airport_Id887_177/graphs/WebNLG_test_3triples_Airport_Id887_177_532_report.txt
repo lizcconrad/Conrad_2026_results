@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Airport_Id887_177_532
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-|                                                              GOLD OUTPUTS                                                             |
-+--------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                              | Generated? |
-+--------------------------------------------------------------------------------------------------------------------------+------------+
-| Bedford Aerodrome has 08/26 runway made of concrete at an elevation of 83.2104 above sea level.                          | False      |
-| The Bedford Aerodrome is 83.2 meters above sea level and has a runway named "08/26" which is made of concrete.           | False      |
-| The Bedford Aerodrome runway name is 08/26, and it is made of concrete. The aerodrome is 83.2104 metres above sea level. | False      |
-+--------------------------------------------------------------------------------------------------------------------------+------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+|                                                            GOLD OUTPUTS                                                            |
++-----------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                           | Generated? |
++-----------------------------------------------------------------------------------------------------------------------+------------+
+| Bedford Aerodrome has a runway named 08/26 that has a length of 1095.0 and is located 83.2104 above sea level.        | False      |
+| The Bedford Aerodrome is 83.2 meters above sea level. The runway has a length of 1095 and is named 08/26.             | False      |
+| The Bedford Aerodrome runway, which is 1095 long, is named 08/26 and its elevation above sea level is 83.2104 meters. | False      |
++-----------------------------------------------------------------------------------------------------------------------+------------+
 
 +-----------------------------------------------------------------------------------------+
 |                                       NODE METRICS                                      |
@@ -56,96 +56,81 @@ GRAPH NAME: WebNLG_test_3triples_Airport_Id887_177_532
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h17953                                                                    |
-|               |   INDEX: e17950 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h17953 ARG0: e17950 ARG1: i17951 ARG2: i17952 ]       |
-|               |           [ def_udef_a_q LBL: h17974 ARG0: x17971 RSTR: h17972 BODY: h17973 ]    |
-|               |           [ _name_v_1 LBL: h17958 ARG0: e17954 ARG1: i17955 ARG2: i17956 ARG3:   |
-|               | i17957 ]                                                                         |
-|               |           [ explicit_or_proper_q LBL: h17962 ARG0: x17959 RSTR: h17960 BODY:     |
-|               | h17961 ]                                                                         |
-|               |           [ named LBL: h17949 ARG0: x17948 CARG: "08/26" ]                       |
-|               |           [ _runway_n_1 LBL: h17965 ARG0: x17964 ]                               |
-|               |           [ explicit_or_proper_q LBL: h17969 ARG0: x17966 RSTR: h17967 BODY:     |
-|               | h17968 ]                                                                         |
-|               |           [ named LBL: h17947 ARG0: x17946 CARG: "Bedford Aerodrome" ] >         |
-|               |   HCONS: < h17960 qeq h17949 h17972 qeq h17965 h17967 qeq h17947 >               |
-|               |   ICONS: < e17954 topic i17957 >                                                 |
-|               |   EQS: < x17959 eq x17948 h17958 eq h17963 i17956 eq x17959 h17958 eq h17965     |
-|               | i17957 eq x17964 x17971 eq x17964 h17953 eq h17975 i17952 eq x17971 x17966 eq    |
-|               | x17946 h17953 eq h17970 i17951 eq x17966 > ]                                     |
+| Original      | [ TOP: h163                                                                      |
+|               |   INDEX: e160 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _have_v_1 LBL: h163 ARG0: e160 ARG1: i161 ARG2: i162 ]               |
+|               |           [ def_udef_a_q LBL: h184 ARG0: x181 RSTR: h182 BODY: h183 ]            |
+|               |           [ _name_v_1 LBL: h168 ARG0: e164 ARG1: i165 ARG2: i166 ARG3: i167 ]    |
+|               |           [ explicit_or_proper_q LBL: h172 ARG0: x169 RSTR: h170 BODY: h171 ]    |
+|               |           [ named LBL: h159 ARG0: x158 CARG: "08/26" ]                           |
+|               |           [ _runway_n_1 LBL: h175 ARG0: x174 ]                                   |
+|               |           [ explicit_or_proper_q LBL: h179 ARG0: x176 RSTR: h177 BODY: h178 ]    |
+|               |           [ named LBL: h157 ARG0: x156 CARG: "Bedford Aerodrome" ] >             |
+|               |   HCONS: < h170 qeq h159 h182 qeq h175 h177 qeq h157 >                           |
+|               |   ICONS: < e164 topic i167 >                                                     |
+|               |   EQS: < x169 eq x158 h168 eq h173 i166 eq x169 h168 eq h175 i167 eq x174 x181   |
+|               | eq x174 h163 eq h185 i162 eq x181 x176 eq x156 h163 eq h180 i161 eq x176 > ]     |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h17953                                                                    |
-|               |   INDEX: e17950 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h17953 ARG0: e17950 ARG1: x17946 ARG2: x17964 ]       |
-|               |           [ def_udef_a_q LBL: h17974 ARG0: x17964 RSTR: h17972 BODY: h17973 ]    |
-|               |           [ _name_v_1 LBL: h17958 ARG0: e17954 ARG1: i17955 ARG2: x17948 ARG3:   |
-|               | x17964 ]                                                                         |
-|               |           [ explicit_or_proper_q LBL: h17962 ARG0: x17948 RSTR: h17960 BODY:     |
-|               | h17961 ]                                                                         |
-|               |           [ named LBL: h17949 ARG0: x17948 CARG: "08/26" ]                       |
-|               |           [ _runway_n_1 LBL: h17958 ARG0: x17964 ]                               |
-|               |           [ explicit_or_proper_q LBL: h17969 ARG0: x17946 RSTR: h17967 BODY:     |
-|               | h17968 ]                                                                         |
-|               |           [ named LBL: h17947 ARG0: x17946 CARG: "Bedford Aerodrome" ] >         |
-|               |   HCONS: < h17960 qeq h17949 h17972 qeq h17958 h17967 qeq h17947 >               |
-|               |   ICONS: < e17954 topic x17964 > ]                                               |
+| EQs Collapsed | [ TOP: h163                                                                      |
+|               |   INDEX: e160 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _have_v_1 LBL: h163 ARG0: e160 ARG1: x156 ARG2: x174 ]               |
+|               |           [ def_udef_a_q LBL: h184 ARG0: x174 RSTR: h182 BODY: h183 ]            |
+|               |           [ _name_v_1 LBL: h168 ARG0: e164 ARG1: i165 ARG2: x158 ARG3: x174 ]    |
+|               |           [ explicit_or_proper_q LBL: h172 ARG0: x158 RSTR: h170 BODY: h171 ]    |
+|               |           [ named LBL: h159 ARG0: x158 CARG: "08/26" ]                           |
+|               |           [ _runway_n_1 LBL: h168 ARG0: x174 ]                                   |
+|               |           [ explicit_or_proper_q LBL: h179 ARG0: x156 RSTR: h177 BODY: h178 ]    |
+|               |           [ named LBL: h157 ARG0: x156 CARG: "Bedford Aerodrome" ] >             |
+|               |   HCONS: < h170 qeq h159 h182 qeq h168 h177 qeq h157 >                           |
+|               |   ICONS: < e164 topic x174 > ]                                                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h17976                                                                    |
-|               |   INDEX: e17950 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h17953 ARG0: e17950 ARG1: x17946 ARG2: x17964 ]       |
-|               |           [ def_udef_a_q LBL: h17974 ARG0: x17964 RSTR: h17972 BODY: h17973 ]    |
-|               |           [ _name_v_1 LBL: h17958 ARG0: e17954 ARG1: i17955 ARG2: x17948 ARG3:   |
-|               | x17964 ]                                                                         |
-|               |           [ explicit_or_proper_q LBL: h17962 ARG0: x17948 RSTR: h17960 BODY:     |
-|               | h17961 ]                                                                         |
-|               |           [ named LBL: h17949 ARG0: x17948 CARG: "08/26" ]                       |
-|               |           [ _runway_n_1 LBL: h17958 ARG0: x17964 ]                               |
-|               |           [ explicit_or_proper_q LBL: h17969 ARG0: x17946 RSTR: h17967 BODY:     |
-|               | h17968 ]                                                                         |
-|               |           [ named LBL: h17947 ARG0: x17946 CARG: "Bedford Aerodrome" ] >         |
-|               |   HCONS: < h17960 qeq h17949 h17972 qeq h17958 h17967 qeq h17947 h17976 qeq      |
-|               | h17953 >                                                                         |
-|               |   ICONS: < e17954 topic x17964 > ]                                               |
+| Prepped       | [ TOP: h186                                                                      |
+|               |   INDEX: e160 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _have_v_1 LBL: h163 ARG0: e160 ARG1: x156 ARG2: x174 ]               |
+|               |           [ def_udef_a_q LBL: h184 ARG0: x174 RSTR: h182 BODY: h183 ]            |
+|               |           [ _name_v_1 LBL: h168 ARG0: e164 ARG1: i165 ARG2: x158 ARG3: x174 ]    |
+|               |           [ explicit_or_proper_q LBL: h172 ARG0: x158 RSTR: h170 BODY: h171 ]    |
+|               |           [ named LBL: h159 ARG0: x158 CARG: "08/26" ]                           |
+|               |           [ _runway_n_1 LBL: h168 ARG0: x174 ]                                   |
+|               |           [ explicit_or_proper_q LBL: h179 ARG0: x156 RSTR: h177 BODY: h178 ]    |
+|               |           [ named LBL: h157 ARG0: x156 CARG: "Bedford Aerodrome" ] >             |
+|               |   HCONS: < h170 qeq h159 h182 qeq h168 h177 qeq h157 h186 qeq h163 >             |
+|               |   ICONS: < e164 topic x174 > ]                                                   |
 +---------------+----------------------------------------------------------------------------------+
 
-+------------------------------------------------------------------------------------------------+
-|                                          NODE SEMENTS                                          |
-+-------------------+----------------------------------------------------------------------------+
-| Node              | Generated SEMENT                                                           |
-+-------------------+----------------------------------------------------------------------------+
-| Bedford_Aerodrome | [ TOP: h17947                                                              |
-|                   |   INDEX: x17946                                                            |
-|                   |   RELS: < [ named LBL: h17947 ARG0: x17946 CARG: "Bedford Aerodrome" ] > ] |
-+-------------------+----------------------------------------------------------------------------+
-| "08/26"           | [ TOP: h17949                                                              |
-|                   |   INDEX: x17948                                                            |
-|                   |   RELS: < [ named LBL: h17949 ARG0: x17948 CARG: "08/26" ] > ]             |
-+-------------------+----------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+|                                        NODE SEMENTS                                        |
++-------------------+------------------------------------------------------------------------+
+| Node              | Generated SEMENT                                                       |
++-------------------+------------------------------------------------------------------------+
+| Bedford_Aerodrome | [ TOP: h157                                                            |
+|                   |   INDEX: x156                                                          |
+|                   |   RELS: < [ named LBL: h157 ARG0: x156 CARG: "Bedford Aerodrome" ] > ] |
++-------------------+------------------------------------------------------------------------+
+| "08/26"           | [ TOP: h159                                                            |
+|                   |   INDEX: x158                                                          |
+|                   |   RELS: < [ named LBL: h159 ARG0: x158 CARG: "08/26" ] > ]             |
++-------------------+------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------------+
 |                                                         EDGE SEMENTS                                                        |
 +------------+-------------------+---------+----------------------------------------------------------------------------------+
 | Edge       | Parent            | Child   | Generated SEMENT                                                                 |
 +------------+-------------------+---------+----------------------------------------------------------------------------------+
-| runwayName | Bedford_Aerodrome | "08/26" | [ TOP: h17953                                                                    |
-|            |                   |         |   INDEX: e17950 [ e TENSE: tensed ]                                              |
-|            |                   |         |   RELS: < [ _have_v_1 LBL: h17953 ARG0: e17950 ARG1: i17951 ARG2: i17952 ]       |
-|            |                   |         |           [ def_udef_a_q LBL: h17974 ARG0: x17971 RSTR: h17972 BODY: h17973 ]    |
-|            |                   |         |           [ _name_v_1 LBL: h17958 ARG0: e17954 ARG1: i17955 ARG2: i17956 ARG3:   |
-|            |                   |         | i17957 ]                                                                         |
-|            |                   |         |           [ explicit_or_proper_q LBL: h17962 ARG0: x17959 RSTR: h17960 BODY:     |
-|            |                   |         | h17961 ]                                                                         |
-|            |                   |         |           [ named LBL: h17949 ARG0: x17948 CARG: "08/26" ]                       |
-|            |                   |         |           [ _runway_n_1 LBL: h17965 ARG0: x17964 ]                               |
-|            |                   |         |           [ explicit_or_proper_q LBL: h17969 ARG0: x17966 RSTR: h17967 BODY:     |
-|            |                   |         | h17968 ]                                                                         |
-|            |                   |         |           [ named LBL: h17947 ARG0: x17946 CARG: "Bedford Aerodrome" ] >         |
-|            |                   |         |   HCONS: < h17960 qeq h17949 h17972 qeq h17965 h17967 qeq h17947 >               |
-|            |                   |         |   ICONS: < e17954 topic i17957 >                                                 |
-|            |                   |         |   EQS: < x17959 eq x17948 h17958 eq h17963 i17956 eq x17959 h17958 eq h17965     |
-|            |                   |         | i17957 eq x17964 x17971 eq x17964 h17953 eq h17975 i17952 eq x17971 x17966 eq    |
-|            |                   |         | x17946 h17953 eq h17970 i17951 eq x17966 > ]                                     |
+| runwayName | Bedford_Aerodrome | "08/26" | [ TOP: h163                                                                      |
+|            |                   |         |   INDEX: e160 [ e TENSE: tensed ]                                                |
+|            |                   |         |   RELS: < [ _have_v_1 LBL: h163 ARG0: e160 ARG1: i161 ARG2: i162 ]               |
+|            |                   |         |           [ def_udef_a_q LBL: h184 ARG0: x181 RSTR: h182 BODY: h183 ]            |
+|            |                   |         |           [ _name_v_1 LBL: h168 ARG0: e164 ARG1: i165 ARG2: i166 ARG3: i167 ]    |
+|            |                   |         |           [ explicit_or_proper_q LBL: h172 ARG0: x169 RSTR: h170 BODY: h171 ]    |
+|            |                   |         |           [ named LBL: h159 ARG0: x158 CARG: "08/26" ]                           |
+|            |                   |         |           [ _runway_n_1 LBL: h175 ARG0: x174 ]                                   |
+|            |                   |         |           [ explicit_or_proper_q LBL: h179 ARG0: x176 RSTR: h177 BODY: h178 ]    |
+|            |                   |         |           [ named LBL: h157 ARG0: x156 CARG: "Bedford Aerodrome" ] >             |
+|            |                   |         |   HCONS: < h170 qeq h159 h182 qeq h175 h177 qeq h157 >                           |
+|            |                   |         |   ICONS: < e164 topic i167 >                                                     |
+|            |                   |         |   EQS: < x169 eq x158 h168 eq h173 i166 eq x169 h168 eq h175 i167 eq x174 x181   |
+|            |                   |         | eq x174 h163 eq h185 i162 eq x181 x176 eq x156 h163 eq h180 i161 eq x176 > ]     |
 +------------+-------------------+---------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------+

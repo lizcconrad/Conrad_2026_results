@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id1016_294_882
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+----------------------------------------------------------------------------------------------------------------------------+
-|                                                        GOLD OUTPUTS                                                        |
-+---------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                   | Generated? |
-+---------------------------------------------------------------------------------------------------------------+------------+
-| Brandon Carter, born in England on January 1, 1942, had Dennis William Sciama as his doctoral advisor.        | False      |
-| Brandon Carter, who was born in England on 01-01-1942, has a doctoral advisor named Dennis William Sciama.    | False      |
-| Dennis William Sciama was the doctoral advisor of Brandon Carter who was born in England on January 1st 1942. | False      |
-+---------------------------------------------------------------------------------------------------------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                             GOLD OUTPUTS                                                                             |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                             | Generated? |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Brandon Carter (born on January 1st 1942) was advised by Dennis William Sciama for his doctorate in General Relativity, Carter's professional field.    | False      |
+| Brandon Carter, a professional in the field of general relativity who learned from Dennis William Sciama, was born on January 1st, 1942.                | False      |
+| Physicist Brandon Carter, born January 1st, 1942, is a professional in the field of General Relativity. His doctoral advisor was Dennis William Sciama. | False      |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +---------------------------------------------------------------------------------------------+
 |                                         NODE METRICS                                        |
@@ -56,92 +56,91 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id1016_294_882
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h29624                                                                    |
-|               |   INDEX: e29621 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h29624 ARG0: e29621 ARG1: p29622 ARG2: i29623 ]        |
-|               |           [ explicit_or_proper_q LBL: h29633 ARG0: x29630 RSTR: h29631 BODY:     |
-|               | h29632 ]                                                                         |
-|               |           [ named LBL: h29606 ARG0: x29605 CARG: "Dennis William Sciama" ]       |
-|               |           [ def_udef_a_q LBL: h29628 ARG0: x29625 RSTR: h29626 BODY: h29627 ]    |
-|               |           [ poss LBL: h29620 ARG0: e29617 ARG1: x29618 ARG2: i29619 ]            |
-|               |           [ explicit_or_proper_q LBL: h29615 ARG0: x29612 RSTR: h29613 BODY:     |
-|               | h29614 ]                                                                         |
-|               |           [ named LBL: h29604 ARG0: x29603 CARG: "Brandon Carter" ]              |
-|               |           [ _doctoral_a_1 LBL: h29609 ARG0: e29607 ARG1: u29608 ]                |
-|               |           [ _advisor_n_1 LBL: h29611 ARG0: x29610 ] >                            |
-|               |   HCONS: < h29631 qeq h29606 h29613 qeq h29604 h29626 qeq h29611 >               |
-|               |   EQS: < x29630 eq x29605 h29624 eq h29634 i29623 eq x29630 x29612 eq x29603     |
-|               | h29620 eq h29616 i29619 eq x29612 h29609 eq h29611 u29608 eq x29610 h29620 eq    |
-|               | h29611 x29618 eq x29610 x29625 eq x29610 h29624 eq h29629 p29622 eq x29625 > ]   |
+| Original      | [ TOP: h7439                                                                     |
+|               |   INDEX: e7436 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h7439 ARG0: e7436 ARG1: p7437 ARG2: i7438 ]            |
+|               |           [ explicit_or_proper_q LBL: h7448 ARG0: x7445 RSTR: h7446 BODY: h7447  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7421 ARG0: x7420 CARG: "Dennis William Sciama" ]         |
+|               |           [ def_udef_a_q LBL: h7443 ARG0: x7440 RSTR: h7441 BODY: h7442 ]        |
+|               |           [ poss LBL: h7435 ARG0: e7432 ARG1: x7433 ARG2: i7434 ]                |
+|               |           [ explicit_or_proper_q LBL: h7430 ARG0: x7427 RSTR: h7428 BODY: h7429  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7419 ARG0: x7418 CARG: "Brandon Carter" ]                |
+|               |           [ _doctoral_a_1 LBL: h7424 ARG0: e7422 ARG1: u7423 ]                   |
+|               |           [ _advisor_n_1 LBL: h7426 ARG0: x7425 ] >                              |
+|               |   HCONS: < h7446 qeq h7421 h7428 qeq h7419 h7441 qeq h7426 >                     |
+|               |   EQS: < x7445 eq x7420 h7439 eq h7449 i7438 eq x7445 x7427 eq x7418 h7435 eq    |
+|               | h7431 i7434 eq x7427 h7424 eq h7426 u7423 eq x7425 h7435 eq h7426 x7433 eq x7425 |
+|               | x7440 eq x7425 h7439 eq h7444 p7437 eq x7440 > ]                                 |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h29624                                                                    |
-|               |   INDEX: e29621 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h29624 ARG0: e29621 ARG1: x29610 ARG2: x29605 ]        |
-|               |           [ explicit_or_proper_q LBL: h29633 ARG0: x29605 RSTR: h29631 BODY:     |
-|               | h29632 ]                                                                         |
-|               |           [ named LBL: h29606 ARG0: x29605 CARG: "Dennis William Sciama" ]       |
-|               |           [ def_udef_a_q LBL: h29628 ARG0: x29610 RSTR: h29626 BODY: h29627 ]    |
-|               |           [ poss LBL: h29609 ARG0: e29617 ARG1: x29610 ARG2: x29603 ]            |
-|               |           [ explicit_or_proper_q LBL: h29615 ARG0: x29603 RSTR: h29613 BODY:     |
-|               | h29614 ]                                                                         |
-|               |           [ named LBL: h29604 ARG0: x29603 CARG: "Brandon Carter" ]              |
-|               |           [ _doctoral_a_1 LBL: h29609 ARG0: e29607 ARG1: x29610 ]                |
-|               |           [ _advisor_n_1 LBL: h29609 ARG0: x29610 ] >                            |
-|               |   HCONS: < h29631 qeq h29606 h29613 qeq h29604 h29626 qeq h29609 > ]             |
+| EQs Collapsed | [ TOP: h7439                                                                     |
+|               |   INDEX: e7436 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h7439 ARG0: e7436 ARG1: x7425 ARG2: x7420 ]            |
+|               |           [ explicit_or_proper_q LBL: h7448 ARG0: x7420 RSTR: h7446 BODY: h7447  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7421 ARG0: x7420 CARG: "Dennis William Sciama" ]         |
+|               |           [ def_udef_a_q LBL: h7443 ARG0: x7425 RSTR: h7441 BODY: h7442 ]        |
+|               |           [ poss LBL: h7424 ARG0: e7432 ARG1: x7425 ARG2: x7418 ]                |
+|               |           [ explicit_or_proper_q LBL: h7430 ARG0: x7418 RSTR: h7428 BODY: h7429  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7419 ARG0: x7418 CARG: "Brandon Carter" ]                |
+|               |           [ _doctoral_a_1 LBL: h7424 ARG0: e7422 ARG1: x7425 ]                   |
+|               |           [ _advisor_n_1 LBL: h7424 ARG0: x7425 ] >                              |
+|               |   HCONS: < h7446 qeq h7421 h7428 qeq h7419 h7441 qeq h7424 > ]                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h29635                                                                    |
-|               |   INDEX: e29621 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h29624 ARG0: e29621 ARG1: x29610 ARG2: x29605 ]        |
-|               |           [ explicit_or_proper_q LBL: h29633 ARG0: x29605 RSTR: h29631 BODY:     |
-|               | h29632 ]                                                                         |
-|               |           [ named LBL: h29606 ARG0: x29605 CARG: "Dennis William Sciama" ]       |
-|               |           [ def_udef_a_q LBL: h29628 ARG0: x29610 RSTR: h29626 BODY: h29627 ]    |
-|               |           [ poss LBL: h29609 ARG0: e29617 ARG1: x29610 ARG2: x29603 ]            |
-|               |           [ explicit_or_proper_q LBL: h29615 ARG0: x29603 RSTR: h29613 BODY:     |
-|               | h29614 ]                                                                         |
-|               |           [ named LBL: h29604 ARG0: x29603 CARG: "Brandon Carter" ]              |
-|               |           [ _doctoral_a_1 LBL: h29609 ARG0: e29607 ARG1: x29610 ]                |
-|               |           [ _advisor_n_1 LBL: h29609 ARG0: x29610 ] >                            |
-|               |   HCONS: < h29631 qeq h29606 h29613 qeq h29604 h29626 qeq h29609 h29635 qeq      |
-|               | h29624 > ]                                                                       |
+| Prepped       | [ TOP: h7450                                                                     |
+|               |   INDEX: e7436 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h7439 ARG0: e7436 ARG1: x7425 ARG2: x7420 ]            |
+|               |           [ explicit_or_proper_q LBL: h7448 ARG0: x7420 RSTR: h7446 BODY: h7447  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7421 ARG0: x7420 CARG: "Dennis William Sciama" ]         |
+|               |           [ def_udef_a_q LBL: h7443 ARG0: x7425 RSTR: h7441 BODY: h7442 ]        |
+|               |           [ poss LBL: h7424 ARG0: e7432 ARG1: x7425 ARG2: x7418 ]                |
+|               |           [ explicit_or_proper_q LBL: h7430 ARG0: x7418 RSTR: h7428 BODY: h7429  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7419 ARG0: x7418 CARG: "Brandon Carter" ]                |
+|               |           [ _doctoral_a_1 LBL: h7424 ARG0: e7422 ARG1: x7425 ]                   |
+|               |           [ _advisor_n_1 LBL: h7424 ARG0: x7425 ] >                              |
+|               |   HCONS: < h7446 qeq h7421 h7428 qeq h7419 h7441 qeq h7424 h7450 qeq h7439 > ]   |
 +---------------+----------------------------------------------------------------------------------+
 
-+--------------------------------------------------------------------------------------------------------+
-|                                              NODE SEMENTS                                              |
-+-----------------------+--------------------------------------------------------------------------------+
-| Node                  | Generated SEMENT                                                               |
-+-----------------------+--------------------------------------------------------------------------------+
-| Brandon_Carter        | [ TOP: h29604                                                                  |
-|                       |   INDEX: x29603                                                                |
-|                       |   RELS: < [ named LBL: h29604 ARG0: x29603 CARG: "Brandon Carter" ] > ]        |
-+-----------------------+--------------------------------------------------------------------------------+
-| Dennis_William_Sciama | [ TOP: h29606                                                                  |
-|                       |   INDEX: x29605                                                                |
-|                       |   RELS: < [ named LBL: h29606 ARG0: x29605 CARG: "Dennis William Sciama" ] > ] |
-+-----------------------+--------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------+
+|                                             NODE SEMENTS                                             |
++-----------------------+------------------------------------------------------------------------------+
+| Node                  | Generated SEMENT                                                             |
++-----------------------+------------------------------------------------------------------------------+
+| Brandon_Carter        | [ TOP: h7419                                                                 |
+|                       |   INDEX: x7418                                                               |
+|                       |   RELS: < [ named LBL: h7419 ARG0: x7418 CARG: "Brandon Carter" ] > ]        |
++-----------------------+------------------------------------------------------------------------------+
+| Dennis_William_Sciama | [ TOP: h7421                                                                 |
+|                       |   INDEX: x7420                                                               |
+|                       |   RELS: < [ named LBL: h7421 ARG0: x7420 CARG: "Dennis William Sciama" ] > ] |
++-----------------------+------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                                 EDGE SEMENTS                                                                |
 +-----------------+----------------+-----------------------+----------------------------------------------------------------------------------+
 | Edge            | Parent         | Child                 | Generated SEMENT                                                                 |
 +-----------------+----------------+-----------------------+----------------------------------------------------------------------------------+
-| doctoralAdvisor | Brandon_Carter | Dennis_William_Sciama | [ TOP: h29624                                                                    |
-|                 |                |                       |   INDEX: e29621 [ e SF: prop TENSE: tensed ]                                     |
-|                 |                |                       |   RELS: < [ _be_v_id LBL: h29624 ARG0: e29621 ARG1: p29622 ARG2: i29623 ]        |
-|                 |                |                       |           [ explicit_or_proper_q LBL: h29633 ARG0: x29630 RSTR: h29631 BODY:     |
-|                 |                |                       | h29632 ]                                                                         |
-|                 |                |                       |           [ named LBL: h29606 ARG0: x29605 CARG: "Dennis William Sciama" ]       |
-|                 |                |                       |           [ def_udef_a_q LBL: h29628 ARG0: x29625 RSTR: h29626 BODY: h29627 ]    |
-|                 |                |                       |           [ poss LBL: h29620 ARG0: e29617 ARG1: x29618 ARG2: i29619 ]            |
-|                 |                |                       |           [ explicit_or_proper_q LBL: h29615 ARG0: x29612 RSTR: h29613 BODY:     |
-|                 |                |                       | h29614 ]                                                                         |
-|                 |                |                       |           [ named LBL: h29604 ARG0: x29603 CARG: "Brandon Carter" ]              |
-|                 |                |                       |           [ _doctoral_a_1 LBL: h29609 ARG0: e29607 ARG1: u29608 ]                |
-|                 |                |                       |           [ _advisor_n_1 LBL: h29611 ARG0: x29610 ] >                            |
-|                 |                |                       |   HCONS: < h29631 qeq h29606 h29613 qeq h29604 h29626 qeq h29611 >               |
-|                 |                |                       |   EQS: < x29630 eq x29605 h29624 eq h29634 i29623 eq x29630 x29612 eq x29603     |
-|                 |                |                       | h29620 eq h29616 i29619 eq x29612 h29609 eq h29611 u29608 eq x29610 h29620 eq    |
-|                 |                |                       | h29611 x29618 eq x29610 x29625 eq x29610 h29624 eq h29629 p29622 eq x29625 > ]   |
+| doctoralAdvisor | Brandon_Carter | Dennis_William_Sciama | [ TOP: h7439                                                                     |
+|                 |                |                       |   INDEX: e7436 [ e SF: prop TENSE: tensed ]                                      |
+|                 |                |                       |   RELS: < [ _be_v_id LBL: h7439 ARG0: e7436 ARG1: p7437 ARG2: i7438 ]            |
+|                 |                |                       |           [ explicit_or_proper_q LBL: h7448 ARG0: x7445 RSTR: h7446 BODY: h7447  |
+|                 |                |                       | ]                                                                                |
+|                 |                |                       |           [ named LBL: h7421 ARG0: x7420 CARG: "Dennis William Sciama" ]         |
+|                 |                |                       |           [ def_udef_a_q LBL: h7443 ARG0: x7440 RSTR: h7441 BODY: h7442 ]        |
+|                 |                |                       |           [ poss LBL: h7435 ARG0: e7432 ARG1: x7433 ARG2: i7434 ]                |
+|                 |                |                       |           [ explicit_or_proper_q LBL: h7430 ARG0: x7427 RSTR: h7428 BODY: h7429  |
+|                 |                |                       | ]                                                                                |
+|                 |                |                       |           [ named LBL: h7419 ARG0: x7418 CARG: "Brandon Carter" ]                |
+|                 |                |                       |           [ _doctoral_a_1 LBL: h7424 ARG0: e7422 ARG1: u7423 ]                   |
+|                 |                |                       |           [ _advisor_n_1 LBL: h7426 ARG0: x7425 ] >                              |
+|                 |                |                       |   HCONS: < h7446 qeq h7421 h7428 qeq h7419 h7441 qeq h7426 >                     |
+|                 |                |                       |   EQS: < x7445 eq x7420 h7439 eq h7449 i7438 eq x7445 x7427 eq x7418 h7435 eq    |
+|                 |                |                       | h7431 i7434 eq x7427 h7424 eq h7426 u7423 eq x7425 h7435 eq h7426 x7433 eq x7425 |
+|                 |                |                       | x7440 eq x7425 h7439 eq h7444 p7437 eq x7440 > ]                                 |
 +-----------------+----------------+-----------------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------+

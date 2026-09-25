@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_Astronaut_Id1010_191_382
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+----------------------------------------------------------------------------------------------------------+
-|                                               GOLD OUTPUTS                                               |
-+---------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                 | Generated? |
-+---------------------------------------------------------------------------------------------+------------+
-| Nie Haisheng is from Hubei in the People's Republic of China.                               | False      |
-| Nie Haisheng was born in Hubei in the People's Republic of China.                           | False      |
-| Nie Haisheng was born in Hubei province and is a citizen of the people's Republic of China. | False      |
-+---------------------------------------------------------------------------------------------+------------+
++----------------------------------------------------------------------------------------+
+|                                      GOLD OUTPUTS                                      |
++---------------------------------------------------------------------------+------------+
+| Gold Output                                                               | Generated? |
++---------------------------------------------------------------------------+------------+
+| Nie Haisheng who was born in Hubei, previously worked as a fighter pilot. | False      |
+| Nie Haisheng, a fighter pilot, is from Hubei province.                    | False      |
+| Nie Haisheng, a former fighter pilot, was born in Hubei.                  | False      |
++---------------------------------------------------------------------------+------------+
 
 +------------------------------------------------------------------------------------+
 |                                    NODE METRICS                                    |
@@ -56,81 +56,73 @@ GRAPH NAME: WebNLG_test_2triples_Astronaut_Id1010_191_382
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h12618                                                                    |
-|               |   INDEX: e12615 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h12609 ARG0: e12606 ARG1: u12607 ARG2: u12608 ]     |
-|               |           [ explicit_or_proper_q LBL: h12613 ARG0: x12610 RSTR: h12611 BODY:     |
-|               | h12612 ]                                                                         |
-|               |           [ named LBL: h12605 ARG0: x12604 CARG: "Hubei" ]                       |
-|               |           [ _born_a_of LBL: h12618 ARG0: e12615 ARG1: u12616 ARG2: u12617 ]      |
-|               |           [ explicit_or_proper_q LBL: h12622 ARG0: x12619 RSTR: h12620 BODY:     |
-|               | h12621 ]                                                                         |
-|               |           [ named LBL: h12603 ARG0: x12602 CARG: "Nie Haisheng" ] >              |
-|               |   HCONS: < h12611 qeq h12605 h12620 qeq h12603 >                                 |
-|               |   EQS: < x12610 eq x12604 h12609 eq h12614 u12608 eq x12610 x12619 eq x12602     |
-|               | h12618 eq h12623 u12616 eq x12619 h12609 eq h12618 u12607 eq e12615 >            |
-|               |   SLOTS: < ARG2: u12617 > ]                                                      |
+| Original      | [ TOP: h853                                                                      |
+|               |   INDEX: e850 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_state LBL: h844 ARG0: e841 ARG1: u842 ARG2: u843 ]             |
+|               |           [ explicit_or_proper_q LBL: h848 ARG0: x845 RSTR: h846 BODY: h847 ]    |
+|               |           [ named LBL: h840 ARG0: x839 CARG: "Hubei" ]                           |
+|               |           [ _born_a_of LBL: h853 ARG0: e850 ARG1: u851 ARG2: u852 ]              |
+|               |           [ explicit_or_proper_q LBL: h857 ARG0: x854 RSTR: h855 BODY: h856 ]    |
+|               |           [ named LBL: h838 ARG0: x837 CARG: "Nie Haisheng" ] >                  |
+|               |   HCONS: < h846 qeq h840 h855 qeq h838 >                                         |
+|               |   EQS: < x845 eq x839 h844 eq h849 u843 eq x845 x854 eq x837 h853 eq h858 u851   |
+|               | eq x854 h844 eq h853 u842 eq e850 >                                              |
+|               |   SLOTS: < ARG2: u852 > ]                                                        |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h12609                                                                    |
-|               |   INDEX: e12615 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h12609 ARG0: e12606 ARG1: e12615 ARG2: x12604 ]     |
-|               |           [ explicit_or_proper_q LBL: h12613 ARG0: x12604 RSTR: h12611 BODY:     |
-|               | h12612 ]                                                                         |
-|               |           [ named LBL: h12605 ARG0: x12604 CARG: "Hubei" ]                       |
-|               |           [ _born_a_of LBL: h12609 ARG0: e12615 ARG1: x12602 ARG2: u12617 ]      |
-|               |           [ explicit_or_proper_q LBL: h12622 ARG0: x12602 RSTR: h12620 BODY:     |
-|               | h12621 ]                                                                         |
-|               |           [ named LBL: h12603 ARG0: x12602 CARG: "Nie Haisheng" ] >              |
-|               |   HCONS: < h12611 qeq h12605 h12620 qeq h12603 >                                 |
-|               |   SLOTS: < ARG2: u12617 > ]                                                      |
+| EQs Collapsed | [ TOP: h844                                                                      |
+|               |   INDEX: e850 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_state LBL: h844 ARG0: e841 ARG1: e850 ARG2: x839 ]             |
+|               |           [ explicit_or_proper_q LBL: h848 ARG0: x839 RSTR: h846 BODY: h847 ]    |
+|               |           [ named LBL: h840 ARG0: x839 CARG: "Hubei" ]                           |
+|               |           [ _born_a_of LBL: h844 ARG0: e850 ARG1: x837 ARG2: u852 ]              |
+|               |           [ explicit_or_proper_q LBL: h857 ARG0: x837 RSTR: h855 BODY: h856 ]    |
+|               |           [ named LBL: h838 ARG0: x837 CARG: "Nie Haisheng" ] >                  |
+|               |   HCONS: < h846 qeq h840 h855 qeq h838 >                                         |
+|               |   SLOTS: < ARG2: u852 > ]                                                        |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h12624                                                                    |
-|               |   INDEX: e12615 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h12609 ARG0: e12606 ARG1: e12615 ARG2: x12604 ]     |
-|               |           [ explicit_or_proper_q LBL: h12613 ARG0: x12604 RSTR: h12611 BODY:     |
-|               | h12612 ]                                                                         |
-|               |           [ named LBL: h12605 ARG0: x12604 CARG: "Hubei" ]                       |
-|               |           [ _born_a_of LBL: h12609 ARG0: e12615 ARG1: x12602 ARG2: u12617 ]      |
-|               |           [ explicit_or_proper_q LBL: h12622 ARG0: x12602 RSTR: h12620 BODY:     |
-|               | h12621 ]                                                                         |
-|               |           [ named LBL: h12603 ARG0: x12602 CARG: "Nie Haisheng" ] >              |
-|               |   HCONS: < h12611 qeq h12605 h12620 qeq h12603 h12624 qeq h12609 >               |
-|               |   SLOTS: < ARG2: u12617 > ]                                                      |
+| Prepped       | [ TOP: h859                                                                      |
+|               |   INDEX: e850 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_state LBL: h844 ARG0: e841 ARG1: e850 ARG2: x839 ]             |
+|               |           [ explicit_or_proper_q LBL: h848 ARG0: x839 RSTR: h846 BODY: h847 ]    |
+|               |           [ named LBL: h840 ARG0: x839 CARG: "Hubei" ]                           |
+|               |           [ _born_a_of LBL: h844 ARG0: e850 ARG1: x837 ARG2: u852 ]              |
+|               |           [ explicit_or_proper_q LBL: h857 ARG0: x837 RSTR: h855 BODY: h856 ]    |
+|               |           [ named LBL: h838 ARG0: x837 CARG: "Nie Haisheng" ] >                  |
+|               |   HCONS: < h846 qeq h840 h855 qeq h838 h859 qeq h844 >                           |
+|               |   SLOTS: < ARG2: u852 > ]                                                        |
 +---------------+----------------------------------------------------------------------------------+
 
-+--------------------------------------------------------------------------------------+
-|                                     NODE SEMENTS                                     |
-+--------------+-----------------------------------------------------------------------+
-| Node         | Generated SEMENT                                                      |
-+--------------+-----------------------------------------------------------------------+
-| Nie_Haisheng | [ TOP: h12603                                                         |
-|              |   INDEX: x12602                                                       |
-|              |   RELS: < [ named LBL: h12603 ARG0: x12602 CARG: "Nie Haisheng" ] > ] |
-+--------------+-----------------------------------------------------------------------+
-| Hubei        | [ TOP: h12605                                                         |
-|              |   INDEX: x12604                                                       |
-|              |   RELS: < [ named LBL: h12605 ARG0: x12604 CARG: "Hubei" ] > ]        |
-+--------------+-----------------------------------------------------------------------+
++----------------------------------------------------------------------------------+
+|                                   NODE SEMENTS                                   |
++--------------+-------------------------------------------------------------------+
+| Node         | Generated SEMENT                                                  |
++--------------+-------------------------------------------------------------------+
+| Nie_Haisheng | [ TOP: h838                                                       |
+|              |   INDEX: x837                                                     |
+|              |   RELS: < [ named LBL: h838 ARG0: x837 CARG: "Nie Haisheng" ] > ] |
++--------------+-------------------------------------------------------------------+
+| Hubei        | [ TOP: h840                                                       |
+|              |   INDEX: x839                                                     |
+|              |   RELS: < [ named LBL: h840 ARG0: x839 CARG: "Hubei" ] > ]        |
++--------------+-------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------+
 |                                                     EDGE SEMENTS                                                     |
 +------------+--------------+-------+----------------------------------------------------------------------------------+
 | Edge       | Parent       | Child | Generated SEMENT                                                                 |
 +------------+--------------+-------+----------------------------------------------------------------------------------+
-| birthPlace | Nie_Haisheng | Hubei | [ TOP: h12618                                                                    |
-|            |              |       |   INDEX: e12615 [ e TENSE: tensed ]                                              |
-|            |              |       |   RELS: < [ _in_p_state LBL: h12609 ARG0: e12606 ARG1: u12607 ARG2: u12608 ]     |
-|            |              |       |           [ explicit_or_proper_q LBL: h12613 ARG0: x12610 RSTR: h12611 BODY:     |
-|            |              |       | h12612 ]                                                                         |
-|            |              |       |           [ named LBL: h12605 ARG0: x12604 CARG: "Hubei" ]                       |
-|            |              |       |           [ _born_a_of LBL: h12618 ARG0: e12615 ARG1: u12616 ARG2: u12617 ]      |
-|            |              |       |           [ explicit_or_proper_q LBL: h12622 ARG0: x12619 RSTR: h12620 BODY:     |
-|            |              |       | h12621 ]                                                                         |
-|            |              |       |           [ named LBL: h12603 ARG0: x12602 CARG: "Nie Haisheng" ] >              |
-|            |              |       |   HCONS: < h12611 qeq h12605 h12620 qeq h12603 >                                 |
-|            |              |       |   EQS: < x12610 eq x12604 h12609 eq h12614 u12608 eq x12610 x12619 eq x12602     |
-|            |              |       | h12618 eq h12623 u12616 eq x12619 h12609 eq h12618 u12607 eq e12615 >            |
-|            |              |       |   SLOTS: < ARG2: u12617 > ]                                                      |
+| birthPlace | Nie_Haisheng | Hubei | [ TOP: h853                                                                      |
+|            |              |       |   INDEX: e850 [ e TENSE: tensed ]                                                |
+|            |              |       |   RELS: < [ _in_p_state LBL: h844 ARG0: e841 ARG1: u842 ARG2: u843 ]             |
+|            |              |       |           [ explicit_or_proper_q LBL: h848 ARG0: x845 RSTR: h846 BODY: h847 ]    |
+|            |              |       |           [ named LBL: h840 ARG0: x839 CARG: "Hubei" ]                           |
+|            |              |       |           [ _born_a_of LBL: h853 ARG0: e850 ARG1: u851 ARG2: u852 ]              |
+|            |              |       |           [ explicit_or_proper_q LBL: h857 ARG0: x854 RSTR: h855 BODY: h856 ]    |
+|            |              |       |           [ named LBL: h838 ARG0: x837 CARG: "Nie Haisheng" ] >                  |
+|            |              |       |   HCONS: < h846 qeq h840 h855 qeq h838 >                                         |
+|            |              |       |   EQS: < x845 eq x839 h844 eq h849 u843 eq x845 x854 eq x837 h853 eq h858 u851   |
+|            |              |       | eq x854 h844 eq h853 u842 eq e850 >                                              |
+|            |              |       |   SLOTS: < ARG2: u852 > ]                                                        |
 +------------+--------------+-------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------+

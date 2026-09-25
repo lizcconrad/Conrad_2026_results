@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_WrittenWork_Id1436_251_754
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-|                                                         GOLD OUTPUTS                                                        |
-+----------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                    | Generated? |
-+----------------------------------------------------------------------------------------------------------------+------------+
-| George Allen & Unwin published a Fantasy novel, The Fellowship of the Ring, written by J.R.R. Tolkien.         | False      |
-| J.R.R. Tolkien wrote fantasy literary genre book The Fellowship of the Ring published by George Allen & Unwin. | False      |
-| The Fellowship of the Ring, a fantasy novel by J.R.R. Tolkien, was published by George Allen & Unwin.          | False      |
-+----------------------------------------------------------------------------------------------------------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                   GOLD OUTPUTS                                                                   |
++-------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                         | Generated? |
++-------------------------------------------------------------------------------------------------------------------------------------+------------+
+| George Allen & Unwin published the fantasy novel The Fellowship of the Ring, which was followed by its sequel The Two Towers.       | False      |
+| George Allen & Unwin published the fantasy, Fellowship of the Ring, followed by The Two Towers.                                     | False      |
+| The Fellowship of the Ring and The Two Towers were books belonging to the fantasy literary genre published by George Allen & Unwin. | False      |
++-------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +--------------------------------------------------------------------------------------------------+
 |                                           NODE METRICS                                           |
@@ -56,65 +56,58 @@ GRAPH NAME: WebNLG_test_3triples_WrittenWork_Id1436_251_754
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h25668                                                                    |
-|               |   INDEX: e25665 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _belong_v_to LBL: h25668 ARG0: e25665 ARG1: i25666 ARG2: i25667 ]    |
-|               |           [ appos LBL: h25654 ARG0: e25651 ARG1: x25652 ARG2: i25653 ]           |
-|               |           [ def_udef_a_q LBL: h25663 ARG0: x25660 RSTR: h25661 BODY: h25662 ]    |
-|               |           [ _of_p LBL: h25641 ARG0: e25638 ARG1: u25639 ARG2: i25640 ]           |
-|               |           [ def_udef_a_q LBL: h25649 ARG0: x25646 RSTR: h25647 BODY: h25648 ]    |
-|               |           [ _literature_n_1 LBL: h25645 ARG0: x25644 ]                           |
-|               |           [ unk_n LBL: h25643 ARG0: x25642 [ x IND: + ] CARG: "genre" ]          |
-|               |           [ def_udef_a_q LBL: h25658 ARG0: x25655 RSTR: h25656 BODY: h25657 ]    |
-|               |           [ _fantasy_n_1 LBL: h25637 ARG0: x25636 ]                              |
-|               |           [ explicit_or_proper_q LBL: h25672 ARG0: x25669 RSTR: h25670 BODY:     |
-|               | h25671 ]                                                                         |
-|               |           [ named LBL: h25635 ARG0: x25634 CARG: "The Fellowship of the Ring" ]  |
-|               | >                                                                                |
-|               |   HCONS: < h25647 qeq h25645 h25661 qeq h25643 h25656 qeq h25637 h25670 qeq      |
-|               | h25635 >                                                                         |
-|               |   EQS: < x25646 eq x25644 h25641 eq h25650 i25640 eq x25646 h25641 eq h25643     |
-|               | u25639 eq x25642 x25660 eq x25642 h25654 eq h25664 i25653 eq x25660 x25655 eq    |
-|               | x25636 h25654 eq h25659 x25652 eq x25655 h25668 eq h25659 i25667 eq x25655       |
-|               | x25669 eq x25634 h25668 eq h25673 i25666 eq x25669 > ]                           |
+| Original      | [ TOP: h7973                                                                     |
+|               |   INDEX: e7970 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _belong_v_to LBL: h7973 ARG0: e7970 ARG1: i7971 ARG2: i7972 ]        |
+|               |           [ appos LBL: h7959 ARG0: e7956 ARG1: x7957 ARG2: i7958 ]               |
+|               |           [ def_udef_a_q LBL: h7968 ARG0: x7965 RSTR: h7966 BODY: h7967 ]        |
+|               |           [ _of_p LBL: h7946 ARG0: e7943 ARG1: u7944 ARG2: i7945 ]               |
+|               |           [ def_udef_a_q LBL: h7954 ARG0: x7951 RSTR: h7952 BODY: h7953 ]        |
+|               |           [ _literature_n_1 LBL: h7950 ARG0: x7949 ]                             |
+|               |           [ unk_n LBL: h7948 ARG0: x7947 [ x IND: + ] CARG: "genre" ]            |
+|               |           [ def_udef_a_q LBL: h7963 ARG0: x7960 RSTR: h7961 BODY: h7962 ]        |
+|               |           [ _fantasy_n_1 LBL: h7942 ARG0: x7941 ]                                |
+|               |           [ explicit_or_proper_q LBL: h7977 ARG0: x7974 RSTR: h7975 BODY: h7976  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7940 ARG0: x7939 CARG: "The Fellowship of the Ring" ] >  |
+|               |   HCONS: < h7952 qeq h7950 h7966 qeq h7948 h7961 qeq h7942 h7975 qeq h7940 >     |
+|               |   EQS: < x7951 eq x7949 h7946 eq h7955 i7945 eq x7951 h7946 eq h7948 u7944 eq    |
+|               | x7947 x7965 eq x7947 h7959 eq h7969 i7958 eq x7965 x7960 eq x7941 h7959 eq h7964 |
+|               | x7957 eq x7960 h7973 eq h7964 i7972 eq x7960 x7974 eq x7939 h7973 eq h7978 i7971 |
+|               | eq x7974 > ]                                                                     |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h25654                                                                    |
-|               |   INDEX: e25665 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _belong_v_to LBL: h25654 ARG0: e25665 ARG1: x25634 ARG2: x25636 ]    |
-|               |           [ appos LBL: h25654 ARG0: e25651 ARG1: x25636 ARG2: x25642 [ x IND: +  |
-|               | ] ]                                                                              |
-|               |           [ def_udef_a_q LBL: h25663 ARG0: x25642 RSTR: h25661 BODY: h25662 ]    |
-|               |           [ _of_p LBL: h25641 ARG0: e25638 ARG1: x25642 ARG2: x25644 ]           |
-|               |           [ def_udef_a_q LBL: h25649 ARG0: x25644 RSTR: h25647 BODY: h25648 ]    |
-|               |           [ _literature_n_1 LBL: h25645 ARG0: x25644 ]                           |
-|               |           [ unk_n LBL: h25641 ARG0: x25642 CARG: "genre" ]                       |
-|               |           [ def_udef_a_q LBL: h25658 ARG0: x25636 RSTR: h25656 BODY: h25657 ]    |
-|               |           [ _fantasy_n_1 LBL: h25637 ARG0: x25636 ]                              |
-|               |           [ explicit_or_proper_q LBL: h25672 ARG0: x25634 RSTR: h25670 BODY:     |
-|               | h25671 ]                                                                         |
-|               |           [ named LBL: h25635 ARG0: x25634 CARG: "The Fellowship of the Ring" ]  |
-|               | >                                                                                |
-|               |   HCONS: < h25647 qeq h25645 h25661 qeq h25641 h25656 qeq h25637 h25670 qeq      |
-|               | h25635 > ]                                                                       |
+| EQs Collapsed | [ TOP: h7959                                                                     |
+|               |   INDEX: e7970 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _belong_v_to LBL: h7959 ARG0: e7970 ARG1: x7939 ARG2: x7941 ]        |
+|               |           [ appos LBL: h7959 ARG0: e7956 ARG1: x7941 ARG2: x7947 [ x IND: + ] ]  |
+|               |           [ def_udef_a_q LBL: h7968 ARG0: x7947 RSTR: h7966 BODY: h7967 ]        |
+|               |           [ _of_p LBL: h7946 ARG0: e7943 ARG1: x7947 ARG2: x7949 ]               |
+|               |           [ def_udef_a_q LBL: h7954 ARG0: x7949 RSTR: h7952 BODY: h7953 ]        |
+|               |           [ _literature_n_1 LBL: h7950 ARG0: x7949 ]                             |
+|               |           [ unk_n LBL: h7946 ARG0: x7947 CARG: "genre" ]                         |
+|               |           [ def_udef_a_q LBL: h7963 ARG0: x7941 RSTR: h7961 BODY: h7962 ]        |
+|               |           [ _fantasy_n_1 LBL: h7942 ARG0: x7941 ]                                |
+|               |           [ explicit_or_proper_q LBL: h7977 ARG0: x7939 RSTR: h7975 BODY: h7976  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7940 ARG0: x7939 CARG: "The Fellowship of the Ring" ] >  |
+|               |   HCONS: < h7952 qeq h7950 h7966 qeq h7946 h7961 qeq h7942 h7975 qeq h7940 > ]   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h25674                                                                    |
-|               |   INDEX: e25665 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _belong_v_to LBL: h25654 ARG0: e25665 ARG1: x25634 ARG2: x25636 ]    |
-|               |           [ appos LBL: h25654 ARG0: e25651 ARG1: x25636 ARG2: x25642 [ x IND: +  |
-|               | ] ]                                                                              |
-|               |           [ def_udef_a_q LBL: h25663 ARG0: x25642 RSTR: h25661 BODY: h25662 ]    |
-|               |           [ _of_p LBL: h25641 ARG0: e25638 ARG1: x25642 ARG2: x25644 ]           |
-|               |           [ def_udef_a_q LBL: h25649 ARG0: x25644 RSTR: h25647 BODY: h25648 ]    |
-|               |           [ _literature_n_1 LBL: h25645 ARG0: x25644 ]                           |
-|               |           [ unk_n LBL: h25641 ARG0: x25642 CARG: "genre" ]                       |
-|               |           [ def_udef_a_q LBL: h25658 ARG0: x25636 RSTR: h25656 BODY: h25657 ]    |
-|               |           [ _fantasy_n_1 LBL: h25637 ARG0: x25636 ]                              |
-|               |           [ explicit_or_proper_q LBL: h25672 ARG0: x25634 RSTR: h25670 BODY:     |
-|               | h25671 ]                                                                         |
-|               |           [ named LBL: h25635 ARG0: x25634 CARG: "The Fellowship of the Ring" ]  |
-|               | >                                                                                |
-|               |   HCONS: < h25647 qeq h25645 h25661 qeq h25641 h25656 qeq h25637 h25670 qeq      |
-|               | h25635 h25674 qeq h25654 > ]                                                     |
+| Prepped       | [ TOP: h7979                                                                     |
+|               |   INDEX: e7970 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _belong_v_to LBL: h7959 ARG0: e7970 ARG1: x7939 ARG2: x7941 ]        |
+|               |           [ appos LBL: h7959 ARG0: e7956 ARG1: x7941 ARG2: x7947 [ x IND: + ] ]  |
+|               |           [ def_udef_a_q LBL: h7968 ARG0: x7947 RSTR: h7966 BODY: h7967 ]        |
+|               |           [ _of_p LBL: h7946 ARG0: e7943 ARG1: x7947 ARG2: x7949 ]               |
+|               |           [ def_udef_a_q LBL: h7954 ARG0: x7949 RSTR: h7952 BODY: h7953 ]        |
+|               |           [ _literature_n_1 LBL: h7950 ARG0: x7949 ]                             |
+|               |           [ unk_n LBL: h7946 ARG0: x7947 CARG: "genre" ]                         |
+|               |           [ def_udef_a_q LBL: h7963 ARG0: x7941 RSTR: h7961 BODY: h7962 ]        |
+|               |           [ _fantasy_n_1 LBL: h7942 ARG0: x7941 ]                                |
+|               |           [ explicit_or_proper_q LBL: h7977 ARG0: x7939 RSTR: h7975 BODY: h7976  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7940 ARG0: x7939 CARG: "The Fellowship of the Ring" ] >  |
+|               |   HCONS: < h7952 qeq h7950 h7966 qeq h7946 h7961 qeq h7942 h7975 qeq h7940 h7979 |
+|               | qeq h7959 > ]                                                                    |
 +---------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -122,26 +115,26 @@ GRAPH NAME: WebNLG_test_3triples_WrittenWork_Id1436_251_754
 +----------------------------+----------------------------------------------------------------------------------+
 | Node                       | Generated SEMENT                                                                 |
 +----------------------------+----------------------------------------------------------------------------------+
-| The_Fellowship_of_the_Ring | [ TOP: h25635                                                                    |
-|                            |   INDEX: x25634                                                                  |
-|                            |   RELS: < [ named LBL: h25635 ARG0: x25634 CARG: "The Fellowship of the Ring" ]  |
-|                            | > ]                                                                              |
+| The_Fellowship_of_the_Ring | [ TOP: h7940                                                                     |
+|                            |   INDEX: x7939                                                                   |
+|                            |   RELS: < [ named LBL: h7940 ARG0: x7939 CARG: "The Fellowship of the Ring" ] >  |
+|                            | ]                                                                                |
 +----------------------------+----------------------------------------------------------------------------------+
-| Fantasy_(genre)            | [ TOP: h25659                                                                    |
-|                            |   INDEX: x25655                                                                  |
-|                            |   RELS: < [ appos LBL: h25654 ARG0: e25651 ARG1: x25652 ARG2: i25653 ]           |
-|                            |           [ def_udef_a_q LBL: h25663 ARG0: x25660 RSTR: h25661 BODY: h25662 ]    |
-|                            |           [ _of_p LBL: h25641 ARG0: e25638 ARG1: u25639 ARG2: i25640 ]           |
-|                            |           [ def_udef_a_q LBL: h25649 ARG0: x25646 RSTR: h25647 BODY: h25648 ]    |
-|                            |           [ _literature_n_1 LBL: h25645 ARG0: x25644 ]                           |
-|                            |           [ unk_n LBL: h25643 ARG0: x25642 [ x IND: + ] CARG: "genre" ]          |
-|                            |           [ def_udef_a_q LBL: h25658 ARG0: x25655 RSTR: h25656 BODY: h25657 ]    |
-|                            |           [ _fantasy_n_1 LBL: h25637 ARG0: x25636 ] >                            |
-|                            |   HCONS: < h25647 qeq h25645 h25661 qeq h25643 h25656 qeq h25637 >               |
-|                            |   EQS: < x25646 eq x25644 h25641 eq h25650 i25640 eq x25646 h25641 eq h25643     |
-|                            | u25639 eq x25642 x25660 eq x25642 h25654 eq h25664 i25653 eq x25660 x25655 eq    |
-|                            | x25636 h25654 eq h25659 x25652 eq x25655 >                                       |
-|                            |   SLOTS: < BODY: h25657 > ]                                                      |
+| Fantasy_(genre)            | [ TOP: h7964                                                                     |
+|                            |   INDEX: x7960                                                                   |
+|                            |   RELS: < [ appos LBL: h7959 ARG0: e7956 ARG1: x7957 ARG2: i7958 ]               |
+|                            |           [ def_udef_a_q LBL: h7968 ARG0: x7965 RSTR: h7966 BODY: h7967 ]        |
+|                            |           [ _of_p LBL: h7946 ARG0: e7943 ARG1: u7944 ARG2: i7945 ]               |
+|                            |           [ def_udef_a_q LBL: h7954 ARG0: x7951 RSTR: h7952 BODY: h7953 ]        |
+|                            |           [ _literature_n_1 LBL: h7950 ARG0: x7949 ]                             |
+|                            |           [ unk_n LBL: h7948 ARG0: x7947 [ x IND: + ] CARG: "genre" ]            |
+|                            |           [ def_udef_a_q LBL: h7963 ARG0: x7960 RSTR: h7961 BODY: h7962 ]        |
+|                            |           [ _fantasy_n_1 LBL: h7942 ARG0: x7941 ] >                              |
+|                            |   HCONS: < h7952 qeq h7950 h7966 qeq h7948 h7961 qeq h7942 >                     |
+|                            |   EQS: < x7951 eq x7949 h7946 eq h7955 i7945 eq x7951 h7946 eq h7948 u7944 eq    |
+|                            | x7947 x7965 eq x7947 h7959 eq h7969 i7958 eq x7965 x7960 eq x7941 h7959 eq h7964 |
+|                            | x7957 eq x7960 >                                                                 |
+|                            |   SLOTS: < BODY: h7962 > ]                                                       |
 +----------------------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -149,27 +142,25 @@ GRAPH NAME: WebNLG_test_3triples_WrittenWork_Id1436_251_754
 +---------------+----------------------------+-----------------+----------------------------------------------------------------------------------+
 | Edge          | Parent                     | Child           | Generated SEMENT                                                                 |
 +---------------+----------------------------+-----------------+----------------------------------------------------------------------------------+
-| literaryGenre | The_Fellowship_of_the_Ring | Fantasy_(genre) | [ TOP: h25668                                                                    |
-|               |                            |                 |   INDEX: e25665 [ e TENSE: tensed ]                                              |
-|               |                            |                 |   RELS: < [ _belong_v_to LBL: h25668 ARG0: e25665 ARG1: i25666 ARG2: i25667 ]    |
-|               |                            |                 |           [ appos LBL: h25654 ARG0: e25651 ARG1: x25652 ARG2: i25653 ]           |
-|               |                            |                 |           [ def_udef_a_q LBL: h25663 ARG0: x25660 RSTR: h25661 BODY: h25662 ]    |
-|               |                            |                 |           [ _of_p LBL: h25641 ARG0: e25638 ARG1: u25639 ARG2: i25640 ]           |
-|               |                            |                 |           [ def_udef_a_q LBL: h25649 ARG0: x25646 RSTR: h25647 BODY: h25648 ]    |
-|               |                            |                 |           [ _literature_n_1 LBL: h25645 ARG0: x25644 ]                           |
-|               |                            |                 |           [ unk_n LBL: h25643 ARG0: x25642 [ x IND: + ] CARG: "genre" ]          |
-|               |                            |                 |           [ def_udef_a_q LBL: h25658 ARG0: x25655 RSTR: h25656 BODY: h25657 ]    |
-|               |                            |                 |           [ _fantasy_n_1 LBL: h25637 ARG0: x25636 ]                              |
-|               |                            |                 |           [ explicit_or_proper_q LBL: h25672 ARG0: x25669 RSTR: h25670 BODY:     |
-|               |                            |                 | h25671 ]                                                                         |
-|               |                            |                 |           [ named LBL: h25635 ARG0: x25634 CARG: "The Fellowship of the Ring" ]  |
-|               |                            |                 | >                                                                                |
-|               |                            |                 |   HCONS: < h25647 qeq h25645 h25661 qeq h25643 h25656 qeq h25637 h25670 qeq      |
-|               |                            |                 | h25635 >                                                                         |
-|               |                            |                 |   EQS: < x25646 eq x25644 h25641 eq h25650 i25640 eq x25646 h25641 eq h25643     |
-|               |                            |                 | u25639 eq x25642 x25660 eq x25642 h25654 eq h25664 i25653 eq x25660 x25655 eq    |
-|               |                            |                 | x25636 h25654 eq h25659 x25652 eq x25655 h25668 eq h25659 i25667 eq x25655       |
-|               |                            |                 | x25669 eq x25634 h25668 eq h25673 i25666 eq x25669 > ]                           |
+| literaryGenre | The_Fellowship_of_the_Ring | Fantasy_(genre) | [ TOP: h7973                                                                     |
+|               |                            |                 |   INDEX: e7970 [ e TENSE: tensed ]                                               |
+|               |                            |                 |   RELS: < [ _belong_v_to LBL: h7973 ARG0: e7970 ARG1: i7971 ARG2: i7972 ]        |
+|               |                            |                 |           [ appos LBL: h7959 ARG0: e7956 ARG1: x7957 ARG2: i7958 ]               |
+|               |                            |                 |           [ def_udef_a_q LBL: h7968 ARG0: x7965 RSTR: h7966 BODY: h7967 ]        |
+|               |                            |                 |           [ _of_p LBL: h7946 ARG0: e7943 ARG1: u7944 ARG2: i7945 ]               |
+|               |                            |                 |           [ def_udef_a_q LBL: h7954 ARG0: x7951 RSTR: h7952 BODY: h7953 ]        |
+|               |                            |                 |           [ _literature_n_1 LBL: h7950 ARG0: x7949 ]                             |
+|               |                            |                 |           [ unk_n LBL: h7948 ARG0: x7947 [ x IND: + ] CARG: "genre" ]            |
+|               |                            |                 |           [ def_udef_a_q LBL: h7963 ARG0: x7960 RSTR: h7961 BODY: h7962 ]        |
+|               |                            |                 |           [ _fantasy_n_1 LBL: h7942 ARG0: x7941 ]                                |
+|               |                            |                 |           [ explicit_or_proper_q LBL: h7977 ARG0: x7974 RSTR: h7975 BODY: h7976  |
+|               |                            |                 | ]                                                                                |
+|               |                            |                 |           [ named LBL: h7940 ARG0: x7939 CARG: "The Fellowship of the Ring" ] >  |
+|               |                            |                 |   HCONS: < h7952 qeq h7950 h7966 qeq h7948 h7961 qeq h7942 h7975 qeq h7940 >     |
+|               |                            |                 |   EQS: < x7951 eq x7949 h7946 eq h7955 i7945 eq x7951 h7946 eq h7948 u7944 eq    |
+|               |                            |                 | x7947 x7965 eq x7947 h7959 eq h7969 i7958 eq x7965 x7960 eq x7941 h7959 eq h7964 |
+|               |                            |                 | x7957 eq x7960 h7973 eq h7964 i7972 eq x7960 x7974 eq x7939 h7973 eq h7978 i7971 |
+|               |                            |                 | eq x7974 > ]                                                                     |
 +---------------+----------------------------+-----------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------+

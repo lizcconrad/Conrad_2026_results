@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id122_96_289
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-|                                                           GOLD OUTPUTS                                                          |
-+--------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                        | Generated? |
-+--------------------------------------------------------------------------------------------------------------------+------------+
-| Super Capers, a film written by Ray Griggs, is 98 minutes long. Danielle Harris was one of the stars of the movie. | False      |
-| The 98.0 minute film,Super Capers starring Danielle Harris was written by the director Ray Griggs.                 | False      |
-| The film Super Capers is written by Ray Griggs and stars Danielle Harris. The film's running time is 98 minutes.   | False      |
-+--------------------------------------------------------------------------------------------------------------------+------------+
++-------------------------------------------------------------------------------------------------------------------+
+|                                                    GOLD OUTPUTS                                                   |
++------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                          | Generated? |
++------------------------------------------------------------------------------------------------------+------------+
+| Danielle Harris is starring in Super Capers which was written and directed by Ray Griggs.            | False      |
+| Super Capers, which is a movie written and directed by Ray Griggs, starred Danielle Harris.          | False      |
+| Written and directed by Ray Griggs, the main role in the movie Super Capers went to Danielle Harris. | False      |
++------------------------------------------------------------------------------------------------------+------------+
 
 +---------------------------------------------------------------------------------------------+
 |                                         NODE METRICS                                        |
@@ -56,51 +56,50 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id122_96_289
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h10022                                                                    |
-|               |   INDEX: e10019 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _write_v_to LBL: h10022 ARG0: e10019 ARG1: i10020 ARG2: i10021 ]     |
-|               |           [ explicit_or_proper_q LBL: h10026 ARG0: x10023 RSTR: h10024 BODY:     |
-|               | h10025 ]                                                                         |
-|               |           [ named LBL: h9999 ARG0: x9998 CARG: "Super Capers" ]                  |
-|               |           [ appos LBL: h10008 ARG0: e10005 ARG1: x10006 ARG2: i10007 ]           |
-|               |           [ def_udef_a_q LBL: h10017 ARG0: x10014 RSTR: h10015 BODY: h10016 ]    |
-|               |           [ _director_n_of LBL: h10004 ARG0: x10002 ARG1: i10003 ]               |
-|               |           [ explicit_or_proper_q LBL: h10012 ARG0: x10009 RSTR: h10010 BODY:     |
-|               | h10011 ]                                                                         |
-|               |           [ named LBL: h10001 ARG0: x10000 CARG: "Ray Griggs" ] >                |
-|               |   HCONS: < h10024 qeq h9999 h10015 qeq h10004 h10010 qeq h10001 >                |
-|               |   EQS: < x10023 eq x9998 h10022 eq h10027 i10021 eq x10023 x10014 eq x10002      |
-|               | h10008 eq h10018 i10007 eq x10014 x10009 eq x10000 h10008 eq h10013 x10006 eq    |
-|               | x10009 h10022 eq h10013 i10020 eq x10009 > ]                                     |
+| Original      | [ TOP: h5715                                                                     |
+|               |   INDEX: e5712 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _write_v_to LBL: h5715 ARG0: e5712 ARG1: i5713 ARG2: i5714 ]         |
+|               |           [ explicit_or_proper_q LBL: h5719 ARG0: x5716 RSTR: h5717 BODY: h5718  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5692 ARG0: x5691 CARG: "Super Capers" ]                  |
+|               |           [ appos LBL: h5701 ARG0: e5698 ARG1: x5699 ARG2: i5700 ]               |
+|               |           [ def_udef_a_q LBL: h5710 ARG0: x5707 RSTR: h5708 BODY: h5709 ]        |
+|               |           [ _director_n_of LBL: h5697 ARG0: x5695 ARG1: i5696 ]                  |
+|               |           [ explicit_or_proper_q LBL: h5705 ARG0: x5702 RSTR: h5703 BODY: h5704  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5694 ARG0: x5693 CARG: "Ray Griggs" ] >                  |
+|               |   HCONS: < h5717 qeq h5692 h5708 qeq h5697 h5703 qeq h5694 >                     |
+|               |   EQS: < x5716 eq x5691 h5715 eq h5720 i5714 eq x5716 x5707 eq x5695 h5701 eq    |
+|               | h5711 i5700 eq x5707 x5702 eq x5693 h5701 eq h5706 x5699 eq x5702 h5715 eq h5706 |
+|               | i5713 eq x5702 > ]                                                               |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h10008                                                                    |
-|               |   INDEX: e10019 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _write_v_to LBL: h10008 ARG0: e10019 ARG1: x10000 ARG2: x10023 ]     |
-|               |           [ explicit_or_proper_q LBL: h10026 ARG0: x10023 RSTR: h10024 BODY:     |
-|               | h10025 ]                                                                         |
-|               |           [ named LBL: h9999 ARG0: x10023 CARG: "Super Capers" ]                 |
-|               |           [ appos LBL: h10008 ARG0: e10005 ARG1: x10000 ARG2: x10002 ]           |
-|               |           [ def_udef_a_q LBL: h10017 ARG0: x10002 RSTR: h10015 BODY: h10016 ]    |
-|               |           [ _director_n_of LBL: h10004 ARG0: x10002 ARG1: i10003 ]               |
-|               |           [ explicit_or_proper_q LBL: h10012 ARG0: x10000 RSTR: h10010 BODY:     |
-|               | h10011 ]                                                                         |
-|               |           [ named LBL: h10001 ARG0: x10000 CARG: "Ray Griggs" ] >                |
-|               |   HCONS: < h10024 qeq h9999 h10015 qeq h10004 h10010 qeq h10001 > ]              |
+| EQs Collapsed | [ TOP: h5701                                                                     |
+|               |   INDEX: e5712 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _write_v_to LBL: h5701 ARG0: e5712 ARG1: x5693 ARG2: x5691 ]         |
+|               |           [ explicit_or_proper_q LBL: h5719 ARG0: x5691 RSTR: h5717 BODY: h5718  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5692 ARG0: x5691 CARG: "Super Capers" ]                  |
+|               |           [ appos LBL: h5701 ARG0: e5698 ARG1: x5693 ARG2: x5695 ]               |
+|               |           [ def_udef_a_q LBL: h5710 ARG0: x5695 RSTR: h5708 BODY: h5709 ]        |
+|               |           [ _director_n_of LBL: h5697 ARG0: x5695 ARG1: i5696 ]                  |
+|               |           [ explicit_or_proper_q LBL: h5705 ARG0: x5693 RSTR: h5703 BODY: h5704  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5694 ARG0: x5693 CARG: "Ray Griggs" ] >                  |
+|               |   HCONS: < h5717 qeq h5692 h5708 qeq h5697 h5703 qeq h5694 > ]                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h10028                                                                    |
-|               |   INDEX: e10019 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _write_v_to LBL: h10008 ARG0: e10019 ARG1: x10000 ARG2: x10023 ]     |
-|               |           [ explicit_or_proper_q LBL: h10026 ARG0: x10023 RSTR: h10024 BODY:     |
-|               | h10025 ]                                                                         |
-|               |           [ named LBL: h9999 ARG0: x10023 CARG: "Super Capers" ]                 |
-|               |           [ appos LBL: h10008 ARG0: e10005 ARG1: x10000 ARG2: x10002 ]           |
-|               |           [ def_udef_a_q LBL: h10017 ARG0: x10002 RSTR: h10015 BODY: h10016 ]    |
-|               |           [ _director_n_of LBL: h10004 ARG0: x10002 ARG1: i10003 ]               |
-|               |           [ explicit_or_proper_q LBL: h10012 ARG0: x10000 RSTR: h10010 BODY:     |
-|               | h10011 ]                                                                         |
-|               |           [ named LBL: h10001 ARG0: x10000 CARG: "Ray Griggs" ] >                |
-|               |   HCONS: < h10024 qeq h9999 h10015 qeq h10004 h10010 qeq h10001 h10028 qeq       |
-|               | h10008 > ]                                                                       |
+| Prepped       | [ TOP: h5721                                                                     |
+|               |   INDEX: e5712 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _write_v_to LBL: h5701 ARG0: e5712 ARG1: x5693 ARG2: x5691 ]         |
+|               |           [ explicit_or_proper_q LBL: h5719 ARG0: x5691 RSTR: h5717 BODY: h5718  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5692 ARG0: x5691 CARG: "Super Capers" ]                  |
+|               |           [ appos LBL: h5701 ARG0: e5698 ARG1: x5693 ARG2: x5695 ]               |
+|               |           [ def_udef_a_q LBL: h5710 ARG0: x5695 RSTR: h5708 BODY: h5709 ]        |
+|               |           [ _director_n_of LBL: h5697 ARG0: x5695 ARG1: i5696 ]                  |
+|               |           [ explicit_or_proper_q LBL: h5705 ARG0: x5693 RSTR: h5703 BODY: h5704  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5694 ARG0: x5693 CARG: "Ray Griggs" ] >                  |
+|               |   HCONS: < h5717 qeq h5692 h5708 qeq h5697 h5703 qeq h5694 h5721 qeq h5701 > ]   |
 +---------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------+
@@ -108,22 +107,22 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id122_96_289
 +-----------------------+----------------------------------------------------------------------------------+
 | Node                  | Generated SEMENT                                                                 |
 +-----------------------+----------------------------------------------------------------------------------+
-| Super_Capers          | [ TOP: h9999                                                                     |
-|                       |   INDEX: x9998                                                                   |
-|                       |   RELS: < [ named LBL: h9999 ARG0: x9998 CARG: "Super Capers" ] > ]              |
+| Super_Capers          | [ TOP: h5692                                                                     |
+|                       |   INDEX: x5691                                                                   |
+|                       |   RELS: < [ named LBL: h5692 ARG0: x5691 CARG: "Super Capers" ] > ]              |
 +-----------------------+----------------------------------------------------------------------------------+
-| Ray_Griggs_(director) | [ TOP: h10013                                                                    |
-|                       |   INDEX: x10009                                                                  |
-|                       |   RELS: < [ appos LBL: h10008 ARG0: e10005 ARG1: x10006 ARG2: i10007 ]           |
-|                       |           [ def_udef_a_q LBL: h10017 ARG0: x10014 RSTR: h10015 BODY: h10016 ]    |
-|                       |           [ _director_n_of LBL: h10004 ARG0: x10002 ARG1: i10003 ]               |
-|                       |           [ explicit_or_proper_q LBL: h10012 ARG0: x10009 RSTR: h10010 BODY:     |
-|                       | h10011 ]                                                                         |
-|                       |           [ named LBL: h10001 ARG0: x10000 CARG: "Ray Griggs" ] >                |
-|                       |   HCONS: < h10015 qeq h10004 h10010 qeq h10001 >                                 |
-|                       |   EQS: < x10014 eq x10002 h10008 eq h10018 i10007 eq x10014 x10009 eq x10000     |
-|                       | h10008 eq h10013 x10006 eq x10009 >                                              |
-|                       |   SLOTS: < BODY: h10011 > ]                                                      |
+| Ray_Griggs_(director) | [ TOP: h5706                                                                     |
+|                       |   INDEX: x5702                                                                   |
+|                       |   RELS: < [ appos LBL: h5701 ARG0: e5698 ARG1: x5699 ARG2: i5700 ]               |
+|                       |           [ def_udef_a_q LBL: h5710 ARG0: x5707 RSTR: h5708 BODY: h5709 ]        |
+|                       |           [ _director_n_of LBL: h5697 ARG0: x5695 ARG1: i5696 ]                  |
+|                       |           [ explicit_or_proper_q LBL: h5705 ARG0: x5702 RSTR: h5703 BODY: h5704  |
+|                       | ]                                                                                |
+|                       |           [ named LBL: h5694 ARG0: x5693 CARG: "Ray Griggs" ] >                  |
+|                       |   HCONS: < h5708 qeq h5697 h5703 qeq h5694 >                                     |
+|                       |   EQS: < x5707 eq x5695 h5701 eq h5711 i5700 eq x5707 x5702 eq x5693 h5701 eq    |
+|                       | h5706 x5699 eq x5702 >                                                           |
+|                       |   SLOTS: < BODY: h5704 > ]                                                       |
 +-----------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------------+
@@ -131,22 +130,22 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id122_96_289
 +--------+--------------+-----------------------+----------------------------------------------------------------------------------+
 | Edge   | Parent       | Child                 | Generated SEMENT                                                                 |
 +--------+--------------+-----------------------+----------------------------------------------------------------------------------+
-| writer | Super_Capers | Ray_Griggs_(director) | [ TOP: h10022                                                                    |
-|        |              |                       |   INDEX: e10019 [ e TENSE: tensed ]                                              |
-|        |              |                       |   RELS: < [ _write_v_to LBL: h10022 ARG0: e10019 ARG1: i10020 ARG2: i10021 ]     |
-|        |              |                       |           [ explicit_or_proper_q LBL: h10026 ARG0: x10023 RSTR: h10024 BODY:     |
-|        |              |                       | h10025 ]                                                                         |
-|        |              |                       |           [ named LBL: h9999 ARG0: x9998 CARG: "Super Capers" ]                  |
-|        |              |                       |           [ appos LBL: h10008 ARG0: e10005 ARG1: x10006 ARG2: i10007 ]           |
-|        |              |                       |           [ def_udef_a_q LBL: h10017 ARG0: x10014 RSTR: h10015 BODY: h10016 ]    |
-|        |              |                       |           [ _director_n_of LBL: h10004 ARG0: x10002 ARG1: i10003 ]               |
-|        |              |                       |           [ explicit_or_proper_q LBL: h10012 ARG0: x10009 RSTR: h10010 BODY:     |
-|        |              |                       | h10011 ]                                                                         |
-|        |              |                       |           [ named LBL: h10001 ARG0: x10000 CARG: "Ray Griggs" ] >                |
-|        |              |                       |   HCONS: < h10024 qeq h9999 h10015 qeq h10004 h10010 qeq h10001 >                |
-|        |              |                       |   EQS: < x10023 eq x9998 h10022 eq h10027 i10021 eq x10023 x10014 eq x10002      |
-|        |              |                       | h10008 eq h10018 i10007 eq x10014 x10009 eq x10000 h10008 eq h10013 x10006 eq    |
-|        |              |                       | x10009 h10022 eq h10013 i10020 eq x10009 > ]                                     |
+| writer | Super_Capers | Ray_Griggs_(director) | [ TOP: h5715                                                                     |
+|        |              |                       |   INDEX: e5712 [ e TENSE: tensed ]                                               |
+|        |              |                       |   RELS: < [ _write_v_to LBL: h5715 ARG0: e5712 ARG1: i5713 ARG2: i5714 ]         |
+|        |              |                       |           [ explicit_or_proper_q LBL: h5719 ARG0: x5716 RSTR: h5717 BODY: h5718  |
+|        |              |                       | ]                                                                                |
+|        |              |                       |           [ named LBL: h5692 ARG0: x5691 CARG: "Super Capers" ]                  |
+|        |              |                       |           [ appos LBL: h5701 ARG0: e5698 ARG1: x5699 ARG2: i5700 ]               |
+|        |              |                       |           [ def_udef_a_q LBL: h5710 ARG0: x5707 RSTR: h5708 BODY: h5709 ]        |
+|        |              |                       |           [ _director_n_of LBL: h5697 ARG0: x5695 ARG1: i5696 ]                  |
+|        |              |                       |           [ explicit_or_proper_q LBL: h5705 ARG0: x5702 RSTR: h5703 BODY: h5704  |
+|        |              |                       | ]                                                                                |
+|        |              |                       |           [ named LBL: h5694 ARG0: x5693 CARG: "Ray Griggs" ] >                  |
+|        |              |                       |   HCONS: < h5717 qeq h5692 h5708 qeq h5697 h5703 qeq h5694 >                     |
+|        |              |                       |   EQS: < x5716 eq x5691 h5715 eq h5720 i5714 eq x5716 x5707 eq x5695 h5701 eq    |
+|        |              |                       | h5711 i5700 eq x5707 x5702 eq x5693 h5701 eq h5706 x5699 eq x5702 h5715 eq h5706 |
+|        |              |                       | i5713 eq x5702 > ]                                                               |
 +--------+--------------+-----------------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------+

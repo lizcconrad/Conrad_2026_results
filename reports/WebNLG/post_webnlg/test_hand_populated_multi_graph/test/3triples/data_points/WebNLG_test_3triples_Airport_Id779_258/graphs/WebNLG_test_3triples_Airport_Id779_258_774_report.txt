@@ -24,14 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Airport_Id779_258_774
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+------------------------------------------------------------------------------------------------------------------------------+
-|                                                         GOLD OUTPUTS                                                         |
-+-----------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                     | Generated? |
-+-----------------------------------------------------------------------------------------------------------------+------------+
-| The runway length at the Bedford Aerodrome in Thurleigh is 1095 and the aerodrome serves the Bedford Autodrome. | False      |
-| The runway length of the Bedford Aerodrome (serviced by the Bedford Autodrome) in Thurleigh measures 1095.0.    | False      |
-+-----------------------------------------------------------------------------------------------------------------+------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+|                                                            GOLD OUTPUTS                                                            |
++-----------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                           | Generated? |
++-----------------------------------------------------------------------------------------------------------------------+------------+
+| Bedford Aerodrome has a runway named 08/26 that has a length of 1095.0 and is located 83.2104 above sea level.        | False      |
+| The Bedford Aerodrome is 83.2 meters above sea level. The runway has a length of 1095 and is named 08/26.             | False      |
+| The Bedford Aerodrome runway, which is 1095 long, is named 08/26 and its elevation above sea level is 83.2104 meters. | False      |
++-----------------------------------------------------------------------------------------------------------------------+------------+
 
 +-----------------------------------------------------------------------------------------+
 |                                       NODE METRICS                                      |
@@ -55,100 +56,88 @@ GRAPH NAME: WebNLG_test_3triples_Airport_Id779_258_774
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h26326                                                                    |
-|               |   INDEX: e26323 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h26326 ARG0: e26323 ARG1: p26324 ARG2: i26325 ]        |
-|               |           [ number_q LBL: h26335 ARG0: x26332 RSTR: h26333 BODY: h26334 ]        |
-|               |           [ card LBL: h26303 ARG0: i26301 ARG1: u26302 CARG: "1095.0" ]          |
-|               |           [ def_udef_a_q LBL: h26330 ARG0: x26327 RSTR: h26328 BODY: h26329 ]    |
-|               |           [ compound LBL: h26317 ARG0: e26314 ARG1: u26315 ARG2: u26316 ]        |
-|               |           [ existential_q LBL: h26321 ARG0: x26318 RSTR: h26319 BODY: h26320 ]   |
-|               |           [ _runway_n_1 LBL: h26313 ARG0: x26312 [ x NUM: sg ] ]                 |
-|               |           [ _length_n_of LBL: h26306 ARG0: x26304 ARG1: i26305 ]                 |
-|               |           [ explicit_or_proper_q LBL: h26310 ARG0: x26307 RSTR: h26308 BODY:     |
-|               | h26309 ]                                                                         |
-|               |           [ named LBL: h26300 ARG0: x26299 CARG: "Bedford Aerodrome" ] >         |
-|               |   HCONS: < h26333 qeq h26303 h26319 qeq h26313 h26308 qeq h26300 h26328 qeq      |
-|               | h26306 >                                                                         |
-|               |   EQS: < x26332 eq i26301 h26326 eq h26336 i26325 eq x26332 x26318 eq x26312     |
-|               | h26317 eq h26322 u26316 eq x26318 x26307 eq x26299 h26306 eq h26311 i26305 eq    |
-|               | x26307 h26317 eq h26306 u26315 eq x26304 x26327 eq x26304 h26326 eq h26331       |
-|               | p26324 eq x26327 > ]                                                             |
+| Original      | [ TOP: h87                                                                       |
+|               |   INDEX: e84 [ e SF: prop TENSE: tensed ]                                        |
+|               |   RELS: < [ _be_v_id LBL: h87 ARG0: e84 ARG1: p85 ARG2: i86 ]                    |
+|               |           [ number_q LBL: h96 ARG0: x93 RSTR: h94 BODY: h95 ]                    |
+|               |           [ card LBL: h64 ARG0: i62 ARG1: u63 CARG: "1095.0" ]                   |
+|               |           [ def_udef_a_q LBL: h91 ARG0: x88 RSTR: h89 BODY: h90 ]                |
+|               |           [ compound LBL: h78 ARG0: e75 ARG1: u76 ARG2: u77 ]                    |
+|               |           [ existential_q LBL: h82 ARG0: x79 RSTR: h80 BODY: h81 ]               |
+|               |           [ _runway_n_1 LBL: h74 ARG0: x73 [ x NUM: sg ] ]                       |
+|               |           [ _length_n_of LBL: h67 ARG0: x65 ARG1: i66 ]                          |
+|               |           [ explicit_or_proper_q LBL: h71 ARG0: x68 RSTR: h69 BODY: h70 ]        |
+|               |           [ named LBL: h61 ARG0: x60 CARG: "Bedford Aerodrome" ] >               |
+|               |   HCONS: < h94 qeq h64 h80 qeq h74 h69 qeq h61 h89 qeq h67 >                     |
+|               |   EQS: < x93 eq i62 h87 eq h97 i86 eq x93 x79 eq x73 h78 eq h83 u77 eq x79 x68   |
+|               | eq x60 h67 eq h72 i66 eq x68 h78 eq h67 u76 eq x65 x88 eq x65 h87 eq h92 p85 eq  |
+|               | x88 > ]                                                                          |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h26326                                                                    |
-|               |   INDEX: e26323 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h26326 ARG0: e26323 ARG1: x26304 ARG2: x26332 ]        |
-|               |           [ number_q LBL: h26335 ARG0: x26332 RSTR: h26333 BODY: h26334 ]        |
-|               |           [ card LBL: h26303 ARG0: x26332 ARG1: u26302 CARG: "1095.0" ]          |
-|               |           [ def_udef_a_q LBL: h26330 ARG0: x26304 RSTR: h26328 BODY: h26329 ]    |
-|               |           [ compound LBL: h26306 ARG0: e26314 ARG1: x26304 ARG2: x26312 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h26321 ARG0: x26312 RSTR: h26319 BODY: h26320 ]   |
-|               |           [ _runway_n_1 LBL: h26313 ARG0: x26312 ]                               |
-|               |           [ _length_n_of LBL: h26306 ARG0: x26304 ARG1: x26299 ]                 |
-|               |           [ explicit_or_proper_q LBL: h26310 ARG0: x26299 RSTR: h26308 BODY:     |
-|               | h26309 ]                                                                         |
-|               |           [ named LBL: h26300 ARG0: x26299 CARG: "Bedford Aerodrome" ] >         |
-|               |   HCONS: < h26333 qeq h26303 h26319 qeq h26313 h26308 qeq h26300 h26328 qeq      |
-|               | h26306 > ]                                                                       |
+| EQs Collapsed | [ TOP: h87                                                                       |
+|               |   INDEX: e84 [ e SF: prop TENSE: tensed ]                                        |
+|               |   RELS: < [ _be_v_id LBL: h87 ARG0: e84 ARG1: x65 ARG2: x93 ]                    |
+|               |           [ number_q LBL: h96 ARG0: x93 RSTR: h94 BODY: h95 ]                    |
+|               |           [ card LBL: h64 ARG0: x93 ARG1: u63 CARG: "1095.0" ]                   |
+|               |           [ def_udef_a_q LBL: h91 ARG0: x65 RSTR: h89 BODY: h90 ]                |
+|               |           [ compound LBL: h67 ARG0: e75 ARG1: x65 ARG2: x73 [ x NUM: sg ] ]      |
+|               |           [ existential_q LBL: h82 ARG0: x73 RSTR: h80 BODY: h81 ]               |
+|               |           [ _runway_n_1 LBL: h74 ARG0: x73 ]                                     |
+|               |           [ _length_n_of LBL: h67 ARG0: x65 ARG1: x60 ]                          |
+|               |           [ explicit_or_proper_q LBL: h71 ARG0: x60 RSTR: h69 BODY: h70 ]        |
+|               |           [ named LBL: h61 ARG0: x60 CARG: "Bedford Aerodrome" ] >               |
+|               |   HCONS: < h94 qeq h64 h80 qeq h74 h69 qeq h61 h89 qeq h67 > ]                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h26337                                                                    |
-|               |   INDEX: e26323 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h26326 ARG0: e26323 ARG1: x26304 ARG2: x26332 ]        |
-|               |           [ number_q LBL: h26335 ARG0: x26332 RSTR: h26333 BODY: h26334 ]        |
-|               |           [ card LBL: h26303 ARG0: x26332 ARG1: u26302 CARG: "1095.0" ]          |
-|               |           [ def_udef_a_q LBL: h26330 ARG0: x26304 RSTR: h26328 BODY: h26329 ]    |
-|               |           [ compound LBL: h26306 ARG0: e26314 ARG1: x26304 ARG2: x26312 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h26321 ARG0: x26312 RSTR: h26319 BODY: h26320 ]   |
-|               |           [ _runway_n_1 LBL: h26313 ARG0: x26312 ]                               |
-|               |           [ _length_n_of LBL: h26306 ARG0: x26304 ARG1: x26299 ]                 |
-|               |           [ explicit_or_proper_q LBL: h26310 ARG0: x26299 RSTR: h26308 BODY:     |
-|               | h26309 ]                                                                         |
-|               |           [ named LBL: h26300 ARG0: x26299 CARG: "Bedford Aerodrome" ] >         |
-|               |   HCONS: < h26333 qeq h26303 h26319 qeq h26313 h26308 qeq h26300 h26328 qeq      |
-|               | h26306 h26337 qeq h26326 > ]                                                     |
+| Prepped       | [ TOP: h98                                                                       |
+|               |   INDEX: e84 [ e SF: prop TENSE: tensed ]                                        |
+|               |   RELS: < [ _be_v_id LBL: h87 ARG0: e84 ARG1: x65 ARG2: x93 ]                    |
+|               |           [ number_q LBL: h96 ARG0: x93 RSTR: h94 BODY: h95 ]                    |
+|               |           [ card LBL: h64 ARG0: x93 ARG1: u63 CARG: "1095.0" ]                   |
+|               |           [ def_udef_a_q LBL: h91 ARG0: x65 RSTR: h89 BODY: h90 ]                |
+|               |           [ compound LBL: h67 ARG0: e75 ARG1: x65 ARG2: x73 [ x NUM: sg ] ]      |
+|               |           [ existential_q LBL: h82 ARG0: x73 RSTR: h80 BODY: h81 ]               |
+|               |           [ _runway_n_1 LBL: h74 ARG0: x73 ]                                     |
+|               |           [ _length_n_of LBL: h67 ARG0: x65 ARG1: x60 ]                          |
+|               |           [ explicit_or_proper_q LBL: h71 ARG0: x60 RSTR: h69 BODY: h70 ]        |
+|               |           [ named LBL: h61 ARG0: x60 CARG: "Bedford Aerodrome" ] >               |
+|               |   HCONS: < h94 qeq h64 h80 qeq h74 h69 qeq h61 h89 qeq h67 h98 qeq h87 > ]       |
 +---------------+----------------------------------------------------------------------------------+
 
-+------------------------------------------------------------------------------------------------+
-|                                          NODE SEMENTS                                          |
-+-------------------+----------------------------------------------------------------------------+
-| Node              | Generated SEMENT                                                           |
-+-------------------+----------------------------------------------------------------------------+
-| Bedford_Aerodrome | [ TOP: h26300                                                              |
-|                   |   INDEX: x26299                                                            |
-|                   |   RELS: < [ named LBL: h26300 ARG0: x26299 CARG: "Bedford Aerodrome" ] > ] |
-+-------------------+----------------------------------------------------------------------------+
-| 1095.0            | [ TOP: h26303                                                              |
-|                   |   INDEX: i26301                                                            |
-|                   |   RELS: < [ card LBL: h26303 ARG0: i26301 ARG1: u26302 CARG: "1095.0" ] >  |
-|                   |   SLOTS: < ARG1: u26302 > ]                                                |
-+-------------------+----------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------+
+|                                       NODE SEMENTS                                       |
++-------------------+----------------------------------------------------------------------+
+| Node              | Generated SEMENT                                                     |
++-------------------+----------------------------------------------------------------------+
+| Bedford_Aerodrome | [ TOP: h61                                                           |
+|                   |   INDEX: x60                                                         |
+|                   |   RELS: < [ named LBL: h61 ARG0: x60 CARG: "Bedford Aerodrome" ] > ] |
++-------------------+----------------------------------------------------------------------+
+| 1095.0            | [ TOP: h64                                                           |
+|                   |   INDEX: i62                                                         |
+|                   |   RELS: < [ card LBL: h64 ARG0: i62 ARG1: u63 CARG: "1095.0" ] >     |
+|                   |   SLOTS: < ARG1: u63 > ]                                             |
++-------------------+----------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------------------------------------+
 |                                                         EDGE SEMENTS                                                         |
 +--------------+-------------------+--------+----------------------------------------------------------------------------------+
 | Edge         | Parent            | Child  | Generated SEMENT                                                                 |
 +--------------+-------------------+--------+----------------------------------------------------------------------------------+
-| runwayLength | Bedford_Aerodrome | 1095.0 | [ TOP: h26326                                                                    |
-|              |                   |        |   INDEX: e26323 [ e SF: prop TENSE: tensed ]                                     |
-|              |                   |        |   RELS: < [ _be_v_id LBL: h26326 ARG0: e26323 ARG1: p26324 ARG2: i26325 ]        |
-|              |                   |        |           [ number_q LBL: h26335 ARG0: x26332 RSTR: h26333 BODY: h26334 ]        |
-|              |                   |        |           [ card LBL: h26303 ARG0: i26301 ARG1: u26302 CARG: "1095.0" ]          |
-|              |                   |        |           [ def_udef_a_q LBL: h26330 ARG0: x26327 RSTR: h26328 BODY: h26329 ]    |
-|              |                   |        |           [ compound LBL: h26317 ARG0: e26314 ARG1: u26315 ARG2: u26316 ]        |
-|              |                   |        |           [ existential_q LBL: h26321 ARG0: x26318 RSTR: h26319 BODY: h26320 ]   |
-|              |                   |        |           [ _runway_n_1 LBL: h26313 ARG0: x26312 [ x NUM: sg ] ]                 |
-|              |                   |        |           [ _length_n_of LBL: h26306 ARG0: x26304 ARG1: i26305 ]                 |
-|              |                   |        |           [ explicit_or_proper_q LBL: h26310 ARG0: x26307 RSTR: h26308 BODY:     |
-|              |                   |        | h26309 ]                                                                         |
-|              |                   |        |           [ named LBL: h26300 ARG0: x26299 CARG: "Bedford Aerodrome" ] >         |
-|              |                   |        |   HCONS: < h26333 qeq h26303 h26319 qeq h26313 h26308 qeq h26300 h26328 qeq      |
-|              |                   |        | h26306 >                                                                         |
-|              |                   |        |   EQS: < x26332 eq i26301 h26326 eq h26336 i26325 eq x26332 x26318 eq x26312     |
-|              |                   |        | h26317 eq h26322 u26316 eq x26318 x26307 eq x26299 h26306 eq h26311 i26305 eq    |
-|              |                   |        | x26307 h26317 eq h26306 u26315 eq x26304 x26327 eq x26304 h26326 eq h26331       |
-|              |                   |        | p26324 eq x26327 > ]                                                             |
+| runwayLength | Bedford_Aerodrome | 1095.0 | [ TOP: h87                                                                       |
+|              |                   |        |   INDEX: e84 [ e SF: prop TENSE: tensed ]                                        |
+|              |                   |        |   RELS: < [ _be_v_id LBL: h87 ARG0: e84 ARG1: p85 ARG2: i86 ]                    |
+|              |                   |        |           [ number_q LBL: h96 ARG0: x93 RSTR: h94 BODY: h95 ]                    |
+|              |                   |        |           [ card LBL: h64 ARG0: i62 ARG1: u63 CARG: "1095.0" ]                   |
+|              |                   |        |           [ def_udef_a_q LBL: h91 ARG0: x88 RSTR: h89 BODY: h90 ]                |
+|              |                   |        |           [ compound LBL: h78 ARG0: e75 ARG1: u76 ARG2: u77 ]                    |
+|              |                   |        |           [ existential_q LBL: h82 ARG0: x79 RSTR: h80 BODY: h81 ]               |
+|              |                   |        |           [ _runway_n_1 LBL: h74 ARG0: x73 [ x NUM: sg ] ]                       |
+|              |                   |        |           [ _length_n_of LBL: h67 ARG0: x65 ARG1: i66 ]                          |
+|              |                   |        |           [ explicit_or_proper_q LBL: h71 ARG0: x68 RSTR: h69 BODY: h70 ]        |
+|              |                   |        |           [ named LBL: h61 ARG0: x60 CARG: "Bedford Aerodrome" ] >               |
+|              |                   |        |   HCONS: < h94 qeq h64 h80 qeq h74 h69 qeq h61 h89 qeq h67 >                     |
+|              |                   |        |   EQS: < x93 eq i62 h87 eq h97 i86 eq x93 x79 eq x73 h78 eq h83 u77 eq x79 x68   |
+|              |                   |        | eq x60 h67 eq h72 i66 eq x68 h78 eq h67 u76 eq x65 x88 eq x65 h87 eq h92 p85 eq  |
+|              |                   |        | x88 > ]                                                                          |
 +--------------+-------------------+--------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------+

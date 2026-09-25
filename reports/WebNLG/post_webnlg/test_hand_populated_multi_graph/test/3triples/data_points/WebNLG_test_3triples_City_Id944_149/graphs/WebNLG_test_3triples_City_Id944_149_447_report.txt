@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_City_Id944_149_447
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                                 GOLD OUTPUTS                                                                                 |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                                     | Generated? |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Ciudad Ayala city has a population density of 1604.0 and uses a type of government called council-manager government where the leader is called the governator. | False      |
-| Ciudad Ayala government type in the city is council-manager and has a leader called the Governator. The population density in Ciudad Ayala is 1604.             | False      |
-| The population density of Ciudad Ayala is 1604.0 which uses a council-manager government where the leader is called the governator.                             | False      |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------+
+|                                                          GOLD OUTPUTS                                                          |
++-------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                       | Generated? |
++-------------------------------------------------------------------------------------------------------------------+------------+
+| Ciudad Ayala city has a population density of 1604.0 uses a type of government called council-manager government. | False      |
+| Ciudad Ayala is a city with a population density of 1604.0 and a council-manager government.                      | False      |
+| Ciudad Ayala is a city with the population density of 1604 and has a council-manager as their government type.    | False      |
++-------------------------------------------------------------------------------------------------------------------+------------+
 
 +--------------------------------------------------------------------------------------------------+
 |                                           NODE METRICS                                           |
@@ -56,73 +56,71 @@ GRAPH NAME: WebNLG_test_3triples_City_Id944_149_447
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h15010                                                                    |
-|               |   INDEX: e15007 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h15010 ARG0: e15007 ARG1: i15008 ARG2: i15009 ]       |
-|               |           [ def_udef_a_q LBL: h15039 ARG0: x15036 RSTR: h15037 BODY: h15038 ]    |
-|               |           [ compound LBL: h15025 ARG0: e15022 ARG1: u15023 ARG2: u15024 ]        |
-|               |           [ existential_q LBL: h15029 ARG0: x15026 RSTR: h15027 BODY: h15028 ]   |
-|               |           [ compound LBL: h15001 ARG0: e14998 ARG1: u14999 ARG2: u15000 ]        |
-|               |           [ existential_q LBL: h15005 ARG0: x15002 RSTR: h15003 BODY: h15004 ]   |
-|               |           [ unk_n LBL: h14997 ARG0: x14996 [ x NUM: sg IND: + ] CARG: "council-  |
+| Original      | [ TOP: h1468                                                                     |
+|               |   INDEX: e1465 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h1468 ARG0: e1465 ARG1: i1466 ARG2: i1467 ]           |
+|               |           [ def_udef_a_q LBL: h1497 ARG0: x1494 RSTR: h1495 BODY: h1496 ]        |
+|               |           [ compound LBL: h1483 ARG0: e1480 ARG1: u1481 ARG2: u1482 ]            |
+|               |           [ existential_q LBL: h1487 ARG0: x1484 RSTR: h1485 BODY: h1486 ]       |
+|               |           [ compound LBL: h1459 ARG0: e1456 ARG1: u1457 ARG2: u1458 ]            |
+|               |           [ existential_q LBL: h1463 ARG0: x1460 RSTR: h1461 BODY: h1462 ]       |
+|               |           [ unk_n LBL: h1455 ARG0: x1454 [ x NUM: sg IND: + ] CARG: "council-    |
 |               | manager" ]                                                                       |
-|               |           [ _government_n_of LBL: h14995 ARG0: x14993 [ x NUM: sg ] ARG1: i14994 |
+|               |           [ _government_n_of LBL: h1453 ARG0: x1451 [ x NUM: sg ] ARG1: i1452 ]  |
+|               |           [ _type_n_of-n LBL: h1471 ARG0: x1469 ARG1: i1470 ]                    |
+|               |           [ def_udef_a_q LBL: h1478 ARG0: x1475 RSTR: h1476 BODY: h1477 ]        |
+|               |           [ _government_n_of LBL: h1474 ARG0: x1472 ARG1: i1473 ]                |
+|               |           [ explicit_or_proper_q LBL: h1492 ARG0: x1489 RSTR: h1490 BODY: h1491  |
 |               | ]                                                                                |
-|               |           [ _type_n_of-n LBL: h15013 ARG0: x15011 ARG1: i15012 ]                 |
-|               |           [ def_udef_a_q LBL: h15020 ARG0: x15017 RSTR: h15018 BODY: h15019 ]    |
-|               |           [ _government_n_of LBL: h15016 ARG0: x15014 ARG1: i15015 ]             |
-|               |           [ explicit_or_proper_q LBL: h15034 ARG0: x15031 RSTR: h15032 BODY:     |
-|               | h15033 ]                                                                         |
-|               |           [ named LBL: h14992 ARG0: x14991 CARG: "Ciudad Ayala" ] >              |
-|               |   HCONS: < h15003 qeq h14997 h15027 qeq h14995 h15018 qeq h15016 h15037 qeq      |
-|               | h15013 h15032 qeq h14992 >                                                       |
-|               |   EQS: < x15002 eq x14996 h15001 eq h15006 u15000 eq x15002 h15001 eq h14995     |
-|               | u14999 eq x14993 x15026 eq x14993 h15025 eq h15030 u15024 eq x15026 x15017 eq    |
-|               | x15014 h15013 eq h15021 i15012 eq x15017 h15025 eq h15013 u15023 eq x15011       |
-|               | x15036 eq x15011 h15010 eq h15040 i15009 eq x15036 x15031 eq x14991 h15010 eq    |
-|               | h15035 i15008 eq x15031 > ]                                                      |
+|               |           [ named LBL: h1450 ARG0: x1449 CARG: "Ciudad Ayala" ] >                |
+|               |   HCONS: < h1461 qeq h1455 h1485 qeq h1453 h1476 qeq h1474 h1495 qeq h1471 h1490 |
+|               | qeq h1450 >                                                                      |
+|               |   EQS: < x1460 eq x1454 h1459 eq h1464 u1458 eq x1460 h1459 eq h1453 u1457 eq    |
+|               | x1451 x1484 eq x1451 h1483 eq h1488 u1482 eq x1484 x1475 eq x1472 h1471 eq h1479 |
+|               | i1470 eq x1475 h1483 eq h1471 u1481 eq x1469 x1494 eq x1469 h1468 eq h1498 i1467 |
+|               | eq x1494 x1489 eq x1449 h1468 eq h1493 i1466 eq x1489 > ]                        |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h15010                                                                    |
-|               |   INDEX: e15007 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h15010 ARG0: e15007 ARG1: x14991 ARG2: x15011 ]       |
-|               |           [ def_udef_a_q LBL: h15039 ARG0: x15011 RSTR: h15037 BODY: h15038 ]    |
-|               |           [ compound LBL: h15013 ARG0: e15022 ARG1: x15011 ARG2: x14993 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h15029 ARG0: x14993 RSTR: h15027 BODY: h15028 ]   |
-|               |           [ compound LBL: h14995 ARG0: e14998 ARG1: x14993 ARG2: x14996 [ x NUM: |
-|               | sg IND: + ] ]                                                                    |
-|               |           [ existential_q LBL: h15005 ARG0: x14996 RSTR: h15003 BODY: h15004 ]   |
-|               |           [ unk_n LBL: h14997 ARG0: x14996 CARG: "council-manager" ]             |
-|               |           [ _government_n_of LBL: h14995 ARG0: x14993 ARG1: i14994 ]             |
-|               |           [ _type_n_of-n LBL: h15013 ARG0: x15011 ARG1: x15014 ]                 |
-|               |           [ def_udef_a_q LBL: h15020 ARG0: x15014 RSTR: h15018 BODY: h15019 ]    |
-|               |           [ _government_n_of LBL: h15016 ARG0: x15014 ARG1: i15015 ]             |
-|               |           [ explicit_or_proper_q LBL: h15034 ARG0: x14991 RSTR: h15032 BODY:     |
-|               | h15033 ]                                                                         |
-|               |           [ named LBL: h14992 ARG0: x14991 CARG: "Ciudad Ayala" ] >              |
-|               |   HCONS: < h15003 qeq h14997 h15027 qeq h14995 h15018 qeq h15016 h15037 qeq      |
-|               | h15013 h15032 qeq h14992 > ]                                                     |
+| EQs Collapsed | [ TOP: h1468                                                                     |
+|               |   INDEX: e1465 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h1468 ARG0: e1465 ARG1: x1449 ARG2: x1469 ]           |
+|               |           [ def_udef_a_q LBL: h1497 ARG0: x1469 RSTR: h1495 BODY: h1496 ]        |
+|               |           [ compound LBL: h1471 ARG0: e1480 ARG1: x1469 ARG2: x1451 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h1487 ARG0: x1451 RSTR: h1485 BODY: h1486 ]       |
+|               |           [ compound LBL: h1453 ARG0: e1456 ARG1: x1451 ARG2: x1454 [ x NUM: sg  |
+|               | IND: + ] ]                                                                       |
+|               |           [ existential_q LBL: h1463 ARG0: x1454 RSTR: h1461 BODY: h1462 ]       |
+|               |           [ unk_n LBL: h1455 ARG0: x1454 CARG: "council-manager" ]               |
+|               |           [ _government_n_of LBL: h1453 ARG0: x1451 ARG1: i1452 ]                |
+|               |           [ _type_n_of-n LBL: h1471 ARG0: x1469 ARG1: x1472 ]                    |
+|               |           [ def_udef_a_q LBL: h1478 ARG0: x1472 RSTR: h1476 BODY: h1477 ]        |
+|               |           [ _government_n_of LBL: h1474 ARG0: x1472 ARG1: i1473 ]                |
+|               |           [ explicit_or_proper_q LBL: h1492 ARG0: x1449 RSTR: h1490 BODY: h1491  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1450 ARG0: x1449 CARG: "Ciudad Ayala" ] >                |
+|               |   HCONS: < h1461 qeq h1455 h1485 qeq h1453 h1476 qeq h1474 h1495 qeq h1471 h1490 |
+|               | qeq h1450 > ]                                                                    |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h15041                                                                    |
-|               |   INDEX: e15007 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h15010 ARG0: e15007 ARG1: x14991 ARG2: x15011 ]       |
-|               |           [ def_udef_a_q LBL: h15039 ARG0: x15011 RSTR: h15037 BODY: h15038 ]    |
-|               |           [ compound LBL: h15013 ARG0: e15022 ARG1: x15011 ARG2: x14993 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h15029 ARG0: x14993 RSTR: h15027 BODY: h15028 ]   |
-|               |           [ compound LBL: h14995 ARG0: e14998 ARG1: x14993 ARG2: x14996 [ x NUM: |
-|               | sg IND: + ] ]                                                                    |
-|               |           [ existential_q LBL: h15005 ARG0: x14996 RSTR: h15003 BODY: h15004 ]   |
-|               |           [ unk_n LBL: h14997 ARG0: x14996 CARG: "council-manager" ]             |
-|               |           [ _government_n_of LBL: h14995 ARG0: x14993 ARG1: i14994 ]             |
-|               |           [ _type_n_of-n LBL: h15013 ARG0: x15011 ARG1: x15014 ]                 |
-|               |           [ def_udef_a_q LBL: h15020 ARG0: x15014 RSTR: h15018 BODY: h15019 ]    |
-|               |           [ _government_n_of LBL: h15016 ARG0: x15014 ARG1: i15015 ]             |
-|               |           [ explicit_or_proper_q LBL: h15034 ARG0: x14991 RSTR: h15032 BODY:     |
-|               | h15033 ]                                                                         |
-|               |           [ named LBL: h14992 ARG0: x14991 CARG: "Ciudad Ayala" ] >              |
-|               |   HCONS: < h15003 qeq h14997 h15027 qeq h14995 h15018 qeq h15016 h15037 qeq      |
-|               | h15013 h15032 qeq h14992 h15041 qeq h15010 > ]                                   |
+| Prepped       | [ TOP: h1499                                                                     |
+|               |   INDEX: e1465 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h1468 ARG0: e1465 ARG1: x1449 ARG2: x1469 ]           |
+|               |           [ def_udef_a_q LBL: h1497 ARG0: x1469 RSTR: h1495 BODY: h1496 ]        |
+|               |           [ compound LBL: h1471 ARG0: e1480 ARG1: x1469 ARG2: x1451 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h1487 ARG0: x1451 RSTR: h1485 BODY: h1486 ]       |
+|               |           [ compound LBL: h1453 ARG0: e1456 ARG1: x1451 ARG2: x1454 [ x NUM: sg  |
+|               | IND: + ] ]                                                                       |
+|               |           [ existential_q LBL: h1463 ARG0: x1454 RSTR: h1461 BODY: h1462 ]       |
+|               |           [ unk_n LBL: h1455 ARG0: x1454 CARG: "council-manager" ]               |
+|               |           [ _government_n_of LBL: h1453 ARG0: x1451 ARG1: i1452 ]                |
+|               |           [ _type_n_of-n LBL: h1471 ARG0: x1469 ARG1: x1472 ]                    |
+|               |           [ def_udef_a_q LBL: h1478 ARG0: x1472 RSTR: h1476 BODY: h1477 ]        |
+|               |           [ _government_n_of LBL: h1474 ARG0: x1472 ARG1: i1473 ]                |
+|               |           [ explicit_or_proper_q LBL: h1492 ARG0: x1449 RSTR: h1490 BODY: h1491  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1450 ARG0: x1449 CARG: "Ciudad Ayala" ] >                |
+|               |   HCONS: < h1461 qeq h1455 h1485 qeq h1453 h1476 qeq h1474 h1495 qeq h1471 h1490 |
+|               | qeq h1450 h1499 qeq h1468 > ]                                                    |
 +---------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -130,21 +128,21 @@ GRAPH NAME: WebNLG_test_3triples_City_Id944_149_447
 +----------------------------+----------------------------------------------------------------------------------+
 | Node                       | Generated SEMENT                                                                 |
 +----------------------------+----------------------------------------------------------------------------------+
-| Ciudad_Ayala               | [ TOP: h14992                                                                    |
-|                            |   INDEX: x14991                                                                  |
-|                            |   RELS: < [ named LBL: h14992 ARG0: x14991 CARG: "Ciudad Ayala" ] > ]            |
+| Ciudad_Ayala               | [ TOP: h1450                                                                     |
+|                            |   INDEX: x1449                                                                   |
+|                            |   RELS: < [ named LBL: h1450 ARG0: x1449 CARG: "Ciudad Ayala" ] > ]              |
 +----------------------------+----------------------------------------------------------------------------------+
-| Council-manager_government | [ TOP: h14995                                                                    |
-|                            |   INDEX: x14993                                                                  |
-|                            |   RELS: < [ compound LBL: h15001 ARG0: e14998 ARG1: u14999 ARG2: u15000 ]        |
-|                            |           [ existential_q LBL: h15005 ARG0: x15002 RSTR: h15003 BODY: h15004 ]   |
-|                            |           [ unk_n LBL: h14997 ARG0: x14996 [ x NUM: sg IND: + ] CARG: "council-  |
+| Council-manager_government | [ TOP: h1453                                                                     |
+|                            |   INDEX: x1451                                                                   |
+|                            |   RELS: < [ compound LBL: h1459 ARG0: e1456 ARG1: u1457 ARG2: u1458 ]            |
+|                            |           [ existential_q LBL: h1463 ARG0: x1460 RSTR: h1461 BODY: h1462 ]       |
+|                            |           [ unk_n LBL: h1455 ARG0: x1454 [ x NUM: sg IND: + ] CARG: "council-    |
 |                            | manager" ]                                                                       |
-|                            |           [ _government_n_of LBL: h14995 ARG0: x14993 ARG1: i14994 ] >           |
-|                            |   HCONS: < h15003 qeq h14997 >                                                   |
-|                            |   EQS: < x15002 eq x14996 h15001 eq h15006 u15000 eq x15002 h15001 eq h14995     |
-|                            | u14999 eq x14993 >                                                               |
-|                            |   SLOTS: < ARG1: i14994 > ]                                                      |
+|                            |           [ _government_n_of LBL: h1453 ARG0: x1451 ARG1: i1452 ] >              |
+|                            |   HCONS: < h1461 qeq h1455 >                                                     |
+|                            |   EQS: < x1460 eq x1454 h1459 eq h1464 u1458 eq x1460 h1459 eq h1453 u1457 eq    |
+|                            | x1451 >                                                                          |
+|                            |   SLOTS: < ARG1: i1452 > ]                                                       |
 +----------------------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -152,31 +150,29 @@ GRAPH NAME: WebNLG_test_3triples_City_Id944_149_447
 +----------------+--------------+----------------------------+----------------------------------------------------------------------------------+
 | Edge           | Parent       | Child                      | Generated SEMENT                                                                 |
 +----------------+--------------+----------------------------+----------------------------------------------------------------------------------+
-| governmentType | Ciudad_Ayala | Council-manager_government | [ TOP: h15010                                                                    |
-|                |              |                            |   INDEX: e15007 [ e TENSE: tensed ]                                              |
-|                |              |                            |   RELS: < [ _have_v_1 LBL: h15010 ARG0: e15007 ARG1: i15008 ARG2: i15009 ]       |
-|                |              |                            |           [ def_udef_a_q LBL: h15039 ARG0: x15036 RSTR: h15037 BODY: h15038 ]    |
-|                |              |                            |           [ compound LBL: h15025 ARG0: e15022 ARG1: u15023 ARG2: u15024 ]        |
-|                |              |                            |           [ existential_q LBL: h15029 ARG0: x15026 RSTR: h15027 BODY: h15028 ]   |
-|                |              |                            |           [ compound LBL: h15001 ARG0: e14998 ARG1: u14999 ARG2: u15000 ]        |
-|                |              |                            |           [ existential_q LBL: h15005 ARG0: x15002 RSTR: h15003 BODY: h15004 ]   |
-|                |              |                            |           [ unk_n LBL: h14997 ARG0: x14996 [ x NUM: sg IND: + ] CARG: "council-  |
+| governmentType | Ciudad_Ayala | Council-manager_government | [ TOP: h1468                                                                     |
+|                |              |                            |   INDEX: e1465 [ e TENSE: tensed ]                                               |
+|                |              |                            |   RELS: < [ _have_v_1 LBL: h1468 ARG0: e1465 ARG1: i1466 ARG2: i1467 ]           |
+|                |              |                            |           [ def_udef_a_q LBL: h1497 ARG0: x1494 RSTR: h1495 BODY: h1496 ]        |
+|                |              |                            |           [ compound LBL: h1483 ARG0: e1480 ARG1: u1481 ARG2: u1482 ]            |
+|                |              |                            |           [ existential_q LBL: h1487 ARG0: x1484 RSTR: h1485 BODY: h1486 ]       |
+|                |              |                            |           [ compound LBL: h1459 ARG0: e1456 ARG1: u1457 ARG2: u1458 ]            |
+|                |              |                            |           [ existential_q LBL: h1463 ARG0: x1460 RSTR: h1461 BODY: h1462 ]       |
+|                |              |                            |           [ unk_n LBL: h1455 ARG0: x1454 [ x NUM: sg IND: + ] CARG: "council-    |
 |                |              |                            | manager" ]                                                                       |
-|                |              |                            |           [ _government_n_of LBL: h14995 ARG0: x14993 [ x NUM: sg ] ARG1: i14994 |
+|                |              |                            |           [ _government_n_of LBL: h1453 ARG0: x1451 [ x NUM: sg ] ARG1: i1452 ]  |
+|                |              |                            |           [ _type_n_of-n LBL: h1471 ARG0: x1469 ARG1: i1470 ]                    |
+|                |              |                            |           [ def_udef_a_q LBL: h1478 ARG0: x1475 RSTR: h1476 BODY: h1477 ]        |
+|                |              |                            |           [ _government_n_of LBL: h1474 ARG0: x1472 ARG1: i1473 ]                |
+|                |              |                            |           [ explicit_or_proper_q LBL: h1492 ARG0: x1489 RSTR: h1490 BODY: h1491  |
 |                |              |                            | ]                                                                                |
-|                |              |                            |           [ _type_n_of-n LBL: h15013 ARG0: x15011 ARG1: i15012 ]                 |
-|                |              |                            |           [ def_udef_a_q LBL: h15020 ARG0: x15017 RSTR: h15018 BODY: h15019 ]    |
-|                |              |                            |           [ _government_n_of LBL: h15016 ARG0: x15014 ARG1: i15015 ]             |
-|                |              |                            |           [ explicit_or_proper_q LBL: h15034 ARG0: x15031 RSTR: h15032 BODY:     |
-|                |              |                            | h15033 ]                                                                         |
-|                |              |                            |           [ named LBL: h14992 ARG0: x14991 CARG: "Ciudad Ayala" ] >              |
-|                |              |                            |   HCONS: < h15003 qeq h14997 h15027 qeq h14995 h15018 qeq h15016 h15037 qeq      |
-|                |              |                            | h15013 h15032 qeq h14992 >                                                       |
-|                |              |                            |   EQS: < x15002 eq x14996 h15001 eq h15006 u15000 eq x15002 h15001 eq h14995     |
-|                |              |                            | u14999 eq x14993 x15026 eq x14993 h15025 eq h15030 u15024 eq x15026 x15017 eq    |
-|                |              |                            | x15014 h15013 eq h15021 i15012 eq x15017 h15025 eq h15013 u15023 eq x15011       |
-|                |              |                            | x15036 eq x15011 h15010 eq h15040 i15009 eq x15036 x15031 eq x14991 h15010 eq    |
-|                |              |                            | h15035 i15008 eq x15031 > ]                                                      |
+|                |              |                            |           [ named LBL: h1450 ARG0: x1449 CARG: "Ciudad Ayala" ] >                |
+|                |              |                            |   HCONS: < h1461 qeq h1455 h1485 qeq h1453 h1476 qeq h1474 h1495 qeq h1471 h1490 |
+|                |              |                            | qeq h1450 >                                                                      |
+|                |              |                            |   EQS: < x1460 eq x1454 h1459 eq h1464 u1458 eq x1460 h1459 eq h1453 u1457 eq    |
+|                |              |                            | x1451 x1484 eq x1451 h1483 eq h1488 u1482 eq x1484 x1475 eq x1472 h1471 eq h1479 |
+|                |              |                            | i1470 eq x1475 h1483 eq h1471 u1481 eq x1469 x1494 eq x1469 h1468 eq h1498 i1467 |
+|                |              |                            | eq x1494 x1489 eq x1449 h1468 eq h1493 i1466 eq x1489 > ]                        |
 +----------------+--------------+----------------------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------------+

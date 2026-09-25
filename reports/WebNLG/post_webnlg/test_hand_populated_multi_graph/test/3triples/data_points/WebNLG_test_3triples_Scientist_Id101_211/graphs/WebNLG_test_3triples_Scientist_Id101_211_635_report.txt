@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id101_211_635
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                          GOLD OUTPUTS                                                                         |
-+--------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                      | Generated? |
-+--------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Olga Bondareva is known for the Bondareva-Shapley theorem, described by Olga Nikolaevna Bondareva in Leningrad State University.                 | False      |
-| Olga Bondareva, birth name Olga Nikolaevna Bondareva, graduated from Leningrad State University. She is known for the Bondareva-Shapley theorem. | False      |
-| Olga Bondareva, born "Olga Nikolaevna Bondareva" and a student of Leningrad State University, was known for the Bondareva-Shapley theorem.       | False      |
-+--------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+|                                                               GOLD OUTPUTS                                                              |
++----------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                | Generated? |
++----------------------------------------------------------------------------------------------------------------------------+------------+
+| Olga Bondareva (born on April 27, 1937) graduated from Leningrad State University, and died on the ninth of December 1991. | False      |
+| Olga Bondareva, an alumnus of Leningrad State University, was born April 27, 1937 and died December 9, 1991.               | False      |
+| Olga Bondareva, who lived from April 27th, 1937 to December 9th, 1991, was a student at Leningrad State University.        | False      |
++----------------------------------------------------------------------------------------------------------------------------+------------+
 
 +--------------------------------------------------------------------------------------------------+
 |                                           NODE METRICS                                           |
@@ -56,53 +56,52 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id101_211_635
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h21431                                                                    |
-|               |   INDEX: e21428 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h21431 ARG0: e21428 ARG1: p21429 ARG2: i21430 ]        |
-|               |           [ explicit_or_proper_q LBL: h21440 ARG0: x21437 RSTR: h21438 BODY:     |
-|               | h21439 ]                                                                         |
-|               |           [ named LBL: h21416 ARG0: x21415 CARG: "Leningrad State University" ]  |
-|               |           [ def_udef_a_q LBL: h21435 ARG0: x21432 RSTR: h21433 BODY: h21434 ]    |
-|               |           [ poss LBL: h21427 ARG0: e21424 ARG1: x21425 ARG2: i21426 ]            |
-|               |           [ explicit_or_proper_q LBL: h21422 ARG0: x21419 RSTR: h21420 BODY:     |
-|               | h21421 ]                                                                         |
-|               |           [ named LBL: h21414 ARG0: x21413 CARG: "Olga Bondareva" ]              |
-|               |           [ unk_n LBL: h21418 ARG0: x21417 [ x IND: + ] CARG: "alma mater" ] >   |
-|               |   HCONS: < h21438 qeq h21416 h21420 qeq h21414 h21433 qeq h21418 >               |
-|               |   EQS: < x21437 eq x21415 h21431 eq h21441 i21430 eq x21437 x21419 eq x21413     |
-|               | h21427 eq h21423 i21426 eq x21419 h21427 eq h21418 x21425 eq x21417 x21432 eq    |
-|               | x21417 h21431 eq h21436 p21429 eq x21432 > ]                                     |
+| Original      | [ TOP: h2160                                                                     |
+|               |   INDEX: e2157 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h2160 ARG0: e2157 ARG1: p2158 ARG2: i2159 ]            |
+|               |           [ explicit_or_proper_q LBL: h2169 ARG0: x2166 RSTR: h2167 BODY: h2168  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2145 ARG0: x2144 CARG: "Leningrad State University" ]    |
+|               |           [ def_udef_a_q LBL: h2164 ARG0: x2161 RSTR: h2162 BODY: h2163 ]        |
+|               |           [ poss LBL: h2156 ARG0: e2153 ARG1: x2154 ARG2: i2155 ]                |
+|               |           [ explicit_or_proper_q LBL: h2151 ARG0: x2148 RSTR: h2149 BODY: h2150  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2143 ARG0: x2142 CARG: "Olga Bondareva" ]                |
+|               |           [ unk_n LBL: h2147 ARG0: x2146 [ x IND: + ] CARG: "alma mater" ] >     |
+|               |   HCONS: < h2167 qeq h2145 h2149 qeq h2143 h2162 qeq h2147 >                     |
+|               |   EQS: < x2166 eq x2144 h2160 eq h2170 i2159 eq x2166 x2148 eq x2142 h2156 eq    |
+|               | h2152 i2155 eq x2148 h2156 eq h2147 x2154 eq x2146 x2161 eq x2146 h2160 eq h2165 |
+|               | p2158 eq x2161 > ]                                                               |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h21431                                                                    |
-|               |   INDEX: e21428 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h21431 ARG0: e21428 ARG1: x21417 [ x IND: + ] ARG2:    |
-|               | x21415 ]                                                                         |
-|               |           [ explicit_or_proper_q LBL: h21440 ARG0: x21415 RSTR: h21438 BODY:     |
-|               | h21439 ]                                                                         |
-|               |           [ named LBL: h21416 ARG0: x21415 CARG: "Leningrad State University" ]  |
-|               |           [ def_udef_a_q LBL: h21435 ARG0: x21417 RSTR: h21433 BODY: h21434 ]    |
-|               |           [ poss LBL: h21418 ARG0: e21424 ARG1: x21417 ARG2: x21413 ]            |
-|               |           [ explicit_or_proper_q LBL: h21422 ARG0: x21413 RSTR: h21420 BODY:     |
-|               | h21421 ]                                                                         |
-|               |           [ named LBL: h21414 ARG0: x21413 CARG: "Olga Bondareva" ]              |
-|               |           [ unk_n LBL: h21418 ARG0: x21417 CARG: "alma mater" ] >                |
-|               |   HCONS: < h21438 qeq h21416 h21420 qeq h21414 h21433 qeq h21418 > ]             |
+| EQs Collapsed | [ TOP: h2160                                                                     |
+|               |   INDEX: e2157 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h2160 ARG0: e2157 ARG1: x2146 [ x IND: + ] ARG2: x2144 |
+|               | ]                                                                                |
+|               |           [ explicit_or_proper_q LBL: h2169 ARG0: x2144 RSTR: h2167 BODY: h2168  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2145 ARG0: x2144 CARG: "Leningrad State University" ]    |
+|               |           [ def_udef_a_q LBL: h2164 ARG0: x2146 RSTR: h2162 BODY: h2163 ]        |
+|               |           [ poss LBL: h2147 ARG0: e2153 ARG1: x2146 ARG2: x2142 ]                |
+|               |           [ explicit_or_proper_q LBL: h2151 ARG0: x2142 RSTR: h2149 BODY: h2150  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2143 ARG0: x2142 CARG: "Olga Bondareva" ]                |
+|               |           [ unk_n LBL: h2147 ARG0: x2146 CARG: "alma mater" ] >                  |
+|               |   HCONS: < h2167 qeq h2145 h2149 qeq h2143 h2162 qeq h2147 > ]                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h21442                                                                    |
-|               |   INDEX: e21428 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h21431 ARG0: e21428 ARG1: x21417 [ x IND: + ] ARG2:    |
-|               | x21415 ]                                                                         |
-|               |           [ explicit_or_proper_q LBL: h21440 ARG0: x21415 RSTR: h21438 BODY:     |
-|               | h21439 ]                                                                         |
-|               |           [ named LBL: h21416 ARG0: x21415 CARG: "Leningrad State University" ]  |
-|               |           [ def_udef_a_q LBL: h21435 ARG0: x21417 RSTR: h21433 BODY: h21434 ]    |
-|               |           [ poss LBL: h21418 ARG0: e21424 ARG1: x21417 ARG2: x21413 ]            |
-|               |           [ explicit_or_proper_q LBL: h21422 ARG0: x21413 RSTR: h21420 BODY:     |
-|               | h21421 ]                                                                         |
-|               |           [ named LBL: h21414 ARG0: x21413 CARG: "Olga Bondareva" ]              |
-|               |           [ unk_n LBL: h21418 ARG0: x21417 CARG: "alma mater" ] >                |
-|               |   HCONS: < h21438 qeq h21416 h21420 qeq h21414 h21433 qeq h21418 h21442 qeq      |
-|               | h21431 > ]                                                                       |
+| Prepped       | [ TOP: h2171                                                                     |
+|               |   INDEX: e2157 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h2160 ARG0: e2157 ARG1: x2146 [ x IND: + ] ARG2: x2144 |
+|               | ]                                                                                |
+|               |           [ explicit_or_proper_q LBL: h2169 ARG0: x2144 RSTR: h2167 BODY: h2168  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2145 ARG0: x2144 CARG: "Leningrad State University" ]    |
+|               |           [ def_udef_a_q LBL: h2164 ARG0: x2146 RSTR: h2162 BODY: h2163 ]        |
+|               |           [ poss LBL: h2147 ARG0: e2153 ARG1: x2146 ARG2: x2142 ]                |
+|               |           [ explicit_or_proper_q LBL: h2151 ARG0: x2142 RSTR: h2149 BODY: h2150  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2143 ARG0: x2142 CARG: "Olga Bondareva" ]                |
+|               |           [ unk_n LBL: h2147 ARG0: x2146 CARG: "alma mater" ] >                  |
+|               |   HCONS: < h2167 qeq h2145 h2149 qeq h2143 h2162 qeq h2147 h2171 qeq h2160 > ]   |
 +---------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -110,14 +109,14 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id101_211_635
 +----------------------------+----------------------------------------------------------------------------------+
 | Node                       | Generated SEMENT                                                                 |
 +----------------------------+----------------------------------------------------------------------------------+
-| Olga_Bondareva             | [ TOP: h21414                                                                    |
-|                            |   INDEX: x21413                                                                  |
-|                            |   RELS: < [ named LBL: h21414 ARG0: x21413 CARG: "Olga Bondareva" ] > ]          |
+| Olga_Bondareva             | [ TOP: h2143                                                                     |
+|                            |   INDEX: x2142                                                                   |
+|                            |   RELS: < [ named LBL: h2143 ARG0: x2142 CARG: "Olga Bondareva" ] > ]            |
 +----------------------------+----------------------------------------------------------------------------------+
-| Leningrad_State_University | [ TOP: h21416                                                                    |
-|                            |   INDEX: x21415                                                                  |
-|                            |   RELS: < [ named LBL: h21416 ARG0: x21415 CARG: "Leningrad State University" ]  |
-|                            | > ]                                                                              |
+| Leningrad_State_University | [ TOP: h2145                                                                     |
+|                            |   INDEX: x2144                                                                   |
+|                            |   RELS: < [ named LBL: h2145 ARG0: x2144 CARG: "Leningrad State University" ] >  |
+|                            | ]                                                                                |
 +----------------------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -125,22 +124,22 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id101_211_635
 +-----------+----------------+----------------------------+----------------------------------------------------------------------------------+
 | Edge      | Parent         | Child                      | Generated SEMENT                                                                 |
 +-----------+----------------+----------------------------+----------------------------------------------------------------------------------+
-| almaMater | Olga_Bondareva | Leningrad_State_University | [ TOP: h21431                                                                    |
-|           |                |                            |   INDEX: e21428 [ e SF: prop TENSE: tensed ]                                     |
-|           |                |                            |   RELS: < [ _be_v_id LBL: h21431 ARG0: e21428 ARG1: p21429 ARG2: i21430 ]        |
-|           |                |                            |           [ explicit_or_proper_q LBL: h21440 ARG0: x21437 RSTR: h21438 BODY:     |
-|           |                |                            | h21439 ]                                                                         |
-|           |                |                            |           [ named LBL: h21416 ARG0: x21415 CARG: "Leningrad State University" ]  |
-|           |                |                            |           [ def_udef_a_q LBL: h21435 ARG0: x21432 RSTR: h21433 BODY: h21434 ]    |
-|           |                |                            |           [ poss LBL: h21427 ARG0: e21424 ARG1: x21425 ARG2: i21426 ]            |
-|           |                |                            |           [ explicit_or_proper_q LBL: h21422 ARG0: x21419 RSTR: h21420 BODY:     |
-|           |                |                            | h21421 ]                                                                         |
-|           |                |                            |           [ named LBL: h21414 ARG0: x21413 CARG: "Olga Bondareva" ]              |
-|           |                |                            |           [ unk_n LBL: h21418 ARG0: x21417 [ x IND: + ] CARG: "alma mater" ] >   |
-|           |                |                            |   HCONS: < h21438 qeq h21416 h21420 qeq h21414 h21433 qeq h21418 >               |
-|           |                |                            |   EQS: < x21437 eq x21415 h21431 eq h21441 i21430 eq x21437 x21419 eq x21413     |
-|           |                |                            | h21427 eq h21423 i21426 eq x21419 h21427 eq h21418 x21425 eq x21417 x21432 eq    |
-|           |                |                            | x21417 h21431 eq h21436 p21429 eq x21432 > ]                                     |
+| almaMater | Olga_Bondareva | Leningrad_State_University | [ TOP: h2160                                                                     |
+|           |                |                            |   INDEX: e2157 [ e SF: prop TENSE: tensed ]                                      |
+|           |                |                            |   RELS: < [ _be_v_id LBL: h2160 ARG0: e2157 ARG1: p2158 ARG2: i2159 ]            |
+|           |                |                            |           [ explicit_or_proper_q LBL: h2169 ARG0: x2166 RSTR: h2167 BODY: h2168  |
+|           |                |                            | ]                                                                                |
+|           |                |                            |           [ named LBL: h2145 ARG0: x2144 CARG: "Leningrad State University" ]    |
+|           |                |                            |           [ def_udef_a_q LBL: h2164 ARG0: x2161 RSTR: h2162 BODY: h2163 ]        |
+|           |                |                            |           [ poss LBL: h2156 ARG0: e2153 ARG1: x2154 ARG2: i2155 ]                |
+|           |                |                            |           [ explicit_or_proper_q LBL: h2151 ARG0: x2148 RSTR: h2149 BODY: h2150  |
+|           |                |                            | ]                                                                                |
+|           |                |                            |           [ named LBL: h2143 ARG0: x2142 CARG: "Olga Bondareva" ]                |
+|           |                |                            |           [ unk_n LBL: h2147 ARG0: x2146 [ x IND: + ] CARG: "alma mater" ] >     |
+|           |                |                            |   HCONS: < h2167 qeq h2145 h2149 qeq h2143 h2162 qeq h2147 >                     |
+|           |                |                            |   EQS: < x2166 eq x2144 h2160 eq h2170 i2159 eq x2166 x2148 eq x2142 h2156 eq    |
+|           |                |                            | h2152 i2155 eq x2148 h2156 eq h2147 x2154 eq x2146 x2161 eq x2146 h2160 eq h2165 |
+|           |                |                            | p2158 eq x2161 > ]                                                               |
 +-----------+----------------+----------------------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------+

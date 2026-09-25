@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id33_169_509
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                         GOLD OUTPUTS                                                                         |
-+-------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                     | Generated? |
-+-------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| It's Great to be Young,a 1956 film starring Cecil Parker was composed by Louis Levy and written by Ted Willis.                                  | False      |
-| Louis Levy is the composer of the 1956 film It's Great to Be Young, which is written by Ted Willis and stars Cecil Parker.                      | False      |
-| “It's Great to Be Young” (1956) was written by Ted Willis and features music by Louis Levy. A main role in the movie was given to Cecil Parker. | False      |
-+-------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+|                                                               GOLD OUTPUTS                                                              |
++----------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                | Generated? |
++----------------------------------------------------------------------------------------------------------------------------+------------+
+| Cecil Parker starred in the 1956 movie It's Great to Be Young which was written by Ted Willis and edited by Max Benedict.  | False      |
+| The 1956 film 'It's great to Be Young' was written by Ted Willis, and edited by Max Benedict. The film stars Cecil Parker. | False      |
+| “It’s great to be young”, a 1956 film starring Cecil Parker was written by Ted Willis and edited by Max Benedict.          | False      |
++----------------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------------------------+
 |                                               NODE METRICS                                               |
@@ -56,66 +56,64 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id33_169_509
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h17054                                                                    |
-|               |   INDEX: e17051 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _write_v_to LBL: h17054 ARG0: e17051 ARG1: i17052 ARG2: i17053 ]     |
-|               |           [ appos LBL: h17038 ARG0: e17035 ARG1: x17036 ARG2: i17037 ]           |
-|               |           [ def_udef_a_q LBL: h17047 ARG0: x17044 RSTR: h17045 BODY: h17046 ]    |
-|               |           [ compound LBL: h17034 ARG0: e17031 ARG1: u17032 ARG2: u17033 ]        |
-|               |           [ proper_q LBL: h17029 ARG0: x17026 [ x NUM: sg ] RSTR: h17027 BODY:   |
-|               | h17028 ]                                                                         |
-|               |           [ yofc LBL: h17025 ARG0: x17024 CARG: "1956" ]                         |
-|               |           [ _film_n_1 LBL: h17017 ARG0: x17016 ]                                 |
-|               |           [ explicit_or_proper_q LBL: h17042 ARG0: x17039 RSTR: h17040 BODY:     |
-|               | h17041 ]                                                                         |
-|               |           [ named LBL: h17015 ARG0: x17014 CARG: "It's Great to Be Young" ]      |
-|               |           [ explicit_or_proper_q LBL: h17058 ARG0: x17055 RSTR: h17056 BODY:     |
-|               | h17057 ]                                                                         |
-|               |           [ named LBL: h17050 ARG0: x17049 CARG: "Ted Willis" ] >                |
-|               |   HCONS: < h17027 qeq h17025 h17045 qeq h17017 h17040 qeq h17015 h17056 qeq      |
-|               | h17050 >                                                                         |
-|               |   EQS: < x17026 eq x17024 h17034 eq h17030 u17033 eq x17026 h17034 eq h17017     |
-|               | u17032 eq x17016 x17044 eq x17016 h17038 eq h17048 i17037 eq x17044 x17039 eq    |
-|               | x17014 h17038 eq h17043 x17036 eq x17039 h17054 eq h17043 i17053 eq x17039       |
-|               | x17055 eq x17049 h17054 eq h17059 i17052 eq x17055 > ]                           |
+| Original      | [ TOP: h8922                                                                     |
+|               |   INDEX: e8919 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _write_v_to LBL: h8922 ARG0: e8919 ARG1: i8920 ARG2: i8921 ]         |
+|               |           [ appos LBL: h8906 ARG0: e8903 ARG1: x8904 ARG2: i8905 ]               |
+|               |           [ def_udef_a_q LBL: h8915 ARG0: x8912 RSTR: h8913 BODY: h8914 ]        |
+|               |           [ compound LBL: h8902 ARG0: e8899 ARG1: u8900 ARG2: u8901 ]            |
+|               |           [ proper_q LBL: h8897 ARG0: x8894 [ x NUM: sg ] RSTR: h8895 BODY:      |
+|               | h8896 ]                                                                          |
+|               |           [ yofc LBL: h8893 ARG0: x8892 CARG: "1956" ]                           |
+|               |           [ _film_n_1 LBL: h8885 ARG0: x8884 ]                                   |
+|               |           [ explicit_or_proper_q LBL: h8910 ARG0: x8907 RSTR: h8908 BODY: h8909  |
+|               | ]                                                                                |
+|               |           [ named LBL: h8883 ARG0: x8882 CARG: "It's Great to Be Young" ]        |
+|               |           [ explicit_or_proper_q LBL: h8926 ARG0: x8923 RSTR: h8924 BODY: h8925  |
+|               | ]                                                                                |
+|               |           [ named LBL: h8918 ARG0: x8917 CARG: "Ted Willis" ] >                  |
+|               |   HCONS: < h8895 qeq h8893 h8913 qeq h8885 h8908 qeq h8883 h8924 qeq h8918 >     |
+|               |   EQS: < x8894 eq x8892 h8902 eq h8898 u8901 eq x8894 h8902 eq h8885 u8900 eq    |
+|               | x8884 x8912 eq x8884 h8906 eq h8916 i8905 eq x8912 x8907 eq x8882 h8906 eq h8911 |
+|               | x8904 eq x8907 h8922 eq h8911 i8921 eq x8907 x8923 eq x8917 h8922 eq h8927 i8920 |
+|               | eq x8923 > ]                                                                     |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h17038                                                                    |
-|               |   INDEX: e17051 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _write_v_to LBL: h17038 ARG0: e17051 ARG1: x17049 ARG2: x17014 ]     |
-|               |           [ appos LBL: h17038 ARG0: e17035 ARG1: x17014 ARG2: x17016 ]           |
-|               |           [ def_udef_a_q LBL: h17047 ARG0: x17016 RSTR: h17045 BODY: h17046 ]    |
-|               |           [ compound LBL: h17017 ARG0: e17031 ARG1: x17016 ARG2: x17024 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ proper_q LBL: h17029 ARG0: x17024 RSTR: h17027 BODY: h17028 ]        |
-|               |           [ yofc LBL: h17025 ARG0: x17024 CARG: "1956" ]                         |
-|               |           [ _film_n_1 LBL: h17017 ARG0: x17016 ]                                 |
-|               |           [ explicit_or_proper_q LBL: h17042 ARG0: x17014 RSTR: h17040 BODY:     |
-|               | h17041 ]                                                                         |
-|               |           [ named LBL: h17015 ARG0: x17014 CARG: "It's Great to Be Young" ]      |
-|               |           [ explicit_or_proper_q LBL: h17058 ARG0: x17049 RSTR: h17056 BODY:     |
-|               | h17057 ]                                                                         |
-|               |           [ named LBL: h17050 ARG0: x17049 CARG: "Ted Willis" ] >                |
-|               |   HCONS: < h17027 qeq h17025 h17045 qeq h17017 h17040 qeq h17015 h17056 qeq      |
-|               | h17050 > ]                                                                       |
+| EQs Collapsed | [ TOP: h8906                                                                     |
+|               |   INDEX: e8919 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _write_v_to LBL: h8906 ARG0: e8919 ARG1: x8917 ARG2: x8882 ]         |
+|               |           [ appos LBL: h8906 ARG0: e8903 ARG1: x8882 ARG2: x8884 ]               |
+|               |           [ def_udef_a_q LBL: h8915 ARG0: x8884 RSTR: h8913 BODY: h8914 ]        |
+|               |           [ compound LBL: h8885 ARG0: e8899 ARG1: x8884 ARG2: x8892 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ proper_q LBL: h8897 ARG0: x8892 RSTR: h8895 BODY: h8896 ]            |
+|               |           [ yofc LBL: h8893 ARG0: x8892 CARG: "1956" ]                           |
+|               |           [ _film_n_1 LBL: h8885 ARG0: x8884 ]                                   |
+|               |           [ explicit_or_proper_q LBL: h8910 ARG0: x8882 RSTR: h8908 BODY: h8909  |
+|               | ]                                                                                |
+|               |           [ named LBL: h8883 ARG0: x8882 CARG: "It's Great to Be Young" ]        |
+|               |           [ explicit_or_proper_q LBL: h8926 ARG0: x8917 RSTR: h8924 BODY: h8925  |
+|               | ]                                                                                |
+|               |           [ named LBL: h8918 ARG0: x8917 CARG: "Ted Willis" ] >                  |
+|               |   HCONS: < h8895 qeq h8893 h8913 qeq h8885 h8908 qeq h8883 h8924 qeq h8918 > ]   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h17060                                                                    |
-|               |   INDEX: e17051 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _write_v_to LBL: h17038 ARG0: e17051 ARG1: x17049 ARG2: x17014 ]     |
-|               |           [ appos LBL: h17038 ARG0: e17035 ARG1: x17014 ARG2: x17016 ]           |
-|               |           [ def_udef_a_q LBL: h17047 ARG0: x17016 RSTR: h17045 BODY: h17046 ]    |
-|               |           [ compound LBL: h17017 ARG0: e17031 ARG1: x17016 ARG2: x17024 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ proper_q LBL: h17029 ARG0: x17024 RSTR: h17027 BODY: h17028 ]        |
-|               |           [ yofc LBL: h17025 ARG0: x17024 CARG: "1956" ]                         |
-|               |           [ _film_n_1 LBL: h17017 ARG0: x17016 ]                                 |
-|               |           [ explicit_or_proper_q LBL: h17042 ARG0: x17014 RSTR: h17040 BODY:     |
-|               | h17041 ]                                                                         |
-|               |           [ named LBL: h17015 ARG0: x17014 CARG: "It's Great to Be Young" ]      |
-|               |           [ explicit_or_proper_q LBL: h17058 ARG0: x17049 RSTR: h17056 BODY:     |
-|               | h17057 ]                                                                         |
-|               |           [ named LBL: h17050 ARG0: x17049 CARG: "Ted Willis" ] >                |
-|               |   HCONS: < h17027 qeq h17025 h17045 qeq h17017 h17040 qeq h17015 h17056 qeq      |
-|               | h17050 h17060 qeq h17038 > ]                                                     |
+| Prepped       | [ TOP: h8928                                                                     |
+|               |   INDEX: e8919 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _write_v_to LBL: h8906 ARG0: e8919 ARG1: x8917 ARG2: x8882 ]         |
+|               |           [ appos LBL: h8906 ARG0: e8903 ARG1: x8882 ARG2: x8884 ]               |
+|               |           [ def_udef_a_q LBL: h8915 ARG0: x8884 RSTR: h8913 BODY: h8914 ]        |
+|               |           [ compound LBL: h8885 ARG0: e8899 ARG1: x8884 ARG2: x8892 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ proper_q LBL: h8897 ARG0: x8892 RSTR: h8895 BODY: h8896 ]            |
+|               |           [ yofc LBL: h8893 ARG0: x8892 CARG: "1956" ]                           |
+|               |           [ _film_n_1 LBL: h8885 ARG0: x8884 ]                                   |
+|               |           [ explicit_or_proper_q LBL: h8910 ARG0: x8882 RSTR: h8908 BODY: h8909  |
+|               | ]                                                                                |
+|               |           [ named LBL: h8883 ARG0: x8882 CARG: "It's Great to Be Young" ]        |
+|               |           [ explicit_or_proper_q LBL: h8926 ARG0: x8917 RSTR: h8924 BODY: h8925  |
+|               | ]                                                                                |
+|               |           [ named LBL: h8918 ARG0: x8917 CARG: "Ted Willis" ] >                  |
+|               |   HCONS: < h8895 qeq h8893 h8913 qeq h8885 h8908 qeq h8883 h8924 qeq h8918 h8928 |
+|               | qeq h8906 > ]                                                                    |
 +---------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------+
@@ -123,27 +121,27 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id33_169_509
 +------------------------------------+----------------------------------------------------------------------------------+
 | Node                               | Generated SEMENT                                                                 |
 +------------------------------------+----------------------------------------------------------------------------------+
-| It's_Great_to_Be_Young_(1956_film) | [ TOP: h17043                                                                    |
-|                                    |   INDEX: x17039                                                                  |
-|                                    |   RELS: < [ appos LBL: h17038 ARG0: e17035 ARG1: x17036 ARG2: i17037 ]           |
-|                                    |           [ def_udef_a_q LBL: h17047 ARG0: x17044 RSTR: h17045 BODY: h17046 ]    |
-|                                    |           [ compound LBL: h17034 ARG0: e17031 ARG1: u17032 ARG2: u17033 ]        |
-|                                    |           [ proper_q LBL: h17029 ARG0: x17026 [ x NUM: sg ] RSTR: h17027 BODY:   |
-|                                    | h17028 ]                                                                         |
-|                                    |           [ yofc LBL: h17025 ARG0: x17024 CARG: "1956" ]                         |
-|                                    |           [ _film_n_1 LBL: h17017 ARG0: x17016 ]                                 |
-|                                    |           [ explicit_or_proper_q LBL: h17042 ARG0: x17039 RSTR: h17040 BODY:     |
-|                                    | h17041 ]                                                                         |
-|                                    |           [ named LBL: h17015 ARG0: x17014 CARG: "It's Great to Be Young" ] >    |
-|                                    |   HCONS: < h17027 qeq h17025 h17045 qeq h17017 h17040 qeq h17015 >               |
-|                                    |   EQS: < x17026 eq x17024 h17034 eq h17030 u17033 eq x17026 h17034 eq h17017     |
-|                                    | u17032 eq x17016 x17044 eq x17016 h17038 eq h17048 i17037 eq x17044 x17039 eq    |
-|                                    | x17014 h17038 eq h17043 x17036 eq x17039 >                                       |
-|                                    |   SLOTS: < BODY: h17041 > ]                                                      |
+| It's_Great_to_Be_Young_(1956_film) | [ TOP: h8911                                                                     |
+|                                    |   INDEX: x8907                                                                   |
+|                                    |   RELS: < [ appos LBL: h8906 ARG0: e8903 ARG1: x8904 ARG2: i8905 ]               |
+|                                    |           [ def_udef_a_q LBL: h8915 ARG0: x8912 RSTR: h8913 BODY: h8914 ]        |
+|                                    |           [ compound LBL: h8902 ARG0: e8899 ARG1: u8900 ARG2: u8901 ]            |
+|                                    |           [ proper_q LBL: h8897 ARG0: x8894 [ x NUM: sg ] RSTR: h8895 BODY:      |
+|                                    | h8896 ]                                                                          |
+|                                    |           [ yofc LBL: h8893 ARG0: x8892 CARG: "1956" ]                           |
+|                                    |           [ _film_n_1 LBL: h8885 ARG0: x8884 ]                                   |
+|                                    |           [ explicit_or_proper_q LBL: h8910 ARG0: x8907 RSTR: h8908 BODY: h8909  |
+|                                    | ]                                                                                |
+|                                    |           [ named LBL: h8883 ARG0: x8882 CARG: "It's Great to Be Young" ] >      |
+|                                    |   HCONS: < h8895 qeq h8893 h8913 qeq h8885 h8908 qeq h8883 >                     |
+|                                    |   EQS: < x8894 eq x8892 h8902 eq h8898 u8901 eq x8894 h8902 eq h8885 u8900 eq    |
+|                                    | x8884 x8912 eq x8884 h8906 eq h8916 i8905 eq x8912 x8907 eq x8882 h8906 eq h8911 |
+|                                    | x8904 eq x8907 >                                                                 |
+|                                    |   SLOTS: < BODY: h8909 > ]                                                       |
 +------------------------------------+----------------------------------------------------------------------------------+
-| Ted_Willis                         | [ TOP: h17050                                                                    |
-|                                    |   INDEX: x17049                                                                  |
-|                                    |   RELS: < [ named LBL: h17050 ARG0: x17049 CARG: "Ted Willis" ] > ]              |
+| Ted_Willis                         | [ TOP: h8918                                                                     |
+|                                    |   INDEX: x8917                                                                   |
+|                                    |   RELS: < [ named LBL: h8918 ARG0: x8917 CARG: "Ted Willis" ] > ]                |
 +------------------------------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -151,28 +149,27 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id33_169_509
 +--------+------------------------------------+------------+----------------------------------------------------------------------------------+
 | Edge   | Parent                             | Child      | Generated SEMENT                                                                 |
 +--------+------------------------------------+------------+----------------------------------------------------------------------------------+
-| writer | It's_Great_to_Be_Young_(1956_film) | Ted_Willis | [ TOP: h17054                                                                    |
-|        |                                    |            |   INDEX: e17051 [ e TENSE: tensed ]                                              |
-|        |                                    |            |   RELS: < [ _write_v_to LBL: h17054 ARG0: e17051 ARG1: i17052 ARG2: i17053 ]     |
-|        |                                    |            |           [ appos LBL: h17038 ARG0: e17035 ARG1: x17036 ARG2: i17037 ]           |
-|        |                                    |            |           [ def_udef_a_q LBL: h17047 ARG0: x17044 RSTR: h17045 BODY: h17046 ]    |
-|        |                                    |            |           [ compound LBL: h17034 ARG0: e17031 ARG1: u17032 ARG2: u17033 ]        |
-|        |                                    |            |           [ proper_q LBL: h17029 ARG0: x17026 [ x NUM: sg ] RSTR: h17027 BODY:   |
-|        |                                    |            | h17028 ]                                                                         |
-|        |                                    |            |           [ yofc LBL: h17025 ARG0: x17024 CARG: "1956" ]                         |
-|        |                                    |            |           [ _film_n_1 LBL: h17017 ARG0: x17016 ]                                 |
-|        |                                    |            |           [ explicit_or_proper_q LBL: h17042 ARG0: x17039 RSTR: h17040 BODY:     |
-|        |                                    |            | h17041 ]                                                                         |
-|        |                                    |            |           [ named LBL: h17015 ARG0: x17014 CARG: "It's Great to Be Young" ]      |
-|        |                                    |            |           [ explicit_or_proper_q LBL: h17058 ARG0: x17055 RSTR: h17056 BODY:     |
-|        |                                    |            | h17057 ]                                                                         |
-|        |                                    |            |           [ named LBL: h17050 ARG0: x17049 CARG: "Ted Willis" ] >                |
-|        |                                    |            |   HCONS: < h17027 qeq h17025 h17045 qeq h17017 h17040 qeq h17015 h17056 qeq      |
-|        |                                    |            | h17050 >                                                                         |
-|        |                                    |            |   EQS: < x17026 eq x17024 h17034 eq h17030 u17033 eq x17026 h17034 eq h17017     |
-|        |                                    |            | u17032 eq x17016 x17044 eq x17016 h17038 eq h17048 i17037 eq x17044 x17039 eq    |
-|        |                                    |            | x17014 h17038 eq h17043 x17036 eq x17039 h17054 eq h17043 i17053 eq x17039       |
-|        |                                    |            | x17055 eq x17049 h17054 eq h17059 i17052 eq x17055 > ]                           |
+| writer | It's_Great_to_Be_Young_(1956_film) | Ted_Willis | [ TOP: h8922                                                                     |
+|        |                                    |            |   INDEX: e8919 [ e TENSE: tensed ]                                               |
+|        |                                    |            |   RELS: < [ _write_v_to LBL: h8922 ARG0: e8919 ARG1: i8920 ARG2: i8921 ]         |
+|        |                                    |            |           [ appos LBL: h8906 ARG0: e8903 ARG1: x8904 ARG2: i8905 ]               |
+|        |                                    |            |           [ def_udef_a_q LBL: h8915 ARG0: x8912 RSTR: h8913 BODY: h8914 ]        |
+|        |                                    |            |           [ compound LBL: h8902 ARG0: e8899 ARG1: u8900 ARG2: u8901 ]            |
+|        |                                    |            |           [ proper_q LBL: h8897 ARG0: x8894 [ x NUM: sg ] RSTR: h8895 BODY:      |
+|        |                                    |            | h8896 ]                                                                          |
+|        |                                    |            |           [ yofc LBL: h8893 ARG0: x8892 CARG: "1956" ]                           |
+|        |                                    |            |           [ _film_n_1 LBL: h8885 ARG0: x8884 ]                                   |
+|        |                                    |            |           [ explicit_or_proper_q LBL: h8910 ARG0: x8907 RSTR: h8908 BODY: h8909  |
+|        |                                    |            | ]                                                                                |
+|        |                                    |            |           [ named LBL: h8883 ARG0: x8882 CARG: "It's Great to Be Young" ]        |
+|        |                                    |            |           [ explicit_or_proper_q LBL: h8926 ARG0: x8923 RSTR: h8924 BODY: h8925  |
+|        |                                    |            | ]                                                                                |
+|        |                                    |            |           [ named LBL: h8918 ARG0: x8917 CARG: "Ted Willis" ] >                  |
+|        |                                    |            |   HCONS: < h8895 qeq h8893 h8913 qeq h8885 h8908 qeq h8883 h8924 qeq h8918 >     |
+|        |                                    |            |   EQS: < x8894 eq x8892 h8902 eq h8898 u8901 eq x8894 h8902 eq h8885 u8900 eq    |
+|        |                                    |            | x8884 x8912 eq x8884 h8906 eq h8916 i8905 eq x8912 x8907 eq x8882 h8906 eq h8911 |
+|        |                                    |            | x8904 eq x8907 h8922 eq h8911 i8921 eq x8907 x8923 eq x8917 h8922 eq h8927 i8920 |
+|        |                                    |            | eq x8923 > ]                                                                     |
 +--------+------------------------------------+------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------+

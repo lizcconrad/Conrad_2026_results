@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id1055_172_516
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                                GOLD OUTPUTS                                                                                |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                                   | Generated? |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| It's Great to Be Young was a film from 1956; its length is 94 minutes. John Mills had a main role in the film which accrued 282,838 pounds at the box office. | False      |
-| It's Great to Be Young, a 1956 film starring John Mills, runs 94 minutes and made £282,838.                                                                   | False      |
-| John Mills starred in the 1957 film It's Great to Be Young which runs 94 minutes and costed £282,838.                                                         | False      |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                GOLD OUTPUTS                                                                               |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                                  | Generated? |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| It's Great to Be Young includes John Mills and Cecil Parker in its cast, and includes music composed by Louis Levy.                                          | False      |
+| It's Great to be Young is a 1956 film starring John Mills and Cecil Parker. Louis Levy composed the music for the film.                                      | False      |
+| John Mills and Cecil Parker had lead and main roles, respectively, in the 1956 film It’s Great to be Young. The music composer for the movie was Louis Levy. | False      |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------------------------+
 |                                               NODE METRICS                                               |
@@ -56,70 +56,58 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id1055_172_516
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h17321                                                                    |
-|               |   INDEX: e17319 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h17318 ARG0: e17315 ARG1: u17316 ARG2: u17317 ]     |
-|               |           [ appos LBL: h17302 ARG0: e17299 ARG1: x17300 ARG2: i17301 ]           |
-|               |           [ def_udef_a_q LBL: h17311 ARG0: x17308 RSTR: h17309 BODY: h17310 ]    |
-|               |           [ compound LBL: h17298 ARG0: e17295 ARG1: u17296 ARG2: u17297 ]        |
-|               |           [ proper_q LBL: h17293 ARG0: x17290 [ x NUM: sg ] RSTR: h17291 BODY:   |
-|               | h17292 ]                                                                         |
-|               |           [ yofc LBL: h17289 ARG0: x17288 CARG: "1956" ]                         |
-|               |           [ _film_n_1 LBL: h17281 ARG0: x17280 ]                                 |
-|               |           [ explicit_or_proper_q LBL: h17306 ARG0: x17303 RSTR: h17304 BODY:     |
-|               | h17305 ]                                                                         |
-|               |           [ named LBL: h17279 ARG0: x17278 CARG: "It's Great to Be Young" ]      |
-|               |           [ _star_v_1 LBL: h17321 ARG0: e17319 ARG1: i17320 ]                    |
-|               |           [ explicit_or_proper_q LBL: h17325 ARG0: x17322 RSTR: h17323 BODY:     |
-|               | h17324 ]                                                                         |
-|               |           [ named LBL: h17314 ARG0: x17313 CARG: "John Mills" ] >                |
-|               |   HCONS: < h17291 qeq h17289 h17309 qeq h17281 h17304 qeq h17279 h17323 qeq      |
-|               | h17314 >                                                                         |
-|               |   EQS: < x17290 eq x17288 h17298 eq h17294 u17297 eq x17290 h17298 eq h17281     |
-|               | u17296 eq x17280 x17308 eq x17280 h17302 eq h17312 i17301 eq x17308 x17303 eq    |
-|               | x17278 h17302 eq h17307 x17300 eq x17303 h17318 eq h17307 u17317 eq x17303       |
-|               | x17322 eq x17313 h17321 eq h17326 i17320 eq x17322 h17318 eq h17321 u17316 eq    |
-|               | e17319 > ]                                                                       |
+| Original      | [ TOP: h386                                                                      |
+|               |   INDEX: e384 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_state LBL: h383 ARG0: e380 ARG1: u381 ARG2: u382 ]             |
+|               |           [ appos LBL: h367 ARG0: e364 ARG1: x365 ARG2: i366 ]                   |
+|               |           [ def_udef_a_q LBL: h376 ARG0: x373 RSTR: h374 BODY: h375 ]            |
+|               |           [ compound LBL: h363 ARG0: e360 ARG1: u361 ARG2: u362 ]                |
+|               |           [ proper_q LBL: h358 ARG0: x355 [ x NUM: sg ] RSTR: h356 BODY: h357 ]  |
+|               |           [ yofc LBL: h354 ARG0: x353 CARG: "1956" ]                             |
+|               |           [ _film_n_1 LBL: h346 ARG0: x345 ]                                     |
+|               |           [ explicit_or_proper_q LBL: h371 ARG0: x368 RSTR: h369 BODY: h370 ]    |
+|               |           [ named LBL: h344 ARG0: x343 CARG: "It's Great to Be Young" ]          |
+|               |           [ _star_v_1 LBL: h386 ARG0: e384 ARG1: i385 ]                          |
+|               |           [ explicit_or_proper_q LBL: h390 ARG0: x387 RSTR: h388 BODY: h389 ]    |
+|               |           [ named LBL: h379 ARG0: x378 CARG: "John Mills" ] >                    |
+|               |   HCONS: < h356 qeq h354 h374 qeq h346 h369 qeq h344 h388 qeq h379 >             |
+|               |   EQS: < x355 eq x353 h363 eq h359 u362 eq x355 h363 eq h346 u361 eq x345 x373   |
+|               | eq x345 h367 eq h377 i366 eq x373 x368 eq x343 h367 eq h372 x365 eq x368 h383 eq |
+|               | h372 u382 eq x368 x387 eq x378 h386 eq h391 i385 eq x387 h383 eq h386 u381 eq    |
+|               | e384 > ]                                                                         |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h17302                                                                    |
-|               |   INDEX: e17319 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h17302 ARG0: e17315 ARG1: e17319 ARG2: x17278 ]     |
-|               |           [ appos LBL: h17302 ARG0: e17299 ARG1: x17278 ARG2: x17280 ]           |
-|               |           [ def_udef_a_q LBL: h17311 ARG0: x17280 RSTR: h17309 BODY: h17310 ]    |
-|               |           [ compound LBL: h17281 ARG0: e17295 ARG1: x17280 ARG2: x17288 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ proper_q LBL: h17293 ARG0: x17288 RSTR: h17291 BODY: h17292 ]        |
-|               |           [ yofc LBL: h17289 ARG0: x17288 CARG: "1956" ]                         |
-|               |           [ _film_n_1 LBL: h17281 ARG0: x17280 ]                                 |
-|               |           [ explicit_or_proper_q LBL: h17306 ARG0: x17278 RSTR: h17304 BODY:     |
-|               | h17305 ]                                                                         |
-|               |           [ named LBL: h17279 ARG0: x17278 CARG: "It's Great to Be Young" ]      |
-|               |           [ _star_v_1 LBL: h17302 ARG0: e17319 ARG1: x17313 ]                    |
-|               |           [ explicit_or_proper_q LBL: h17325 ARG0: x17313 RSTR: h17323 BODY:     |
-|               | h17324 ]                                                                         |
-|               |           [ named LBL: h17314 ARG0: x17313 CARG: "John Mills" ] >                |
-|               |   HCONS: < h17291 qeq h17289 h17309 qeq h17281 h17304 qeq h17279 h17323 qeq      |
-|               | h17314 > ]                                                                       |
+| EQs Collapsed | [ TOP: h367                                                                      |
+|               |   INDEX: e384 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_state LBL: h367 ARG0: e380 ARG1: e384 ARG2: x343 ]             |
+|               |           [ appos LBL: h367 ARG0: e364 ARG1: x343 ARG2: x345 ]                   |
+|               |           [ def_udef_a_q LBL: h376 ARG0: x345 RSTR: h374 BODY: h375 ]            |
+|               |           [ compound LBL: h346 ARG0: e360 ARG1: x345 ARG2: x353 [ x NUM: sg ] ]  |
+|               |           [ proper_q LBL: h358 ARG0: x353 RSTR: h356 BODY: h357 ]                |
+|               |           [ yofc LBL: h354 ARG0: x353 CARG: "1956" ]                             |
+|               |           [ _film_n_1 LBL: h346 ARG0: x345 ]                                     |
+|               |           [ explicit_or_proper_q LBL: h371 ARG0: x343 RSTR: h369 BODY: h370 ]    |
+|               |           [ named LBL: h344 ARG0: x343 CARG: "It's Great to Be Young" ]          |
+|               |           [ _star_v_1 LBL: h367 ARG0: e384 ARG1: x378 ]                          |
+|               |           [ explicit_or_proper_q LBL: h390 ARG0: x378 RSTR: h388 BODY: h389 ]    |
+|               |           [ named LBL: h379 ARG0: x378 CARG: "John Mills" ] >                    |
+|               |   HCONS: < h356 qeq h354 h374 qeq h346 h369 qeq h344 h388 qeq h379 > ]           |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h17327                                                                    |
-|               |   INDEX: e17319 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h17302 ARG0: e17315 ARG1: e17319 ARG2: x17278 ]     |
-|               |           [ appos LBL: h17302 ARG0: e17299 ARG1: x17278 ARG2: x17280 ]           |
-|               |           [ def_udef_a_q LBL: h17311 ARG0: x17280 RSTR: h17309 BODY: h17310 ]    |
-|               |           [ compound LBL: h17281 ARG0: e17295 ARG1: x17280 ARG2: x17288 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ proper_q LBL: h17293 ARG0: x17288 RSTR: h17291 BODY: h17292 ]        |
-|               |           [ yofc LBL: h17289 ARG0: x17288 CARG: "1956" ]                         |
-|               |           [ _film_n_1 LBL: h17281 ARG0: x17280 ]                                 |
-|               |           [ explicit_or_proper_q LBL: h17306 ARG0: x17278 RSTR: h17304 BODY:     |
-|               | h17305 ]                                                                         |
-|               |           [ named LBL: h17279 ARG0: x17278 CARG: "It's Great to Be Young" ]      |
-|               |           [ _star_v_1 LBL: h17302 ARG0: e17319 ARG1: x17313 ]                    |
-|               |           [ explicit_or_proper_q LBL: h17325 ARG0: x17313 RSTR: h17323 BODY:     |
-|               | h17324 ]                                                                         |
-|               |           [ named LBL: h17314 ARG0: x17313 CARG: "John Mills" ] >                |
-|               |   HCONS: < h17291 qeq h17289 h17309 qeq h17281 h17304 qeq h17279 h17323 qeq      |
-|               | h17314 h17327 qeq h17302 > ]                                                     |
+| Prepped       | [ TOP: h392                                                                      |
+|               |   INDEX: e384 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_state LBL: h367 ARG0: e380 ARG1: e384 ARG2: x343 ]             |
+|               |           [ appos LBL: h367 ARG0: e364 ARG1: x343 ARG2: x345 ]                   |
+|               |           [ def_udef_a_q LBL: h376 ARG0: x345 RSTR: h374 BODY: h375 ]            |
+|               |           [ compound LBL: h346 ARG0: e360 ARG1: x345 ARG2: x353 [ x NUM: sg ] ]  |
+|               |           [ proper_q LBL: h358 ARG0: x353 RSTR: h356 BODY: h357 ]                |
+|               |           [ yofc LBL: h354 ARG0: x353 CARG: "1956" ]                             |
+|               |           [ _film_n_1 LBL: h346 ARG0: x345 ]                                     |
+|               |           [ explicit_or_proper_q LBL: h371 ARG0: x343 RSTR: h369 BODY: h370 ]    |
+|               |           [ named LBL: h344 ARG0: x343 CARG: "It's Great to Be Young" ]          |
+|               |           [ _star_v_1 LBL: h367 ARG0: e384 ARG1: x378 ]                          |
+|               |           [ explicit_or_proper_q LBL: h390 ARG0: x378 RSTR: h388 BODY: h389 ]    |
+|               |           [ named LBL: h379 ARG0: x378 CARG: "John Mills" ] >                    |
+|               |   HCONS: < h356 qeq h354 h374 qeq h346 h369 qeq h344 h388 qeq h379 h392 qeq h367 |
+|               | > ]                                                                              |
 +---------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------+
@@ -127,27 +115,24 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id1055_172_516
 +------------------------------------+----------------------------------------------------------------------------------+
 | Node                               | Generated SEMENT                                                                 |
 +------------------------------------+----------------------------------------------------------------------------------+
-| It's_Great_to_Be_Young_(1956_film) | [ TOP: h17307                                                                    |
-|                                    |   INDEX: x17303                                                                  |
-|                                    |   RELS: < [ appos LBL: h17302 ARG0: e17299 ARG1: x17300 ARG2: i17301 ]           |
-|                                    |           [ def_udef_a_q LBL: h17311 ARG0: x17308 RSTR: h17309 BODY: h17310 ]    |
-|                                    |           [ compound LBL: h17298 ARG0: e17295 ARG1: u17296 ARG2: u17297 ]        |
-|                                    |           [ proper_q LBL: h17293 ARG0: x17290 [ x NUM: sg ] RSTR: h17291 BODY:   |
-|                                    | h17292 ]                                                                         |
-|                                    |           [ yofc LBL: h17289 ARG0: x17288 CARG: "1956" ]                         |
-|                                    |           [ _film_n_1 LBL: h17281 ARG0: x17280 ]                                 |
-|                                    |           [ explicit_or_proper_q LBL: h17306 ARG0: x17303 RSTR: h17304 BODY:     |
-|                                    | h17305 ]                                                                         |
-|                                    |           [ named LBL: h17279 ARG0: x17278 CARG: "It's Great to Be Young" ] >    |
-|                                    |   HCONS: < h17291 qeq h17289 h17309 qeq h17281 h17304 qeq h17279 >               |
-|                                    |   EQS: < x17290 eq x17288 h17298 eq h17294 u17297 eq x17290 h17298 eq h17281     |
-|                                    | u17296 eq x17280 x17308 eq x17280 h17302 eq h17312 i17301 eq x17308 x17303 eq    |
-|                                    | x17278 h17302 eq h17307 x17300 eq x17303 >                                       |
-|                                    |   SLOTS: < BODY: h17305 > ]                                                      |
+| It's_Great_to_Be_Young_(1956_film) | [ TOP: h372                                                                      |
+|                                    |   INDEX: x368                                                                    |
+|                                    |   RELS: < [ appos LBL: h367 ARG0: e364 ARG1: x365 ARG2: i366 ]                   |
+|                                    |           [ def_udef_a_q LBL: h376 ARG0: x373 RSTR: h374 BODY: h375 ]            |
+|                                    |           [ compound LBL: h363 ARG0: e360 ARG1: u361 ARG2: u362 ]                |
+|                                    |           [ proper_q LBL: h358 ARG0: x355 [ x NUM: sg ] RSTR: h356 BODY: h357 ]  |
+|                                    |           [ yofc LBL: h354 ARG0: x353 CARG: "1956" ]                             |
+|                                    |           [ _film_n_1 LBL: h346 ARG0: x345 ]                                     |
+|                                    |           [ explicit_or_proper_q LBL: h371 ARG0: x368 RSTR: h369 BODY: h370 ]    |
+|                                    |           [ named LBL: h344 ARG0: x343 CARG: "It's Great to Be Young" ] >        |
+|                                    |   HCONS: < h356 qeq h354 h374 qeq h346 h369 qeq h344 >                           |
+|                                    |   EQS: < x355 eq x353 h363 eq h359 u362 eq x355 h363 eq h346 u361 eq x345 x373   |
+|                                    | eq x345 h367 eq h377 i366 eq x373 x368 eq x343 h367 eq h372 x365 eq x368 >       |
+|                                    |   SLOTS: < BODY: h370 > ]                                                        |
 +------------------------------------+----------------------------------------------------------------------------------+
-| John_Mills                         | [ TOP: h17314                                                                    |
-|                                    |   INDEX: x17313                                                                  |
-|                                    |   RELS: < [ named LBL: h17314 ARG0: x17313 CARG: "John Mills" ] > ]              |
+| John_Mills                         | [ TOP: h379                                                                      |
+|                                    |   INDEX: x378                                                                    |
+|                                    |   RELS: < [ named LBL: h379 ARG0: x378 CARG: "John Mills" ] > ]                  |
 +------------------------------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -155,30 +140,25 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id1055_172_516
 +----------+------------------------------------+------------+----------------------------------------------------------------------------------+
 | Edge     | Parent                             | Child      | Generated SEMENT                                                                 |
 +----------+------------------------------------+------------+----------------------------------------------------------------------------------+
-| starring | It's_Great_to_Be_Young_(1956_film) | John_Mills | [ TOP: h17321                                                                    |
-|          |                                    |            |   INDEX: e17319 [ e TENSE: tensed ]                                              |
-|          |                                    |            |   RELS: < [ _in_p_state LBL: h17318 ARG0: e17315 ARG1: u17316 ARG2: u17317 ]     |
-|          |                                    |            |           [ appos LBL: h17302 ARG0: e17299 ARG1: x17300 ARG2: i17301 ]           |
-|          |                                    |            |           [ def_udef_a_q LBL: h17311 ARG0: x17308 RSTR: h17309 BODY: h17310 ]    |
-|          |                                    |            |           [ compound LBL: h17298 ARG0: e17295 ARG1: u17296 ARG2: u17297 ]        |
-|          |                                    |            |           [ proper_q LBL: h17293 ARG0: x17290 [ x NUM: sg ] RSTR: h17291 BODY:   |
-|          |                                    |            | h17292 ]                                                                         |
-|          |                                    |            |           [ yofc LBL: h17289 ARG0: x17288 CARG: "1956" ]                         |
-|          |                                    |            |           [ _film_n_1 LBL: h17281 ARG0: x17280 ]                                 |
-|          |                                    |            |           [ explicit_or_proper_q LBL: h17306 ARG0: x17303 RSTR: h17304 BODY:     |
-|          |                                    |            | h17305 ]                                                                         |
-|          |                                    |            |           [ named LBL: h17279 ARG0: x17278 CARG: "It's Great to Be Young" ]      |
-|          |                                    |            |           [ _star_v_1 LBL: h17321 ARG0: e17319 ARG1: i17320 ]                    |
-|          |                                    |            |           [ explicit_or_proper_q LBL: h17325 ARG0: x17322 RSTR: h17323 BODY:     |
-|          |                                    |            | h17324 ]                                                                         |
-|          |                                    |            |           [ named LBL: h17314 ARG0: x17313 CARG: "John Mills" ] >                |
-|          |                                    |            |   HCONS: < h17291 qeq h17289 h17309 qeq h17281 h17304 qeq h17279 h17323 qeq      |
-|          |                                    |            | h17314 >                                                                         |
-|          |                                    |            |   EQS: < x17290 eq x17288 h17298 eq h17294 u17297 eq x17290 h17298 eq h17281     |
-|          |                                    |            | u17296 eq x17280 x17308 eq x17280 h17302 eq h17312 i17301 eq x17308 x17303 eq    |
-|          |                                    |            | x17278 h17302 eq h17307 x17300 eq x17303 h17318 eq h17307 u17317 eq x17303       |
-|          |                                    |            | x17322 eq x17313 h17321 eq h17326 i17320 eq x17322 h17318 eq h17321 u17316 eq    |
-|          |                                    |            | e17319 > ]                                                                       |
+| starring | It's_Great_to_Be_Young_(1956_film) | John_Mills | [ TOP: h386                                                                      |
+|          |                                    |            |   INDEX: e384 [ e TENSE: tensed ]                                                |
+|          |                                    |            |   RELS: < [ _in_p_state LBL: h383 ARG0: e380 ARG1: u381 ARG2: u382 ]             |
+|          |                                    |            |           [ appos LBL: h367 ARG0: e364 ARG1: x365 ARG2: i366 ]                   |
+|          |                                    |            |           [ def_udef_a_q LBL: h376 ARG0: x373 RSTR: h374 BODY: h375 ]            |
+|          |                                    |            |           [ compound LBL: h363 ARG0: e360 ARG1: u361 ARG2: u362 ]                |
+|          |                                    |            |           [ proper_q LBL: h358 ARG0: x355 [ x NUM: sg ] RSTR: h356 BODY: h357 ]  |
+|          |                                    |            |           [ yofc LBL: h354 ARG0: x353 CARG: "1956" ]                             |
+|          |                                    |            |           [ _film_n_1 LBL: h346 ARG0: x345 ]                                     |
+|          |                                    |            |           [ explicit_or_proper_q LBL: h371 ARG0: x368 RSTR: h369 BODY: h370 ]    |
+|          |                                    |            |           [ named LBL: h344 ARG0: x343 CARG: "It's Great to Be Young" ]          |
+|          |                                    |            |           [ _star_v_1 LBL: h386 ARG0: e384 ARG1: i385 ]                          |
+|          |                                    |            |           [ explicit_or_proper_q LBL: h390 ARG0: x387 RSTR: h388 BODY: h389 ]    |
+|          |                                    |            |           [ named LBL: h379 ARG0: x378 CARG: "John Mills" ] >                    |
+|          |                                    |            |   HCONS: < h356 qeq h354 h374 qeq h346 h369 qeq h344 h388 qeq h379 >             |
+|          |                                    |            |   EQS: < x355 eq x353 h363 eq h359 u362 eq x355 h363 eq h346 u361 eq x345 x373   |
+|          |                                    |            | eq x345 h367 eq h377 i366 eq x373 x368 eq x343 h367 eq h372 x365 eq x368 h383 eq |
+|          |                                    |            | h372 u382 eq x368 x387 eq x378 h386 eq h391 i385 eq x387 h383 eq h386 u381 eq    |
+|          |                                    |            | e384 > ]                                                                         |
 +----------+------------------------------------+------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------+

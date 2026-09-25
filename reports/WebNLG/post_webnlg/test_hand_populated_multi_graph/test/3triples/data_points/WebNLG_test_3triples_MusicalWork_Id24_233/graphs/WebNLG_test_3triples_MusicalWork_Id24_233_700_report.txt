@@ -24,17 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id24_233_700
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                            GOLD OUTPUTS                                                                            |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                           | Generated? |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| From the production team Espionage, Train's song Mermaid (on the California 37 album) was followed by Train's performance of Imagine by John Lennon.  | False      |
-| Imagine is a song that Train followed Mermaid with, which was a song produced by the production team Espionage, and was on their album California 37. | False      |
-| The Train song Mermaid, which belongs to the California 37 Train album and was produced by Espionage, is followed by the John Lennon song Imagine.    | False      |
-| Train followed its song Mermaid, from its California 37 album, which was was produced by the production team Espionage, with a song titled Imagine.   | False      |
-| Train's song Imagine came after a song from their California 37 album, titled Mermaid, which was produced by the production team Espionage.           | False      |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                            GOLD OUTPUTS                                                                                           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                                                          | Generated? |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| The John Lennon song Imagine is produced by Phil Spector, but The Train song Mermaid, which is followed by the song Imagine, was produced by the Espionage production team.          | False      |
+| The song Mermaid by Train (produced by the production team Espionage) was followed by the release of Imagine by John Lennon (which was produced by Phil Spector) performed by Train. | False      |
+| Train followed Mermaid with Imagine, a song by John Lennon produced by Phil Spector's production team Espionage.                                                                     | False      |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +---------------------------------------------------------------------------------------------------+
 |                                            NODE METRICS                                           |
@@ -58,88 +56,87 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id24_233_700
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h23673                                                                    |
-|               |   INDEX: e23670 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _produce_v_1 LBL: h23673 ARG0: e23670 ARG1: i23671 ARG2: i23672 ]    |
-|               |           [ appos LBL: h23628 ARG0: e23625 ARG1: x23626 ARG2: i23627 ]           |
-|               |           [ def_udef_a_q LBL: h23637 ARG0: x23634 RSTR: h23635 BODY: h23636 ]    |
-|               |           [ compound LBL: h23619 ARG0: e23616 ARG1: u23617 ARG2: u23618 ]        |
-|               |           [ existential_q LBL: h23623 ARG0: x23620 RSTR: h23621 BODY: h23622 ]   |
-|               |           [ named LBL: h23615 ARG0: x23614 [ x NUM: sg ] CARG: "Train" ]         |
-|               |           [ _song_n_of LBL: h23613 ARG0: x23611 ARG1: i23612 ]                   |
-|               |           [ explicit_or_proper_q LBL: h23632 ARG0: x23629 RSTR: h23630 BODY:     |
-|               | h23631 ]                                                                         |
-|               |           [ named LBL: h23610 ARG0: x23609 CARG: "Mermaid" ]                     |
-|               |           [ appos LBL: h23659 ARG0: e23656 ARG1: x23657 ARG2: i23658 ]           |
-|               |           [ def_udef_a_q LBL: h23668 ARG0: x23665 RSTR: h23666 BODY: h23667 ]    |
-|               |           [ compound LBL: h23650 ARG0: e23647 ARG1: u23648 ARG2: u23649 ]        |
-|               |           [ existential_q LBL: h23654 ARG0: x23651 RSTR: h23652 BODY: h23653 ]   |
-|               |           [ _production_n_of LBL: h23646 ARG0: x23644 [ x NUM: sg ] ARG1: i23645 |
+| Original      | [ TOP: h5667                                                                     |
+|               |   INDEX: e5664 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _produce_v_1 LBL: h5667 ARG0: e5664 ARG1: i5665 ARG2: i5666 ]        |
+|               |           [ appos LBL: h5622 ARG0: e5619 ARG1: x5620 ARG2: i5621 ]               |
+|               |           [ def_udef_a_q LBL: h5631 ARG0: x5628 RSTR: h5629 BODY: h5630 ]        |
+|               |           [ compound LBL: h5613 ARG0: e5610 ARG1: u5611 ARG2: u5612 ]            |
+|               |           [ existential_q LBL: h5617 ARG0: x5614 RSTR: h5615 BODY: h5616 ]       |
+|               |           [ named LBL: h5609 ARG0: x5608 [ x NUM: sg ] CARG: "Train" ]           |
+|               |           [ _song_n_of LBL: h5607 ARG0: x5605 ARG1: i5606 ]                      |
+|               |           [ explicit_or_proper_q LBL: h5626 ARG0: x5623 RSTR: h5624 BODY: h5625  |
 |               | ]                                                                                |
-|               |           [ _team_n_of LBL: h23643 ARG0: x23641 ARG1: i23642 ]                   |
-|               |           [ explicit_or_proper_q LBL: h23663 ARG0: x23660 RSTR: h23661 BODY:     |
-|               | h23662 ]                                                                         |
-|               |           [ named LBL: h23640 ARG0: x23639 CARG: "Espionage" ] >                 |
-|               |   HCONS: < h23621 qeq h23615 h23635 qeq h23613 h23630 qeq h23610 h23652 qeq      |
-|               | h23646 h23666 qeq h23643 h23661 qeq h23640 >                                     |
-|               |   EQS: < x23620 eq x23614 h23619 eq h23624 u23618 eq x23620 h23619 eq h23613     |
-|               | u23617 eq x23611 x23634 eq x23611 h23628 eq h23638 i23627 eq x23634 x23629 eq    |
-|               | x23609 h23628 eq h23633 x23626 eq x23629 h23673 eq h23633 i23672 eq x23629       |
-|               | x23651 eq x23644 h23650 eq h23655 u23649 eq x23651 h23650 eq h23643 u23648 eq    |
-|               | x23641 x23665 eq x23641 h23659 eq h23669 i23658 eq x23665 x23660 eq x23639       |
-|               | h23659 eq h23664 x23657 eq x23660 h23673 eq h23664 i23671 eq x23660 > ]          |
+|               |           [ named LBL: h5604 ARG0: x5603 CARG: "Mermaid" ]                       |
+|               |           [ appos LBL: h5653 ARG0: e5650 ARG1: x5651 ARG2: i5652 ]               |
+|               |           [ def_udef_a_q LBL: h5662 ARG0: x5659 RSTR: h5660 BODY: h5661 ]        |
+|               |           [ compound LBL: h5644 ARG0: e5641 ARG1: u5642 ARG2: u5643 ]            |
+|               |           [ existential_q LBL: h5648 ARG0: x5645 RSTR: h5646 BODY: h5647 ]       |
+|               |           [ _production_n_of LBL: h5640 ARG0: x5638 [ x NUM: sg ] ARG1: i5639 ]  |
+|               |           [ _team_n_of LBL: h5637 ARG0: x5635 ARG1: i5636 ]                      |
+|               |           [ explicit_or_proper_q LBL: h5657 ARG0: x5654 RSTR: h5655 BODY: h5656  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5634 ARG0: x5633 CARG: "Espionage" ] >                   |
+|               |   HCONS: < h5615 qeq h5609 h5629 qeq h5607 h5624 qeq h5604 h5646 qeq h5640 h5660 |
+|               | qeq h5637 h5655 qeq h5634 >                                                      |
+|               |   EQS: < x5614 eq x5608 h5613 eq h5618 u5612 eq x5614 h5613 eq h5607 u5611 eq    |
+|               | x5605 x5628 eq x5605 h5622 eq h5632 i5621 eq x5628 x5623 eq x5603 h5622 eq h5627 |
+|               | x5620 eq x5623 h5667 eq h5627 i5666 eq x5623 x5645 eq x5638 h5644 eq h5649 u5643 |
+|               | eq x5645 h5644 eq h5637 u5642 eq x5635 x5659 eq x5635 h5653 eq h5663 i5652 eq    |
+|               | x5659 x5654 eq x5633 h5653 eq h5658 x5651 eq x5654 h5667 eq h5658 i5665 eq x5654 |
+|               | > ]                                                                              |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h23628                                                                    |
-|               |   INDEX: e23670 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _produce_v_1 LBL: h23628 ARG0: e23670 ARG1: x23639 ARG2: x23609 ]    |
-|               |           [ appos LBL: h23628 ARG0: e23625 ARG1: x23609 ARG2: x23611 ]           |
-|               |           [ def_udef_a_q LBL: h23637 ARG0: x23611 RSTR: h23635 BODY: h23636 ]    |
-|               |           [ compound LBL: h23613 ARG0: e23616 ARG1: x23611 ARG2: x23614 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h23623 ARG0: x23614 RSTR: h23621 BODY: h23622 ]   |
-|               |           [ named LBL: h23615 ARG0: x23614 CARG: "Train" ]                       |
-|               |           [ _song_n_of LBL: h23613 ARG0: x23611 ARG1: i23612 ]                   |
-|               |           [ explicit_or_proper_q LBL: h23632 ARG0: x23609 RSTR: h23630 BODY:     |
-|               | h23631 ]                                                                         |
-|               |           [ named LBL: h23610 ARG0: x23609 CARG: "Mermaid" ]                     |
-|               |           [ appos LBL: h23628 ARG0: e23656 ARG1: x23639 ARG2: x23641 ]           |
-|               |           [ def_udef_a_q LBL: h23668 ARG0: x23641 RSTR: h23666 BODY: h23667 ]    |
-|               |           [ compound LBL: h23643 ARG0: e23647 ARG1: x23641 ARG2: x23644 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h23654 ARG0: x23644 RSTR: h23652 BODY: h23653 ]   |
-|               |           [ _production_n_of LBL: h23646 ARG0: x23644 ARG1: i23645 ]             |
-|               |           [ _team_n_of LBL: h23643 ARG0: x23641 ARG1: i23642 ]                   |
-|               |           [ explicit_or_proper_q LBL: h23663 ARG0: x23639 RSTR: h23661 BODY:     |
-|               | h23662 ]                                                                         |
-|               |           [ named LBL: h23640 ARG0: x23639 CARG: "Espionage" ] >                 |
-|               |   HCONS: < h23621 qeq h23615 h23635 qeq h23613 h23630 qeq h23610 h23652 qeq      |
-|               | h23646 h23666 qeq h23643 h23661 qeq h23640 > ]                                   |
+| EQs Collapsed | [ TOP: h5622                                                                     |
+|               |   INDEX: e5664 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _produce_v_1 LBL: h5622 ARG0: e5664 ARG1: x5633 ARG2: x5603 ]        |
+|               |           [ appos LBL: h5622 ARG0: e5619 ARG1: x5603 ARG2: x5605 ]               |
+|               |           [ def_udef_a_q LBL: h5631 ARG0: x5605 RSTR: h5629 BODY: h5630 ]        |
+|               |           [ compound LBL: h5607 ARG0: e5610 ARG1: x5605 ARG2: x5608 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h5617 ARG0: x5608 RSTR: h5615 BODY: h5616 ]       |
+|               |           [ named LBL: h5609 ARG0: x5608 CARG: "Train" ]                         |
+|               |           [ _song_n_of LBL: h5607 ARG0: x5605 ARG1: i5606 ]                      |
+|               |           [ explicit_or_proper_q LBL: h5626 ARG0: x5603 RSTR: h5624 BODY: h5625  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5604 ARG0: x5603 CARG: "Mermaid" ]                       |
+|               |           [ appos LBL: h5622 ARG0: e5650 ARG1: x5633 ARG2: x5635 ]               |
+|               |           [ def_udef_a_q LBL: h5662 ARG0: x5635 RSTR: h5660 BODY: h5661 ]        |
+|               |           [ compound LBL: h5637 ARG0: e5641 ARG1: x5635 ARG2: x5638 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h5648 ARG0: x5638 RSTR: h5646 BODY: h5647 ]       |
+|               |           [ _production_n_of LBL: h5640 ARG0: x5638 ARG1: i5639 ]                |
+|               |           [ _team_n_of LBL: h5637 ARG0: x5635 ARG1: i5636 ]                      |
+|               |           [ explicit_or_proper_q LBL: h5657 ARG0: x5633 RSTR: h5655 BODY: h5656  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5634 ARG0: x5633 CARG: "Espionage" ] >                   |
+|               |   HCONS: < h5615 qeq h5609 h5629 qeq h5607 h5624 qeq h5604 h5646 qeq h5640 h5660 |
+|               | qeq h5637 h5655 qeq h5634 > ]                                                    |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h23674                                                                    |
-|               |   INDEX: e23670 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _produce_v_1 LBL: h23628 ARG0: e23670 ARG1: x23639 ARG2: x23609 ]    |
-|               |           [ appos LBL: h23628 ARG0: e23625 ARG1: x23609 ARG2: x23611 ]           |
-|               |           [ def_udef_a_q LBL: h23637 ARG0: x23611 RSTR: h23635 BODY: h23636 ]    |
-|               |           [ compound LBL: h23613 ARG0: e23616 ARG1: x23611 ARG2: x23614 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h23623 ARG0: x23614 RSTR: h23621 BODY: h23622 ]   |
-|               |           [ named LBL: h23615 ARG0: x23614 CARG: "Train" ]                       |
-|               |           [ _song_n_of LBL: h23613 ARG0: x23611 ARG1: i23612 ]                   |
-|               |           [ explicit_or_proper_q LBL: h23632 ARG0: x23609 RSTR: h23630 BODY:     |
-|               | h23631 ]                                                                         |
-|               |           [ named LBL: h23610 ARG0: x23609 CARG: "Mermaid" ]                     |
-|               |           [ appos LBL: h23628 ARG0: e23656 ARG1: x23639 ARG2: x23641 ]           |
-|               |           [ def_udef_a_q LBL: h23668 ARG0: x23641 RSTR: h23666 BODY: h23667 ]    |
-|               |           [ compound LBL: h23643 ARG0: e23647 ARG1: x23641 ARG2: x23644 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h23654 ARG0: x23644 RSTR: h23652 BODY: h23653 ]   |
-|               |           [ _production_n_of LBL: h23646 ARG0: x23644 ARG1: i23645 ]             |
-|               |           [ _team_n_of LBL: h23643 ARG0: x23641 ARG1: i23642 ]                   |
-|               |           [ explicit_or_proper_q LBL: h23663 ARG0: x23639 RSTR: h23661 BODY:     |
-|               | h23662 ]                                                                         |
-|               |           [ named LBL: h23640 ARG0: x23639 CARG: "Espionage" ] >                 |
-|               |   HCONS: < h23621 qeq h23615 h23635 qeq h23613 h23630 qeq h23610 h23652 qeq      |
-|               | h23646 h23666 qeq h23643 h23661 qeq h23640 h23674 qeq h23628 > ]                 |
+| Prepped       | [ TOP: h5668                                                                     |
+|               |   INDEX: e5664 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _produce_v_1 LBL: h5622 ARG0: e5664 ARG1: x5633 ARG2: x5603 ]        |
+|               |           [ appos LBL: h5622 ARG0: e5619 ARG1: x5603 ARG2: x5605 ]               |
+|               |           [ def_udef_a_q LBL: h5631 ARG0: x5605 RSTR: h5629 BODY: h5630 ]        |
+|               |           [ compound LBL: h5607 ARG0: e5610 ARG1: x5605 ARG2: x5608 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h5617 ARG0: x5608 RSTR: h5615 BODY: h5616 ]       |
+|               |           [ named LBL: h5609 ARG0: x5608 CARG: "Train" ]                         |
+|               |           [ _song_n_of LBL: h5607 ARG0: x5605 ARG1: i5606 ]                      |
+|               |           [ explicit_or_proper_q LBL: h5626 ARG0: x5603 RSTR: h5624 BODY: h5625  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5604 ARG0: x5603 CARG: "Mermaid" ]                       |
+|               |           [ appos LBL: h5622 ARG0: e5650 ARG1: x5633 ARG2: x5635 ]               |
+|               |           [ def_udef_a_q LBL: h5662 ARG0: x5635 RSTR: h5660 BODY: h5661 ]        |
+|               |           [ compound LBL: h5637 ARG0: e5641 ARG1: x5635 ARG2: x5638 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h5648 ARG0: x5638 RSTR: h5646 BODY: h5647 ]       |
+|               |           [ _production_n_of LBL: h5640 ARG0: x5638 ARG1: i5639 ]                |
+|               |           [ _team_n_of LBL: h5637 ARG0: x5635 ARG1: i5636 ]                      |
+|               |           [ explicit_or_proper_q LBL: h5657 ARG0: x5633 RSTR: h5655 BODY: h5656  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5634 ARG0: x5633 CARG: "Espionage" ] >                   |
+|               |   HCONS: < h5615 qeq h5609 h5629 qeq h5607 h5624 qeq h5604 h5646 qeq h5640 h5660 |
+|               | qeq h5637 h5655 qeq h5634 h5668 qeq h5622 > ]                                    |
 +---------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------+
@@ -147,40 +144,39 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id24_233_700
 +-----------------------------+----------------------------------------------------------------------------------+
 | Node                        | Generated SEMENT                                                                 |
 +-----------------------------+----------------------------------------------------------------------------------+
-| Mermaid_(Train_song)        | [ TOP: h23633                                                                    |
-|                             |   INDEX: x23629                                                                  |
-|                             |   RELS: < [ appos LBL: h23628 ARG0: e23625 ARG1: x23626 ARG2: i23627 ]           |
-|                             |           [ def_udef_a_q LBL: h23637 ARG0: x23634 RSTR: h23635 BODY: h23636 ]    |
-|                             |           [ compound LBL: h23619 ARG0: e23616 ARG1: u23617 ARG2: u23618 ]        |
-|                             |           [ existential_q LBL: h23623 ARG0: x23620 RSTR: h23621 BODY: h23622 ]   |
-|                             |           [ named LBL: h23615 ARG0: x23614 [ x NUM: sg ] CARG: "Train" ]         |
-|                             |           [ _song_n_of LBL: h23613 ARG0: x23611 ARG1: i23612 ]                   |
-|                             |           [ explicit_or_proper_q LBL: h23632 ARG0: x23629 RSTR: h23630 BODY:     |
-|                             | h23631 ]                                                                         |
-|                             |           [ named LBL: h23610 ARG0: x23609 CARG: "Mermaid" ] >                   |
-|                             |   HCONS: < h23621 qeq h23615 h23635 qeq h23613 h23630 qeq h23610 >               |
-|                             |   EQS: < x23620 eq x23614 h23619 eq h23624 u23618 eq x23620 h23619 eq h23613     |
-|                             | u23617 eq x23611 x23634 eq x23611 h23628 eq h23638 i23627 eq x23634 x23629 eq    |
-|                             | x23609 h23628 eq h23633 x23626 eq x23629 >                                       |
-|                             |   SLOTS: < BODY: h23631 > ]                                                      |
-+-----------------------------+----------------------------------------------------------------------------------+
-| Espionage_(production_team) | [ TOP: h23664                                                                    |
-|                             |   INDEX: x23660                                                                  |
-|                             |   RELS: < [ appos LBL: h23659 ARG0: e23656 ARG1: x23657 ARG2: i23658 ]           |
-|                             |           [ def_udef_a_q LBL: h23668 ARG0: x23665 RSTR: h23666 BODY: h23667 ]    |
-|                             |           [ compound LBL: h23650 ARG0: e23647 ARG1: u23648 ARG2: u23649 ]        |
-|                             |           [ existential_q LBL: h23654 ARG0: x23651 RSTR: h23652 BODY: h23653 ]   |
-|                             |           [ _production_n_of LBL: h23646 ARG0: x23644 [ x NUM: sg ] ARG1: i23645 |
+| Mermaid_(Train_song)        | [ TOP: h5627                                                                     |
+|                             |   INDEX: x5623                                                                   |
+|                             |   RELS: < [ appos LBL: h5622 ARG0: e5619 ARG1: x5620 ARG2: i5621 ]               |
+|                             |           [ def_udef_a_q LBL: h5631 ARG0: x5628 RSTR: h5629 BODY: h5630 ]        |
+|                             |           [ compound LBL: h5613 ARG0: e5610 ARG1: u5611 ARG2: u5612 ]            |
+|                             |           [ existential_q LBL: h5617 ARG0: x5614 RSTR: h5615 BODY: h5616 ]       |
+|                             |           [ named LBL: h5609 ARG0: x5608 [ x NUM: sg ] CARG: "Train" ]           |
+|                             |           [ _song_n_of LBL: h5607 ARG0: x5605 ARG1: i5606 ]                      |
+|                             |           [ explicit_or_proper_q LBL: h5626 ARG0: x5623 RSTR: h5624 BODY: h5625  |
 |                             | ]                                                                                |
-|                             |           [ _team_n_of LBL: h23643 ARG0: x23641 ARG1: i23642 ]                   |
-|                             |           [ explicit_or_proper_q LBL: h23663 ARG0: x23660 RSTR: h23661 BODY:     |
-|                             | h23662 ]                                                                         |
-|                             |           [ named LBL: h23640 ARG0: x23639 CARG: "Espionage" ] >                 |
-|                             |   HCONS: < h23652 qeq h23646 h23666 qeq h23643 h23661 qeq h23640 >               |
-|                             |   EQS: < x23651 eq x23644 h23650 eq h23655 u23649 eq x23651 h23650 eq h23643     |
-|                             | u23648 eq x23641 x23665 eq x23641 h23659 eq h23669 i23658 eq x23665 x23660 eq    |
-|                             | x23639 h23659 eq h23664 x23657 eq x23660 >                                       |
-|                             |   SLOTS: < BODY: h23662 > ]                                                      |
+|                             |           [ named LBL: h5604 ARG0: x5603 CARG: "Mermaid" ] >                     |
+|                             |   HCONS: < h5615 qeq h5609 h5629 qeq h5607 h5624 qeq h5604 >                     |
+|                             |   EQS: < x5614 eq x5608 h5613 eq h5618 u5612 eq x5614 h5613 eq h5607 u5611 eq    |
+|                             | x5605 x5628 eq x5605 h5622 eq h5632 i5621 eq x5628 x5623 eq x5603 h5622 eq h5627 |
+|                             | x5620 eq x5623 >                                                                 |
+|                             |   SLOTS: < BODY: h5625 > ]                                                       |
++-----------------------------+----------------------------------------------------------------------------------+
+| Espionage_(production_team) | [ TOP: h5658                                                                     |
+|                             |   INDEX: x5654                                                                   |
+|                             |   RELS: < [ appos LBL: h5653 ARG0: e5650 ARG1: x5651 ARG2: i5652 ]               |
+|                             |           [ def_udef_a_q LBL: h5662 ARG0: x5659 RSTR: h5660 BODY: h5661 ]        |
+|                             |           [ compound LBL: h5644 ARG0: e5641 ARG1: u5642 ARG2: u5643 ]            |
+|                             |           [ existential_q LBL: h5648 ARG0: x5645 RSTR: h5646 BODY: h5647 ]       |
+|                             |           [ _production_n_of LBL: h5640 ARG0: x5638 [ x NUM: sg ] ARG1: i5639 ]  |
+|                             |           [ _team_n_of LBL: h5637 ARG0: x5635 ARG1: i5636 ]                      |
+|                             |           [ explicit_or_proper_q LBL: h5657 ARG0: x5654 RSTR: h5655 BODY: h5656  |
+|                             | ]                                                                                |
+|                             |           [ named LBL: h5634 ARG0: x5633 CARG: "Espionage" ] >                   |
+|                             |   HCONS: < h5646 qeq h5640 h5660 qeq h5637 h5655 qeq h5634 >                     |
+|                             |   EQS: < x5645 eq x5638 h5644 eq h5649 u5643 eq x5645 h5644 eq h5637 u5642 eq    |
+|                             | x5635 x5659 eq x5635 h5653 eq h5663 i5652 eq x5659 x5654 eq x5633 h5653 eq h5658 |
+|                             | x5651 eq x5654 >                                                                 |
+|                             |   SLOTS: < BODY: h5656 > ]                                                       |
 +-----------------------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -188,36 +184,35 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id24_233_700
 +----------+----------------------+-----------------------------+----------------------------------------------------------------------------------+
 | Edge     | Parent               | Child                       | Generated SEMENT                                                                 |
 +----------+----------------------+-----------------------------+----------------------------------------------------------------------------------+
-| producer | Mermaid_(Train_song) | Espionage_(production_team) | [ TOP: h23673                                                                    |
-|          |                      |                             |   INDEX: e23670 [ e TENSE: tensed ]                                              |
-|          |                      |                             |   RELS: < [ _produce_v_1 LBL: h23673 ARG0: e23670 ARG1: i23671 ARG2: i23672 ]    |
-|          |                      |                             |           [ appos LBL: h23628 ARG0: e23625 ARG1: x23626 ARG2: i23627 ]           |
-|          |                      |                             |           [ def_udef_a_q LBL: h23637 ARG0: x23634 RSTR: h23635 BODY: h23636 ]    |
-|          |                      |                             |           [ compound LBL: h23619 ARG0: e23616 ARG1: u23617 ARG2: u23618 ]        |
-|          |                      |                             |           [ existential_q LBL: h23623 ARG0: x23620 RSTR: h23621 BODY: h23622 ]   |
-|          |                      |                             |           [ named LBL: h23615 ARG0: x23614 [ x NUM: sg ] CARG: "Train" ]         |
-|          |                      |                             |           [ _song_n_of LBL: h23613 ARG0: x23611 ARG1: i23612 ]                   |
-|          |                      |                             |           [ explicit_or_proper_q LBL: h23632 ARG0: x23629 RSTR: h23630 BODY:     |
-|          |                      |                             | h23631 ]                                                                         |
-|          |                      |                             |           [ named LBL: h23610 ARG0: x23609 CARG: "Mermaid" ]                     |
-|          |                      |                             |           [ appos LBL: h23659 ARG0: e23656 ARG1: x23657 ARG2: i23658 ]           |
-|          |                      |                             |           [ def_udef_a_q LBL: h23668 ARG0: x23665 RSTR: h23666 BODY: h23667 ]    |
-|          |                      |                             |           [ compound LBL: h23650 ARG0: e23647 ARG1: u23648 ARG2: u23649 ]        |
-|          |                      |                             |           [ existential_q LBL: h23654 ARG0: x23651 RSTR: h23652 BODY: h23653 ]   |
-|          |                      |                             |           [ _production_n_of LBL: h23646 ARG0: x23644 [ x NUM: sg ] ARG1: i23645 |
+| producer | Mermaid_(Train_song) | Espionage_(production_team) | [ TOP: h5667                                                                     |
+|          |                      |                             |   INDEX: e5664 [ e TENSE: tensed ]                                               |
+|          |                      |                             |   RELS: < [ _produce_v_1 LBL: h5667 ARG0: e5664 ARG1: i5665 ARG2: i5666 ]        |
+|          |                      |                             |           [ appos LBL: h5622 ARG0: e5619 ARG1: x5620 ARG2: i5621 ]               |
+|          |                      |                             |           [ def_udef_a_q LBL: h5631 ARG0: x5628 RSTR: h5629 BODY: h5630 ]        |
+|          |                      |                             |           [ compound LBL: h5613 ARG0: e5610 ARG1: u5611 ARG2: u5612 ]            |
+|          |                      |                             |           [ existential_q LBL: h5617 ARG0: x5614 RSTR: h5615 BODY: h5616 ]       |
+|          |                      |                             |           [ named LBL: h5609 ARG0: x5608 [ x NUM: sg ] CARG: "Train" ]           |
+|          |                      |                             |           [ _song_n_of LBL: h5607 ARG0: x5605 ARG1: i5606 ]                      |
+|          |                      |                             |           [ explicit_or_proper_q LBL: h5626 ARG0: x5623 RSTR: h5624 BODY: h5625  |
 |          |                      |                             | ]                                                                                |
-|          |                      |                             |           [ _team_n_of LBL: h23643 ARG0: x23641 ARG1: i23642 ]                   |
-|          |                      |                             |           [ explicit_or_proper_q LBL: h23663 ARG0: x23660 RSTR: h23661 BODY:     |
-|          |                      |                             | h23662 ]                                                                         |
-|          |                      |                             |           [ named LBL: h23640 ARG0: x23639 CARG: "Espionage" ] >                 |
-|          |                      |                             |   HCONS: < h23621 qeq h23615 h23635 qeq h23613 h23630 qeq h23610 h23652 qeq      |
-|          |                      |                             | h23646 h23666 qeq h23643 h23661 qeq h23640 >                                     |
-|          |                      |                             |   EQS: < x23620 eq x23614 h23619 eq h23624 u23618 eq x23620 h23619 eq h23613     |
-|          |                      |                             | u23617 eq x23611 x23634 eq x23611 h23628 eq h23638 i23627 eq x23634 x23629 eq    |
-|          |                      |                             | x23609 h23628 eq h23633 x23626 eq x23629 h23673 eq h23633 i23672 eq x23629       |
-|          |                      |                             | x23651 eq x23644 h23650 eq h23655 u23649 eq x23651 h23650 eq h23643 u23648 eq    |
-|          |                      |                             | x23641 x23665 eq x23641 h23659 eq h23669 i23658 eq x23665 x23660 eq x23639       |
-|          |                      |                             | h23659 eq h23664 x23657 eq x23660 h23673 eq h23664 i23671 eq x23660 > ]          |
+|          |                      |                             |           [ named LBL: h5604 ARG0: x5603 CARG: "Mermaid" ]                       |
+|          |                      |                             |           [ appos LBL: h5653 ARG0: e5650 ARG1: x5651 ARG2: i5652 ]               |
+|          |                      |                             |           [ def_udef_a_q LBL: h5662 ARG0: x5659 RSTR: h5660 BODY: h5661 ]        |
+|          |                      |                             |           [ compound LBL: h5644 ARG0: e5641 ARG1: u5642 ARG2: u5643 ]            |
+|          |                      |                             |           [ existential_q LBL: h5648 ARG0: x5645 RSTR: h5646 BODY: h5647 ]       |
+|          |                      |                             |           [ _production_n_of LBL: h5640 ARG0: x5638 [ x NUM: sg ] ARG1: i5639 ]  |
+|          |                      |                             |           [ _team_n_of LBL: h5637 ARG0: x5635 ARG1: i5636 ]                      |
+|          |                      |                             |           [ explicit_or_proper_q LBL: h5657 ARG0: x5654 RSTR: h5655 BODY: h5656  |
+|          |                      |                             | ]                                                                                |
+|          |                      |                             |           [ named LBL: h5634 ARG0: x5633 CARG: "Espionage" ] >                   |
+|          |                      |                             |   HCONS: < h5615 qeq h5609 h5629 qeq h5607 h5624 qeq h5604 h5646 qeq h5640 h5660 |
+|          |                      |                             | qeq h5637 h5655 qeq h5634 >                                                      |
+|          |                      |                             |   EQS: < x5614 eq x5608 h5613 eq h5618 u5612 eq x5614 h5613 eq h5607 u5611 eq    |
+|          |                      |                             | x5605 x5628 eq x5605 h5622 eq h5632 i5621 eq x5628 x5623 eq x5603 h5622 eq h5627 |
+|          |                      |                             | x5620 eq x5623 h5667 eq h5627 i5666 eq x5623 x5645 eq x5638 h5644 eq h5649 u5643 |
+|          |                      |                             | eq x5645 h5644 eq h5637 u5642 eq x5635 x5659 eq x5635 h5653 eq h5663 i5652 eq    |
+|          |                      |                             | x5659 x5654 eq x5633 h5653 eq h5658 x5651 eq x5654 h5667 eq h5658 i5665 eq x5654 |
+|          |                      |                             | > ]                                                                              |
 +----------+----------------------+-----------------------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------+

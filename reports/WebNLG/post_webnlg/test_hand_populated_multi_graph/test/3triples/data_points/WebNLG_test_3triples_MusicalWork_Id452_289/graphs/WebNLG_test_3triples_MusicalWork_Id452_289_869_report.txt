@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id452_289_869
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                                                                                GOLD OUTPUTS                                                                                                                               |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                                                                                                                                  | Generated? |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Mermaid,performed by Train, is on the Sony Music Entertainment label;however,John Lennon also released Imagine which was followed by Happy Xmas (War is Over) on the same record label.                                                                      | False      |
-| The Train song Mermaid, released under the record label Sony Music Entertainment, is followed by the John Lennon song Imagine, which was followed by his hit Imagine with Happy Xmas (War is Over).                                                          | False      |
-| Train's hit Mermaid was put out by the Sony Music Entertainment record label, followed by Mermaid with Imagine, a song by John Lennon. The release of the song Imagine by John Lennon was then followed by the release of the song Happy Xmas (War Is Over). | False      |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                                    GOLD OUTPUTS                                                                                                    |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                                                                           | Generated? |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| The Train song Mermaid was preceded by the song This'll be my year. Mermaid was followed by the John Lennon song Imagine. The song Imagine was followed with Happy Xmas (War is Over) by John Lennon. | False      |
+| The song Mermaid by Train was preceded by the song This'll Be My Year and followed by the release of Imagine by John Lennon performed by Train and then by Happy Xmas (War Is Over).                  | False      |
+| Train followed This’ll Be My Year with Mermaid, and then with Imagine, a song written by John Lennon prior to that artist’s release of Happy Xmas (War is Over).                                      | False      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +--------------------------------------------------------------------------------------------------+
 |                                           NODE METRICS                                           |
@@ -56,65 +56,64 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id452_289_869
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h29239                                                                    |
-|               |   INDEX: e29236 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _follow_v_1 LBL: h29239 ARG0: e29236 ARG1: i29237 ARG2: i29238 ]     |
-|               |           [ appos LBL: h29223 ARG0: e29220 ARG1: x29221 ARG2: i29222 ]           |
-|               |           [ def_udef_a_q LBL: h29232 ARG0: x29229 RSTR: h29230 BODY: h29231 ]    |
-|               |           [ compound LBL: h29214 ARG0: e29211 ARG1: u29212 ARG2: u29213 ]        |
-|               |           [ existential_q LBL: h29218 ARG0: x29215 RSTR: h29216 BODY: h29217 ]   |
-|               |           [ named LBL: h29210 ARG0: x29209 [ x NUM: sg ] CARG: "John Lennon" ]   |
-|               |           [ _song_n_of LBL: h29208 ARG0: x29206 ARG1: i29207 ]                   |
-|               |           [ explicit_or_proper_q LBL: h29227 ARG0: x29224 RSTR: h29225 BODY:     |
-|               | h29226 ]                                                                         |
-|               |           [ named LBL: h29205 ARG0: x29204 CARG: "Imagine" ]                     |
-|               |           [ explicit_or_proper_q LBL: h29243 ARG0: x29240 RSTR: h29241 BODY:     |
-|               | h29242 ]                                                                         |
-|               |           [ named LBL: h29235 ARG0: x29234 CARG: "Happy Xmas (War Is Over)" ] >  |
-|               |   HCONS: < h29216 qeq h29210 h29230 qeq h29208 h29225 qeq h29205 h29241 qeq      |
-|               | h29235 >                                                                         |
-|               |   EQS: < x29215 eq x29209 h29214 eq h29219 u29213 eq x29215 h29214 eq h29208     |
-|               | u29212 eq x29206 x29229 eq x29206 h29223 eq h29233 i29222 eq x29229 x29224 eq    |
-|               | x29204 h29223 eq h29228 x29221 eq x29224 h29239 eq h29228 i29238 eq x29224       |
-|               | x29240 eq x29234 h29239 eq h29244 i29237 eq x29240 > ]                           |
+| Original      | [ TOP: h10022                                                                    |
+|               |   INDEX: e10019 [ e TENSE: tensed ]                                              |
+|               |   RELS: < [ _follow_v_1 LBL: h10022 ARG0: e10019 ARG1: i10020 ARG2: i10021 ]     |
+|               |           [ appos LBL: h10006 ARG0: e10003 ARG1: x10004 ARG2: i10005 ]           |
+|               |           [ def_udef_a_q LBL: h10015 ARG0: x10012 RSTR: h10013 BODY: h10014 ]    |
+|               |           [ compound LBL: h9997 ARG0: e9994 ARG1: u9995 ARG2: u9996 ]            |
+|               |           [ existential_q LBL: h10001 ARG0: x9998 RSTR: h9999 BODY: h10000 ]     |
+|               |           [ named LBL: h9993 ARG0: x9992 [ x NUM: sg ] CARG: "John Lennon" ]     |
+|               |           [ _song_n_of LBL: h9991 ARG0: x9989 ARG1: i9990 ]                      |
+|               |           [ explicit_or_proper_q LBL: h10010 ARG0: x10007 RSTR: h10008 BODY:     |
+|               | h10009 ]                                                                         |
+|               |           [ named LBL: h9988 ARG0: x9987 CARG: "Imagine" ]                       |
+|               |           [ explicit_or_proper_q LBL: h10026 ARG0: x10023 RSTR: h10024 BODY:     |
+|               | h10025 ]                                                                         |
+|               |           [ named LBL: h10018 ARG0: x10017 CARG: "Happy Xmas (War Is Over)" ] >  |
+|               |   HCONS: < h9999 qeq h9993 h10013 qeq h9991 h10008 qeq h9988 h10024 qeq h10018 > |
+|               |   EQS: < x9998 eq x9992 h9997 eq h10002 u9996 eq x9998 h9997 eq h9991 u9995 eq   |
+|               | x9989 x10012 eq x9989 h10006 eq h10016 i10005 eq x10012 x10007 eq x9987 h10006   |
+|               | eq h10011 x10004 eq x10007 h10022 eq h10011 i10021 eq x10007 x10023 eq x10017    |
+|               | h10022 eq h10027 i10020 eq x10023 > ]                                            |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h29223                                                                    |
-|               |   INDEX: e29236 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _follow_v_1 LBL: h29223 ARG0: e29236 ARG1: x29234 ARG2: x29204 ]     |
-|               |           [ appos LBL: h29223 ARG0: e29220 ARG1: x29204 ARG2: x29206 ]           |
-|               |           [ def_udef_a_q LBL: h29232 ARG0: x29206 RSTR: h29230 BODY: h29231 ]    |
-|               |           [ compound LBL: h29208 ARG0: e29211 ARG1: x29206 ARG2: x29209 [ x NUM: |
+| EQs Collapsed | [ TOP: h10006                                                                    |
+|               |   INDEX: e10019 [ e TENSE: tensed ]                                              |
+|               |   RELS: < [ _follow_v_1 LBL: h10006 ARG0: e10019 ARG1: x10017 ARG2: x10004 ]     |
+|               |           [ appos LBL: h10006 ARG0: e10003 ARG1: x10004 ARG2: x10012 ]           |
+|               |           [ def_udef_a_q LBL: h10015 ARG0: x10012 RSTR: h10013 BODY: h10014 ]    |
+|               |           [ compound LBL: h10002 ARG0: e9994 ARG1: x10012 ARG2: x9992 [ x NUM:   |
 |               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h29218 ARG0: x29209 RSTR: h29216 BODY: h29217 ]   |
-|               |           [ named LBL: h29210 ARG0: x29209 CARG: "John Lennon" ]                 |
-|               |           [ _song_n_of LBL: h29208 ARG0: x29206 ARG1: i29207 ]                   |
-|               |           [ explicit_or_proper_q LBL: h29227 ARG0: x29204 RSTR: h29225 BODY:     |
-|               | h29226 ]                                                                         |
-|               |           [ named LBL: h29205 ARG0: x29204 CARG: "Imagine" ]                     |
-|               |           [ explicit_or_proper_q LBL: h29243 ARG0: x29234 RSTR: h29241 BODY:     |
-|               | h29242 ]                                                                         |
-|               |           [ named LBL: h29235 ARG0: x29234 CARG: "Happy Xmas (War Is Over)" ] >  |
-|               |   HCONS: < h29216 qeq h29210 h29230 qeq h29208 h29225 qeq h29205 h29241 qeq      |
-|               | h29235 > ]                                                                       |
+|               |           [ existential_q LBL: h10001 ARG0: x9992 RSTR: h9999 BODY: h10000 ]     |
+|               |           [ named LBL: h9993 ARG0: x9992 CARG: "John Lennon" ]                   |
+|               |           [ _song_n_of LBL: h10002 ARG0: x10012 ARG1: i9990 ]                    |
+|               |           [ explicit_or_proper_q LBL: h10010 ARG0: x10004 RSTR: h10008 BODY:     |
+|               | h10009 ]                                                                         |
+|               |           [ named LBL: h9988 ARG0: x10004 CARG: "Imagine" ]                      |
+|               |           [ explicit_or_proper_q LBL: h10026 ARG0: x10017 RSTR: h10024 BODY:     |
+|               | h10025 ]                                                                         |
+|               |           [ named LBL: h10018 ARG0: x10017 CARG: "Happy Xmas (War Is Over)" ] >  |
+|               |   HCONS: < h9999 qeq h9993 h10013 qeq h10002 h10008 qeq h9988 h10024 qeq h10018  |
+|               | > ]                                                                              |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h29245                                                                    |
-|               |   INDEX: e29236 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _follow_v_1 LBL: h29223 ARG0: e29236 ARG1: x29234 ARG2: x29204 ]     |
-|               |           [ appos LBL: h29223 ARG0: e29220 ARG1: x29204 ARG2: x29206 ]           |
-|               |           [ def_udef_a_q LBL: h29232 ARG0: x29206 RSTR: h29230 BODY: h29231 ]    |
-|               |           [ compound LBL: h29208 ARG0: e29211 ARG1: x29206 ARG2: x29209 [ x NUM: |
+| Prepped       | [ TOP: h10028                                                                    |
+|               |   INDEX: e10019 [ e TENSE: tensed ]                                              |
+|               |   RELS: < [ _follow_v_1 LBL: h10006 ARG0: e10019 ARG1: x10017 ARG2: x10004 ]     |
+|               |           [ appos LBL: h10006 ARG0: e10003 ARG1: x10004 ARG2: x10012 ]           |
+|               |           [ def_udef_a_q LBL: h10015 ARG0: x10012 RSTR: h10013 BODY: h10014 ]    |
+|               |           [ compound LBL: h10002 ARG0: e9994 ARG1: x10012 ARG2: x9992 [ x NUM:   |
 |               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h29218 ARG0: x29209 RSTR: h29216 BODY: h29217 ]   |
-|               |           [ named LBL: h29210 ARG0: x29209 CARG: "John Lennon" ]                 |
-|               |           [ _song_n_of LBL: h29208 ARG0: x29206 ARG1: i29207 ]                   |
-|               |           [ explicit_or_proper_q LBL: h29227 ARG0: x29204 RSTR: h29225 BODY:     |
-|               | h29226 ]                                                                         |
-|               |           [ named LBL: h29205 ARG0: x29204 CARG: "Imagine" ]                     |
-|               |           [ explicit_or_proper_q LBL: h29243 ARG0: x29234 RSTR: h29241 BODY:     |
-|               | h29242 ]                                                                         |
-|               |           [ named LBL: h29235 ARG0: x29234 CARG: "Happy Xmas (War Is Over)" ] >  |
-|               |   HCONS: < h29216 qeq h29210 h29230 qeq h29208 h29225 qeq h29205 h29241 qeq      |
-|               | h29235 h29245 qeq h29223 > ]                                                     |
+|               |           [ existential_q LBL: h10001 ARG0: x9992 RSTR: h9999 BODY: h10000 ]     |
+|               |           [ named LBL: h9993 ARG0: x9992 CARG: "John Lennon" ]                   |
+|               |           [ _song_n_of LBL: h10002 ARG0: x10012 ARG1: i9990 ]                    |
+|               |           [ explicit_or_proper_q LBL: h10010 ARG0: x10004 RSTR: h10008 BODY:     |
+|               | h10009 ]                                                                         |
+|               |           [ named LBL: h9988 ARG0: x10004 CARG: "Imagine" ]                      |
+|               |           [ explicit_or_proper_q LBL: h10026 ARG0: x10017 RSTR: h10024 BODY:     |
+|               | h10025 ]                                                                         |
+|               |           [ named LBL: h10018 ARG0: x10017 CARG: "Happy Xmas (War Is Over)" ] >  |
+|               |   HCONS: < h9999 qeq h9993 h10013 qeq h10002 h10008 qeq h9988 h10024 qeq h10018  |
+|               | h10028 qeq h10006 > ]                                                            |
 +---------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -122,26 +121,26 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id452_289_869
 +----------------------------+----------------------------------------------------------------------------------+
 | Node                       | Generated SEMENT                                                                 |
 +----------------------------+----------------------------------------------------------------------------------+
-| Imagine_(John_Lennon_song) | [ TOP: h29228                                                                    |
-|                            |   INDEX: x29224                                                                  |
-|                            |   RELS: < [ appos LBL: h29223 ARG0: e29220 ARG1: x29221 ARG2: i29222 ]           |
-|                            |           [ def_udef_a_q LBL: h29232 ARG0: x29229 RSTR: h29230 BODY: h29231 ]    |
-|                            |           [ compound LBL: h29214 ARG0: e29211 ARG1: u29212 ARG2: u29213 ]        |
-|                            |           [ existential_q LBL: h29218 ARG0: x29215 RSTR: h29216 BODY: h29217 ]   |
-|                            |           [ named LBL: h29210 ARG0: x29209 [ x NUM: sg ] CARG: "John Lennon" ]   |
-|                            |           [ _song_n_of LBL: h29208 ARG0: x29206 ARG1: i29207 ]                   |
-|                            |           [ explicit_or_proper_q LBL: h29227 ARG0: x29224 RSTR: h29225 BODY:     |
-|                            | h29226 ]                                                                         |
-|                            |           [ named LBL: h29205 ARG0: x29204 CARG: "Imagine" ] >                   |
-|                            |   HCONS: < h29216 qeq h29210 h29230 qeq h29208 h29225 qeq h29205 >               |
-|                            |   EQS: < x29215 eq x29209 h29214 eq h29219 u29213 eq x29215 h29214 eq h29208     |
-|                            | u29212 eq x29206 x29229 eq x29206 h29223 eq h29233 i29222 eq x29229 x29224 eq    |
-|                            | x29204 h29223 eq h29228 x29221 eq x29224 >                                       |
-|                            |   SLOTS: < BODY: h29226 > ]                                                      |
+| Imagine_(John_Lennon_song) | [ TOP: h10011                                                                    |
+|                            |   INDEX: x10007                                                                  |
+|                            |   RELS: < [ appos LBL: h10006 ARG0: e10003 ARG1: x10004 ARG2: i10005 ]           |
+|                            |           [ def_udef_a_q LBL: h10015 ARG0: x10012 RSTR: h10013 BODY: h10014 ]    |
+|                            |           [ compound LBL: h9997 ARG0: e9994 ARG1: u9995 ARG2: u9996 ]            |
+|                            |           [ existential_q LBL: h10001 ARG0: x9998 RSTR: h9999 BODY: h10000 ]     |
+|                            |           [ named LBL: h9993 ARG0: x9992 [ x NUM: sg ] CARG: "John Lennon" ]     |
+|                            |           [ _song_n_of LBL: h9991 ARG0: x9989 ARG1: i9990 ]                      |
+|                            |           [ explicit_or_proper_q LBL: h10010 ARG0: x10007 RSTR: h10008 BODY:     |
+|                            | h10009 ]                                                                         |
+|                            |           [ named LBL: h9988 ARG0: x9987 CARG: "Imagine" ] >                     |
+|                            |   HCONS: < h9999 qeq h9993 h10013 qeq h9991 h10008 qeq h9988 >                   |
+|                            |   EQS: < x9998 eq x9992 h9997 eq h10002 u9996 eq x9998 h9997 eq h9991 u9995 eq   |
+|                            | x9989 x10012 eq x9989 h10006 eq h10016 i10005 eq x10012 x10007 eq x9987 h10006   |
+|                            | eq h10011 x10004 eq x10007 >                                                     |
+|                            |   SLOTS: < BODY: h10009 > ]                                                      |
 +----------------------------+----------------------------------------------------------------------------------+
-| Happy_Xmas_(War_Is_Over)   | [ TOP: h29235                                                                    |
-|                            |   INDEX: x29234                                                                  |
-|                            |   RELS: < [ named LBL: h29235 ARG0: x29234 CARG: "Happy Xmas (War Is Over)" ] >  |
+| Happy_Xmas_(War_Is_Over)   | [ TOP: h10018                                                                    |
+|                            |   INDEX: x10017                                                                  |
+|                            |   RELS: < [ named LBL: h10018 ARG0: x10017 CARG: "Happy Xmas (War Is Over)" ] >  |
 |                            | ]                                                                                |
 +----------------------------+----------------------------------------------------------------------------------+
 
@@ -150,27 +149,26 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id452_289_869
 +------------+----------------------------+--------------------------+----------------------------------------------------------------------------------+
 | Edge       | Parent                     | Child                    | Generated SEMENT                                                                 |
 +------------+----------------------------+--------------------------+----------------------------------------------------------------------------------+
-| followedBy | Imagine_(John_Lennon_song) | Happy_Xmas_(War_Is_Over) | [ TOP: h29239                                                                    |
-|            |                            |                          |   INDEX: e29236 [ e TENSE: tensed ]                                              |
-|            |                            |                          |   RELS: < [ _follow_v_1 LBL: h29239 ARG0: e29236 ARG1: i29237 ARG2: i29238 ]     |
-|            |                            |                          |           [ appos LBL: h29223 ARG0: e29220 ARG1: x29221 ARG2: i29222 ]           |
-|            |                            |                          |           [ def_udef_a_q LBL: h29232 ARG0: x29229 RSTR: h29230 BODY: h29231 ]    |
-|            |                            |                          |           [ compound LBL: h29214 ARG0: e29211 ARG1: u29212 ARG2: u29213 ]        |
-|            |                            |                          |           [ existential_q LBL: h29218 ARG0: x29215 RSTR: h29216 BODY: h29217 ]   |
-|            |                            |                          |           [ named LBL: h29210 ARG0: x29209 [ x NUM: sg ] CARG: "John Lennon" ]   |
-|            |                            |                          |           [ _song_n_of LBL: h29208 ARG0: x29206 ARG1: i29207 ]                   |
-|            |                            |                          |           [ explicit_or_proper_q LBL: h29227 ARG0: x29224 RSTR: h29225 BODY:     |
-|            |                            |                          | h29226 ]                                                                         |
-|            |                            |                          |           [ named LBL: h29205 ARG0: x29204 CARG: "Imagine" ]                     |
-|            |                            |                          |           [ explicit_or_proper_q LBL: h29243 ARG0: x29240 RSTR: h29241 BODY:     |
-|            |                            |                          | h29242 ]                                                                         |
-|            |                            |                          |           [ named LBL: h29235 ARG0: x29234 CARG: "Happy Xmas (War Is Over)" ] >  |
-|            |                            |                          |   HCONS: < h29216 qeq h29210 h29230 qeq h29208 h29225 qeq h29205 h29241 qeq      |
-|            |                            |                          | h29235 >                                                                         |
-|            |                            |                          |   EQS: < x29215 eq x29209 h29214 eq h29219 u29213 eq x29215 h29214 eq h29208     |
-|            |                            |                          | u29212 eq x29206 x29229 eq x29206 h29223 eq h29233 i29222 eq x29229 x29224 eq    |
-|            |                            |                          | x29204 h29223 eq h29228 x29221 eq x29224 h29239 eq h29228 i29238 eq x29224       |
-|            |                            |                          | x29240 eq x29234 h29239 eq h29244 i29237 eq x29240 > ]                           |
+| followedBy | Imagine_(John_Lennon_song) | Happy_Xmas_(War_Is_Over) | [ TOP: h10022                                                                    |
+|            |                            |                          |   INDEX: e10019 [ e TENSE: tensed ]                                              |
+|            |                            |                          |   RELS: < [ _follow_v_1 LBL: h10022 ARG0: e10019 ARG1: i10020 ARG2: i10021 ]     |
+|            |                            |                          |           [ appos LBL: h10006 ARG0: e10003 ARG1: x10004 ARG2: i10005 ]           |
+|            |                            |                          |           [ def_udef_a_q LBL: h10015 ARG0: x10012 RSTR: h10013 BODY: h10014 ]    |
+|            |                            |                          |           [ compound LBL: h9997 ARG0: e9994 ARG1: u9995 ARG2: u9996 ]            |
+|            |                            |                          |           [ existential_q LBL: h10001 ARG0: x9998 RSTR: h9999 BODY: h10000 ]     |
+|            |                            |                          |           [ named LBL: h9993 ARG0: x9992 [ x NUM: sg ] CARG: "John Lennon" ]     |
+|            |                            |                          |           [ _song_n_of LBL: h9991 ARG0: x9989 ARG1: i9990 ]                      |
+|            |                            |                          |           [ explicit_or_proper_q LBL: h10010 ARG0: x10007 RSTR: h10008 BODY:     |
+|            |                            |                          | h10009 ]                                                                         |
+|            |                            |                          |           [ named LBL: h9988 ARG0: x9987 CARG: "Imagine" ]                       |
+|            |                            |                          |           [ explicit_or_proper_q LBL: h10026 ARG0: x10023 RSTR: h10024 BODY:     |
+|            |                            |                          | h10025 ]                                                                         |
+|            |                            |                          |           [ named LBL: h10018 ARG0: x10017 CARG: "Happy Xmas (War Is Over)" ] >  |
+|            |                            |                          |   HCONS: < h9999 qeq h9993 h10013 qeq h9991 h10008 qeq h9988 h10024 qeq h10018 > |
+|            |                            |                          |   EQS: < x9998 eq x9992 h9997 eq h10002 u9996 eq x9998 h9997 eq h9991 u9995 eq   |
+|            |                            |                          | x9989 x10012 eq x9989 h10006 eq h10016 i10005 eq x10012 x10007 eq x9987 h10006   |
+|            |                            |                          | eq h10011 x10004 eq x10007 h10022 eq h10011 i10021 eq x10007 x10023 eq x10017    |
+|            |                            |                          | h10022 eq h10027 i10020 eq x10023 > ]                                            |
 +------------+----------------------------+--------------------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------+

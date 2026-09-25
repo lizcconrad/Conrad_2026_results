@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_SportsTeam_Id786_180_360
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                 GOLD OUTPUTS                                                                 |
-+---------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                     | Generated? |
-+---------------------------------------------------------------------------------------------------------------------------------+------------+
-| Agremiação Sportiva Arapiraquense compete in the Campeonato Brasileiro Série C league that had a competition in 2015.           | False      |
-| Agremiação Sportiva Arapiraquense from Campeonato Brasileiro Série C league competed in the 2015 Campeonato Brasileiro Série C. | False      |
-| Agremiação Sportiva Arapiraquense played in the Campeonato Brasileiro Série C league in 2015.                                   | False      |
-+---------------------------------------------------------------------------------------------------------------------------------+------------+
++-------------------------------------------------------------------------------------------------------------------------+
+|                                                       GOLD OUTPUTS                                                      |
++------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                | Generated? |
++------------------------------------------------------------------------------------------------------------+------------+
+| Agremiação Sportiva Arapiraquense from the Campeonato Brasileiro Série C league has 17000 members.         | False      |
+| Agremiação Sportiva Arapiraquense have 17000 members who play in the Campeonato Brasileiro Série C league. | False      |
+| Agremiação Sportiva Arapiraquense play in the Campeonato Brasileiro Série C league and have 17000 members. | False      |
++------------------------------------------------------------------------------------------------------------+------------+
 
 +---------------------------------------------------------------------------------------------------------+
 |                                               NODE METRICS                                              |
@@ -56,43 +56,37 @@ GRAPH NAME: WebNLG_test_2triples_SportsTeam_Id786_180_360
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h2431                                                                     |
-|               |   INDEX: e2428 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _in_p_loc LBL: h2431 ARG0: e2428 ARG1: u2429 ARG2: u2430 ]           |
-|               |           [ explicit_or_proper_q LBL: h2435 ARG0: x2432 RSTR: h2433 BODY: h2434  |
-|               | ]                                                                                |
-|               |           [ named LBL: h2427 ARG0: x2426 CARG: "Campeonato Brasileiro Série C" ] |
-|               |           [ explicit_or_proper_q LBL: h2440 ARG0: x2437 RSTR: h2438 BODY: h2439  |
-|               | ]                                                                                |
-|               |           [ named LBL: h2425 ARG0: x2424 CARG: "Agremiação Sportiva              |
-|               | Arapiraquense" ] >                                                               |
-|               |   HCONS: < h2433 qeq h2427 h2438 qeq h2425 >                                     |
-|               |   EQS: < x2432 eq x2426 h2431 eq h2436 u2430 eq x2432 x2437 eq x2424 h2431 eq    |
-|               | h2441 u2429 eq x2437 > ]                                                         |
+| Original      | [ TOP: h370                                                                      |
+|               |   INDEX: e367 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_loc LBL: h370 ARG0: e367 ARG1: u368 ARG2: u369 ]               |
+|               |           [ explicit_or_proper_q LBL: h374 ARG0: x371 RSTR: h372 BODY: h373 ]    |
+|               |           [ named LBL: h366 ARG0: x365 CARG: "Campeonato Brasileiro Série C" ]   |
+|               |           [ explicit_or_proper_q LBL: h379 ARG0: x376 RSTR: h377 BODY: h378 ]    |
+|               |           [ named LBL: h364 ARG0: x363 CARG: "Agremiação Sportiva Arapiraquense" |
+|               | ] >                                                                              |
+|               |   HCONS: < h372 qeq h366 h377 qeq h364 >                                         |
+|               |   EQS: < x371 eq x365 h370 eq h375 u369 eq x371 x376 eq x363 h370 eq h380 u368   |
+|               | eq x376 > ]                                                                      |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h2431                                                                     |
-|               |   INDEX: e2428 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _in_p_loc LBL: h2431 ARG0: e2428 ARG1: x2424 ARG2: x2426 ]           |
-|               |           [ explicit_or_proper_q LBL: h2435 ARG0: x2426 RSTR: h2433 BODY: h2434  |
-|               | ]                                                                                |
-|               |           [ named LBL: h2427 ARG0: x2426 CARG: "Campeonato Brasileiro Série C" ] |
-|               |           [ explicit_or_proper_q LBL: h2440 ARG0: x2424 RSTR: h2438 BODY: h2439  |
-|               | ]                                                                                |
-|               |           [ named LBL: h2425 ARG0: x2424 CARG: "Agremiação Sportiva              |
-|               | Arapiraquense" ] >                                                               |
-|               |   HCONS: < h2433 qeq h2427 h2438 qeq h2425 > ]                                   |
+| EQs Collapsed | [ TOP: h370                                                                      |
+|               |   INDEX: e367 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_loc LBL: h370 ARG0: e367 ARG1: x363 ARG2: x365 ]               |
+|               |           [ explicit_or_proper_q LBL: h374 ARG0: x365 RSTR: h372 BODY: h373 ]    |
+|               |           [ named LBL: h366 ARG0: x365 CARG: "Campeonato Brasileiro Série C" ]   |
+|               |           [ explicit_or_proper_q LBL: h379 ARG0: x363 RSTR: h377 BODY: h378 ]    |
+|               |           [ named LBL: h364 ARG0: x363 CARG: "Agremiação Sportiva Arapiraquense" |
+|               | ] >                                                                              |
+|               |   HCONS: < h372 qeq h366 h377 qeq h364 > ]                                       |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h2442                                                                     |
-|               |   INDEX: e2428 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _in_p_loc LBL: h2431 ARG0: e2428 ARG1: x2424 ARG2: x2426 ]           |
-|               |           [ explicit_or_proper_q LBL: h2435 ARG0: x2426 RSTR: h2433 BODY: h2434  |
-|               | ]                                                                                |
-|               |           [ named LBL: h2427 ARG0: x2426 CARG: "Campeonato Brasileiro Série C" ] |
-|               |           [ explicit_or_proper_q LBL: h2440 ARG0: x2424 RSTR: h2438 BODY: h2439  |
-|               | ]                                                                                |
-|               |           [ named LBL: h2425 ARG0: x2424 CARG: "Agremiação Sportiva              |
-|               | Arapiraquense" ] >                                                               |
-|               |   HCONS: < h2433 qeq h2427 h2438 qeq h2425 h2442 qeq h2431 > ]                   |
+| Prepped       | [ TOP: h381                                                                      |
+|               |   INDEX: e367 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_loc LBL: h370 ARG0: e367 ARG1: x363 ARG2: x365 ]               |
+|               |           [ explicit_or_proper_q LBL: h374 ARG0: x365 RSTR: h372 BODY: h373 ]    |
+|               |           [ named LBL: h366 ARG0: x365 CARG: "Campeonato Brasileiro Série C" ]   |
+|               |           [ explicit_or_proper_q LBL: h379 ARG0: x363 RSTR: h377 BODY: h378 ]    |
+|               |           [ named LBL: h364 ARG0: x363 CARG: "Agremiação Sportiva Arapiraquense" |
+|               | ] >                                                                              |
+|               |   HCONS: < h372 qeq h366 h377 qeq h364 h381 qeq h370 > ]                         |
 +---------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -100,15 +94,15 @@ GRAPH NAME: WebNLG_test_2triples_SportsTeam_Id786_180_360
 +-----------------------------------+----------------------------------------------------------------------------------+
 | Node                              | Generated SEMENT                                                                 |
 +-----------------------------------+----------------------------------------------------------------------------------+
-| Agremiação_Sportiva_Arapiraquense | [ TOP: h2425                                                                     |
-|                                   |   INDEX: x2424                                                                   |
-|                                   |   RELS: < [ named LBL: h2425 ARG0: x2424 CARG: "Agremiação Sportiva              |
-|                                   | Arapiraquense" ] > ]                                                             |
+| Agremiação_Sportiva_Arapiraquense | [ TOP: h364                                                                      |
+|                                   |   INDEX: x363                                                                    |
+|                                   |   RELS: < [ named LBL: h364 ARG0: x363 CARG: "Agremiação Sportiva Arapiraquense" |
+|                                   | ] > ]                                                                            |
 +-----------------------------------+----------------------------------------------------------------------------------+
-| Campeonato_Brasileiro_Série_C     | [ TOP: h2427                                                                     |
-|                                   |   INDEX: x2426                                                                   |
-|                                   |   RELS: < [ named LBL: h2427 ARG0: x2426 CARG: "Campeonato Brasileiro Série C" ] |
-|                                   | > ]                                                                              |
+| Campeonato_Brasileiro_Série_C     | [ TOP: h366                                                                      |
+|                                   |   INDEX: x365                                                                    |
+|                                   |   RELS: < [ named LBL: h366 ARG0: x365 CARG: "Campeonato Brasileiro Série C" ] > |
+|                                   | ]                                                                                |
 +-----------------------------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -116,19 +110,17 @@ GRAPH NAME: WebNLG_test_2triples_SportsTeam_Id786_180_360
 +--------+-----------------------------------+-------------------------------+----------------------------------------------------------------------------------+
 | Edge   | Parent                            | Child                         | Generated SEMENT                                                                 |
 +--------+-----------------------------------+-------------------------------+----------------------------------------------------------------------------------+
-| league | Agremiação_Sportiva_Arapiraquense | Campeonato_Brasileiro_Série_C | [ TOP: h2431                                                                     |
-|        |                                   |                               |   INDEX: e2428 [ e TENSE: tensed ]                                               |
-|        |                                   |                               |   RELS: < [ _in_p_loc LBL: h2431 ARG0: e2428 ARG1: u2429 ARG2: u2430 ]           |
-|        |                                   |                               |           [ explicit_or_proper_q LBL: h2435 ARG0: x2432 RSTR: h2433 BODY: h2434  |
-|        |                                   |                               | ]                                                                                |
-|        |                                   |                               |           [ named LBL: h2427 ARG0: x2426 CARG: "Campeonato Brasileiro Série C" ] |
-|        |                                   |                               |           [ explicit_or_proper_q LBL: h2440 ARG0: x2437 RSTR: h2438 BODY: h2439  |
-|        |                                   |                               | ]                                                                                |
-|        |                                   |                               |           [ named LBL: h2425 ARG0: x2424 CARG: "Agremiação Sportiva              |
-|        |                                   |                               | Arapiraquense" ] >                                                               |
-|        |                                   |                               |   HCONS: < h2433 qeq h2427 h2438 qeq h2425 >                                     |
-|        |                                   |                               |   EQS: < x2432 eq x2426 h2431 eq h2436 u2430 eq x2432 x2437 eq x2424 h2431 eq    |
-|        |                                   |                               | h2441 u2429 eq x2437 > ]                                                         |
+| league | Agremiação_Sportiva_Arapiraquense | Campeonato_Brasileiro_Série_C | [ TOP: h370                                                                      |
+|        |                                   |                               |   INDEX: e367 [ e TENSE: tensed ]                                                |
+|        |                                   |                               |   RELS: < [ _in_p_loc LBL: h370 ARG0: e367 ARG1: u368 ARG2: u369 ]               |
+|        |                                   |                               |           [ explicit_or_proper_q LBL: h374 ARG0: x371 RSTR: h372 BODY: h373 ]    |
+|        |                                   |                               |           [ named LBL: h366 ARG0: x365 CARG: "Campeonato Brasileiro Série C" ]   |
+|        |                                   |                               |           [ explicit_or_proper_q LBL: h379 ARG0: x376 RSTR: h377 BODY: h378 ]    |
+|        |                                   |                               |           [ named LBL: h364 ARG0: x363 CARG: "Agremiação Sportiva Arapiraquense" |
+|        |                                   |                               | ] >                                                                              |
+|        |                                   |                               |   HCONS: < h372 qeq h366 h377 qeq h364 >                                         |
+|        |                                   |                               |   EQS: < x371 eq x365 h370 eq h375 u369 eq x371 x376 eq x363 h370 eq h380 u368   |
+|        |                                   |                               | eq x376 > ]                                                                      |
 +--------+-----------------------------------+-------------------------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------------+

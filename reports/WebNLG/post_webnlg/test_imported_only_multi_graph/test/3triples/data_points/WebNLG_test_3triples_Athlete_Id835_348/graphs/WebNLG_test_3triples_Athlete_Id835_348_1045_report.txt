@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Athlete_Id835_348_1045
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                                    GOLD OUTPUTS                                                                                   |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                                          | Generated? |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Aleksandr Prudnikov played for the youth FC Spartak Moscow previously, as well as the FC Terek Grozny which is managed by Rashid Rakhimov.                           | False      |
-| Aleksandr Prudnikov plays for FC Terek Grozny and played for FC Spartak Moscow's youth team. His manager is Rashid Rakhimov.                                         | False      |
-| Aleksandr Prudnikov was previously a member of the youth side of FC Spartak Moscow and currently is on the FC Terek Grozny club which is managed by Rashid Rakhimov. | False      |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                        GOLD OUTPUTS                                                                        |
++-----------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                   | Generated? |
++-----------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Aleksandr Prudnikov is a member of FC Spartak Moscow youth team and FC Terek Grozny club. The latter club is based in Grozny.                 | False      |
+| Aleksandr Prudnikov played for FC Spartak Moscow's youth team and currently plays for FC Terek Grozny. FC Terek Grozny's ground is at Grozny. | False      |
+| Aleksandr Prudnikov played for the youth FC Spartak Moscow before playing for FC Terek Grozny, which is located in Grozny.                    | False      |
++-----------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +-------------------------------------------------------------------------------------------+
 |                                        NODE METRICS                                       |
@@ -56,46 +56,46 @@ GRAPH NAME: WebNLG_test_3triples_Athlete_Id835_348_1045
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h7497                                                                     |
-|               |   INDEX: e7494 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _for_p LBL: h7488 ARG0: i7485 ARG1: u7486 ARG2: u7487 ]              |
-|               |           [ explicit_or_proper_q LBL: h7492 ARG0: x7489 RSTR: h7490 BODY: h7491  |
+| Original      | [ TOP: h1099                                                                     |
+|               |   INDEX: e1096 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _for_p LBL: h1090 ARG0: i1087 ARG1: u1088 ARG2: u1089 ]              |
+|               |           [ explicit_or_proper_q LBL: h1094 ARG0: x1091 RSTR: h1092 BODY: h1093  |
 |               | ]                                                                                |
-|               |           [ named LBL: h7484 ARG0: x7483 CARG: "FC Terek Grozny" ]               |
-|               |           [ _play_v_1 LBL: h7497 ARG0: e7494 ARG1: i7495 ARG2: i7496 ]           |
-|               |           [ explicit_or_proper_q LBL: h7501 ARG0: x7498 RSTR: h7499 BODY: h7500  |
+|               |           [ named LBL: h1086 ARG0: x1085 CARG: "FC Terek Grozny" ]               |
+|               |           [ _play_v_1 LBL: h1099 ARG0: e1096 ARG1: i1097 ARG2: i1098 ]           |
+|               |           [ explicit_or_proper_q LBL: h1103 ARG0: x1100 RSTR: h1101 BODY: h1102  |
 |               | ]                                                                                |
-|               |           [ named LBL: h7482 ARG0: x7481 CARG: "Aleksandr Prudnikov" ] >         |
-|               |   HCONS: < h7490 qeq h7484 h7499 qeq h7482 >                                     |
-|               |   EQS: < x7489 eq x7483 h7488 eq h7493 u7487 eq x7489 x7498 eq x7481 h7497 eq    |
-|               | h7502 i7495 eq x7498 h7488 eq h7497 u7486 eq e7494 >                             |
-|               |   SLOTS: < ARG2: i7496 > ]                                                       |
+|               |           [ named LBL: h1084 ARG0: x1083 CARG: "Aleksandr Prudnikov" ] >         |
+|               |   HCONS: < h1092 qeq h1086 h1101 qeq h1084 >                                     |
+|               |   EQS: < x1091 eq x1085 h1090 eq h1095 u1089 eq x1091 x1100 eq x1083 h1099 eq    |
+|               | h1104 i1097 eq x1100 h1090 eq h1099 u1088 eq e1096 >                             |
+|               |   SLOTS: < ARG2: i1098 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h7488                                                                     |
-|               |   INDEX: e7494 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _for_p LBL: h7488 ARG0: i7485 ARG1: e7494 ARG2: x7483 ]              |
-|               |           [ explicit_or_proper_q LBL: h7492 ARG0: x7483 RSTR: h7490 BODY: h7491  |
+| EQs Collapsed | [ TOP: h1090                                                                     |
+|               |   INDEX: e1096 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _for_p LBL: h1090 ARG0: i1087 ARG1: e1096 ARG2: x1085 ]              |
+|               |           [ explicit_or_proper_q LBL: h1094 ARG0: x1085 RSTR: h1092 BODY: h1093  |
 |               | ]                                                                                |
-|               |           [ named LBL: h7484 ARG0: x7483 CARG: "FC Terek Grozny" ]               |
-|               |           [ _play_v_1 LBL: h7488 ARG0: e7494 ARG1: x7481 ARG2: i7496 ]           |
-|               |           [ explicit_or_proper_q LBL: h7501 ARG0: x7481 RSTR: h7499 BODY: h7500  |
+|               |           [ named LBL: h1086 ARG0: x1085 CARG: "FC Terek Grozny" ]               |
+|               |           [ _play_v_1 LBL: h1090 ARG0: e1096 ARG1: x1083 ARG2: i1098 ]           |
+|               |           [ explicit_or_proper_q LBL: h1103 ARG0: x1083 RSTR: h1101 BODY: h1102  |
 |               | ]                                                                                |
-|               |           [ named LBL: h7482 ARG0: x7481 CARG: "Aleksandr Prudnikov" ] >         |
-|               |   HCONS: < h7490 qeq h7484 h7499 qeq h7482 >                                     |
-|               |   SLOTS: < ARG2: i7496 > ]                                                       |
+|               |           [ named LBL: h1084 ARG0: x1083 CARG: "Aleksandr Prudnikov" ] >         |
+|               |   HCONS: < h1092 qeq h1086 h1101 qeq h1084 >                                     |
+|               |   SLOTS: < ARG2: i1098 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h7503                                                                     |
-|               |   INDEX: e7494 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _for_p LBL: h7488 ARG0: i7485 ARG1: e7494 ARG2: x7483 ]              |
-|               |           [ explicit_or_proper_q LBL: h7492 ARG0: x7483 RSTR: h7490 BODY: h7491  |
+| Prepped       | [ TOP: h1105                                                                     |
+|               |   INDEX: e1096 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _for_p LBL: h1090 ARG0: i1087 ARG1: e1096 ARG2: x1085 ]              |
+|               |           [ explicit_or_proper_q LBL: h1094 ARG0: x1085 RSTR: h1092 BODY: h1093  |
 |               | ]                                                                                |
-|               |           [ named LBL: h7484 ARG0: x7483 CARG: "FC Terek Grozny" ]               |
-|               |           [ _play_v_1 LBL: h7488 ARG0: e7494 ARG1: x7481 ARG2: i7496 ]           |
-|               |           [ explicit_or_proper_q LBL: h7501 ARG0: x7481 RSTR: h7499 BODY: h7500  |
+|               |           [ named LBL: h1086 ARG0: x1085 CARG: "FC Terek Grozny" ]               |
+|               |           [ _play_v_1 LBL: h1090 ARG0: e1096 ARG1: x1083 ARG2: i1098 ]           |
+|               |           [ explicit_or_proper_q LBL: h1103 ARG0: x1083 RSTR: h1101 BODY: h1102  |
 |               | ]                                                                                |
-|               |           [ named LBL: h7482 ARG0: x7481 CARG: "Aleksandr Prudnikov" ] >         |
-|               |   HCONS: < h7490 qeq h7484 h7499 qeq h7482 h7503 qeq h7488 >                     |
-|               |   SLOTS: < ARG2: i7496 > ]                                                       |
+|               |           [ named LBL: h1084 ARG0: x1083 CARG: "Aleksandr Prudnikov" ] >         |
+|               |   HCONS: < h1092 qeq h1086 h1101 qeq h1084 h1105 qeq h1090 >                     |
+|               |   SLOTS: < ARG2: i1098 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------------------+
@@ -103,13 +103,13 @@ GRAPH NAME: WebNLG_test_3triples_Athlete_Id835_348_1045
 +---------------------+----------------------------------------------------------------------------+
 | Node                | Generated SEMENT                                                           |
 +---------------------+----------------------------------------------------------------------------+
-| Aleksandr_Prudnikov | [ TOP: h7482                                                               |
-|                     |   INDEX: x7481                                                             |
-|                     |   RELS: < [ named LBL: h7482 ARG0: x7481 CARG: "Aleksandr Prudnikov" ] > ] |
+| Aleksandr_Prudnikov | [ TOP: h1084                                                               |
+|                     |   INDEX: x1083                                                             |
+|                     |   RELS: < [ named LBL: h1084 ARG0: x1083 CARG: "Aleksandr Prudnikov" ] > ] |
 +---------------------+----------------------------------------------------------------------------+
-| FC_Terek_Grozny     | [ TOP: h7484                                                               |
-|                     |   INDEX: x7483                                                             |
-|                     |   RELS: < [ named LBL: h7484 ARG0: x7483 CARG: "FC Terek Grozny" ] > ]     |
+| FC_Terek_Grozny     | [ TOP: h1086                                                               |
+|                     |   INDEX: x1085                                                             |
+|                     |   RELS: < [ named LBL: h1086 ARG0: x1085 CARG: "FC Terek Grozny" ] > ]     |
 +---------------------+----------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------------------------+
@@ -117,20 +117,20 @@ GRAPH NAME: WebNLG_test_3triples_Athlete_Id835_348_1045
 +------+---------------------+-----------------+----------------------------------------------------------------------------------+
 | Edge | Parent              | Child           | Generated SEMENT                                                                 |
 +------+---------------------+-----------------+----------------------------------------------------------------------------------+
-| club | Aleksandr_Prudnikov | FC_Terek_Grozny | [ TOP: h7497                                                                     |
-|      |                     |                 |   INDEX: e7494 [ e TENSE: tensed ]                                               |
-|      |                     |                 |   RELS: < [ _for_p LBL: h7488 ARG0: i7485 ARG1: u7486 ARG2: u7487 ]              |
-|      |                     |                 |           [ explicit_or_proper_q LBL: h7492 ARG0: x7489 RSTR: h7490 BODY: h7491  |
+| club | Aleksandr_Prudnikov | FC_Terek_Grozny | [ TOP: h1099                                                                     |
+|      |                     |                 |   INDEX: e1096 [ e TENSE: tensed ]                                               |
+|      |                     |                 |   RELS: < [ _for_p LBL: h1090 ARG0: i1087 ARG1: u1088 ARG2: u1089 ]              |
+|      |                     |                 |           [ explicit_or_proper_q LBL: h1094 ARG0: x1091 RSTR: h1092 BODY: h1093  |
 |      |                     |                 | ]                                                                                |
-|      |                     |                 |           [ named LBL: h7484 ARG0: x7483 CARG: "FC Terek Grozny" ]               |
-|      |                     |                 |           [ _play_v_1 LBL: h7497 ARG0: e7494 ARG1: i7495 ARG2: i7496 ]           |
-|      |                     |                 |           [ explicit_or_proper_q LBL: h7501 ARG0: x7498 RSTR: h7499 BODY: h7500  |
+|      |                     |                 |           [ named LBL: h1086 ARG0: x1085 CARG: "FC Terek Grozny" ]               |
+|      |                     |                 |           [ _play_v_1 LBL: h1099 ARG0: e1096 ARG1: i1097 ARG2: i1098 ]           |
+|      |                     |                 |           [ explicit_or_proper_q LBL: h1103 ARG0: x1100 RSTR: h1101 BODY: h1102  |
 |      |                     |                 | ]                                                                                |
-|      |                     |                 |           [ named LBL: h7482 ARG0: x7481 CARG: "Aleksandr Prudnikov" ] >         |
-|      |                     |                 |   HCONS: < h7490 qeq h7484 h7499 qeq h7482 >                                     |
-|      |                     |                 |   EQS: < x7489 eq x7483 h7488 eq h7493 u7487 eq x7489 x7498 eq x7481 h7497 eq    |
-|      |                     |                 | h7502 i7495 eq x7498 h7488 eq h7497 u7486 eq e7494 >                             |
-|      |                     |                 |   SLOTS: < ARG2: i7496 > ]                                                       |
+|      |                     |                 |           [ named LBL: h1084 ARG0: x1083 CARG: "Aleksandr Prudnikov" ] >         |
+|      |                     |                 |   HCONS: < h1092 qeq h1086 h1101 qeq h1084 >                                     |
+|      |                     |                 |   EQS: < x1091 eq x1085 h1090 eq h1095 u1089 eq x1091 x1100 eq x1083 h1099 eq    |
+|      |                     |                 | h1104 i1097 eq x1100 h1090 eq h1099 u1088 eq e1096 >                             |
+|      |                     |                 |   SLOTS: < ARG2: i1098 > ]                                                       |
 +------+---------------------+-----------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------+

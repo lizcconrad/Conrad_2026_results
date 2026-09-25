@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id945_58_176
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                           GOLD OUTPUTS                                                                           |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                         | Generated? |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| It's Great to Be Young is a 1956 film which was produced by Cyril Frankel, and starred John Mills and Cecil Parker.                                 | False      |
-| John Mills plays the lead and Cecil Parker had a main role in the 1956 movie, It's Great to Be Young which was directed by Cyril Frankel.           | False      |
-| The 1956 film It's Great to be Young was directed by Cyril Frankel. The star of the movie was Cecil Parker, and John Mills had a main role as well. | False      |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                GOLD OUTPUTS                                                                               |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                                  | Generated? |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| It's Great to Be Young includes John Mills and Cecil Parker in its cast, and includes music composed by Louis Levy.                                          | False      |
+| It's Great to be Young is a 1956 film starring John Mills and Cecil Parker. Louis Levy composed the music for the film.                                      | False      |
+| John Mills and Cecil Parker had lead and main roles, respectively, in the 1956 film It’s Great to be Young. The music composer for the movie was Louis Levy. | False      |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------------------------+
 |                                               NODE METRICS                                               |
@@ -56,67 +56,58 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id945_58_176
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h6035                                                                     |
-|               |   INDEX: e6033 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _in_p_state LBL: h6032 ARG0: e6029 ARG1: u6030 ARG2: u6031 ]         |
-|               |           [ appos LBL: h6016 ARG0: e6013 ARG1: x6014 ARG2: i6015 ]               |
-|               |           [ def_udef_a_q LBL: h6025 ARG0: x6022 RSTR: h6023 BODY: h6024 ]        |
-|               |           [ compound LBL: h6012 ARG0: e6009 ARG1: u6010 ARG2: u6011 ]            |
-|               |           [ proper_q LBL: h6007 ARG0: x6004 [ x NUM: sg ] RSTR: h6005 BODY:      |
-|               | h6006 ]                                                                          |
-|               |           [ yofc LBL: h6003 ARG0: x6002 CARG: "1956" ]                           |
-|               |           [ _film_n_1 LBL: h5995 ARG0: x5994 ]                                   |
-|               |           [ explicit_or_proper_q LBL: h6020 ARG0: x6017 RSTR: h6018 BODY: h6019  |
-|               | ]                                                                                |
-|               |           [ named LBL: h5993 ARG0: x5992 CARG: "It's Great to Be Young" ]        |
-|               |           [ _star_v_1 LBL: h6035 ARG0: e6033 ARG1: i6034 ]                       |
-|               |           [ explicit_or_proper_q LBL: h6039 ARG0: x6036 RSTR: h6037 BODY: h6038  |
-|               | ]                                                                                |
-|               |           [ named LBL: h6028 ARG0: x6027 CARG: "Cecil Parker" ] >                |
-|               |   HCONS: < h6005 qeq h6003 h6023 qeq h5995 h6018 qeq h5993 h6037 qeq h6028 >     |
-|               |   EQS: < x6004 eq x6002 h6012 eq h6008 u6011 eq x6004 h6012 eq h5995 u6010 eq    |
-|               | x5994 x6022 eq x5994 h6016 eq h6026 i6015 eq x6022 x6017 eq x5992 h6016 eq h6021 |
-|               | x6014 eq x6017 h6032 eq h6021 u6031 eq x6017 x6036 eq x6027 h6035 eq h6040 i6034 |
-|               | eq x6036 h6032 eq h6035 u6030 eq e6033 > ]                                       |
+| Original      | [ TOP: h494                                                                      |
+|               |   INDEX: e492 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_state LBL: h491 ARG0: e488 ARG1: u489 ARG2: u490 ]             |
+|               |           [ appos LBL: h475 ARG0: e472 ARG1: x473 ARG2: i474 ]                   |
+|               |           [ def_udef_a_q LBL: h484 ARG0: x481 RSTR: h482 BODY: h483 ]            |
+|               |           [ compound LBL: h471 ARG0: e468 ARG1: u469 ARG2: u470 ]                |
+|               |           [ proper_q LBL: h466 ARG0: x463 [ x NUM: sg ] RSTR: h464 BODY: h465 ]  |
+|               |           [ yofc LBL: h462 ARG0: x461 CARG: "1956" ]                             |
+|               |           [ _film_n_1 LBL: h454 ARG0: x453 ]                                     |
+|               |           [ explicit_or_proper_q LBL: h479 ARG0: x476 RSTR: h477 BODY: h478 ]    |
+|               |           [ named LBL: h452 ARG0: x451 CARG: "It's Great to Be Young" ]          |
+|               |           [ _star_v_1 LBL: h494 ARG0: e492 ARG1: i493 ]                          |
+|               |           [ explicit_or_proper_q LBL: h498 ARG0: x495 RSTR: h496 BODY: h497 ]    |
+|               |           [ named LBL: h487 ARG0: x486 CARG: "Cecil Parker" ] >                  |
+|               |   HCONS: < h464 qeq h462 h482 qeq h454 h477 qeq h452 h496 qeq h487 >             |
+|               |   EQS: < x463 eq x461 h471 eq h467 u470 eq x463 h471 eq h454 u469 eq x453 x481   |
+|               | eq x453 h475 eq h485 i474 eq x481 x476 eq x451 h475 eq h480 x473 eq x476 h491 eq |
+|               | h480 u490 eq x476 x495 eq x486 h494 eq h499 i493 eq x495 h491 eq h494 u489 eq    |
+|               | e492 > ]                                                                         |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h6016                                                                     |
-|               |   INDEX: e6033 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _in_p_state LBL: h6016 ARG0: e6029 ARG1: e6033 ARG2: x5992 ]         |
-|               |           [ appos LBL: h6016 ARG0: e6013 ARG1: x5992 ARG2: x5994 ]               |
-|               |           [ def_udef_a_q LBL: h6025 ARG0: x5994 RSTR: h6023 BODY: h6024 ]        |
-|               |           [ compound LBL: h5995 ARG0: e6009 ARG1: x5994 ARG2: x6002 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ proper_q LBL: h6007 ARG0: x6002 RSTR: h6005 BODY: h6006 ]            |
-|               |           [ yofc LBL: h6003 ARG0: x6002 CARG: "1956" ]                           |
-|               |           [ _film_n_1 LBL: h5995 ARG0: x5994 ]                                   |
-|               |           [ explicit_or_proper_q LBL: h6020 ARG0: x5992 RSTR: h6018 BODY: h6019  |
-|               | ]                                                                                |
-|               |           [ named LBL: h5993 ARG0: x5992 CARG: "It's Great to Be Young" ]        |
-|               |           [ _star_v_1 LBL: h6016 ARG0: e6033 ARG1: x6027 ]                       |
-|               |           [ explicit_or_proper_q LBL: h6039 ARG0: x6027 RSTR: h6037 BODY: h6038  |
-|               | ]                                                                                |
-|               |           [ named LBL: h6028 ARG0: x6027 CARG: "Cecil Parker" ] >                |
-|               |   HCONS: < h6005 qeq h6003 h6023 qeq h5995 h6018 qeq h5993 h6037 qeq h6028 > ]   |
+| EQs Collapsed | [ TOP: h475                                                                      |
+|               |   INDEX: e492 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_state LBL: h475 ARG0: e488 ARG1: e492 ARG2: x451 ]             |
+|               |           [ appos LBL: h475 ARG0: e472 ARG1: x451 ARG2: x453 ]                   |
+|               |           [ def_udef_a_q LBL: h484 ARG0: x453 RSTR: h482 BODY: h483 ]            |
+|               |           [ compound LBL: h454 ARG0: e468 ARG1: x453 ARG2: x461 [ x NUM: sg ] ]  |
+|               |           [ proper_q LBL: h466 ARG0: x461 RSTR: h464 BODY: h465 ]                |
+|               |           [ yofc LBL: h462 ARG0: x461 CARG: "1956" ]                             |
+|               |           [ _film_n_1 LBL: h454 ARG0: x453 ]                                     |
+|               |           [ explicit_or_proper_q LBL: h479 ARG0: x451 RSTR: h477 BODY: h478 ]    |
+|               |           [ named LBL: h452 ARG0: x451 CARG: "It's Great to Be Young" ]          |
+|               |           [ _star_v_1 LBL: h475 ARG0: e492 ARG1: x486 ]                          |
+|               |           [ explicit_or_proper_q LBL: h498 ARG0: x486 RSTR: h496 BODY: h497 ]    |
+|               |           [ named LBL: h487 ARG0: x486 CARG: "Cecil Parker" ] >                  |
+|               |   HCONS: < h464 qeq h462 h482 qeq h454 h477 qeq h452 h496 qeq h487 > ]           |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h6041                                                                     |
-|               |   INDEX: e6033 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _in_p_state LBL: h6016 ARG0: e6029 ARG1: e6033 ARG2: x5992 ]         |
-|               |           [ appos LBL: h6016 ARG0: e6013 ARG1: x5992 ARG2: x5994 ]               |
-|               |           [ def_udef_a_q LBL: h6025 ARG0: x5994 RSTR: h6023 BODY: h6024 ]        |
-|               |           [ compound LBL: h5995 ARG0: e6009 ARG1: x5994 ARG2: x6002 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ proper_q LBL: h6007 ARG0: x6002 RSTR: h6005 BODY: h6006 ]            |
-|               |           [ yofc LBL: h6003 ARG0: x6002 CARG: "1956" ]                           |
-|               |           [ _film_n_1 LBL: h5995 ARG0: x5994 ]                                   |
-|               |           [ explicit_or_proper_q LBL: h6020 ARG0: x5992 RSTR: h6018 BODY: h6019  |
-|               | ]                                                                                |
-|               |           [ named LBL: h5993 ARG0: x5992 CARG: "It's Great to Be Young" ]        |
-|               |           [ _star_v_1 LBL: h6016 ARG0: e6033 ARG1: x6027 ]                       |
-|               |           [ explicit_or_proper_q LBL: h6039 ARG0: x6027 RSTR: h6037 BODY: h6038  |
-|               | ]                                                                                |
-|               |           [ named LBL: h6028 ARG0: x6027 CARG: "Cecil Parker" ] >                |
-|               |   HCONS: < h6005 qeq h6003 h6023 qeq h5995 h6018 qeq h5993 h6037 qeq h6028 h6041 |
-|               | qeq h6016 > ]                                                                    |
+| Prepped       | [ TOP: h500                                                                      |
+|               |   INDEX: e492 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_state LBL: h475 ARG0: e488 ARG1: e492 ARG2: x451 ]             |
+|               |           [ appos LBL: h475 ARG0: e472 ARG1: x451 ARG2: x453 ]                   |
+|               |           [ def_udef_a_q LBL: h484 ARG0: x453 RSTR: h482 BODY: h483 ]            |
+|               |           [ compound LBL: h454 ARG0: e468 ARG1: x453 ARG2: x461 [ x NUM: sg ] ]  |
+|               |           [ proper_q LBL: h466 ARG0: x461 RSTR: h464 BODY: h465 ]                |
+|               |           [ yofc LBL: h462 ARG0: x461 CARG: "1956" ]                             |
+|               |           [ _film_n_1 LBL: h454 ARG0: x453 ]                                     |
+|               |           [ explicit_or_proper_q LBL: h479 ARG0: x451 RSTR: h477 BODY: h478 ]    |
+|               |           [ named LBL: h452 ARG0: x451 CARG: "It's Great to Be Young" ]          |
+|               |           [ _star_v_1 LBL: h475 ARG0: e492 ARG1: x486 ]                          |
+|               |           [ explicit_or_proper_q LBL: h498 ARG0: x486 RSTR: h496 BODY: h497 ]    |
+|               |           [ named LBL: h487 ARG0: x486 CARG: "Cecil Parker" ] >                  |
+|               |   HCONS: < h464 qeq h462 h482 qeq h454 h477 qeq h452 h496 qeq h487 h500 qeq h475 |
+|               | > ]                                                                              |
 +---------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------+
@@ -124,27 +115,24 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id945_58_176
 +------------------------------------+----------------------------------------------------------------------------------+
 | Node                               | Generated SEMENT                                                                 |
 +------------------------------------+----------------------------------------------------------------------------------+
-| It's_Great_to_Be_Young_(1956_film) | [ TOP: h6021                                                                     |
-|                                    |   INDEX: x6017                                                                   |
-|                                    |   RELS: < [ appos LBL: h6016 ARG0: e6013 ARG1: x6014 ARG2: i6015 ]               |
-|                                    |           [ def_udef_a_q LBL: h6025 ARG0: x6022 RSTR: h6023 BODY: h6024 ]        |
-|                                    |           [ compound LBL: h6012 ARG0: e6009 ARG1: u6010 ARG2: u6011 ]            |
-|                                    |           [ proper_q LBL: h6007 ARG0: x6004 [ x NUM: sg ] RSTR: h6005 BODY:      |
-|                                    | h6006 ]                                                                          |
-|                                    |           [ yofc LBL: h6003 ARG0: x6002 CARG: "1956" ]                           |
-|                                    |           [ _film_n_1 LBL: h5995 ARG0: x5994 ]                                   |
-|                                    |           [ explicit_or_proper_q LBL: h6020 ARG0: x6017 RSTR: h6018 BODY: h6019  |
-|                                    | ]                                                                                |
-|                                    |           [ named LBL: h5993 ARG0: x5992 CARG: "It's Great to Be Young" ] >      |
-|                                    |   HCONS: < h6005 qeq h6003 h6023 qeq h5995 h6018 qeq h5993 >                     |
-|                                    |   EQS: < x6004 eq x6002 h6012 eq h6008 u6011 eq x6004 h6012 eq h5995 u6010 eq    |
-|                                    | x5994 x6022 eq x5994 h6016 eq h6026 i6015 eq x6022 x6017 eq x5992 h6016 eq h6021 |
-|                                    | x6014 eq x6017 >                                                                 |
-|                                    |   SLOTS: < BODY: h6019 > ]                                                       |
+| It's_Great_to_Be_Young_(1956_film) | [ TOP: h480                                                                      |
+|                                    |   INDEX: x476                                                                    |
+|                                    |   RELS: < [ appos LBL: h475 ARG0: e472 ARG1: x473 ARG2: i474 ]                   |
+|                                    |           [ def_udef_a_q LBL: h484 ARG0: x481 RSTR: h482 BODY: h483 ]            |
+|                                    |           [ compound LBL: h471 ARG0: e468 ARG1: u469 ARG2: u470 ]                |
+|                                    |           [ proper_q LBL: h466 ARG0: x463 [ x NUM: sg ] RSTR: h464 BODY: h465 ]  |
+|                                    |           [ yofc LBL: h462 ARG0: x461 CARG: "1956" ]                             |
+|                                    |           [ _film_n_1 LBL: h454 ARG0: x453 ]                                     |
+|                                    |           [ explicit_or_proper_q LBL: h479 ARG0: x476 RSTR: h477 BODY: h478 ]    |
+|                                    |           [ named LBL: h452 ARG0: x451 CARG: "It's Great to Be Young" ] >        |
+|                                    |   HCONS: < h464 qeq h462 h482 qeq h454 h477 qeq h452 >                           |
+|                                    |   EQS: < x463 eq x461 h471 eq h467 u470 eq x463 h471 eq h454 u469 eq x453 x481   |
+|                                    | eq x453 h475 eq h485 i474 eq x481 x476 eq x451 h475 eq h480 x473 eq x476 >       |
+|                                    |   SLOTS: < BODY: h478 > ]                                                        |
 +------------------------------------+----------------------------------------------------------------------------------+
-| Cecil_Parker                       | [ TOP: h6028                                                                     |
-|                                    |   INDEX: x6027                                                                   |
-|                                    |   RELS: < [ named LBL: h6028 ARG0: x6027 CARG: "Cecil Parker" ] > ]              |
+| Cecil_Parker                       | [ TOP: h487                                                                      |
+|                                    |   INDEX: x486                                                                    |
+|                                    |   RELS: < [ named LBL: h487 ARG0: x486 CARG: "Cecil Parker" ] > ]                |
 +------------------------------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -152,28 +140,25 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id945_58_176
 +----------+------------------------------------+--------------+----------------------------------------------------------------------------------+
 | Edge     | Parent                             | Child        | Generated SEMENT                                                                 |
 +----------+------------------------------------+--------------+----------------------------------------------------------------------------------+
-| starring | It's_Great_to_Be_Young_(1956_film) | Cecil_Parker | [ TOP: h6035                                                                     |
-|          |                                    |              |   INDEX: e6033 [ e TENSE: tensed ]                                               |
-|          |                                    |              |   RELS: < [ _in_p_state LBL: h6032 ARG0: e6029 ARG1: u6030 ARG2: u6031 ]         |
-|          |                                    |              |           [ appos LBL: h6016 ARG0: e6013 ARG1: x6014 ARG2: i6015 ]               |
-|          |                                    |              |           [ def_udef_a_q LBL: h6025 ARG0: x6022 RSTR: h6023 BODY: h6024 ]        |
-|          |                                    |              |           [ compound LBL: h6012 ARG0: e6009 ARG1: u6010 ARG2: u6011 ]            |
-|          |                                    |              |           [ proper_q LBL: h6007 ARG0: x6004 [ x NUM: sg ] RSTR: h6005 BODY:      |
-|          |                                    |              | h6006 ]                                                                          |
-|          |                                    |              |           [ yofc LBL: h6003 ARG0: x6002 CARG: "1956" ]                           |
-|          |                                    |              |           [ _film_n_1 LBL: h5995 ARG0: x5994 ]                                   |
-|          |                                    |              |           [ explicit_or_proper_q LBL: h6020 ARG0: x6017 RSTR: h6018 BODY: h6019  |
-|          |                                    |              | ]                                                                                |
-|          |                                    |              |           [ named LBL: h5993 ARG0: x5992 CARG: "It's Great to Be Young" ]        |
-|          |                                    |              |           [ _star_v_1 LBL: h6035 ARG0: e6033 ARG1: i6034 ]                       |
-|          |                                    |              |           [ explicit_or_proper_q LBL: h6039 ARG0: x6036 RSTR: h6037 BODY: h6038  |
-|          |                                    |              | ]                                                                                |
-|          |                                    |              |           [ named LBL: h6028 ARG0: x6027 CARG: "Cecil Parker" ] >                |
-|          |                                    |              |   HCONS: < h6005 qeq h6003 h6023 qeq h5995 h6018 qeq h5993 h6037 qeq h6028 >     |
-|          |                                    |              |   EQS: < x6004 eq x6002 h6012 eq h6008 u6011 eq x6004 h6012 eq h5995 u6010 eq    |
-|          |                                    |              | x5994 x6022 eq x5994 h6016 eq h6026 i6015 eq x6022 x6017 eq x5992 h6016 eq h6021 |
-|          |                                    |              | x6014 eq x6017 h6032 eq h6021 u6031 eq x6017 x6036 eq x6027 h6035 eq h6040 i6034 |
-|          |                                    |              | eq x6036 h6032 eq h6035 u6030 eq e6033 > ]                                       |
+| starring | It's_Great_to_Be_Young_(1956_film) | Cecil_Parker | [ TOP: h494                                                                      |
+|          |                                    |              |   INDEX: e492 [ e TENSE: tensed ]                                                |
+|          |                                    |              |   RELS: < [ _in_p_state LBL: h491 ARG0: e488 ARG1: u489 ARG2: u490 ]             |
+|          |                                    |              |           [ appos LBL: h475 ARG0: e472 ARG1: x473 ARG2: i474 ]                   |
+|          |                                    |              |           [ def_udef_a_q LBL: h484 ARG0: x481 RSTR: h482 BODY: h483 ]            |
+|          |                                    |              |           [ compound LBL: h471 ARG0: e468 ARG1: u469 ARG2: u470 ]                |
+|          |                                    |              |           [ proper_q LBL: h466 ARG0: x463 [ x NUM: sg ] RSTR: h464 BODY: h465 ]  |
+|          |                                    |              |           [ yofc LBL: h462 ARG0: x461 CARG: "1956" ]                             |
+|          |                                    |              |           [ _film_n_1 LBL: h454 ARG0: x453 ]                                     |
+|          |                                    |              |           [ explicit_or_proper_q LBL: h479 ARG0: x476 RSTR: h477 BODY: h478 ]    |
+|          |                                    |              |           [ named LBL: h452 ARG0: x451 CARG: "It's Great to Be Young" ]          |
+|          |                                    |              |           [ _star_v_1 LBL: h494 ARG0: e492 ARG1: i493 ]                          |
+|          |                                    |              |           [ explicit_or_proper_q LBL: h498 ARG0: x495 RSTR: h496 BODY: h497 ]    |
+|          |                                    |              |           [ named LBL: h487 ARG0: x486 CARG: "Cecil Parker" ] >                  |
+|          |                                    |              |   HCONS: < h464 qeq h462 h482 qeq h454 h477 qeq h452 h496 qeq h487 >             |
+|          |                                    |              |   EQS: < x463 eq x461 h471 eq h467 u470 eq x463 h471 eq h454 u469 eq x453 x481   |
+|          |                                    |              | eq x453 h475 eq h485 i474 eq x481 x476 eq x451 h475 eq h480 x473 eq x476 h491 eq |
+|          |                                    |              | h480 u490 eq x476 x495 eq x486 h494 eq h499 i493 eq x495 h491 eq h494 u489 eq    |
+|          |                                    |              | e492 > ]                                                                         |
 +----------+------------------------------------+--------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------+

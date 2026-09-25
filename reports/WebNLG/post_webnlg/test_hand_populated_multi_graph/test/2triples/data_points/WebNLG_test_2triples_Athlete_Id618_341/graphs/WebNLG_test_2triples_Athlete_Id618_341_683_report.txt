@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_Athlete_Id618_341_683
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-----------------------------------------------------------------------------------------+
-|                                       GOLD OUTPUTS                                      |
-+----------------------------------------------------------------------------+------------+
-| Gold Output                                                                | Generated? |
-+----------------------------------------------------------------------------+------------+
-| Piotr Hallmann was born in August 25th, 1987 and weighs 70.308kgs.         | False      |
-| Piotr Hallmann was born on August 25, 1987 and he weighs 70.308 kilograms. | False      |
-| Piotr Hallmann was born on August 25, 1987 and weighs 70.308 kg.           | False      |
-+----------------------------------------------------------------------------+------------+
++----------------------------------------------------------------------------+
+|                                GOLD OUTPUTS                                |
++---------------------------------------------------------------+------------+
+| Gold Output                                                   | Generated? |
++---------------------------------------------------------------+------------+
+| Piotr Hallmann was born August 25th, 1987 in Gdynia, Poland.  | False      |
+| Piotr Hallmann was born in Gdynia, Poland on August 25, 1987. | False      |
+| Piotr Hallmann was born on August 25, 1987 in Gdynia, Poland. | False      |
++---------------------------------------------------------------+------------+
 
 +--------------------------------------------------------------------------------------+
 |                                     NODE METRICS                                     |
@@ -56,66 +56,61 @@ GRAPH NAME: WebNLG_test_2triples_Athlete_Id618_341_683
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h21961                                                                    |
-|               |   INDEX: e21958 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h21952 ARG0: e21949 ARG1: u21950 ARG2: i21951 ]      |
-|               |           [ def_udef_a_q LBL: h21956 ARG0: x21953 RSTR: h21954 BODY: h21955 ]    |
-|               |           [ of_p LBL: h21943 ARG0: e21940 ARG1: x21941 ARG2: x21942 ]            |
-|               |           [ def_implicit_q LBL: h21947 ARG0: x21944 RSTR: h21945 BODY: h21946 ]  |
-|               |           [ mofy LBL: h21932 ARG0: x21930 [ x NUM: sg ] ARG1: i21931 CARG: "Aug" |
+| Original      | [ TOP: h2122                                                                     |
+|               |   INDEX: e2119 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _on_p_temp LBL: h2113 ARG0: e2110 ARG1: u2111 ARG2: i2112 ]          |
+|               |           [ def_udef_a_q LBL: h2117 ARG0: x2114 RSTR: h2115 BODY: h2116 ]        |
+|               |           [ of_p LBL: h2104 ARG0: e2101 ARG1: x2102 ARG2: x2103 ]                |
+|               |           [ def_implicit_q LBL: h2108 ARG0: x2105 RSTR: h2106 BODY: h2107 ]      |
+|               |           [ mofy LBL: h2093 ARG0: x2091 [ x NUM: sg ] ARG1: i2092 CARG: "Aug" ]  |
+|               |           [ dofm LBL: h2090 ARG0: x2088 ARG1: i2089 CARG: "25th" ]               |
+|               |           [ proper_q LBL: h2099 ARG0: x2096 RSTR: h2097 BODY: h2098 ]            |
+|               |           [ yofc LBL: h2095 ARG0: x2094 CARG: "1987" ]                           |
+|               |           [ _born_a_of LBL: h2122 ARG0: e2119 ARG1: u2120 ARG2: u2121 ]          |
+|               |           [ explicit_or_proper_q LBL: h2126 ARG0: x2123 RSTR: h2124 BODY: h2125  |
 |               | ]                                                                                |
-|               |           [ dofm LBL: h21929 ARG0: x21927 ARG1: i21928 CARG: "25th" ]            |
-|               |           [ proper_q LBL: h21938 ARG0: x21935 RSTR: h21936 BODY: h21937 ]        |
-|               |           [ yofc LBL: h21934 ARG0: x21933 CARG: "1987" ]                         |
-|               |           [ _born_a_of LBL: h21961 ARG0: e21958 ARG1: u21959 ARG2: u21960 ]      |
-|               |           [ explicit_or_proper_q LBL: h21965 ARG0: x21962 RSTR: h21963 BODY:     |
-|               | h21964 ]                                                                         |
-|               |           [ named LBL: h21926 ARG0: x21925 CARG: "Piotr Hallmann" ] >            |
-|               |   HCONS: < h21945 qeq h21932 h21936 qeq h21934 h21954 qeq h21929 h21963 qeq      |
-|               | h21926 >                                                                         |
-|               |   EQS: < x21944 eq x21930 h21943 eq h21948 x21942 eq x21944 x21935 eq x21933     |
-|               | h21929 eq h21939 i21928 eq x21935 h21943 eq h21929 x21941 eq x21927 x21953 eq    |
-|               | x21927 h21952 eq h21957 i21951 eq x21953 x21962 eq x21925 h21961 eq h21966       |
-|               | u21959 eq x21962 h21952 eq h21961 u21950 eq e21958 >                             |
-|               |   SLOTS: < ARG2: u21960 > ]                                                      |
+|               |           [ named LBL: h2087 ARG0: x2086 CARG: "Piotr Hallmann" ] >              |
+|               |   HCONS: < h2106 qeq h2093 h2097 qeq h2095 h2115 qeq h2090 h2124 qeq h2087 >     |
+|               |   EQS: < x2105 eq x2091 h2104 eq h2109 x2103 eq x2105 x2096 eq x2094 h2090 eq    |
+|               | h2100 i2089 eq x2096 h2104 eq h2090 x2102 eq x2088 x2114 eq x2088 h2113 eq h2118 |
+|               | i2112 eq x2114 x2123 eq x2086 h2122 eq h2127 u2120 eq x2123 h2113 eq h2122 u2111 |
+|               | eq e2119 >                                                                       |
+|               |   SLOTS: < ARG2: u2121 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h21952                                                                    |
-|               |   INDEX: e21958 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h21952 ARG0: e21949 ARG1: e21958 ARG2: x21927 ]      |
-|               |           [ def_udef_a_q LBL: h21956 ARG0: x21927 RSTR: h21954 BODY: h21955 ]    |
-|               |           [ of_p LBL: h21929 ARG0: e21940 ARG1: x21927 ARG2: x21930 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ def_implicit_q LBL: h21947 ARG0: x21930 RSTR: h21945 BODY: h21946 ]  |
-|               |           [ mofy LBL: h21932 ARG0: x21930 ARG1: i21931 CARG: "Aug" ]             |
-|               |           [ dofm LBL: h21929 ARG0: x21927 ARG1: x21933 CARG: "25th" ]            |
-|               |           [ proper_q LBL: h21938 ARG0: x21933 RSTR: h21936 BODY: h21937 ]        |
-|               |           [ yofc LBL: h21934 ARG0: x21933 CARG: "1987" ]                         |
-|               |           [ _born_a_of LBL: h21952 ARG0: e21958 ARG1: x21925 ARG2: u21960 ]      |
-|               |           [ explicit_or_proper_q LBL: h21965 ARG0: x21925 RSTR: h21963 BODY:     |
-|               | h21964 ]                                                                         |
-|               |           [ named LBL: h21926 ARG0: x21925 CARG: "Piotr Hallmann" ] >            |
-|               |   HCONS: < h21945 qeq h21932 h21936 qeq h21934 h21954 qeq h21929 h21963 qeq      |
-|               | h21926 >                                                                         |
-|               |   SLOTS: < ARG2: u21960 > ]                                                      |
+| EQs Collapsed | [ TOP: h2113                                                                     |
+|               |   INDEX: e2119 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _on_p_temp LBL: h2113 ARG0: e2110 ARG1: e2119 ARG2: x2088 ]          |
+|               |           [ def_udef_a_q LBL: h2117 ARG0: x2088 RSTR: h2115 BODY: h2116 ]        |
+|               |           [ of_p LBL: h2090 ARG0: e2101 ARG1: x2088 ARG2: x2091 [ x NUM: sg ] ]  |
+|               |           [ def_implicit_q LBL: h2108 ARG0: x2091 RSTR: h2106 BODY: h2107 ]      |
+|               |           [ mofy LBL: h2093 ARG0: x2091 ARG1: i2092 CARG: "Aug" ]                |
+|               |           [ dofm LBL: h2090 ARG0: x2088 ARG1: x2094 CARG: "25th" ]               |
+|               |           [ proper_q LBL: h2099 ARG0: x2094 RSTR: h2097 BODY: h2098 ]            |
+|               |           [ yofc LBL: h2095 ARG0: x2094 CARG: "1987" ]                           |
+|               |           [ _born_a_of LBL: h2113 ARG0: e2119 ARG1: x2086 ARG2: u2121 ]          |
+|               |           [ explicit_or_proper_q LBL: h2126 ARG0: x2086 RSTR: h2124 BODY: h2125  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2087 ARG0: x2086 CARG: "Piotr Hallmann" ] >              |
+|               |   HCONS: < h2106 qeq h2093 h2097 qeq h2095 h2115 qeq h2090 h2124 qeq h2087 >     |
+|               |   SLOTS: < ARG2: u2121 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h21967                                                                    |
-|               |   INDEX: e21958 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h21952 ARG0: e21949 ARG1: e21958 ARG2: x21927 ]      |
-|               |           [ def_udef_a_q LBL: h21956 ARG0: x21927 RSTR: h21954 BODY: h21955 ]    |
-|               |           [ of_p LBL: h21929 ARG0: e21940 ARG1: x21927 ARG2: x21930 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ def_implicit_q LBL: h21947 ARG0: x21930 RSTR: h21945 BODY: h21946 ]  |
-|               |           [ mofy LBL: h21932 ARG0: x21930 ARG1: i21931 CARG: "Aug" ]             |
-|               |           [ dofm LBL: h21929 ARG0: x21927 ARG1: x21933 CARG: "25th" ]            |
-|               |           [ proper_q LBL: h21938 ARG0: x21933 RSTR: h21936 BODY: h21937 ]        |
-|               |           [ yofc LBL: h21934 ARG0: x21933 CARG: "1987" ]                         |
-|               |           [ _born_a_of LBL: h21952 ARG0: e21958 ARG1: x21925 ARG2: u21960 ]      |
-|               |           [ explicit_or_proper_q LBL: h21965 ARG0: x21925 RSTR: h21963 BODY:     |
-|               | h21964 ]                                                                         |
-|               |           [ named LBL: h21926 ARG0: x21925 CARG: "Piotr Hallmann" ] >            |
-|               |   HCONS: < h21945 qeq h21932 h21936 qeq h21934 h21954 qeq h21929 h21963 qeq      |
-|               | h21926 h21967 qeq h21952 >                                                       |
-|               |   SLOTS: < ARG2: u21960 > ]                                                      |
+| Prepped       | [ TOP: h2128                                                                     |
+|               |   INDEX: e2119 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _on_p_temp LBL: h2113 ARG0: e2110 ARG1: e2119 ARG2: x2088 ]          |
+|               |           [ def_udef_a_q LBL: h2117 ARG0: x2088 RSTR: h2115 BODY: h2116 ]        |
+|               |           [ of_p LBL: h2090 ARG0: e2101 ARG1: x2088 ARG2: x2091 [ x NUM: sg ] ]  |
+|               |           [ def_implicit_q LBL: h2108 ARG0: x2091 RSTR: h2106 BODY: h2107 ]      |
+|               |           [ mofy LBL: h2093 ARG0: x2091 ARG1: i2092 CARG: "Aug" ]                |
+|               |           [ dofm LBL: h2090 ARG0: x2088 ARG1: x2094 CARG: "25th" ]               |
+|               |           [ proper_q LBL: h2099 ARG0: x2094 RSTR: h2097 BODY: h2098 ]            |
+|               |           [ yofc LBL: h2095 ARG0: x2094 CARG: "1987" ]                           |
+|               |           [ _born_a_of LBL: h2113 ARG0: e2119 ARG1: x2086 ARG2: u2121 ]          |
+|               |           [ explicit_or_proper_q LBL: h2126 ARG0: x2086 RSTR: h2124 BODY: h2125  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2087 ARG0: x2086 CARG: "Piotr Hallmann" ] >              |
+|               |   HCONS: < h2106 qeq h2093 h2097 qeq h2095 h2115 qeq h2090 h2124 qeq h2087 h2128 |
+|               | qeq h2113 >                                                                      |
+|               |   SLOTS: < ARG2: u2121 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------+
@@ -123,22 +118,21 @@ GRAPH NAME: WebNLG_test_2triples_Athlete_Id618_341_683
 +----------------+----------------------------------------------------------------------------------+
 | Node           | Generated SEMENT                                                                 |
 +----------------+----------------------------------------------------------------------------------+
-| Piotr_Hallmann | [ TOP: h21926                                                                    |
-|                |   INDEX: x21925                                                                  |
-|                |   RELS: < [ named LBL: h21926 ARG0: x21925 CARG: "Piotr Hallmann" ] > ]          |
+| Piotr_Hallmann | [ TOP: h2087                                                                     |
+|                |   INDEX: x2086                                                                   |
+|                |   RELS: < [ named LBL: h2087 ARG0: x2086 CARG: "Piotr Hallmann" ] > ]            |
 +----------------+----------------------------------------------------------------------------------+
-| 1987-08-25     | [ TOP: h21929                                                                    |
-|                |   INDEX: x21927                                                                  |
-|                |   RELS: < [ of_p LBL: h21943 ARG0: e21940 ARG1: x21941 ARG2: x21942 ]            |
-|                |           [ def_implicit_q LBL: h21947 ARG0: x21944 RSTR: h21945 BODY: h21946 ]  |
-|                |           [ mofy LBL: h21932 ARG0: x21930 [ x NUM: sg ] ARG1: i21931 CARG: "Aug" |
-|                | ]                                                                                |
-|                |           [ dofm LBL: h21929 ARG0: x21927 ARG1: i21928 CARG: "25th" ]            |
-|                |           [ proper_q LBL: h21938 ARG0: x21935 RSTR: h21936 BODY: h21937 ]        |
-|                |           [ yofc LBL: h21934 ARG0: x21933 CARG: "1987" ] >                       |
-|                |   HCONS: < h21945 qeq h21932 h21936 qeq h21934 >                                 |
-|                |   EQS: < x21944 eq x21930 h21943 eq h21948 x21942 eq x21944 x21935 eq x21933     |
-|                | h21929 eq h21939 i21928 eq x21935 h21943 eq h21929 x21941 eq x21927 > ]          |
+| 1987-08-25     | [ TOP: h2090                                                                     |
+|                |   INDEX: x2088                                                                   |
+|                |   RELS: < [ of_p LBL: h2104 ARG0: e2101 ARG1: x2102 ARG2: x2103 ]                |
+|                |           [ def_implicit_q LBL: h2108 ARG0: x2105 RSTR: h2106 BODY: h2107 ]      |
+|                |           [ mofy LBL: h2093 ARG0: x2091 [ x NUM: sg ] ARG1: i2092 CARG: "Aug" ]  |
+|                |           [ dofm LBL: h2090 ARG0: x2088 ARG1: i2089 CARG: "25th" ]               |
+|                |           [ proper_q LBL: h2099 ARG0: x2096 RSTR: h2097 BODY: h2098 ]            |
+|                |           [ yofc LBL: h2095 ARG0: x2094 CARG: "1987" ] >                         |
+|                |   HCONS: < h2106 qeq h2093 h2097 qeq h2095 >                                     |
+|                |   EQS: < x2105 eq x2091 h2104 eq h2109 x2103 eq x2105 x2096 eq x2094 h2090 eq    |
+|                | h2100 i2089 eq x2096 h2104 eq h2090 x2102 eq x2088 > ]                           |
 +----------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------+
@@ -146,28 +140,26 @@ GRAPH NAME: WebNLG_test_2triples_Athlete_Id618_341_683
 +-----------+----------------+------------+----------------------------------------------------------------------------------+
 | Edge      | Parent         | Child      | Generated SEMENT                                                                 |
 +-----------+----------------+------------+----------------------------------------------------------------------------------+
-| birthDate | Piotr_Hallmann | 1987-08-25 | [ TOP: h21961                                                                    |
-|           |                |            |   INDEX: e21958 [ e TENSE: tensed ]                                              |
-|           |                |            |   RELS: < [ _on_p_temp LBL: h21952 ARG0: e21949 ARG1: u21950 ARG2: i21951 ]      |
-|           |                |            |           [ def_udef_a_q LBL: h21956 ARG0: x21953 RSTR: h21954 BODY: h21955 ]    |
-|           |                |            |           [ of_p LBL: h21943 ARG0: e21940 ARG1: x21941 ARG2: x21942 ]            |
-|           |                |            |           [ def_implicit_q LBL: h21947 ARG0: x21944 RSTR: h21945 BODY: h21946 ]  |
-|           |                |            |           [ mofy LBL: h21932 ARG0: x21930 [ x NUM: sg ] ARG1: i21931 CARG: "Aug" |
+| birthDate | Piotr_Hallmann | 1987-08-25 | [ TOP: h2122                                                                     |
+|           |                |            |   INDEX: e2119 [ e TENSE: tensed ]                                               |
+|           |                |            |   RELS: < [ _on_p_temp LBL: h2113 ARG0: e2110 ARG1: u2111 ARG2: i2112 ]          |
+|           |                |            |           [ def_udef_a_q LBL: h2117 ARG0: x2114 RSTR: h2115 BODY: h2116 ]        |
+|           |                |            |           [ of_p LBL: h2104 ARG0: e2101 ARG1: x2102 ARG2: x2103 ]                |
+|           |                |            |           [ def_implicit_q LBL: h2108 ARG0: x2105 RSTR: h2106 BODY: h2107 ]      |
+|           |                |            |           [ mofy LBL: h2093 ARG0: x2091 [ x NUM: sg ] ARG1: i2092 CARG: "Aug" ]  |
+|           |                |            |           [ dofm LBL: h2090 ARG0: x2088 ARG1: i2089 CARG: "25th" ]               |
+|           |                |            |           [ proper_q LBL: h2099 ARG0: x2096 RSTR: h2097 BODY: h2098 ]            |
+|           |                |            |           [ yofc LBL: h2095 ARG0: x2094 CARG: "1987" ]                           |
+|           |                |            |           [ _born_a_of LBL: h2122 ARG0: e2119 ARG1: u2120 ARG2: u2121 ]          |
+|           |                |            |           [ explicit_or_proper_q LBL: h2126 ARG0: x2123 RSTR: h2124 BODY: h2125  |
 |           |                |            | ]                                                                                |
-|           |                |            |           [ dofm LBL: h21929 ARG0: x21927 ARG1: i21928 CARG: "25th" ]            |
-|           |                |            |           [ proper_q LBL: h21938 ARG0: x21935 RSTR: h21936 BODY: h21937 ]        |
-|           |                |            |           [ yofc LBL: h21934 ARG0: x21933 CARG: "1987" ]                         |
-|           |                |            |           [ _born_a_of LBL: h21961 ARG0: e21958 ARG1: u21959 ARG2: u21960 ]      |
-|           |                |            |           [ explicit_or_proper_q LBL: h21965 ARG0: x21962 RSTR: h21963 BODY:     |
-|           |                |            | h21964 ]                                                                         |
-|           |                |            |           [ named LBL: h21926 ARG0: x21925 CARG: "Piotr Hallmann" ] >            |
-|           |                |            |   HCONS: < h21945 qeq h21932 h21936 qeq h21934 h21954 qeq h21929 h21963 qeq      |
-|           |                |            | h21926 >                                                                         |
-|           |                |            |   EQS: < x21944 eq x21930 h21943 eq h21948 x21942 eq x21944 x21935 eq x21933     |
-|           |                |            | h21929 eq h21939 i21928 eq x21935 h21943 eq h21929 x21941 eq x21927 x21953 eq    |
-|           |                |            | x21927 h21952 eq h21957 i21951 eq x21953 x21962 eq x21925 h21961 eq h21966       |
-|           |                |            | u21959 eq x21962 h21952 eq h21961 u21950 eq e21958 >                             |
-|           |                |            |   SLOTS: < ARG2: u21960 > ]                                                      |
+|           |                |            |           [ named LBL: h2087 ARG0: x2086 CARG: "Piotr Hallmann" ] >              |
+|           |                |            |   HCONS: < h2106 qeq h2093 h2097 qeq h2095 h2115 qeq h2090 h2124 qeq h2087 >     |
+|           |                |            |   EQS: < x2105 eq x2091 h2104 eq h2109 x2103 eq x2105 x2096 eq x2094 h2090 eq    |
+|           |                |            | h2100 i2089 eq x2096 h2104 eq h2090 x2102 eq x2088 x2114 eq x2088 h2113 eq h2118 |
+|           |                |            | i2112 eq x2114 x2123 eq x2086 h2122 eq h2127 u2120 eq x2123 h2113 eq h2122 u2111 |
+|           |                |            | eq e2119 >                                                                       |
+|           |                |            |   SLOTS: < ARG2: u2121 > ]                                                       |
 +-----------+----------------+------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------+

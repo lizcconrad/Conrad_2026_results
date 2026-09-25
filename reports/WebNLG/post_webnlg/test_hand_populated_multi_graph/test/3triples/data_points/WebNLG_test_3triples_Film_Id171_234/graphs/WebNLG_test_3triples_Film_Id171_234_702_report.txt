@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id171_234_702
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                       GOLD OUTPUTS                                                                       |
-+---------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                 | Generated? |
-+---------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| 'McVeagh of the South Seas' (a film registered in IMDb, ID 0004319) was directed by Cyril Bruce and Harry Carey, an actor born in 1878.     | False      |
-| McVeagh of the South Seas (IMDb ID 0004319) is a film starring Harry Carey and was directed by Harry Carey and Cyril Bruce.                 | False      |
-| The movie McVeagh of the South Seas' IMDb id is 0004319. It was directed by Cyril Bruce and starred actor Harry Carey who was born in 1878. | False      |
-+---------------------------------------------------------------------------------------------------------------------------------------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                          GOLD OUTPUTS                                                                                         |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                                                      | Generated? |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Harry Carey born in 1878 is starring in the film McVeagh of the South Seas, registered in IMDb with the ID 0004319. The film was produced by Progressive Motion Picture Company. | False      |
+| McVeagh of the South Seas (IMDb ID 0004319) was produced by the Progressive Motion Picture Company and stars Harry Carey (born in 1878).                                         | False      |
+| McVeagh of the South Seas with IMDb id of 0004319 which was produced by the Progressive Motion Picture company, starred Harry Carey, who was born in 1878.                       | False      |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +-------------------------------------------------------------------------------------------------+
 |                                           NODE METRICS                                          |
@@ -56,75 +56,72 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id171_234_702
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h23777                                                                    |
-|               |   INDEX: e23774 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _with_p LBL: h23746 ARG0: e23743 ARG1: u23744 ARG2: i23745 ]         |
-|               |           [ explicit_or_proper_q LBL: h23761 ARG0: x23758 RSTR: h23759 BODY:     |
-|               | h23760 ]                                                                         |
-|               |           [ compound LBL: h23752 ARG0: e23749 ARG1: u23750 ARG2: u23751 ]        |
-|               |           [ existential_q LBL: h23756 ARG0: x23753 RSTR: h23754 BODY: h23755 ]   |
-|               |           [ named LBL: h23748 ARG0: x23747 [ x NUM: sg ] CARG: "ID" ]            |
-|               |           [ named LBL: h23742 ARG0: x23741 CARG: "0004319" ]                     |
-|               |           [ _in_p_state LBL: h23766 ARG0: e23763 ARG1: u23764 ARG2: u23765 ]     |
-|               |           [ explicit_or_proper_q LBL: h23772 ARG0: x23769 RSTR: h23770 BODY:     |
-|               | h23771 ]                                                                         |
-|               |           [ named LBL: h23768 ARG0: x23767 CARG: "IMDb" ]                        |
-|               |           [ _register_v_1 LBL: h23777 ARG0: e23774 ARG1: i23775 ARG2: i23776 ]   |
-|               |           [ explicit_or_proper_q LBL: h23781 ARG0: x23778 RSTR: h23779 BODY:     |
-|               | h23780 ]                                                                         |
-|               |           [ named LBL: h23740 ARG0: x23739 CARG: "McVeagh of the South Seas" ] > |
-|               |   HCONS: < h23754 qeq h23748 h23759 qeq h23742 h23770 qeq h23768 h23779 qeq      |
-|               | h23740 >                                                                         |
-|               |   EQS: < x23753 eq x23747 h23752 eq h23757 u23751 eq x23753 h23752 eq h23742     |
-|               | u23750 eq x23741 x23758 eq x23741 h23746 eq h23762 i23745 eq x23758 x23769 eq    |
-|               | x23767 h23766 eq h23773 u23765 eq x23769 x23778 eq x23739 h23777 eq h23782       |
-|               | i23776 eq x23778 h23766 eq h23777 u23764 eq e23774 h23746 eq h23777 u23744 eq    |
-|               | e23774 >                                                                         |
-|               |   SLOTS: < ARG1: i23775 > ]                                                      |
+| Original      | [ TOP: h7229                                                                     |
+|               |   INDEX: e7226 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _with_p LBL: h7198 ARG0: e7195 ARG1: u7196 ARG2: i7197 ]             |
+|               |           [ explicit_or_proper_q LBL: h7213 ARG0: x7210 RSTR: h7211 BODY: h7212  |
+|               | ]                                                                                |
+|               |           [ compound LBL: h7204 ARG0: e7201 ARG1: u7202 ARG2: u7203 ]            |
+|               |           [ existential_q LBL: h7208 ARG0: x7205 RSTR: h7206 BODY: h7207 ]       |
+|               |           [ named LBL: h7200 ARG0: x7199 [ x NUM: sg ] CARG: "ID" ]              |
+|               |           [ named LBL: h7194 ARG0: x7193 CARG: "0004319" ]                       |
+|               |           [ _in_p_state LBL: h7218 ARG0: e7215 ARG1: u7216 ARG2: u7217 ]         |
+|               |           [ explicit_or_proper_q LBL: h7224 ARG0: x7221 RSTR: h7222 BODY: h7223  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7220 ARG0: x7219 CARG: "IMDb" ]                          |
+|               |           [ _register_v_1 LBL: h7229 ARG0: e7226 ARG1: i7227 ARG2: i7228 ]       |
+|               |           [ explicit_or_proper_q LBL: h7233 ARG0: x7230 RSTR: h7231 BODY: h7232  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7192 ARG0: x7191 CARG: "McVeagh of the South Seas" ] >   |
+|               |   HCONS: < h7206 qeq h7200 h7211 qeq h7194 h7222 qeq h7220 h7231 qeq h7192 >     |
+|               |   EQS: < x7205 eq x7199 h7204 eq h7209 u7203 eq x7205 h7204 eq h7194 u7202 eq    |
+|               | x7193 x7210 eq x7193 h7198 eq h7214 i7197 eq x7210 x7221 eq x7219 h7218 eq h7225 |
+|               | u7217 eq x7221 x7230 eq x7191 h7229 eq h7234 i7228 eq x7230 h7218 eq h7229 u7216 |
+|               | eq e7226 h7198 eq h7229 u7196 eq e7226 >                                         |
+|               |   SLOTS: < ARG1: i7227 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h23746                                                                    |
-|               |   INDEX: e23774 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _with_p LBL: h23746 ARG0: e23743 ARG1: e23774 ARG2: x23741 ]         |
-|               |           [ explicit_or_proper_q LBL: h23761 ARG0: x23741 RSTR: h23759 BODY:     |
-|               | h23760 ]                                                                         |
-|               |           [ compound LBL: h23742 ARG0: e23749 ARG1: x23741 ARG2: x23747 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h23756 ARG0: x23747 RSTR: h23754 BODY: h23755 ]   |
-|               |           [ named LBL: h23748 ARG0: x23747 CARG: "ID" ]                          |
-|               |           [ named LBL: h23742 ARG0: x23741 CARG: "0004319" ]                     |
-|               |           [ _in_p_state LBL: h23746 ARG0: e23763 ARG1: e23774 ARG2: x23767 ]     |
-|               |           [ explicit_or_proper_q LBL: h23772 ARG0: x23767 RSTR: h23770 BODY:     |
-|               | h23771 ]                                                                         |
-|               |           [ named LBL: h23768 ARG0: x23767 CARG: "IMDb" ]                        |
-|               |           [ _register_v_1 LBL: h23746 ARG0: e23774 ARG1: i23775 ARG2: x23739 ]   |
-|               |           [ explicit_or_proper_q LBL: h23781 ARG0: x23739 RSTR: h23779 BODY:     |
-|               | h23780 ]                                                                         |
-|               |           [ named LBL: h23740 ARG0: x23739 CARG: "McVeagh of the South Seas" ] > |
-|               |   HCONS: < h23754 qeq h23748 h23759 qeq h23742 h23770 qeq h23768 h23779 qeq      |
-|               | h23740 >                                                                         |
-|               |   SLOTS: < ARG1: i23775 > ]                                                      |
+| EQs Collapsed | [ TOP: h7198                                                                     |
+|               |   INDEX: e7226 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _with_p LBL: h7198 ARG0: e7195 ARG1: e7226 ARG2: x7193 ]             |
+|               |           [ explicit_or_proper_q LBL: h7213 ARG0: x7193 RSTR: h7211 BODY: h7212  |
+|               | ]                                                                                |
+|               |           [ compound LBL: h7194 ARG0: e7201 ARG1: x7193 ARG2: x7199 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h7208 ARG0: x7199 RSTR: h7206 BODY: h7207 ]       |
+|               |           [ named LBL: h7200 ARG0: x7199 CARG: "ID" ]                            |
+|               |           [ named LBL: h7194 ARG0: x7193 CARG: "0004319" ]                       |
+|               |           [ _in_p_state LBL: h7198 ARG0: e7215 ARG1: e7226 ARG2: x7219 ]         |
+|               |           [ explicit_or_proper_q LBL: h7224 ARG0: x7219 RSTR: h7222 BODY: h7223  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7220 ARG0: x7219 CARG: "IMDb" ]                          |
+|               |           [ _register_v_1 LBL: h7198 ARG0: e7226 ARG1: i7227 ARG2: x7191 ]       |
+|               |           [ explicit_or_proper_q LBL: h7233 ARG0: x7191 RSTR: h7231 BODY: h7232  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7192 ARG0: x7191 CARG: "McVeagh of the South Seas" ] >   |
+|               |   HCONS: < h7206 qeq h7200 h7211 qeq h7194 h7222 qeq h7220 h7231 qeq h7192 >     |
+|               |   SLOTS: < ARG1: i7227 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h23783                                                                    |
-|               |   INDEX: e23774 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _with_p LBL: h23746 ARG0: e23743 ARG1: e23774 ARG2: x23741 ]         |
-|               |           [ explicit_or_proper_q LBL: h23761 ARG0: x23741 RSTR: h23759 BODY:     |
-|               | h23760 ]                                                                         |
-|               |           [ compound LBL: h23742 ARG0: e23749 ARG1: x23741 ARG2: x23747 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h23756 ARG0: x23747 RSTR: h23754 BODY: h23755 ]   |
-|               |           [ named LBL: h23748 ARG0: x23747 CARG: "ID" ]                          |
-|               |           [ named LBL: h23742 ARG0: x23741 CARG: "0004319" ]                     |
-|               |           [ _in_p_state LBL: h23746 ARG0: e23763 ARG1: e23774 ARG2: x23767 ]     |
-|               |           [ explicit_or_proper_q LBL: h23772 ARG0: x23767 RSTR: h23770 BODY:     |
-|               | h23771 ]                                                                         |
-|               |           [ named LBL: h23768 ARG0: x23767 CARG: "IMDb" ]                        |
-|               |           [ _register_v_1 LBL: h23746 ARG0: e23774 ARG1: i23775 ARG2: x23739 ]   |
-|               |           [ explicit_or_proper_q LBL: h23781 ARG0: x23739 RSTR: h23779 BODY:     |
-|               | h23780 ]                                                                         |
-|               |           [ named LBL: h23740 ARG0: x23739 CARG: "McVeagh of the South Seas" ] > |
-|               |   HCONS: < h23754 qeq h23748 h23759 qeq h23742 h23770 qeq h23768 h23779 qeq      |
-|               | h23740 h23783 qeq h23746 >                                                       |
-|               |   SLOTS: < ARG1: i23775 > ]                                                      |
+| Prepped       | [ TOP: h7235                                                                     |
+|               |   INDEX: e7226 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _with_p LBL: h7198 ARG0: e7195 ARG1: e7226 ARG2: x7193 ]             |
+|               |           [ explicit_or_proper_q LBL: h7213 ARG0: x7193 RSTR: h7211 BODY: h7212  |
+|               | ]                                                                                |
+|               |           [ compound LBL: h7194 ARG0: e7201 ARG1: x7193 ARG2: x7199 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h7208 ARG0: x7199 RSTR: h7206 BODY: h7207 ]       |
+|               |           [ named LBL: h7200 ARG0: x7199 CARG: "ID" ]                            |
+|               |           [ named LBL: h7194 ARG0: x7193 CARG: "0004319" ]                       |
+|               |           [ _in_p_state LBL: h7198 ARG0: e7215 ARG1: e7226 ARG2: x7219 ]         |
+|               |           [ explicit_or_proper_q LBL: h7224 ARG0: x7219 RSTR: h7222 BODY: h7223  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7220 ARG0: x7219 CARG: "IMDb" ]                          |
+|               |           [ _register_v_1 LBL: h7198 ARG0: e7226 ARG1: i7227 ARG2: x7191 ]       |
+|               |           [ explicit_or_proper_q LBL: h7233 ARG0: x7191 RSTR: h7231 BODY: h7232  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7192 ARG0: x7191 CARG: "McVeagh of the South Seas" ] >   |
+|               |   HCONS: < h7206 qeq h7200 h7211 qeq h7194 h7222 qeq h7220 h7231 qeq h7192 h7235 |
+|               | qeq h7198 >                                                                      |
+|               |   SLOTS: < ARG1: i7227 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------------------------------+
@@ -132,14 +129,13 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id171_234_702
 +---------------------------+----------------------------------------------------------------------------------+
 | Node                      | Generated SEMENT                                                                 |
 +---------------------------+----------------------------------------------------------------------------------+
-| McVeagh_of_the_South_Seas | [ TOP: h23740                                                                    |
-|                           |   INDEX: x23739                                                                  |
-|                           |   RELS: < [ named LBL: h23740 ARG0: x23739 CARG: "McVeagh of the South Seas" ] > |
-|                           | ]                                                                                |
+| McVeagh_of_the_South_Seas | [ TOP: h7192                                                                     |
+|                           |   INDEX: x7191                                                                   |
+|                           |   RELS: < [ named LBL: h7192 ARG0: x7191 CARG: "McVeagh of the South Seas" ] > ] |
 +---------------------------+----------------------------------------------------------------------------------+
-| 0004319                   | [ TOP: h23742                                                                    |
-|                           |   INDEX: x23741                                                                  |
-|                           |   RELS: < [ named LBL: h23742 ARG0: x23741 CARG: "0004319" ] > ]                 |
+| 0004319                   | [ TOP: h7194                                                                     |
+|                           |   INDEX: x7193                                                                   |
+|                           |   RELS: < [ named LBL: h7194 ARG0: x7193 CARG: "0004319" ] > ]                   |
 +---------------------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------------------------+
@@ -147,31 +143,29 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id171_234_702
 +--------+---------------------------+---------+----------------------------------------------------------------------------------+
 | Edge   | Parent                    | Child   | Generated SEMENT                                                                 |
 +--------+---------------------------+---------+----------------------------------------------------------------------------------+
-| imdbId | McVeagh_of_the_South_Seas | 0004319 | [ TOP: h23777                                                                    |
-|        |                           |         |   INDEX: e23774 [ e TENSE: tensed ]                                              |
-|        |                           |         |   RELS: < [ _with_p LBL: h23746 ARG0: e23743 ARG1: u23744 ARG2: i23745 ]         |
-|        |                           |         |           [ explicit_or_proper_q LBL: h23761 ARG0: x23758 RSTR: h23759 BODY:     |
-|        |                           |         | h23760 ]                                                                         |
-|        |                           |         |           [ compound LBL: h23752 ARG0: e23749 ARG1: u23750 ARG2: u23751 ]        |
-|        |                           |         |           [ existential_q LBL: h23756 ARG0: x23753 RSTR: h23754 BODY: h23755 ]   |
-|        |                           |         |           [ named LBL: h23748 ARG0: x23747 [ x NUM: sg ] CARG: "ID" ]            |
-|        |                           |         |           [ named LBL: h23742 ARG0: x23741 CARG: "0004319" ]                     |
-|        |                           |         |           [ _in_p_state LBL: h23766 ARG0: e23763 ARG1: u23764 ARG2: u23765 ]     |
-|        |                           |         |           [ explicit_or_proper_q LBL: h23772 ARG0: x23769 RSTR: h23770 BODY:     |
-|        |                           |         | h23771 ]                                                                         |
-|        |                           |         |           [ named LBL: h23768 ARG0: x23767 CARG: "IMDb" ]                        |
-|        |                           |         |           [ _register_v_1 LBL: h23777 ARG0: e23774 ARG1: i23775 ARG2: i23776 ]   |
-|        |                           |         |           [ explicit_or_proper_q LBL: h23781 ARG0: x23778 RSTR: h23779 BODY:     |
-|        |                           |         | h23780 ]                                                                         |
-|        |                           |         |           [ named LBL: h23740 ARG0: x23739 CARG: "McVeagh of the South Seas" ] > |
-|        |                           |         |   HCONS: < h23754 qeq h23748 h23759 qeq h23742 h23770 qeq h23768 h23779 qeq      |
-|        |                           |         | h23740 >                                                                         |
-|        |                           |         |   EQS: < x23753 eq x23747 h23752 eq h23757 u23751 eq x23753 h23752 eq h23742     |
-|        |                           |         | u23750 eq x23741 x23758 eq x23741 h23746 eq h23762 i23745 eq x23758 x23769 eq    |
-|        |                           |         | x23767 h23766 eq h23773 u23765 eq x23769 x23778 eq x23739 h23777 eq h23782       |
-|        |                           |         | i23776 eq x23778 h23766 eq h23777 u23764 eq e23774 h23746 eq h23777 u23744 eq    |
-|        |                           |         | e23774 >                                                                         |
-|        |                           |         |   SLOTS: < ARG1: i23775 > ]                                                      |
+| imdbId | McVeagh_of_the_South_Seas | 0004319 | [ TOP: h7229                                                                     |
+|        |                           |         |   INDEX: e7226 [ e TENSE: tensed ]                                               |
+|        |                           |         |   RELS: < [ _with_p LBL: h7198 ARG0: e7195 ARG1: u7196 ARG2: i7197 ]             |
+|        |                           |         |           [ explicit_or_proper_q LBL: h7213 ARG0: x7210 RSTR: h7211 BODY: h7212  |
+|        |                           |         | ]                                                                                |
+|        |                           |         |           [ compound LBL: h7204 ARG0: e7201 ARG1: u7202 ARG2: u7203 ]            |
+|        |                           |         |           [ existential_q LBL: h7208 ARG0: x7205 RSTR: h7206 BODY: h7207 ]       |
+|        |                           |         |           [ named LBL: h7200 ARG0: x7199 [ x NUM: sg ] CARG: "ID" ]              |
+|        |                           |         |           [ named LBL: h7194 ARG0: x7193 CARG: "0004319" ]                       |
+|        |                           |         |           [ _in_p_state LBL: h7218 ARG0: e7215 ARG1: u7216 ARG2: u7217 ]         |
+|        |                           |         |           [ explicit_or_proper_q LBL: h7224 ARG0: x7221 RSTR: h7222 BODY: h7223  |
+|        |                           |         | ]                                                                                |
+|        |                           |         |           [ named LBL: h7220 ARG0: x7219 CARG: "IMDb" ]                          |
+|        |                           |         |           [ _register_v_1 LBL: h7229 ARG0: e7226 ARG1: i7227 ARG2: i7228 ]       |
+|        |                           |         |           [ explicit_or_proper_q LBL: h7233 ARG0: x7230 RSTR: h7231 BODY: h7232  |
+|        |                           |         | ]                                                                                |
+|        |                           |         |           [ named LBL: h7192 ARG0: x7191 CARG: "McVeagh of the South Seas" ] >   |
+|        |                           |         |   HCONS: < h7206 qeq h7200 h7211 qeq h7194 h7222 qeq h7220 h7231 qeq h7192 >     |
+|        |                           |         |   EQS: < x7205 eq x7199 h7204 eq h7209 u7203 eq x7205 h7204 eq h7194 u7202 eq    |
+|        |                           |         | x7193 x7210 eq x7193 h7198 eq h7214 i7197 eq x7210 x7221 eq x7219 h7218 eq h7225 |
+|        |                           |         | u7217 eq x7221 x7230 eq x7191 h7229 eq h7234 i7228 eq x7230 h7218 eq h7229 u7216 |
+|        |                           |         | eq e7226 h7198 eq h7229 u7196 eq e7226 >                                         |
+|        |                           |         |   SLOTS: < ARG1: i7227 > ]                                                       |
 +--------+---------------------------+---------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------+

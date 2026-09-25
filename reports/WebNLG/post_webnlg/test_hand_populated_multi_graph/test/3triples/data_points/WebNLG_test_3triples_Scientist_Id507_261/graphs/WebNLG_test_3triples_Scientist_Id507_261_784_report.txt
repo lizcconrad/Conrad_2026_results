@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id507_261_784
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+--------------------------------------------------------------------------------------------------------------------------+
-|                                                       GOLD OUTPUTS                                                       |
-+-------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                 | Generated? |
-+-------------------------------------------------------------------------------------------------------------+------------+
-| Born in Darlington on January 1, 1726, Lady Anne Monson died on February 18th, 1776.                        | False      |
-| Lady Anne Monson was born in Darlington on January 1, 1726, and died on February 18, 1776.                  | False      |
-| Lady Anne Monson was born in Darlington on the 1st of January, 1726 and died on the 18th of February, 1776. | False      |
-+-------------------------------------------------------------------------------------------------------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                 GOLD OUTPUTS                                                                 |
++---------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                     | Generated? |
++---------------------------------------------------------------------------------------------------------------------------------+------------+
+| Lady Anne Monson, born January 1st, 1726, was a British woman who lived in England. Her professional field of study was botany. | False      |
+| Lady Anne Monson, born on January 1, 1726 in the Kingdom of England, studied botany.                                            | False      |
+| Lady Anne Monson, who was born on January 1, 1726 in England, was a professional botanist.                                      | False      |
++---------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------+
 |                                      NODE METRICS                                      |
@@ -56,78 +56,75 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id507_261_784
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h26657                                                                    |
-|               |   INDEX: e26654 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h26648 ARG0: e26645 ARG1: u26646 ARG2: i26647 ]      |
-|               |           [ def_udef_a_q LBL: h26652 ARG0: x26649 RSTR: h26650 BODY: h26651 ]    |
-|               |           [ of_p LBL: h26639 ARG0: e26636 ARG1: x26637 ARG2: x26638 ]            |
-|               |           [ def_implicit_q LBL: h26643 ARG0: x26640 RSTR: h26641 BODY: h26642 ]  |
-|               |           [ mofy LBL: h26628 ARG0: x26626 [ x NUM: sg ] ARG1: i26627 CARG: "Jan" |
+| Original      | [ TOP: h8312                                                                     |
+|               |   INDEX: e8309 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _on_p_temp LBL: h8303 ARG0: e8300 ARG1: u8301 ARG2: i8302 ]          |
+|               |           [ def_udef_a_q LBL: h8307 ARG0: x8304 RSTR: h8305 BODY: h8306 ]        |
+|               |           [ of_p LBL: h8294 ARG0: e8291 ARG1: x8292 ARG2: x8293 ]                |
+|               |           [ def_implicit_q LBL: h8298 ARG0: x8295 RSTR: h8296 BODY: h8297 ]      |
+|               |           [ mofy LBL: h8283 ARG0: x8281 [ x NUM: sg ] ARG1: i8282 CARG: "Jan" ]  |
+|               |           [ dofm LBL: h8280 ARG0: x8278 ARG1: i8279 CARG: "1st" ]                |
+|               |           [ proper_q LBL: h8289 ARG0: x8286 RSTR: h8287 BODY: h8288 ]            |
+|               |           [ yofc LBL: h8285 ARG0: x8284 CARG: "1726" ]                           |
+|               |           [ _born_a_of LBL: h8312 ARG0: e8309 ARG1: u8310 ARG2: u8311 ]          |
+|               |           [ explicit_or_proper_q LBL: h8316 ARG0: x8313 RSTR: h8314 BODY: h8315  |
 |               | ]                                                                                |
-|               |           [ dofm LBL: h26625 ARG0: x26623 ARG1: i26624 CARG: "1st" ]             |
-|               |           [ proper_q LBL: h26634 ARG0: x26631 RSTR: h26632 BODY: h26633 ]        |
-|               |           [ yofc LBL: h26630 ARG0: x26629 CARG: "1726" ]                         |
-|               |           [ _born_a_of LBL: h26657 ARG0: e26654 ARG1: u26655 ARG2: u26656 ]      |
-|               |           [ explicit_or_proper_q LBL: h26661 ARG0: x26658 RSTR: h26659 BODY:     |
-|               | h26660 ]                                                                         |
-|               |           [ compound LBL: h26617 ARG0: e26614 ARG1: u26615 ARG2: u26616 ]        |
-|               |           [ existential_q LBL: h26621 ARG0: x26618 RSTR: h26619 BODY: h26620 ]   |
-|               |           [ _lady_n_1 LBL: h26613 ARG0: x26612 [ x NUM: sg ] ]                   |
-|               |           [ named LBL: h26611 ARG0: x26610 CARG: "Anne Monson" ] >               |
-|               |   HCONS: < h26641 qeq h26628 h26632 qeq h26630 h26650 qeq h26625 h26619 qeq      |
-|               | h26613 h26659 qeq h26611 >                                                       |
-|               |   EQS: < x26640 eq x26626 h26639 eq h26644 x26638 eq x26640 x26631 eq x26629     |
-|               | h26625 eq h26635 i26624 eq x26631 h26639 eq h26625 x26637 eq x26623 x26649 eq    |
-|               | x26623 h26648 eq h26653 i26647 eq x26649 x26618 eq x26612 h26617 eq h26622       |
-|               | u26616 eq x26618 h26617 eq h26611 u26615 eq x26610 x26658 eq x26610 h26657 eq    |
-|               | h26662 u26655 eq x26658 h26648 eq h26657 u26646 eq e26654 >                      |
-|               |   SLOTS: < ARG2: u26656 > ]                                                      |
+|               |           [ compound LBL: h8272 ARG0: e8269 ARG1: u8270 ARG2: u8271 ]            |
+|               |           [ existential_q LBL: h8276 ARG0: x8273 RSTR: h8274 BODY: h8275 ]       |
+|               |           [ _lady_n_1 LBL: h8268 ARG0: x8267 [ x NUM: sg ] ]                     |
+|               |           [ named LBL: h8266 ARG0: x8265 CARG: "Anne Monson" ] >                 |
+|               |   HCONS: < h8296 qeq h8283 h8287 qeq h8285 h8305 qeq h8280 h8274 qeq h8268 h8314 |
+|               | qeq h8266 >                                                                      |
+|               |   EQS: < x8295 eq x8281 h8294 eq h8299 x8293 eq x8295 x8286 eq x8284 h8280 eq    |
+|               | h8290 i8279 eq x8286 h8294 eq h8280 x8292 eq x8278 x8304 eq x8278 h8303 eq h8308 |
+|               | i8302 eq x8304 x8273 eq x8267 h8272 eq h8277 u8271 eq x8273 h8272 eq h8266 u8270 |
+|               | eq x8265 x8313 eq x8265 h8312 eq h8317 u8310 eq x8313 h8303 eq h8312 u8301 eq    |
+|               | e8309 >                                                                          |
+|               |   SLOTS: < ARG2: u8311 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h26648                                                                    |
-|               |   INDEX: e26654 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h26648 ARG0: e26645 ARG1: e26654 ARG2: x26623 ]      |
-|               |           [ def_udef_a_q LBL: h26652 ARG0: x26623 RSTR: h26650 BODY: h26651 ]    |
-|               |           [ of_p LBL: h26625 ARG0: e26636 ARG1: x26623 ARG2: x26626 [ x NUM: sg  |
+| EQs Collapsed | [ TOP: h8303                                                                     |
+|               |   INDEX: e8309 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _on_p_temp LBL: h8303 ARG0: e8300 ARG1: e8309 ARG2: x8278 ]          |
+|               |           [ def_udef_a_q LBL: h8307 ARG0: x8278 RSTR: h8305 BODY: h8306 ]        |
+|               |           [ of_p LBL: h8280 ARG0: e8291 ARG1: x8278 ARG2: x8281 [ x NUM: sg ] ]  |
+|               |           [ def_implicit_q LBL: h8298 ARG0: x8281 RSTR: h8296 BODY: h8297 ]      |
+|               |           [ mofy LBL: h8283 ARG0: x8281 ARG1: i8282 CARG: "Jan" ]                |
+|               |           [ dofm LBL: h8280 ARG0: x8278 ARG1: x8284 CARG: "1st" ]                |
+|               |           [ proper_q LBL: h8289 ARG0: x8284 RSTR: h8287 BODY: h8288 ]            |
+|               |           [ yofc LBL: h8285 ARG0: x8284 CARG: "1726" ]                           |
+|               |           [ _born_a_of LBL: h8303 ARG0: e8309 ARG1: x8265 ARG2: u8311 ]          |
+|               |           [ explicit_or_proper_q LBL: h8316 ARG0: x8265 RSTR: h8314 BODY: h8315  |
+|               | ]                                                                                |
+|               |           [ compound LBL: h8266 ARG0: e8269 ARG1: x8265 ARG2: x8267 [ x NUM: sg  |
 |               | ] ]                                                                              |
-|               |           [ def_implicit_q LBL: h26643 ARG0: x26626 RSTR: h26641 BODY: h26642 ]  |
-|               |           [ mofy LBL: h26628 ARG0: x26626 ARG1: i26627 CARG: "Jan" ]             |
-|               |           [ dofm LBL: h26625 ARG0: x26623 ARG1: x26629 CARG: "1st" ]             |
-|               |           [ proper_q LBL: h26634 ARG0: x26629 RSTR: h26632 BODY: h26633 ]        |
-|               |           [ yofc LBL: h26630 ARG0: x26629 CARG: "1726" ]                         |
-|               |           [ _born_a_of LBL: h26648 ARG0: e26654 ARG1: x26610 ARG2: u26656 ]      |
-|               |           [ explicit_or_proper_q LBL: h26661 ARG0: x26610 RSTR: h26659 BODY:     |
-|               | h26660 ]                                                                         |
-|               |           [ compound LBL: h26611 ARG0: e26614 ARG1: x26610 ARG2: x26612 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h26621 ARG0: x26612 RSTR: h26619 BODY: h26620 ]   |
-|               |           [ _lady_n_1 LBL: h26613 ARG0: x26612 ]                                 |
-|               |           [ named LBL: h26611 ARG0: x26610 CARG: "Anne Monson" ] >               |
-|               |   HCONS: < h26641 qeq h26628 h26632 qeq h26630 h26650 qeq h26625 h26619 qeq      |
-|               | h26613 h26659 qeq h26611 >                                                       |
-|               |   SLOTS: < ARG2: u26656 > ]                                                      |
+|               |           [ existential_q LBL: h8276 ARG0: x8267 RSTR: h8274 BODY: h8275 ]       |
+|               |           [ _lady_n_1 LBL: h8268 ARG0: x8267 ]                                   |
+|               |           [ named LBL: h8266 ARG0: x8265 CARG: "Anne Monson" ] >                 |
+|               |   HCONS: < h8296 qeq h8283 h8287 qeq h8285 h8305 qeq h8280 h8274 qeq h8268 h8314 |
+|               | qeq h8266 >                                                                      |
+|               |   SLOTS: < ARG2: u8311 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h26663                                                                    |
-|               |   INDEX: e26654 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h26648 ARG0: e26645 ARG1: e26654 ARG2: x26623 ]      |
-|               |           [ def_udef_a_q LBL: h26652 ARG0: x26623 RSTR: h26650 BODY: h26651 ]    |
-|               |           [ of_p LBL: h26625 ARG0: e26636 ARG1: x26623 ARG2: x26626 [ x NUM: sg  |
+| Prepped       | [ TOP: h8318                                                                     |
+|               |   INDEX: e8309 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _on_p_temp LBL: h8303 ARG0: e8300 ARG1: e8309 ARG2: x8278 ]          |
+|               |           [ def_udef_a_q LBL: h8307 ARG0: x8278 RSTR: h8305 BODY: h8306 ]        |
+|               |           [ of_p LBL: h8280 ARG0: e8291 ARG1: x8278 ARG2: x8281 [ x NUM: sg ] ]  |
+|               |           [ def_implicit_q LBL: h8298 ARG0: x8281 RSTR: h8296 BODY: h8297 ]      |
+|               |           [ mofy LBL: h8283 ARG0: x8281 ARG1: i8282 CARG: "Jan" ]                |
+|               |           [ dofm LBL: h8280 ARG0: x8278 ARG1: x8284 CARG: "1st" ]                |
+|               |           [ proper_q LBL: h8289 ARG0: x8284 RSTR: h8287 BODY: h8288 ]            |
+|               |           [ yofc LBL: h8285 ARG0: x8284 CARG: "1726" ]                           |
+|               |           [ _born_a_of LBL: h8303 ARG0: e8309 ARG1: x8265 ARG2: u8311 ]          |
+|               |           [ explicit_or_proper_q LBL: h8316 ARG0: x8265 RSTR: h8314 BODY: h8315  |
+|               | ]                                                                                |
+|               |           [ compound LBL: h8266 ARG0: e8269 ARG1: x8265 ARG2: x8267 [ x NUM: sg  |
 |               | ] ]                                                                              |
-|               |           [ def_implicit_q LBL: h26643 ARG0: x26626 RSTR: h26641 BODY: h26642 ]  |
-|               |           [ mofy LBL: h26628 ARG0: x26626 ARG1: i26627 CARG: "Jan" ]             |
-|               |           [ dofm LBL: h26625 ARG0: x26623 ARG1: x26629 CARG: "1st" ]             |
-|               |           [ proper_q LBL: h26634 ARG0: x26629 RSTR: h26632 BODY: h26633 ]        |
-|               |           [ yofc LBL: h26630 ARG0: x26629 CARG: "1726" ]                         |
-|               |           [ _born_a_of LBL: h26648 ARG0: e26654 ARG1: x26610 ARG2: u26656 ]      |
-|               |           [ explicit_or_proper_q LBL: h26661 ARG0: x26610 RSTR: h26659 BODY:     |
-|               | h26660 ]                                                                         |
-|               |           [ compound LBL: h26611 ARG0: e26614 ARG1: x26610 ARG2: x26612 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h26621 ARG0: x26612 RSTR: h26619 BODY: h26620 ]   |
-|               |           [ _lady_n_1 LBL: h26613 ARG0: x26612 ]                                 |
-|               |           [ named LBL: h26611 ARG0: x26610 CARG: "Anne Monson" ] >               |
-|               |   HCONS: < h26641 qeq h26628 h26632 qeq h26630 h26650 qeq h26625 h26619 qeq      |
-|               | h26613 h26659 qeq h26611 h26663 qeq h26648 >                                     |
-|               |   SLOTS: < ARG2: u26656 > ]                                                      |
+|               |           [ existential_q LBL: h8276 ARG0: x8267 RSTR: h8274 BODY: h8275 ]       |
+|               |           [ _lady_n_1 LBL: h8268 ARG0: x8267 ]                                   |
+|               |           [ named LBL: h8266 ARG0: x8265 CARG: "Anne Monson" ] >                 |
+|               |   HCONS: < h8296 qeq h8283 h8287 qeq h8285 h8305 qeq h8280 h8274 qeq h8268 h8314 |
+|               | qeq h8266 h8318 qeq h8303 >                                                      |
+|               |   SLOTS: < ARG2: u8311 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------+
@@ -135,28 +132,27 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id507_261_784
 +------------------+----------------------------------------------------------------------------------+
 | Node             | Generated SEMENT                                                                 |
 +------------------+----------------------------------------------------------------------------------+
-| Lady_Anne_Monson | [ TOP: h26611                                                                    |
-|                  |   INDEX: x26610                                                                  |
-|                  |   RELS: < [ compound LBL: h26617 ARG0: e26614 ARG1: u26615 ARG2: u26616 ]        |
-|                  |           [ existential_q LBL: h26621 ARG0: x26618 RSTR: h26619 BODY: h26620 ]   |
-|                  |           [ _lady_n_1 LBL: h26613 ARG0: x26612 [ x NUM: sg ] ]                   |
-|                  |           [ named LBL: h26611 ARG0: x26610 CARG: "Anne Monson" ] >               |
-|                  |   HCONS: < h26619 qeq h26613 >                                                   |
-|                  |   EQS: < x26618 eq x26612 h26617 eq h26622 u26616 eq x26618 h26617 eq h26611     |
-|                  | u26615 eq x26610 > ]                                                             |
+| Lady_Anne_Monson | [ TOP: h8266                                                                     |
+|                  |   INDEX: x8265                                                                   |
+|                  |   RELS: < [ compound LBL: h8272 ARG0: e8269 ARG1: u8270 ARG2: u8271 ]            |
+|                  |           [ existential_q LBL: h8276 ARG0: x8273 RSTR: h8274 BODY: h8275 ]       |
+|                  |           [ _lady_n_1 LBL: h8268 ARG0: x8267 [ x NUM: sg ] ]                     |
+|                  |           [ named LBL: h8266 ARG0: x8265 CARG: "Anne Monson" ] >                 |
+|                  |   HCONS: < h8274 qeq h8268 >                                                     |
+|                  |   EQS: < x8273 eq x8267 h8272 eq h8277 u8271 eq x8273 h8272 eq h8266 u8270 eq    |
+|                  | x8265 > ]                                                                        |
 +------------------+----------------------------------------------------------------------------------+
-| 1726-01-01       | [ TOP: h26625                                                                    |
-|                  |   INDEX: x26623                                                                  |
-|                  |   RELS: < [ of_p LBL: h26639 ARG0: e26636 ARG1: x26637 ARG2: x26638 ]            |
-|                  |           [ def_implicit_q LBL: h26643 ARG0: x26640 RSTR: h26641 BODY: h26642 ]  |
-|                  |           [ mofy LBL: h26628 ARG0: x26626 [ x NUM: sg ] ARG1: i26627 CARG: "Jan" |
-|                  | ]                                                                                |
-|                  |           [ dofm LBL: h26625 ARG0: x26623 ARG1: i26624 CARG: "1st" ]             |
-|                  |           [ proper_q LBL: h26634 ARG0: x26631 RSTR: h26632 BODY: h26633 ]        |
-|                  |           [ yofc LBL: h26630 ARG0: x26629 CARG: "1726" ] >                       |
-|                  |   HCONS: < h26641 qeq h26628 h26632 qeq h26630 >                                 |
-|                  |   EQS: < x26640 eq x26626 h26639 eq h26644 x26638 eq x26640 x26631 eq x26629     |
-|                  | h26625 eq h26635 i26624 eq x26631 h26639 eq h26625 x26637 eq x26623 > ]          |
+| 1726-01-01       | [ TOP: h8280                                                                     |
+|                  |   INDEX: x8278                                                                   |
+|                  |   RELS: < [ of_p LBL: h8294 ARG0: e8291 ARG1: x8292 ARG2: x8293 ]                |
+|                  |           [ def_implicit_q LBL: h8298 ARG0: x8295 RSTR: h8296 BODY: h8297 ]      |
+|                  |           [ mofy LBL: h8283 ARG0: x8281 [ x NUM: sg ] ARG1: i8282 CARG: "Jan" ]  |
+|                  |           [ dofm LBL: h8280 ARG0: x8278 ARG1: i8279 CARG: "1st" ]                |
+|                  |           [ proper_q LBL: h8289 ARG0: x8286 RSTR: h8287 BODY: h8288 ]            |
+|                  |           [ yofc LBL: h8285 ARG0: x8284 CARG: "1726" ] >                         |
+|                  |   HCONS: < h8296 qeq h8283 h8287 qeq h8285 >                                     |
+|                  |   EQS: < x8295 eq x8281 h8294 eq h8299 x8293 eq x8295 x8286 eq x8284 h8280 eq    |
+|                  | h8290 i8279 eq x8286 h8294 eq h8280 x8292 eq x8278 > ]                           |
 +------------------+----------------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------------------------------------+
@@ -164,32 +160,31 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id507_261_784
 +-----------+------------------+------------+----------------------------------------------------------------------------------+
 | Edge      | Parent           | Child      | Generated SEMENT                                                                 |
 +-----------+------------------+------------+----------------------------------------------------------------------------------+
-| birthDate | Lady_Anne_Monson | 1726-01-01 | [ TOP: h26657                                                                    |
-|           |                  |            |   INDEX: e26654 [ e TENSE: tensed ]                                              |
-|           |                  |            |   RELS: < [ _on_p_temp LBL: h26648 ARG0: e26645 ARG1: u26646 ARG2: i26647 ]      |
-|           |                  |            |           [ def_udef_a_q LBL: h26652 ARG0: x26649 RSTR: h26650 BODY: h26651 ]    |
-|           |                  |            |           [ of_p LBL: h26639 ARG0: e26636 ARG1: x26637 ARG2: x26638 ]            |
-|           |                  |            |           [ def_implicit_q LBL: h26643 ARG0: x26640 RSTR: h26641 BODY: h26642 ]  |
-|           |                  |            |           [ mofy LBL: h26628 ARG0: x26626 [ x NUM: sg ] ARG1: i26627 CARG: "Jan" |
+| birthDate | Lady_Anne_Monson | 1726-01-01 | [ TOP: h8312                                                                     |
+|           |                  |            |   INDEX: e8309 [ e TENSE: tensed ]                                               |
+|           |                  |            |   RELS: < [ _on_p_temp LBL: h8303 ARG0: e8300 ARG1: u8301 ARG2: i8302 ]          |
+|           |                  |            |           [ def_udef_a_q LBL: h8307 ARG0: x8304 RSTR: h8305 BODY: h8306 ]        |
+|           |                  |            |           [ of_p LBL: h8294 ARG0: e8291 ARG1: x8292 ARG2: x8293 ]                |
+|           |                  |            |           [ def_implicit_q LBL: h8298 ARG0: x8295 RSTR: h8296 BODY: h8297 ]      |
+|           |                  |            |           [ mofy LBL: h8283 ARG0: x8281 [ x NUM: sg ] ARG1: i8282 CARG: "Jan" ]  |
+|           |                  |            |           [ dofm LBL: h8280 ARG0: x8278 ARG1: i8279 CARG: "1st" ]                |
+|           |                  |            |           [ proper_q LBL: h8289 ARG0: x8286 RSTR: h8287 BODY: h8288 ]            |
+|           |                  |            |           [ yofc LBL: h8285 ARG0: x8284 CARG: "1726" ]                           |
+|           |                  |            |           [ _born_a_of LBL: h8312 ARG0: e8309 ARG1: u8310 ARG2: u8311 ]          |
+|           |                  |            |           [ explicit_or_proper_q LBL: h8316 ARG0: x8313 RSTR: h8314 BODY: h8315  |
 |           |                  |            | ]                                                                                |
-|           |                  |            |           [ dofm LBL: h26625 ARG0: x26623 ARG1: i26624 CARG: "1st" ]             |
-|           |                  |            |           [ proper_q LBL: h26634 ARG0: x26631 RSTR: h26632 BODY: h26633 ]        |
-|           |                  |            |           [ yofc LBL: h26630 ARG0: x26629 CARG: "1726" ]                         |
-|           |                  |            |           [ _born_a_of LBL: h26657 ARG0: e26654 ARG1: u26655 ARG2: u26656 ]      |
-|           |                  |            |           [ explicit_or_proper_q LBL: h26661 ARG0: x26658 RSTR: h26659 BODY:     |
-|           |                  |            | h26660 ]                                                                         |
-|           |                  |            |           [ compound LBL: h26617 ARG0: e26614 ARG1: u26615 ARG2: u26616 ]        |
-|           |                  |            |           [ existential_q LBL: h26621 ARG0: x26618 RSTR: h26619 BODY: h26620 ]   |
-|           |                  |            |           [ _lady_n_1 LBL: h26613 ARG0: x26612 [ x NUM: sg ] ]                   |
-|           |                  |            |           [ named LBL: h26611 ARG0: x26610 CARG: "Anne Monson" ] >               |
-|           |                  |            |   HCONS: < h26641 qeq h26628 h26632 qeq h26630 h26650 qeq h26625 h26619 qeq      |
-|           |                  |            | h26613 h26659 qeq h26611 >                                                       |
-|           |                  |            |   EQS: < x26640 eq x26626 h26639 eq h26644 x26638 eq x26640 x26631 eq x26629     |
-|           |                  |            | h26625 eq h26635 i26624 eq x26631 h26639 eq h26625 x26637 eq x26623 x26649 eq    |
-|           |                  |            | x26623 h26648 eq h26653 i26647 eq x26649 x26618 eq x26612 h26617 eq h26622       |
-|           |                  |            | u26616 eq x26618 h26617 eq h26611 u26615 eq x26610 x26658 eq x26610 h26657 eq    |
-|           |                  |            | h26662 u26655 eq x26658 h26648 eq h26657 u26646 eq e26654 >                      |
-|           |                  |            |   SLOTS: < ARG2: u26656 > ]                                                      |
+|           |                  |            |           [ compound LBL: h8272 ARG0: e8269 ARG1: u8270 ARG2: u8271 ]            |
+|           |                  |            |           [ existential_q LBL: h8276 ARG0: x8273 RSTR: h8274 BODY: h8275 ]       |
+|           |                  |            |           [ _lady_n_1 LBL: h8268 ARG0: x8267 [ x NUM: sg ] ]                     |
+|           |                  |            |           [ named LBL: h8266 ARG0: x8265 CARG: "Anne Monson" ] >                 |
+|           |                  |            |   HCONS: < h8296 qeq h8283 h8287 qeq h8285 h8305 qeq h8280 h8274 qeq h8268 h8314 |
+|           |                  |            | qeq h8266 >                                                                      |
+|           |                  |            |   EQS: < x8295 eq x8281 h8294 eq h8299 x8293 eq x8295 x8286 eq x8284 h8280 eq    |
+|           |                  |            | h8290 i8279 eq x8286 h8294 eq h8280 x8292 eq x8278 x8304 eq x8278 h8303 eq h8308 |
+|           |                  |            | i8302 eq x8304 x8273 eq x8267 h8272 eq h8277 u8271 eq x8273 h8272 eq h8266 u8270 |
+|           |                  |            | eq x8265 x8313 eq x8265 h8312 eq h8317 u8310 eq x8313 h8303 eq h8312 u8301 eq    |
+|           |                  |            | e8309 >                                                                          |
+|           |                  |            |   SLOTS: < ARG2: u8311 > ]                                                       |
 +-----------+------------------+------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------+

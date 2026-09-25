@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_Film_Id253_299_599
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+------------------------------------------------------------------------------------------------+
-|                                          GOLD OUTPUTS                                          |
-+-----------------------------------------------------------------------------------+------------+
-| Gold Output                                                                       | Generated? |
-+-----------------------------------------------------------------------------------+------------+
-| The film Super Capers stars both Michael Rooker and Tom Sizemore.                 | False      |
-| Tom Sizemore stars in Super Capers which starred Michael Rooker.                  | False      |
-| Tom Sizemore stars in Super Capers, a film in which Michael Rooker also plays in. | False      |
-+-----------------------------------------------------------------------------------+------------+
++------------------------------------------------------------------------------+
+|                                 GOLD OUTPUTS                                 |
++-----------------------------------------------------------------+------------+
+| Gold Output                                                     | Generated? |
++-----------------------------------------------------------------+------------+
+| The movie Super Capers stars the actor Tom Sizemore.            | False      |
+| The movie, Super Capers, features Tom Sizemore who is an actor. | False      |
+| Tom Sizemore, who is an actor, stars in Super Capers.           | False      |
++-----------------------------------------------------------------+------------+
 
 +------------------------------------------------------------------------------------+
 |                                    NODE METRICS                                    |
@@ -56,77 +56,69 @@ GRAPH NAME: WebNLG_test_2triples_Film_Id253_299_599
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h19300                                                                    |
-|               |   INDEX: e19298 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h19292 ARG0: e19289 ARG1: u19290 ARG2: u19291 ]     |
-|               |           [ explicit_or_proper_q LBL: h19296 ARG0: x19293 RSTR: h19294 BODY:     |
-|               | h19295 ]                                                                         |
-|               |           [ named LBL: h19286 ARG0: x19285 CARG: "Super Capers" ]                |
-|               |           [ _star_v_1 LBL: h19300 ARG0: e19298 ARG1: i19299 ]                    |
-|               |           [ explicit_or_proper_q LBL: h19304 ARG0: x19301 RSTR: h19302 BODY:     |
-|               | h19303 ]                                                                         |
-|               |           [ named LBL: h19288 ARG0: x19287 CARG: "Tom Sizemore" ] >              |
-|               |   HCONS: < h19294 qeq h19286 h19302 qeq h19288 >                                 |
-|               |   EQS: < x19293 eq x19285 h19292 eq h19297 u19291 eq x19293 x19301 eq x19287     |
-|               | h19300 eq h19305 i19299 eq x19301 h19292 eq h19300 u19290 eq e19298 > ]          |
+| Original      | [ TOP: h65                                                                       |
+|               |   INDEX: e63 [ e TENSE: tensed ]                                                 |
+|               |   RELS: < [ _in_p_state LBL: h57 ARG0: e54 ARG1: u55 ARG2: u56 ]                 |
+|               |           [ explicit_or_proper_q LBL: h61 ARG0: x58 RSTR: h59 BODY: h60 ]        |
+|               |           [ named LBL: h51 ARG0: x50 CARG: "Super Capers" ]                      |
+|               |           [ _star_v_1 LBL: h65 ARG0: e63 ARG1: i64 ]                             |
+|               |           [ explicit_or_proper_q LBL: h69 ARG0: x66 RSTR: h67 BODY: h68 ]        |
+|               |           [ named LBL: h53 ARG0: x52 CARG: "Tom Sizemore" ] >                    |
+|               |   HCONS: < h59 qeq h51 h67 qeq h53 >                                             |
+|               |   EQS: < x58 eq x50 h57 eq h62 u56 eq x58 x66 eq x52 h65 eq h70 i64 eq x66 h57   |
+|               | eq h65 u55 eq e63 > ]                                                            |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h19292                                                                    |
-|               |   INDEX: e19298 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h19292 ARG0: e19289 ARG1: e19298 ARG2: x19285 ]     |
-|               |           [ explicit_or_proper_q LBL: h19296 ARG0: x19285 RSTR: h19294 BODY:     |
-|               | h19295 ]                                                                         |
-|               |           [ named LBL: h19286 ARG0: x19285 CARG: "Super Capers" ]                |
-|               |           [ _star_v_1 LBL: h19292 ARG0: e19298 ARG1: x19287 ]                    |
-|               |           [ explicit_or_proper_q LBL: h19304 ARG0: x19287 RSTR: h19302 BODY:     |
-|               | h19303 ]                                                                         |
-|               |           [ named LBL: h19288 ARG0: x19287 CARG: "Tom Sizemore" ] >              |
-|               |   HCONS: < h19294 qeq h19286 h19302 qeq h19288 > ]                               |
+| EQs Collapsed | [ TOP: h57                                                                       |
+|               |   INDEX: e63 [ e TENSE: tensed ]                                                 |
+|               |   RELS: < [ _in_p_state LBL: h57 ARG0: e54 ARG1: e63 ARG2: x50 ]                 |
+|               |           [ explicit_or_proper_q LBL: h61 ARG0: x50 RSTR: h59 BODY: h60 ]        |
+|               |           [ named LBL: h51 ARG0: x50 CARG: "Super Capers" ]                      |
+|               |           [ _star_v_1 LBL: h57 ARG0: e63 ARG1: x52 ]                             |
+|               |           [ explicit_or_proper_q LBL: h69 ARG0: x52 RSTR: h67 BODY: h68 ]        |
+|               |           [ named LBL: h53 ARG0: x52 CARG: "Tom Sizemore" ] >                    |
+|               |   HCONS: < h59 qeq h51 h67 qeq h53 > ]                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h19306                                                                    |
-|               |   INDEX: e19298 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h19292 ARG0: e19289 ARG1: e19298 ARG2: x19285 ]     |
-|               |           [ explicit_or_proper_q LBL: h19296 ARG0: x19285 RSTR: h19294 BODY:     |
-|               | h19295 ]                                                                         |
-|               |           [ named LBL: h19286 ARG0: x19285 CARG: "Super Capers" ]                |
-|               |           [ _star_v_1 LBL: h19292 ARG0: e19298 ARG1: x19287 ]                    |
-|               |           [ explicit_or_proper_q LBL: h19304 ARG0: x19287 RSTR: h19302 BODY:     |
-|               | h19303 ]                                                                         |
-|               |           [ named LBL: h19288 ARG0: x19287 CARG: "Tom Sizemore" ] >              |
-|               |   HCONS: < h19294 qeq h19286 h19302 qeq h19288 h19306 qeq h19292 > ]             |
+| Prepped       | [ TOP: h71                                                                       |
+|               |   INDEX: e63 [ e TENSE: tensed ]                                                 |
+|               |   RELS: < [ _in_p_state LBL: h57 ARG0: e54 ARG1: e63 ARG2: x50 ]                 |
+|               |           [ explicit_or_proper_q LBL: h61 ARG0: x50 RSTR: h59 BODY: h60 ]        |
+|               |           [ named LBL: h51 ARG0: x50 CARG: "Super Capers" ]                      |
+|               |           [ _star_v_1 LBL: h57 ARG0: e63 ARG1: x52 ]                             |
+|               |           [ explicit_or_proper_q LBL: h69 ARG0: x52 RSTR: h67 BODY: h68 ]        |
+|               |           [ named LBL: h53 ARG0: x52 CARG: "Tom Sizemore" ] >                    |
+|               |   HCONS: < h59 qeq h51 h67 qeq h53 h71 qeq h57 > ]                               |
 +---------------+----------------------------------------------------------------------------------+
 
-+--------------------------------------------------------------------------------------+
-|                                     NODE SEMENTS                                     |
-+--------------+-----------------------------------------------------------------------+
-| Node         | Generated SEMENT                                                      |
-+--------------+-----------------------------------------------------------------------+
-| Super_Capers | [ TOP: h19286                                                         |
-|              |   INDEX: x19285                                                       |
-|              |   RELS: < [ named LBL: h19286 ARG0: x19285 CARG: "Super Capers" ] > ] |
-+--------------+-----------------------------------------------------------------------+
-| Tom_Sizemore | [ TOP: h19288                                                         |
-|              |   INDEX: x19287                                                       |
-|              |   RELS: < [ named LBL: h19288 ARG0: x19287 CARG: "Tom Sizemore" ] > ] |
-+--------------+-----------------------------------------------------------------------+
++--------------------------------------------------------------------------------+
+|                                  NODE SEMENTS                                  |
++--------------+-----------------------------------------------------------------+
+| Node         | Generated SEMENT                                                |
++--------------+-----------------------------------------------------------------+
+| Super_Capers | [ TOP: h51                                                      |
+|              |   INDEX: x50                                                    |
+|              |   RELS: < [ named LBL: h51 ARG0: x50 CARG: "Super Capers" ] > ] |
++--------------+-----------------------------------------------------------------+
+| Tom_Sizemore | [ TOP: h53                                                      |
+|              |   INDEX: x52                                                    |
+|              |   RELS: < [ named LBL: h53 ARG0: x52 CARG: "Tom Sizemore" ] > ] |
++--------------+-----------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------------------+
 |                                                        EDGE SEMENTS                                                       |
 +----------+--------------+--------------+----------------------------------------------------------------------------------+
 | Edge     | Parent       | Child        | Generated SEMENT                                                                 |
 +----------+--------------+--------------+----------------------------------------------------------------------------------+
-| starring | Super_Capers | Tom_Sizemore | [ TOP: h19300                                                                    |
-|          |              |              |   INDEX: e19298 [ e TENSE: tensed ]                                              |
-|          |              |              |   RELS: < [ _in_p_state LBL: h19292 ARG0: e19289 ARG1: u19290 ARG2: u19291 ]     |
-|          |              |              |           [ explicit_or_proper_q LBL: h19296 ARG0: x19293 RSTR: h19294 BODY:     |
-|          |              |              | h19295 ]                                                                         |
-|          |              |              |           [ named LBL: h19286 ARG0: x19285 CARG: "Super Capers" ]                |
-|          |              |              |           [ _star_v_1 LBL: h19300 ARG0: e19298 ARG1: i19299 ]                    |
-|          |              |              |           [ explicit_or_proper_q LBL: h19304 ARG0: x19301 RSTR: h19302 BODY:     |
-|          |              |              | h19303 ]                                                                         |
-|          |              |              |           [ named LBL: h19288 ARG0: x19287 CARG: "Tom Sizemore" ] >              |
-|          |              |              |   HCONS: < h19294 qeq h19286 h19302 qeq h19288 >                                 |
-|          |              |              |   EQS: < x19293 eq x19285 h19292 eq h19297 u19291 eq x19293 x19301 eq x19287     |
-|          |              |              | h19300 eq h19305 i19299 eq x19301 h19292 eq h19300 u19290 eq e19298 > ]          |
+| starring | Super_Capers | Tom_Sizemore | [ TOP: h65                                                                       |
+|          |              |              |   INDEX: e63 [ e TENSE: tensed ]                                                 |
+|          |              |              |   RELS: < [ _in_p_state LBL: h57 ARG0: e54 ARG1: u55 ARG2: u56 ]                 |
+|          |              |              |           [ explicit_or_proper_q LBL: h61 ARG0: x58 RSTR: h59 BODY: h60 ]        |
+|          |              |              |           [ named LBL: h51 ARG0: x50 CARG: "Super Capers" ]                      |
+|          |              |              |           [ _star_v_1 LBL: h65 ARG0: e63 ARG1: i64 ]                             |
+|          |              |              |           [ explicit_or_proper_q LBL: h69 ARG0: x66 RSTR: h67 BODY: h68 ]        |
+|          |              |              |           [ named LBL: h53 ARG0: x52 CARG: "Tom Sizemore" ] >                    |
+|          |              |              |   HCONS: < h59 qeq h51 h67 qeq h53 >                                             |
+|          |              |              |   EQS: < x58 eq x50 h57 eq h62 u56 eq x58 x66 eq x52 h65 eq h70 i64 eq x66 h57   |
+|          |              |              | eq h65 u55 eq e63 > ]                                                            |
 +----------+--------------+--------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------+

@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_CelestialBody_Id580_302_908
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                     GOLD OUTPUTS                                                                     |
-+-----------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                             | Generated? |
-+-----------------------------------------------------------------------------------------------------------------------------------------+------------+
-| An asteroid 1147 Stavropolis which was discovered on 11 June 1929 has a rotation period of 20378.5 and the periapsis of 260855000000.0. | False      |
-| The 1147 Stavropolis asteroid which was discovered on June 11, 1929, has a rotation period of 20378.5 with a periapsis of 260855000000. | False      |
-| The 1147 Stavropolis which was discovered on June 11, 1929, has a rotation period of 20378.5 and a periapsis of 260855000000.0.         | False      |
-+-----------------------------------------------------------------------------------------------------------------------------------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                       GOLD OUTPUTS                                                                       |
++---------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                 | Generated? |
++---------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| 1147 Stavropolis which was discovered on June 11, 1929 has an apoapsis of 418476000000.0 and a periapsis of 260855000000.0.                 | False      |
+| 1147 Stavropolis, discovered on June 11, 1929, has an apoapsis of 418476000000.0 AU and a periapsis of 260855000000.0.                      | False      |
+| The asteroid 1147 Stavropolis was discovered on the 11th of June 1929 and has a apoapsis of 418476000000.0 and a periapsis of 260855000000. | False      |
++---------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------+
 |                                      NODE METRICS                                      |
@@ -56,50 +56,50 @@ GRAPH NAME: WebNLG_test_3triples_CelestialBody_Id580_302_908
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h30415                                                                    |
-|               |   INDEX: e30412 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h30415 ARG0: e30412 ARG1: p30413 ARG2: i30414 ]        |
-|               |           [ number_q LBL: h30424 ARG0: x30421 RSTR: h30422 BODY: h30423 ]        |
-|               |           [ card LBL: h30400 ARG0: i30398 ARG1: u30399 CARG: "260855000000.0" ]  |
-|               |           [ def_udef_a_q LBL: h30419 ARG0: x30416 RSTR: h30417 BODY: h30418 ]    |
-|               |           [ _of_p LBL: h30404 ARG0: e30401 ARG1: u30402 ARG2: i30403 ]           |
-|               |           [ explicit_or_proper_q LBL: h30408 ARG0: x30405 RSTR: h30406 BODY:     |
-|               | h30407 ]                                                                         |
-|               |           [ named LBL: h30397 ARG0: x30396 CARG: "1147 Stavropolis" ]            |
-|               |           [ unk_n LBL: h30411 ARG0: x30410 [ x IND: + ] CARG: "periapsis" ] >    |
-|               |   HCONS: < h30422 qeq h30400 h30406 qeq h30397 h30417 qeq h30411 >               |
-|               |   EQS: < x30421 eq i30398 h30415 eq h30425 i30414 eq x30421 x30405 eq x30396     |
-|               | h30404 eq h30409 i30403 eq x30405 h30404 eq h30411 u30402 eq x30410 x30416 eq    |
-|               | x30410 h30415 eq h30420 p30413 eq x30416 > ]                                     |
+| Original      | [ TOP: h10326                                                                    |
+|               |   INDEX: e10323 [ e SF: prop TENSE: tensed ]                                     |
+|               |   RELS: < [ _be_v_id LBL: h10326 ARG0: e10323 ARG1: p10324 ARG2: i10325 ]        |
+|               |           [ number_q LBL: h10335 ARG0: x10332 RSTR: h10333 BODY: h10334 ]        |
+|               |           [ card LBL: h10311 ARG0: i10309 ARG1: u10310 CARG: "260855000000.0" ]  |
+|               |           [ def_udef_a_q LBL: h10330 ARG0: x10327 RSTR: h10328 BODY: h10329 ]    |
+|               |           [ _of_p LBL: h10315 ARG0: e10312 ARG1: u10313 ARG2: i10314 ]           |
+|               |           [ explicit_or_proper_q LBL: h10319 ARG0: x10316 RSTR: h10317 BODY:     |
+|               | h10318 ]                                                                         |
+|               |           [ named LBL: h10308 ARG0: x10307 CARG: "1147 Stavropolis" ]            |
+|               |           [ unk_n LBL: h10322 ARG0: x10321 [ x IND: + ] CARG: "periapsis" ] >    |
+|               |   HCONS: < h10333 qeq h10311 h10317 qeq h10308 h10328 qeq h10322 >               |
+|               |   EQS: < x10332 eq i10309 h10326 eq h10336 i10325 eq x10332 x10316 eq x10307     |
+|               | h10315 eq h10320 i10314 eq x10316 h10315 eq h10322 u10313 eq x10321 x10327 eq    |
+|               | x10321 h10326 eq h10331 p10324 eq x10327 > ]                                     |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h30415                                                                    |
-|               |   INDEX: e30412 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h30415 ARG0: e30412 ARG1: x30410 [ x IND: + ] ARG2:    |
-|               | x30421 ]                                                                         |
-|               |           [ number_q LBL: h30424 ARG0: x30421 RSTR: h30422 BODY: h30423 ]        |
-|               |           [ card LBL: h30400 ARG0: x30421 ARG1: u30399 CARG: "260855000000.0" ]  |
-|               |           [ def_udef_a_q LBL: h30419 ARG0: x30410 RSTR: h30417 BODY: h30418 ]    |
-|               |           [ _of_p LBL: h30404 ARG0: e30401 ARG1: x30410 ARG2: x30396 ]           |
-|               |           [ explicit_or_proper_q LBL: h30408 ARG0: x30396 RSTR: h30406 BODY:     |
-|               | h30407 ]                                                                         |
-|               |           [ named LBL: h30397 ARG0: x30396 CARG: "1147 Stavropolis" ]            |
-|               |           [ unk_n LBL: h30404 ARG0: x30410 CARG: "periapsis" ] >                 |
-|               |   HCONS: < h30422 qeq h30400 h30406 qeq h30397 h30417 qeq h30404 > ]             |
+| EQs Collapsed | [ TOP: h10326                                                                    |
+|               |   INDEX: e10323 [ e SF: prop TENSE: tensed ]                                     |
+|               |   RELS: < [ _be_v_id LBL: h10326 ARG0: e10323 ARG1: x10321 [ x IND: + ] ARG2:    |
+|               | x10332 ]                                                                         |
+|               |           [ number_q LBL: h10335 ARG0: x10332 RSTR: h10333 BODY: h10334 ]        |
+|               |           [ card LBL: h10311 ARG0: x10332 ARG1: u10310 CARG: "260855000000.0" ]  |
+|               |           [ def_udef_a_q LBL: h10330 ARG0: x10321 RSTR: h10328 BODY: h10329 ]    |
+|               |           [ _of_p LBL: h10315 ARG0: e10312 ARG1: x10321 ARG2: x10307 ]           |
+|               |           [ explicit_or_proper_q LBL: h10319 ARG0: x10307 RSTR: h10317 BODY:     |
+|               | h10318 ]                                                                         |
+|               |           [ named LBL: h10308 ARG0: x10307 CARG: "1147 Stavropolis" ]            |
+|               |           [ unk_n LBL: h10315 ARG0: x10321 CARG: "periapsis" ] >                 |
+|               |   HCONS: < h10333 qeq h10311 h10317 qeq h10308 h10328 qeq h10315 > ]             |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h30426                                                                    |
-|               |   INDEX: e30412 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h30415 ARG0: e30412 ARG1: x30410 [ x IND: + ] ARG2:    |
-|               | x30421 ]                                                                         |
-|               |           [ number_q LBL: h30424 ARG0: x30421 RSTR: h30422 BODY: h30423 ]        |
-|               |           [ card LBL: h30400 ARG0: x30421 ARG1: u30399 CARG: "260855000000.0" ]  |
-|               |           [ def_udef_a_q LBL: h30419 ARG0: x30410 RSTR: h30417 BODY: h30418 ]    |
-|               |           [ _of_p LBL: h30404 ARG0: e30401 ARG1: x30410 ARG2: x30396 ]           |
-|               |           [ explicit_or_proper_q LBL: h30408 ARG0: x30396 RSTR: h30406 BODY:     |
-|               | h30407 ]                                                                         |
-|               |           [ named LBL: h30397 ARG0: x30396 CARG: "1147 Stavropolis" ]            |
-|               |           [ unk_n LBL: h30404 ARG0: x30410 CARG: "periapsis" ] >                 |
-|               |   HCONS: < h30422 qeq h30400 h30406 qeq h30397 h30417 qeq h30404 h30426 qeq      |
-|               | h30415 > ]                                                                       |
+| Prepped       | [ TOP: h10337                                                                    |
+|               |   INDEX: e10323 [ e SF: prop TENSE: tensed ]                                     |
+|               |   RELS: < [ _be_v_id LBL: h10326 ARG0: e10323 ARG1: x10321 [ x IND: + ] ARG2:    |
+|               | x10332 ]                                                                         |
+|               |           [ number_q LBL: h10335 ARG0: x10332 RSTR: h10333 BODY: h10334 ]        |
+|               |           [ card LBL: h10311 ARG0: x10332 ARG1: u10310 CARG: "260855000000.0" ]  |
+|               |           [ def_udef_a_q LBL: h10330 ARG0: x10321 RSTR: h10328 BODY: h10329 ]    |
+|               |           [ _of_p LBL: h10315 ARG0: e10312 ARG1: x10321 ARG2: x10307 ]           |
+|               |           [ explicit_or_proper_q LBL: h10319 ARG0: x10307 RSTR: h10317 BODY:     |
+|               | h10318 ]                                                                         |
+|               |           [ named LBL: h10308 ARG0: x10307 CARG: "1147 Stavropolis" ]            |
+|               |           [ unk_n LBL: h10315 ARG0: x10321 CARG: "periapsis" ] >                 |
+|               |   HCONS: < h10333 qeq h10311 h10317 qeq h10308 h10328 qeq h10315 h10337 qeq      |
+|               | h10326 > ]                                                                       |
 +---------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------+
@@ -107,15 +107,15 @@ GRAPH NAME: WebNLG_test_3triples_CelestialBody_Id580_302_908
 +------------------+----------------------------------------------------------------------------------+
 | Node             | Generated SEMENT                                                                 |
 +------------------+----------------------------------------------------------------------------------+
-| 1147_Stavropolis | [ TOP: h30397                                                                    |
-|                  |   INDEX: x30396                                                                  |
-|                  |   RELS: < [ named LBL: h30397 ARG0: x30396 CARG: "1147 Stavropolis" ] > ]        |
+| 1147_Stavropolis | [ TOP: h10308                                                                    |
+|                  |   INDEX: x10307                                                                  |
+|                  |   RELS: < [ named LBL: h10308 ARG0: x10307 CARG: "1147 Stavropolis" ] > ]        |
 +------------------+----------------------------------------------------------------------------------+
-| 260855000000.0   | [ TOP: h30400                                                                    |
-|                  |   INDEX: i30398                                                                  |
-|                  |   RELS: < [ card LBL: h30400 ARG0: i30398 ARG1: u30399 CARG: "260855000000.0" ]  |
+| 260855000000.0   | [ TOP: h10311                                                                    |
+|                  |   INDEX: i10309                                                                  |
+|                  |   RELS: < [ card LBL: h10311 ARG0: i10309 ARG1: u10310 CARG: "260855000000.0" ]  |
 |                  | >                                                                                |
-|                  |   SLOTS: < ARG1: u30399 > ]                                                      |
+|                  |   SLOTS: < ARG1: u10310 > ]                                                      |
 +------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------------+
@@ -123,21 +123,21 @@ GRAPH NAME: WebNLG_test_3triples_CelestialBody_Id580_302_908
 +-----------+------------------+----------------+----------------------------------------------------------------------------------+
 | Edge      | Parent           | Child          | Generated SEMENT                                                                 |
 +-----------+------------------+----------------+----------------------------------------------------------------------------------+
-| periapsis | 1147_Stavropolis | 260855000000.0 | [ TOP: h30415                                                                    |
-|           |                  |                |   INDEX: e30412 [ e SF: prop TENSE: tensed ]                                     |
-|           |                  |                |   RELS: < [ _be_v_id LBL: h30415 ARG0: e30412 ARG1: p30413 ARG2: i30414 ]        |
-|           |                  |                |           [ number_q LBL: h30424 ARG0: x30421 RSTR: h30422 BODY: h30423 ]        |
-|           |                  |                |           [ card LBL: h30400 ARG0: i30398 ARG1: u30399 CARG: "260855000000.0" ]  |
-|           |                  |                |           [ def_udef_a_q LBL: h30419 ARG0: x30416 RSTR: h30417 BODY: h30418 ]    |
-|           |                  |                |           [ _of_p LBL: h30404 ARG0: e30401 ARG1: u30402 ARG2: i30403 ]           |
-|           |                  |                |           [ explicit_or_proper_q LBL: h30408 ARG0: x30405 RSTR: h30406 BODY:     |
-|           |                  |                | h30407 ]                                                                         |
-|           |                  |                |           [ named LBL: h30397 ARG0: x30396 CARG: "1147 Stavropolis" ]            |
-|           |                  |                |           [ unk_n LBL: h30411 ARG0: x30410 [ x IND: + ] CARG: "periapsis" ] >    |
-|           |                  |                |   HCONS: < h30422 qeq h30400 h30406 qeq h30397 h30417 qeq h30411 >               |
-|           |                  |                |   EQS: < x30421 eq i30398 h30415 eq h30425 i30414 eq x30421 x30405 eq x30396     |
-|           |                  |                | h30404 eq h30409 i30403 eq x30405 h30404 eq h30411 u30402 eq x30410 x30416 eq    |
-|           |                  |                | x30410 h30415 eq h30420 p30413 eq x30416 > ]                                     |
+| periapsis | 1147_Stavropolis | 260855000000.0 | [ TOP: h10326                                                                    |
+|           |                  |                |   INDEX: e10323 [ e SF: prop TENSE: tensed ]                                     |
+|           |                  |                |   RELS: < [ _be_v_id LBL: h10326 ARG0: e10323 ARG1: p10324 ARG2: i10325 ]        |
+|           |                  |                |           [ number_q LBL: h10335 ARG0: x10332 RSTR: h10333 BODY: h10334 ]        |
+|           |                  |                |           [ card LBL: h10311 ARG0: i10309 ARG1: u10310 CARG: "260855000000.0" ]  |
+|           |                  |                |           [ def_udef_a_q LBL: h10330 ARG0: x10327 RSTR: h10328 BODY: h10329 ]    |
+|           |                  |                |           [ _of_p LBL: h10315 ARG0: e10312 ARG1: u10313 ARG2: i10314 ]           |
+|           |                  |                |           [ explicit_or_proper_q LBL: h10319 ARG0: x10316 RSTR: h10317 BODY:     |
+|           |                  |                | h10318 ]                                                                         |
+|           |                  |                |           [ named LBL: h10308 ARG0: x10307 CARG: "1147 Stavropolis" ]            |
+|           |                  |                |           [ unk_n LBL: h10322 ARG0: x10321 [ x IND: + ] CARG: "periapsis" ] >    |
+|           |                  |                |   HCONS: < h10333 qeq h10311 h10317 qeq h10308 h10328 qeq h10322 >               |
+|           |                  |                |   EQS: < x10332 eq i10309 h10326 eq h10336 i10325 eq x10332 x10316 eq x10307     |
+|           |                  |                | h10315 eq h10320 i10314 eq x10316 h10315 eq h10322 u10313 eq x10321 x10327 eq    |
+|           |                  |                | x10321 h10326 eq h10331 p10324 eq x10327 > ]                                     |
 +-----------+------------------+----------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------+

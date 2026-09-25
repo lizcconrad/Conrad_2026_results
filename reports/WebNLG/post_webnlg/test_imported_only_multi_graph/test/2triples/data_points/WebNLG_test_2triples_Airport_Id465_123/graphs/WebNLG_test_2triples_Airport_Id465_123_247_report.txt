@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_Airport_Id465_123_247
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+----------------------------------------------------------------------------------------------------------------------------+
-|                                                        GOLD OUTPUTS                                                        |
-+---------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                   | Generated? |
-+---------------------------------------------------------------------------------------------------------------+------------+
-| Al Asad Airbase is operated by the United States Air Force and has a runway name 09R/27L.                     | False      |
-| Al Asad Airbase is operated by the United States Air Force and has a runway named 09R/27L.                    | False      |
-| The United States Air Force is the operating organisation for Al Asad airbase and has a runway named 09R/27L. | False      |
-+---------------------------------------------------------------------------------------------------------------+------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+|                                                            GOLD OUTPUTS                                                            |
++-----------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                           | Generated? |
++-----------------------------------------------------------------------------------------------------------------------+------------+
+| Al Asad Airbase has a runway length of 3,992.88 and is run by the United States Air Force.                            | False      |
+| Al Asad Airbase is operated by the United States Air Force and has a runway length of 3,992.88.                       | False      |
+| The operating organisation for Al Asad airbase, which has a runway length of 3992.88, is the United States Air Force. | False      |
++-----------------------------------------------------------------------------------------------------------------------+------------+
 
 +-----------------------------------------------------------------------------------------------+
 |                                          NODE METRICS                                         |
@@ -56,73 +56,65 @@ GRAPH NAME: WebNLG_test_2triples_Airport_Id465_123_247
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h1656                                                                     |
-|               |   INDEX: e1653 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _operate_v_1 LBL: h1656 ARG0: e1653 ARG1: i1654 ARG2: i1655 ]        |
-|               |           [ explicit_or_proper_q LBL: h1665 ARG0: x1662 RSTR: h1663 BODY: h1664  |
-|               | ]                                                                                |
-|               |           [ named LBL: h1650 ARG0: x1649 CARG: "Al Asad Airbase" ]               |
-|               |           [ explicit_or_proper_q LBL: h1660 ARG0: x1657 RSTR: h1658 BODY: h1659  |
-|               | ]                                                                                |
-|               |           [ named LBL: h1652 ARG0: x1651 CARG: "United States Air Force" ] >     |
-|               |   HCONS: < h1663 qeq h1650 h1658 qeq h1652 >                                     |
-|               |   EQS: < x1662 eq x1649 h1656 eq h1666 i1655 eq x1662 x1657 eq x1651 h1656 eq    |
-|               | h1661 i1654 eq x1657 > ]                                                         |
+| Original      | [ TOP: h133                                                                      |
+|               |   INDEX: e130 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _operate_v_1 LBL: h133 ARG0: e130 ARG1: i131 ARG2: i132 ]            |
+|               |           [ explicit_or_proper_q LBL: h142 ARG0: x139 RSTR: h140 BODY: h141 ]    |
+|               |           [ named LBL: h127 ARG0: x126 CARG: "Al Asad Airbase" ]                 |
+|               |           [ explicit_or_proper_q LBL: h137 ARG0: x134 RSTR: h135 BODY: h136 ]    |
+|               |           [ named LBL: h129 ARG0: x128 CARG: "United States Air Force" ] >       |
+|               |   HCONS: < h140 qeq h127 h135 qeq h129 >                                         |
+|               |   EQS: < x139 eq x126 h133 eq h143 i132 eq x139 x134 eq x128 h133 eq h138 i131   |
+|               | eq x134 > ]                                                                      |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h1656                                                                     |
-|               |   INDEX: e1653 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _operate_v_1 LBL: h1656 ARG0: e1653 ARG1: x1651 ARG2: x1649 ]        |
-|               |           [ explicit_or_proper_q LBL: h1665 ARG0: x1649 RSTR: h1663 BODY: h1664  |
-|               | ]                                                                                |
-|               |           [ named LBL: h1650 ARG0: x1649 CARG: "Al Asad Airbase" ]               |
-|               |           [ explicit_or_proper_q LBL: h1660 ARG0: x1651 RSTR: h1658 BODY: h1659  |
-|               | ]                                                                                |
-|               |           [ named LBL: h1652 ARG0: x1651 CARG: "United States Air Force" ] >     |
-|               |   HCONS: < h1663 qeq h1650 h1658 qeq h1652 > ]                                   |
+| EQs Collapsed | [ TOP: h133                                                                      |
+|               |   INDEX: e130 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _operate_v_1 LBL: h133 ARG0: e130 ARG1: x128 ARG2: x126 ]            |
+|               |           [ explicit_or_proper_q LBL: h142 ARG0: x126 RSTR: h140 BODY: h141 ]    |
+|               |           [ named LBL: h127 ARG0: x126 CARG: "Al Asad Airbase" ]                 |
+|               |           [ explicit_or_proper_q LBL: h137 ARG0: x128 RSTR: h135 BODY: h136 ]    |
+|               |           [ named LBL: h129 ARG0: x128 CARG: "United States Air Force" ] >       |
+|               |   HCONS: < h140 qeq h127 h135 qeq h129 > ]                                       |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h1667                                                                     |
-|               |   INDEX: e1653 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _operate_v_1 LBL: h1656 ARG0: e1653 ARG1: x1651 ARG2: x1649 ]        |
-|               |           [ explicit_or_proper_q LBL: h1665 ARG0: x1649 RSTR: h1663 BODY: h1664  |
-|               | ]                                                                                |
-|               |           [ named LBL: h1650 ARG0: x1649 CARG: "Al Asad Airbase" ]               |
-|               |           [ explicit_or_proper_q LBL: h1660 ARG0: x1651 RSTR: h1658 BODY: h1659  |
-|               | ]                                                                                |
-|               |           [ named LBL: h1652 ARG0: x1651 CARG: "United States Air Force" ] >     |
-|               |   HCONS: < h1663 qeq h1650 h1658 qeq h1652 h1667 qeq h1656 > ]                   |
+| Prepped       | [ TOP: h144                                                                      |
+|               |   INDEX: e130 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _operate_v_1 LBL: h133 ARG0: e130 ARG1: x128 ARG2: x126 ]            |
+|               |           [ explicit_or_proper_q LBL: h142 ARG0: x126 RSTR: h140 BODY: h141 ]    |
+|               |           [ named LBL: h127 ARG0: x126 CARG: "Al Asad Airbase" ]                 |
+|               |           [ explicit_or_proper_q LBL: h137 ARG0: x128 RSTR: h135 BODY: h136 ]    |
+|               |           [ named LBL: h129 ARG0: x128 CARG: "United States Air Force" ] >       |
+|               |   HCONS: < h140 qeq h127 h135 qeq h129 h144 qeq h133 > ]                         |
 +---------------+----------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------------------+
-|                                               NODE SEMENTS                                               |
-+-------------------------+--------------------------------------------------------------------------------+
-| Node                    | Generated SEMENT                                                               |
-+-------------------------+--------------------------------------------------------------------------------+
-| Al_Asad_Airbase         | [ TOP: h1650                                                                   |
-|                         |   INDEX: x1649                                                                 |
-|                         |   RELS: < [ named LBL: h1650 ARG0: x1649 CARG: "Al Asad Airbase" ] > ]         |
-+-------------------------+--------------------------------------------------------------------------------+
-| United_States_Air_Force | [ TOP: h1652                                                                   |
-|                         |   INDEX: x1651                                                                 |
-|                         |   RELS: < [ named LBL: h1652 ARG0: x1651 CARG: "United States Air Force" ] > ] |
-+-------------------------+--------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+|                                              NODE SEMENTS                                              |
++-------------------------+------------------------------------------------------------------------------+
+| Node                    | Generated SEMENT                                                             |
++-------------------------+------------------------------------------------------------------------------+
+| Al_Asad_Airbase         | [ TOP: h127                                                                  |
+|                         |   INDEX: x126                                                                |
+|                         |   RELS: < [ named LBL: h127 ARG0: x126 CARG: "Al Asad Airbase" ] > ]         |
++-------------------------+------------------------------------------------------------------------------+
+| United_States_Air_Force | [ TOP: h129                                                                  |
+|                         |   INDEX: x128                                                                |
+|                         |   RELS: < [ named LBL: h129 ARG0: x128 CARG: "United States Air Force" ] > ] |
++-------------------------+------------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                                     EDGE SEMENTS                                                                     |
 +-----------------------+-----------------+-------------------------+----------------------------------------------------------------------------------+
 | Edge                  | Parent          | Child                   | Generated SEMENT                                                                 |
 +-----------------------+-----------------+-------------------------+----------------------------------------------------------------------------------+
-| operatingOrganisation | Al_Asad_Airbase | United_States_Air_Force | [ TOP: h1656                                                                     |
-|                       |                 |                         |   INDEX: e1653 [ e TENSE: tensed ]                                               |
-|                       |                 |                         |   RELS: < [ _operate_v_1 LBL: h1656 ARG0: e1653 ARG1: i1654 ARG2: i1655 ]        |
-|                       |                 |                         |           [ explicit_or_proper_q LBL: h1665 ARG0: x1662 RSTR: h1663 BODY: h1664  |
-|                       |                 |                         | ]                                                                                |
-|                       |                 |                         |           [ named LBL: h1650 ARG0: x1649 CARG: "Al Asad Airbase" ]               |
-|                       |                 |                         |           [ explicit_or_proper_q LBL: h1660 ARG0: x1657 RSTR: h1658 BODY: h1659  |
-|                       |                 |                         | ]                                                                                |
-|                       |                 |                         |           [ named LBL: h1652 ARG0: x1651 CARG: "United States Air Force" ] >     |
-|                       |                 |                         |   HCONS: < h1663 qeq h1650 h1658 qeq h1652 >                                     |
-|                       |                 |                         |   EQS: < x1662 eq x1649 h1656 eq h1666 i1655 eq x1662 x1657 eq x1651 h1656 eq    |
-|                       |                 |                         | h1661 i1654 eq x1657 > ]                                                         |
+| operatingOrganisation | Al_Asad_Airbase | United_States_Air_Force | [ TOP: h133                                                                      |
+|                       |                 |                         |   INDEX: e130 [ e TENSE: tensed ]                                                |
+|                       |                 |                         |   RELS: < [ _operate_v_1 LBL: h133 ARG0: e130 ARG1: i131 ARG2: i132 ]            |
+|                       |                 |                         |           [ explicit_or_proper_q LBL: h142 ARG0: x139 RSTR: h140 BODY: h141 ]    |
+|                       |                 |                         |           [ named LBL: h127 ARG0: x126 CARG: "Al Asad Airbase" ]                 |
+|                       |                 |                         |           [ explicit_or_proper_q LBL: h137 ARG0: x134 RSTR: h135 BODY: h136 ]    |
+|                       |                 |                         |           [ named LBL: h129 ARG0: x128 CARG: "United States Air Force" ] >       |
+|                       |                 |                         |   HCONS: < h140 qeq h127 h135 qeq h129 >                                         |
+|                       |                 |                         |   EQS: < x139 eq x126 h133 eq h143 i132 eq x139 x134 eq x128 h133 eq h138 i131   |
+|                       |                 |                         | eq x134 > ]                                                                      |
 +-----------------------+-----------------+-------------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------+

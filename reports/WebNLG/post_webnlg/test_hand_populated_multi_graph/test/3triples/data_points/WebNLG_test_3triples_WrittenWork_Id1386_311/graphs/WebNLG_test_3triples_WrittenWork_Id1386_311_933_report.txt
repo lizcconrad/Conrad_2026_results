@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_WrittenWork_Id1386_311_933
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                         GOLD OUTPUTS                                                                        |
-+------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                    | Generated? |
-+------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| George Allen & Unwin published the Fellowship of the Ring authored by J.R.R. Tolkien, Fellowship of the Ring was followed by The Two Towers.   | False      |
-| The Fellowship of the Ring was written by J.R.R. Tolkien, published by George Allen & Unwin, and the Two Towers is its sequel.                 | False      |
-| The author of The Fellowship of the Ring is J.R.R. Tolkien. This book was followed by the Two Towers and was published by George Allen &Unwin. | False      |
-+------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                   GOLD OUTPUTS                                                                   |
++-------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                         | Generated? |
++-------------------------------------------------------------------------------------------------------------------------------------+------------+
+| George Allen & Unwin published the fantasy novel The Fellowship of the Ring, which was followed by its sequel The Two Towers.       | False      |
+| George Allen & Unwin published the fantasy, Fellowship of the Ring, followed by The Two Towers.                                     | False      |
+| The Fellowship of the Ring and The Two Towers were books belonging to the fantasy literary genre published by George Allen & Unwin. | False      |
++-------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +--------------------------------------------------------------------------------------------------+
 |                                           NODE METRICS                                           |
@@ -56,48 +56,46 @@ GRAPH NAME: WebNLG_test_3triples_WrittenWork_Id1386_311_933
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h31240                                                                    |
-|               |   INDEX: e31237 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h31240 ARG0: e31237 ARG1: p31238 ARG2: i31239 ]        |
-|               |           [ def_udef_a_q LBL: h31249 ARG0: x31246 RSTR: h31247 BODY: h31248 ]    |
-|               |           [ _publisher_n_of LBL: h31231 ARG0: x31229 ARG1: i31230 ]              |
-|               |           [ explicit_or_proper_q LBL: h31235 ARG0: x31232 RSTR: h31233 BODY:     |
-|               | h31234 ]                                                                         |
-|               |           [ named LBL: h31226 ARG0: x31225 CARG: "The Fellowship of the Ring" ]  |
-|               |           [ explicit_or_proper_q LBL: h31244 ARG0: x31241 RSTR: h31242 BODY:     |
-|               | h31243 ]                                                                         |
-|               |           [ named LBL: h31228 ARG0: x31227 CARG: "George Allen & Unwin" ] >      |
-|               |   HCONS: < h31233 qeq h31226 h31247 qeq h31231 h31242 qeq h31228 >               |
-|               |   EQS: < x31232 eq x31225 h31231 eq h31236 i31230 eq x31232 x31246 eq x31229     |
-|               | h31240 eq h31250 i31239 eq x31246 x31241 eq x31227 h31240 eq h31245 p31238 eq    |
-|               | x31241 > ]                                                                       |
+| Original      | [ TOP: h7927                                                                     |
+|               |   INDEX: e7924 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h7927 ARG0: e7924 ARG1: p7925 ARG2: i7926 ]            |
+|               |           [ def_udef_a_q LBL: h7936 ARG0: x7933 RSTR: h7934 BODY: h7935 ]        |
+|               |           [ _publisher_n_of LBL: h7918 ARG0: x7916 ARG1: i7917 ]                 |
+|               |           [ explicit_or_proper_q LBL: h7922 ARG0: x7919 RSTR: h7920 BODY: h7921  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7913 ARG0: x7912 CARG: "The Fellowship of the Ring" ]    |
+|               |           [ explicit_or_proper_q LBL: h7931 ARG0: x7928 RSTR: h7929 BODY: h7930  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7915 ARG0: x7914 CARG: "George Allen & Unwin" ] >        |
+|               |   HCONS: < h7920 qeq h7913 h7934 qeq h7918 h7929 qeq h7915 >                     |
+|               |   EQS: < x7919 eq x7912 h7918 eq h7923 i7917 eq x7919 x7933 eq x7916 h7927 eq    |
+|               | h7937 i7926 eq x7933 x7928 eq x7914 h7927 eq h7932 p7925 eq x7928 > ]            |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h31240                                                                    |
-|               |   INDEX: e31237 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h31240 ARG0: e31237 ARG1: x31227 ARG2: x31229 ]        |
-|               |           [ def_udef_a_q LBL: h31249 ARG0: x31229 RSTR: h31247 BODY: h31248 ]    |
-|               |           [ _publisher_n_of LBL: h31231 ARG0: x31229 ARG1: x31225 ]              |
-|               |           [ explicit_or_proper_q LBL: h31235 ARG0: x31225 RSTR: h31233 BODY:     |
-|               | h31234 ]                                                                         |
-|               |           [ named LBL: h31226 ARG0: x31225 CARG: "The Fellowship of the Ring" ]  |
-|               |           [ explicit_or_proper_q LBL: h31244 ARG0: x31227 RSTR: h31242 BODY:     |
-|               | h31243 ]                                                                         |
-|               |           [ named LBL: h31228 ARG0: x31227 CARG: "George Allen & Unwin" ] >      |
-|               |   HCONS: < h31233 qeq h31226 h31247 qeq h31231 h31242 qeq h31228 > ]             |
+| EQs Collapsed | [ TOP: h7927                                                                     |
+|               |   INDEX: e7924 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h7927 ARG0: e7924 ARG1: x7914 ARG2: x7916 ]            |
+|               |           [ def_udef_a_q LBL: h7936 ARG0: x7916 RSTR: h7934 BODY: h7935 ]        |
+|               |           [ _publisher_n_of LBL: h7918 ARG0: x7916 ARG1: x7912 ]                 |
+|               |           [ explicit_or_proper_q LBL: h7922 ARG0: x7912 RSTR: h7920 BODY: h7921  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7913 ARG0: x7912 CARG: "The Fellowship of the Ring" ]    |
+|               |           [ explicit_or_proper_q LBL: h7931 ARG0: x7914 RSTR: h7929 BODY: h7930  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7915 ARG0: x7914 CARG: "George Allen & Unwin" ] >        |
+|               |   HCONS: < h7920 qeq h7913 h7934 qeq h7918 h7929 qeq h7915 > ]                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h31251                                                                    |
-|               |   INDEX: e31237 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h31240 ARG0: e31237 ARG1: x31227 ARG2: x31229 ]        |
-|               |           [ def_udef_a_q LBL: h31249 ARG0: x31229 RSTR: h31247 BODY: h31248 ]    |
-|               |           [ _publisher_n_of LBL: h31231 ARG0: x31229 ARG1: x31225 ]              |
-|               |           [ explicit_or_proper_q LBL: h31235 ARG0: x31225 RSTR: h31233 BODY:     |
-|               | h31234 ]                                                                         |
-|               |           [ named LBL: h31226 ARG0: x31225 CARG: "The Fellowship of the Ring" ]  |
-|               |           [ explicit_or_proper_q LBL: h31244 ARG0: x31227 RSTR: h31242 BODY:     |
-|               | h31243 ]                                                                         |
-|               |           [ named LBL: h31228 ARG0: x31227 CARG: "George Allen & Unwin" ] >      |
-|               |   HCONS: < h31233 qeq h31226 h31247 qeq h31231 h31242 qeq h31228 h31251 qeq      |
-|               | h31240 > ]                                                                       |
+| Prepped       | [ TOP: h7938                                                                     |
+|               |   INDEX: e7924 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h7927 ARG0: e7924 ARG1: x7914 ARG2: x7916 ]            |
+|               |           [ def_udef_a_q LBL: h7936 ARG0: x7916 RSTR: h7934 BODY: h7935 ]        |
+|               |           [ _publisher_n_of LBL: h7918 ARG0: x7916 ARG1: x7912 ]                 |
+|               |           [ explicit_or_proper_q LBL: h7922 ARG0: x7912 RSTR: h7920 BODY: h7921  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7913 ARG0: x7912 CARG: "The Fellowship of the Ring" ]    |
+|               |           [ explicit_or_proper_q LBL: h7931 ARG0: x7914 RSTR: h7929 BODY: h7930  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7915 ARG0: x7914 CARG: "George Allen & Unwin" ] >        |
+|               |   HCONS: < h7920 qeq h7913 h7934 qeq h7918 h7929 qeq h7915 h7938 qeq h7927 > ]   |
 +---------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -105,14 +103,14 @@ GRAPH NAME: WebNLG_test_3triples_WrittenWork_Id1386_311_933
 +----------------------------+----------------------------------------------------------------------------------+
 | Node                       | Generated SEMENT                                                                 |
 +----------------------------+----------------------------------------------------------------------------------+
-| The_Fellowship_of_the_Ring | [ TOP: h31226                                                                    |
-|                            |   INDEX: x31225                                                                  |
-|                            |   RELS: < [ named LBL: h31226 ARG0: x31225 CARG: "The Fellowship of the Ring" ]  |
-|                            | > ]                                                                              |
+| The_Fellowship_of_the_Ring | [ TOP: h7913                                                                     |
+|                            |   INDEX: x7912                                                                   |
+|                            |   RELS: < [ named LBL: h7913 ARG0: x7912 CARG: "The Fellowship of the Ring" ] >  |
+|                            | ]                                                                                |
 +----------------------------+----------------------------------------------------------------------------------+
-| George_Allen_&_Unwin       | [ TOP: h31228                                                                    |
-|                            |   INDEX: x31227                                                                  |
-|                            |   RELS: < [ named LBL: h31228 ARG0: x31227 CARG: "George Allen & Unwin" ] > ]    |
+| George_Allen_&_Unwin       | [ TOP: h7915                                                                     |
+|                            |   INDEX: x7914                                                                   |
+|                            |   RELS: < [ named LBL: h7915 ARG0: x7914 CARG: "George Allen & Unwin" ] > ]      |
 +----------------------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -120,21 +118,20 @@ GRAPH NAME: WebNLG_test_3triples_WrittenWork_Id1386_311_933
 +-----------+----------------------------+----------------------+----------------------------------------------------------------------------------+
 | Edge      | Parent                     | Child                | Generated SEMENT                                                                 |
 +-----------+----------------------------+----------------------+----------------------------------------------------------------------------------+
-| publisher | The_Fellowship_of_the_Ring | George_Allen_&_Unwin | [ TOP: h31240                                                                    |
-|           |                            |                      |   INDEX: e31237 [ e SF: prop TENSE: tensed ]                                     |
-|           |                            |                      |   RELS: < [ _be_v_id LBL: h31240 ARG0: e31237 ARG1: p31238 ARG2: i31239 ]        |
-|           |                            |                      |           [ def_udef_a_q LBL: h31249 ARG0: x31246 RSTR: h31247 BODY: h31248 ]    |
-|           |                            |                      |           [ _publisher_n_of LBL: h31231 ARG0: x31229 ARG1: i31230 ]              |
-|           |                            |                      |           [ explicit_or_proper_q LBL: h31235 ARG0: x31232 RSTR: h31233 BODY:     |
-|           |                            |                      | h31234 ]                                                                         |
-|           |                            |                      |           [ named LBL: h31226 ARG0: x31225 CARG: "The Fellowship of the Ring" ]  |
-|           |                            |                      |           [ explicit_or_proper_q LBL: h31244 ARG0: x31241 RSTR: h31242 BODY:     |
-|           |                            |                      | h31243 ]                                                                         |
-|           |                            |                      |           [ named LBL: h31228 ARG0: x31227 CARG: "George Allen & Unwin" ] >      |
-|           |                            |                      |   HCONS: < h31233 qeq h31226 h31247 qeq h31231 h31242 qeq h31228 >               |
-|           |                            |                      |   EQS: < x31232 eq x31225 h31231 eq h31236 i31230 eq x31232 x31246 eq x31229     |
-|           |                            |                      | h31240 eq h31250 i31239 eq x31246 x31241 eq x31227 h31240 eq h31245 p31238 eq    |
-|           |                            |                      | x31241 > ]                                                                       |
+| publisher | The_Fellowship_of_the_Ring | George_Allen_&_Unwin | [ TOP: h7927                                                                     |
+|           |                            |                      |   INDEX: e7924 [ e SF: prop TENSE: tensed ]                                      |
+|           |                            |                      |   RELS: < [ _be_v_id LBL: h7927 ARG0: e7924 ARG1: p7925 ARG2: i7926 ]            |
+|           |                            |                      |           [ def_udef_a_q LBL: h7936 ARG0: x7933 RSTR: h7934 BODY: h7935 ]        |
+|           |                            |                      |           [ _publisher_n_of LBL: h7918 ARG0: x7916 ARG1: i7917 ]                 |
+|           |                            |                      |           [ explicit_or_proper_q LBL: h7922 ARG0: x7919 RSTR: h7920 BODY: h7921  |
+|           |                            |                      | ]                                                                                |
+|           |                            |                      |           [ named LBL: h7913 ARG0: x7912 CARG: "The Fellowship of the Ring" ]    |
+|           |                            |                      |           [ explicit_or_proper_q LBL: h7931 ARG0: x7928 RSTR: h7929 BODY: h7930  |
+|           |                            |                      | ]                                                                                |
+|           |                            |                      |           [ named LBL: h7915 ARG0: x7914 CARG: "George Allen & Unwin" ] >        |
+|           |                            |                      |   HCONS: < h7920 qeq h7913 h7934 qeq h7918 h7929 qeq h7915 >                     |
+|           |                            |                      |   EQS: < x7919 eq x7912 h7918 eq h7923 i7917 eq x7919 x7933 eq x7916 h7927 eq    |
+|           |                            |                      | h7937 i7926 eq x7933 x7928 eq x7914 h7927 eq h7932 p7925 eq x7928 > ]            |
 +-----------+----------------------------+----------------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------+

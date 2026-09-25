@@ -24,14 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_SportsTeam_Id200_316_950
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                                     GOLD OUTPUTS                                                                                    |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                                            | Generated? |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Agremiação Sportiva Arapiraquense competed in the Campeonato Brasileiro Serie C league in 2015 . The Vila Nova Futebol Clube were champions in that tournament.        | False      |
-| Agremiação Sportiva Arapiraquense play in the Campeonato Brasileiro Série C league in 2015 where Vila Nova Futebol Clube were declared as the champions of the league. | False      |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                 GOLD OUTPUTS                                                                                |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                                    | Generated? |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Agremiação Sportiva Arapiraquense has 17000 members, plays in the Campeonato Brasileiro Série C league and competed in the 2015 Campeonato Brasileiro Série C. | False      |
+| Agremiação Sportiva Arapiraquense have 17000 members, play in the Campeonato Brasileiro Série C league and competed there in 2015.                             | False      |
+| Agremiação Sportiva Arapiraquense play in the Campeonato Brasileiro Série C league, they were in Campeonato Brasileiro Serie C in 2015 and has 17000 members.  | False      |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------------------------+
 |                                               NODE METRICS                                               |
@@ -55,62 +56,61 @@ GRAPH NAME: WebNLG_test_3triples_SportsTeam_Id200_316_950
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h31876                                                                    |
-|               |   INDEX: e31873 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_temp LBL: h31856 ARG0: e31853 ARG1: u31854 ARG2: i31855 ]      |
-|               |           [ def_udef_a_q LBL: h31871 ARG0: x31868 RSTR: h31869 BODY: h31870 ]    |
-|               |           [ compound LBL: h31862 ARG0: e31859 ARG1: u31860 ARG2: u31861 ]        |
-|               |           [ existential_q LBL: h31866 ARG0: x31863 RSTR: h31864 BODY: h31865 ]   |
-|               |           [ named LBL: h31852 ARG0: x31851 [ x NUM: sg ] CARG: "2015 Campeonato  |
+| Original      | [ TOP: h6025                                                                     |
+|               |   INDEX: e6022 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_temp LBL: h6005 ARG0: e6002 ARG1: u6003 ARG2: i6004 ]          |
+|               |           [ def_udef_a_q LBL: h6020 ARG0: x6017 RSTR: h6018 BODY: h6019 ]        |
+|               |           [ compound LBL: h6011 ARG0: e6008 ARG1: u6009 ARG2: u6010 ]            |
+|               |           [ existential_q LBL: h6015 ARG0: x6012 RSTR: h6013 BODY: h6014 ]       |
+|               |           [ named LBL: h6001 ARG0: x6000 [ x NUM: sg ] CARG: "2015 Campeonato    |
 |               | Brasileiro Série C" ]                                                            |
-|               |           [ season LBL: h31858 ARG0: x31857 CARG: "season" ]                     |
-|               |           [ _play_v_1 LBL: h31876 ARG0: e31873 ARG1: i31874 ARG2: i31875 ]       |
-|               |           [ explicit_or_proper_q LBL: h31880 ARG0: x31877 RSTR: h31878 BODY:     |
-|               | h31879 ]                                                                         |
-|               |           [ named LBL: h31850 ARG0: x31849 CARG: "Agremiação Sportiva            |
+|               |           [ season LBL: h6007 ARG0: x6006 CARG: "season" ]                       |
+|               |           [ _play_v_1 LBL: h6025 ARG0: e6022 ARG1: i6023 ARG2: i6024 ]           |
+|               |           [ explicit_or_proper_q LBL: h6029 ARG0: x6026 RSTR: h6027 BODY: h6028  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5999 ARG0: x5998 CARG: "Agremiação Sportiva              |
 |               | Arapiraquense" ] >                                                               |
-|               |   HCONS: < h31864 qeq h31852 h31869 qeq h31858 h31878 qeq h31850 >               |
-|               |   EQS: < x31863 eq x31851 h31862 eq h31867 u31861 eq x31863 h31862 eq h31858     |
-|               | u31860 eq x31857 x31868 eq x31857 h31856 eq h31872 i31855 eq x31868 x31877 eq    |
-|               | x31849 h31876 eq h31881 i31874 eq x31877 h31856 eq h31876 u31854 eq e31873 >     |
-|               |   SLOTS: < ARG2: i31875 > ]                                                      |
+|               |   HCONS: < h6013 qeq h6001 h6018 qeq h6007 h6027 qeq h5999 >                     |
+|               |   EQS: < x6012 eq x6000 h6011 eq h6016 u6010 eq x6012 h6011 eq h6007 u6009 eq    |
+|               | x6006 x6017 eq x6006 h6005 eq h6021 i6004 eq x6017 x6026 eq x5998 h6025 eq h6030 |
+|               | i6023 eq x6026 h6005 eq h6025 u6003 eq e6022 >                                   |
+|               |   SLOTS: < ARG2: i6024 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h31856                                                                    |
-|               |   INDEX: e31873 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_temp LBL: h31856 ARG0: e31853 ARG1: e31873 ARG2: x31857 ]      |
-|               |           [ def_udef_a_q LBL: h31871 ARG0: x31857 RSTR: h31869 BODY: h31870 ]    |
-|               |           [ compound LBL: h31858 ARG0: e31859 ARG1: x31857 ARG2: x31851 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h31866 ARG0: x31851 RSTR: h31864 BODY: h31865 ]   |
-|               |           [ named LBL: h31852 ARG0: x31851 CARG: "2015 Campeonato Brasileiro     |
-|               | Série C" ]                                                                       |
-|               |           [ season LBL: h31858 ARG0: x31857 CARG: "season" ]                     |
-|               |           [ _play_v_1 LBL: h31856 ARG0: e31873 ARG1: x31849 ARG2: i31875 ]       |
-|               |           [ explicit_or_proper_q LBL: h31880 ARG0: x31849 RSTR: h31878 BODY:     |
-|               | h31879 ]                                                                         |
-|               |           [ named LBL: h31850 ARG0: x31849 CARG: "Agremiação Sportiva            |
+| EQs Collapsed | [ TOP: h6005                                                                     |
+|               |   INDEX: e6022 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_temp LBL: h6005 ARG0: e6002 ARG1: e6022 ARG2: x6006 ]          |
+|               |           [ def_udef_a_q LBL: h6020 ARG0: x6006 RSTR: h6018 BODY: h6019 ]        |
+|               |           [ compound LBL: h6007 ARG0: e6008 ARG1: x6006 ARG2: x6000 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h6015 ARG0: x6000 RSTR: h6013 BODY: h6014 ]       |
+|               |           [ named LBL: h6001 ARG0: x6000 CARG: "2015 Campeonato Brasileiro Série |
+|               | C" ]                                                                             |
+|               |           [ season LBL: h6007 ARG0: x6006 CARG: "season" ]                       |
+|               |           [ _play_v_1 LBL: h6005 ARG0: e6022 ARG1: x5998 ARG2: i6024 ]           |
+|               |           [ explicit_or_proper_q LBL: h6029 ARG0: x5998 RSTR: h6027 BODY: h6028  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5999 ARG0: x5998 CARG: "Agremiação Sportiva              |
 |               | Arapiraquense" ] >                                                               |
-|               |   HCONS: < h31864 qeq h31852 h31869 qeq h31858 h31878 qeq h31850 >               |
-|               |   SLOTS: < ARG2: i31875 > ]                                                      |
+|               |   HCONS: < h6013 qeq h6001 h6018 qeq h6007 h6027 qeq h5999 >                     |
+|               |   SLOTS: < ARG2: i6024 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h31882                                                                    |
-|               |   INDEX: e31873 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_temp LBL: h31856 ARG0: e31853 ARG1: e31873 ARG2: x31857 ]      |
-|               |           [ def_udef_a_q LBL: h31871 ARG0: x31857 RSTR: h31869 BODY: h31870 ]    |
-|               |           [ compound LBL: h31858 ARG0: e31859 ARG1: x31857 ARG2: x31851 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h31866 ARG0: x31851 RSTR: h31864 BODY: h31865 ]   |
-|               |           [ named LBL: h31852 ARG0: x31851 CARG: "2015 Campeonato Brasileiro     |
-|               | Série C" ]                                                                       |
-|               |           [ season LBL: h31858 ARG0: x31857 CARG: "season" ]                     |
-|               |           [ _play_v_1 LBL: h31856 ARG0: e31873 ARG1: x31849 ARG2: i31875 ]       |
-|               |           [ explicit_or_proper_q LBL: h31880 ARG0: x31849 RSTR: h31878 BODY:     |
-|               | h31879 ]                                                                         |
-|               |           [ named LBL: h31850 ARG0: x31849 CARG: "Agremiação Sportiva            |
+| Prepped       | [ TOP: h6031                                                                     |
+|               |   INDEX: e6022 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_temp LBL: h6005 ARG0: e6002 ARG1: e6022 ARG2: x6006 ]          |
+|               |           [ def_udef_a_q LBL: h6020 ARG0: x6006 RSTR: h6018 BODY: h6019 ]        |
+|               |           [ compound LBL: h6007 ARG0: e6008 ARG1: x6006 ARG2: x6000 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h6015 ARG0: x6000 RSTR: h6013 BODY: h6014 ]       |
+|               |           [ named LBL: h6001 ARG0: x6000 CARG: "2015 Campeonato Brasileiro Série |
+|               | C" ]                                                                             |
+|               |           [ season LBL: h6007 ARG0: x6006 CARG: "season" ]                       |
+|               |           [ _play_v_1 LBL: h6005 ARG0: e6022 ARG1: x5998 ARG2: i6024 ]           |
+|               |           [ explicit_or_proper_q LBL: h6029 ARG0: x5998 RSTR: h6027 BODY: h6028  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5999 ARG0: x5998 CARG: "Agremiação Sportiva              |
 |               | Arapiraquense" ] >                                                               |
-|               |   HCONS: < h31864 qeq h31852 h31869 qeq h31858 h31878 qeq h31850 h31882 qeq      |
-|               | h31856 >                                                                         |
-|               |   SLOTS: < ARG2: i31875 > ]                                                      |
+|               |   HCONS: < h6013 qeq h6001 h6018 qeq h6007 h6027 qeq h5999 h6031 qeq h6005 >     |
+|               |   SLOTS: < ARG2: i6024 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------+
@@ -118,15 +118,15 @@ GRAPH NAME: WebNLG_test_3triples_SportsTeam_Id200_316_950
 +------------------------------------+----------------------------------------------------------------------------------+
 | Node                               | Generated SEMENT                                                                 |
 +------------------------------------+----------------------------------------------------------------------------------+
-| Agremiação_Sportiva_Arapiraquense  | [ TOP: h31850                                                                    |
-|                                    |   INDEX: x31849                                                                  |
-|                                    |   RELS: < [ named LBL: h31850 ARG0: x31849 CARG: "Agremiação Sportiva            |
+| Agremiação_Sportiva_Arapiraquense  | [ TOP: h5999                                                                     |
+|                                    |   INDEX: x5998                                                                   |
+|                                    |   RELS: < [ named LBL: h5999 ARG0: x5998 CARG: "Agremiação Sportiva              |
 |                                    | Arapiraquense" ] > ]                                                             |
 +------------------------------------+----------------------------------------------------------------------------------+
-| 2015_Campeonato_Brasileiro_Série_C | [ TOP: h31852                                                                    |
-|                                    |   INDEX: x31851                                                                  |
-|                                    |   RELS: < [ named LBL: h31852 ARG0: x31851 CARG: "2015 Campeonato Brasileiro     |
-|                                    | Série C" ] > ]                                                                   |
+| 2015_Campeonato_Brasileiro_Série_C | [ TOP: h6001                                                                     |
+|                                    |   INDEX: x6000                                                                   |
+|                                    |   RELS: < [ named LBL: h6001 ARG0: x6000 CARG: "2015 Campeonato Brasileiro Série |
+|                                    | C" ] > ]                                                                         |
 +------------------------------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -134,25 +134,25 @@ GRAPH NAME: WebNLG_test_3triples_SportsTeam_Id200_316_950
 +--------+-----------------------------------+------------------------------------+----------------------------------------------------------------------------------+
 | Edge   | Parent                            | Child                              | Generated SEMENT                                                                 |
 +--------+-----------------------------------+------------------------------------+----------------------------------------------------------------------------------+
-| season | Agremiação_Sportiva_Arapiraquense | 2015_Campeonato_Brasileiro_Série_C | [ TOP: h31876                                                                    |
-|        |                                   |                                    |   INDEX: e31873 [ e TENSE: tensed ]                                              |
-|        |                                   |                                    |   RELS: < [ _in_p_temp LBL: h31856 ARG0: e31853 ARG1: u31854 ARG2: i31855 ]      |
-|        |                                   |                                    |           [ def_udef_a_q LBL: h31871 ARG0: x31868 RSTR: h31869 BODY: h31870 ]    |
-|        |                                   |                                    |           [ compound LBL: h31862 ARG0: e31859 ARG1: u31860 ARG2: u31861 ]        |
-|        |                                   |                                    |           [ existential_q LBL: h31866 ARG0: x31863 RSTR: h31864 BODY: h31865 ]   |
-|        |                                   |                                    |           [ named LBL: h31852 ARG0: x31851 [ x NUM: sg ] CARG: "2015 Campeonato  |
+| season | Agremiação_Sportiva_Arapiraquense | 2015_Campeonato_Brasileiro_Série_C | [ TOP: h6025                                                                     |
+|        |                                   |                                    |   INDEX: e6022 [ e TENSE: tensed ]                                               |
+|        |                                   |                                    |   RELS: < [ _in_p_temp LBL: h6005 ARG0: e6002 ARG1: u6003 ARG2: i6004 ]          |
+|        |                                   |                                    |           [ def_udef_a_q LBL: h6020 ARG0: x6017 RSTR: h6018 BODY: h6019 ]        |
+|        |                                   |                                    |           [ compound LBL: h6011 ARG0: e6008 ARG1: u6009 ARG2: u6010 ]            |
+|        |                                   |                                    |           [ existential_q LBL: h6015 ARG0: x6012 RSTR: h6013 BODY: h6014 ]       |
+|        |                                   |                                    |           [ named LBL: h6001 ARG0: x6000 [ x NUM: sg ] CARG: "2015 Campeonato    |
 |        |                                   |                                    | Brasileiro Série C" ]                                                            |
-|        |                                   |                                    |           [ season LBL: h31858 ARG0: x31857 CARG: "season" ]                     |
-|        |                                   |                                    |           [ _play_v_1 LBL: h31876 ARG0: e31873 ARG1: i31874 ARG2: i31875 ]       |
-|        |                                   |                                    |           [ explicit_or_proper_q LBL: h31880 ARG0: x31877 RSTR: h31878 BODY:     |
-|        |                                   |                                    | h31879 ]                                                                         |
-|        |                                   |                                    |           [ named LBL: h31850 ARG0: x31849 CARG: "Agremiação Sportiva            |
+|        |                                   |                                    |           [ season LBL: h6007 ARG0: x6006 CARG: "season" ]                       |
+|        |                                   |                                    |           [ _play_v_1 LBL: h6025 ARG0: e6022 ARG1: i6023 ARG2: i6024 ]           |
+|        |                                   |                                    |           [ explicit_or_proper_q LBL: h6029 ARG0: x6026 RSTR: h6027 BODY: h6028  |
+|        |                                   |                                    | ]                                                                                |
+|        |                                   |                                    |           [ named LBL: h5999 ARG0: x5998 CARG: "Agremiação Sportiva              |
 |        |                                   |                                    | Arapiraquense" ] >                                                               |
-|        |                                   |                                    |   HCONS: < h31864 qeq h31852 h31869 qeq h31858 h31878 qeq h31850 >               |
-|        |                                   |                                    |   EQS: < x31863 eq x31851 h31862 eq h31867 u31861 eq x31863 h31862 eq h31858     |
-|        |                                   |                                    | u31860 eq x31857 x31868 eq x31857 h31856 eq h31872 i31855 eq x31868 x31877 eq    |
-|        |                                   |                                    | x31849 h31876 eq h31881 i31874 eq x31877 h31856 eq h31876 u31854 eq e31873 >     |
-|        |                                   |                                    |   SLOTS: < ARG2: i31875 > ]                                                      |
+|        |                                   |                                    |   HCONS: < h6013 qeq h6001 h6018 qeq h6007 h6027 qeq h5999 >                     |
+|        |                                   |                                    |   EQS: < x6012 eq x6000 h6011 eq h6016 u6010 eq x6012 h6011 eq h6007 u6009 eq    |
+|        |                                   |                                    | x6006 x6017 eq x6006 h6005 eq h6021 i6004 eq x6017 x6026 eq x5998 h6025 eq h6030 |
+|        |                                   |                                    | i6023 eq x6026 h6005 eq h6025 u6003 eq e6022 >                                   |
+|        |                                   |                                    |   SLOTS: < ARG2: i6024 > ]                                                       |
 +--------+-----------------------------------+------------------------------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------------------+

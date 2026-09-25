@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_MusicalWork_Id778_84_169
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                 GOLD OUTPUTS                                                                 |
-+---------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                     | Generated? |
-+---------------------------------------------------------------------------------------------------------------------------------+------------+
-| Expect a Miracle by Brian Kelly, an album of the easy listening genre, was preceded by the album Pools of Light.                | False      |
-| Expect a Miracle's genre is easy listening, and is preceded by the Brian Kelly album Pools of Light.                            | False      |
-| The Brian Kelly album Expect a Miracle, an album in the easy listening musical genre, was preceded by the album Pools of Light. | False      |
-+---------------------------------------------------------------------------------------------------------------------------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------+
+|                                                          GOLD OUTPUTS                                                          |
++-------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                       | Generated? |
++-------------------------------------------------------------------------------------------------------------------+------------+
+| Expect a Miracle, with a runtime of 54.56, is preceded by the Brian Kelly album Pools of Light.                   | False      |
+| Expect a Miracle, with a runtime of 54:56, was preceded by Pools of Light by Brian Kelly.                         | False      |
+| With a runtime of 54.56 minutes, the Brian Kelly album Expect a Miracle was preceded by the album Pools of Light. | False      |
++-------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------------------------+
 |                                               NODE METRICS                                               |
@@ -56,63 +56,54 @@ GRAPH NAME: WebNLG_test_2triples_MusicalWork_Id778_84_169
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h5557                                                                     |
-|               |   INDEX: e5554 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _precede_v_1 LBL: h5557 ARG0: e5554 ARG1: i5555 ARG2: i5556 ]        |
-|               |           [ explicit_or_proper_q LBL: h5561 ARG0: x5558 RSTR: h5559 BODY: h5560  |
-|               | ]                                                                                |
-|               |           [ named LBL: h5524 ARG0: x5523 CARG: "Expect a Miracle" ]              |
-|               |           [ appos LBL: h5543 ARG0: e5540 ARG1: x5541 ARG2: i5542 ]               |
-|               |           [ def_udef_a_q LBL: h5552 ARG0: x5549 RSTR: h5550 BODY: h5551 ]        |
-|               |           [ compound LBL: h5534 ARG0: e5531 ARG1: u5532 ARG2: u5533 ]            |
-|               |           [ existential_q LBL: h5538 ARG0: x5535 RSTR: h5536 BODY: h5537 ]       |
-|               |           [ named LBL: h5530 ARG0: x5529 [ x NUM: sg ] CARG: "Brian Kelly" ]     |
-|               |           [ _album_n_1 LBL: h5528 ARG0: x5527 ]                                  |
-|               |           [ explicit_or_proper_q LBL: h5547 ARG0: x5544 RSTR: h5545 BODY: h5546  |
-|               | ]                                                                                |
-|               |           [ named LBL: h5526 ARG0: x5525 CARG: "Pools of Light" ] >              |
-|               |   HCONS: < h5559 qeq h5524 h5536 qeq h5530 h5550 qeq h5528 h5545 qeq h5526 >     |
-|               |   EQS: < x5558 eq x5523 h5557 eq h5562 i5556 eq x5558 x5535 eq x5529 h5534 eq    |
-|               | h5539 u5533 eq x5535 h5534 eq h5528 u5532 eq x5527 x5549 eq x5527 h5543 eq h5553 |
-|               | i5542 eq x5549 x5544 eq x5525 h5543 eq h5548 x5541 eq x5544 h5557 eq h5548 i5555 |
-|               | eq x5544 > ]                                                                     |
+| Original      | [ TOP: h346                                                                      |
+|               |   INDEX: e343 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _precede_v_1 LBL: h346 ARG0: e343 ARG1: i344 ARG2: i345 ]            |
+|               |           [ explicit_or_proper_q LBL: h350 ARG0: x347 RSTR: h348 BODY: h349 ]    |
+|               |           [ named LBL: h313 ARG0: x312 CARG: "Expect a Miracle" ]                |
+|               |           [ appos LBL: h332 ARG0: e329 ARG1: x330 ARG2: i331 ]                   |
+|               |           [ def_udef_a_q LBL: h341 ARG0: x338 RSTR: h339 BODY: h340 ]            |
+|               |           [ compound LBL: h323 ARG0: e320 ARG1: u321 ARG2: u322 ]                |
+|               |           [ existential_q LBL: h327 ARG0: x324 RSTR: h325 BODY: h326 ]           |
+|               |           [ named LBL: h319 ARG0: x318 [ x NUM: sg ] CARG: "Brian Kelly" ]       |
+|               |           [ _album_n_1 LBL: h317 ARG0: x316 ]                                    |
+|               |           [ explicit_or_proper_q LBL: h336 ARG0: x333 RSTR: h334 BODY: h335 ]    |
+|               |           [ named LBL: h315 ARG0: x314 CARG: "Pools of Light" ] >                |
+|               |   HCONS: < h348 qeq h313 h325 qeq h319 h339 qeq h317 h334 qeq h315 >             |
+|               |   EQS: < x347 eq x312 h346 eq h351 i345 eq x347 x324 eq x318 h323 eq h328 u322   |
+|               | eq x324 h323 eq h317 u321 eq x316 x338 eq x316 h332 eq h342 i331 eq x338 x333 eq |
+|               | x314 h332 eq h337 x330 eq x333 h346 eq h337 i344 eq x333 > ]                     |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h5543                                                                     |
-|               |   INDEX: e5554 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _precede_v_1 LBL: h5543 ARG0: e5554 ARG1: x5525 ARG2: x5523 ]        |
-|               |           [ explicit_or_proper_q LBL: h5561 ARG0: x5523 RSTR: h5559 BODY: h5560  |
-|               | ]                                                                                |
-|               |           [ named LBL: h5524 ARG0: x5523 CARG: "Expect a Miracle" ]              |
-|               |           [ appos LBL: h5543 ARG0: e5540 ARG1: x5525 ARG2: x5527 ]               |
-|               |           [ def_udef_a_q LBL: h5552 ARG0: x5527 RSTR: h5550 BODY: h5551 ]        |
-|               |           [ compound LBL: h5528 ARG0: e5531 ARG1: x5527 ARG2: x5529 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ existential_q LBL: h5538 ARG0: x5529 RSTR: h5536 BODY: h5537 ]       |
-|               |           [ named LBL: h5530 ARG0: x5529 CARG: "Brian Kelly" ]                   |
-|               |           [ _album_n_1 LBL: h5528 ARG0: x5527 ]                                  |
-|               |           [ explicit_or_proper_q LBL: h5547 ARG0: x5525 RSTR: h5545 BODY: h5546  |
-|               | ]                                                                                |
-|               |           [ named LBL: h5526 ARG0: x5525 CARG: "Pools of Light" ] >              |
-|               |   HCONS: < h5559 qeq h5524 h5536 qeq h5530 h5550 qeq h5528 h5545 qeq h5526 > ]   |
+| EQs Collapsed | [ TOP: h332                                                                      |
+|               |   INDEX: e343 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _precede_v_1 LBL: h332 ARG0: e343 ARG1: x314 ARG2: x312 ]            |
+|               |           [ explicit_or_proper_q LBL: h350 ARG0: x312 RSTR: h348 BODY: h349 ]    |
+|               |           [ named LBL: h313 ARG0: x312 CARG: "Expect a Miracle" ]                |
+|               |           [ appos LBL: h332 ARG0: e329 ARG1: x314 ARG2: x316 ]                   |
+|               |           [ def_udef_a_q LBL: h341 ARG0: x316 RSTR: h339 BODY: h340 ]            |
+|               |           [ compound LBL: h317 ARG0: e320 ARG1: x316 ARG2: x318 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h327 ARG0: x318 RSTR: h325 BODY: h326 ]           |
+|               |           [ named LBL: h319 ARG0: x318 CARG: "Brian Kelly" ]                     |
+|               |           [ _album_n_1 LBL: h317 ARG0: x316 ]                                    |
+|               |           [ explicit_or_proper_q LBL: h336 ARG0: x314 RSTR: h334 BODY: h335 ]    |
+|               |           [ named LBL: h315 ARG0: x314 CARG: "Pools of Light" ] >                |
+|               |   HCONS: < h348 qeq h313 h325 qeq h319 h339 qeq h317 h334 qeq h315 > ]           |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h5563                                                                     |
-|               |   INDEX: e5554 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _precede_v_1 LBL: h5543 ARG0: e5554 ARG1: x5525 ARG2: x5523 ]        |
-|               |           [ explicit_or_proper_q LBL: h5561 ARG0: x5523 RSTR: h5559 BODY: h5560  |
-|               | ]                                                                                |
-|               |           [ named LBL: h5524 ARG0: x5523 CARG: "Expect a Miracle" ]              |
-|               |           [ appos LBL: h5543 ARG0: e5540 ARG1: x5525 ARG2: x5527 ]               |
-|               |           [ def_udef_a_q LBL: h5552 ARG0: x5527 RSTR: h5550 BODY: h5551 ]        |
-|               |           [ compound LBL: h5528 ARG0: e5531 ARG1: x5527 ARG2: x5529 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ existential_q LBL: h5538 ARG0: x5529 RSTR: h5536 BODY: h5537 ]       |
-|               |           [ named LBL: h5530 ARG0: x5529 CARG: "Brian Kelly" ]                   |
-|               |           [ _album_n_1 LBL: h5528 ARG0: x5527 ]                                  |
-|               |           [ explicit_or_proper_q LBL: h5547 ARG0: x5525 RSTR: h5545 BODY: h5546  |
-|               | ]                                                                                |
-|               |           [ named LBL: h5526 ARG0: x5525 CARG: "Pools of Light" ] >              |
-|               |   HCONS: < h5559 qeq h5524 h5536 qeq h5530 h5550 qeq h5528 h5545 qeq h5526 h5563 |
-|               | qeq h5543 > ]                                                                    |
+| Prepped       | [ TOP: h352                                                                      |
+|               |   INDEX: e343 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _precede_v_1 LBL: h332 ARG0: e343 ARG1: x314 ARG2: x312 ]            |
+|               |           [ explicit_or_proper_q LBL: h350 ARG0: x312 RSTR: h348 BODY: h349 ]    |
+|               |           [ named LBL: h313 ARG0: x312 CARG: "Expect a Miracle" ]                |
+|               |           [ appos LBL: h332 ARG0: e329 ARG1: x314 ARG2: x316 ]                   |
+|               |           [ def_udef_a_q LBL: h341 ARG0: x316 RSTR: h339 BODY: h340 ]            |
+|               |           [ compound LBL: h317 ARG0: e320 ARG1: x316 ARG2: x318 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h327 ARG0: x318 RSTR: h325 BODY: h326 ]           |
+|               |           [ named LBL: h319 ARG0: x318 CARG: "Brian Kelly" ]                     |
+|               |           [ _album_n_1 LBL: h317 ARG0: x316 ]                                    |
+|               |           [ explicit_or_proper_q LBL: h336 ARG0: x314 RSTR: h334 BODY: h335 ]    |
+|               |           [ named LBL: h315 ARG0: x314 CARG: "Pools of Light" ] >                |
+|               |   HCONS: < h348 qeq h313 h325 qeq h319 h339 qeq h317 h334 qeq h315 h352 qeq h332 |
+|               | > ]                                                                              |
 +---------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------+
@@ -120,26 +111,24 @@ GRAPH NAME: WebNLG_test_2triples_MusicalWork_Id778_84_169
 +------------------------------------+----------------------------------------------------------------------------------+
 | Node                               | Generated SEMENT                                                                 |
 +------------------------------------+----------------------------------------------------------------------------------+
-| Expect_a_Miracle                   | [ TOP: h5524                                                                     |
-|                                    |   INDEX: x5523                                                                   |
-|                                    |   RELS: < [ named LBL: h5524 ARG0: x5523 CARG: "Expect a Miracle" ] > ]          |
+| Expect_a_Miracle                   | [ TOP: h313                                                                      |
+|                                    |   INDEX: x312                                                                    |
+|                                    |   RELS: < [ named LBL: h313 ARG0: x312 CARG: "Expect a Miracle" ] > ]            |
 +------------------------------------+----------------------------------------------------------------------------------+
-| Pools_of_Light_(Brian_Kelly_album) | [ TOP: h5548                                                                     |
-|                                    |   INDEX: x5544                                                                   |
-|                                    |   RELS: < [ appos LBL: h5543 ARG0: e5540 ARG1: x5541 ARG2: i5542 ]               |
-|                                    |           [ def_udef_a_q LBL: h5552 ARG0: x5549 RSTR: h5550 BODY: h5551 ]        |
-|                                    |           [ compound LBL: h5534 ARG0: e5531 ARG1: u5532 ARG2: u5533 ]            |
-|                                    |           [ existential_q LBL: h5538 ARG0: x5535 RSTR: h5536 BODY: h5537 ]       |
-|                                    |           [ named LBL: h5530 ARG0: x5529 [ x NUM: sg ] CARG: "Brian Kelly" ]     |
-|                                    |           [ _album_n_1 LBL: h5528 ARG0: x5527 ]                                  |
-|                                    |           [ explicit_or_proper_q LBL: h5547 ARG0: x5544 RSTR: h5545 BODY: h5546  |
-|                                    | ]                                                                                |
-|                                    |           [ named LBL: h5526 ARG0: x5525 CARG: "Pools of Light" ] >              |
-|                                    |   HCONS: < h5536 qeq h5530 h5550 qeq h5528 h5545 qeq h5526 >                     |
-|                                    |   EQS: < x5535 eq x5529 h5534 eq h5539 u5533 eq x5535 h5534 eq h5528 u5532 eq    |
-|                                    | x5527 x5549 eq x5527 h5543 eq h5553 i5542 eq x5549 x5544 eq x5525 h5543 eq h5548 |
-|                                    | x5541 eq x5544 >                                                                 |
-|                                    |   SLOTS: < BODY: h5546 > ]                                                       |
+| Pools_of_Light_(Brian_Kelly_album) | [ TOP: h337                                                                      |
+|                                    |   INDEX: x333                                                                    |
+|                                    |   RELS: < [ appos LBL: h332 ARG0: e329 ARG1: x330 ARG2: i331 ]                   |
+|                                    |           [ def_udef_a_q LBL: h341 ARG0: x338 RSTR: h339 BODY: h340 ]            |
+|                                    |           [ compound LBL: h323 ARG0: e320 ARG1: u321 ARG2: u322 ]                |
+|                                    |           [ existential_q LBL: h327 ARG0: x324 RSTR: h325 BODY: h326 ]           |
+|                                    |           [ named LBL: h319 ARG0: x318 [ x NUM: sg ] CARG: "Brian Kelly" ]       |
+|                                    |           [ _album_n_1 LBL: h317 ARG0: x316 ]                                    |
+|                                    |           [ explicit_or_proper_q LBL: h336 ARG0: x333 RSTR: h334 BODY: h335 ]    |
+|                                    |           [ named LBL: h315 ARG0: x314 CARG: "Pools of Light" ] >                |
+|                                    |   HCONS: < h325 qeq h319 h339 qeq h317 h334 qeq h315 >                           |
+|                                    |   EQS: < x324 eq x318 h323 eq h328 u322 eq x324 h323 eq h317 u321 eq x316 x338   |
+|                                    | eq x316 h332 eq h342 i331 eq x338 x333 eq x314 h332 eq h337 x330 eq x333 >       |
+|                                    |   SLOTS: < BODY: h335 > ]                                                        |
 +------------------------------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -147,26 +136,23 @@ GRAPH NAME: WebNLG_test_2triples_MusicalWork_Id778_84_169
 +------------+------------------+------------------------------------+----------------------------------------------------------------------------------+
 | Edge       | Parent           | Child                              | Generated SEMENT                                                                 |
 +------------+------------------+------------------------------------+----------------------------------------------------------------------------------+
-| precededBy | Expect_a_Miracle | Pools_of_Light_(Brian_Kelly_album) | [ TOP: h5557                                                                     |
-|            |                  |                                    |   INDEX: e5554 [ e TENSE: tensed ]                                               |
-|            |                  |                                    |   RELS: < [ _precede_v_1 LBL: h5557 ARG0: e5554 ARG1: i5555 ARG2: i5556 ]        |
-|            |                  |                                    |           [ explicit_or_proper_q LBL: h5561 ARG0: x5558 RSTR: h5559 BODY: h5560  |
-|            |                  |                                    | ]                                                                                |
-|            |                  |                                    |           [ named LBL: h5524 ARG0: x5523 CARG: "Expect a Miracle" ]              |
-|            |                  |                                    |           [ appos LBL: h5543 ARG0: e5540 ARG1: x5541 ARG2: i5542 ]               |
-|            |                  |                                    |           [ def_udef_a_q LBL: h5552 ARG0: x5549 RSTR: h5550 BODY: h5551 ]        |
-|            |                  |                                    |           [ compound LBL: h5534 ARG0: e5531 ARG1: u5532 ARG2: u5533 ]            |
-|            |                  |                                    |           [ existential_q LBL: h5538 ARG0: x5535 RSTR: h5536 BODY: h5537 ]       |
-|            |                  |                                    |           [ named LBL: h5530 ARG0: x5529 [ x NUM: sg ] CARG: "Brian Kelly" ]     |
-|            |                  |                                    |           [ _album_n_1 LBL: h5528 ARG0: x5527 ]                                  |
-|            |                  |                                    |           [ explicit_or_proper_q LBL: h5547 ARG0: x5544 RSTR: h5545 BODY: h5546  |
-|            |                  |                                    | ]                                                                                |
-|            |                  |                                    |           [ named LBL: h5526 ARG0: x5525 CARG: "Pools of Light" ] >              |
-|            |                  |                                    |   HCONS: < h5559 qeq h5524 h5536 qeq h5530 h5550 qeq h5528 h5545 qeq h5526 >     |
-|            |                  |                                    |   EQS: < x5558 eq x5523 h5557 eq h5562 i5556 eq x5558 x5535 eq x5529 h5534 eq    |
-|            |                  |                                    | h5539 u5533 eq x5535 h5534 eq h5528 u5532 eq x5527 x5549 eq x5527 h5543 eq h5553 |
-|            |                  |                                    | i5542 eq x5549 x5544 eq x5525 h5543 eq h5548 x5541 eq x5544 h5557 eq h5548 i5555 |
-|            |                  |                                    | eq x5544 > ]                                                                     |
+| precededBy | Expect_a_Miracle | Pools_of_Light_(Brian_Kelly_album) | [ TOP: h346                                                                      |
+|            |                  |                                    |   INDEX: e343 [ e TENSE: tensed ]                                                |
+|            |                  |                                    |   RELS: < [ _precede_v_1 LBL: h346 ARG0: e343 ARG1: i344 ARG2: i345 ]            |
+|            |                  |                                    |           [ explicit_or_proper_q LBL: h350 ARG0: x347 RSTR: h348 BODY: h349 ]    |
+|            |                  |                                    |           [ named LBL: h313 ARG0: x312 CARG: "Expect a Miracle" ]                |
+|            |                  |                                    |           [ appos LBL: h332 ARG0: e329 ARG1: x330 ARG2: i331 ]                   |
+|            |                  |                                    |           [ def_udef_a_q LBL: h341 ARG0: x338 RSTR: h339 BODY: h340 ]            |
+|            |                  |                                    |           [ compound LBL: h323 ARG0: e320 ARG1: u321 ARG2: u322 ]                |
+|            |                  |                                    |           [ existential_q LBL: h327 ARG0: x324 RSTR: h325 BODY: h326 ]           |
+|            |                  |                                    |           [ named LBL: h319 ARG0: x318 [ x NUM: sg ] CARG: "Brian Kelly" ]       |
+|            |                  |                                    |           [ _album_n_1 LBL: h317 ARG0: x316 ]                                    |
+|            |                  |                                    |           [ explicit_or_proper_q LBL: h336 ARG0: x333 RSTR: h334 BODY: h335 ]    |
+|            |                  |                                    |           [ named LBL: h315 ARG0: x314 CARG: "Pools of Light" ] >                |
+|            |                  |                                    |   HCONS: < h348 qeq h313 h325 qeq h319 h339 qeq h317 h334 qeq h315 >             |
+|            |                  |                                    |   EQS: < x347 eq x312 h346 eq h351 i345 eq x347 x324 eq x318 h323 eq h328 u322   |
+|            |                  |                                    | eq x324 h323 eq h317 u321 eq x316 x338 eq x316 h332 eq h342 i331 eq x338 x333 eq |
+|            |                  |                                    | x314 h332 eq h337 x330 eq x333 h346 eq h337 i344 eq x333 > ]                     |
 +------------+------------------+------------------------------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------+

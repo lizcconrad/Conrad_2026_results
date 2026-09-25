@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id741_277_831
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                        GOLD OUTPUTS                                                                       |
-+----------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                  | Generated? |
-+----------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Artist Brian Kelly, who is a composer & pianist, created Expect a Miracle, which is an easy listening album in the instrumental music genre. | False      |
-| Expect a Miracle by Brian Kelly falls under both the instrumental genre and the easy listening genre.                                        | False      |
-| Expect a Miracle by Brian Kelly falls until both the instrumental genre and the easy listening genre.                                        | False      |
-+----------------------------------------------------------------------------------------------------------------------------------------------+------------+
++--------------------------------------------------------------------------------------------------------------+
+|                                                 GOLD OUTPUTS                                                 |
++-------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                     | Generated? |
++-------------------------------------------------------------------------------------------------+------------+
+| Brian Kelly, a composer & pianist, produced the easy listening album, Expect a Miracle.         | False      |
+| Expect a Miracle is an easy listening album produced and written by Brian Kelly.                | False      |
+| Expect a Miracle's genre is easy listening was produced and recorded by the artist Brian Kelly. | False      |
++-------------------------------------------------------------------------------------------------+------------+
 
 +--------------------------------------------------------------------------------------------------------+
 |                                              NODE METRICS                                              |
@@ -56,68 +56,66 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id741_277_831
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h28103                                                                    |
-|               |   INDEX: e28100 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _by_p_loc LBL: h28103 ARG0: e28100 ARG1: u28101 ARG2: i28102 ]       |
-|               |           [ appos LBL: h28094 ARG0: e28091 ARG1: x28092 ARG2: i28093 ]           |
-|               |           [ udef_q LBL: h28089 ARG0: x28086 RSTR: h28087 BODY: h28088 ]          |
-|               |           [ _and_c LBL: h28070 ARG0: i28067 ARG1: u28068 ARG2: u28069 ]          |
-|               |           [ def_udef_a_q LBL: h28079 ARG0: x28076 RSTR: h28077 BODY: h28078 ]    |
-|               |           [ unk_n LBL: h28075 ARG0: x28074 [ x IND: + ] CARG: "pianist" ]        |
-|               |           [ def_udef_a_q LBL: h28084 ARG0: x28081 RSTR: h28082 BODY: h28083 ]    |
-|               |           [ _composer_n_of LBL: h28073 ARG0: x28071 ARG1: i28072 ]               |
-|               |           [ explicit_or_proper_q LBL: h28098 ARG0: x28095 RSTR: h28096 BODY:     |
-|               | h28097 ]                                                                         |
-|               |           [ named LBL: h28066 ARG0: x28065 CARG: "Brian Kelly" ]                 |
-|               |           [ explicit_or_proper_q LBL: h28107 ARG0: x28104 RSTR: h28105 BODY:     |
-|               | h28106 ]                                                                         |
-|               |           [ named LBL: h28064 ARG0: x28063 CARG: "Expect a Miracle" ] >          |
-|               |   HCONS: < h28077 qeq h28075 h28082 qeq h28073 h28087 qeq h28070 h28096 qeq      |
-|               | h28066 h28105 qeq h28064 >                                                       |
-|               |   EQS: < x28076 eq x28074 h28070 eq h28080 u28069 eq x28076 x28081 eq x28071     |
-|               | h28070 eq h28085 u28068 eq x28081 x28086 eq i28067 h28094 eq h28090 i28093 eq    |
-|               | x28086 x28095 eq x28065 h28094 eq h28099 x28092 eq x28095 h28103 eq h28099       |
-|               | i28102 eq x28095 x28104 eq x28063 h28103 eq h28108 u28101 eq x28104 > ]          |
+| Original      | [ TOP: h1257                                                                     |
+|               |   INDEX: e1254 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _by_p_loc LBL: h1257 ARG0: e1254 ARG1: u1255 ARG2: i1256 ]           |
+|               |           [ appos LBL: h1248 ARG0: e1245 ARG1: x1246 ARG2: i1247 ]               |
+|               |           [ udef_q LBL: h1243 ARG0: x1240 RSTR: h1241 BODY: h1242 ]              |
+|               |           [ _and_c LBL: h1224 ARG0: i1221 ARG1: u1222 ARG2: u1223 ]              |
+|               |           [ def_udef_a_q LBL: h1233 ARG0: x1230 RSTR: h1231 BODY: h1232 ]        |
+|               |           [ unk_n LBL: h1229 ARG0: x1228 [ x IND: + ] CARG: "pianist" ]          |
+|               |           [ def_udef_a_q LBL: h1238 ARG0: x1235 RSTR: h1236 BODY: h1237 ]        |
+|               |           [ _composer_n_of LBL: h1227 ARG0: x1225 ARG1: i1226 ]                  |
+|               |           [ explicit_or_proper_q LBL: h1252 ARG0: x1249 RSTR: h1250 BODY: h1251  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1220 ARG0: x1219 CARG: "Brian Kelly" ]                   |
+|               |           [ explicit_or_proper_q LBL: h1261 ARG0: x1258 RSTR: h1259 BODY: h1260  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1218 ARG0: x1217 CARG: "Expect a Miracle" ] >            |
+|               |   HCONS: < h1231 qeq h1229 h1236 qeq h1227 h1241 qeq h1224 h1250 qeq h1220 h1259 |
+|               | qeq h1218 >                                                                      |
+|               |   EQS: < x1230 eq x1228 h1224 eq h1234 u1223 eq x1230 x1235 eq x1225 h1224 eq    |
+|               | h1239 u1222 eq x1235 x1240 eq i1221 h1248 eq h1244 i1247 eq x1240 x1249 eq x1219 |
+|               | h1248 eq h1253 x1246 eq x1249 h1257 eq h1253 i1256 eq x1249 x1258 eq x1217 h1257 |
+|               | eq h1262 u1255 eq x1258 > ]                                                      |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h28090                                                                    |
-|               |   INDEX: e28100 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _by_p_loc LBL: h28090 ARG0: e28100 ARG1: x28063 ARG2: x28065 ]       |
-|               |           [ appos LBL: h28090 ARG0: e28091 ARG1: x28065 ARG2: x28086 ]           |
-|               |           [ udef_q LBL: h28089 ARG0: x28086 RSTR: h28087 BODY: h28088 ]          |
-|               |           [ _and_c LBL: h28070 ARG0: x28086 ARG1: x28071 ARG2: x28074 [ x IND: + |
-|               | ] ]                                                                              |
-|               |           [ def_udef_a_q LBL: h28079 ARG0: x28074 RSTR: h28077 BODY: h28078 ]    |
-|               |           [ unk_n LBL: h28075 ARG0: x28074 CARG: "pianist" ]                     |
-|               |           [ def_udef_a_q LBL: h28084 ARG0: x28071 RSTR: h28082 BODY: h28083 ]    |
-|               |           [ _composer_n_of LBL: h28073 ARG0: x28071 ARG1: i28072 ]               |
-|               |           [ explicit_or_proper_q LBL: h28098 ARG0: x28065 RSTR: h28096 BODY:     |
-|               | h28097 ]                                                                         |
-|               |           [ named LBL: h28066 ARG0: x28065 CARG: "Brian Kelly" ]                 |
-|               |           [ explicit_or_proper_q LBL: h28107 ARG0: x28063 RSTR: h28105 BODY:     |
-|               | h28106 ]                                                                         |
-|               |           [ named LBL: h28064 ARG0: x28063 CARG: "Expect a Miracle" ] >          |
-|               |   HCONS: < h28077 qeq h28075 h28082 qeq h28073 h28087 qeq h28070 h28096 qeq      |
-|               | h28066 h28105 qeq h28064 > ]                                                     |
+| EQs Collapsed | [ TOP: h1244                                                                     |
+|               |   INDEX: e1254 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _by_p_loc LBL: h1244 ARG0: e1254 ARG1: x1217 ARG2: x1219 ]           |
+|               |           [ appos LBL: h1244 ARG0: e1245 ARG1: x1219 ARG2: x1240 ]               |
+|               |           [ udef_q LBL: h1243 ARG0: x1240 RSTR: h1241 BODY: h1242 ]              |
+|               |           [ _and_c LBL: h1224 ARG0: x1240 ARG1: x1225 ARG2: x1228 [ x IND: + ] ] |
+|               |           [ def_udef_a_q LBL: h1233 ARG0: x1228 RSTR: h1231 BODY: h1232 ]        |
+|               |           [ unk_n LBL: h1229 ARG0: x1228 CARG: "pianist" ]                       |
+|               |           [ def_udef_a_q LBL: h1238 ARG0: x1225 RSTR: h1236 BODY: h1237 ]        |
+|               |           [ _composer_n_of LBL: h1227 ARG0: x1225 ARG1: i1226 ]                  |
+|               |           [ explicit_or_proper_q LBL: h1252 ARG0: x1219 RSTR: h1250 BODY: h1251  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1220 ARG0: x1219 CARG: "Brian Kelly" ]                   |
+|               |           [ explicit_or_proper_q LBL: h1261 ARG0: x1217 RSTR: h1259 BODY: h1260  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1218 ARG0: x1217 CARG: "Expect a Miracle" ] >            |
+|               |   HCONS: < h1231 qeq h1229 h1236 qeq h1227 h1241 qeq h1224 h1250 qeq h1220 h1259 |
+|               | qeq h1218 > ]                                                                    |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h28109                                                                    |
-|               |   INDEX: e28100 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _by_p_loc LBL: h28090 ARG0: e28100 ARG1: x28063 ARG2: x28065 ]       |
-|               |           [ appos LBL: h28090 ARG0: e28091 ARG1: x28065 ARG2: x28086 ]           |
-|               |           [ udef_q LBL: h28089 ARG0: x28086 RSTR: h28087 BODY: h28088 ]          |
-|               |           [ _and_c LBL: h28070 ARG0: x28086 ARG1: x28071 ARG2: x28074 [ x IND: + |
-|               | ] ]                                                                              |
-|               |           [ def_udef_a_q LBL: h28079 ARG0: x28074 RSTR: h28077 BODY: h28078 ]    |
-|               |           [ unk_n LBL: h28075 ARG0: x28074 CARG: "pianist" ]                     |
-|               |           [ def_udef_a_q LBL: h28084 ARG0: x28071 RSTR: h28082 BODY: h28083 ]    |
-|               |           [ _composer_n_of LBL: h28073 ARG0: x28071 ARG1: i28072 ]               |
-|               |           [ explicit_or_proper_q LBL: h28098 ARG0: x28065 RSTR: h28096 BODY:     |
-|               | h28097 ]                                                                         |
-|               |           [ named LBL: h28066 ARG0: x28065 CARG: "Brian Kelly" ]                 |
-|               |           [ explicit_or_proper_q LBL: h28107 ARG0: x28063 RSTR: h28105 BODY:     |
-|               | h28106 ]                                                                         |
-|               |           [ named LBL: h28064 ARG0: x28063 CARG: "Expect a Miracle" ] >          |
-|               |   HCONS: < h28077 qeq h28075 h28082 qeq h28073 h28087 qeq h28070 h28096 qeq      |
-|               | h28066 h28105 qeq h28064 h28109 qeq h28090 > ]                                   |
+| Prepped       | [ TOP: h1263                                                                     |
+|               |   INDEX: e1254 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _by_p_loc LBL: h1244 ARG0: e1254 ARG1: x1217 ARG2: x1219 ]           |
+|               |           [ appos LBL: h1244 ARG0: e1245 ARG1: x1219 ARG2: x1240 ]               |
+|               |           [ udef_q LBL: h1243 ARG0: x1240 RSTR: h1241 BODY: h1242 ]              |
+|               |           [ _and_c LBL: h1224 ARG0: x1240 ARG1: x1225 ARG2: x1228 [ x IND: + ] ] |
+|               |           [ def_udef_a_q LBL: h1233 ARG0: x1228 RSTR: h1231 BODY: h1232 ]        |
+|               |           [ unk_n LBL: h1229 ARG0: x1228 CARG: "pianist" ]                       |
+|               |           [ def_udef_a_q LBL: h1238 ARG0: x1225 RSTR: h1236 BODY: h1237 ]        |
+|               |           [ _composer_n_of LBL: h1227 ARG0: x1225 ARG1: i1226 ]                  |
+|               |           [ explicit_or_proper_q LBL: h1252 ARG0: x1219 RSTR: h1250 BODY: h1251  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1220 ARG0: x1219 CARG: "Brian Kelly" ]                   |
+|               |           [ explicit_or_proper_q LBL: h1261 ARG0: x1217 RSTR: h1259 BODY: h1260  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1218 ARG0: x1217 CARG: "Expect a Miracle" ] >            |
+|               |   HCONS: < h1231 qeq h1229 h1236 qeq h1227 h1241 qeq h1224 h1250 qeq h1220 h1259 |
+|               | qeq h1218 h1263 qeq h1244 > ]                                                    |
 +---------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------------+
@@ -125,28 +123,27 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id741_277_831
 +----------------------------------+----------------------------------------------------------------------------------+
 | Node                             | Generated SEMENT                                                                 |
 +----------------------------------+----------------------------------------------------------------------------------+
-| Expect_a_Miracle                 | [ TOP: h28064                                                                    |
-|                                  |   INDEX: x28063                                                                  |
-|                                  |   RELS: < [ named LBL: h28064 ARG0: x28063 CARG: "Expect a Miracle" ] > ]        |
+| Expect_a_Miracle                 | [ TOP: h1218                                                                     |
+|                                  |   INDEX: x1217                                                                   |
+|                                  |   RELS: < [ named LBL: h1218 ARG0: x1217 CARG: "Expect a Miracle" ] > ]          |
 +----------------------------------+----------------------------------------------------------------------------------+
-| Brian_Kelly_(composer_&_pianist) | [ TOP: h28099                                                                    |
-|                                  |   INDEX: x28095                                                                  |
-|                                  |   RELS: < [ appos LBL: h28094 ARG0: e28091 ARG1: x28092 ARG2: i28093 ]           |
-|                                  |           [ udef_q LBL: h28089 ARG0: x28086 RSTR: h28087 BODY: h28088 ]          |
-|                                  |           [ _and_c LBL: h28070 ARG0: i28067 ARG1: u28068 ARG2: u28069 ]          |
-|                                  |           [ def_udef_a_q LBL: h28079 ARG0: x28076 RSTR: h28077 BODY: h28078 ]    |
-|                                  |           [ unk_n LBL: h28075 ARG0: x28074 [ x IND: + ] CARG: "pianist" ]        |
-|                                  |           [ def_udef_a_q LBL: h28084 ARG0: x28081 RSTR: h28082 BODY: h28083 ]    |
-|                                  |           [ _composer_n_of LBL: h28073 ARG0: x28071 ARG1: i28072 ]               |
-|                                  |           [ explicit_or_proper_q LBL: h28098 ARG0: x28095 RSTR: h28096 BODY:     |
-|                                  | h28097 ]                                                                         |
-|                                  |           [ named LBL: h28066 ARG0: x28065 CARG: "Brian Kelly" ] >               |
-|                                  |   HCONS: < h28077 qeq h28075 h28082 qeq h28073 h28087 qeq h28070 h28096 qeq      |
-|                                  | h28066 >                                                                         |
-|                                  |   EQS: < x28076 eq x28074 h28070 eq h28080 u28069 eq x28076 x28081 eq x28071     |
-|                                  | h28070 eq h28085 u28068 eq x28081 x28086 eq i28067 h28094 eq h28090 i28093 eq    |
-|                                  | x28086 x28095 eq x28065 h28094 eq h28099 x28092 eq x28095 >                      |
-|                                  |   SLOTS: < BODY: h28097 > ]                                                      |
+| Brian_Kelly_(composer_&_pianist) | [ TOP: h1253                                                                     |
+|                                  |   INDEX: x1249                                                                   |
+|                                  |   RELS: < [ appos LBL: h1248 ARG0: e1245 ARG1: x1246 ARG2: i1247 ]               |
+|                                  |           [ udef_q LBL: h1243 ARG0: x1240 RSTR: h1241 BODY: h1242 ]              |
+|                                  |           [ _and_c LBL: h1224 ARG0: i1221 ARG1: u1222 ARG2: u1223 ]              |
+|                                  |           [ def_udef_a_q LBL: h1233 ARG0: x1230 RSTR: h1231 BODY: h1232 ]        |
+|                                  |           [ unk_n LBL: h1229 ARG0: x1228 [ x IND: + ] CARG: "pianist" ]          |
+|                                  |           [ def_udef_a_q LBL: h1238 ARG0: x1235 RSTR: h1236 BODY: h1237 ]        |
+|                                  |           [ _composer_n_of LBL: h1227 ARG0: x1225 ARG1: i1226 ]                  |
+|                                  |           [ explicit_or_proper_q LBL: h1252 ARG0: x1249 RSTR: h1250 BODY: h1251  |
+|                                  | ]                                                                                |
+|                                  |           [ named LBL: h1220 ARG0: x1219 CARG: "Brian Kelly" ] >                 |
+|                                  |   HCONS: < h1231 qeq h1229 h1236 qeq h1227 h1241 qeq h1224 h1250 qeq h1220 >     |
+|                                  |   EQS: < x1230 eq x1228 h1224 eq h1234 u1223 eq x1230 x1235 eq x1225 h1224 eq    |
+|                                  | h1239 u1222 eq x1235 x1240 eq i1221 h1248 eq h1244 i1247 eq x1240 x1249 eq x1219 |
+|                                  | h1248 eq h1253 x1246 eq x1249 >                                                  |
+|                                  |   SLOTS: < BODY: h1251 > ]                                                       |
 +----------------------------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -154,28 +151,28 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id741_277_831
 +--------+------------------+----------------------------------+----------------------------------------------------------------------------------+
 | Edge   | Parent           | Child                            | Generated SEMENT                                                                 |
 +--------+------------------+----------------------------------+----------------------------------------------------------------------------------+
-| artist | Expect_a_Miracle | Brian_Kelly_(composer_&_pianist) | [ TOP: h28103                                                                    |
-|        |                  |                                  |   INDEX: e28100 [ e TENSE: tensed ]                                              |
-|        |                  |                                  |   RELS: < [ _by_p_loc LBL: h28103 ARG0: e28100 ARG1: u28101 ARG2: i28102 ]       |
-|        |                  |                                  |           [ appos LBL: h28094 ARG0: e28091 ARG1: x28092 ARG2: i28093 ]           |
-|        |                  |                                  |           [ udef_q LBL: h28089 ARG0: x28086 RSTR: h28087 BODY: h28088 ]          |
-|        |                  |                                  |           [ _and_c LBL: h28070 ARG0: i28067 ARG1: u28068 ARG2: u28069 ]          |
-|        |                  |                                  |           [ def_udef_a_q LBL: h28079 ARG0: x28076 RSTR: h28077 BODY: h28078 ]    |
-|        |                  |                                  |           [ unk_n LBL: h28075 ARG0: x28074 [ x IND: + ] CARG: "pianist" ]        |
-|        |                  |                                  |           [ def_udef_a_q LBL: h28084 ARG0: x28081 RSTR: h28082 BODY: h28083 ]    |
-|        |                  |                                  |           [ _composer_n_of LBL: h28073 ARG0: x28071 ARG1: i28072 ]               |
-|        |                  |                                  |           [ explicit_or_proper_q LBL: h28098 ARG0: x28095 RSTR: h28096 BODY:     |
-|        |                  |                                  | h28097 ]                                                                         |
-|        |                  |                                  |           [ named LBL: h28066 ARG0: x28065 CARG: "Brian Kelly" ]                 |
-|        |                  |                                  |           [ explicit_or_proper_q LBL: h28107 ARG0: x28104 RSTR: h28105 BODY:     |
-|        |                  |                                  | h28106 ]                                                                         |
-|        |                  |                                  |           [ named LBL: h28064 ARG0: x28063 CARG: "Expect a Miracle" ] >          |
-|        |                  |                                  |   HCONS: < h28077 qeq h28075 h28082 qeq h28073 h28087 qeq h28070 h28096 qeq      |
-|        |                  |                                  | h28066 h28105 qeq h28064 >                                                       |
-|        |                  |                                  |   EQS: < x28076 eq x28074 h28070 eq h28080 u28069 eq x28076 x28081 eq x28071     |
-|        |                  |                                  | h28070 eq h28085 u28068 eq x28081 x28086 eq i28067 h28094 eq h28090 i28093 eq    |
-|        |                  |                                  | x28086 x28095 eq x28065 h28094 eq h28099 x28092 eq x28095 h28103 eq h28099       |
-|        |                  |                                  | i28102 eq x28095 x28104 eq x28063 h28103 eq h28108 u28101 eq x28104 > ]          |
+| artist | Expect_a_Miracle | Brian_Kelly_(composer_&_pianist) | [ TOP: h1257                                                                     |
+|        |                  |                                  |   INDEX: e1254 [ e TENSE: tensed ]                                               |
+|        |                  |                                  |   RELS: < [ _by_p_loc LBL: h1257 ARG0: e1254 ARG1: u1255 ARG2: i1256 ]           |
+|        |                  |                                  |           [ appos LBL: h1248 ARG0: e1245 ARG1: x1246 ARG2: i1247 ]               |
+|        |                  |                                  |           [ udef_q LBL: h1243 ARG0: x1240 RSTR: h1241 BODY: h1242 ]              |
+|        |                  |                                  |           [ _and_c LBL: h1224 ARG0: i1221 ARG1: u1222 ARG2: u1223 ]              |
+|        |                  |                                  |           [ def_udef_a_q LBL: h1233 ARG0: x1230 RSTR: h1231 BODY: h1232 ]        |
+|        |                  |                                  |           [ unk_n LBL: h1229 ARG0: x1228 [ x IND: + ] CARG: "pianist" ]          |
+|        |                  |                                  |           [ def_udef_a_q LBL: h1238 ARG0: x1235 RSTR: h1236 BODY: h1237 ]        |
+|        |                  |                                  |           [ _composer_n_of LBL: h1227 ARG0: x1225 ARG1: i1226 ]                  |
+|        |                  |                                  |           [ explicit_or_proper_q LBL: h1252 ARG0: x1249 RSTR: h1250 BODY: h1251  |
+|        |                  |                                  | ]                                                                                |
+|        |                  |                                  |           [ named LBL: h1220 ARG0: x1219 CARG: "Brian Kelly" ]                   |
+|        |                  |                                  |           [ explicit_or_proper_q LBL: h1261 ARG0: x1258 RSTR: h1259 BODY: h1260  |
+|        |                  |                                  | ]                                                                                |
+|        |                  |                                  |           [ named LBL: h1218 ARG0: x1217 CARG: "Expect a Miracle" ] >            |
+|        |                  |                                  |   HCONS: < h1231 qeq h1229 h1236 qeq h1227 h1241 qeq h1224 h1250 qeq h1220 h1259 |
+|        |                  |                                  | qeq h1218 >                                                                      |
+|        |                  |                                  |   EQS: < x1230 eq x1228 h1224 eq h1234 u1223 eq x1230 x1235 eq x1225 h1224 eq    |
+|        |                  |                                  | h1239 u1222 eq x1235 x1240 eq i1221 h1248 eq h1244 i1247 eq x1240 x1249 eq x1219 |
+|        |                  |                                  | h1248 eq h1253 x1246 eq x1249 h1257 eq h1253 i1256 eq x1249 x1258 eq x1217 h1257 |
+|        |                  |                                  | eq h1262 u1255 eq x1258 > ]                                                      |
 +--------+------------------+----------------------------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------------------+

@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_Astronaut_Id631_267_535
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-------------------------------------------------------------------------------------------------+
-|                                           GOLD OUTPUTS                                          |
-+------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                        | Generated? |
-+------------------------------------------------------------------------------------+------------+
-| Nie Haisheng is a fighter pilot and a citizen of the People’s Republic of China.   | False      |
-| Nie Haisheng was a fighter pilot from the People's Republic of China.              | False      |
-| Nie Haisheng worked as a fighter pilot and is from the People's Republic of China. | False      |
-+------------------------------------------------------------------------------------+------------+
++----------------------------------------------------------------------------------------+
+|                                      GOLD OUTPUTS                                      |
++---------------------------------------------------------------------------+------------+
+| Gold Output                                                               | Generated? |
++---------------------------------------------------------------------------+------------+
+| Nie Haisheng who was born in Hubei, previously worked as a fighter pilot. | False      |
+| Nie Haisheng, a fighter pilot, is from Hubei province.                    | False      |
+| Nie Haisheng, a former fighter pilot, was born in Hubei.                  | False      |
++---------------------------------------------------------------------------+------------+
 
 +-------------------------------------------------------------------------------------+
 |                                     NODE METRICS                                    |
@@ -56,93 +56,83 @@ GRAPH NAME: WebNLG_test_2triples_Astronaut_Id631_267_535
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h17396                                                                    |
-|               |   INDEX: e17393 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h17396 ARG0: e17393 ARG1: p17394 ARG2: i17395 ]        |
-|               |           [ def_udef_a_q LBL: h17405 ARG0: x17402 RSTR: h17403 BODY: h17404 ]    |
-|               |           [ compound LBL: h17387 ARG0: e17384 ARG1: u17385 ARG2: u17386 ]        |
-|               |           [ existential_q LBL: h17391 ARG0: x17388 RSTR: h17389 BODY: h17390 ]   |
-|               |           [ _fighter_n_1 LBL: h17383 ARG0: x17382 [ x NUM: sg ] ]                |
-|               |           [ _pilot_n_of LBL: h17381 ARG0: x17379 ARG1: i17380 ]                  |
-|               |           [ explicit_or_proper_q LBL: h17400 ARG0: x17397 RSTR: h17398 BODY:     |
-|               | h17399 ]                                                                         |
-|               |           [ named LBL: h17378 ARG0: x17377 CARG: "Nie Haisheng" ] >              |
-|               |   HCONS: < h17389 qeq h17383 h17403 qeq h17381 h17398 qeq h17378 >               |
-|               |   EQS: < x17388 eq x17382 h17387 eq h17392 u17386 eq x17388 h17387 eq h17381     |
-|               | u17385 eq x17379 x17402 eq x17379 h17396 eq h17406 i17395 eq x17402 x17397 eq    |
-|               | x17377 h17396 eq h17401 p17394 eq x17397 > ]                                     |
+| Original      | [ TOP: h879                                                                      |
+|               |   INDEX: e876 [ e SF: prop TENSE: tensed ]                                       |
+|               |   RELS: < [ _be_v_id LBL: h879 ARG0: e876 ARG1: p877 ARG2: i878 ]                |
+|               |           [ def_udef_a_q LBL: h888 ARG0: x885 RSTR: h886 BODY: h887 ]            |
+|               |           [ compound LBL: h870 ARG0: e867 ARG1: u868 ARG2: u869 ]                |
+|               |           [ existential_q LBL: h874 ARG0: x871 RSTR: h872 BODY: h873 ]           |
+|               |           [ _fighter_n_1 LBL: h866 ARG0: x865 [ x NUM: sg ] ]                    |
+|               |           [ _pilot_n_of LBL: h864 ARG0: x862 ARG1: i863 ]                        |
+|               |           [ explicit_or_proper_q LBL: h883 ARG0: x880 RSTR: h881 BODY: h882 ]    |
+|               |           [ named LBL: h861 ARG0: x860 CARG: "Nie Haisheng" ] >                  |
+|               |   HCONS: < h872 qeq h866 h886 qeq h864 h881 qeq h861 >                           |
+|               |   EQS: < x871 eq x865 h870 eq h875 u869 eq x871 h870 eq h864 u868 eq x862 x885   |
+|               | eq x862 h879 eq h889 i878 eq x885 x880 eq x860 h879 eq h884 p877 eq x880 > ]     |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h17396                                                                    |
-|               |   INDEX: e17393 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h17396 ARG0: e17393 ARG1: x17377 ARG2: x17379 ]        |
-|               |           [ def_udef_a_q LBL: h17405 ARG0: x17379 RSTR: h17403 BODY: h17404 ]    |
-|               |           [ compound LBL: h17381 ARG0: e17384 ARG1: x17379 ARG2: x17382 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h17391 ARG0: x17382 RSTR: h17389 BODY: h17390 ]   |
-|               |           [ _fighter_n_1 LBL: h17383 ARG0: x17382 ]                              |
-|               |           [ _pilot_n_of LBL: h17381 ARG0: x17379 ARG1: i17380 ]                  |
-|               |           [ explicit_or_proper_q LBL: h17400 ARG0: x17377 RSTR: h17398 BODY:     |
-|               | h17399 ]                                                                         |
-|               |           [ named LBL: h17378 ARG0: x17377 CARG: "Nie Haisheng" ] >              |
-|               |   HCONS: < h17389 qeq h17383 h17403 qeq h17381 h17398 qeq h17378 > ]             |
+| EQs Collapsed | [ TOP: h879                                                                      |
+|               |   INDEX: e876 [ e SF: prop TENSE: tensed ]                                       |
+|               |   RELS: < [ _be_v_id LBL: h879 ARG0: e876 ARG1: x860 ARG2: x862 ]                |
+|               |           [ def_udef_a_q LBL: h888 ARG0: x862 RSTR: h886 BODY: h887 ]            |
+|               |           [ compound LBL: h864 ARG0: e867 ARG1: x862 ARG2: x865 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h874 ARG0: x865 RSTR: h872 BODY: h873 ]           |
+|               |           [ _fighter_n_1 LBL: h866 ARG0: x865 ]                                  |
+|               |           [ _pilot_n_of LBL: h864 ARG0: x862 ARG1: i863 ]                        |
+|               |           [ explicit_or_proper_q LBL: h883 ARG0: x860 RSTR: h881 BODY: h882 ]    |
+|               |           [ named LBL: h861 ARG0: x860 CARG: "Nie Haisheng" ] >                  |
+|               |   HCONS: < h872 qeq h866 h886 qeq h864 h881 qeq h861 > ]                         |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h17407                                                                    |
-|               |   INDEX: e17393 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h17396 ARG0: e17393 ARG1: x17377 ARG2: x17379 ]        |
-|               |           [ def_udef_a_q LBL: h17405 ARG0: x17379 RSTR: h17403 BODY: h17404 ]    |
-|               |           [ compound LBL: h17381 ARG0: e17384 ARG1: x17379 ARG2: x17382 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h17391 ARG0: x17382 RSTR: h17389 BODY: h17390 ]   |
-|               |           [ _fighter_n_1 LBL: h17383 ARG0: x17382 ]                              |
-|               |           [ _pilot_n_of LBL: h17381 ARG0: x17379 ARG1: i17380 ]                  |
-|               |           [ explicit_or_proper_q LBL: h17400 ARG0: x17377 RSTR: h17398 BODY:     |
-|               | h17399 ]                                                                         |
-|               |           [ named LBL: h17378 ARG0: x17377 CARG: "Nie Haisheng" ] >              |
-|               |   HCONS: < h17389 qeq h17383 h17403 qeq h17381 h17398 qeq h17378 h17407 qeq      |
-|               | h17396 > ]                                                                       |
+| Prepped       | [ TOP: h890                                                                      |
+|               |   INDEX: e876 [ e SF: prop TENSE: tensed ]                                       |
+|               |   RELS: < [ _be_v_id LBL: h879 ARG0: e876 ARG1: x860 ARG2: x862 ]                |
+|               |           [ def_udef_a_q LBL: h888 ARG0: x862 RSTR: h886 BODY: h887 ]            |
+|               |           [ compound LBL: h864 ARG0: e867 ARG1: x862 ARG2: x865 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h874 ARG0: x865 RSTR: h872 BODY: h873 ]           |
+|               |           [ _fighter_n_1 LBL: h866 ARG0: x865 ]                                  |
+|               |           [ _pilot_n_of LBL: h864 ARG0: x862 ARG1: i863 ]                        |
+|               |           [ explicit_or_proper_q LBL: h883 ARG0: x860 RSTR: h881 BODY: h882 ]    |
+|               |           [ named LBL: h861 ARG0: x860 CARG: "Nie Haisheng" ] >                  |
+|               |   HCONS: < h872 qeq h866 h886 qeq h864 h881 qeq h861 h890 qeq h879 > ]           |
 +---------------+----------------------------------------------------------------------------------+
 
-+--------------------------------------------------------------------------------------------------+
-|                                           NODE SEMENTS                                           |
-+---------------+----------------------------------------------------------------------------------+
-| Node          | Generated SEMENT                                                                 |
-+---------------+----------------------------------------------------------------------------------+
-| Nie_Haisheng  | [ TOP: h17378                                                                    |
-|               |   INDEX: x17377                                                                  |
-|               |   RELS: < [ named LBL: h17378 ARG0: x17377 CARG: "Nie Haisheng" ] > ]            |
-+---------------+----------------------------------------------------------------------------------+
-| Fighter_pilot | [ TOP: h17381                                                                    |
-|               |   INDEX: x17379                                                                  |
-|               |   RELS: < [ compound LBL: h17387 ARG0: e17384 ARG1: u17385 ARG2: u17386 ]        |
-|               |           [ existential_q LBL: h17391 ARG0: x17388 RSTR: h17389 BODY: h17390 ]   |
-|               |           [ _fighter_n_1 LBL: h17383 ARG0: x17382 [ x NUM: sg ] ]                |
-|               |           [ _pilot_n_of LBL: h17381 ARG0: x17379 ARG1: i17380 ] >                |
-|               |   HCONS: < h17389 qeq h17383 >                                                   |
-|               |   EQS: < x17388 eq x17382 h17387 eq h17392 u17386 eq x17388 h17387 eq h17381     |
-|               | u17385 eq x17379 >                                                               |
-|               |   SLOTS: < ARG1: i17380 > ]                                                      |
-+---------------+----------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+|                                         NODE SEMENTS                                        |
++---------------+-----------------------------------------------------------------------------+
+| Node          | Generated SEMENT                                                            |
++---------------+-----------------------------------------------------------------------------+
+| Nie_Haisheng  | [ TOP: h861                                                                 |
+|               |   INDEX: x860                                                               |
+|               |   RELS: < [ named LBL: h861 ARG0: x860 CARG: "Nie Haisheng" ] > ]           |
++---------------+-----------------------------------------------------------------------------+
+| Fighter_pilot | [ TOP: h864                                                                 |
+|               |   INDEX: x862                                                               |
+|               |   RELS: < [ compound LBL: h870 ARG0: e867 ARG1: u868 ARG2: u869 ]           |
+|               |           [ existential_q LBL: h874 ARG0: x871 RSTR: h872 BODY: h873 ]      |
+|               |           [ _fighter_n_1 LBL: h866 ARG0: x865 [ x NUM: sg ] ]               |
+|               |           [ _pilot_n_of LBL: h864 ARG0: x862 ARG1: i863 ] >                 |
+|               |   HCONS: < h872 qeq h866 >                                                  |
+|               |   EQS: < x871 eq x865 h870 eq h875 u869 eq x871 h870 eq h864 u868 eq x862 > |
+|               |   SLOTS: < ARG1: i863 > ]                                                   |
++---------------+-----------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------------------------------------+
 |                                                         EDGE SEMENTS                                                         |
 +------------+--------------+---------------+----------------------------------------------------------------------------------+
 | Edge       | Parent       | Child         | Generated SEMENT                                                                 |
 +------------+--------------+---------------+----------------------------------------------------------------------------------+
-| occupation | Nie_Haisheng | Fighter_pilot | [ TOP: h17396                                                                    |
-|            |              |               |   INDEX: e17393 [ e SF: prop TENSE: tensed ]                                     |
-|            |              |               |   RELS: < [ _be_v_id LBL: h17396 ARG0: e17393 ARG1: p17394 ARG2: i17395 ]        |
-|            |              |               |           [ def_udef_a_q LBL: h17405 ARG0: x17402 RSTR: h17403 BODY: h17404 ]    |
-|            |              |               |           [ compound LBL: h17387 ARG0: e17384 ARG1: u17385 ARG2: u17386 ]        |
-|            |              |               |           [ existential_q LBL: h17391 ARG0: x17388 RSTR: h17389 BODY: h17390 ]   |
-|            |              |               |           [ _fighter_n_1 LBL: h17383 ARG0: x17382 [ x NUM: sg ] ]                |
-|            |              |               |           [ _pilot_n_of LBL: h17381 ARG0: x17379 ARG1: i17380 ]                  |
-|            |              |               |           [ explicit_or_proper_q LBL: h17400 ARG0: x17397 RSTR: h17398 BODY:     |
-|            |              |               | h17399 ]                                                                         |
-|            |              |               |           [ named LBL: h17378 ARG0: x17377 CARG: "Nie Haisheng" ] >              |
-|            |              |               |   HCONS: < h17389 qeq h17383 h17403 qeq h17381 h17398 qeq h17378 >               |
-|            |              |               |   EQS: < x17388 eq x17382 h17387 eq h17392 u17386 eq x17388 h17387 eq h17381     |
-|            |              |               | u17385 eq x17379 x17402 eq x17379 h17396 eq h17406 i17395 eq x17402 x17397 eq    |
-|            |              |               | x17377 h17396 eq h17401 p17394 eq x17397 > ]                                     |
+| occupation | Nie_Haisheng | Fighter_pilot | [ TOP: h879                                                                      |
+|            |              |               |   INDEX: e876 [ e SF: prop TENSE: tensed ]                                       |
+|            |              |               |   RELS: < [ _be_v_id LBL: h879 ARG0: e876 ARG1: p877 ARG2: i878 ]                |
+|            |              |               |           [ def_udef_a_q LBL: h888 ARG0: x885 RSTR: h886 BODY: h887 ]            |
+|            |              |               |           [ compound LBL: h870 ARG0: e867 ARG1: u868 ARG2: u869 ]                |
+|            |              |               |           [ existential_q LBL: h874 ARG0: x871 RSTR: h872 BODY: h873 ]           |
+|            |              |               |           [ _fighter_n_1 LBL: h866 ARG0: x865 [ x NUM: sg ] ]                    |
+|            |              |               |           [ _pilot_n_of LBL: h864 ARG0: x862 ARG1: i863 ]                        |
+|            |              |               |           [ explicit_or_proper_q LBL: h883 ARG0: x880 RSTR: h881 BODY: h882 ]    |
+|            |              |               |           [ named LBL: h861 ARG0: x860 CARG: "Nie Haisheng" ] >                  |
+|            |              |               |   HCONS: < h872 qeq h866 h886 qeq h864 h881 qeq h861 >                           |
+|            |              |               |   EQS: < x871 eq x865 h870 eq h875 u869 eq x871 h870 eq h864 u868 eq x862 x885   |
+|            |              |               | eq x862 h879 eq h889 i878 eq x885 x880 eq x860 h879 eq h884 p877 eq x880 > ]     |
 +------------+--------------+---------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------+

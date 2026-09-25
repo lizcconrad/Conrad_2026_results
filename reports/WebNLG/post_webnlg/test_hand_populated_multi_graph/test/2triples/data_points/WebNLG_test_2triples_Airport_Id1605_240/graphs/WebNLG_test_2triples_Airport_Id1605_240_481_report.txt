@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_Airport_Id1605_240_481
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+----------------------------------------------------------------------------------------------------------+
-|                                               GOLD OUTPUTS                                               |
-+---------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                 | Generated? |
-+---------------------------------------------------------------------------------------------+------------+
-| Bedford Aerodrome has a runway surface made of concrete whose name is 08/26.                | False      |
-| The Bedford Aerodrome runway surface is made out of concrete and has a runway called 08/26. | False      |
-| The runway surface of the Bedford Aerodrome named "08/26" is made of concrete.              | False      |
-+---------------------------------------------------------------------------------------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+|                                                             GOLD OUTPUTS                                                             |
++-------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                             | Generated? |
++-------------------------------------------------------------------------------------------------------------------------+------------+
+| Bedford Aerodrome with concrete runway has EGBF as its International Civil Aviation Organization (ICAO) identifier.     | False      |
+| The ICAO location identifier for Bedford Aerodrome is EGBF and its runway is made of concrete.                          | False      |
+| The ICAO location identifier for the Bedford Aerodrome is EGBF and the aerodrome has a runway surface made of concrete. | False      |
++-------------------------------------------------------------------------------------------------------------------------+------------+
 
 +-----------------------------------------------------------------------------------------+
 |                                       NODE METRICS                                      |
@@ -56,111 +56,108 @@ GRAPH NAME: WebNLG_test_2triples_Airport_Id1605_240_481
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h15701                                                                    |
-|               |   INDEX: e15697 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _make_v_of LBL: h15701 ARG0: e15697 ARG1: i15698 ARG2: p15699 ARG3:  |
-|               | i15700 ]                                                                         |
-|               |           [ def_udef_a_q LBL: h15727 ARG0: x15724 RSTR: h15725 BODY: h15726 ]    |
-|               |           [ poss LBL: h15723 ARG0: e15720 ARG1: x15721 ARG2: i15722 ]            |
-|               |           [ explicit_or_proper_q LBL: h15718 ARG0: x15715 RSTR: h15716 BODY:     |
-|               | h15717 ]                                                                         |
-|               |           [ named LBL: h15694 ARG0: x15693 CARG: "Bedford Aerodrome" ]           |
-|               |           [ compound LBL: h15709 ARG0: e15706 ARG1: u15707 ARG2: u15708 ]        |
-|               |           [ existential_q LBL: h15713 ARG0: x15710 RSTR: h15711 BODY: h15712 ]   |
-|               |           [ _runway_n_1 LBL: h15705 ARG0: x15704 [ x NUM: sg ] ]                 |
-|               |           [ _surface_n_1 LBL: h15703 ARG0: x15702 ]                              |
-|               |           [ def_udef_a_q LBL: h15732 ARG0: x15729 RSTR: h15730 BODY: h15731 ]    |
-|               |           [ _concrete_n_1 LBL: h15696 ARG0: x15695 ] >                           |
-|               |   HCONS: < h15716 qeq h15694 h15711 qeq h15705 h15725 qeq h15703 h15730 qeq      |
-|               | h15696 >                                                                         |
-|               |   EQS: < x15715 eq x15693 h15723 eq h15719 i15722 eq x15715 x15710 eq x15704     |
-|               | h15709 eq h15714 u15708 eq x15710 h15709 eq h15703 u15707 eq x15702 h15723 eq    |
-|               | h15703 x15721 eq x15702 x15724 eq x15702 h15701 eq h15728 p15699 eq x15724       |
-|               | x15729 eq x15695 h15701 eq h15733 i15700 eq x15729 >                             |
-|               |   SLOTS: < ARG1: i15698 > ]                                                      |
+| Original      | [ TOP: h9126                                                                     |
+|               |   INDEX: e9122 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _make_v_of LBL: h9126 ARG0: e9122 ARG1: i9123 ARG2: p9124 ARG3:      |
+|               | i9125 ]                                                                          |
+|               |           [ def_udef_a_q LBL: h9152 ARG0: x9149 RSTR: h9150 BODY: h9151 ]        |
+|               |           [ poss LBL: h9148 ARG0: e9145 ARG1: x9146 ARG2: i9147 ]                |
+|               |           [ explicit_or_proper_q LBL: h9143 ARG0: x9140 RSTR: h9141 BODY: h9142  |
+|               | ]                                                                                |
+|               |           [ named LBL: h9119 ARG0: x9118 CARG: "Bedford Aerodrome" ]             |
+|               |           [ compound LBL: h9134 ARG0: e9131 ARG1: u9132 ARG2: u9133 ]            |
+|               |           [ existential_q LBL: h9138 ARG0: x9135 RSTR: h9136 BODY: h9137 ]       |
+|               |           [ _runway_n_1 LBL: h9130 ARG0: x9129 [ x NUM: sg ] ]                   |
+|               |           [ _surface_n_1 LBL: h9128 ARG0: x9127 ]                                |
+|               |           [ def_udef_a_q LBL: h9157 ARG0: x9154 RSTR: h9155 BODY: h9156 ]        |
+|               |           [ _concrete_n_1 LBL: h9121 ARG0: x9120 ] >                             |
+|               |   HCONS: < h9141 qeq h9119 h9136 qeq h9130 h9150 qeq h9128 h9155 qeq h9121 >     |
+|               |   EQS: < x9140 eq x9118 h9148 eq h9144 i9147 eq x9140 x9135 eq x9129 h9134 eq    |
+|               | h9139 u9133 eq x9135 h9134 eq h9128 u9132 eq x9127 h9148 eq h9128 x9146 eq x9127 |
+|               | x9149 eq x9127 h9126 eq h9153 p9124 eq x9149 x9154 eq x9120 h9126 eq h9158 i9125 |
+|               | eq x9154 >                                                                       |
+|               |   SLOTS: < ARG1: i9123 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h15701                                                                    |
-|               |   INDEX: e15697 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _make_v_of LBL: h15701 ARG0: e15697 ARG1: i15698 ARG2: x15702 ARG3:  |
-|               | x15695 ]                                                                         |
-|               |           [ def_udef_a_q LBL: h15727 ARG0: x15702 RSTR: h15725 BODY: h15726 ]    |
-|               |           [ poss LBL: h15703 ARG0: e15720 ARG1: x15702 ARG2: x15693 ]            |
-|               |           [ explicit_or_proper_q LBL: h15718 ARG0: x15693 RSTR: h15716 BODY:     |
-|               | h15717 ]                                                                         |
-|               |           [ named LBL: h15694 ARG0: x15693 CARG: "Bedford Aerodrome" ]           |
-|               |           [ compound LBL: h15703 ARG0: e15706 ARG1: x15702 ARG2: x15704 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h15713 ARG0: x15704 RSTR: h15711 BODY: h15712 ]   |
-|               |           [ _runway_n_1 LBL: h15705 ARG0: x15704 ]                               |
-|               |           [ _surface_n_1 LBL: h15703 ARG0: x15702 ]                              |
-|               |           [ def_udef_a_q LBL: h15732 ARG0: x15695 RSTR: h15730 BODY: h15731 ]    |
-|               |           [ _concrete_n_1 LBL: h15696 ARG0: x15695 ] >                           |
-|               |   HCONS: < h15716 qeq h15694 h15711 qeq h15705 h15725 qeq h15703 h15730 qeq      |
-|               | h15696 >                                                                         |
-|               |   SLOTS: < ARG1: i15698 > ]                                                      |
+| EQs Collapsed | [ TOP: h9126                                                                     |
+|               |   INDEX: e9122 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _make_v_of LBL: h9126 ARG0: e9122 ARG1: i9123 ARG2: x9127 ARG3:      |
+|               | x9120 ]                                                                          |
+|               |           [ def_udef_a_q LBL: h9152 ARG0: x9127 RSTR: h9150 BODY: h9151 ]        |
+|               |           [ poss LBL: h9128 ARG0: e9145 ARG1: x9127 ARG2: x9118 ]                |
+|               |           [ explicit_or_proper_q LBL: h9143 ARG0: x9118 RSTR: h9141 BODY: h9142  |
+|               | ]                                                                                |
+|               |           [ named LBL: h9119 ARG0: x9118 CARG: "Bedford Aerodrome" ]             |
+|               |           [ compound LBL: h9128 ARG0: e9131 ARG1: x9127 ARG2: x9129 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h9138 ARG0: x9129 RSTR: h9136 BODY: h9137 ]       |
+|               |           [ _runway_n_1 LBL: h9130 ARG0: x9129 ]                                 |
+|               |           [ _surface_n_1 LBL: h9128 ARG0: x9127 ]                                |
+|               |           [ def_udef_a_q LBL: h9157 ARG0: x9120 RSTR: h9155 BODY: h9156 ]        |
+|               |           [ _concrete_n_1 LBL: h9121 ARG0: x9120 ] >                             |
+|               |   HCONS: < h9141 qeq h9119 h9136 qeq h9130 h9150 qeq h9128 h9155 qeq h9121 >     |
+|               |   SLOTS: < ARG1: i9123 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h15734                                                                    |
-|               |   INDEX: e15697 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _make_v_of LBL: h15701 ARG0: e15697 ARG1: i15698 ARG2: x15702 ARG3:  |
-|               | x15695 ]                                                                         |
-|               |           [ def_udef_a_q LBL: h15727 ARG0: x15702 RSTR: h15725 BODY: h15726 ]    |
-|               |           [ poss LBL: h15703 ARG0: e15720 ARG1: x15702 ARG2: x15693 ]            |
-|               |           [ explicit_or_proper_q LBL: h15718 ARG0: x15693 RSTR: h15716 BODY:     |
-|               | h15717 ]                                                                         |
-|               |           [ named LBL: h15694 ARG0: x15693 CARG: "Bedford Aerodrome" ]           |
-|               |           [ compound LBL: h15703 ARG0: e15706 ARG1: x15702 ARG2: x15704 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h15713 ARG0: x15704 RSTR: h15711 BODY: h15712 ]   |
-|               |           [ _runway_n_1 LBL: h15705 ARG0: x15704 ]                               |
-|               |           [ _surface_n_1 LBL: h15703 ARG0: x15702 ]                              |
-|               |           [ def_udef_a_q LBL: h15732 ARG0: x15695 RSTR: h15730 BODY: h15731 ]    |
-|               |           [ _concrete_n_1 LBL: h15696 ARG0: x15695 ] >                           |
-|               |   HCONS: < h15716 qeq h15694 h15711 qeq h15705 h15725 qeq h15703 h15730 qeq      |
-|               | h15696 h15734 qeq h15701 >                                                       |
-|               |   SLOTS: < ARG1: i15698 > ]                                                      |
+| Prepped       | [ TOP: h9159                                                                     |
+|               |   INDEX: e9122 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _make_v_of LBL: h9126 ARG0: e9122 ARG1: i9123 ARG2: x9127 ARG3:      |
+|               | x9120 ]                                                                          |
+|               |           [ def_udef_a_q LBL: h9152 ARG0: x9127 RSTR: h9150 BODY: h9151 ]        |
+|               |           [ poss LBL: h9128 ARG0: e9145 ARG1: x9127 ARG2: x9118 ]                |
+|               |           [ explicit_or_proper_q LBL: h9143 ARG0: x9118 RSTR: h9141 BODY: h9142  |
+|               | ]                                                                                |
+|               |           [ named LBL: h9119 ARG0: x9118 CARG: "Bedford Aerodrome" ]             |
+|               |           [ compound LBL: h9128 ARG0: e9131 ARG1: x9127 ARG2: x9129 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h9138 ARG0: x9129 RSTR: h9136 BODY: h9137 ]       |
+|               |           [ _runway_n_1 LBL: h9130 ARG0: x9129 ]                                 |
+|               |           [ _surface_n_1 LBL: h9128 ARG0: x9127 ]                                |
+|               |           [ def_udef_a_q LBL: h9157 ARG0: x9120 RSTR: h9155 BODY: h9156 ]        |
+|               |           [ _concrete_n_1 LBL: h9121 ARG0: x9120 ] >                             |
+|               |   HCONS: < h9141 qeq h9119 h9136 qeq h9130 h9150 qeq h9128 h9155 qeq h9121 h9159 |
+|               | qeq h9126 >                                                                      |
+|               |   SLOTS: < ARG1: i9123 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
 
-+------------------------------------------------------------------------------------------------+
-|                                          NODE SEMENTS                                          |
-+-------------------+----------------------------------------------------------------------------+
-| Node              | Generated SEMENT                                                           |
-+-------------------+----------------------------------------------------------------------------+
-| Bedford_Aerodrome | [ TOP: h15694                                                              |
-|                   |   INDEX: x15693                                                            |
-|                   |   RELS: < [ named LBL: h15694 ARG0: x15693 CARG: "Bedford Aerodrome" ] > ] |
-+-------------------+----------------------------------------------------------------------------+
-| Concrete          | [ TOP: h15696                                                              |
-|                   |   INDEX: x15695                                                            |
-|                   |   RELS: < [ _concrete_n_1 LBL: h15696 ARG0: x15695 ] > ]                   |
-+-------------------+----------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------+
+|                                         NODE SEMENTS                                         |
++-------------------+--------------------------------------------------------------------------+
+| Node              | Generated SEMENT                                                         |
++-------------------+--------------------------------------------------------------------------+
+| Bedford_Aerodrome | [ TOP: h9119                                                             |
+|                   |   INDEX: x9118                                                           |
+|                   |   RELS: < [ named LBL: h9119 ARG0: x9118 CARG: "Bedford Aerodrome" ] > ] |
++-------------------+--------------------------------------------------------------------------+
+| Concrete          | [ TOP: h9121                                                             |
+|                   |   INDEX: x9120                                                           |
+|                   |   RELS: < [ _concrete_n_1 LBL: h9121 ARG0: x9120 ] > ]                   |
++-------------------+--------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------------------------------------------+
 |                                                             EDGE SEMENTS                                                            |
 +-------------------+-------------------+----------+----------------------------------------------------------------------------------+
 | Edge              | Parent            | Child    | Generated SEMENT                                                                 |
 +-------------------+-------------------+----------+----------------------------------------------------------------------------------+
-| runwaySurfaceType | Bedford_Aerodrome | Concrete | [ TOP: h15701                                                                    |
-|                   |                   |          |   INDEX: e15697 [ e TENSE: tensed ]                                              |
-|                   |                   |          |   RELS: < [ _make_v_of LBL: h15701 ARG0: e15697 ARG1: i15698 ARG2: p15699 ARG3:  |
-|                   |                   |          | i15700 ]                                                                         |
-|                   |                   |          |           [ def_udef_a_q LBL: h15727 ARG0: x15724 RSTR: h15725 BODY: h15726 ]    |
-|                   |                   |          |           [ poss LBL: h15723 ARG0: e15720 ARG1: x15721 ARG2: i15722 ]            |
-|                   |                   |          |           [ explicit_or_proper_q LBL: h15718 ARG0: x15715 RSTR: h15716 BODY:     |
-|                   |                   |          | h15717 ]                                                                         |
-|                   |                   |          |           [ named LBL: h15694 ARG0: x15693 CARG: "Bedford Aerodrome" ]           |
-|                   |                   |          |           [ compound LBL: h15709 ARG0: e15706 ARG1: u15707 ARG2: u15708 ]        |
-|                   |                   |          |           [ existential_q LBL: h15713 ARG0: x15710 RSTR: h15711 BODY: h15712 ]   |
-|                   |                   |          |           [ _runway_n_1 LBL: h15705 ARG0: x15704 [ x NUM: sg ] ]                 |
-|                   |                   |          |           [ _surface_n_1 LBL: h15703 ARG0: x15702 ]                              |
-|                   |                   |          |           [ def_udef_a_q LBL: h15732 ARG0: x15729 RSTR: h15730 BODY: h15731 ]    |
-|                   |                   |          |           [ _concrete_n_1 LBL: h15696 ARG0: x15695 ] >                           |
-|                   |                   |          |   HCONS: < h15716 qeq h15694 h15711 qeq h15705 h15725 qeq h15703 h15730 qeq      |
-|                   |                   |          | h15696 >                                                                         |
-|                   |                   |          |   EQS: < x15715 eq x15693 h15723 eq h15719 i15722 eq x15715 x15710 eq x15704     |
-|                   |                   |          | h15709 eq h15714 u15708 eq x15710 h15709 eq h15703 u15707 eq x15702 h15723 eq    |
-|                   |                   |          | h15703 x15721 eq x15702 x15724 eq x15702 h15701 eq h15728 p15699 eq x15724       |
-|                   |                   |          | x15729 eq x15695 h15701 eq h15733 i15700 eq x15729 >                             |
-|                   |                   |          |   SLOTS: < ARG1: i15698 > ]                                                      |
+| runwaySurfaceType | Bedford_Aerodrome | Concrete | [ TOP: h9126                                                                     |
+|                   |                   |          |   INDEX: e9122 [ e TENSE: tensed ]                                               |
+|                   |                   |          |   RELS: < [ _make_v_of LBL: h9126 ARG0: e9122 ARG1: i9123 ARG2: p9124 ARG3:      |
+|                   |                   |          | i9125 ]                                                                          |
+|                   |                   |          |           [ def_udef_a_q LBL: h9152 ARG0: x9149 RSTR: h9150 BODY: h9151 ]        |
+|                   |                   |          |           [ poss LBL: h9148 ARG0: e9145 ARG1: x9146 ARG2: i9147 ]                |
+|                   |                   |          |           [ explicit_or_proper_q LBL: h9143 ARG0: x9140 RSTR: h9141 BODY: h9142  |
+|                   |                   |          | ]                                                                                |
+|                   |                   |          |           [ named LBL: h9119 ARG0: x9118 CARG: "Bedford Aerodrome" ]             |
+|                   |                   |          |           [ compound LBL: h9134 ARG0: e9131 ARG1: u9132 ARG2: u9133 ]            |
+|                   |                   |          |           [ existential_q LBL: h9138 ARG0: x9135 RSTR: h9136 BODY: h9137 ]       |
+|                   |                   |          |           [ _runway_n_1 LBL: h9130 ARG0: x9129 [ x NUM: sg ] ]                   |
+|                   |                   |          |           [ _surface_n_1 LBL: h9128 ARG0: x9127 ]                                |
+|                   |                   |          |           [ def_udef_a_q LBL: h9157 ARG0: x9154 RSTR: h9155 BODY: h9156 ]        |
+|                   |                   |          |           [ _concrete_n_1 LBL: h9121 ARG0: x9120 ] >                             |
+|                   |                   |          |   HCONS: < h9141 qeq h9119 h9136 qeq h9130 h9150 qeq h9128 h9155 qeq h9121 >     |
+|                   |                   |          |   EQS: < x9140 eq x9118 h9148 eq h9144 i9147 eq x9140 x9135 eq x9129 h9134 eq    |
+|                   |                   |          | h9139 u9133 eq x9135 h9134 eq h9128 u9132 eq x9127 h9148 eq h9128 x9146 eq x9127 |
+|                   |                   |          | x9149 eq x9127 h9126 eq h9153 p9124 eq x9149 x9154 eq x9120 h9126 eq h9158 i9125 |
+|                   |                   |          | eq x9154 >                                                                       |
+|                   |                   |          |   SLOTS: < ARG1: i9123 > ]                                                       |
 +-------------------+-------------------+----------+----------------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------+

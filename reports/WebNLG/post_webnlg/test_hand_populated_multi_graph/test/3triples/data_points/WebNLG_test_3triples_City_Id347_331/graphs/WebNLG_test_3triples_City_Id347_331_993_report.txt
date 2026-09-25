@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_City_Id347_331_993
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                        GOLD OUTPUTS                                                                        |
-+-----------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                   | Generated? |
-+-----------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Ciudad Ayala has a City manager as one of its leaders for this city with a metropolitan area population of 1,777,539 people.                  | False      |
-| Ciudad Ayala is a city which is led by a City Manager. The population of the metropolitan area of Ciudad Ayala is 1,777,539.                  | False      |
-| The population of the metropolitan area of the city of Ciudad Ayala is 1,777,539. One of the leaders of this city is called the City Manager. | False      |
-+-----------------------------------------------------------------------------------------------------------------------------------------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                                 GOLD OUTPUTS                                                                                                 |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                                                                     | Generated? |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Ciudad Ayala population in the metropolitan area is 1777539 and the leader title is City Manager. The government type in the city of Ciudad Ayala is council-manager.                           | False      |
+| The government type of Ciudad Ayala is the council-manager government, one of the leaders is the city manager and the population of the metropolitan area is 1,777,539.                         | False      |
+| The population of the metropolitan are of Ciudad Ayala is 1,777,539. It uses a type of government called council-manager government and one of the leaders of Ciudad Ayala is the City manager. | False      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +------------------------------------------------------------------------------------+
 |                                    NODE METRICS                                    |
@@ -56,102 +56,99 @@ GRAPH NAME: WebNLG_test_3triples_City_Id347_331_993
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h33096                                                                    |
-|               |   INDEX: e33093 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h33096 ARG0: e33093 ARG1: p33094 ARG2: i33095 ]        |
-|               |           [ number_q LBL: h33105 ARG0: x33102 RSTR: h33103 BODY: h33104 ]        |
-|               |           [ card LBL: h33070 ARG0: i33068 ARG1: u33069 CARG: "1777539" ]         |
-|               |           [ def_udef_a_q LBL: h33100 ARG0: x33097 RSTR: h33098 BODY: h33099 ]    |
-|               |           [ _of_p LBL: h33074 ARG0: e33071 ARG1: u33072 ARG2: i33073 ]           |
-|               |           [ def_udef_a_q LBL: h33091 ARG0: x33088 RSTR: h33089 BODY: h33090 ]    |
-|               |           [ _metropolitan_a_1 LBL: h33079 ARG0: e33077 ARG1: u33078 ]            |
-|               |           [ _area_n_of LBL: h33082 ARG0: x33080 ARG1: i33081 ]                   |
-|               |           [ explicit_or_proper_q LBL: h33086 ARG0: x33083 RSTR: h33084 BODY:     |
-|               | h33085 ]                                                                         |
-|               |           [ named LBL: h33067 ARG0: x33066 CARG: "Ciudad Ayala" ]                |
-|               |           [ _population_n_1 LBL: h33076 ARG0: x33075 ] >                         |
-|               |   HCONS: < h33103 qeq h33070 h33084 qeq h33067 h33089 qeq h33082 h33098 qeq      |
-|               | h33076 >                                                                         |
-|               |   EQS: < x33102 eq i33068 h33096 eq h33106 i33095 eq x33102 h33079 eq h33082     |
-|               | u33078 eq x33080 x33083 eq x33066 h33082 eq h33087 i33081 eq x33083 x33088 eq    |
-|               | x33080 h33074 eq h33092 i33073 eq x33088 h33074 eq h33076 u33072 eq x33075       |
-|               | x33097 eq x33075 h33096 eq h33101 p33094 eq x33097 > ]                           |
+| Original      | [ TOP: h2244                                                                     |
+|               |   INDEX: e2241 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h2244 ARG0: e2241 ARG1: p2242 ARG2: i2243 ]            |
+|               |           [ number_q LBL: h2253 ARG0: x2250 RSTR: h2251 BODY: h2252 ]            |
+|               |           [ card LBL: h2218 ARG0: i2216 ARG1: u2217 CARG: "1777539" ]            |
+|               |           [ def_udef_a_q LBL: h2248 ARG0: x2245 RSTR: h2246 BODY: h2247 ]        |
+|               |           [ _of_p LBL: h2222 ARG0: e2219 ARG1: u2220 ARG2: i2221 ]               |
+|               |           [ def_udef_a_q LBL: h2239 ARG0: x2236 RSTR: h2237 BODY: h2238 ]        |
+|               |           [ _metropolitan_a_1 LBL: h2227 ARG0: e2225 ARG1: u2226 ]               |
+|               |           [ _area_n_of LBL: h2230 ARG0: x2228 ARG1: i2229 ]                      |
+|               |           [ explicit_or_proper_q LBL: h2234 ARG0: x2231 RSTR: h2232 BODY: h2233  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2215 ARG0: x2214 CARG: "Ciudad Ayala" ]                  |
+|               |           [ _population_n_1 LBL: h2224 ARG0: x2223 ] >                           |
+|               |   HCONS: < h2251 qeq h2218 h2232 qeq h2215 h2237 qeq h2230 h2246 qeq h2224 >     |
+|               |   EQS: < x2250 eq i2216 h2244 eq h2254 i2243 eq x2250 h2227 eq h2230 u2226 eq    |
+|               | x2228 x2231 eq x2214 h2230 eq h2235 i2229 eq x2231 x2236 eq x2228 h2222 eq h2240 |
+|               | i2221 eq x2236 h2222 eq h2224 u2220 eq x2223 x2245 eq x2223 h2244 eq h2249 p2242 |
+|               | eq x2245 > ]                                                                     |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h33096                                                                    |
-|               |   INDEX: e33093 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h33096 ARG0: e33093 ARG1: x33075 ARG2: x33102 ]        |
-|               |           [ number_q LBL: h33105 ARG0: x33102 RSTR: h33103 BODY: h33104 ]        |
-|               |           [ card LBL: h33070 ARG0: x33102 ARG1: u33069 CARG: "1777539" ]         |
-|               |           [ def_udef_a_q LBL: h33100 ARG0: x33075 RSTR: h33098 BODY: h33099 ]    |
-|               |           [ _of_p LBL: h33074 ARG0: e33071 ARG1: x33075 ARG2: x33080 ]           |
-|               |           [ def_udef_a_q LBL: h33091 ARG0: x33080 RSTR: h33089 BODY: h33090 ]    |
-|               |           [ _metropolitan_a_1 LBL: h33079 ARG0: e33077 ARG1: x33080 ]            |
-|               |           [ _area_n_of LBL: h33079 ARG0: x33080 ARG1: x33066 ]                   |
-|               |           [ explicit_or_proper_q LBL: h33086 ARG0: x33066 RSTR: h33084 BODY:     |
-|               | h33085 ]                                                                         |
-|               |           [ named LBL: h33067 ARG0: x33066 CARG: "Ciudad Ayala" ]                |
-|               |           [ _population_n_1 LBL: h33074 ARG0: x33075 ] >                         |
-|               |   HCONS: < h33103 qeq h33070 h33084 qeq h33067 h33089 qeq h33079 h33098 qeq      |
-|               | h33074 > ]                                                                       |
+| EQs Collapsed | [ TOP: h2244                                                                     |
+|               |   INDEX: e2241 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h2244 ARG0: e2241 ARG1: x2223 ARG2: x2250 ]            |
+|               |           [ number_q LBL: h2253 ARG0: x2250 RSTR: h2251 BODY: h2252 ]            |
+|               |           [ card LBL: h2218 ARG0: x2250 ARG1: u2217 CARG: "1777539" ]            |
+|               |           [ def_udef_a_q LBL: h2248 ARG0: x2223 RSTR: h2246 BODY: h2247 ]        |
+|               |           [ _of_p LBL: h2222 ARG0: e2219 ARG1: x2223 ARG2: x2228 ]               |
+|               |           [ def_udef_a_q LBL: h2239 ARG0: x2228 RSTR: h2237 BODY: h2238 ]        |
+|               |           [ _metropolitan_a_1 LBL: h2227 ARG0: e2225 ARG1: x2228 ]               |
+|               |           [ _area_n_of LBL: h2227 ARG0: x2228 ARG1: x2214 ]                      |
+|               |           [ explicit_or_proper_q LBL: h2234 ARG0: x2214 RSTR: h2232 BODY: h2233  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2215 ARG0: x2214 CARG: "Ciudad Ayala" ]                  |
+|               |           [ _population_n_1 LBL: h2222 ARG0: x2223 ] >                           |
+|               |   HCONS: < h2251 qeq h2218 h2232 qeq h2215 h2237 qeq h2227 h2246 qeq h2222 > ]   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h33107                                                                    |
-|               |   INDEX: e33093 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h33096 ARG0: e33093 ARG1: x33075 ARG2: x33102 ]        |
-|               |           [ number_q LBL: h33105 ARG0: x33102 RSTR: h33103 BODY: h33104 ]        |
-|               |           [ card LBL: h33070 ARG0: x33102 ARG1: u33069 CARG: "1777539" ]         |
-|               |           [ def_udef_a_q LBL: h33100 ARG0: x33075 RSTR: h33098 BODY: h33099 ]    |
-|               |           [ _of_p LBL: h33074 ARG0: e33071 ARG1: x33075 ARG2: x33080 ]           |
-|               |           [ def_udef_a_q LBL: h33091 ARG0: x33080 RSTR: h33089 BODY: h33090 ]    |
-|               |           [ _metropolitan_a_1 LBL: h33079 ARG0: e33077 ARG1: x33080 ]            |
-|               |           [ _area_n_of LBL: h33079 ARG0: x33080 ARG1: x33066 ]                   |
-|               |           [ explicit_or_proper_q LBL: h33086 ARG0: x33066 RSTR: h33084 BODY:     |
-|               | h33085 ]                                                                         |
-|               |           [ named LBL: h33067 ARG0: x33066 CARG: "Ciudad Ayala" ]                |
-|               |           [ _population_n_1 LBL: h33074 ARG0: x33075 ] >                         |
-|               |   HCONS: < h33103 qeq h33070 h33084 qeq h33067 h33089 qeq h33079 h33098 qeq      |
-|               | h33074 h33107 qeq h33096 > ]                                                     |
+| Prepped       | [ TOP: h2255                                                                     |
+|               |   INDEX: e2241 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h2244 ARG0: e2241 ARG1: x2223 ARG2: x2250 ]            |
+|               |           [ number_q LBL: h2253 ARG0: x2250 RSTR: h2251 BODY: h2252 ]            |
+|               |           [ card LBL: h2218 ARG0: x2250 ARG1: u2217 CARG: "1777539" ]            |
+|               |           [ def_udef_a_q LBL: h2248 ARG0: x2223 RSTR: h2246 BODY: h2247 ]        |
+|               |           [ _of_p LBL: h2222 ARG0: e2219 ARG1: x2223 ARG2: x2228 ]               |
+|               |           [ def_udef_a_q LBL: h2239 ARG0: x2228 RSTR: h2237 BODY: h2238 ]        |
+|               |           [ _metropolitan_a_1 LBL: h2227 ARG0: e2225 ARG1: x2228 ]               |
+|               |           [ _area_n_of LBL: h2227 ARG0: x2228 ARG1: x2214 ]                      |
+|               |           [ explicit_or_proper_q LBL: h2234 ARG0: x2214 RSTR: h2232 BODY: h2233  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2215 ARG0: x2214 CARG: "Ciudad Ayala" ]                  |
+|               |           [ _population_n_1 LBL: h2222 ARG0: x2223 ] >                           |
+|               |   HCONS: < h2251 qeq h2218 h2232 qeq h2215 h2237 qeq h2227 h2246 qeq h2222 h2255 |
+|               | qeq h2244 > ]                                                                    |
 +---------------+----------------------------------------------------------------------------------+
 
-+-------------------------------------------------------------------------------------------+
-|                                        NODE SEMENTS                                       |
-+--------------+----------------------------------------------------------------------------+
-| Node         | Generated SEMENT                                                           |
-+--------------+----------------------------------------------------------------------------+
-| Ciudad_Ayala | [ TOP: h33067                                                              |
-|              |   INDEX: x33066                                                            |
-|              |   RELS: < [ named LBL: h33067 ARG0: x33066 CARG: "Ciudad Ayala" ] > ]      |
-+--------------+----------------------------------------------------------------------------+
-| 1777539      | [ TOP: h33070                                                              |
-|              |   INDEX: i33068                                                            |
-|              |   RELS: < [ card LBL: h33070 ARG0: i33068 ARG1: u33069 CARG: "1777539" ] > |
-|              |   SLOTS: < ARG1: u33069 > ]                                                |
-+--------------+----------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------+
+|                                      NODE SEMENTS                                      |
++--------------+-------------------------------------------------------------------------+
+| Node         | Generated SEMENT                                                        |
++--------------+-------------------------------------------------------------------------+
+| Ciudad_Ayala | [ TOP: h2215                                                            |
+|              |   INDEX: x2214                                                          |
+|              |   RELS: < [ named LBL: h2215 ARG0: x2214 CARG: "Ciudad Ayala" ] > ]     |
++--------------+-------------------------------------------------------------------------+
+| 1777539      | [ TOP: h2218                                                            |
+|              |   INDEX: i2216                                                          |
+|              |   RELS: < [ card LBL: h2218 ARG0: i2216 ARG1: u2217 CARG: "1777539" ] > |
+|              |   SLOTS: < ARG1: u2217 > ]                                              |
++--------------+-------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------------+
 |                                                         EDGE SEMENTS                                                        |
 +-----------------+--------------+---------+----------------------------------------------------------------------------------+
 | Edge            | Parent       | Child   | Generated SEMENT                                                                 |
 +-----------------+--------------+---------+----------------------------------------------------------------------------------+
-| populationMetro | Ciudad_Ayala | 1777539 | [ TOP: h33096                                                                    |
-|                 |              |         |   INDEX: e33093 [ e SF: prop TENSE: tensed ]                                     |
-|                 |              |         |   RELS: < [ _be_v_id LBL: h33096 ARG0: e33093 ARG1: p33094 ARG2: i33095 ]        |
-|                 |              |         |           [ number_q LBL: h33105 ARG0: x33102 RSTR: h33103 BODY: h33104 ]        |
-|                 |              |         |           [ card LBL: h33070 ARG0: i33068 ARG1: u33069 CARG: "1777539" ]         |
-|                 |              |         |           [ def_udef_a_q LBL: h33100 ARG0: x33097 RSTR: h33098 BODY: h33099 ]    |
-|                 |              |         |           [ _of_p LBL: h33074 ARG0: e33071 ARG1: u33072 ARG2: i33073 ]           |
-|                 |              |         |           [ def_udef_a_q LBL: h33091 ARG0: x33088 RSTR: h33089 BODY: h33090 ]    |
-|                 |              |         |           [ _metropolitan_a_1 LBL: h33079 ARG0: e33077 ARG1: u33078 ]            |
-|                 |              |         |           [ _area_n_of LBL: h33082 ARG0: x33080 ARG1: i33081 ]                   |
-|                 |              |         |           [ explicit_or_proper_q LBL: h33086 ARG0: x33083 RSTR: h33084 BODY:     |
-|                 |              |         | h33085 ]                                                                         |
-|                 |              |         |           [ named LBL: h33067 ARG0: x33066 CARG: "Ciudad Ayala" ]                |
-|                 |              |         |           [ _population_n_1 LBL: h33076 ARG0: x33075 ] >                         |
-|                 |              |         |   HCONS: < h33103 qeq h33070 h33084 qeq h33067 h33089 qeq h33082 h33098 qeq      |
-|                 |              |         | h33076 >                                                                         |
-|                 |              |         |   EQS: < x33102 eq i33068 h33096 eq h33106 i33095 eq x33102 h33079 eq h33082     |
-|                 |              |         | u33078 eq x33080 x33083 eq x33066 h33082 eq h33087 i33081 eq x33083 x33088 eq    |
-|                 |              |         | x33080 h33074 eq h33092 i33073 eq x33088 h33074 eq h33076 u33072 eq x33075       |
-|                 |              |         | x33097 eq x33075 h33096 eq h33101 p33094 eq x33097 > ]                           |
+| populationMetro | Ciudad_Ayala | 1777539 | [ TOP: h2244                                                                     |
+|                 |              |         |   INDEX: e2241 [ e SF: prop TENSE: tensed ]                                      |
+|                 |              |         |   RELS: < [ _be_v_id LBL: h2244 ARG0: e2241 ARG1: p2242 ARG2: i2243 ]            |
+|                 |              |         |           [ number_q LBL: h2253 ARG0: x2250 RSTR: h2251 BODY: h2252 ]            |
+|                 |              |         |           [ card LBL: h2218 ARG0: i2216 ARG1: u2217 CARG: "1777539" ]            |
+|                 |              |         |           [ def_udef_a_q LBL: h2248 ARG0: x2245 RSTR: h2246 BODY: h2247 ]        |
+|                 |              |         |           [ _of_p LBL: h2222 ARG0: e2219 ARG1: u2220 ARG2: i2221 ]               |
+|                 |              |         |           [ def_udef_a_q LBL: h2239 ARG0: x2236 RSTR: h2237 BODY: h2238 ]        |
+|                 |              |         |           [ _metropolitan_a_1 LBL: h2227 ARG0: e2225 ARG1: u2226 ]               |
+|                 |              |         |           [ _area_n_of LBL: h2230 ARG0: x2228 ARG1: i2229 ]                      |
+|                 |              |         |           [ explicit_or_proper_q LBL: h2234 ARG0: x2231 RSTR: h2232 BODY: h2233  |
+|                 |              |         | ]                                                                                |
+|                 |              |         |           [ named LBL: h2215 ARG0: x2214 CARG: "Ciudad Ayala" ]                  |
+|                 |              |         |           [ _population_n_1 LBL: h2224 ARG0: x2223 ] >                           |
+|                 |              |         |   HCONS: < h2251 qeq h2218 h2232 qeq h2215 h2237 qeq h2230 h2246 qeq h2224 >     |
+|                 |              |         |   EQS: < x2250 eq i2216 h2244 eq h2254 i2243 eq x2250 h2227 eq h2230 u2226 eq    |
+|                 |              |         | x2228 x2231 eq x2214 h2230 eq h2235 i2229 eq x2231 x2236 eq x2228 h2222 eq h2240 |
+|                 |              |         | i2221 eq x2236 h2222 eq h2224 u2220 eq x2223 x2245 eq x2223 h2244 eq h2249 p2242 |
+|                 |              |         | eq x2245 > ]                                                                     |
 +-----------------+--------------+---------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------+

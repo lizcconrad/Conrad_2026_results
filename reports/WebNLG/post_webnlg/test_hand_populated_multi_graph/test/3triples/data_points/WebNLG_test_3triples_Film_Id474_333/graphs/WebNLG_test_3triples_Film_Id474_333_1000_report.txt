@@ -29,9 +29,9 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id474_333_1000
 +--------------------------------------------------------------------------------------------------------------------+------------+
 | Gold Output                                                                                                        | Generated? |
 +--------------------------------------------------------------------------------------------------------------------+------------+
-| Super Capers, a 98 minute film distributed by Roadside Attractions, stars Tom Sizemore.                            | False      |
-| Tom Sizemore starred in the 98.0 minutes long movie Super Capers which was distributed by Roadside Attractions.    | False      |
-| Tom Sizemore stars in Super Capers which was distributed by Roadside Attractions and has a duration of 98 minutes. | False      |
+| Super Capers, a film written by Ray Griggs, is 98 minutes long. Danielle Harris was one of the stars of the movie. | False      |
+| The 98.0 minute film,Super Capers starring Danielle Harris was written by the director Ray Griggs.                 | False      |
+| The film Super Capers is written by Ray Griggs and stars Danielle Harris. The film's running time is 98 minutes.   | False      |
 +--------------------------------------------------------------------------------------------------------------------+------------+
 
 +------------------------------------------------------------------------------------+
@@ -56,89 +56,88 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id474_333_1000
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h33277                                                                    |
-|               |   INDEX: e33274 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h33277 ARG0: e33274 ARG1: i33275 ARG2: i33276 ]       |
-|               |           [ def_udef_a_q LBL: h33300 ARG0: x33297 RSTR: h33298 BODY: h33299 ]    |
-|               |           [ _of_p LBL: h33281 ARG0: e33278 ARG1: u33279 ARG2: i33280 ]           |
-|               |           [ number_q LBL: h33290 ARG0: x33287 RSTR: h33288 BODY: h33289 ]        |
-|               |           [ card LBL: h33273 ARG0: i33271 ARG1: u33272 CARG: "98.0" ]            |
-|               |           [ _total_a_1 LBL: h33284 ARG0: e33282 ARG1: u33283 ]                   |
-|               |           [ _runtime_n_1 LBL: h33286 ARG0: x33285 ]                              |
-|               |           [ explicit_or_proper_q LBL: h33295 ARG0: x33292 RSTR: h33293 BODY:     |
-|               | h33294 ]                                                                         |
-|               |           [ named LBL: h33270 ARG0: x33269 CARG: "Super Capers" ] >              |
-|               |   HCONS: < h33288 qeq h33273 h33298 qeq h33286 h33293 qeq h33270 >               |
-|               |   EQS: < x33287 eq i33271 h33281 eq h33291 i33280 eq x33287 h33284 eq h33286     |
-|               | u33283 eq x33285 h33281 eq h33286 u33279 eq x33285 x33297 eq x33285 h33277 eq    |
-|               | h33301 i33276 eq x33297 x33292 eq x33269 h33277 eq h33296 i33275 eq x33292 > ]   |
+| Original      | [ TOP: h7165                                                                     |
+|               |   INDEX: e7162 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h7165 ARG0: e7162 ARG1: i7163 ARG2: i7164 ]           |
+|               |           [ def_udef_a_q LBL: h7188 ARG0: x7185 RSTR: h7186 BODY: h7187 ]        |
+|               |           [ _of_p LBL: h7169 ARG0: e7166 ARG1: u7167 ARG2: i7168 ]               |
+|               |           [ number_q LBL: h7178 ARG0: x7175 RSTR: h7176 BODY: h7177 ]            |
+|               |           [ card LBL: h7161 ARG0: i7159 ARG1: u7160 CARG: "98.0" ]               |
+|               |           [ _total_a_1 LBL: h7172 ARG0: e7170 ARG1: u7171 ]                      |
+|               |           [ _runtime_n_1 LBL: h7174 ARG0: x7173 ]                                |
+|               |           [ explicit_or_proper_q LBL: h7183 ARG0: x7180 RSTR: h7181 BODY: h7182  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7158 ARG0: x7157 CARG: "Super Capers" ] >                |
+|               |   HCONS: < h7176 qeq h7161 h7186 qeq h7174 h7181 qeq h7158 >                     |
+|               |   EQS: < x7175 eq i7159 h7169 eq h7179 i7168 eq x7175 h7172 eq h7174 u7171 eq    |
+|               | x7173 h7169 eq h7174 u7167 eq x7173 x7185 eq x7173 h7165 eq h7189 i7164 eq x7185 |
+|               | x7180 eq x7157 h7165 eq h7184 i7163 eq x7180 > ]                                 |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h33277                                                                    |
-|               |   INDEX: e33274 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h33277 ARG0: e33274 ARG1: x33269 ARG2: x33285 ]       |
-|               |           [ def_udef_a_q LBL: h33300 ARG0: x33285 RSTR: h33298 BODY: h33299 ]    |
-|               |           [ _of_p LBL: h33281 ARG0: e33278 ARG1: x33285 ARG2: x33287 ]           |
-|               |           [ number_q LBL: h33290 ARG0: x33287 RSTR: h33288 BODY: h33289 ]        |
-|               |           [ card LBL: h33273 ARG0: x33287 ARG1: u33272 CARG: "98.0" ]            |
-|               |           [ _total_a_1 LBL: h33281 ARG0: e33282 ARG1: x33285 ]                   |
-|               |           [ _runtime_n_1 LBL: h33281 ARG0: x33285 ]                              |
-|               |           [ explicit_or_proper_q LBL: h33295 ARG0: x33269 RSTR: h33293 BODY:     |
-|               | h33294 ]                                                                         |
-|               |           [ named LBL: h33270 ARG0: x33269 CARG: "Super Capers" ] >              |
-|               |   HCONS: < h33288 qeq h33273 h33298 qeq h33281 h33293 qeq h33270 > ]             |
+| EQs Collapsed | [ TOP: h7165                                                                     |
+|               |   INDEX: e7162 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h7165 ARG0: e7162 ARG1: x7157 ARG2: x7173 ]           |
+|               |           [ def_udef_a_q LBL: h7188 ARG0: x7173 RSTR: h7186 BODY: h7187 ]        |
+|               |           [ _of_p LBL: h7169 ARG0: e7166 ARG1: x7173 ARG2: x7175 ]               |
+|               |           [ number_q LBL: h7178 ARG0: x7175 RSTR: h7176 BODY: h7177 ]            |
+|               |           [ card LBL: h7161 ARG0: x7175 ARG1: u7160 CARG: "98.0" ]               |
+|               |           [ _total_a_1 LBL: h7169 ARG0: e7170 ARG1: x7173 ]                      |
+|               |           [ _runtime_n_1 LBL: h7169 ARG0: x7173 ]                                |
+|               |           [ explicit_or_proper_q LBL: h7183 ARG0: x7157 RSTR: h7181 BODY: h7182  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7158 ARG0: x7157 CARG: "Super Capers" ] >                |
+|               |   HCONS: < h7176 qeq h7161 h7186 qeq h7169 h7181 qeq h7158 > ]                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h33302                                                                    |
-|               |   INDEX: e33274 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h33277 ARG0: e33274 ARG1: x33269 ARG2: x33285 ]       |
-|               |           [ def_udef_a_q LBL: h33300 ARG0: x33285 RSTR: h33298 BODY: h33299 ]    |
-|               |           [ _of_p LBL: h33281 ARG0: e33278 ARG1: x33285 ARG2: x33287 ]           |
-|               |           [ number_q LBL: h33290 ARG0: x33287 RSTR: h33288 BODY: h33289 ]        |
-|               |           [ card LBL: h33273 ARG0: x33287 ARG1: u33272 CARG: "98.0" ]            |
-|               |           [ _total_a_1 LBL: h33281 ARG0: e33282 ARG1: x33285 ]                   |
-|               |           [ _runtime_n_1 LBL: h33281 ARG0: x33285 ]                              |
-|               |           [ explicit_or_proper_q LBL: h33295 ARG0: x33269 RSTR: h33293 BODY:     |
-|               | h33294 ]                                                                         |
-|               |           [ named LBL: h33270 ARG0: x33269 CARG: "Super Capers" ] >              |
-|               |   HCONS: < h33288 qeq h33273 h33298 qeq h33281 h33293 qeq h33270 h33302 qeq      |
-|               | h33277 > ]                                                                       |
+| Prepped       | [ TOP: h7190                                                                     |
+|               |   INDEX: e7162 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h7165 ARG0: e7162 ARG1: x7157 ARG2: x7173 ]           |
+|               |           [ def_udef_a_q LBL: h7188 ARG0: x7173 RSTR: h7186 BODY: h7187 ]        |
+|               |           [ _of_p LBL: h7169 ARG0: e7166 ARG1: x7173 ARG2: x7175 ]               |
+|               |           [ number_q LBL: h7178 ARG0: x7175 RSTR: h7176 BODY: h7177 ]            |
+|               |           [ card LBL: h7161 ARG0: x7175 ARG1: u7160 CARG: "98.0" ]               |
+|               |           [ _total_a_1 LBL: h7169 ARG0: e7170 ARG1: x7173 ]                      |
+|               |           [ _runtime_n_1 LBL: h7169 ARG0: x7173 ]                                |
+|               |           [ explicit_or_proper_q LBL: h7183 ARG0: x7157 RSTR: h7181 BODY: h7182  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7158 ARG0: x7157 CARG: "Super Capers" ] >                |
+|               |   HCONS: < h7176 qeq h7161 h7186 qeq h7169 h7181 qeq h7158 h7190 qeq h7165 > ]   |
 +---------------+----------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------+
-|                                      NODE SEMENTS                                      |
-+--------------+-------------------------------------------------------------------------+
-| Node         | Generated SEMENT                                                        |
-+--------------+-------------------------------------------------------------------------+
-| Super_Capers | [ TOP: h33270                                                           |
-|              |   INDEX: x33269                                                         |
-|              |   RELS: < [ named LBL: h33270 ARG0: x33269 CARG: "Super Capers" ] > ]   |
-+--------------+-------------------------------------------------------------------------+
-| 98.0         | [ TOP: h33273                                                           |
-|              |   INDEX: i33271                                                         |
-|              |   RELS: < [ card LBL: h33273 ARG0: i33271 ARG1: u33272 CARG: "98.0" ] > |
-|              |   SLOTS: < ARG1: u33272 > ]                                             |
-+--------------+-------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------+
+|                                     NODE SEMENTS                                    |
++--------------+----------------------------------------------------------------------+
+| Node         | Generated SEMENT                                                     |
++--------------+----------------------------------------------------------------------+
+| Super_Capers | [ TOP: h7158                                                         |
+|              |   INDEX: x7157                                                       |
+|              |   RELS: < [ named LBL: h7158 ARG0: x7157 CARG: "Super Capers" ] > ]  |
++--------------+----------------------------------------------------------------------+
+| 98.0         | [ TOP: h7161                                                         |
+|              |   INDEX: i7159                                                       |
+|              |   RELS: < [ card LBL: h7161 ARG0: i7159 ARG1: u7160 CARG: "98.0" ] > |
+|              |   SLOTS: < ARG1: u7160 > ]                                           |
++--------------+----------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------------------------+
 |                                                    EDGE SEMENTS                                                   |
 +---------+--------------+-------+----------------------------------------------------------------------------------+
 | Edge    | Parent       | Child | Generated SEMENT                                                                 |
 +---------+--------------+-------+----------------------------------------------------------------------------------+
-| runtime | Super_Capers | 98.0  | [ TOP: h33277                                                                    |
-|         |              |       |   INDEX: e33274 [ e TENSE: tensed ]                                              |
-|         |              |       |   RELS: < [ _have_v_1 LBL: h33277 ARG0: e33274 ARG1: i33275 ARG2: i33276 ]       |
-|         |              |       |           [ def_udef_a_q LBL: h33300 ARG0: x33297 RSTR: h33298 BODY: h33299 ]    |
-|         |              |       |           [ _of_p LBL: h33281 ARG0: e33278 ARG1: u33279 ARG2: i33280 ]           |
-|         |              |       |           [ number_q LBL: h33290 ARG0: x33287 RSTR: h33288 BODY: h33289 ]        |
-|         |              |       |           [ card LBL: h33273 ARG0: i33271 ARG1: u33272 CARG: "98.0" ]            |
-|         |              |       |           [ _total_a_1 LBL: h33284 ARG0: e33282 ARG1: u33283 ]                   |
-|         |              |       |           [ _runtime_n_1 LBL: h33286 ARG0: x33285 ]                              |
-|         |              |       |           [ explicit_or_proper_q LBL: h33295 ARG0: x33292 RSTR: h33293 BODY:     |
-|         |              |       | h33294 ]                                                                         |
-|         |              |       |           [ named LBL: h33270 ARG0: x33269 CARG: "Super Capers" ] >              |
-|         |              |       |   HCONS: < h33288 qeq h33273 h33298 qeq h33286 h33293 qeq h33270 >               |
-|         |              |       |   EQS: < x33287 eq i33271 h33281 eq h33291 i33280 eq x33287 h33284 eq h33286     |
-|         |              |       | u33283 eq x33285 h33281 eq h33286 u33279 eq x33285 x33297 eq x33285 h33277 eq    |
-|         |              |       | h33301 i33276 eq x33297 x33292 eq x33269 h33277 eq h33296 i33275 eq x33292 > ]   |
+| runtime | Super_Capers | 98.0  | [ TOP: h7165                                                                     |
+|         |              |       |   INDEX: e7162 [ e TENSE: tensed ]                                               |
+|         |              |       |   RELS: < [ _have_v_1 LBL: h7165 ARG0: e7162 ARG1: i7163 ARG2: i7164 ]           |
+|         |              |       |           [ def_udef_a_q LBL: h7188 ARG0: x7185 RSTR: h7186 BODY: h7187 ]        |
+|         |              |       |           [ _of_p LBL: h7169 ARG0: e7166 ARG1: u7167 ARG2: i7168 ]               |
+|         |              |       |           [ number_q LBL: h7178 ARG0: x7175 RSTR: h7176 BODY: h7177 ]            |
+|         |              |       |           [ card LBL: h7161 ARG0: i7159 ARG1: u7160 CARG: "98.0" ]               |
+|         |              |       |           [ _total_a_1 LBL: h7172 ARG0: e7170 ARG1: u7171 ]                      |
+|         |              |       |           [ _runtime_n_1 LBL: h7174 ARG0: x7173 ]                                |
+|         |              |       |           [ explicit_or_proper_q LBL: h7183 ARG0: x7180 RSTR: h7181 BODY: h7182  |
+|         |              |       | ]                                                                                |
+|         |              |       |           [ named LBL: h7158 ARG0: x7157 CARG: "Super Capers" ] >                |
+|         |              |       |   HCONS: < h7176 qeq h7161 h7186 qeq h7174 h7181 qeq h7158 >                     |
+|         |              |       |   EQS: < x7175 eq i7159 h7169 eq h7179 i7168 eq x7175 h7172 eq h7174 u7171 eq    |
+|         |              |       | x7173 h7169 eq h7174 u7167 eq x7173 x7185 eq x7173 h7165 eq h7189 i7164 eq x7185 |
+|         |              |       | x7180 eq x7157 h7165 eq h7184 i7163 eq x7180 > ]                                 |
 +---------+--------------+-------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------+

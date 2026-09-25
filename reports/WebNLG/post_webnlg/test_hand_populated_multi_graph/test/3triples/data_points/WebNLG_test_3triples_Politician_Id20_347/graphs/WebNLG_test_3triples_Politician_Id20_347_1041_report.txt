@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Politician_Id20_347_1041
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                GOLD OUTPUTS                                                                |
-+-------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                   | Generated? |
-+-------------------------------------------------------------------------------------------------------------------------------+------------+
-| Abraham A Ribicoff was born and died in the United States where African Americans are an ethnic group.                        | False      |
-| Abraham A. Ribicoff was born and died in the United States where African Americans are an ethnic group.                       | False      |
-| Abraham A.Ribicoff died in the United States. It was also his birthplace. African Americans are an ethnic group in the U.S.A. | False      |
-+-------------------------------------------------------------------------------------------------------------------------------+------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                       GOLD OUTPUTS                                                                                       |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                                                 | Generated? |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Abraham Ribicoff died in the United States where African Americans are a national ethnic group. He was married to Casey Ribicoff.                                           | False      |
+| In the USA, where African Americans are a national ethnic group, Casey Ribicoff and Abraham A. Ribicoff were married and Abraham later died there.                          | False      |
+| In the United States, one of the national ethnic groups are the African Americans. The United States is where Abraham A. Ribicoff, who was married to Casey Ribicoff, died. | False      |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +-------------------------------------------------------------------------------------------+
 |                                        NODE METRICS                                       |
@@ -56,81 +56,81 @@ GRAPH NAME: WebNLG_test_3triples_Politician_Id20_347_1041
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h34690                                                                    |
-|               |   INDEX: e34688 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h34682 ARG0: e34679 ARG1: u34680 ARG2: u34681 ]     |
-|               |           [ explicit_or_proper_q LBL: h34686 ARG0: x34683 RSTR: h34684 BODY:     |
-|               | h34685 ]                                                                         |
-|               |           [ named_pl LBL: h34678 ARG0: x34677 [ x NUM: pl ] CARG: "United        |
-|               | States" ]                                                                        |
-|               |           [ _die_v_1 LBL: h34690 ARG0: e34688 ARG1: i34689 ]                     |
-|               |           [ explicit_or_proper_q LBL: h34694 ARG0: x34691 RSTR: h34692 BODY:     |
-|               | h34693 ]                                                                         |
-|               |           [ named LBL: h34676 ARG0: x34675 CARG: "Abraham A. Ribicoff" ] >       |
-|               |   HCONS: < h34684 qeq h34678 h34692 qeq h34676 >                                 |
-|               |   EQS: < x34683 eq x34677 h34682 eq h34687 u34681 eq x34683 x34691 eq x34675     |
-|               | h34690 eq h34695 i34689 eq x34691 h34682 eq h34690 u34680 eq e34688 > ]          |
+| Original      | [ TOP: h9090                                                                     |
+|               |   INDEX: e9088 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_state LBL: h9082 ARG0: e9079 ARG1: u9080 ARG2: u9081 ]         |
+|               |           [ explicit_or_proper_q LBL: h9086 ARG0: x9083 RSTR: h9084 BODY: h9085  |
+|               | ]                                                                                |
+|               |           [ named_pl LBL: h9078 ARG0: x9077 [ x NUM: pl ] CARG: "United States"  |
+|               | ]                                                                                |
+|               |           [ _die_v_1 LBL: h9090 ARG0: e9088 ARG1: i9089 ]                        |
+|               |           [ explicit_or_proper_q LBL: h9094 ARG0: x9091 RSTR: h9092 BODY: h9093  |
+|               | ]                                                                                |
+|               |           [ named LBL: h9076 ARG0: x9075 CARG: "Abraham A. Ribicoff" ] >         |
+|               |   HCONS: < h9084 qeq h9078 h9092 qeq h9076 >                                     |
+|               |   EQS: < x9083 eq x9077 h9082 eq h9087 u9081 eq x9083 x9091 eq x9075 h9090 eq    |
+|               | h9095 i9089 eq x9091 h9082 eq h9090 u9080 eq e9088 > ]                           |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h34682                                                                    |
-|               |   INDEX: e34688 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h34682 ARG0: e34679 ARG1: e34688 ARG2: x34677 [ x   |
-|               | NUM: pl ] ]                                                                      |
-|               |           [ explicit_or_proper_q LBL: h34686 ARG0: x34677 RSTR: h34684 BODY:     |
-|               | h34685 ]                                                                         |
-|               |           [ named_pl LBL: h34678 ARG0: x34677 CARG: "United States" ]            |
-|               |           [ _die_v_1 LBL: h34682 ARG0: e34688 ARG1: x34675 ]                     |
-|               |           [ explicit_or_proper_q LBL: h34694 ARG0: x34675 RSTR: h34692 BODY:     |
-|               | h34693 ]                                                                         |
-|               |           [ named LBL: h34676 ARG0: x34675 CARG: "Abraham A. Ribicoff" ] >       |
-|               |   HCONS: < h34684 qeq h34678 h34692 qeq h34676 > ]                               |
+| EQs Collapsed | [ TOP: h9082                                                                     |
+|               |   INDEX: e9088 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_state LBL: h9082 ARG0: e9079 ARG1: e9088 ARG2: x9077 [ x NUM:  |
+|               | pl ] ]                                                                           |
+|               |           [ explicit_or_proper_q LBL: h9086 ARG0: x9077 RSTR: h9084 BODY: h9085  |
+|               | ]                                                                                |
+|               |           [ named_pl LBL: h9078 ARG0: x9077 CARG: "United States" ]              |
+|               |           [ _die_v_1 LBL: h9082 ARG0: e9088 ARG1: x9075 ]                        |
+|               |           [ explicit_or_proper_q LBL: h9094 ARG0: x9075 RSTR: h9092 BODY: h9093  |
+|               | ]                                                                                |
+|               |           [ named LBL: h9076 ARG0: x9075 CARG: "Abraham A. Ribicoff" ] >         |
+|               |   HCONS: < h9084 qeq h9078 h9092 qeq h9076 > ]                                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h34696                                                                    |
-|               |   INDEX: e34688 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h34682 ARG0: e34679 ARG1: e34688 ARG2: x34677 [ x   |
-|               | NUM: pl ] ]                                                                      |
-|               |           [ explicit_or_proper_q LBL: h34686 ARG0: x34677 RSTR: h34684 BODY:     |
-|               | h34685 ]                                                                         |
-|               |           [ named_pl LBL: h34678 ARG0: x34677 CARG: "United States" ]            |
-|               |           [ _die_v_1 LBL: h34682 ARG0: e34688 ARG1: x34675 ]                     |
-|               |           [ explicit_or_proper_q LBL: h34694 ARG0: x34675 RSTR: h34692 BODY:     |
-|               | h34693 ]                                                                         |
-|               |           [ named LBL: h34676 ARG0: x34675 CARG: "Abraham A. Ribicoff" ] >       |
-|               |   HCONS: < h34684 qeq h34678 h34692 qeq h34676 h34696 qeq h34682 > ]             |
+| Prepped       | [ TOP: h9096                                                                     |
+|               |   INDEX: e9088 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_state LBL: h9082 ARG0: e9079 ARG1: e9088 ARG2: x9077 [ x NUM:  |
+|               | pl ] ]                                                                           |
+|               |           [ explicit_or_proper_q LBL: h9086 ARG0: x9077 RSTR: h9084 BODY: h9085  |
+|               | ]                                                                                |
+|               |           [ named_pl LBL: h9078 ARG0: x9077 CARG: "United States" ]              |
+|               |           [ _die_v_1 LBL: h9082 ARG0: e9088 ARG1: x9075 ]                        |
+|               |           [ explicit_or_proper_q LBL: h9094 ARG0: x9075 RSTR: h9092 BODY: h9093  |
+|               | ]                                                                                |
+|               |           [ named LBL: h9076 ARG0: x9075 CARG: "Abraham A. Ribicoff" ] >         |
+|               |   HCONS: < h9084 qeq h9078 h9092 qeq h9076 h9096 qeq h9082 > ]                   |
 +---------------+----------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------------+
-|                                            NODE SEMENTS                                            |
-+---------------------+------------------------------------------------------------------------------+
-| Node                | Generated SEMENT                                                             |
-+---------------------+------------------------------------------------------------------------------+
-| Abraham_A._Ribicoff | [ TOP: h34676                                                                |
-|                     |   INDEX: x34675                                                              |
-|                     |   RELS: < [ named LBL: h34676 ARG0: x34675 CARG: "Abraham A. Ribicoff" ] > ] |
-+---------------------+------------------------------------------------------------------------------+
-| United_States       | [ TOP: h34678                                                                |
-|                     |   INDEX: x34677 [ x NUM: pl ]                                                |
-|                     |   RELS: < [ named_pl LBL: h34678 ARG0: x34677 CARG: "United States" ] > ]    |
-+---------------------+------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------+
+|                                           NODE SEMENTS                                           |
++---------------------+----------------------------------------------------------------------------+
+| Node                | Generated SEMENT                                                           |
++---------------------+----------------------------------------------------------------------------+
+| Abraham_A._Ribicoff | [ TOP: h9076                                                               |
+|                     |   INDEX: x9075                                                             |
+|                     |   RELS: < [ named LBL: h9076 ARG0: x9075 CARG: "Abraham A. Ribicoff" ] > ] |
++---------------------+----------------------------------------------------------------------------+
+| United_States       | [ TOP: h9078                                                               |
+|                     |   INDEX: x9077 [ x NUM: pl ]                                               |
+|                     |   RELS: < [ named_pl LBL: h9078 ARG0: x9077 CARG: "United States" ] > ]    |
++---------------------+----------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------------------------------------------+
 |                                                             EDGE SEMENTS                                                            |
 +------------+---------------------+---------------+----------------------------------------------------------------------------------+
 | Edge       | Parent              | Child         | Generated SEMENT                                                                 |
 +------------+---------------------+---------------+----------------------------------------------------------------------------------+
-| deathPlace | Abraham_A._Ribicoff | United_States | [ TOP: h34690                                                                    |
-|            |                     |               |   INDEX: e34688 [ e TENSE: tensed ]                                              |
-|            |                     |               |   RELS: < [ _in_p_state LBL: h34682 ARG0: e34679 ARG1: u34680 ARG2: u34681 ]     |
-|            |                     |               |           [ explicit_or_proper_q LBL: h34686 ARG0: x34683 RSTR: h34684 BODY:     |
-|            |                     |               | h34685 ]                                                                         |
-|            |                     |               |           [ named_pl LBL: h34678 ARG0: x34677 [ x NUM: pl ] CARG: "United        |
-|            |                     |               | States" ]                                                                        |
-|            |                     |               |           [ _die_v_1 LBL: h34690 ARG0: e34688 ARG1: i34689 ]                     |
-|            |                     |               |           [ explicit_or_proper_q LBL: h34694 ARG0: x34691 RSTR: h34692 BODY:     |
-|            |                     |               | h34693 ]                                                                         |
-|            |                     |               |           [ named LBL: h34676 ARG0: x34675 CARG: "Abraham A. Ribicoff" ] >       |
-|            |                     |               |   HCONS: < h34684 qeq h34678 h34692 qeq h34676 >                                 |
-|            |                     |               |   EQS: < x34683 eq x34677 h34682 eq h34687 u34681 eq x34683 x34691 eq x34675     |
-|            |                     |               | h34690 eq h34695 i34689 eq x34691 h34682 eq h34690 u34680 eq e34688 > ]          |
+| deathPlace | Abraham_A._Ribicoff | United_States | [ TOP: h9090                                                                     |
+|            |                     |               |   INDEX: e9088 [ e TENSE: tensed ]                                               |
+|            |                     |               |   RELS: < [ _in_p_state LBL: h9082 ARG0: e9079 ARG1: u9080 ARG2: u9081 ]         |
+|            |                     |               |           [ explicit_or_proper_q LBL: h9086 ARG0: x9083 RSTR: h9084 BODY: h9085  |
+|            |                     |               | ]                                                                                |
+|            |                     |               |           [ named_pl LBL: h9078 ARG0: x9077 [ x NUM: pl ] CARG: "United States"  |
+|            |                     |               | ]                                                                                |
+|            |                     |               |           [ _die_v_1 LBL: h9090 ARG0: e9088 ARG1: i9089 ]                        |
+|            |                     |               |           [ explicit_or_proper_q LBL: h9094 ARG0: x9091 RSTR: h9092 BODY: h9093  |
+|            |                     |               | ]                                                                                |
+|            |                     |               |           [ named LBL: h9076 ARG0: x9075 CARG: "Abraham A. Ribicoff" ] >         |
+|            |                     |               |   HCONS: < h9084 qeq h9078 h9092 qeq h9076 >                                     |
+|            |                     |               |   EQS: < x9083 eq x9077 h9082 eq h9087 u9081 eq x9083 x9091 eq x9075 h9090 eq    |
+|            |                     |               | h9095 i9089 eq x9091 h9082 eq h9090 u9080 eq e9088 > ]                           |
 +------------+---------------------+---------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------+

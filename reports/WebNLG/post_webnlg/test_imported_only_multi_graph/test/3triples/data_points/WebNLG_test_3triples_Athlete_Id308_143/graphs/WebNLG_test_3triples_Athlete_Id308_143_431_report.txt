@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Athlete_Id308_143_431
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                             GOLD OUTPUTS                                                                            |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                            | Generated? |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Aleksandr Prudnikov born on 1989-02-24 plays for and is a member of FC Spartak Moscow.                                                                 | False      |
-| Aleksandr Prudnikov was born on February 24, 1989. He played for FC Spartak Moscow's youth team and is now playing for FC Spartak Moscow.              | False      |
-| Aleksandr Prudnikov was born on February 24, 1989. He plays for FC Spartak Moscow and previously played for the FC Spartak Moscow youth football club. | False      |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++--------------------------------------------------------------------------------------------------------------------------+
+|                                                       GOLD OUTPUTS                                                       |
++-------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                 | Generated? |
++-------------------------------------------------------------------------------------------------------------+------------+
+| 185 centimetre tall Aleksandr Prudnikov played for the Otkrytiye Arena based FC Spartak, Moscow.            | False      |
+| Aleksandr Prudnikov who is 185 cm tall, plays for FC Spartak Moscow whose ground is the Otkrytiye Arena.    | False      |
+| The 185 cm tall Aleksandr Prudnikov plays for FC Spartak Moscow who call their home ground Otkrytiye Arena. | False      |
++-------------------------------------------------------------------------------------------------------------+------------+
 
 +-------------------------------------------------------------------------------------------+
 |                                        NODE METRICS                                       |
@@ -56,81 +56,73 @@ GRAPH NAME: WebNLG_test_3triples_Athlete_Id308_143_431
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h3147                                                                     |
-|               |   INDEX: e3144 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _for_p LBL: h3138 ARG0: i3135 ARG1: u3136 ARG2: u3137 ]              |
-|               |           [ explicit_or_proper_q LBL: h3142 ARG0: x3139 RSTR: h3140 BODY: h3141  |
-|               | ]                                                                                |
-|               |           [ named LBL: h3134 ARG0: x3133 CARG: "FC Spartak Moscow" ]             |
-|               |           [ _play_v_1 LBL: h3147 ARG0: e3144 ARG1: i3145 ARG2: i3146 ]           |
-|               |           [ explicit_or_proper_q LBL: h3151 ARG0: x3148 RSTR: h3149 BODY: h3150  |
-|               | ]                                                                                |
-|               |           [ named LBL: h3132 ARG0: x3131 CARG: "Aleksandr Prudnikov" ] >         |
-|               |   HCONS: < h3140 qeq h3134 h3149 qeq h3132 >                                     |
-|               |   EQS: < x3139 eq x3133 h3138 eq h3143 u3137 eq x3139 x3148 eq x3131 h3147 eq    |
-|               | h3152 i3145 eq x3148 h3138 eq h3147 u3136 eq e3144 >                             |
-|               |   SLOTS: < ARG2: i3146 > ]                                                       |
+| Original      | [ TOP: h612                                                                      |
+|               |   INDEX: e609 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _for_p LBL: h603 ARG0: i600 ARG1: u601 ARG2: u602 ]                  |
+|               |           [ explicit_or_proper_q LBL: h607 ARG0: x604 RSTR: h605 BODY: h606 ]    |
+|               |           [ named LBL: h599 ARG0: x598 CARG: "FC Spartak Moscow" ]               |
+|               |           [ _play_v_1 LBL: h612 ARG0: e609 ARG1: i610 ARG2: i611 ]               |
+|               |           [ explicit_or_proper_q LBL: h616 ARG0: x613 RSTR: h614 BODY: h615 ]    |
+|               |           [ named LBL: h597 ARG0: x596 CARG: "Aleksandr Prudnikov" ] >           |
+|               |   HCONS: < h605 qeq h599 h614 qeq h597 >                                         |
+|               |   EQS: < x604 eq x598 h603 eq h608 u602 eq x604 x613 eq x596 h612 eq h617 i610   |
+|               | eq x613 h603 eq h612 u601 eq e609 >                                              |
+|               |   SLOTS: < ARG2: i611 > ]                                                        |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h3138                                                                     |
-|               |   INDEX: e3144 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _for_p LBL: h3138 ARG0: i3135 ARG1: e3144 ARG2: x3133 ]              |
-|               |           [ explicit_or_proper_q LBL: h3142 ARG0: x3133 RSTR: h3140 BODY: h3141  |
-|               | ]                                                                                |
-|               |           [ named LBL: h3134 ARG0: x3133 CARG: "FC Spartak Moscow" ]             |
-|               |           [ _play_v_1 LBL: h3138 ARG0: e3144 ARG1: x3131 ARG2: i3146 ]           |
-|               |           [ explicit_or_proper_q LBL: h3151 ARG0: x3131 RSTR: h3149 BODY: h3150  |
-|               | ]                                                                                |
-|               |           [ named LBL: h3132 ARG0: x3131 CARG: "Aleksandr Prudnikov" ] >         |
-|               |   HCONS: < h3140 qeq h3134 h3149 qeq h3132 >                                     |
-|               |   SLOTS: < ARG2: i3146 > ]                                                       |
+| EQs Collapsed | [ TOP: h603                                                                      |
+|               |   INDEX: e609 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _for_p LBL: h603 ARG0: i600 ARG1: e609 ARG2: x598 ]                  |
+|               |           [ explicit_or_proper_q LBL: h607 ARG0: x598 RSTR: h605 BODY: h606 ]    |
+|               |           [ named LBL: h599 ARG0: x598 CARG: "FC Spartak Moscow" ]               |
+|               |           [ _play_v_1 LBL: h603 ARG0: e609 ARG1: x596 ARG2: i611 ]               |
+|               |           [ explicit_or_proper_q LBL: h616 ARG0: x596 RSTR: h614 BODY: h615 ]    |
+|               |           [ named LBL: h597 ARG0: x596 CARG: "Aleksandr Prudnikov" ] >           |
+|               |   HCONS: < h605 qeq h599 h614 qeq h597 >                                         |
+|               |   SLOTS: < ARG2: i611 > ]                                                        |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h3153                                                                     |
-|               |   INDEX: e3144 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _for_p LBL: h3138 ARG0: i3135 ARG1: e3144 ARG2: x3133 ]              |
-|               |           [ explicit_or_proper_q LBL: h3142 ARG0: x3133 RSTR: h3140 BODY: h3141  |
-|               | ]                                                                                |
-|               |           [ named LBL: h3134 ARG0: x3133 CARG: "FC Spartak Moscow" ]             |
-|               |           [ _play_v_1 LBL: h3138 ARG0: e3144 ARG1: x3131 ARG2: i3146 ]           |
-|               |           [ explicit_or_proper_q LBL: h3151 ARG0: x3131 RSTR: h3149 BODY: h3150  |
-|               | ]                                                                                |
-|               |           [ named LBL: h3132 ARG0: x3131 CARG: "Aleksandr Prudnikov" ] >         |
-|               |   HCONS: < h3140 qeq h3134 h3149 qeq h3132 h3153 qeq h3138 >                     |
-|               |   SLOTS: < ARG2: i3146 > ]                                                       |
+| Prepped       | [ TOP: h618                                                                      |
+|               |   INDEX: e609 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _for_p LBL: h603 ARG0: i600 ARG1: e609 ARG2: x598 ]                  |
+|               |           [ explicit_or_proper_q LBL: h607 ARG0: x598 RSTR: h605 BODY: h606 ]    |
+|               |           [ named LBL: h599 ARG0: x598 CARG: "FC Spartak Moscow" ]               |
+|               |           [ _play_v_1 LBL: h603 ARG0: e609 ARG1: x596 ARG2: i611 ]               |
+|               |           [ explicit_or_proper_q LBL: h616 ARG0: x596 RSTR: h614 BODY: h615 ]    |
+|               |           [ named LBL: h597 ARG0: x596 CARG: "Aleksandr Prudnikov" ] >           |
+|               |   HCONS: < h605 qeq h599 h614 qeq h597 h618 qeq h603 >                           |
+|               |   SLOTS: < ARG2: i611 > ]                                                        |
 +---------------+----------------------------------------------------------------------------------+
 
-+--------------------------------------------------------------------------------------------------+
-|                                           NODE SEMENTS                                           |
-+---------------------+----------------------------------------------------------------------------+
-| Node                | Generated SEMENT                                                           |
-+---------------------+----------------------------------------------------------------------------+
-| Aleksandr_Prudnikov | [ TOP: h3132                                                               |
-|                     |   INDEX: x3131                                                             |
-|                     |   RELS: < [ named LBL: h3132 ARG0: x3131 CARG: "Aleksandr Prudnikov" ] > ] |
-+---------------------+----------------------------------------------------------------------------+
-| FC_Spartak_Moscow   | [ TOP: h3134                                                               |
-|                     |   INDEX: x3133                                                             |
-|                     |   RELS: < [ named LBL: h3134 ARG0: x3133 CARG: "FC Spartak Moscow" ] > ]   |
-+---------------------+----------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------+
+|                                          NODE SEMENTS                                          |
++---------------------+--------------------------------------------------------------------------+
+| Node                | Generated SEMENT                                                         |
++---------------------+--------------------------------------------------------------------------+
+| Aleksandr_Prudnikov | [ TOP: h597                                                              |
+|                     |   INDEX: x596                                                            |
+|                     |   RELS: < [ named LBL: h597 ARG0: x596 CARG: "Aleksandr Prudnikov" ] > ] |
++---------------------+--------------------------------------------------------------------------+
+| FC_Spartak_Moscow   | [ TOP: h599                                                              |
+|                     |   INDEX: x598                                                            |
+|                     |   RELS: < [ named LBL: h599 ARG0: x598 CARG: "FC Spartak Moscow" ] > ]   |
++---------------------+--------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
 |                                                            EDGE SEMENTS                                                           |
 +------+---------------------+-------------------+----------------------------------------------------------------------------------+
 | Edge | Parent              | Child             | Generated SEMENT                                                                 |
 +------+---------------------+-------------------+----------------------------------------------------------------------------------+
-| club | Aleksandr_Prudnikov | FC_Spartak_Moscow | [ TOP: h3147                                                                     |
-|      |                     |                   |   INDEX: e3144 [ e TENSE: tensed ]                                               |
-|      |                     |                   |   RELS: < [ _for_p LBL: h3138 ARG0: i3135 ARG1: u3136 ARG2: u3137 ]              |
-|      |                     |                   |           [ explicit_or_proper_q LBL: h3142 ARG0: x3139 RSTR: h3140 BODY: h3141  |
-|      |                     |                   | ]                                                                                |
-|      |                     |                   |           [ named LBL: h3134 ARG0: x3133 CARG: "FC Spartak Moscow" ]             |
-|      |                     |                   |           [ _play_v_1 LBL: h3147 ARG0: e3144 ARG1: i3145 ARG2: i3146 ]           |
-|      |                     |                   |           [ explicit_or_proper_q LBL: h3151 ARG0: x3148 RSTR: h3149 BODY: h3150  |
-|      |                     |                   | ]                                                                                |
-|      |                     |                   |           [ named LBL: h3132 ARG0: x3131 CARG: "Aleksandr Prudnikov" ] >         |
-|      |                     |                   |   HCONS: < h3140 qeq h3134 h3149 qeq h3132 >                                     |
-|      |                     |                   |   EQS: < x3139 eq x3133 h3138 eq h3143 u3137 eq x3139 x3148 eq x3131 h3147 eq    |
-|      |                     |                   | h3152 i3145 eq x3148 h3138 eq h3147 u3136 eq e3144 >                             |
-|      |                     |                   |   SLOTS: < ARG2: i3146 > ]                                                       |
+| club | Aleksandr_Prudnikov | FC_Spartak_Moscow | [ TOP: h612                                                                      |
+|      |                     |                   |   INDEX: e609 [ e TENSE: tensed ]                                                |
+|      |                     |                   |   RELS: < [ _for_p LBL: h603 ARG0: i600 ARG1: u601 ARG2: u602 ]                  |
+|      |                     |                   |           [ explicit_or_proper_q LBL: h607 ARG0: x604 RSTR: h605 BODY: h606 ]    |
+|      |                     |                   |           [ named LBL: h599 ARG0: x598 CARG: "FC Spartak Moscow" ]               |
+|      |                     |                   |           [ _play_v_1 LBL: h612 ARG0: e609 ARG1: i610 ARG2: i611 ]               |
+|      |                     |                   |           [ explicit_or_proper_q LBL: h616 ARG0: x613 RSTR: h614 BODY: h615 ]    |
+|      |                     |                   |           [ named LBL: h597 ARG0: x596 CARG: "Aleksandr Prudnikov" ] >           |
+|      |                     |                   |   HCONS: < h605 qeq h599 h614 qeq h597 >                                         |
+|      |                     |                   |   EQS: < x604 eq x598 h603 eq h608 u602 eq x604 x613 eq x596 h612 eq h617 i610   |
+|      |                     |                   | eq x613 h603 eq h612 u601 eq e609 >                                              |
+|      |                     |                   |   SLOTS: < ARG2: i611 > ]                                                        |
 +------+---------------------+-------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------+

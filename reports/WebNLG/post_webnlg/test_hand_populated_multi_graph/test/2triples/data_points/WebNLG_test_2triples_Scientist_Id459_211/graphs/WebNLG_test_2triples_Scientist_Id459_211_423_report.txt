@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_Scientist_Id459_211_423
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-----------------------------------------------------------------------------------------------------------------+
-|                                                   GOLD OUTPUTS                                                  |
-+----------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                        | Generated? |
-+----------------------------------------------------------------------------------------------------+------------+
-| Lady Anne Monson was born in the Kingdom of England, which has a unitary state form of government. | False      |
-| Lady Anne Monson’s Kingdom of England birthplace used a unitary state form of government.          | False      |
-| The Kingdom of England, the place where Lady Anne Monson was born, was a unitary state.            | False      |
-+----------------------------------------------------------------------------------------------------+------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                   GOLD OUTPUTS                                                                  |
++------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                        | Generated? |
++------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Kingdom of England is a unitary state form of government which is also Lady Anne Monson's nationality.                             | False      |
+| Lady Anne Monson held British nationality; she lived in the kingdom of England where there was a unitary state form of government. | False      |
+| Lady Anne Monson is an English national from the unitary Kingdom of England.                                                       | False      |
++------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +------------------------------------------------------------------------------------------+
 |                                       NODE METRICS                                       |
@@ -56,106 +56,103 @@ GRAPH NAME: WebNLG_test_2triples_Scientist_Id459_211_423
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h13960                                                                    |
-|               |   INDEX: e13957 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h13960 ARG0: e13957 ARG1: i13958 ARG2: i13959 ]       |
-|               |           [ def_udef_a_q LBL: h13989 ARG0: x13986 RSTR: h13987 BODY: h13988 ]    |
-|               |           [ compound LBL: h13975 ARG0: e13972 ARG1: u13973 ARG2: u13974 ]        |
-|               |           [ existential_q LBL: h13979 ARG0: x13976 RSTR: h13977 BODY: h13978 ]   |
-|               |           [ _unitary_a_1 LBL: h13953 ARG0: e13951 ARG1: u13952 ]                 |
-|               |           [ _state_n_of LBL: h13956 ARG0: x13954 [ x NUM: sg ] ARG1: i13955 ]    |
-|               |           [ _type_n_of-n LBL: h13963 ARG0: x13961 ARG1: i13962 ]                 |
-|               |           [ def_udef_a_q LBL: h13970 ARG0: x13967 RSTR: h13968 BODY: h13969 ]    |
-|               |           [ _government_n_of LBL: h13966 ARG0: x13964 ARG1: i13965 ]             |
-|               |           [ explicit_or_proper_q LBL: h13984 ARG0: x13981 RSTR: h13982 BODY:     |
-|               | h13983 ]                                                                         |
-|               |           [ named LBL: h13950 ARG0: x13949 CARG: "Kingdom of England" ] >        |
-|               |   HCONS: < h13977 qeq h13956 h13968 qeq h13966 h13987 qeq h13963 h13982 qeq      |
-|               | h13950 >                                                                         |
-|               |   EQS: < h13953 eq h13956 u13952 eq x13954 x13976 eq x13954 h13975 eq h13980     |
-|               | u13974 eq x13976 x13967 eq x13964 h13963 eq h13971 i13962 eq x13967 h13975 eq    |
-|               | h13963 u13973 eq x13961 x13986 eq x13961 h13960 eq h13990 i13959 eq x13986       |
-|               | x13981 eq x13949 h13960 eq h13985 i13958 eq x13981 > ]                           |
+| Original      | [ TOP: h4947                                                                     |
+|               |   INDEX: e4944 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h4947 ARG0: e4944 ARG1: i4945 ARG2: i4946 ]           |
+|               |           [ def_udef_a_q LBL: h4976 ARG0: x4973 RSTR: h4974 BODY: h4975 ]        |
+|               |           [ compound LBL: h4962 ARG0: e4959 ARG1: u4960 ARG2: u4961 ]            |
+|               |           [ existential_q LBL: h4966 ARG0: x4963 RSTR: h4964 BODY: h4965 ]       |
+|               |           [ _unitary_a_1 LBL: h4940 ARG0: e4938 ARG1: u4939 ]                    |
+|               |           [ _state_n_of LBL: h4943 ARG0: x4941 [ x NUM: sg ] ARG1: i4942 ]       |
+|               |           [ _type_n_of-n LBL: h4950 ARG0: x4948 ARG1: i4949 ]                    |
+|               |           [ def_udef_a_q LBL: h4957 ARG0: x4954 RSTR: h4955 BODY: h4956 ]        |
+|               |           [ _government_n_of LBL: h4953 ARG0: x4951 ARG1: i4952 ]                |
+|               |           [ explicit_or_proper_q LBL: h4971 ARG0: x4968 RSTR: h4969 BODY: h4970  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4937 ARG0: x4936 CARG: "Kingdom of England" ] >          |
+|               |   HCONS: < h4964 qeq h4943 h4955 qeq h4953 h4974 qeq h4950 h4969 qeq h4937 >     |
+|               |   EQS: < h4940 eq h4943 u4939 eq x4941 x4963 eq x4941 h4962 eq h4967 u4961 eq    |
+|               | x4963 x4954 eq x4951 h4950 eq h4958 i4949 eq x4954 h4962 eq h4950 u4960 eq x4948 |
+|               | x4973 eq x4948 h4947 eq h4977 i4946 eq x4973 x4968 eq x4936 h4947 eq h4972 i4945 |
+|               | eq x4968 > ]                                                                     |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h13960                                                                    |
-|               |   INDEX: e13957 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h13960 ARG0: e13957 ARG1: x13949 ARG2: x13961 ]       |
-|               |           [ def_udef_a_q LBL: h13989 ARG0: x13961 RSTR: h13987 BODY: h13988 ]    |
-|               |           [ compound LBL: h13963 ARG0: e13972 ARG1: x13961 ARG2: x13954 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h13979 ARG0: x13954 RSTR: h13977 BODY: h13978 ]   |
-|               |           [ _unitary_a_1 LBL: h13953 ARG0: e13951 ARG1: x13954 ]                 |
-|               |           [ _state_n_of LBL: h13953 ARG0: x13954 ARG1: i13955 ]                  |
-|               |           [ _type_n_of-n LBL: h13963 ARG0: x13961 ARG1: x13964 ]                 |
-|               |           [ def_udef_a_q LBL: h13970 ARG0: x13964 RSTR: h13968 BODY: h13969 ]    |
-|               |           [ _government_n_of LBL: h13966 ARG0: x13964 ARG1: i13965 ]             |
-|               |           [ explicit_or_proper_q LBL: h13984 ARG0: x13949 RSTR: h13982 BODY:     |
-|               | h13983 ]                                                                         |
-|               |           [ named LBL: h13950 ARG0: x13949 CARG: "Kingdom of England" ] >        |
-|               |   HCONS: < h13977 qeq h13953 h13968 qeq h13966 h13987 qeq h13963 h13982 qeq      |
-|               | h13950 > ]                                                                       |
+| EQs Collapsed | [ TOP: h4947                                                                     |
+|               |   INDEX: e4944 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h4947 ARG0: e4944 ARG1: x4936 ARG2: x4948 ]           |
+|               |           [ def_udef_a_q LBL: h4976 ARG0: x4948 RSTR: h4974 BODY: h4975 ]        |
+|               |           [ compound LBL: h4950 ARG0: e4959 ARG1: x4948 ARG2: x4941 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h4966 ARG0: x4941 RSTR: h4964 BODY: h4965 ]       |
+|               |           [ _unitary_a_1 LBL: h4940 ARG0: e4938 ARG1: x4941 ]                    |
+|               |           [ _state_n_of LBL: h4940 ARG0: x4941 ARG1: i4942 ]                     |
+|               |           [ _type_n_of-n LBL: h4950 ARG0: x4948 ARG1: x4951 ]                    |
+|               |           [ def_udef_a_q LBL: h4957 ARG0: x4951 RSTR: h4955 BODY: h4956 ]        |
+|               |           [ _government_n_of LBL: h4953 ARG0: x4951 ARG1: i4952 ]                |
+|               |           [ explicit_or_proper_q LBL: h4971 ARG0: x4936 RSTR: h4969 BODY: h4970  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4937 ARG0: x4936 CARG: "Kingdom of England" ] >          |
+|               |   HCONS: < h4964 qeq h4940 h4955 qeq h4953 h4974 qeq h4950 h4969 qeq h4937 > ]   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h13991                                                                    |
-|               |   INDEX: e13957 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h13960 ARG0: e13957 ARG1: x13949 ARG2: x13961 ]       |
-|               |           [ def_udef_a_q LBL: h13989 ARG0: x13961 RSTR: h13987 BODY: h13988 ]    |
-|               |           [ compound LBL: h13963 ARG0: e13972 ARG1: x13961 ARG2: x13954 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h13979 ARG0: x13954 RSTR: h13977 BODY: h13978 ]   |
-|               |           [ _unitary_a_1 LBL: h13953 ARG0: e13951 ARG1: x13954 ]                 |
-|               |           [ _state_n_of LBL: h13953 ARG0: x13954 ARG1: i13955 ]                  |
-|               |           [ _type_n_of-n LBL: h13963 ARG0: x13961 ARG1: x13964 ]                 |
-|               |           [ def_udef_a_q LBL: h13970 ARG0: x13964 RSTR: h13968 BODY: h13969 ]    |
-|               |           [ _government_n_of LBL: h13966 ARG0: x13964 ARG1: i13965 ]             |
-|               |           [ explicit_or_proper_q LBL: h13984 ARG0: x13949 RSTR: h13982 BODY:     |
-|               | h13983 ]                                                                         |
-|               |           [ named LBL: h13950 ARG0: x13949 CARG: "Kingdom of England" ] >        |
-|               |   HCONS: < h13977 qeq h13953 h13968 qeq h13966 h13987 qeq h13963 h13982 qeq      |
-|               | h13950 h13991 qeq h13960 > ]                                                     |
+| Prepped       | [ TOP: h4978                                                                     |
+|               |   INDEX: e4944 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h4947 ARG0: e4944 ARG1: x4936 ARG2: x4948 ]           |
+|               |           [ def_udef_a_q LBL: h4976 ARG0: x4948 RSTR: h4974 BODY: h4975 ]        |
+|               |           [ compound LBL: h4950 ARG0: e4959 ARG1: x4948 ARG2: x4941 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h4966 ARG0: x4941 RSTR: h4964 BODY: h4965 ]       |
+|               |           [ _unitary_a_1 LBL: h4940 ARG0: e4938 ARG1: x4941 ]                    |
+|               |           [ _state_n_of LBL: h4940 ARG0: x4941 ARG1: i4942 ]                     |
+|               |           [ _type_n_of-n LBL: h4950 ARG0: x4948 ARG1: x4951 ]                    |
+|               |           [ def_udef_a_q LBL: h4957 ARG0: x4951 RSTR: h4955 BODY: h4956 ]        |
+|               |           [ _government_n_of LBL: h4953 ARG0: x4951 ARG1: i4952 ]                |
+|               |           [ explicit_or_proper_q LBL: h4971 ARG0: x4936 RSTR: h4969 BODY: h4970  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4937 ARG0: x4936 CARG: "Kingdom of England" ] >          |
+|               |   HCONS: < h4964 qeq h4940 h4955 qeq h4953 h4974 qeq h4950 h4969 qeq h4937 h4978 |
+|               | qeq h4947 > ]                                                                    |
 +---------------+----------------------------------------------------------------------------------+
 
-+--------------------------------------------------------------------------------------------------+
-|                                           NODE SEMENTS                                           |
-+--------------------+-----------------------------------------------------------------------------+
-| Node               | Generated SEMENT                                                            |
-+--------------------+-----------------------------------------------------------------------------+
-| Kingdom_of_England | [ TOP: h13950                                                               |
-|                    |   INDEX: x13949                                                             |
-|                    |   RELS: < [ named LBL: h13950 ARG0: x13949 CARG: "Kingdom of England" ] > ] |
-+--------------------+-----------------------------------------------------------------------------+
-| Unitary_state      | [ TOP: h13956                                                               |
-|                    |   INDEX: x13954                                                             |
-|                    |   RELS: < [ _unitary_a_1 LBL: h13953 ARG0: e13951 ARG1: u13952 ]            |
-|                    |           [ _state_n_of LBL: h13956 ARG0: x13954 ARG1: i13955 ] >           |
-|                    |   EQS: < h13953 eq h13956 u13952 eq x13954 >                                |
-|                    |   SLOTS: < ARG1: i13955 > ]                                                 |
-+--------------------+-----------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------+
+|                                          NODE SEMENTS                                          |
++--------------------+---------------------------------------------------------------------------+
+| Node               | Generated SEMENT                                                          |
++--------------------+---------------------------------------------------------------------------+
+| Kingdom_of_England | [ TOP: h4937                                                              |
+|                    |   INDEX: x4936                                                            |
+|                    |   RELS: < [ named LBL: h4937 ARG0: x4936 CARG: "Kingdom of England" ] > ] |
++--------------------+---------------------------------------------------------------------------+
+| Unitary_state      | [ TOP: h4943                                                              |
+|                    |   INDEX: x4941                                                            |
+|                    |   RELS: < [ _unitary_a_1 LBL: h4940 ARG0: e4938 ARG1: u4939 ]             |
+|                    |           [ _state_n_of LBL: h4943 ARG0: x4941 ARG1: i4942 ] >            |
+|                    |   EQS: < h4940 eq h4943 u4939 eq x4941 >                                  |
+|                    |   SLOTS: < ARG1: i4942 > ]                                                |
++--------------------+---------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------------------+
 |                                                              EDGE SEMENTS                                                              |
 +----------------+--------------------+---------------+----------------------------------------------------------------------------------+
 | Edge           | Parent             | Child         | Generated SEMENT                                                                 |
 +----------------+--------------------+---------------+----------------------------------------------------------------------------------+
-| governmentType | Kingdom_of_England | Unitary_state | [ TOP: h13960                                                                    |
-|                |                    |               |   INDEX: e13957 [ e TENSE: tensed ]                                              |
-|                |                    |               |   RELS: < [ _have_v_1 LBL: h13960 ARG0: e13957 ARG1: i13958 ARG2: i13959 ]       |
-|                |                    |               |           [ def_udef_a_q LBL: h13989 ARG0: x13986 RSTR: h13987 BODY: h13988 ]    |
-|                |                    |               |           [ compound LBL: h13975 ARG0: e13972 ARG1: u13973 ARG2: u13974 ]        |
-|                |                    |               |           [ existential_q LBL: h13979 ARG0: x13976 RSTR: h13977 BODY: h13978 ]   |
-|                |                    |               |           [ _unitary_a_1 LBL: h13953 ARG0: e13951 ARG1: u13952 ]                 |
-|                |                    |               |           [ _state_n_of LBL: h13956 ARG0: x13954 [ x NUM: sg ] ARG1: i13955 ]    |
-|                |                    |               |           [ _type_n_of-n LBL: h13963 ARG0: x13961 ARG1: i13962 ]                 |
-|                |                    |               |           [ def_udef_a_q LBL: h13970 ARG0: x13967 RSTR: h13968 BODY: h13969 ]    |
-|                |                    |               |           [ _government_n_of LBL: h13966 ARG0: x13964 ARG1: i13965 ]             |
-|                |                    |               |           [ explicit_or_proper_q LBL: h13984 ARG0: x13981 RSTR: h13982 BODY:     |
-|                |                    |               | h13983 ]                                                                         |
-|                |                    |               |           [ named LBL: h13950 ARG0: x13949 CARG: "Kingdom of England" ] >        |
-|                |                    |               |   HCONS: < h13977 qeq h13956 h13968 qeq h13966 h13987 qeq h13963 h13982 qeq      |
-|                |                    |               | h13950 >                                                                         |
-|                |                    |               |   EQS: < h13953 eq h13956 u13952 eq x13954 x13976 eq x13954 h13975 eq h13980     |
-|                |                    |               | u13974 eq x13976 x13967 eq x13964 h13963 eq h13971 i13962 eq x13967 h13975 eq    |
-|                |                    |               | h13963 u13973 eq x13961 x13986 eq x13961 h13960 eq h13990 i13959 eq x13986       |
-|                |                    |               | x13981 eq x13949 h13960 eq h13985 i13958 eq x13981 > ]                           |
+| governmentType | Kingdom_of_England | Unitary_state | [ TOP: h4947                                                                     |
+|                |                    |               |   INDEX: e4944 [ e TENSE: tensed ]                                               |
+|                |                    |               |   RELS: < [ _have_v_1 LBL: h4947 ARG0: e4944 ARG1: i4945 ARG2: i4946 ]           |
+|                |                    |               |           [ def_udef_a_q LBL: h4976 ARG0: x4973 RSTR: h4974 BODY: h4975 ]        |
+|                |                    |               |           [ compound LBL: h4962 ARG0: e4959 ARG1: u4960 ARG2: u4961 ]            |
+|                |                    |               |           [ existential_q LBL: h4966 ARG0: x4963 RSTR: h4964 BODY: h4965 ]       |
+|                |                    |               |           [ _unitary_a_1 LBL: h4940 ARG0: e4938 ARG1: u4939 ]                    |
+|                |                    |               |           [ _state_n_of LBL: h4943 ARG0: x4941 [ x NUM: sg ] ARG1: i4942 ]       |
+|                |                    |               |           [ _type_n_of-n LBL: h4950 ARG0: x4948 ARG1: i4949 ]                    |
+|                |                    |               |           [ def_udef_a_q LBL: h4957 ARG0: x4954 RSTR: h4955 BODY: h4956 ]        |
+|                |                    |               |           [ _government_n_of LBL: h4953 ARG0: x4951 ARG1: i4952 ]                |
+|                |                    |               |           [ explicit_or_proper_q LBL: h4971 ARG0: x4968 RSTR: h4969 BODY: h4970  |
+|                |                    |               | ]                                                                                |
+|                |                    |               |           [ named LBL: h4937 ARG0: x4936 CARG: "Kingdom of England" ] >          |
+|                |                    |               |   HCONS: < h4964 qeq h4943 h4955 qeq h4953 h4974 qeq h4950 h4969 qeq h4937 >     |
+|                |                    |               |   EQS: < h4940 eq h4943 u4939 eq x4941 x4963 eq x4941 h4962 eq h4967 u4961 eq    |
+|                |                    |               | x4963 x4954 eq x4951 h4950 eq h4958 i4949 eq x4954 h4962 eq h4950 u4960 eq x4948 |
+|                |                    |               | x4973 eq x4948 h4947 eq h4977 i4946 eq x4973 x4968 eq x4936 h4947 eq h4972 i4945 |
+|                |                    |               | eq x4968 > ]                                                                     |
 +----------------+--------------------+---------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------+

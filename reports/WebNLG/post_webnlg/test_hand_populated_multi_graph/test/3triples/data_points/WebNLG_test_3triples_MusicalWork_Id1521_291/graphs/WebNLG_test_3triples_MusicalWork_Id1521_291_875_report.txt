@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id1521_291_875
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-----------------------------------------------------------------------------------------------------------------+
-|                                                   GOLD OUTPUTS                                                  |
-+----------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                        | Generated? |
-+----------------------------------------------------------------------------------------------------+------------+
-| Expect a Miracle is a compilation album produced by Brian Kelly with a runtime of 54.56 minutes.   | False      |
-| Expect a Miracle, produced by Brian Kelly, is a compilation album with a runtime of 54.56.         | False      |
-| The compilation album Expect a Miracle, which was produced by Brian Kelly, has a runtime of 54:56. | False      |
-+----------------------------------------------------------------------------------------------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                     GOLD OUTPUTS                                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                            | Generated? |
++----------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Brain Kelly's Expect a Miracle was a compilation album that was preceded by Pools of Light and followed by Afterplay.                  | False      |
+| Expect a Miracle is a compilation album by Brian Kelly and came after the album Pools of Light, and before the album titled Afterplay. | False      |
+| Expect a Miracle is a compilation album, preceded by Pools of Light by Brian Kelly which is followed by the album Afterplay.           | False      |
++----------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +-----------------------------------------------------------------------------------------+
 |                                       NODE METRICS                                      |
@@ -56,51 +56,49 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id1521_291_875
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h29432                                                                    |
-|               |   INDEX: e29429 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h29432 ARG0: e29429 ARG1: p29430 ARG2: i29431 ]        |
-|               |           [ def_udef_a_q LBL: h29441 ARG0: x29438 RSTR: h29439 BODY: h29440 ]    |
-|               |           [ compound LBL: h29423 ARG0: e29420 ARG1: u29421 ARG2: u29422 ]        |
-|               |           [ existential_q LBL: h29427 ARG0: x29424 RSTR: h29425 BODY: h29426 ]   |
-|               |           [ _compilation_n_of LBL: h29419 ARG0: x29417 [ x NUM: sg ] ARG1:       |
-|               | i29418 ]                                                                         |
-|               |           [ _album_n_1 LBL: h29416 ARG0: x29415 ]                                |
-|               |           [ explicit_or_proper_q LBL: h29436 ARG0: x29433 RSTR: h29434 BODY:     |
-|               | h29435 ]                                                                         |
-|               |           [ named LBL: h29414 ARG0: x29413 CARG: "Expect a Miracle" ] >          |
-|               |   HCONS: < h29425 qeq h29419 h29439 qeq h29416 h29434 qeq h29414 >               |
-|               |   EQS: < x29424 eq x29417 h29423 eq h29428 u29422 eq x29424 h29423 eq h29416     |
-|               | u29421 eq x29415 x29438 eq x29415 h29432 eq h29442 i29431 eq x29438 x29433 eq    |
-|               | x29413 h29432 eq h29437 p29430 eq x29433 > ]                                     |
+| Original      | [ TOP: h9761                                                                     |
+|               |   INDEX: e9758 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h9761 ARG0: e9758 ARG1: p9759 ARG2: i9760 ]            |
+|               |           [ def_udef_a_q LBL: h9770 ARG0: x9767 RSTR: h9768 BODY: h9769 ]        |
+|               |           [ compound LBL: h9752 ARG0: e9749 ARG1: u9750 ARG2: u9751 ]            |
+|               |           [ existential_q LBL: h9756 ARG0: x9753 RSTR: h9754 BODY: h9755 ]       |
+|               |           [ _compilation_n_of LBL: h9748 ARG0: x9746 [ x NUM: sg ] ARG1: i9747 ] |
+|               |           [ _album_n_1 LBL: h9745 ARG0: x9744 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h9765 ARG0: x9762 RSTR: h9763 BODY: h9764  |
+|               | ]                                                                                |
+|               |           [ named LBL: h9743 ARG0: x9742 CARG: "Expect a Miracle" ] >            |
+|               |   HCONS: < h9754 qeq h9748 h9768 qeq h9745 h9763 qeq h9743 >                     |
+|               |   EQS: < x9753 eq x9746 h9752 eq h9757 u9751 eq x9753 h9752 eq h9745 u9750 eq    |
+|               | x9744 x9767 eq x9744 h9761 eq h9771 i9760 eq x9767 x9762 eq x9742 h9761 eq h9766 |
+|               | p9759 eq x9762 > ]                                                               |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h29432                                                                    |
-|               |   INDEX: e29429 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h29432 ARG0: e29429 ARG1: x29413 ARG2: x29415 ]        |
-|               |           [ def_udef_a_q LBL: h29441 ARG0: x29415 RSTR: h29439 BODY: h29440 ]    |
-|               |           [ compound LBL: h29416 ARG0: e29420 ARG1: x29415 ARG2: x29417 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h29427 ARG0: x29417 RSTR: h29425 BODY: h29426 ]   |
-|               |           [ _compilation_n_of LBL: h29419 ARG0: x29417 ARG1: i29418 ]            |
-|               |           [ _album_n_1 LBL: h29416 ARG0: x29415 ]                                |
-|               |           [ explicit_or_proper_q LBL: h29436 ARG0: x29413 RSTR: h29434 BODY:     |
-|               | h29435 ]                                                                         |
-|               |           [ named LBL: h29414 ARG0: x29413 CARG: "Expect a Miracle" ] >          |
-|               |   HCONS: < h29425 qeq h29419 h29439 qeq h29416 h29434 qeq h29414 > ]             |
+| EQs Collapsed | [ TOP: h9761                                                                     |
+|               |   INDEX: e9758 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h9761 ARG0: e9758 ARG1: x9742 ARG2: x9744 ]            |
+|               |           [ def_udef_a_q LBL: h9770 ARG0: x9744 RSTR: h9768 BODY: h9769 ]        |
+|               |           [ compound LBL: h9745 ARG0: e9749 ARG1: x9744 ARG2: x9746 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h9756 ARG0: x9746 RSTR: h9754 BODY: h9755 ]       |
+|               |           [ _compilation_n_of LBL: h9748 ARG0: x9746 ARG1: i9747 ]               |
+|               |           [ _album_n_1 LBL: h9745 ARG0: x9744 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h9765 ARG0: x9742 RSTR: h9763 BODY: h9764  |
+|               | ]                                                                                |
+|               |           [ named LBL: h9743 ARG0: x9742 CARG: "Expect a Miracle" ] >            |
+|               |   HCONS: < h9754 qeq h9748 h9768 qeq h9745 h9763 qeq h9743 > ]                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h29443                                                                    |
-|               |   INDEX: e29429 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h29432 ARG0: e29429 ARG1: x29413 ARG2: x29415 ]        |
-|               |           [ def_udef_a_q LBL: h29441 ARG0: x29415 RSTR: h29439 BODY: h29440 ]    |
-|               |           [ compound LBL: h29416 ARG0: e29420 ARG1: x29415 ARG2: x29417 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h29427 ARG0: x29417 RSTR: h29425 BODY: h29426 ]   |
-|               |           [ _compilation_n_of LBL: h29419 ARG0: x29417 ARG1: i29418 ]            |
-|               |           [ _album_n_1 LBL: h29416 ARG0: x29415 ]                                |
-|               |           [ explicit_or_proper_q LBL: h29436 ARG0: x29413 RSTR: h29434 BODY:     |
-|               | h29435 ]                                                                         |
-|               |           [ named LBL: h29414 ARG0: x29413 CARG: "Expect a Miracle" ] >          |
-|               |   HCONS: < h29425 qeq h29419 h29439 qeq h29416 h29434 qeq h29414 h29443 qeq      |
-|               | h29432 > ]                                                                       |
+| Prepped       | [ TOP: h9772                                                                     |
+|               |   INDEX: e9758 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h9761 ARG0: e9758 ARG1: x9742 ARG2: x9744 ]            |
+|               |           [ def_udef_a_q LBL: h9770 ARG0: x9744 RSTR: h9768 BODY: h9769 ]        |
+|               |           [ compound LBL: h9745 ARG0: e9749 ARG1: x9744 ARG2: x9746 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h9756 ARG0: x9746 RSTR: h9754 BODY: h9755 ]       |
+|               |           [ _compilation_n_of LBL: h9748 ARG0: x9746 ARG1: i9747 ]               |
+|               |           [ _album_n_1 LBL: h9745 ARG0: x9744 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h9765 ARG0: x9742 RSTR: h9763 BODY: h9764  |
+|               | ]                                                                                |
+|               |           [ named LBL: h9743 ARG0: x9742 CARG: "Expect a Miracle" ] >            |
+|               |   HCONS: < h9754 qeq h9748 h9768 qeq h9745 h9763 qeq h9743 h9772 qeq h9761 > ]   |
 +---------------+----------------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------------+
@@ -108,20 +106,19 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id1521_291_875
 +-------------------+----------------------------------------------------------------------------------+
 | Node              | Generated SEMENT                                                                 |
 +-------------------+----------------------------------------------------------------------------------+
-| Expect_a_Miracle  | [ TOP: h29414                                                                    |
-|                   |   INDEX: x29413                                                                  |
-|                   |   RELS: < [ named LBL: h29414 ARG0: x29413 CARG: "Expect a Miracle" ] > ]        |
+| Expect_a_Miracle  | [ TOP: h9743                                                                     |
+|                   |   INDEX: x9742                                                                   |
+|                   |   RELS: < [ named LBL: h9743 ARG0: x9742 CARG: "Expect a Miracle" ] > ]          |
 +-------------------+----------------------------------------------------------------------------------+
-| Compilation_Album | [ TOP: h29416                                                                    |
-|                   |   INDEX: x29415                                                                  |
-|                   |   RELS: < [ compound LBL: h29423 ARG0: e29420 ARG1: u29421 ARG2: u29422 ]        |
-|                   |           [ existential_q LBL: h29427 ARG0: x29424 RSTR: h29425 BODY: h29426 ]   |
-|                   |           [ _compilation_n_of LBL: h29419 ARG0: x29417 [ x NUM: sg ] ARG1:       |
-|                   | i29418 ]                                                                         |
-|                   |           [ _album_n_1 LBL: h29416 ARG0: x29415 ] >                              |
-|                   |   HCONS: < h29425 qeq h29419 >                                                   |
-|                   |   EQS: < x29424 eq x29417 h29423 eq h29428 u29422 eq x29424 h29423 eq h29416     |
-|                   | u29421 eq x29415 > ]                                                             |
+| Compilation_Album | [ TOP: h9745                                                                     |
+|                   |   INDEX: x9744                                                                   |
+|                   |   RELS: < [ compound LBL: h9752 ARG0: e9749 ARG1: u9750 ARG2: u9751 ]            |
+|                   |           [ existential_q LBL: h9756 ARG0: x9753 RSTR: h9754 BODY: h9755 ]       |
+|                   |           [ _compilation_n_of LBL: h9748 ARG0: x9746 [ x NUM: sg ] ARG1: i9747 ] |
+|                   |           [ _album_n_1 LBL: h9745 ARG0: x9744 ] >                                |
+|                   |   HCONS: < h9754 qeq h9748 >                                                     |
+|                   |   EQS: < x9753 eq x9746 h9752 eq h9757 u9751 eq x9753 h9752 eq h9745 u9750 eq    |
+|                   | x9744 > ]                                                                        |
 +-------------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------------------------------------------------+
@@ -129,22 +126,21 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id1521_291_875
 +------+------------------+-------------------+----------------------------------------------------------------------------------+
 | Edge | Parent           | Child             | Generated SEMENT                                                                 |
 +------+------------------+-------------------+----------------------------------------------------------------------------------+
-| type | Expect_a_Miracle | Compilation_Album | [ TOP: h29432                                                                    |
-|      |                  |                   |   INDEX: e29429 [ e SF: prop TENSE: tensed ]                                     |
-|      |                  |                   |   RELS: < [ _be_v_id LBL: h29432 ARG0: e29429 ARG1: p29430 ARG2: i29431 ]        |
-|      |                  |                   |           [ def_udef_a_q LBL: h29441 ARG0: x29438 RSTR: h29439 BODY: h29440 ]    |
-|      |                  |                   |           [ compound LBL: h29423 ARG0: e29420 ARG1: u29421 ARG2: u29422 ]        |
-|      |                  |                   |           [ existential_q LBL: h29427 ARG0: x29424 RSTR: h29425 BODY: h29426 ]   |
-|      |                  |                   |           [ _compilation_n_of LBL: h29419 ARG0: x29417 [ x NUM: sg ] ARG1:       |
-|      |                  |                   | i29418 ]                                                                         |
-|      |                  |                   |           [ _album_n_1 LBL: h29416 ARG0: x29415 ]                                |
-|      |                  |                   |           [ explicit_or_proper_q LBL: h29436 ARG0: x29433 RSTR: h29434 BODY:     |
-|      |                  |                   | h29435 ]                                                                         |
-|      |                  |                   |           [ named LBL: h29414 ARG0: x29413 CARG: "Expect a Miracle" ] >          |
-|      |                  |                   |   HCONS: < h29425 qeq h29419 h29439 qeq h29416 h29434 qeq h29414 >               |
-|      |                  |                   |   EQS: < x29424 eq x29417 h29423 eq h29428 u29422 eq x29424 h29423 eq h29416     |
-|      |                  |                   | u29421 eq x29415 x29438 eq x29415 h29432 eq h29442 i29431 eq x29438 x29433 eq    |
-|      |                  |                   | x29413 h29432 eq h29437 p29430 eq x29433 > ]                                     |
+| type | Expect_a_Miracle | Compilation_Album | [ TOP: h9761                                                                     |
+|      |                  |                   |   INDEX: e9758 [ e SF: prop TENSE: tensed ]                                      |
+|      |                  |                   |   RELS: < [ _be_v_id LBL: h9761 ARG0: e9758 ARG1: p9759 ARG2: i9760 ]            |
+|      |                  |                   |           [ def_udef_a_q LBL: h9770 ARG0: x9767 RSTR: h9768 BODY: h9769 ]        |
+|      |                  |                   |           [ compound LBL: h9752 ARG0: e9749 ARG1: u9750 ARG2: u9751 ]            |
+|      |                  |                   |           [ existential_q LBL: h9756 ARG0: x9753 RSTR: h9754 BODY: h9755 ]       |
+|      |                  |                   |           [ _compilation_n_of LBL: h9748 ARG0: x9746 [ x NUM: sg ] ARG1: i9747 ] |
+|      |                  |                   |           [ _album_n_1 LBL: h9745 ARG0: x9744 ]                                  |
+|      |                  |                   |           [ explicit_or_proper_q LBL: h9765 ARG0: x9762 RSTR: h9763 BODY: h9764  |
+|      |                  |                   | ]                                                                                |
+|      |                  |                   |           [ named LBL: h9743 ARG0: x9742 CARG: "Expect a Miracle" ] >            |
+|      |                  |                   |   HCONS: < h9754 qeq h9748 h9768 qeq h9745 h9763 qeq h9743 >                     |
+|      |                  |                   |   EQS: < x9753 eq x9746 h9752 eq h9757 u9751 eq x9753 h9752 eq h9745 u9750 eq    |
+|      |                  |                   | x9744 x9767 eq x9744 h9761 eq h9771 i9760 eq x9767 x9762 eq x9742 h9761 eq h9766 |
+|      |                  |                   | p9759 eq x9762 > ]                                                               |
 +------+------------------+-------------------+----------------------------------------------------------------------------------+
 
 +------------------------------------------------------------+

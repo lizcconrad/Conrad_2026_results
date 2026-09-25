@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id342_141_424
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                                 GOLD OUTPUTS                                                                                 |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                                     | Generated? |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| The runtime of the album Turn Me On is 35.1 minutes, with Punk blues as the genre of the album and the artist of the Turn Me On album is the Honeymoon Killers. | False      |
-| The total length of the Turn Me On punk blues album by the American band The Honeymoon Killers is 35 minutes 10 seconds.                                        | False      |
-| Turn Me On is a punk blues album by the Honeymoon Killers which runs 35.1 minutes.                                                                              | False      |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+|                                                         GOLD OUTPUTS                                                        |
++----------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                    | Generated? |
++----------------------------------------------------------------------------------------------------------------+------------+
+| The album Turn Me On is a punk blues album by the American band The Honeymoon Killers in the noise rock genre. | False      |
+| The artist the Honeymoon Killers released their noise rock and punk blues album, Turn Me On.                   | False      |
+| The noise rock punk blues album by the Honeymoon Killers is titled Turn Me On.                                 | False      |
++----------------------------------------------------------------------------------------------------------------+------------+
 
 +-------------------------------------------------------------------------------------------------------------+
 |                                                 NODE METRICS                                                |
@@ -56,67 +56,64 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id342_141_424
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h14298                                                                    |
-|               |   INDEX: e14295 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _by_p_loc LBL: h14298 ARG0: e14295 ARG1: u14296 ARG2: i14297 ]       |
-|               |           [ appos LBL: h14284 ARG0: e14281 ARG1: x14282 ARG2: i14283 ]           |
-|               |           [ def_udef_a_q LBL: h14293 ARG0: x14290 RSTR: h14291 BODY: h14292 ]    |
-|               |           [ _american_a_1 LBL: h14278 ARG0: e14276 ARG1: u14277 ]                |
-|               |           [ _band_n_1 LBL: h14280 ARG0: x14279 ]                                 |
-|               |           [ explicit_or_proper_q LBL: h14288 ARG0: x14285 RSTR: h14286 BODY:     |
-|               | h14287 ]                                                                         |
-|               |           [ named LBL: h14275 ARG0: x14274 CARG: "The Honeymoon Killers" ]       |
-|               |           [ appos LBL: h14263 ARG0: e14260 ARG1: x14261 ARG2: i14262 ]           |
-|               |           [ def_udef_a_q LBL: h14272 ARG0: x14269 RSTR: h14270 BODY: h14271 ]    |
-|               |           [ _album_n_1 LBL: h14259 ARG0: x14258 ]                                |
-|               |           [ explicit_or_proper_q LBL: h14267 ARG0: x14264 RSTR: h14265 BODY:     |
-|               | h14266 ]                                                                         |
-|               |           [ named LBL: h14257 ARG0: x14256 CARG: "Turn Me On" ] >                |
-|               |   HCONS: < h14291 qeq h14280 h14286 qeq h14275 h14270 qeq h14259 h14265 qeq      |
-|               | h14257 >                                                                         |
-|               |   EQS: < h14278 eq h14280 u14277 eq x14279 x14290 eq x14279 h14284 eq h14294     |
-|               | i14283 eq x14290 x14285 eq x14274 h14284 eq h14289 x14282 eq x14285 h14298 eq    |
-|               | h14289 i14297 eq x14285 x14269 eq x14258 h14263 eq h14273 i14262 eq x14269       |
-|               | x14264 eq x14256 h14263 eq h14268 x14261 eq x14264 h14298 eq h14268 u14296 eq    |
-|               | x14264 > ]                                                                       |
+| Original      | [ TOP: h1923                                                                     |
+|               |   INDEX: e1920 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _by_p_loc LBL: h1923 ARG0: e1920 ARG1: u1921 ARG2: i1922 ]           |
+|               |           [ appos LBL: h1909 ARG0: e1906 ARG1: x1907 ARG2: i1908 ]               |
+|               |           [ def_udef_a_q LBL: h1918 ARG0: x1915 RSTR: h1916 BODY: h1917 ]        |
+|               |           [ _american_a_1 LBL: h1903 ARG0: e1901 ARG1: u1902 ]                   |
+|               |           [ _band_n_1 LBL: h1905 ARG0: x1904 ]                                   |
+|               |           [ explicit_or_proper_q LBL: h1913 ARG0: x1910 RSTR: h1911 BODY: h1912  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1900 ARG0: x1899 CARG: "The Honeymoon Killers" ]         |
+|               |           [ appos LBL: h1888 ARG0: e1885 ARG1: x1886 ARG2: i1887 ]               |
+|               |           [ def_udef_a_q LBL: h1897 ARG0: x1894 RSTR: h1895 BODY: h1896 ]        |
+|               |           [ _album_n_1 LBL: h1884 ARG0: x1883 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h1892 ARG0: x1889 RSTR: h1890 BODY: h1891  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1882 ARG0: x1881 CARG: "Turn Me On" ] >                  |
+|               |   HCONS: < h1916 qeq h1905 h1911 qeq h1900 h1895 qeq h1884 h1890 qeq h1882 >     |
+|               |   EQS: < h1903 eq h1905 u1902 eq x1904 x1915 eq x1904 h1909 eq h1919 i1908 eq    |
+|               | x1915 x1910 eq x1899 h1909 eq h1914 x1907 eq x1910 h1923 eq h1914 i1922 eq x1910 |
+|               | x1894 eq x1883 h1888 eq h1898 i1887 eq x1894 x1889 eq x1881 h1888 eq h1893 x1886 |
+|               | eq x1889 h1923 eq h1893 u1921 eq x1889 > ]                                       |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h14263                                                                    |
-|               |   INDEX: e14295 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _by_p_loc LBL: h14263 ARG0: e14295 ARG1: x14256 ARG2: x14274 ]       |
-|               |           [ appos LBL: h14263 ARG0: e14281 ARG1: x14274 ARG2: x14279 ]           |
-|               |           [ def_udef_a_q LBL: h14293 ARG0: x14279 RSTR: h14291 BODY: h14292 ]    |
-|               |           [ _american_a_1 LBL: h14278 ARG0: e14276 ARG1: x14279 ]                |
-|               |           [ _band_n_1 LBL: h14278 ARG0: x14279 ]                                 |
-|               |           [ explicit_or_proper_q LBL: h14288 ARG0: x14274 RSTR: h14286 BODY:     |
-|               | h14287 ]                                                                         |
-|               |           [ named LBL: h14275 ARG0: x14274 CARG: "The Honeymoon Killers" ]       |
-|               |           [ appos LBL: h14263 ARG0: e14260 ARG1: x14256 ARG2: x14258 ]           |
-|               |           [ def_udef_a_q LBL: h14272 ARG0: x14258 RSTR: h14270 BODY: h14271 ]    |
-|               |           [ _album_n_1 LBL: h14259 ARG0: x14258 ]                                |
-|               |           [ explicit_or_proper_q LBL: h14267 ARG0: x14256 RSTR: h14265 BODY:     |
-|               | h14266 ]                                                                         |
-|               |           [ named LBL: h14257 ARG0: x14256 CARG: "Turn Me On" ] >                |
-|               |   HCONS: < h14291 qeq h14278 h14286 qeq h14275 h14270 qeq h14259 h14265 qeq      |
-|               | h14257 > ]                                                                       |
+| EQs Collapsed | [ TOP: h1888                                                                     |
+|               |   INDEX: e1920 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _by_p_loc LBL: h1888 ARG0: e1920 ARG1: x1881 ARG2: x1899 ]           |
+|               |           [ appos LBL: h1888 ARG0: e1906 ARG1: x1899 ARG2: x1904 ]               |
+|               |           [ def_udef_a_q LBL: h1918 ARG0: x1904 RSTR: h1916 BODY: h1917 ]        |
+|               |           [ _american_a_1 LBL: h1903 ARG0: e1901 ARG1: x1904 ]                   |
+|               |           [ _band_n_1 LBL: h1903 ARG0: x1904 ]                                   |
+|               |           [ explicit_or_proper_q LBL: h1913 ARG0: x1899 RSTR: h1911 BODY: h1912  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1900 ARG0: x1899 CARG: "The Honeymoon Killers" ]         |
+|               |           [ appos LBL: h1888 ARG0: e1885 ARG1: x1881 ARG2: x1883 ]               |
+|               |           [ def_udef_a_q LBL: h1897 ARG0: x1883 RSTR: h1895 BODY: h1896 ]        |
+|               |           [ _album_n_1 LBL: h1884 ARG0: x1883 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h1892 ARG0: x1881 RSTR: h1890 BODY: h1891  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1882 ARG0: x1881 CARG: "Turn Me On" ] >                  |
+|               |   HCONS: < h1916 qeq h1903 h1911 qeq h1900 h1895 qeq h1884 h1890 qeq h1882 > ]   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h14299                                                                    |
-|               |   INDEX: e14295 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _by_p_loc LBL: h14263 ARG0: e14295 ARG1: x14256 ARG2: x14274 ]       |
-|               |           [ appos LBL: h14263 ARG0: e14281 ARG1: x14274 ARG2: x14279 ]           |
-|               |           [ def_udef_a_q LBL: h14293 ARG0: x14279 RSTR: h14291 BODY: h14292 ]    |
-|               |           [ _american_a_1 LBL: h14278 ARG0: e14276 ARG1: x14279 ]                |
-|               |           [ _band_n_1 LBL: h14278 ARG0: x14279 ]                                 |
-|               |           [ explicit_or_proper_q LBL: h14288 ARG0: x14274 RSTR: h14286 BODY:     |
-|               | h14287 ]                                                                         |
-|               |           [ named LBL: h14275 ARG0: x14274 CARG: "The Honeymoon Killers" ]       |
-|               |           [ appos LBL: h14263 ARG0: e14260 ARG1: x14256 ARG2: x14258 ]           |
-|               |           [ def_udef_a_q LBL: h14272 ARG0: x14258 RSTR: h14270 BODY: h14271 ]    |
-|               |           [ _album_n_1 LBL: h14259 ARG0: x14258 ]                                |
-|               |           [ explicit_or_proper_q LBL: h14267 ARG0: x14256 RSTR: h14265 BODY:     |
-|               | h14266 ]                                                                         |
-|               |           [ named LBL: h14257 ARG0: x14256 CARG: "Turn Me On" ] >                |
-|               |   HCONS: < h14291 qeq h14278 h14286 qeq h14275 h14270 qeq h14259 h14265 qeq      |
-|               | h14257 h14299 qeq h14263 > ]                                                     |
+| Prepped       | [ TOP: h1924                                                                     |
+|               |   INDEX: e1920 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _by_p_loc LBL: h1888 ARG0: e1920 ARG1: x1881 ARG2: x1899 ]           |
+|               |           [ appos LBL: h1888 ARG0: e1906 ARG1: x1899 ARG2: x1904 ]               |
+|               |           [ def_udef_a_q LBL: h1918 ARG0: x1904 RSTR: h1916 BODY: h1917 ]        |
+|               |           [ _american_a_1 LBL: h1903 ARG0: e1901 ARG1: x1904 ]                   |
+|               |           [ _band_n_1 LBL: h1903 ARG0: x1904 ]                                   |
+|               |           [ explicit_or_proper_q LBL: h1913 ARG0: x1899 RSTR: h1911 BODY: h1912  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1900 ARG0: x1899 CARG: "The Honeymoon Killers" ]         |
+|               |           [ appos LBL: h1888 ARG0: e1885 ARG1: x1881 ARG2: x1883 ]               |
+|               |           [ def_udef_a_q LBL: h1897 ARG0: x1883 RSTR: h1895 BODY: h1896 ]        |
+|               |           [ _album_n_1 LBL: h1884 ARG0: x1883 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h1892 ARG0: x1881 RSTR: h1890 BODY: h1891  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1882 ARG0: x1881 CARG: "Turn Me On" ] >                  |
+|               |   HCONS: < h1916 qeq h1903 h1911 qeq h1900 h1895 qeq h1884 h1890 qeq h1882 h1924 |
+|               | qeq h1888 > ]                                                                    |
 +---------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -124,32 +121,32 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id342_141_424
 +---------------------------------------+----------------------------------------------------------------------------------+
 | Node                                  | Generated SEMENT                                                                 |
 +---------------------------------------+----------------------------------------------------------------------------------+
-| Turn_Me_On_(album)                    | [ TOP: h14268                                                                    |
-|                                       |   INDEX: x14264                                                                  |
-|                                       |   RELS: < [ appos LBL: h14263 ARG0: e14260 ARG1: x14261 ARG2: i14262 ]           |
-|                                       |           [ def_udef_a_q LBL: h14272 ARG0: x14269 RSTR: h14270 BODY: h14271 ]    |
-|                                       |           [ _album_n_1 LBL: h14259 ARG0: x14258 ]                                |
-|                                       |           [ explicit_or_proper_q LBL: h14267 ARG0: x14264 RSTR: h14265 BODY:     |
-|                                       | h14266 ]                                                                         |
-|                                       |           [ named LBL: h14257 ARG0: x14256 CARG: "Turn Me On" ] >                |
-|                                       |   HCONS: < h14270 qeq h14259 h14265 qeq h14257 >                                 |
-|                                       |   EQS: < x14269 eq x14258 h14263 eq h14273 i14262 eq x14269 x14264 eq x14256     |
-|                                       | h14263 eq h14268 x14261 eq x14264 >                                              |
-|                                       |   SLOTS: < BODY: h14266 > ]                                                      |
+| Turn_Me_On_(album)                    | [ TOP: h1893                                                                     |
+|                                       |   INDEX: x1889                                                                   |
+|                                       |   RELS: < [ appos LBL: h1888 ARG0: e1885 ARG1: x1886 ARG2: i1887 ]               |
+|                                       |           [ def_udef_a_q LBL: h1897 ARG0: x1894 RSTR: h1895 BODY: h1896 ]        |
+|                                       |           [ _album_n_1 LBL: h1884 ARG0: x1883 ]                                  |
+|                                       |           [ explicit_or_proper_q LBL: h1892 ARG0: x1889 RSTR: h1890 BODY: h1891  |
+|                                       | ]                                                                                |
+|                                       |           [ named LBL: h1882 ARG0: x1881 CARG: "Turn Me On" ] >                  |
+|                                       |   HCONS: < h1895 qeq h1884 h1890 qeq h1882 >                                     |
+|                                       |   EQS: < x1894 eq x1883 h1888 eq h1898 i1887 eq x1894 x1889 eq x1881 h1888 eq    |
+|                                       | h1893 x1886 eq x1889 >                                                           |
+|                                       |   SLOTS: < BODY: h1891 > ]                                                       |
 +---------------------------------------+----------------------------------------------------------------------------------+
-| The_Honeymoon_Killers_(American_band) | [ TOP: h14289                                                                    |
-|                                       |   INDEX: x14285                                                                  |
-|                                       |   RELS: < [ appos LBL: h14284 ARG0: e14281 ARG1: x14282 ARG2: i14283 ]           |
-|                                       |           [ def_udef_a_q LBL: h14293 ARG0: x14290 RSTR: h14291 BODY: h14292 ]    |
-|                                       |           [ _american_a_1 LBL: h14278 ARG0: e14276 ARG1: u14277 ]                |
-|                                       |           [ _band_n_1 LBL: h14280 ARG0: x14279 ]                                 |
-|                                       |           [ explicit_or_proper_q LBL: h14288 ARG0: x14285 RSTR: h14286 BODY:     |
-|                                       | h14287 ]                                                                         |
-|                                       |           [ named LBL: h14275 ARG0: x14274 CARG: "The Honeymoon Killers" ] >     |
-|                                       |   HCONS: < h14291 qeq h14280 h14286 qeq h14275 >                                 |
-|                                       |   EQS: < h14278 eq h14280 u14277 eq x14279 x14290 eq x14279 h14284 eq h14294     |
-|                                       | i14283 eq x14290 x14285 eq x14274 h14284 eq h14289 x14282 eq x14285 >            |
-|                                       |   SLOTS: < BODY: h14287 > ]                                                      |
+| The_Honeymoon_Killers_(American_band) | [ TOP: h1914                                                                     |
+|                                       |   INDEX: x1910                                                                   |
+|                                       |   RELS: < [ appos LBL: h1909 ARG0: e1906 ARG1: x1907 ARG2: i1908 ]               |
+|                                       |           [ def_udef_a_q LBL: h1918 ARG0: x1915 RSTR: h1916 BODY: h1917 ]        |
+|                                       |           [ _american_a_1 LBL: h1903 ARG0: e1901 ARG1: u1902 ]                   |
+|                                       |           [ _band_n_1 LBL: h1905 ARG0: x1904 ]                                   |
+|                                       |           [ explicit_or_proper_q LBL: h1913 ARG0: x1910 RSTR: h1911 BODY: h1912  |
+|                                       | ]                                                                                |
+|                                       |           [ named LBL: h1900 ARG0: x1899 CARG: "The Honeymoon Killers" ] >       |
+|                                       |   HCONS: < h1916 qeq h1905 h1911 qeq h1900 >                                     |
+|                                       |   EQS: < h1903 eq h1905 u1902 eq x1904 x1915 eq x1904 h1909 eq h1919 i1908 eq    |
+|                                       | x1915 x1910 eq x1899 h1909 eq h1914 x1907 eq x1910 >                             |
+|                                       |   SLOTS: < BODY: h1912 > ]                                                       |
 +---------------------------------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -157,29 +154,27 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id342_141_424
 +--------+--------------------+---------------------------------------+----------------------------------------------------------------------------------+
 | Edge   | Parent             | Child                                 | Generated SEMENT                                                                 |
 +--------+--------------------+---------------------------------------+----------------------------------------------------------------------------------+
-| artist | Turn_Me_On_(album) | The_Honeymoon_Killers_(American_band) | [ TOP: h14298                                                                    |
-|        |                    |                                       |   INDEX: e14295 [ e TENSE: tensed ]                                              |
-|        |                    |                                       |   RELS: < [ _by_p_loc LBL: h14298 ARG0: e14295 ARG1: u14296 ARG2: i14297 ]       |
-|        |                    |                                       |           [ appos LBL: h14284 ARG0: e14281 ARG1: x14282 ARG2: i14283 ]           |
-|        |                    |                                       |           [ def_udef_a_q LBL: h14293 ARG0: x14290 RSTR: h14291 BODY: h14292 ]    |
-|        |                    |                                       |           [ _american_a_1 LBL: h14278 ARG0: e14276 ARG1: u14277 ]                |
-|        |                    |                                       |           [ _band_n_1 LBL: h14280 ARG0: x14279 ]                                 |
-|        |                    |                                       |           [ explicit_or_proper_q LBL: h14288 ARG0: x14285 RSTR: h14286 BODY:     |
-|        |                    |                                       | h14287 ]                                                                         |
-|        |                    |                                       |           [ named LBL: h14275 ARG0: x14274 CARG: "The Honeymoon Killers" ]       |
-|        |                    |                                       |           [ appos LBL: h14263 ARG0: e14260 ARG1: x14261 ARG2: i14262 ]           |
-|        |                    |                                       |           [ def_udef_a_q LBL: h14272 ARG0: x14269 RSTR: h14270 BODY: h14271 ]    |
-|        |                    |                                       |           [ _album_n_1 LBL: h14259 ARG0: x14258 ]                                |
-|        |                    |                                       |           [ explicit_or_proper_q LBL: h14267 ARG0: x14264 RSTR: h14265 BODY:     |
-|        |                    |                                       | h14266 ]                                                                         |
-|        |                    |                                       |           [ named LBL: h14257 ARG0: x14256 CARG: "Turn Me On" ] >                |
-|        |                    |                                       |   HCONS: < h14291 qeq h14280 h14286 qeq h14275 h14270 qeq h14259 h14265 qeq      |
-|        |                    |                                       | h14257 >                                                                         |
-|        |                    |                                       |   EQS: < h14278 eq h14280 u14277 eq x14279 x14290 eq x14279 h14284 eq h14294     |
-|        |                    |                                       | i14283 eq x14290 x14285 eq x14274 h14284 eq h14289 x14282 eq x14285 h14298 eq    |
-|        |                    |                                       | h14289 i14297 eq x14285 x14269 eq x14258 h14263 eq h14273 i14262 eq x14269       |
-|        |                    |                                       | x14264 eq x14256 h14263 eq h14268 x14261 eq x14264 h14298 eq h14268 u14296 eq    |
-|        |                    |                                       | x14264 > ]                                                                       |
+| artist | Turn_Me_On_(album) | The_Honeymoon_Killers_(American_band) | [ TOP: h1923                                                                     |
+|        |                    |                                       |   INDEX: e1920 [ e TENSE: tensed ]                                               |
+|        |                    |                                       |   RELS: < [ _by_p_loc LBL: h1923 ARG0: e1920 ARG1: u1921 ARG2: i1922 ]           |
+|        |                    |                                       |           [ appos LBL: h1909 ARG0: e1906 ARG1: x1907 ARG2: i1908 ]               |
+|        |                    |                                       |           [ def_udef_a_q LBL: h1918 ARG0: x1915 RSTR: h1916 BODY: h1917 ]        |
+|        |                    |                                       |           [ _american_a_1 LBL: h1903 ARG0: e1901 ARG1: u1902 ]                   |
+|        |                    |                                       |           [ _band_n_1 LBL: h1905 ARG0: x1904 ]                                   |
+|        |                    |                                       |           [ explicit_or_proper_q LBL: h1913 ARG0: x1910 RSTR: h1911 BODY: h1912  |
+|        |                    |                                       | ]                                                                                |
+|        |                    |                                       |           [ named LBL: h1900 ARG0: x1899 CARG: "The Honeymoon Killers" ]         |
+|        |                    |                                       |           [ appos LBL: h1888 ARG0: e1885 ARG1: x1886 ARG2: i1887 ]               |
+|        |                    |                                       |           [ def_udef_a_q LBL: h1897 ARG0: x1894 RSTR: h1895 BODY: h1896 ]        |
+|        |                    |                                       |           [ _album_n_1 LBL: h1884 ARG0: x1883 ]                                  |
+|        |                    |                                       |           [ explicit_or_proper_q LBL: h1892 ARG0: x1889 RSTR: h1890 BODY: h1891  |
+|        |                    |                                       | ]                                                                                |
+|        |                    |                                       |           [ named LBL: h1882 ARG0: x1881 CARG: "Turn Me On" ] >                  |
+|        |                    |                                       |   HCONS: < h1916 qeq h1905 h1911 qeq h1900 h1895 qeq h1884 h1890 qeq h1882 >     |
+|        |                    |                                       |   EQS: < h1903 eq h1905 u1902 eq x1904 x1915 eq x1904 h1909 eq h1919 i1908 eq    |
+|        |                    |                                       | x1915 x1910 eq x1899 h1909 eq h1914 x1907 eq x1910 h1923 eq h1914 i1922 eq x1910 |
+|        |                    |                                       | x1894 eq x1883 h1888 eq h1898 i1887 eq x1894 x1889 eq x1881 h1888 eq h1893 x1886 |
+|        |                    |                                       | eq x1889 h1923 eq h1893 u1921 eq x1889 > ]                                       |
 +--------+--------------------+---------------------------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------+

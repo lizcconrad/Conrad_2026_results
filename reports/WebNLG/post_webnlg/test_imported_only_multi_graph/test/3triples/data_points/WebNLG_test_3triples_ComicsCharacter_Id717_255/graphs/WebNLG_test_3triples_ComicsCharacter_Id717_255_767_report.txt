@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_ComicsCharacter_Id717_255_767
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+--------------------------------------------------------------------------------------------------------------------+
-|                                                    GOLD OUTPUTS                                                    |
-+-------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                           | Generated? |
-+-------------------------------------------------------------------------------------------------------+------------+
-| Bananaman was created by Steve Bright and starred Bill Oddie. The show was shown on the BBC.          | False      |
-| Bill Oddie starred in Bananaman, which was created by Steve Bright and was broadcasted by the BBC.    | False      |
-| Steve Bright is the creator of Bananaman which was broadcast by the BBC and starred in by Bill Oddie. | False      |
-+-------------------------------------------------------------------------------------------------------+------------+
++-------------------------------------------------------------------------------------------------------------+
+|                                                 GOLD OUTPUTS                                                |
++------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                    | Generated? |
++------------------------------------------------------------------------------------------------+------------+
+| Bananaman starring Bill Oddie is broadcast by the BBC, which is located in London.             | False      |
+| Bananaman the TV series starring Bill Oddie was shown on the BBC and BBC is located in London. | False      |
+| The BBC, which is located in London, broadcasted Bananaman which starred Billie Oddie.         | False      |
++------------------------------------------------------------------------------------------------+------------+
 
 +---------------------------------------------------------------------------------+
 |                                   NODE METRICS                                  |
@@ -56,73 +56,65 @@ GRAPH NAME: WebNLG_test_3triples_ComicsCharacter_Id717_255_767
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h5439                                                                     |
-|               |   INDEX: e5436 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _broadcast_v_to LBL: h5439 ARG0: e5436 ARG1: i5437 ARG2: i5438 ]     |
-|               |           [ explicit_or_proper_q LBL: h5448 ARG0: x5445 RSTR: h5446 BODY: h5447  |
-|               | ]                                                                                |
-|               |           [ named LBL: h5433 ARG0: x5432 CARG: "Bananaman" ]                     |
-|               |           [ explicit_or_proper_q LBL: h5443 ARG0: x5440 RSTR: h5441 BODY: h5442  |
-|               | ]                                                                                |
-|               |           [ named LBL: h5435 ARG0: x5434 CARG: "BBC" ] >                         |
-|               |   HCONS: < h5446 qeq h5433 h5441 qeq h5435 >                                     |
-|               |   EQS: < x5445 eq x5432 h5439 eq h5449 i5438 eq x5445 x5440 eq x5434 h5439 eq    |
-|               | h5444 i5437 eq x5440 > ]                                                         |
+| Original      | [ TOP: h818                                                                      |
+|               |   INDEX: e815 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _broadcast_v_to LBL: h818 ARG0: e815 ARG1: i816 ARG2: i817 ]         |
+|               |           [ explicit_or_proper_q LBL: h827 ARG0: x824 RSTR: h825 BODY: h826 ]    |
+|               |           [ named LBL: h812 ARG0: x811 CARG: "Bananaman" ]                       |
+|               |           [ explicit_or_proper_q LBL: h822 ARG0: x819 RSTR: h820 BODY: h821 ]    |
+|               |           [ named LBL: h814 ARG0: x813 CARG: "BBC" ] >                           |
+|               |   HCONS: < h825 qeq h812 h820 qeq h814 >                                         |
+|               |   EQS: < x824 eq x811 h818 eq h828 i817 eq x824 x819 eq x813 h818 eq h823 i816   |
+|               | eq x819 > ]                                                                      |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h5439                                                                     |
-|               |   INDEX: e5436 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _broadcast_v_to LBL: h5439 ARG0: e5436 ARG1: x5434 ARG2: x5432 ]     |
-|               |           [ explicit_or_proper_q LBL: h5448 ARG0: x5432 RSTR: h5446 BODY: h5447  |
-|               | ]                                                                                |
-|               |           [ named LBL: h5433 ARG0: x5432 CARG: "Bananaman" ]                     |
-|               |           [ explicit_or_proper_q LBL: h5443 ARG0: x5434 RSTR: h5441 BODY: h5442  |
-|               | ]                                                                                |
-|               |           [ named LBL: h5435 ARG0: x5434 CARG: "BBC" ] >                         |
-|               |   HCONS: < h5446 qeq h5433 h5441 qeq h5435 > ]                                   |
+| EQs Collapsed | [ TOP: h818                                                                      |
+|               |   INDEX: e815 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _broadcast_v_to LBL: h818 ARG0: e815 ARG1: x813 ARG2: x811 ]         |
+|               |           [ explicit_or_proper_q LBL: h827 ARG0: x811 RSTR: h825 BODY: h826 ]    |
+|               |           [ named LBL: h812 ARG0: x811 CARG: "Bananaman" ]                       |
+|               |           [ explicit_or_proper_q LBL: h822 ARG0: x813 RSTR: h820 BODY: h821 ]    |
+|               |           [ named LBL: h814 ARG0: x813 CARG: "BBC" ] >                           |
+|               |   HCONS: < h825 qeq h812 h820 qeq h814 > ]                                       |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h5450                                                                     |
-|               |   INDEX: e5436 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _broadcast_v_to LBL: h5439 ARG0: e5436 ARG1: x5434 ARG2: x5432 ]     |
-|               |           [ explicit_or_proper_q LBL: h5448 ARG0: x5432 RSTR: h5446 BODY: h5447  |
-|               | ]                                                                                |
-|               |           [ named LBL: h5433 ARG0: x5432 CARG: "Bananaman" ]                     |
-|               |           [ explicit_or_proper_q LBL: h5443 ARG0: x5434 RSTR: h5441 BODY: h5442  |
-|               | ]                                                                                |
-|               |           [ named LBL: h5435 ARG0: x5434 CARG: "BBC" ] >                         |
-|               |   HCONS: < h5446 qeq h5433 h5441 qeq h5435 h5450 qeq h5439 > ]                   |
+| Prepped       | [ TOP: h829                                                                      |
+|               |   INDEX: e815 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _broadcast_v_to LBL: h818 ARG0: e815 ARG1: x813 ARG2: x811 ]         |
+|               |           [ explicit_or_proper_q LBL: h827 ARG0: x811 RSTR: h825 BODY: h826 ]    |
+|               |           [ named LBL: h812 ARG0: x811 CARG: "Bananaman" ]                       |
+|               |           [ explicit_or_proper_q LBL: h822 ARG0: x813 RSTR: h820 BODY: h821 ]    |
+|               |           [ named LBL: h814 ARG0: x813 CARG: "BBC" ] >                           |
+|               |   HCONS: < h825 qeq h812 h820 qeq h814 h829 qeq h818 > ]                         |
 +---------------+----------------------------------------------------------------------------------+
 
-+------------------------------------------------------------------------------+
-|                                 NODE SEMENTS                                 |
-+-----------+------------------------------------------------------------------+
-| Node      | Generated SEMENT                                                 |
-+-----------+------------------------------------------------------------------+
-| Bananaman | [ TOP: h5433                                                     |
-|           |   INDEX: x5432                                                   |
-|           |   RELS: < [ named LBL: h5433 ARG0: x5432 CARG: "Bananaman" ] > ] |
-+-----------+------------------------------------------------------------------+
-| BBC       | [ TOP: h5435                                                     |
-|           |   INDEX: x5434                                                   |
-|           |   RELS: < [ named LBL: h5435 ARG0: x5434 CARG: "BBC" ] > ]       |
-+-----------+------------------------------------------------------------------+
++----------------------------------------------------------------------------+
+|                                NODE SEMENTS                                |
++-----------+----------------------------------------------------------------+
+| Node      | Generated SEMENT                                               |
++-----------+----------------------------------------------------------------+
+| Bananaman | [ TOP: h812                                                    |
+|           |   INDEX: x811                                                  |
+|           |   RELS: < [ named LBL: h812 ARG0: x811 CARG: "Bananaman" ] > ] |
++-----------+----------------------------------------------------------------+
+| BBC       | [ TOP: h814                                                    |
+|           |   INDEX: x813                                                  |
+|           |   RELS: < [ named LBL: h814 ARG0: x813 CARG: "BBC" ] > ]       |
++-----------+----------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------+
 |                                                     EDGE SEMENTS                                                     |
 +---------------+-----------+-------+----------------------------------------------------------------------------------+
 | Edge          | Parent    | Child | Generated SEMENT                                                                 |
 +---------------+-----------+-------+----------------------------------------------------------------------------------+
-| broadcastedBy | Bananaman | BBC   | [ TOP: h5439                                                                     |
-|               |           |       |   INDEX: e5436 [ e TENSE: tensed ]                                               |
-|               |           |       |   RELS: < [ _broadcast_v_to LBL: h5439 ARG0: e5436 ARG1: i5437 ARG2: i5438 ]     |
-|               |           |       |           [ explicit_or_proper_q LBL: h5448 ARG0: x5445 RSTR: h5446 BODY: h5447  |
-|               |           |       | ]                                                                                |
-|               |           |       |           [ named LBL: h5433 ARG0: x5432 CARG: "Bananaman" ]                     |
-|               |           |       |           [ explicit_or_proper_q LBL: h5443 ARG0: x5440 RSTR: h5441 BODY: h5442  |
-|               |           |       | ]                                                                                |
-|               |           |       |           [ named LBL: h5435 ARG0: x5434 CARG: "BBC" ] >                         |
-|               |           |       |   HCONS: < h5446 qeq h5433 h5441 qeq h5435 >                                     |
-|               |           |       |   EQS: < x5445 eq x5432 h5439 eq h5449 i5438 eq x5445 x5440 eq x5434 h5439 eq    |
-|               |           |       | h5444 i5437 eq x5440 > ]                                                         |
+| broadcastedBy | Bananaman | BBC   | [ TOP: h818                                                                      |
+|               |           |       |   INDEX: e815 [ e TENSE: tensed ]                                                |
+|               |           |       |   RELS: < [ _broadcast_v_to LBL: h818 ARG0: e815 ARG1: i816 ARG2: i817 ]         |
+|               |           |       |           [ explicit_or_proper_q LBL: h827 ARG0: x824 RSTR: h825 BODY: h826 ]    |
+|               |           |       |           [ named LBL: h812 ARG0: x811 CARG: "Bananaman" ]                       |
+|               |           |       |           [ explicit_or_proper_q LBL: h822 ARG0: x819 RSTR: h820 BODY: h821 ]    |
+|               |           |       |           [ named LBL: h814 ARG0: x813 CARG: "BBC" ] >                           |
+|               |           |       |   HCONS: < h825 qeq h812 h820 qeq h814 >                                         |
+|               |           |       |   EQS: < x824 eq x811 h818 eq h828 i817 eq x824 x819 eq x813 h818 eq h823 i816   |
+|               |           |       | eq x819 > ]                                                                      |
 +---------------+-----------+-------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------+

@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id939_190_571
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                   GOLD OUTPUTS                                                                  |
-+------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                        | Generated? |
-+------------------------------------------------------------------------------------------------------------------------------------+------------+
-| It's Great to be Young (1956 film) was directed by Cyril Frankel, composed by Louis Levy and has a running time of 94 minutes.     | False      |
-| The 1956 movie It's Great to Be Young was directed by Cyril Frankel, composed by Louis Levy, and its length is 94 minutes.         | False      |
-| This movie of 94 minutes, 'It's great to be young', from 1956 was directed by Cyril Frankel and Louis levy was the music composer. | False      |
-+------------------------------------------------------------------------------------------------------------------------------------+------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                           GOLD OUTPUTS                                                                           |
++-----------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                         | Generated? |
++-----------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| It's Great to Be Young is a 1956 film which was produced by Cyril Frankel, and starred John Mills and Cecil Parker.                                 | False      |
+| John Mills plays the lead and Cecil Parker had a main role in the 1956 movie, It's Great to Be Young which was directed by Cyril Frankel.           | False      |
+| The 1956 film It's Great to be Young was directed by Cyril Frankel. The star of the movie was Cecil Parker, and John Mills had a main role as well. | False      |
++-----------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------------------------+
 |                                               NODE METRICS                                               |
@@ -56,73 +56,72 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id939_190_571
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h19276                                                                    |
-|               |   INDEX: e19273 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h19276 ARG0: e19273 ARG1: p19274 ARG2: i19275 ]        |
-|               |           [ def_udef_a_q LBL: h19285 ARG0: x19282 RSTR: h19283 BODY: h19284 ]    |
-|               |           [ _director_n_of LBL: h19272 ARG0: x19270 ARG1: i19271 ]               |
-|               |           [ appos LBL: h19257 ARG0: e19254 ARG1: x19255 ARG2: i19256 ]           |
-|               |           [ def_udef_a_q LBL: h19266 ARG0: x19263 RSTR: h19264 BODY: h19265 ]    |
-|               |           [ compound LBL: h19253 ARG0: e19250 ARG1: u19251 ARG2: u19252 ]        |
-|               |           [ proper_q LBL: h19248 ARG0: x19245 [ x NUM: sg ] RSTR: h19246 BODY:   |
-|               | h19247 ]                                                                         |
-|               |           [ yofc LBL: h19244 ARG0: x19243 CARG: "1956" ]                         |
-|               |           [ _film_n_1 LBL: h19236 ARG0: x19235 ]                                 |
-|               |           [ explicit_or_proper_q LBL: h19261 ARG0: x19258 RSTR: h19259 BODY:     |
-|               | h19260 ]                                                                         |
-|               |           [ named LBL: h19234 ARG0: x19233 CARG: "It's Great to Be Young" ]      |
-|               |           [ explicit_or_proper_q LBL: h19280 ARG0: x19277 RSTR: h19278 BODY:     |
-|               | h19279 ]                                                                         |
-|               |           [ named LBL: h19269 ARG0: x19268 CARG: "Cyril Frankel" ] >             |
-|               |   HCONS: < h19246 qeq h19244 h19264 qeq h19236 h19259 qeq h19234 h19283 qeq      |
-|               | h19272 h19278 qeq h19269 >                                                       |
-|               |   EQS: < x19245 eq x19243 h19253 eq h19249 u19252 eq x19245 h19253 eq h19236     |
-|               | u19251 eq x19235 x19263 eq x19235 h19257 eq h19267 i19256 eq x19263 x19258 eq    |
-|               | x19233 h19257 eq h19262 x19255 eq x19258 h19272 eq h19262 i19271 eq x19258       |
-|               | x19282 eq x19270 h19276 eq h19286 i19275 eq x19282 x19277 eq x19268 h19276 eq    |
-|               | h19281 p19274 eq x19277 > ]                                                      |
+| Original      | [ TOP: h4900                                                                     |
+|               |   INDEX: e4897 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h4900 ARG0: e4897 ARG1: p4898 ARG2: i4899 ]            |
+|               |           [ def_udef_a_q LBL: h4909 ARG0: x4906 RSTR: h4907 BODY: h4908 ]        |
+|               |           [ _director_n_of LBL: h4896 ARG0: x4894 ARG1: i4895 ]                  |
+|               |           [ appos LBL: h4881 ARG0: e4878 ARG1: x4879 ARG2: i4880 ]               |
+|               |           [ def_udef_a_q LBL: h4890 ARG0: x4887 RSTR: h4888 BODY: h4889 ]        |
+|               |           [ compound LBL: h4877 ARG0: e4874 ARG1: u4875 ARG2: u4876 ]            |
+|               |           [ proper_q LBL: h4872 ARG0: x4869 [ x NUM: sg ] RSTR: h4870 BODY:      |
+|               | h4871 ]                                                                          |
+|               |           [ yofc LBL: h4868 ARG0: x4867 CARG: "1956" ]                           |
+|               |           [ _film_n_1 LBL: h4860 ARG0: x4859 ]                                   |
+|               |           [ explicit_or_proper_q LBL: h4885 ARG0: x4882 RSTR: h4883 BODY: h4884  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4858 ARG0: x4857 CARG: "It's Great to Be Young" ]        |
+|               |           [ explicit_or_proper_q LBL: h4904 ARG0: x4901 RSTR: h4902 BODY: h4903  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4893 ARG0: x4892 CARG: "Cyril Frankel" ] >               |
+|               |   HCONS: < h4870 qeq h4868 h4888 qeq h4860 h4883 qeq h4858 h4907 qeq h4896 h4902 |
+|               | qeq h4893 >                                                                      |
+|               |   EQS: < x4869 eq x4867 h4877 eq h4873 u4876 eq x4869 h4877 eq h4860 u4875 eq    |
+|               | x4859 x4887 eq x4859 h4881 eq h4891 i4880 eq x4887 x4882 eq x4857 h4881 eq h4886 |
+|               | x4879 eq x4882 h4896 eq h4886 i4895 eq x4882 x4906 eq x4894 h4900 eq h4910 i4899 |
+|               | eq x4906 x4901 eq x4892 h4900 eq h4905 p4898 eq x4901 > ]                        |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h19276                                                                    |
-|               |   INDEX: e19273 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h19276 ARG0: e19273 ARG1: x19268 ARG2: x19270 ]        |
-|               |           [ def_udef_a_q LBL: h19285 ARG0: x19270 RSTR: h19283 BODY: h19284 ]    |
-|               |           [ _director_n_of LBL: h19257 ARG0: x19270 ARG1: x19233 ]               |
-|               |           [ appos LBL: h19257 ARG0: e19254 ARG1: x19233 ARG2: x19235 ]           |
-|               |           [ def_udef_a_q LBL: h19266 ARG0: x19235 RSTR: h19264 BODY: h19265 ]    |
-|               |           [ compound LBL: h19236 ARG0: e19250 ARG1: x19235 ARG2: x19243 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ proper_q LBL: h19248 ARG0: x19243 RSTR: h19246 BODY: h19247 ]        |
-|               |           [ yofc LBL: h19244 ARG0: x19243 CARG: "1956" ]                         |
-|               |           [ _film_n_1 LBL: h19236 ARG0: x19235 ]                                 |
-|               |           [ explicit_or_proper_q LBL: h19261 ARG0: x19233 RSTR: h19259 BODY:     |
-|               | h19260 ]                                                                         |
-|               |           [ named LBL: h19234 ARG0: x19233 CARG: "It's Great to Be Young" ]      |
-|               |           [ explicit_or_proper_q LBL: h19280 ARG0: x19268 RSTR: h19278 BODY:     |
-|               | h19279 ]                                                                         |
-|               |           [ named LBL: h19269 ARG0: x19268 CARG: "Cyril Frankel" ] >             |
-|               |   HCONS: < h19246 qeq h19244 h19264 qeq h19236 h19259 qeq h19234 h19283 qeq      |
-|               | h19257 h19278 qeq h19269 > ]                                                     |
+| EQs Collapsed | [ TOP: h4900                                                                     |
+|               |   INDEX: e4897 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h4900 ARG0: e4897 ARG1: x4892 ARG2: x4894 ]            |
+|               |           [ def_udef_a_q LBL: h4909 ARG0: x4894 RSTR: h4907 BODY: h4908 ]        |
+|               |           [ _director_n_of LBL: h4881 ARG0: x4894 ARG1: x4857 ]                  |
+|               |           [ appos LBL: h4881 ARG0: e4878 ARG1: x4857 ARG2: x4859 ]               |
+|               |           [ def_udef_a_q LBL: h4890 ARG0: x4859 RSTR: h4888 BODY: h4889 ]        |
+|               |           [ compound LBL: h4860 ARG0: e4874 ARG1: x4859 ARG2: x4867 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ proper_q LBL: h4872 ARG0: x4867 RSTR: h4870 BODY: h4871 ]            |
+|               |           [ yofc LBL: h4868 ARG0: x4867 CARG: "1956" ]                           |
+|               |           [ _film_n_1 LBL: h4860 ARG0: x4859 ]                                   |
+|               |           [ explicit_or_proper_q LBL: h4885 ARG0: x4857 RSTR: h4883 BODY: h4884  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4858 ARG0: x4857 CARG: "It's Great to Be Young" ]        |
+|               |           [ explicit_or_proper_q LBL: h4904 ARG0: x4892 RSTR: h4902 BODY: h4903  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4893 ARG0: x4892 CARG: "Cyril Frankel" ] >               |
+|               |   HCONS: < h4870 qeq h4868 h4888 qeq h4860 h4883 qeq h4858 h4907 qeq h4881 h4902 |
+|               | qeq h4893 > ]                                                                    |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h19287                                                                    |
-|               |   INDEX: e19273 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h19276 ARG0: e19273 ARG1: x19268 ARG2: x19270 ]        |
-|               |           [ def_udef_a_q LBL: h19285 ARG0: x19270 RSTR: h19283 BODY: h19284 ]    |
-|               |           [ _director_n_of LBL: h19257 ARG0: x19270 ARG1: x19233 ]               |
-|               |           [ appos LBL: h19257 ARG0: e19254 ARG1: x19233 ARG2: x19235 ]           |
-|               |           [ def_udef_a_q LBL: h19266 ARG0: x19235 RSTR: h19264 BODY: h19265 ]    |
-|               |           [ compound LBL: h19236 ARG0: e19250 ARG1: x19235 ARG2: x19243 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ proper_q LBL: h19248 ARG0: x19243 RSTR: h19246 BODY: h19247 ]        |
-|               |           [ yofc LBL: h19244 ARG0: x19243 CARG: "1956" ]                         |
-|               |           [ _film_n_1 LBL: h19236 ARG0: x19235 ]                                 |
-|               |           [ explicit_or_proper_q LBL: h19261 ARG0: x19233 RSTR: h19259 BODY:     |
-|               | h19260 ]                                                                         |
-|               |           [ named LBL: h19234 ARG0: x19233 CARG: "It's Great to Be Young" ]      |
-|               |           [ explicit_or_proper_q LBL: h19280 ARG0: x19268 RSTR: h19278 BODY:     |
-|               | h19279 ]                                                                         |
-|               |           [ named LBL: h19269 ARG0: x19268 CARG: "Cyril Frankel" ] >             |
-|               |   HCONS: < h19246 qeq h19244 h19264 qeq h19236 h19259 qeq h19234 h19283 qeq      |
-|               | h19257 h19278 qeq h19269 h19287 qeq h19276 > ]                                   |
+| Prepped       | [ TOP: h4911                                                                     |
+|               |   INDEX: e4897 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h4900 ARG0: e4897 ARG1: x4892 ARG2: x4894 ]            |
+|               |           [ def_udef_a_q LBL: h4909 ARG0: x4894 RSTR: h4907 BODY: h4908 ]        |
+|               |           [ _director_n_of LBL: h4881 ARG0: x4894 ARG1: x4857 ]                  |
+|               |           [ appos LBL: h4881 ARG0: e4878 ARG1: x4857 ARG2: x4859 ]               |
+|               |           [ def_udef_a_q LBL: h4890 ARG0: x4859 RSTR: h4888 BODY: h4889 ]        |
+|               |           [ compound LBL: h4860 ARG0: e4874 ARG1: x4859 ARG2: x4867 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ proper_q LBL: h4872 ARG0: x4867 RSTR: h4870 BODY: h4871 ]            |
+|               |           [ yofc LBL: h4868 ARG0: x4867 CARG: "1956" ]                           |
+|               |           [ _film_n_1 LBL: h4860 ARG0: x4859 ]                                   |
+|               |           [ explicit_or_proper_q LBL: h4885 ARG0: x4857 RSTR: h4883 BODY: h4884  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4858 ARG0: x4857 CARG: "It's Great to Be Young" ]        |
+|               |           [ explicit_or_proper_q LBL: h4904 ARG0: x4892 RSTR: h4902 BODY: h4903  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4893 ARG0: x4892 CARG: "Cyril Frankel" ] >               |
+|               |   HCONS: < h4870 qeq h4868 h4888 qeq h4860 h4883 qeq h4858 h4907 qeq h4881 h4902 |
+|               | qeq h4893 h4911 qeq h4900 > ]                                                    |
 +---------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------+
@@ -130,27 +129,27 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id939_190_571
 +------------------------------------+----------------------------------------------------------------------------------+
 | Node                               | Generated SEMENT                                                                 |
 +------------------------------------+----------------------------------------------------------------------------------+
-| It's_Great_to_Be_Young_(1956_film) | [ TOP: h19262                                                                    |
-|                                    |   INDEX: x19258                                                                  |
-|                                    |   RELS: < [ appos LBL: h19257 ARG0: e19254 ARG1: x19255 ARG2: i19256 ]           |
-|                                    |           [ def_udef_a_q LBL: h19266 ARG0: x19263 RSTR: h19264 BODY: h19265 ]    |
-|                                    |           [ compound LBL: h19253 ARG0: e19250 ARG1: u19251 ARG2: u19252 ]        |
-|                                    |           [ proper_q LBL: h19248 ARG0: x19245 [ x NUM: sg ] RSTR: h19246 BODY:   |
-|                                    | h19247 ]                                                                         |
-|                                    |           [ yofc LBL: h19244 ARG0: x19243 CARG: "1956" ]                         |
-|                                    |           [ _film_n_1 LBL: h19236 ARG0: x19235 ]                                 |
-|                                    |           [ explicit_or_proper_q LBL: h19261 ARG0: x19258 RSTR: h19259 BODY:     |
-|                                    | h19260 ]                                                                         |
-|                                    |           [ named LBL: h19234 ARG0: x19233 CARG: "It's Great to Be Young" ] >    |
-|                                    |   HCONS: < h19246 qeq h19244 h19264 qeq h19236 h19259 qeq h19234 >               |
-|                                    |   EQS: < x19245 eq x19243 h19253 eq h19249 u19252 eq x19245 h19253 eq h19236     |
-|                                    | u19251 eq x19235 x19263 eq x19235 h19257 eq h19267 i19256 eq x19263 x19258 eq    |
-|                                    | x19233 h19257 eq h19262 x19255 eq x19258 >                                       |
-|                                    |   SLOTS: < BODY: h19260 > ]                                                      |
+| It's_Great_to_Be_Young_(1956_film) | [ TOP: h4886                                                                     |
+|                                    |   INDEX: x4882                                                                   |
+|                                    |   RELS: < [ appos LBL: h4881 ARG0: e4878 ARG1: x4879 ARG2: i4880 ]               |
+|                                    |           [ def_udef_a_q LBL: h4890 ARG0: x4887 RSTR: h4888 BODY: h4889 ]        |
+|                                    |           [ compound LBL: h4877 ARG0: e4874 ARG1: u4875 ARG2: u4876 ]            |
+|                                    |           [ proper_q LBL: h4872 ARG0: x4869 [ x NUM: sg ] RSTR: h4870 BODY:      |
+|                                    | h4871 ]                                                                          |
+|                                    |           [ yofc LBL: h4868 ARG0: x4867 CARG: "1956" ]                           |
+|                                    |           [ _film_n_1 LBL: h4860 ARG0: x4859 ]                                   |
+|                                    |           [ explicit_or_proper_q LBL: h4885 ARG0: x4882 RSTR: h4883 BODY: h4884  |
+|                                    | ]                                                                                |
+|                                    |           [ named LBL: h4858 ARG0: x4857 CARG: "It's Great to Be Young" ] >      |
+|                                    |   HCONS: < h4870 qeq h4868 h4888 qeq h4860 h4883 qeq h4858 >                     |
+|                                    |   EQS: < x4869 eq x4867 h4877 eq h4873 u4876 eq x4869 h4877 eq h4860 u4875 eq    |
+|                                    | x4859 x4887 eq x4859 h4881 eq h4891 i4880 eq x4887 x4882 eq x4857 h4881 eq h4886 |
+|                                    | x4879 eq x4882 >                                                                 |
+|                                    |   SLOTS: < BODY: h4884 > ]                                                       |
 +------------------------------------+----------------------------------------------------------------------------------+
-| Cyril_Frankel                      | [ TOP: h19269                                                                    |
-|                                    |   INDEX: x19268                                                                  |
-|                                    |   RELS: < [ named LBL: h19269 ARG0: x19268 CARG: "Cyril Frankel" ] > ]           |
+| Cyril_Frankel                      | [ TOP: h4893                                                                     |
+|                                    |   INDEX: x4892                                                                   |
+|                                    |   RELS: < [ named LBL: h4893 ARG0: x4892 CARG: "Cyril Frankel" ] > ]             |
 +------------------------------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -158,31 +157,30 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id939_190_571
 +----------+------------------------------------+---------------+----------------------------------------------------------------------------------+
 | Edge     | Parent                             | Child         | Generated SEMENT                                                                 |
 +----------+------------------------------------+---------------+----------------------------------------------------------------------------------+
-| director | It's_Great_to_Be_Young_(1956_film) | Cyril_Frankel | [ TOP: h19276                                                                    |
-|          |                                    |               |   INDEX: e19273 [ e SF: prop TENSE: tensed ]                                     |
-|          |                                    |               |   RELS: < [ _be_v_id LBL: h19276 ARG0: e19273 ARG1: p19274 ARG2: i19275 ]        |
-|          |                                    |               |           [ def_udef_a_q LBL: h19285 ARG0: x19282 RSTR: h19283 BODY: h19284 ]    |
-|          |                                    |               |           [ _director_n_of LBL: h19272 ARG0: x19270 ARG1: i19271 ]               |
-|          |                                    |               |           [ appos LBL: h19257 ARG0: e19254 ARG1: x19255 ARG2: i19256 ]           |
-|          |                                    |               |           [ def_udef_a_q LBL: h19266 ARG0: x19263 RSTR: h19264 BODY: h19265 ]    |
-|          |                                    |               |           [ compound LBL: h19253 ARG0: e19250 ARG1: u19251 ARG2: u19252 ]        |
-|          |                                    |               |           [ proper_q LBL: h19248 ARG0: x19245 [ x NUM: sg ] RSTR: h19246 BODY:   |
-|          |                                    |               | h19247 ]                                                                         |
-|          |                                    |               |           [ yofc LBL: h19244 ARG0: x19243 CARG: "1956" ]                         |
-|          |                                    |               |           [ _film_n_1 LBL: h19236 ARG0: x19235 ]                                 |
-|          |                                    |               |           [ explicit_or_proper_q LBL: h19261 ARG0: x19258 RSTR: h19259 BODY:     |
-|          |                                    |               | h19260 ]                                                                         |
-|          |                                    |               |           [ named LBL: h19234 ARG0: x19233 CARG: "It's Great to Be Young" ]      |
-|          |                                    |               |           [ explicit_or_proper_q LBL: h19280 ARG0: x19277 RSTR: h19278 BODY:     |
-|          |                                    |               | h19279 ]                                                                         |
-|          |                                    |               |           [ named LBL: h19269 ARG0: x19268 CARG: "Cyril Frankel" ] >             |
-|          |                                    |               |   HCONS: < h19246 qeq h19244 h19264 qeq h19236 h19259 qeq h19234 h19283 qeq      |
-|          |                                    |               | h19272 h19278 qeq h19269 >                                                       |
-|          |                                    |               |   EQS: < x19245 eq x19243 h19253 eq h19249 u19252 eq x19245 h19253 eq h19236     |
-|          |                                    |               | u19251 eq x19235 x19263 eq x19235 h19257 eq h19267 i19256 eq x19263 x19258 eq    |
-|          |                                    |               | x19233 h19257 eq h19262 x19255 eq x19258 h19272 eq h19262 i19271 eq x19258       |
-|          |                                    |               | x19282 eq x19270 h19276 eq h19286 i19275 eq x19282 x19277 eq x19268 h19276 eq    |
-|          |                                    |               | h19281 p19274 eq x19277 > ]                                                      |
+| director | It's_Great_to_Be_Young_(1956_film) | Cyril_Frankel | [ TOP: h4900                                                                     |
+|          |                                    |               |   INDEX: e4897 [ e SF: prop TENSE: tensed ]                                      |
+|          |                                    |               |   RELS: < [ _be_v_id LBL: h4900 ARG0: e4897 ARG1: p4898 ARG2: i4899 ]            |
+|          |                                    |               |           [ def_udef_a_q LBL: h4909 ARG0: x4906 RSTR: h4907 BODY: h4908 ]        |
+|          |                                    |               |           [ _director_n_of LBL: h4896 ARG0: x4894 ARG1: i4895 ]                  |
+|          |                                    |               |           [ appos LBL: h4881 ARG0: e4878 ARG1: x4879 ARG2: i4880 ]               |
+|          |                                    |               |           [ def_udef_a_q LBL: h4890 ARG0: x4887 RSTR: h4888 BODY: h4889 ]        |
+|          |                                    |               |           [ compound LBL: h4877 ARG0: e4874 ARG1: u4875 ARG2: u4876 ]            |
+|          |                                    |               |           [ proper_q LBL: h4872 ARG0: x4869 [ x NUM: sg ] RSTR: h4870 BODY:      |
+|          |                                    |               | h4871 ]                                                                          |
+|          |                                    |               |           [ yofc LBL: h4868 ARG0: x4867 CARG: "1956" ]                           |
+|          |                                    |               |           [ _film_n_1 LBL: h4860 ARG0: x4859 ]                                   |
+|          |                                    |               |           [ explicit_or_proper_q LBL: h4885 ARG0: x4882 RSTR: h4883 BODY: h4884  |
+|          |                                    |               | ]                                                                                |
+|          |                                    |               |           [ named LBL: h4858 ARG0: x4857 CARG: "It's Great to Be Young" ]        |
+|          |                                    |               |           [ explicit_or_proper_q LBL: h4904 ARG0: x4901 RSTR: h4902 BODY: h4903  |
+|          |                                    |               | ]                                                                                |
+|          |                                    |               |           [ named LBL: h4893 ARG0: x4892 CARG: "Cyril Frankel" ] >               |
+|          |                                    |               |   HCONS: < h4870 qeq h4868 h4888 qeq h4860 h4883 qeq h4858 h4907 qeq h4896 h4902 |
+|          |                                    |               | qeq h4893 >                                                                      |
+|          |                                    |               |   EQS: < x4869 eq x4867 h4877 eq h4873 u4876 eq x4869 h4877 eq h4860 u4875 eq    |
+|          |                                    |               | x4859 x4887 eq x4859 h4881 eq h4891 i4880 eq x4887 x4882 eq x4857 h4881 eq h4886 |
+|          |                                    |               | x4879 eq x4882 h4896 eq h4886 i4895 eq x4882 x4906 eq x4894 h4900 eq h4910 i4899 |
+|          |                                    |               | eq x4906 x4901 eq x4892 h4900 eq h4905 p4898 eq x4901 > ]                        |
 +----------+------------------------------------+---------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------------------+

@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_University_Id334_246_492
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+------------------------------------------------------------------------------------+
-|                                    GOLD OUTPUTS                                    |
-+-----------------------------------------------------------------------+------------+
-| Gold Output                                                           | Generated? |
-+-----------------------------------------------------------------------+------------+
-| The University of Burgundy campus is located in Dijon, France.        | False      |
-| The University of Burgundy has its campus in Dijon, France.           | False      |
-| The campus of the University of Burgundy is located in Dijon, France. | False      |
-+-----------------------------------------------------------------------+------------+
++---------------------------------------------------------------------------------------------------------+
+|                                               GOLD OUTPUTS                                              |
++--------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                | Generated? |
++--------------------------------------------------------------------------------------------+------------+
+| Both the campus of the University, University of Burgundy is located in the city of Dijon. | False      |
+| The University of Burgundy Campus is located in the city of Dijon.                         | False      |
+| The University of Burgundy is located in Dijon.                                            | False      |
++--------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------------+
 |                                         NODE METRICS                                         |
@@ -56,66 +56,63 @@ GRAPH NAME: WebNLG_test_2triples_University_Id334_246_492
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h16072                                                                    |
-|               |   INDEX: e16070 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_loc LBL: h16064 ARG0: e16061 ARG1: u16062 ARG2: u16063 ]       |
-|               |           [ explicit_or_proper_q LBL: h16068 ARG0: x16065 RSTR: h16066 BODY:     |
-|               | h16067 ]                                                                         |
-|               |           [ named LBL: h16060 ARG0: x16059 CARG: "Dijon" ]                       |
-|               |           [ _located_a_1 LBL: h16072 ARG0: e16070 ARG1: u16071 ]                 |
-|               |           [ def_udef_a_q LBL: h16087 ARG0: x16084 RSTR: h16085 BODY: h16086 ]    |
-|               |           [ compound LBL: h16078 ARG0: e16075 ARG1: u16076 ARG2: u16077 ]        |
-|               |           [ existential_q LBL: h16082 ARG0: x16079 RSTR: h16080 BODY: h16081 ]   |
-|               |           [ _university_n_of LBL: h16051 ARG0: x16049 [ x NUM: sg ] ARG1: i16050 |
+| Original      | [ TOP: h8557                                                                     |
+|               |   INDEX: e8555 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_loc LBL: h8549 ARG0: e8546 ARG1: u8547 ARG2: u8548 ]           |
+|               |           [ explicit_or_proper_q LBL: h8553 ARG0: x8550 RSTR: h8551 BODY: h8552  |
 |               | ]                                                                                |
-|               |           [ explicit_or_proper_q LBL: h16057 ARG0: x16054 RSTR: h16055 BODY:     |
-|               | h16056 ]                                                                         |
-|               |           [ named LBL: h16053 ARG0: x16052 CARG: "Burgundy" ]                    |
-|               |           [ _campus_n_1 LBL: h16074 ARG0: x16073 ] >                             |
-|               |   HCONS: < h16066 qeq h16060 h16055 qeq h16053 h16080 qeq h16051 h16085 qeq      |
-|               | h16074 >                                                                         |
-|               |   EQS: < x16065 eq x16059 h16064 eq h16069 u16063 eq x16065 x16054 eq x16052     |
-|               | h16051 eq h16058 i16050 eq x16054 x16079 eq x16049 h16078 eq h16083 u16077 eq    |
-|               | x16079 h16078 eq h16074 u16076 eq x16073 x16084 eq x16073 h16072 eq h16088       |
-|               | u16071 eq x16084 h16064 eq h16072 u16062 eq e16070 > ]                           |
+|               |           [ named LBL: h8545 ARG0: x8544 CARG: "Dijon" ]                         |
+|               |           [ _located_a_1 LBL: h8557 ARG0: e8555 ARG1: u8556 ]                    |
+|               |           [ def_udef_a_q LBL: h8572 ARG0: x8569 RSTR: h8570 BODY: h8571 ]        |
+|               |           [ compound LBL: h8563 ARG0: e8560 ARG1: u8561 ARG2: u8562 ]            |
+|               |           [ existential_q LBL: h8567 ARG0: x8564 RSTR: h8565 BODY: h8566 ]       |
+|               |           [ _university_n_of LBL: h8536 ARG0: x8534 [ x NUM: sg ] ARG1: i8535 ]  |
+|               |           [ explicit_or_proper_q LBL: h8542 ARG0: x8539 RSTR: h8540 BODY: h8541  |
+|               | ]                                                                                |
+|               |           [ named LBL: h8538 ARG0: x8537 CARG: "Burgundy" ]                      |
+|               |           [ _campus_n_1 LBL: h8559 ARG0: x8558 ] >                               |
+|               |   HCONS: < h8551 qeq h8545 h8540 qeq h8538 h8565 qeq h8536 h8570 qeq h8559 >     |
+|               |   EQS: < x8550 eq x8544 h8549 eq h8554 u8548 eq x8550 x8539 eq x8537 h8536 eq    |
+|               | h8543 i8535 eq x8539 x8564 eq x8534 h8563 eq h8568 u8562 eq x8564 h8563 eq h8559 |
+|               | u8561 eq x8558 x8569 eq x8558 h8557 eq h8573 u8556 eq x8569 h8549 eq h8557 u8547 |
+|               | eq e8555 > ]                                                                     |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h16064                                                                    |
-|               |   INDEX: e16070 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_loc LBL: h16064 ARG0: e16061 ARG1: e16070 ARG2: x16059 ]       |
-|               |           [ explicit_or_proper_q LBL: h16068 ARG0: x16059 RSTR: h16066 BODY:     |
-|               | h16067 ]                                                                         |
-|               |           [ named LBL: h16060 ARG0: x16059 CARG: "Dijon" ]                       |
-|               |           [ _located_a_1 LBL: h16064 ARG0: e16070 ARG1: x16073 ]                 |
-|               |           [ def_udef_a_q LBL: h16087 ARG0: x16073 RSTR: h16085 BODY: h16086 ]    |
-|               |           [ compound LBL: h16074 ARG0: e16075 ARG1: x16073 ARG2: x16049 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h16082 ARG0: x16049 RSTR: h16080 BODY: h16081 ]   |
-|               |           [ _university_n_of LBL: h16051 ARG0: x16049 ARG1: x16052 ]             |
-|               |           [ explicit_or_proper_q LBL: h16057 ARG0: x16052 RSTR: h16055 BODY:     |
-|               | h16056 ]                                                                         |
-|               |           [ named LBL: h16053 ARG0: x16052 CARG: "Burgundy" ]                    |
-|               |           [ _campus_n_1 LBL: h16074 ARG0: x16073 ] >                             |
-|               |   HCONS: < h16066 qeq h16060 h16055 qeq h16053 h16080 qeq h16051 h16085 qeq      |
-|               | h16074 > ]                                                                       |
+| EQs Collapsed | [ TOP: h8549                                                                     |
+|               |   INDEX: e8555 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_loc LBL: h8549 ARG0: e8546 ARG1: e8555 ARG2: x8544 ]           |
+|               |           [ explicit_or_proper_q LBL: h8553 ARG0: x8544 RSTR: h8551 BODY: h8552  |
+|               | ]                                                                                |
+|               |           [ named LBL: h8545 ARG0: x8544 CARG: "Dijon" ]                         |
+|               |           [ _located_a_1 LBL: h8549 ARG0: e8555 ARG1: x8558 ]                    |
+|               |           [ def_udef_a_q LBL: h8572 ARG0: x8558 RSTR: h8570 BODY: h8571 ]        |
+|               |           [ compound LBL: h8559 ARG0: e8560 ARG1: x8558 ARG2: x8534 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h8567 ARG0: x8534 RSTR: h8565 BODY: h8566 ]       |
+|               |           [ _university_n_of LBL: h8536 ARG0: x8534 ARG1: x8537 ]                |
+|               |           [ explicit_or_proper_q LBL: h8542 ARG0: x8537 RSTR: h8540 BODY: h8541  |
+|               | ]                                                                                |
+|               |           [ named LBL: h8538 ARG0: x8537 CARG: "Burgundy" ]                      |
+|               |           [ _campus_n_1 LBL: h8559 ARG0: x8558 ] >                               |
+|               |   HCONS: < h8551 qeq h8545 h8540 qeq h8538 h8565 qeq h8536 h8570 qeq h8559 > ]   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h16089                                                                    |
-|               |   INDEX: e16070 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_loc LBL: h16064 ARG0: e16061 ARG1: e16070 ARG2: x16059 ]       |
-|               |           [ explicit_or_proper_q LBL: h16068 ARG0: x16059 RSTR: h16066 BODY:     |
-|               | h16067 ]                                                                         |
-|               |           [ named LBL: h16060 ARG0: x16059 CARG: "Dijon" ]                       |
-|               |           [ _located_a_1 LBL: h16064 ARG0: e16070 ARG1: x16073 ]                 |
-|               |           [ def_udef_a_q LBL: h16087 ARG0: x16073 RSTR: h16085 BODY: h16086 ]    |
-|               |           [ compound LBL: h16074 ARG0: e16075 ARG1: x16073 ARG2: x16049 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h16082 ARG0: x16049 RSTR: h16080 BODY: h16081 ]   |
-|               |           [ _university_n_of LBL: h16051 ARG0: x16049 ARG1: x16052 ]             |
-|               |           [ explicit_or_proper_q LBL: h16057 ARG0: x16052 RSTR: h16055 BODY:     |
-|               | h16056 ]                                                                         |
-|               |           [ named LBL: h16053 ARG0: x16052 CARG: "Burgundy" ]                    |
-|               |           [ _campus_n_1 LBL: h16074 ARG0: x16073 ] >                             |
-|               |   HCONS: < h16066 qeq h16060 h16055 qeq h16053 h16080 qeq h16051 h16085 qeq      |
-|               | h16074 h16089 qeq h16064 > ]                                                     |
+| Prepped       | [ TOP: h8574                                                                     |
+|               |   INDEX: e8555 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_loc LBL: h8549 ARG0: e8546 ARG1: e8555 ARG2: x8544 ]           |
+|               |           [ explicit_or_proper_q LBL: h8553 ARG0: x8544 RSTR: h8551 BODY: h8552  |
+|               | ]                                                                                |
+|               |           [ named LBL: h8545 ARG0: x8544 CARG: "Dijon" ]                         |
+|               |           [ _located_a_1 LBL: h8549 ARG0: e8555 ARG1: x8558 ]                    |
+|               |           [ def_udef_a_q LBL: h8572 ARG0: x8558 RSTR: h8570 BODY: h8571 ]        |
+|               |           [ compound LBL: h8559 ARG0: e8560 ARG1: x8558 ARG2: x8534 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h8567 ARG0: x8534 RSTR: h8565 BODY: h8566 ]       |
+|               |           [ _university_n_of LBL: h8536 ARG0: x8534 ARG1: x8537 ]                |
+|               |           [ explicit_or_proper_q LBL: h8542 ARG0: x8537 RSTR: h8540 BODY: h8541  |
+|               | ]                                                                                |
+|               |           [ named LBL: h8538 ARG0: x8537 CARG: "Burgundy" ]                      |
+|               |           [ _campus_n_1 LBL: h8559 ARG0: x8558 ] >                               |
+|               |   HCONS: < h8551 qeq h8545 h8540 qeq h8538 h8565 qeq h8536 h8570 qeq h8559 h8574 |
+|               | qeq h8549 > ]                                                                    |
 +---------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------+
@@ -123,18 +120,18 @@ GRAPH NAME: WebNLG_test_2triples_University_Id334_246_492
 +------------------------+----------------------------------------------------------------------------------+
 | Node                   | Generated SEMENT                                                                 |
 +------------------------+----------------------------------------------------------------------------------+
-| University_of_Burgundy | [ TOP: h16051                                                                    |
-|                        |   INDEX: x16049                                                                  |
-|                        |   RELS: < [ _university_n_of LBL: h16051 ARG0: x16049 ARG1: i16050 ]             |
-|                        |           [ explicit_or_proper_q LBL: h16057 ARG0: x16054 RSTR: h16055 BODY:     |
-|                        | h16056 ]                                                                         |
-|                        |           [ named LBL: h16053 ARG0: x16052 CARG: "Burgundy" ] >                  |
-|                        |   HCONS: < h16055 qeq h16053 >                                                   |
-|                        |   EQS: < x16054 eq x16052 h16051 eq h16058 i16050 eq x16054 > ]                  |
+| University_of_Burgundy | [ TOP: h8536                                                                     |
+|                        |   INDEX: x8534                                                                   |
+|                        |   RELS: < [ _university_n_of LBL: h8536 ARG0: x8534 ARG1: i8535 ]                |
+|                        |           [ explicit_or_proper_q LBL: h8542 ARG0: x8539 RSTR: h8540 BODY: h8541  |
+|                        | ]                                                                                |
+|                        |           [ named LBL: h8538 ARG0: x8537 CARG: "Burgundy" ] >                    |
+|                        |   HCONS: < h8540 qeq h8538 >                                                     |
+|                        |   EQS: < x8539 eq x8537 h8536 eq h8543 i8535 eq x8539 > ]                        |
 +------------------------+----------------------------------------------------------------------------------+
-| Dijon                  | [ TOP: h16060                                                                    |
-|                        |   INDEX: x16059                                                                  |
-|                        |   RELS: < [ named LBL: h16060 ARG0: x16059 CARG: "Dijon" ] > ]                   |
+| Dijon                  | [ TOP: h8545                                                                     |
+|                        |   INDEX: x8544                                                                   |
+|                        |   RELS: < [ named LBL: h8545 ARG0: x8544 CARG: "Dijon" ] > ]                     |
 +------------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------+
@@ -142,28 +139,26 @@ GRAPH NAME: WebNLG_test_2triples_University_Id334_246_492
 +--------+------------------------+-------+----------------------------------------------------------------------------------+
 | Edge   | Parent                 | Child | Generated SEMENT                                                                 |
 +--------+------------------------+-------+----------------------------------------------------------------------------------+
-| campus | University_of_Burgundy | Dijon | [ TOP: h16072                                                                    |
-|        |                        |       |   INDEX: e16070 [ e TENSE: tensed ]                                              |
-|        |                        |       |   RELS: < [ _in_p_loc LBL: h16064 ARG0: e16061 ARG1: u16062 ARG2: u16063 ]       |
-|        |                        |       |           [ explicit_or_proper_q LBL: h16068 ARG0: x16065 RSTR: h16066 BODY:     |
-|        |                        |       | h16067 ]                                                                         |
-|        |                        |       |           [ named LBL: h16060 ARG0: x16059 CARG: "Dijon" ]                       |
-|        |                        |       |           [ _located_a_1 LBL: h16072 ARG0: e16070 ARG1: u16071 ]                 |
-|        |                        |       |           [ def_udef_a_q LBL: h16087 ARG0: x16084 RSTR: h16085 BODY: h16086 ]    |
-|        |                        |       |           [ compound LBL: h16078 ARG0: e16075 ARG1: u16076 ARG2: u16077 ]        |
-|        |                        |       |           [ existential_q LBL: h16082 ARG0: x16079 RSTR: h16080 BODY: h16081 ]   |
-|        |                        |       |           [ _university_n_of LBL: h16051 ARG0: x16049 [ x NUM: sg ] ARG1: i16050 |
+| campus | University_of_Burgundy | Dijon | [ TOP: h8557                                                                     |
+|        |                        |       |   INDEX: e8555 [ e TENSE: tensed ]                                               |
+|        |                        |       |   RELS: < [ _in_p_loc LBL: h8549 ARG0: e8546 ARG1: u8547 ARG2: u8548 ]           |
+|        |                        |       |           [ explicit_or_proper_q LBL: h8553 ARG0: x8550 RSTR: h8551 BODY: h8552  |
 |        |                        |       | ]                                                                                |
-|        |                        |       |           [ explicit_or_proper_q LBL: h16057 ARG0: x16054 RSTR: h16055 BODY:     |
-|        |                        |       | h16056 ]                                                                         |
-|        |                        |       |           [ named LBL: h16053 ARG0: x16052 CARG: "Burgundy" ]                    |
-|        |                        |       |           [ _campus_n_1 LBL: h16074 ARG0: x16073 ] >                             |
-|        |                        |       |   HCONS: < h16066 qeq h16060 h16055 qeq h16053 h16080 qeq h16051 h16085 qeq      |
-|        |                        |       | h16074 >                                                                         |
-|        |                        |       |   EQS: < x16065 eq x16059 h16064 eq h16069 u16063 eq x16065 x16054 eq x16052     |
-|        |                        |       | h16051 eq h16058 i16050 eq x16054 x16079 eq x16049 h16078 eq h16083 u16077 eq    |
-|        |                        |       | x16079 h16078 eq h16074 u16076 eq x16073 x16084 eq x16073 h16072 eq h16088       |
-|        |                        |       | u16071 eq x16084 h16064 eq h16072 u16062 eq e16070 > ]                           |
+|        |                        |       |           [ named LBL: h8545 ARG0: x8544 CARG: "Dijon" ]                         |
+|        |                        |       |           [ _located_a_1 LBL: h8557 ARG0: e8555 ARG1: u8556 ]                    |
+|        |                        |       |           [ def_udef_a_q LBL: h8572 ARG0: x8569 RSTR: h8570 BODY: h8571 ]        |
+|        |                        |       |           [ compound LBL: h8563 ARG0: e8560 ARG1: u8561 ARG2: u8562 ]            |
+|        |                        |       |           [ existential_q LBL: h8567 ARG0: x8564 RSTR: h8565 BODY: h8566 ]       |
+|        |                        |       |           [ _university_n_of LBL: h8536 ARG0: x8534 [ x NUM: sg ] ARG1: i8535 ]  |
+|        |                        |       |           [ explicit_or_proper_q LBL: h8542 ARG0: x8539 RSTR: h8540 BODY: h8541  |
+|        |                        |       | ]                                                                                |
+|        |                        |       |           [ named LBL: h8538 ARG0: x8537 CARG: "Burgundy" ]                      |
+|        |                        |       |           [ _campus_n_1 LBL: h8559 ARG0: x8558 ] >                               |
+|        |                        |       |   HCONS: < h8551 qeq h8545 h8540 qeq h8538 h8565 qeq h8536 h8570 qeq h8559 >     |
+|        |                        |       |   EQS: < x8550 eq x8544 h8549 eq h8554 u8548 eq x8550 x8539 eq x8537 h8536 eq    |
+|        |                        |       | h8543 i8535 eq x8539 x8564 eq x8534 h8563 eq h8568 u8562 eq x8564 h8563 eq h8559 |
+|        |                        |       | u8561 eq x8558 x8569 eq x8558 h8557 eq h8573 u8556 eq x8569 h8549 eq h8557 u8547 |
+|        |                        |       | eq e8555 > ]                                                                     |
 +--------+------------------------+-------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------+

@@ -24,15 +24,14 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id1011_267_803
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                          GOLD OUTPUTS                                                                         |
-+--------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                      | Generated? |
-+--------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Born on January 1st, 1942, Brandon Carter is a graduate of the University of Cambridge known for the Penrose diagram.                            | False      |
-| Brandon Carter was born in 1942 on January, 1 and graduated from the University of Cambridge. He is best known for creating the Penrose diagram. | False      |
-| Brandon Carter, known for the Penrose diagram, was born on January 1, 1942 and attended the University of Cambridge.                             | False      |
-+--------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                    GOLD OUTPUTS                                                                    |
++---------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                           | Generated? |
++---------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Brandon Carter born in England attended University of Cambridge whose vice chancellor is Leszek Borysiewicz.                          | False      |
+| Brandon Carter was born in England and graduated from the University of Cambridge where the current Chancellor is Leszek Borysiewicz. | False      |
++---------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +-----------------------------------------------------------------------------------------------+
 |                                          NODE METRICS                                         |
@@ -56,62 +55,59 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id1011_267_803
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h27186                                                                    |
-|               |   INDEX: e27183 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h27186 ARG0: e27183 ARG1: p27184 ARG2: i27185 ]        |
-|               |           [ def_udef_a_q LBL: h27195 ARG0: x27192 RSTR: h27193 BODY: h27194 ]    |
-|               |           [ _university_n_of LBL: h27164 ARG0: x27162 ARG1: i27163 ]             |
-|               |           [ explicit_or_proper_q LBL: h27170 ARG0: x27167 RSTR: h27168 BODY:     |
-|               | h27169 ]                                                                         |
-|               |           [ named LBL: h27166 ARG0: x27165 CARG: "Cambridge" ]                   |
-|               |           [ def_udef_a_q LBL: h27190 ARG0: x27187 RSTR: h27188 BODY: h27189 ]    |
-|               |           [ poss LBL: h27182 ARG0: e27179 ARG1: x27180 ARG2: i27181 ]            |
-|               |           [ explicit_or_proper_q LBL: h27177 ARG0: x27174 RSTR: h27175 BODY:     |
-|               | h27176 ]                                                                         |
-|               |           [ named LBL: h27161 ARG0: x27160 CARG: "Brandon Carter" ]              |
-|               |           [ unk_n LBL: h27173 ARG0: x27172 [ x IND: + ] CARG: "alma mater" ] >   |
-|               |   HCONS: < h27168 qeq h27166 h27193 qeq h27164 h27175 qeq h27161 h27188 qeq      |
-|               | h27173 >                                                                         |
-|               |   EQS: < x27167 eq x27165 h27164 eq h27171 i27163 eq x27167 x27192 eq x27162     |
-|               | h27186 eq h27196 i27185 eq x27192 x27174 eq x27160 h27182 eq h27178 i27181 eq    |
-|               | x27174 h27182 eq h27173 x27180 eq x27172 x27187 eq x27172 h27186 eq h27191       |
-|               | p27184 eq x27187 > ]                                                             |
+| Original      | [ TOP: h3376                                                                     |
+|               |   INDEX: e3373 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h3376 ARG0: e3373 ARG1: p3374 ARG2: i3375 ]            |
+|               |           [ def_udef_a_q LBL: h3385 ARG0: x3382 RSTR: h3383 BODY: h3384 ]        |
+|               |           [ _university_n_of LBL: h3354 ARG0: x3352 ARG1: i3353 ]                |
+|               |           [ explicit_or_proper_q LBL: h3360 ARG0: x3357 RSTR: h3358 BODY: h3359  |
+|               | ]                                                                                |
+|               |           [ named LBL: h3356 ARG0: x3355 CARG: "Cambridge" ]                     |
+|               |           [ def_udef_a_q LBL: h3380 ARG0: x3377 RSTR: h3378 BODY: h3379 ]        |
+|               |           [ poss LBL: h3372 ARG0: e3369 ARG1: x3370 ARG2: i3371 ]                |
+|               |           [ explicit_or_proper_q LBL: h3367 ARG0: x3364 RSTR: h3365 BODY: h3366  |
+|               | ]                                                                                |
+|               |           [ named LBL: h3351 ARG0: x3350 CARG: "Brandon Carter" ]                |
+|               |           [ unk_n LBL: h3363 ARG0: x3362 [ x IND: + ] CARG: "alma mater" ] >     |
+|               |   HCONS: < h3358 qeq h3356 h3383 qeq h3354 h3365 qeq h3351 h3378 qeq h3363 >     |
+|               |   EQS: < x3357 eq x3355 h3354 eq h3361 i3353 eq x3357 x3382 eq x3352 h3376 eq    |
+|               | h3386 i3375 eq x3382 x3364 eq x3350 h3372 eq h3368 i3371 eq x3364 h3372 eq h3363 |
+|               | x3370 eq x3362 x3377 eq x3362 h3376 eq h3381 p3374 eq x3377 > ]                  |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h27186                                                                    |
-|               |   INDEX: e27183 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h27186 ARG0: e27183 ARG1: x27172 [ x IND: + ] ARG2:    |
-|               | x27162 ]                                                                         |
-|               |           [ def_udef_a_q LBL: h27195 ARG0: x27162 RSTR: h27193 BODY: h27194 ]    |
-|               |           [ _university_n_of LBL: h27164 ARG0: x27162 ARG1: x27165 ]             |
-|               |           [ explicit_or_proper_q LBL: h27170 ARG0: x27165 RSTR: h27168 BODY:     |
-|               | h27169 ]                                                                         |
-|               |           [ named LBL: h27166 ARG0: x27165 CARG: "Cambridge" ]                   |
-|               |           [ def_udef_a_q LBL: h27190 ARG0: x27172 RSTR: h27188 BODY: h27189 ]    |
-|               |           [ poss LBL: h27173 ARG0: e27179 ARG1: x27172 ARG2: x27160 ]            |
-|               |           [ explicit_or_proper_q LBL: h27177 ARG0: x27160 RSTR: h27175 BODY:     |
-|               | h27176 ]                                                                         |
-|               |           [ named LBL: h27161 ARG0: x27160 CARG: "Brandon Carter" ]              |
-|               |           [ unk_n LBL: h27173 ARG0: x27172 CARG: "alma mater" ] >                |
-|               |   HCONS: < h27168 qeq h27166 h27193 qeq h27164 h27175 qeq h27161 h27188 qeq      |
-|               | h27173 > ]                                                                       |
+| EQs Collapsed | [ TOP: h3376                                                                     |
+|               |   INDEX: e3373 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h3376 ARG0: e3373 ARG1: x3362 [ x IND: + ] ARG2: x3352 |
+|               | ]                                                                                |
+|               |           [ def_udef_a_q LBL: h3385 ARG0: x3352 RSTR: h3383 BODY: h3384 ]        |
+|               |           [ _university_n_of LBL: h3354 ARG0: x3352 ARG1: x3355 ]                |
+|               |           [ explicit_or_proper_q LBL: h3360 ARG0: x3355 RSTR: h3358 BODY: h3359  |
+|               | ]                                                                                |
+|               |           [ named LBL: h3356 ARG0: x3355 CARG: "Cambridge" ]                     |
+|               |           [ def_udef_a_q LBL: h3380 ARG0: x3362 RSTR: h3378 BODY: h3379 ]        |
+|               |           [ poss LBL: h3363 ARG0: e3369 ARG1: x3362 ARG2: x3350 ]                |
+|               |           [ explicit_or_proper_q LBL: h3367 ARG0: x3350 RSTR: h3365 BODY: h3366  |
+|               | ]                                                                                |
+|               |           [ named LBL: h3351 ARG0: x3350 CARG: "Brandon Carter" ]                |
+|               |           [ unk_n LBL: h3363 ARG0: x3362 CARG: "alma mater" ] >                  |
+|               |   HCONS: < h3358 qeq h3356 h3383 qeq h3354 h3365 qeq h3351 h3378 qeq h3363 > ]   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h27197                                                                    |
-|               |   INDEX: e27183 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h27186 ARG0: e27183 ARG1: x27172 [ x IND: + ] ARG2:    |
-|               | x27162 ]                                                                         |
-|               |           [ def_udef_a_q LBL: h27195 ARG0: x27162 RSTR: h27193 BODY: h27194 ]    |
-|               |           [ _university_n_of LBL: h27164 ARG0: x27162 ARG1: x27165 ]             |
-|               |           [ explicit_or_proper_q LBL: h27170 ARG0: x27165 RSTR: h27168 BODY:     |
-|               | h27169 ]                                                                         |
-|               |           [ named LBL: h27166 ARG0: x27165 CARG: "Cambridge" ]                   |
-|               |           [ def_udef_a_q LBL: h27190 ARG0: x27172 RSTR: h27188 BODY: h27189 ]    |
-|               |           [ poss LBL: h27173 ARG0: e27179 ARG1: x27172 ARG2: x27160 ]            |
-|               |           [ explicit_or_proper_q LBL: h27177 ARG0: x27160 RSTR: h27175 BODY:     |
-|               | h27176 ]                                                                         |
-|               |           [ named LBL: h27161 ARG0: x27160 CARG: "Brandon Carter" ]              |
-|               |           [ unk_n LBL: h27173 ARG0: x27172 CARG: "alma mater" ] >                |
-|               |   HCONS: < h27168 qeq h27166 h27193 qeq h27164 h27175 qeq h27161 h27188 qeq      |
-|               | h27173 h27197 qeq h27186 > ]                                                     |
+| Prepped       | [ TOP: h3387                                                                     |
+|               |   INDEX: e3373 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h3376 ARG0: e3373 ARG1: x3362 [ x IND: + ] ARG2: x3352 |
+|               | ]                                                                                |
+|               |           [ def_udef_a_q LBL: h3385 ARG0: x3352 RSTR: h3383 BODY: h3384 ]        |
+|               |           [ _university_n_of LBL: h3354 ARG0: x3352 ARG1: x3355 ]                |
+|               |           [ explicit_or_proper_q LBL: h3360 ARG0: x3355 RSTR: h3358 BODY: h3359  |
+|               | ]                                                                                |
+|               |           [ named LBL: h3356 ARG0: x3355 CARG: "Cambridge" ]                     |
+|               |           [ def_udef_a_q LBL: h3380 ARG0: x3362 RSTR: h3378 BODY: h3379 ]        |
+|               |           [ poss LBL: h3363 ARG0: e3369 ARG1: x3362 ARG2: x3350 ]                |
+|               |           [ explicit_or_proper_q LBL: h3367 ARG0: x3350 RSTR: h3365 BODY: h3366  |
+|               | ]                                                                                |
+|               |           [ named LBL: h3351 ARG0: x3350 CARG: "Brandon Carter" ]                |
+|               |           [ unk_n LBL: h3363 ARG0: x3362 CARG: "alma mater" ] >                  |
+|               |   HCONS: < h3358 qeq h3356 h3383 qeq h3354 h3365 qeq h3351 h3378 qeq h3363 h3387 |
+|               | qeq h3376 > ]                                                                    |
 +---------------+----------------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------------------+
@@ -119,18 +115,18 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id1011_267_803
 +-------------------------+----------------------------------------------------------------------------------+
 | Node                    | Generated SEMENT                                                                 |
 +-------------------------+----------------------------------------------------------------------------------+
-| Brandon_Carter          | [ TOP: h27161                                                                    |
-|                         |   INDEX: x27160                                                                  |
-|                         |   RELS: < [ named LBL: h27161 ARG0: x27160 CARG: "Brandon Carter" ] > ]          |
+| Brandon_Carter          | [ TOP: h3351                                                                     |
+|                         |   INDEX: x3350                                                                   |
+|                         |   RELS: < [ named LBL: h3351 ARG0: x3350 CARG: "Brandon Carter" ] > ]            |
 +-------------------------+----------------------------------------------------------------------------------+
-| University_of_Cambridge | [ TOP: h27164                                                                    |
-|                         |   INDEX: x27162                                                                  |
-|                         |   RELS: < [ _university_n_of LBL: h27164 ARG0: x27162 ARG1: i27163 ]             |
-|                         |           [ explicit_or_proper_q LBL: h27170 ARG0: x27167 RSTR: h27168 BODY:     |
-|                         | h27169 ]                                                                         |
-|                         |           [ named LBL: h27166 ARG0: x27165 CARG: "Cambridge" ] >                 |
-|                         |   HCONS: < h27168 qeq h27166 >                                                   |
-|                         |   EQS: < x27167 eq x27165 h27164 eq h27171 i27163 eq x27167 > ]                  |
+| University_of_Cambridge | [ TOP: h3354                                                                     |
+|                         |   INDEX: x3352                                                                   |
+|                         |   RELS: < [ _university_n_of LBL: h3354 ARG0: x3352 ARG1: i3353 ]                |
+|                         |           [ explicit_or_proper_q LBL: h3360 ARG0: x3357 RSTR: h3358 BODY: h3359  |
+|                         | ]                                                                                |
+|                         |           [ named LBL: h3356 ARG0: x3355 CARG: "Cambridge" ] >                   |
+|                         |   HCONS: < h3358 qeq h3356 >                                                     |
+|                         |   EQS: < x3357 eq x3355 h3354 eq h3361 i3353 eq x3357 > ]                        |
 +-------------------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------------------------+
@@ -138,26 +134,24 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id1011_267_803
 +-----------+----------------+-------------------------+----------------------------------------------------------------------------------+
 | Edge      | Parent         | Child                   | Generated SEMENT                                                                 |
 +-----------+----------------+-------------------------+----------------------------------------------------------------------------------+
-| almaMater | Brandon_Carter | University_of_Cambridge | [ TOP: h27186                                                                    |
-|           |                |                         |   INDEX: e27183 [ e SF: prop TENSE: tensed ]                                     |
-|           |                |                         |   RELS: < [ _be_v_id LBL: h27186 ARG0: e27183 ARG1: p27184 ARG2: i27185 ]        |
-|           |                |                         |           [ def_udef_a_q LBL: h27195 ARG0: x27192 RSTR: h27193 BODY: h27194 ]    |
-|           |                |                         |           [ _university_n_of LBL: h27164 ARG0: x27162 ARG1: i27163 ]             |
-|           |                |                         |           [ explicit_or_proper_q LBL: h27170 ARG0: x27167 RSTR: h27168 BODY:     |
-|           |                |                         | h27169 ]                                                                         |
-|           |                |                         |           [ named LBL: h27166 ARG0: x27165 CARG: "Cambridge" ]                   |
-|           |                |                         |           [ def_udef_a_q LBL: h27190 ARG0: x27187 RSTR: h27188 BODY: h27189 ]    |
-|           |                |                         |           [ poss LBL: h27182 ARG0: e27179 ARG1: x27180 ARG2: i27181 ]            |
-|           |                |                         |           [ explicit_or_proper_q LBL: h27177 ARG0: x27174 RSTR: h27175 BODY:     |
-|           |                |                         | h27176 ]                                                                         |
-|           |                |                         |           [ named LBL: h27161 ARG0: x27160 CARG: "Brandon Carter" ]              |
-|           |                |                         |           [ unk_n LBL: h27173 ARG0: x27172 [ x IND: + ] CARG: "alma mater" ] >   |
-|           |                |                         |   HCONS: < h27168 qeq h27166 h27193 qeq h27164 h27175 qeq h27161 h27188 qeq      |
-|           |                |                         | h27173 >                                                                         |
-|           |                |                         |   EQS: < x27167 eq x27165 h27164 eq h27171 i27163 eq x27167 x27192 eq x27162     |
-|           |                |                         | h27186 eq h27196 i27185 eq x27192 x27174 eq x27160 h27182 eq h27178 i27181 eq    |
-|           |                |                         | x27174 h27182 eq h27173 x27180 eq x27172 x27187 eq x27172 h27186 eq h27191       |
-|           |                |                         | p27184 eq x27187 > ]                                                             |
+| almaMater | Brandon_Carter | University_of_Cambridge | [ TOP: h3376                                                                     |
+|           |                |                         |   INDEX: e3373 [ e SF: prop TENSE: tensed ]                                      |
+|           |                |                         |   RELS: < [ _be_v_id LBL: h3376 ARG0: e3373 ARG1: p3374 ARG2: i3375 ]            |
+|           |                |                         |           [ def_udef_a_q LBL: h3385 ARG0: x3382 RSTR: h3383 BODY: h3384 ]        |
+|           |                |                         |           [ _university_n_of LBL: h3354 ARG0: x3352 ARG1: i3353 ]                |
+|           |                |                         |           [ explicit_or_proper_q LBL: h3360 ARG0: x3357 RSTR: h3358 BODY: h3359  |
+|           |                |                         | ]                                                                                |
+|           |                |                         |           [ named LBL: h3356 ARG0: x3355 CARG: "Cambridge" ]                     |
+|           |                |                         |           [ def_udef_a_q LBL: h3380 ARG0: x3377 RSTR: h3378 BODY: h3379 ]        |
+|           |                |                         |           [ poss LBL: h3372 ARG0: e3369 ARG1: x3370 ARG2: i3371 ]                |
+|           |                |                         |           [ explicit_or_proper_q LBL: h3367 ARG0: x3364 RSTR: h3365 BODY: h3366  |
+|           |                |                         | ]                                                                                |
+|           |                |                         |           [ named LBL: h3351 ARG0: x3350 CARG: "Brandon Carter" ]                |
+|           |                |                         |           [ unk_n LBL: h3363 ARG0: x3362 [ x IND: + ] CARG: "alma mater" ] >     |
+|           |                |                         |   HCONS: < h3358 qeq h3356 h3383 qeq h3354 h3365 qeq h3351 h3378 qeq h3363 >     |
+|           |                |                         |   EQS: < x3357 eq x3355 h3354 eq h3361 i3353 eq x3357 x3382 eq x3352 h3376 eq    |
+|           |                |                         | h3386 i3375 eq x3382 x3364 eq x3350 h3372 eq h3368 i3371 eq x3364 h3372 eq h3363 |
+|           |                |                         | x3370 eq x3362 x3377 eq x3362 h3376 eq h3381 p3374 eq x3377 > ]                  |
 +-----------+----------------+-------------------------+----------------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------+

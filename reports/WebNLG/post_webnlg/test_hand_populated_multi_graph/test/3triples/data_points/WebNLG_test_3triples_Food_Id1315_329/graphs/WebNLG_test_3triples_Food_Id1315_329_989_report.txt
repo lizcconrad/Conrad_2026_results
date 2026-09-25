@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Food_Id1315_329_989
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+--------------------------------------------------------------------------------------------------------------+
-|                                                 GOLD OUTPUTS                                                 |
-+-------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                     | Generated? |
-+-------------------------------------------------------------------------------------------------+------------+
-| Bionico is a dessert food found in Mexico. One type of dessert is cake.                         | False      |
-| Bionico is a dish served for dessert found in Mexico. A variation on dessert is cake.           | False      |
-| Bionico is a food found in Mexico served at the dessert course. A variation on dessert is cake. | False      |
-+-------------------------------------------------------------------------------------------------+------------+
++-------------------------------------------------------------------------------------------------------+
+|                                              GOLD OUTPUTS                                             |
++------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                              | Generated? |
++------------------------------------------------------------------------------------------+------------+
+| Bionico and cookie are both desserts. Bionico is served at the dessert course in Mexico. | False      |
+| Bionico is a dessert, which is found in Mexico. Cookie is also a type of dessert.        | False      |
+| Bionico is a dish found in Mexico served for dessert and cookie is also a dessert.       | False      |
++------------------------------------------------------------------------------------------+------------+
 
 +-------------------------------------------------------------------------------+
 |                                  NODE METRICS                                 |
@@ -56,73 +56,69 @@ GRAPH NAME: WebNLG_test_3triples_Food_Id1315_329_989
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h32973                                                                    |
-|               |   INDEX: e32971 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_loc LBL: h32965 ARG0: e32962 ARG1: u32963 ARG2: u32964 ]       |
-|               |           [ explicit_or_proper_q LBL: h32969 ARG0: x32966 RSTR: h32967 BODY:     |
-|               | h32968 ]                                                                         |
-|               |           [ named LBL: h32961 ARG0: x32960 CARG: "Mexico" ]                      |
-|               |           [ _located_a_1 LBL: h32973 ARG0: e32971 ARG1: u32972 ]                 |
-|               |           [ def_udef_a_q LBL: h32977 ARG0: x32974 RSTR: h32975 BODY: h32976 ]    |
-|               |           [ unk_n LBL: h32959 ARG0: x32958 [ x IND: - ] CARG: "bionico" ] >      |
-|               |   HCONS: < h32967 qeq h32961 h32975 qeq h32959 >                                 |
-|               |   EQS: < x32966 eq x32960 h32965 eq h32970 u32964 eq x32966 x32974 eq x32958     |
-|               | h32973 eq h32978 u32972 eq x32974 h32965 eq h32973 u32963 eq e32971 > ]          |
+| Original      | [ TOP: h336                                                                      |
+|               |   INDEX: e334 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_loc LBL: h328 ARG0: e325 ARG1: u326 ARG2: u327 ]               |
+|               |           [ explicit_or_proper_q LBL: h332 ARG0: x329 RSTR: h330 BODY: h331 ]    |
+|               |           [ named LBL: h324 ARG0: x323 CARG: "Mexico" ]                          |
+|               |           [ _located_a_1 LBL: h336 ARG0: e334 ARG1: u335 ]                       |
+|               |           [ def_udef_a_q LBL: h340 ARG0: x337 RSTR: h338 BODY: h339 ]            |
+|               |           [ unk_n LBL: h322 ARG0: x321 [ x IND: - ] CARG: "bionico" ] >          |
+|               |   HCONS: < h330 qeq h324 h338 qeq h322 >                                         |
+|               |   EQS: < x329 eq x323 h328 eq h333 u327 eq x329 x337 eq x321 h336 eq h341 u335   |
+|               | eq x337 h328 eq h336 u326 eq e334 > ]                                            |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h32965                                                                    |
-|               |   INDEX: e32971 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_loc LBL: h32965 ARG0: e32962 ARG1: e32971 ARG2: x32960 ]       |
-|               |           [ explicit_or_proper_q LBL: h32969 ARG0: x32960 RSTR: h32967 BODY:     |
-|               | h32968 ]                                                                         |
-|               |           [ named LBL: h32961 ARG0: x32960 CARG: "Mexico" ]                      |
-|               |           [ _located_a_1 LBL: h32965 ARG0: e32971 ARG1: x32958 [ x IND: - ] ]    |
-|               |           [ def_udef_a_q LBL: h32977 ARG0: x32958 RSTR: h32975 BODY: h32976 ]    |
-|               |           [ unk_n LBL: h32959 ARG0: x32958 CARG: "bionico" ] >                   |
-|               |   HCONS: < h32967 qeq h32961 h32975 qeq h32959 > ]                               |
+| EQs Collapsed | [ TOP: h328                                                                      |
+|               |   INDEX: e334 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_loc LBL: h328 ARG0: e325 ARG1: e334 ARG2: x323 ]               |
+|               |           [ explicit_or_proper_q LBL: h332 ARG0: x323 RSTR: h330 BODY: h331 ]    |
+|               |           [ named LBL: h324 ARG0: x323 CARG: "Mexico" ]                          |
+|               |           [ _located_a_1 LBL: h328 ARG0: e334 ARG1: x321 [ x IND: - ] ]          |
+|               |           [ def_udef_a_q LBL: h340 ARG0: x321 RSTR: h338 BODY: h339 ]            |
+|               |           [ unk_n LBL: h322 ARG0: x321 CARG: "bionico" ] >                       |
+|               |   HCONS: < h330 qeq h324 h338 qeq h322 > ]                                       |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h32979                                                                    |
-|               |   INDEX: e32971 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_loc LBL: h32965 ARG0: e32962 ARG1: e32971 ARG2: x32960 ]       |
-|               |           [ explicit_or_proper_q LBL: h32969 ARG0: x32960 RSTR: h32967 BODY:     |
-|               | h32968 ]                                                                         |
-|               |           [ named LBL: h32961 ARG0: x32960 CARG: "Mexico" ]                      |
-|               |           [ _located_a_1 LBL: h32965 ARG0: e32971 ARG1: x32958 [ x IND: - ] ]    |
-|               |           [ def_udef_a_q LBL: h32977 ARG0: x32958 RSTR: h32975 BODY: h32976 ]    |
-|               |           [ unk_n LBL: h32959 ARG0: x32958 CARG: "bionico" ] >                   |
-|               |   HCONS: < h32967 qeq h32961 h32975 qeq h32959 h32979 qeq h32965 > ]             |
+| Prepped       | [ TOP: h342                                                                      |
+|               |   INDEX: e334 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_loc LBL: h328 ARG0: e325 ARG1: e334 ARG2: x323 ]               |
+|               |           [ explicit_or_proper_q LBL: h332 ARG0: x323 RSTR: h330 BODY: h331 ]    |
+|               |           [ named LBL: h324 ARG0: x323 CARG: "Mexico" ]                          |
+|               |           [ _located_a_1 LBL: h328 ARG0: e334 ARG1: x321 [ x IND: - ] ]          |
+|               |           [ def_udef_a_q LBL: h340 ARG0: x321 RSTR: h338 BODY: h339 ]            |
+|               |           [ unk_n LBL: h322 ARG0: x321 CARG: "bionico" ] >                       |
+|               |   HCONS: < h330 qeq h324 h338 qeq h322 h342 qeq h328 > ]                         |
 +---------------+----------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------+
-|                                NODE SEMENTS                                |
-+---------+------------------------------------------------------------------+
-| Node    | Generated SEMENT                                                 |
-+---------+------------------------------------------------------------------+
-| Bionico | [ TOP: h32959                                                    |
-|         |   INDEX: x32958 [ x IND: - ]                                     |
-|         |   RELS: < [ unk_n LBL: h32959 ARG0: x32958 CARG: "bionico" ] > ] |
-+---------+------------------------------------------------------------------+
-| Mexico  | [ TOP: h32961                                                    |
-|         |   INDEX: x32960                                                  |
-|         |   RELS: < [ named LBL: h32961 ARG0: x32960 CARG: "Mexico" ] > ]  |
-+---------+------------------------------------------------------------------+
++------------------------------------------------------------------------+
+|                              NODE SEMENTS                              |
++---------+--------------------------------------------------------------+
+| Node    | Generated SEMENT                                             |
++---------+--------------------------------------------------------------+
+| Bionico | [ TOP: h322                                                  |
+|         |   INDEX: x321 [ x IND: - ]                                   |
+|         |   RELS: < [ unk_n LBL: h322 ARG0: x321 CARG: "bionico" ] > ] |
++---------+--------------------------------------------------------------+
+| Mexico  | [ TOP: h324                                                  |
+|         |   INDEX: x323                                                |
+|         |   RELS: < [ named LBL: h324 ARG0: x323 CARG: "Mexico" ] > ]  |
++---------+--------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
 |                                                  EDGE SEMENTS                                                 |
 +---------+---------+--------+----------------------------------------------------------------------------------+
 | Edge    | Parent  | Child  | Generated SEMENT                                                                 |
 +---------+---------+--------+----------------------------------------------------------------------------------+
-| country | Bionico | Mexico | [ TOP: h32973                                                                    |
-|         |         |        |   INDEX: e32971 [ e TENSE: tensed ]                                              |
-|         |         |        |   RELS: < [ _in_p_loc LBL: h32965 ARG0: e32962 ARG1: u32963 ARG2: u32964 ]       |
-|         |         |        |           [ explicit_or_proper_q LBL: h32969 ARG0: x32966 RSTR: h32967 BODY:     |
-|         |         |        | h32968 ]                                                                         |
-|         |         |        |           [ named LBL: h32961 ARG0: x32960 CARG: "Mexico" ]                      |
-|         |         |        |           [ _located_a_1 LBL: h32973 ARG0: e32971 ARG1: u32972 ]                 |
-|         |         |        |           [ def_udef_a_q LBL: h32977 ARG0: x32974 RSTR: h32975 BODY: h32976 ]    |
-|         |         |        |           [ unk_n LBL: h32959 ARG0: x32958 [ x IND: - ] CARG: "bionico" ] >      |
-|         |         |        |   HCONS: < h32967 qeq h32961 h32975 qeq h32959 >                                 |
-|         |         |        |   EQS: < x32966 eq x32960 h32965 eq h32970 u32964 eq x32966 x32974 eq x32958     |
-|         |         |        | h32973 eq h32978 u32972 eq x32974 h32965 eq h32973 u32963 eq e32971 > ]          |
+| country | Bionico | Mexico | [ TOP: h336                                                                      |
+|         |         |        |   INDEX: e334 [ e TENSE: tensed ]                                                |
+|         |         |        |   RELS: < [ _in_p_loc LBL: h328 ARG0: e325 ARG1: u326 ARG2: u327 ]               |
+|         |         |        |           [ explicit_or_proper_q LBL: h332 ARG0: x329 RSTR: h330 BODY: h331 ]    |
+|         |         |        |           [ named LBL: h324 ARG0: x323 CARG: "Mexico" ]                          |
+|         |         |        |           [ _located_a_1 LBL: h336 ARG0: e334 ARG1: u335 ]                       |
+|         |         |        |           [ def_udef_a_q LBL: h340 ARG0: x337 RSTR: h338 BODY: h339 ]            |
+|         |         |        |           [ unk_n LBL: h322 ARG0: x321 [ x IND: - ] CARG: "bionico" ] >          |
+|         |         |        |   HCONS: < h330 qeq h324 h338 qeq h322 >                                         |
+|         |         |        |   EQS: < x329 eq x323 h328 eq h333 u327 eq x329 x337 eq x321 h336 eq h341 u335   |
+|         |         |        | eq x337 h328 eq h336 u326 eq e334 > ]                                            |
 +---------+---------+--------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------+

@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_CelestialBody_Id580_302_906
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                     GOLD OUTPUTS                                                                     |
-+-----------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                             | Generated? |
-+-----------------------------------------------------------------------------------------------------------------------------------------+------------+
-| An asteroid 1147 Stavropolis which was discovered on 11 June 1929 has a rotation period of 20378.5 and the periapsis of 260855000000.0. | False      |
-| The 1147 Stavropolis asteroid which was discovered on June 11, 1929, has a rotation period of 20378.5 with a periapsis of 260855000000. | False      |
-| The 1147 Stavropolis which was discovered on June 11, 1929, has a rotation period of 20378.5 and a periapsis of 260855000000.0.         | False      |
-+-----------------------------------------------------------------------------------------------------------------------------------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                       GOLD OUTPUTS                                                                      |
++--------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                | Generated? |
++--------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| 1147 Stavropolis discovered on June 11, 1929 has an apoapsis of 418476000000.0 and an absolute magnitude of 11.5.                          | False      |
+| 1147 Stavropolis, an asteroid, discovered on 11 June 1929 with absolute magnitude of 11.5, has an apoapsis of 418476000000.0 AU.           | False      |
+| The 1147 Stavropolis asteroid that was discovered on June 11, 1929, has an apoapsis of 418476000000.0, with an absolute magnitude of 11.5. | False      |
++--------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------+
 |                                      NODE METRICS                                      |
@@ -56,66 +56,61 @@ GRAPH NAME: WebNLG_test_3triples_CelestialBody_Id580_302_906
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h30349                                                                    |
-|               |   INDEX: e30346 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h30340 ARG0: e30337 ARG1: u30338 ARG2: i30339 ]      |
-|               |           [ def_udef_a_q LBL: h30344 ARG0: x30341 RSTR: h30342 BODY: h30343 ]    |
-|               |           [ of_p LBL: h30331 ARG0: e30328 ARG1: x30329 ARG2: x30330 ]            |
-|               |           [ def_implicit_q LBL: h30335 ARG0: x30332 RSTR: h30333 BODY: h30334 ]  |
-|               |           [ mofy LBL: h30320 ARG0: x30318 [ x NUM: sg ] ARG1: i30319 CARG: "Jun" |
+| Original      | [ TOP: h2643                                                                     |
+|               |   INDEX: e2640 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _on_p_temp LBL: h2634 ARG0: e2631 ARG1: u2632 ARG2: i2633 ]          |
+|               |           [ def_udef_a_q LBL: h2638 ARG0: x2635 RSTR: h2636 BODY: h2637 ]        |
+|               |           [ of_p LBL: h2625 ARG0: e2622 ARG1: x2623 ARG2: x2624 ]                |
+|               |           [ def_implicit_q LBL: h2629 ARG0: x2626 RSTR: h2627 BODY: h2628 ]      |
+|               |           [ mofy LBL: h2614 ARG0: x2612 [ x NUM: sg ] ARG1: i2613 CARG: "Jun" ]  |
+|               |           [ dofm LBL: h2611 ARG0: x2609 ARG1: i2610 CARG: "11th" ]               |
+|               |           [ proper_q LBL: h2620 ARG0: x2617 RSTR: h2618 BODY: h2619 ]            |
+|               |           [ yofc LBL: h2616 ARG0: x2615 CARG: "1929" ]                           |
+|               |           [ _discover_v_1 LBL: h2643 ARG0: e2640 ARG1: i2641 ARG2: i2642 ]       |
+|               |           [ explicit_or_proper_q LBL: h2647 ARG0: x2644 RSTR: h2645 BODY: h2646  |
 |               | ]                                                                                |
-|               |           [ dofm LBL: h30317 ARG0: x30315 ARG1: i30316 CARG: "11th" ]            |
-|               |           [ proper_q LBL: h30326 ARG0: x30323 RSTR: h30324 BODY: h30325 ]        |
-|               |           [ yofc LBL: h30322 ARG0: x30321 CARG: "1929" ]                         |
-|               |           [ _discover_v_1 LBL: h30349 ARG0: e30346 ARG1: i30347 ARG2: i30348 ]   |
-|               |           [ explicit_or_proper_q LBL: h30353 ARG0: x30350 RSTR: h30351 BODY:     |
-|               | h30352 ]                                                                         |
-|               |           [ named LBL: h30314 ARG0: x30313 CARG: "1147 Stavropolis" ] >          |
-|               |   HCONS: < h30333 qeq h30320 h30324 qeq h30322 h30342 qeq h30317 h30351 qeq      |
-|               | h30314 >                                                                         |
-|               |   EQS: < x30332 eq x30318 h30331 eq h30336 x30330 eq x30332 x30323 eq x30321     |
-|               | h30317 eq h30327 i30316 eq x30323 h30331 eq h30317 x30329 eq x30315 x30341 eq    |
-|               | x30315 h30340 eq h30345 i30339 eq x30341 x30350 eq x30313 h30349 eq h30354       |
-|               | i30348 eq x30350 h30340 eq h30349 u30338 eq e30346 >                             |
-|               |   SLOTS: < ARG1: i30347 > ]                                                      |
+|               |           [ named LBL: h2608 ARG0: x2607 CARG: "1147 Stavropolis" ] >            |
+|               |   HCONS: < h2627 qeq h2614 h2618 qeq h2616 h2636 qeq h2611 h2645 qeq h2608 >     |
+|               |   EQS: < x2626 eq x2612 h2625 eq h2630 x2624 eq x2626 x2617 eq x2615 h2611 eq    |
+|               | h2621 i2610 eq x2617 h2625 eq h2611 x2623 eq x2609 x2635 eq x2609 h2634 eq h2639 |
+|               | i2633 eq x2635 x2644 eq x2607 h2643 eq h2648 i2642 eq x2644 h2634 eq h2643 u2632 |
+|               | eq e2640 >                                                                       |
+|               |   SLOTS: < ARG1: i2641 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h30340                                                                    |
-|               |   INDEX: e30346 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h30340 ARG0: e30337 ARG1: e30346 ARG2: x30315 ]      |
-|               |           [ def_udef_a_q LBL: h30344 ARG0: x30315 RSTR: h30342 BODY: h30343 ]    |
-|               |           [ of_p LBL: h30317 ARG0: e30328 ARG1: x30315 ARG2: x30318 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ def_implicit_q LBL: h30335 ARG0: x30318 RSTR: h30333 BODY: h30334 ]  |
-|               |           [ mofy LBL: h30320 ARG0: x30318 ARG1: i30319 CARG: "Jun" ]             |
-|               |           [ dofm LBL: h30317 ARG0: x30315 ARG1: x30321 CARG: "11th" ]            |
-|               |           [ proper_q LBL: h30326 ARG0: x30321 RSTR: h30324 BODY: h30325 ]        |
-|               |           [ yofc LBL: h30322 ARG0: x30321 CARG: "1929" ]                         |
-|               |           [ _discover_v_1 LBL: h30340 ARG0: e30346 ARG1: i30347 ARG2: x30313 ]   |
-|               |           [ explicit_or_proper_q LBL: h30353 ARG0: x30313 RSTR: h30351 BODY:     |
-|               | h30352 ]                                                                         |
-|               |           [ named LBL: h30314 ARG0: x30313 CARG: "1147 Stavropolis" ] >          |
-|               |   HCONS: < h30333 qeq h30320 h30324 qeq h30322 h30342 qeq h30317 h30351 qeq      |
-|               | h30314 >                                                                         |
-|               |   SLOTS: < ARG1: i30347 > ]                                                      |
+| EQs Collapsed | [ TOP: h2634                                                                     |
+|               |   INDEX: e2640 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _on_p_temp LBL: h2634 ARG0: e2631 ARG1: e2640 ARG2: x2609 ]          |
+|               |           [ def_udef_a_q LBL: h2638 ARG0: x2609 RSTR: h2636 BODY: h2637 ]        |
+|               |           [ of_p LBL: h2611 ARG0: e2622 ARG1: x2609 ARG2: x2612 [ x NUM: sg ] ]  |
+|               |           [ def_implicit_q LBL: h2629 ARG0: x2612 RSTR: h2627 BODY: h2628 ]      |
+|               |           [ mofy LBL: h2614 ARG0: x2612 ARG1: i2613 CARG: "Jun" ]                |
+|               |           [ dofm LBL: h2611 ARG0: x2609 ARG1: x2615 CARG: "11th" ]               |
+|               |           [ proper_q LBL: h2620 ARG0: x2615 RSTR: h2618 BODY: h2619 ]            |
+|               |           [ yofc LBL: h2616 ARG0: x2615 CARG: "1929" ]                           |
+|               |           [ _discover_v_1 LBL: h2634 ARG0: e2640 ARG1: i2641 ARG2: x2607 ]       |
+|               |           [ explicit_or_proper_q LBL: h2647 ARG0: x2607 RSTR: h2645 BODY: h2646  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2608 ARG0: x2607 CARG: "1147 Stavropolis" ] >            |
+|               |   HCONS: < h2627 qeq h2614 h2618 qeq h2616 h2636 qeq h2611 h2645 qeq h2608 >     |
+|               |   SLOTS: < ARG1: i2641 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h30355                                                                    |
-|               |   INDEX: e30346 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h30340 ARG0: e30337 ARG1: e30346 ARG2: x30315 ]      |
-|               |           [ def_udef_a_q LBL: h30344 ARG0: x30315 RSTR: h30342 BODY: h30343 ]    |
-|               |           [ of_p LBL: h30317 ARG0: e30328 ARG1: x30315 ARG2: x30318 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ def_implicit_q LBL: h30335 ARG0: x30318 RSTR: h30333 BODY: h30334 ]  |
-|               |           [ mofy LBL: h30320 ARG0: x30318 ARG1: i30319 CARG: "Jun" ]             |
-|               |           [ dofm LBL: h30317 ARG0: x30315 ARG1: x30321 CARG: "11th" ]            |
-|               |           [ proper_q LBL: h30326 ARG0: x30321 RSTR: h30324 BODY: h30325 ]        |
-|               |           [ yofc LBL: h30322 ARG0: x30321 CARG: "1929" ]                         |
-|               |           [ _discover_v_1 LBL: h30340 ARG0: e30346 ARG1: i30347 ARG2: x30313 ]   |
-|               |           [ explicit_or_proper_q LBL: h30353 ARG0: x30313 RSTR: h30351 BODY:     |
-|               | h30352 ]                                                                         |
-|               |           [ named LBL: h30314 ARG0: x30313 CARG: "1147 Stavropolis" ] >          |
-|               |   HCONS: < h30333 qeq h30320 h30324 qeq h30322 h30342 qeq h30317 h30351 qeq      |
-|               | h30314 h30355 qeq h30340 >                                                       |
-|               |   SLOTS: < ARG1: i30347 > ]                                                      |
+| Prepped       | [ TOP: h2649                                                                     |
+|               |   INDEX: e2640 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _on_p_temp LBL: h2634 ARG0: e2631 ARG1: e2640 ARG2: x2609 ]          |
+|               |           [ def_udef_a_q LBL: h2638 ARG0: x2609 RSTR: h2636 BODY: h2637 ]        |
+|               |           [ of_p LBL: h2611 ARG0: e2622 ARG1: x2609 ARG2: x2612 [ x NUM: sg ] ]  |
+|               |           [ def_implicit_q LBL: h2629 ARG0: x2612 RSTR: h2627 BODY: h2628 ]      |
+|               |           [ mofy LBL: h2614 ARG0: x2612 ARG1: i2613 CARG: "Jun" ]                |
+|               |           [ dofm LBL: h2611 ARG0: x2609 ARG1: x2615 CARG: "11th" ]               |
+|               |           [ proper_q LBL: h2620 ARG0: x2615 RSTR: h2618 BODY: h2619 ]            |
+|               |           [ yofc LBL: h2616 ARG0: x2615 CARG: "1929" ]                           |
+|               |           [ _discover_v_1 LBL: h2634 ARG0: e2640 ARG1: i2641 ARG2: x2607 ]       |
+|               |           [ explicit_or_proper_q LBL: h2647 ARG0: x2607 RSTR: h2645 BODY: h2646  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2608 ARG0: x2607 CARG: "1147 Stavropolis" ] >            |
+|               |   HCONS: < h2627 qeq h2614 h2618 qeq h2616 h2636 qeq h2611 h2645 qeq h2608 h2649 |
+|               | qeq h2634 >                                                                      |
+|               |   SLOTS: < ARG1: i2641 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------+
@@ -123,22 +118,21 @@ GRAPH NAME: WebNLG_test_3triples_CelestialBody_Id580_302_906
 +------------------+----------------------------------------------------------------------------------+
 | Node             | Generated SEMENT                                                                 |
 +------------------+----------------------------------------------------------------------------------+
-| 1147_Stavropolis | [ TOP: h30314                                                                    |
-|                  |   INDEX: x30313                                                                  |
-|                  |   RELS: < [ named LBL: h30314 ARG0: x30313 CARG: "1147 Stavropolis" ] > ]        |
+| 1147_Stavropolis | [ TOP: h2608                                                                     |
+|                  |   INDEX: x2607                                                                   |
+|                  |   RELS: < [ named LBL: h2608 ARG0: x2607 CARG: "1147 Stavropolis" ] > ]          |
 +------------------+----------------------------------------------------------------------------------+
-| 1929-06-11       | [ TOP: h30317                                                                    |
-|                  |   INDEX: x30315                                                                  |
-|                  |   RELS: < [ of_p LBL: h30331 ARG0: e30328 ARG1: x30329 ARG2: x30330 ]            |
-|                  |           [ def_implicit_q LBL: h30335 ARG0: x30332 RSTR: h30333 BODY: h30334 ]  |
-|                  |           [ mofy LBL: h30320 ARG0: x30318 [ x NUM: sg ] ARG1: i30319 CARG: "Jun" |
-|                  | ]                                                                                |
-|                  |           [ dofm LBL: h30317 ARG0: x30315 ARG1: i30316 CARG: "11th" ]            |
-|                  |           [ proper_q LBL: h30326 ARG0: x30323 RSTR: h30324 BODY: h30325 ]        |
-|                  |           [ yofc LBL: h30322 ARG0: x30321 CARG: "1929" ] >                       |
-|                  |   HCONS: < h30333 qeq h30320 h30324 qeq h30322 >                                 |
-|                  |   EQS: < x30332 eq x30318 h30331 eq h30336 x30330 eq x30332 x30323 eq x30321     |
-|                  | h30317 eq h30327 i30316 eq x30323 h30331 eq h30317 x30329 eq x30315 > ]          |
+| 1929-06-11       | [ TOP: h2611                                                                     |
+|                  |   INDEX: x2609                                                                   |
+|                  |   RELS: < [ of_p LBL: h2625 ARG0: e2622 ARG1: x2623 ARG2: x2624 ]                |
+|                  |           [ def_implicit_q LBL: h2629 ARG0: x2626 RSTR: h2627 BODY: h2628 ]      |
+|                  |           [ mofy LBL: h2614 ARG0: x2612 [ x NUM: sg ] ARG1: i2613 CARG: "Jun" ]  |
+|                  |           [ dofm LBL: h2611 ARG0: x2609 ARG1: i2610 CARG: "11th" ]               |
+|                  |           [ proper_q LBL: h2620 ARG0: x2617 RSTR: h2618 BODY: h2619 ]            |
+|                  |           [ yofc LBL: h2616 ARG0: x2615 CARG: "1929" ] >                         |
+|                  |   HCONS: < h2627 qeq h2614 h2618 qeq h2616 >                                     |
+|                  |   EQS: < x2626 eq x2612 h2625 eq h2630 x2624 eq x2626 x2617 eq x2615 h2611 eq    |
+|                  | h2621 i2610 eq x2617 h2625 eq h2611 x2623 eq x2609 > ]                           |
 +------------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -146,28 +140,26 @@ GRAPH NAME: WebNLG_test_3triples_CelestialBody_Id580_302_906
 +------------+------------------+------------+----------------------------------------------------------------------------------+
 | Edge       | Parent           | Child      | Generated SEMENT                                                                 |
 +------------+------------------+------------+----------------------------------------------------------------------------------+
-| discovered | 1147_Stavropolis | 1929-06-11 | [ TOP: h30349                                                                    |
-|            |                  |            |   INDEX: e30346 [ e TENSE: tensed ]                                              |
-|            |                  |            |   RELS: < [ _on_p_temp LBL: h30340 ARG0: e30337 ARG1: u30338 ARG2: i30339 ]      |
-|            |                  |            |           [ def_udef_a_q LBL: h30344 ARG0: x30341 RSTR: h30342 BODY: h30343 ]    |
-|            |                  |            |           [ of_p LBL: h30331 ARG0: e30328 ARG1: x30329 ARG2: x30330 ]            |
-|            |                  |            |           [ def_implicit_q LBL: h30335 ARG0: x30332 RSTR: h30333 BODY: h30334 ]  |
-|            |                  |            |           [ mofy LBL: h30320 ARG0: x30318 [ x NUM: sg ] ARG1: i30319 CARG: "Jun" |
+| discovered | 1147_Stavropolis | 1929-06-11 | [ TOP: h2643                                                                     |
+|            |                  |            |   INDEX: e2640 [ e TENSE: tensed ]                                               |
+|            |                  |            |   RELS: < [ _on_p_temp LBL: h2634 ARG0: e2631 ARG1: u2632 ARG2: i2633 ]          |
+|            |                  |            |           [ def_udef_a_q LBL: h2638 ARG0: x2635 RSTR: h2636 BODY: h2637 ]        |
+|            |                  |            |           [ of_p LBL: h2625 ARG0: e2622 ARG1: x2623 ARG2: x2624 ]                |
+|            |                  |            |           [ def_implicit_q LBL: h2629 ARG0: x2626 RSTR: h2627 BODY: h2628 ]      |
+|            |                  |            |           [ mofy LBL: h2614 ARG0: x2612 [ x NUM: sg ] ARG1: i2613 CARG: "Jun" ]  |
+|            |                  |            |           [ dofm LBL: h2611 ARG0: x2609 ARG1: i2610 CARG: "11th" ]               |
+|            |                  |            |           [ proper_q LBL: h2620 ARG0: x2617 RSTR: h2618 BODY: h2619 ]            |
+|            |                  |            |           [ yofc LBL: h2616 ARG0: x2615 CARG: "1929" ]                           |
+|            |                  |            |           [ _discover_v_1 LBL: h2643 ARG0: e2640 ARG1: i2641 ARG2: i2642 ]       |
+|            |                  |            |           [ explicit_or_proper_q LBL: h2647 ARG0: x2644 RSTR: h2645 BODY: h2646  |
 |            |                  |            | ]                                                                                |
-|            |                  |            |           [ dofm LBL: h30317 ARG0: x30315 ARG1: i30316 CARG: "11th" ]            |
-|            |                  |            |           [ proper_q LBL: h30326 ARG0: x30323 RSTR: h30324 BODY: h30325 ]        |
-|            |                  |            |           [ yofc LBL: h30322 ARG0: x30321 CARG: "1929" ]                         |
-|            |                  |            |           [ _discover_v_1 LBL: h30349 ARG0: e30346 ARG1: i30347 ARG2: i30348 ]   |
-|            |                  |            |           [ explicit_or_proper_q LBL: h30353 ARG0: x30350 RSTR: h30351 BODY:     |
-|            |                  |            | h30352 ]                                                                         |
-|            |                  |            |           [ named LBL: h30314 ARG0: x30313 CARG: "1147 Stavropolis" ] >          |
-|            |                  |            |   HCONS: < h30333 qeq h30320 h30324 qeq h30322 h30342 qeq h30317 h30351 qeq      |
-|            |                  |            | h30314 >                                                                         |
-|            |                  |            |   EQS: < x30332 eq x30318 h30331 eq h30336 x30330 eq x30332 x30323 eq x30321     |
-|            |                  |            | h30317 eq h30327 i30316 eq x30323 h30331 eq h30317 x30329 eq x30315 x30341 eq    |
-|            |                  |            | x30315 h30340 eq h30345 i30339 eq x30341 x30350 eq x30313 h30349 eq h30354       |
-|            |                  |            | i30348 eq x30350 h30340 eq h30349 u30338 eq e30346 >                             |
-|            |                  |            |   SLOTS: < ARG1: i30347 > ]                                                      |
+|            |                  |            |           [ named LBL: h2608 ARG0: x2607 CARG: "1147 Stavropolis" ] >            |
+|            |                  |            |   HCONS: < h2627 qeq h2614 h2618 qeq h2616 h2636 qeq h2611 h2645 qeq h2608 >     |
+|            |                  |            |   EQS: < x2626 eq x2612 h2625 eq h2630 x2624 eq x2626 x2617 eq x2615 h2611 eq    |
+|            |                  |            | h2621 i2610 eq x2617 h2625 eq h2611 x2623 eq x2609 x2635 eq x2609 h2634 eq h2639 |
+|            |                  |            | i2633 eq x2635 x2644 eq x2607 h2643 eq h2648 i2642 eq x2644 h2634 eq h2643 u2632 |
+|            |                  |            | eq e2640 >                                                                       |
+|            |                  |            |   SLOTS: < ARG1: i2641 > ]                                                       |
 +------------+------------------+------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------+

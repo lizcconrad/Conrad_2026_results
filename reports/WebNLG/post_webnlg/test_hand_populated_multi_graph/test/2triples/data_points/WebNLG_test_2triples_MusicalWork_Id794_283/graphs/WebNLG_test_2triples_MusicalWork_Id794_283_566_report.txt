@@ -24,15 +24,14 @@ GRAPH NAME: WebNLG_test_2triples_MusicalWork_Id794_283_566
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+----------------------------------------------------------------------------------------------------------------------+
-|                                                     GOLD OUTPUTS                                                     |
-+---------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                             | Generated? |
-+---------------------------------------------------------------------------------------------------------+------------+
-| The album Turn Me On was produced by Wharton Tiers and was preceded by the album Let It Breed.          | False      |
-| The album Turn Me On, produced by Wharton Tiers, is preceded by the album Let It Breed.                 | False      |
-| Wharton Tiers is the producer of the album ‘Turn Me On’ which was preceded by the album ‘Let it Breed’. | False      |
-+---------------------------------------------------------------------------------------------------------+------------+
++-----------------------------------------------------------------------------------------------------------------+
+|                                                   GOLD OUTPUTS                                                  |
++----------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                        | Generated? |
++----------------------------------------------------------------------------------------------------+------------+
+| The album Turn Me On was preceded by the album Let It Breed and followed by the Take it Off album. | False      |
+| The album Turn Me On, followed by Take it Off!, was preceded by the album Let it Breed.            | False      |
++----------------------------------------------------------------------------------------------------+------------+
 
 +------------------------------------------------------------------------------------------+
 |                                       NODE METRICS                                       |
@@ -56,51 +55,50 @@ GRAPH NAME: WebNLG_test_2triples_MusicalWork_Id794_283_566
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h18331                                                                    |
-|               |   INDEX: e18328 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _precede_v_1 LBL: h18331 ARG0: e18328 ARG1: i18329 ARG2: i18330 ]    |
-|               |           [ appos LBL: h18315 ARG0: e18312 ARG1: x18313 ARG2: i18314 ]           |
-|               |           [ def_udef_a_q LBL: h18324 ARG0: x18321 RSTR: h18322 BODY: h18323 ]    |
-|               |           [ _album_n_1 LBL: h18311 ARG0: x18310 ]                                |
-|               |           [ explicit_or_proper_q LBL: h18319 ARG0: x18316 RSTR: h18317 BODY:     |
-|               | h18318 ]                                                                         |
-|               |           [ named LBL: h18309 ARG0: x18308 CARG: "Turn Me On" ]                  |
-|               |           [ explicit_or_proper_q LBL: h18335 ARG0: x18332 RSTR: h18333 BODY:     |
-|               | h18334 ]                                                                         |
-|               |           [ named LBL: h18327 ARG0: x18326 CARG: "Let It Breed" ] >              |
-|               |   HCONS: < h18322 qeq h18311 h18317 qeq h18309 h18333 qeq h18327 >               |
-|               |   EQS: < x18321 eq x18310 h18315 eq h18325 i18314 eq x18321 x18316 eq x18308     |
-|               | h18315 eq h18320 x18313 eq x18316 h18331 eq h18320 i18330 eq x18316 x18332 eq    |
-|               | x18326 h18331 eq h18336 i18329 eq x18332 > ]                                     |
+| Original      | [ TOP: h8375                                                                     |
+|               |   INDEX: e8372 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _precede_v_1 LBL: h8375 ARG0: e8372 ARG1: i8373 ARG2: i8374 ]        |
+|               |           [ appos LBL: h8359 ARG0: e8356 ARG1: x8357 ARG2: i8358 ]               |
+|               |           [ def_udef_a_q LBL: h8368 ARG0: x8365 RSTR: h8366 BODY: h8367 ]        |
+|               |           [ _album_n_1 LBL: h8355 ARG0: x8354 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h8363 ARG0: x8360 RSTR: h8361 BODY: h8362  |
+|               | ]                                                                                |
+|               |           [ named LBL: h8353 ARG0: x8352 CARG: "Turn Me On" ]                    |
+|               |           [ explicit_or_proper_q LBL: h8379 ARG0: x8376 RSTR: h8377 BODY: h8378  |
+|               | ]                                                                                |
+|               |           [ named LBL: h8371 ARG0: x8370 CARG: "Let It Breed" ] >                |
+|               |   HCONS: < h8366 qeq h8355 h8361 qeq h8353 h8377 qeq h8371 >                     |
+|               |   EQS: < x8365 eq x8354 h8359 eq h8369 i8358 eq x8365 x8360 eq x8352 h8359 eq    |
+|               | h8364 x8357 eq x8360 h8375 eq h8364 i8374 eq x8360 x8376 eq x8370 h8375 eq h8380 |
+|               | i8373 eq x8376 > ]                                                               |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h18315                                                                    |
-|               |   INDEX: e18328 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _precede_v_1 LBL: h18315 ARG0: e18328 ARG1: x18326 ARG2: x18308 ]    |
-|               |           [ appos LBL: h18315 ARG0: e18312 ARG1: x18308 ARG2: x18310 ]           |
-|               |           [ def_udef_a_q LBL: h18324 ARG0: x18310 RSTR: h18322 BODY: h18323 ]    |
-|               |           [ _album_n_1 LBL: h18311 ARG0: x18310 ]                                |
-|               |           [ explicit_or_proper_q LBL: h18319 ARG0: x18308 RSTR: h18317 BODY:     |
-|               | h18318 ]                                                                         |
-|               |           [ named LBL: h18309 ARG0: x18308 CARG: "Turn Me On" ]                  |
-|               |           [ explicit_or_proper_q LBL: h18335 ARG0: x18326 RSTR: h18333 BODY:     |
-|               | h18334 ]                                                                         |
-|               |           [ named LBL: h18327 ARG0: x18326 CARG: "Let It Breed" ] >              |
-|               |   HCONS: < h18322 qeq h18311 h18317 qeq h18309 h18333 qeq h18327 > ]             |
+| EQs Collapsed | [ TOP: h8359                                                                     |
+|               |   INDEX: e8372 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _precede_v_1 LBL: h8359 ARG0: e8372 ARG1: x8370 ARG2: x8352 ]        |
+|               |           [ appos LBL: h8359 ARG0: e8356 ARG1: x8352 ARG2: x8354 ]               |
+|               |           [ def_udef_a_q LBL: h8368 ARG0: x8354 RSTR: h8366 BODY: h8367 ]        |
+|               |           [ _album_n_1 LBL: h8355 ARG0: x8354 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h8363 ARG0: x8352 RSTR: h8361 BODY: h8362  |
+|               | ]                                                                                |
+|               |           [ named LBL: h8353 ARG0: x8352 CARG: "Turn Me On" ]                    |
+|               |           [ explicit_or_proper_q LBL: h8379 ARG0: x8370 RSTR: h8377 BODY: h8378  |
+|               | ]                                                                                |
+|               |           [ named LBL: h8371 ARG0: x8370 CARG: "Let It Breed" ] >                |
+|               |   HCONS: < h8366 qeq h8355 h8361 qeq h8353 h8377 qeq h8371 > ]                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h18337                                                                    |
-|               |   INDEX: e18328 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _precede_v_1 LBL: h18315 ARG0: e18328 ARG1: x18326 ARG2: x18308 ]    |
-|               |           [ appos LBL: h18315 ARG0: e18312 ARG1: x18308 ARG2: x18310 ]           |
-|               |           [ def_udef_a_q LBL: h18324 ARG0: x18310 RSTR: h18322 BODY: h18323 ]    |
-|               |           [ _album_n_1 LBL: h18311 ARG0: x18310 ]                                |
-|               |           [ explicit_or_proper_q LBL: h18319 ARG0: x18308 RSTR: h18317 BODY:     |
-|               | h18318 ]                                                                         |
-|               |           [ named LBL: h18309 ARG0: x18308 CARG: "Turn Me On" ]                  |
-|               |           [ explicit_or_proper_q LBL: h18335 ARG0: x18326 RSTR: h18333 BODY:     |
-|               | h18334 ]                                                                         |
-|               |           [ named LBL: h18327 ARG0: x18326 CARG: "Let It Breed" ] >              |
-|               |   HCONS: < h18322 qeq h18311 h18317 qeq h18309 h18333 qeq h18327 h18337 qeq      |
-|               | h18315 > ]                                                                       |
+| Prepped       | [ TOP: h8381                                                                     |
+|               |   INDEX: e8372 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _precede_v_1 LBL: h8359 ARG0: e8372 ARG1: x8370 ARG2: x8352 ]        |
+|               |           [ appos LBL: h8359 ARG0: e8356 ARG1: x8352 ARG2: x8354 ]               |
+|               |           [ def_udef_a_q LBL: h8368 ARG0: x8354 RSTR: h8366 BODY: h8367 ]        |
+|               |           [ _album_n_1 LBL: h8355 ARG0: x8354 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h8363 ARG0: x8352 RSTR: h8361 BODY: h8362  |
+|               | ]                                                                                |
+|               |           [ named LBL: h8353 ARG0: x8352 CARG: "Turn Me On" ]                    |
+|               |           [ explicit_or_proper_q LBL: h8379 ARG0: x8370 RSTR: h8377 BODY: h8378  |
+|               | ]                                                                                |
+|               |           [ named LBL: h8371 ARG0: x8370 CARG: "Let It Breed" ] >                |
+|               |   HCONS: < h8366 qeq h8355 h8361 qeq h8353 h8377 qeq h8371 h8381 qeq h8359 > ]   |
 +---------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------------+
@@ -108,22 +106,22 @@ GRAPH NAME: WebNLG_test_2triples_MusicalWork_Id794_283_566
 +--------------------+----------------------------------------------------------------------------------+
 | Node               | Generated SEMENT                                                                 |
 +--------------------+----------------------------------------------------------------------------------+
-| Turn_Me_On_(album) | [ TOP: h18320                                                                    |
-|                    |   INDEX: x18316                                                                  |
-|                    |   RELS: < [ appos LBL: h18315 ARG0: e18312 ARG1: x18313 ARG2: i18314 ]           |
-|                    |           [ def_udef_a_q LBL: h18324 ARG0: x18321 RSTR: h18322 BODY: h18323 ]    |
-|                    |           [ _album_n_1 LBL: h18311 ARG0: x18310 ]                                |
-|                    |           [ explicit_or_proper_q LBL: h18319 ARG0: x18316 RSTR: h18317 BODY:     |
-|                    | h18318 ]                                                                         |
-|                    |           [ named LBL: h18309 ARG0: x18308 CARG: "Turn Me On" ] >                |
-|                    |   HCONS: < h18322 qeq h18311 h18317 qeq h18309 >                                 |
-|                    |   EQS: < x18321 eq x18310 h18315 eq h18325 i18314 eq x18321 x18316 eq x18308     |
-|                    | h18315 eq h18320 x18313 eq x18316 >                                              |
-|                    |   SLOTS: < BODY: h18318 > ]                                                      |
+| Turn_Me_On_(album) | [ TOP: h8364                                                                     |
+|                    |   INDEX: x8360                                                                   |
+|                    |   RELS: < [ appos LBL: h8359 ARG0: e8356 ARG1: x8357 ARG2: i8358 ]               |
+|                    |           [ def_udef_a_q LBL: h8368 ARG0: x8365 RSTR: h8366 BODY: h8367 ]        |
+|                    |           [ _album_n_1 LBL: h8355 ARG0: x8354 ]                                  |
+|                    |           [ explicit_or_proper_q LBL: h8363 ARG0: x8360 RSTR: h8361 BODY: h8362  |
+|                    | ]                                                                                |
+|                    |           [ named LBL: h8353 ARG0: x8352 CARG: "Turn Me On" ] >                  |
+|                    |   HCONS: < h8366 qeq h8355 h8361 qeq h8353 >                                     |
+|                    |   EQS: < x8365 eq x8354 h8359 eq h8369 i8358 eq x8365 x8360 eq x8352 h8359 eq    |
+|                    | h8364 x8357 eq x8360 >                                                           |
+|                    |   SLOTS: < BODY: h8362 > ]                                                       |
 +--------------------+----------------------------------------------------------------------------------+
-| Let_It_Breed       | [ TOP: h18327                                                                    |
-|                    |   INDEX: x18326                                                                  |
-|                    |   RELS: < [ named LBL: h18327 ARG0: x18326 CARG: "Let It Breed" ] > ]            |
+| Let_It_Breed       | [ TOP: h8371                                                                     |
+|                    |   INDEX: x8370                                                                   |
+|                    |   RELS: < [ named LBL: h8371 ARG0: x8370 CARG: "Let It Breed" ] > ]              |
 +--------------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
@@ -131,22 +129,22 @@ GRAPH NAME: WebNLG_test_2triples_MusicalWork_Id794_283_566
 +------------+--------------------+--------------+----------------------------------------------------------------------------------+
 | Edge       | Parent             | Child        | Generated SEMENT                                                                 |
 +------------+--------------------+--------------+----------------------------------------------------------------------------------+
-| precededBy | Turn_Me_On_(album) | Let_It_Breed | [ TOP: h18331                                                                    |
-|            |                    |              |   INDEX: e18328 [ e TENSE: tensed ]                                              |
-|            |                    |              |   RELS: < [ _precede_v_1 LBL: h18331 ARG0: e18328 ARG1: i18329 ARG2: i18330 ]    |
-|            |                    |              |           [ appos LBL: h18315 ARG0: e18312 ARG1: x18313 ARG2: i18314 ]           |
-|            |                    |              |           [ def_udef_a_q LBL: h18324 ARG0: x18321 RSTR: h18322 BODY: h18323 ]    |
-|            |                    |              |           [ _album_n_1 LBL: h18311 ARG0: x18310 ]                                |
-|            |                    |              |           [ explicit_or_proper_q LBL: h18319 ARG0: x18316 RSTR: h18317 BODY:     |
-|            |                    |              | h18318 ]                                                                         |
-|            |                    |              |           [ named LBL: h18309 ARG0: x18308 CARG: "Turn Me On" ]                  |
-|            |                    |              |           [ explicit_or_proper_q LBL: h18335 ARG0: x18332 RSTR: h18333 BODY:     |
-|            |                    |              | h18334 ]                                                                         |
-|            |                    |              |           [ named LBL: h18327 ARG0: x18326 CARG: "Let It Breed" ] >              |
-|            |                    |              |   HCONS: < h18322 qeq h18311 h18317 qeq h18309 h18333 qeq h18327 >               |
-|            |                    |              |   EQS: < x18321 eq x18310 h18315 eq h18325 i18314 eq x18321 x18316 eq x18308     |
-|            |                    |              | h18315 eq h18320 x18313 eq x18316 h18331 eq h18320 i18330 eq x18316 x18332 eq    |
-|            |                    |              | x18326 h18331 eq h18336 i18329 eq x18332 > ]                                     |
+| precededBy | Turn_Me_On_(album) | Let_It_Breed | [ TOP: h8375                                                                     |
+|            |                    |              |   INDEX: e8372 [ e TENSE: tensed ]                                               |
+|            |                    |              |   RELS: < [ _precede_v_1 LBL: h8375 ARG0: e8372 ARG1: i8373 ARG2: i8374 ]        |
+|            |                    |              |           [ appos LBL: h8359 ARG0: e8356 ARG1: x8357 ARG2: i8358 ]               |
+|            |                    |              |           [ def_udef_a_q LBL: h8368 ARG0: x8365 RSTR: h8366 BODY: h8367 ]        |
+|            |                    |              |           [ _album_n_1 LBL: h8355 ARG0: x8354 ]                                  |
+|            |                    |              |           [ explicit_or_proper_q LBL: h8363 ARG0: x8360 RSTR: h8361 BODY: h8362  |
+|            |                    |              | ]                                                                                |
+|            |                    |              |           [ named LBL: h8353 ARG0: x8352 CARG: "Turn Me On" ]                    |
+|            |                    |              |           [ explicit_or_proper_q LBL: h8379 ARG0: x8376 RSTR: h8377 BODY: h8378  |
+|            |                    |              | ]                                                                                |
+|            |                    |              |           [ named LBL: h8371 ARG0: x8370 CARG: "Let It Breed" ] >                |
+|            |                    |              |   HCONS: < h8366 qeq h8355 h8361 qeq h8353 h8377 qeq h8371 >                     |
+|            |                    |              |   EQS: < x8365 eq x8354 h8359 eq h8369 i8358 eq x8365 x8360 eq x8352 h8359 eq    |
+|            |                    |              | h8364 x8357 eq x8360 h8375 eq h8364 i8374 eq x8360 x8376 eq x8370 h8375 eq h8380 |
+|            |                    |              | i8373 eq x8376 > ]                                                               |
 +------------+--------------------+--------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------+

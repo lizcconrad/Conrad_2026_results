@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_University_Id1033_193_581
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                GOLD OUTPUTS                                                               |
-+------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                  | Generated? |
-+------------------------------------------------------------------------------------------------------------------------------+------------+
-| The University of Burgundy has 16800 undergraduate students, 1299 doctoral students, and 27400 students.                     | False      |
-| The University of Burgundy has 27400 students. The Number of doctoral students is 1299 and 16800 are undergraduate students. | False      |
-| The University of Burgundy is home to 27400 students: 16,800 of whom are undergraduates and 1299 of whom are doctoral.       | False      |
-+------------------------------------------------------------------------------------------------------------------------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------+
+|                                                              GOLD OUTPUTS                                                             |
++--------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                              | Generated? |
++--------------------------------------------------------------------------------------------------------------------------+------------+
+| In Dijon, The University of Burgundy campus is home to 27400 students, 1299 of whom are pursuing their doctorate degree. | False      |
+| The University of Burgundy, which is in Dijon, has 27400 students in all, of which 1299 are doctoral students.           | False      |
+| The number of students in the University of Burgundy in Dijon is 27400 including 1299 doctoral students.                 | False      |
++--------------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------------+
 |                                         NODE METRICS                                         |
@@ -56,51 +56,50 @@ GRAPH NAME: WebNLG_test_3triples_University_Id1033_193_581
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h19595                                                                    |
-|               |   INDEX: e19592 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h19595 ARG0: e19592 ARG1: i19593 ARG2: i19594 ]       |
-|               |           [ udef_q LBL: h19610 ARG0: x19607 RSTR: h19608 BODY: h19609 ]          |
-|               |           [ card LBL: h19591 ARG0: i19589 ARG1: u19590 CARG: "1299" ]            |
-|               |           [ _doctoral_a_1 LBL: h19598 ARG0: e19596 ARG1: u19597 ]                |
-|               |           [ _student_n_of LBL: h19601 ARG0: x19599 ARG1: i19600 ]                |
-|               |           [ def_udef_a_q LBL: h19605 ARG0: x19602 RSTR: h19603 BODY: h19604 ]    |
-|               |           [ _university_n_of LBL: h19581 ARG0: x19579 ARG1: i19580 ]             |
-|               |           [ explicit_or_proper_q LBL: h19587 ARG0: x19584 RSTR: h19585 BODY:     |
-|               | h19586 ]                                                                         |
-|               |           [ named LBL: h19583 ARG0: x19582 CARG: "Burgundy" ] >                  |
-|               |   HCONS: < h19608 qeq h19601 h19585 qeq h19583 h19603 qeq h19581 >               |
-|               |   EQS: < h19598 eq h19601 u19597 eq x19599 h19591 eq h19601 u19590 eq x19599     |
-|               | x19607 eq x19599 h19595 eq h19611 i19594 eq x19607 x19584 eq x19582 h19581 eq    |
-|               | h19588 i19580 eq x19584 x19602 eq x19579 h19595 eq h19606 i19593 eq x19602 > ]   |
+| Original      | [ TOP: h4989                                                                     |
+|               |   INDEX: e4986 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h4989 ARG0: e4986 ARG1: i4987 ARG2: i4988 ]           |
+|               |           [ udef_q LBL: h5004 ARG0: x5001 RSTR: h5002 BODY: h5003 ]              |
+|               |           [ card LBL: h4985 ARG0: i4983 ARG1: u4984 CARG: "1299" ]               |
+|               |           [ _doctoral_a_1 LBL: h4992 ARG0: e4990 ARG1: u4991 ]                   |
+|               |           [ _student_n_of LBL: h4995 ARG0: x4993 ARG1: i4994 ]                   |
+|               |           [ def_udef_a_q LBL: h4999 ARG0: x4996 RSTR: h4997 BODY: h4998 ]        |
+|               |           [ _university_n_of LBL: h4975 ARG0: x4973 ARG1: i4974 ]                |
+|               |           [ explicit_or_proper_q LBL: h4981 ARG0: x4978 RSTR: h4979 BODY: h4980  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4977 ARG0: x4976 CARG: "Burgundy" ] >                    |
+|               |   HCONS: < h5002 qeq h4995 h4979 qeq h4977 h4997 qeq h4975 >                     |
+|               |   EQS: < h4992 eq h4995 u4991 eq x4993 h4985 eq h4995 u4984 eq x4993 x5001 eq    |
+|               | x4993 h4989 eq h5005 i4988 eq x5001 x4978 eq x4976 h4975 eq h4982 i4974 eq x4978 |
+|               | x4996 eq x4973 h4989 eq h5000 i4987 eq x4996 > ]                                 |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h19595                                                                    |
-|               |   INDEX: e19592 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h19595 ARG0: e19592 ARG1: x19579 ARG2: x19599 ]       |
-|               |           [ udef_q LBL: h19610 ARG0: x19599 RSTR: h19608 BODY: h19609 ]          |
-|               |           [ card LBL: h19591 ARG0: i19589 ARG1: x19599 CARG: "1299" ]            |
-|               |           [ _doctoral_a_1 LBL: h19591 ARG0: e19596 ARG1: x19599 ]                |
-|               |           [ _student_n_of LBL: h19591 ARG0: x19599 ARG1: i19600 ]                |
-|               |           [ def_udef_a_q LBL: h19605 ARG0: x19579 RSTR: h19603 BODY: h19604 ]    |
-|               |           [ _university_n_of LBL: h19581 ARG0: x19579 ARG1: x19582 ]             |
-|               |           [ explicit_or_proper_q LBL: h19587 ARG0: x19582 RSTR: h19585 BODY:     |
-|               | h19586 ]                                                                         |
-|               |           [ named LBL: h19583 ARG0: x19582 CARG: "Burgundy" ] >                  |
-|               |   HCONS: < h19608 qeq h19591 h19585 qeq h19583 h19603 qeq h19581 > ]             |
+| EQs Collapsed | [ TOP: h4989                                                                     |
+|               |   INDEX: e4986 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h4989 ARG0: e4986 ARG1: x4973 ARG2: x4993 ]           |
+|               |           [ udef_q LBL: h5004 ARG0: x4993 RSTR: h5002 BODY: h5003 ]              |
+|               |           [ card LBL: h4985 ARG0: i4983 ARG1: x4993 CARG: "1299" ]               |
+|               |           [ _doctoral_a_1 LBL: h4985 ARG0: e4990 ARG1: x4993 ]                   |
+|               |           [ _student_n_of LBL: h4985 ARG0: x4993 ARG1: i4994 ]                   |
+|               |           [ def_udef_a_q LBL: h4999 ARG0: x4973 RSTR: h4997 BODY: h4998 ]        |
+|               |           [ _university_n_of LBL: h4975 ARG0: x4973 ARG1: x4976 ]                |
+|               |           [ explicit_or_proper_q LBL: h4981 ARG0: x4976 RSTR: h4979 BODY: h4980  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4977 ARG0: x4976 CARG: "Burgundy" ] >                    |
+|               |   HCONS: < h5002 qeq h4985 h4979 qeq h4977 h4997 qeq h4975 > ]                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h19612                                                                    |
-|               |   INDEX: e19592 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h19595 ARG0: e19592 ARG1: x19579 ARG2: x19599 ]       |
-|               |           [ udef_q LBL: h19610 ARG0: x19599 RSTR: h19608 BODY: h19609 ]          |
-|               |           [ card LBL: h19591 ARG0: i19589 ARG1: x19599 CARG: "1299" ]            |
-|               |           [ _doctoral_a_1 LBL: h19591 ARG0: e19596 ARG1: x19599 ]                |
-|               |           [ _student_n_of LBL: h19591 ARG0: x19599 ARG1: i19600 ]                |
-|               |           [ def_udef_a_q LBL: h19605 ARG0: x19579 RSTR: h19603 BODY: h19604 ]    |
-|               |           [ _university_n_of LBL: h19581 ARG0: x19579 ARG1: x19582 ]             |
-|               |           [ explicit_or_proper_q LBL: h19587 ARG0: x19582 RSTR: h19585 BODY:     |
-|               | h19586 ]                                                                         |
-|               |           [ named LBL: h19583 ARG0: x19582 CARG: "Burgundy" ] >                  |
-|               |   HCONS: < h19608 qeq h19591 h19585 qeq h19583 h19603 qeq h19581 h19612 qeq      |
-|               | h19595 > ]                                                                       |
+| Prepped       | [ TOP: h5006                                                                     |
+|               |   INDEX: e4986 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h4989 ARG0: e4986 ARG1: x4973 ARG2: x4993 ]           |
+|               |           [ udef_q LBL: h5004 ARG0: x4993 RSTR: h5002 BODY: h5003 ]              |
+|               |           [ card LBL: h4985 ARG0: i4983 ARG1: x4993 CARG: "1299" ]               |
+|               |           [ _doctoral_a_1 LBL: h4985 ARG0: e4990 ARG1: x4993 ]                   |
+|               |           [ _student_n_of LBL: h4985 ARG0: x4993 ARG1: i4994 ]                   |
+|               |           [ def_udef_a_q LBL: h4999 ARG0: x4973 RSTR: h4997 BODY: h4998 ]        |
+|               |           [ _university_n_of LBL: h4975 ARG0: x4973 ARG1: x4976 ]                |
+|               |           [ explicit_or_proper_q LBL: h4981 ARG0: x4976 RSTR: h4979 BODY: h4980  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4977 ARG0: x4976 CARG: "Burgundy" ] >                    |
+|               |   HCONS: < h5002 qeq h4985 h4979 qeq h4977 h4997 qeq h4975 h5006 qeq h4989 > ]   |
 +---------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------+
@@ -108,19 +107,19 @@ GRAPH NAME: WebNLG_test_3triples_University_Id1033_193_581
 +------------------------+----------------------------------------------------------------------------------+
 | Node                   | Generated SEMENT                                                                 |
 +------------------------+----------------------------------------------------------------------------------+
-| University_of_Burgundy | [ TOP: h19581                                                                    |
-|                        |   INDEX: x19579                                                                  |
-|                        |   RELS: < [ _university_n_of LBL: h19581 ARG0: x19579 ARG1: i19580 ]             |
-|                        |           [ explicit_or_proper_q LBL: h19587 ARG0: x19584 RSTR: h19585 BODY:     |
-|                        | h19586 ]                                                                         |
-|                        |           [ named LBL: h19583 ARG0: x19582 CARG: "Burgundy" ] >                  |
-|                        |   HCONS: < h19585 qeq h19583 >                                                   |
-|                        |   EQS: < x19584 eq x19582 h19581 eq h19588 i19580 eq x19584 > ]                  |
+| University_of_Burgundy | [ TOP: h4975                                                                     |
+|                        |   INDEX: x4973                                                                   |
+|                        |   RELS: < [ _university_n_of LBL: h4975 ARG0: x4973 ARG1: i4974 ]                |
+|                        |           [ explicit_or_proper_q LBL: h4981 ARG0: x4978 RSTR: h4979 BODY: h4980  |
+|                        | ]                                                                                |
+|                        |           [ named LBL: h4977 ARG0: x4976 CARG: "Burgundy" ] >                    |
+|                        |   HCONS: < h4979 qeq h4977 >                                                     |
+|                        |   EQS: < x4978 eq x4976 h4975 eq h4982 i4974 eq x4978 > ]                        |
 +------------------------+----------------------------------------------------------------------------------+
-| 1299                   | [ TOP: h19591                                                                    |
-|                        |   INDEX: i19589                                                                  |
-|                        |   RELS: < [ card LBL: h19591 ARG0: i19589 ARG1: u19590 CARG: "1299" ] >          |
-|                        |   SLOTS: < ARG1: u19590 > ]                                                      |
+| 1299                   | [ TOP: h4985                                                                     |
+|                        |   INDEX: i4983                                                                   |
+|                        |   RELS: < [ card LBL: h4985 ARG0: i4983 ARG1: u4984 CARG: "1299" ] >             |
+|                        |   SLOTS: < ARG1: u4984 > ]                                                       |
 +------------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -128,22 +127,22 @@ GRAPH NAME: WebNLG_test_3triples_University_Id1033_193_581
 +--------------------------+------------------------+-------+----------------------------------------------------------------------------------+
 | Edge                     | Parent                 | Child | Generated SEMENT                                                                 |
 +--------------------------+------------------------+-------+----------------------------------------------------------------------------------+
-| numberOfDoctoralStudents | University_of_Burgundy | 1299  | [ TOP: h19595                                                                    |
-|                          |                        |       |   INDEX: e19592 [ e TENSE: tensed ]                                              |
-|                          |                        |       |   RELS: < [ _have_v_1 LBL: h19595 ARG0: e19592 ARG1: i19593 ARG2: i19594 ]       |
-|                          |                        |       |           [ udef_q LBL: h19610 ARG0: x19607 RSTR: h19608 BODY: h19609 ]          |
-|                          |                        |       |           [ card LBL: h19591 ARG0: i19589 ARG1: u19590 CARG: "1299" ]            |
-|                          |                        |       |           [ _doctoral_a_1 LBL: h19598 ARG0: e19596 ARG1: u19597 ]                |
-|                          |                        |       |           [ _student_n_of LBL: h19601 ARG0: x19599 ARG1: i19600 ]                |
-|                          |                        |       |           [ def_udef_a_q LBL: h19605 ARG0: x19602 RSTR: h19603 BODY: h19604 ]    |
-|                          |                        |       |           [ _university_n_of LBL: h19581 ARG0: x19579 ARG1: i19580 ]             |
-|                          |                        |       |           [ explicit_or_proper_q LBL: h19587 ARG0: x19584 RSTR: h19585 BODY:     |
-|                          |                        |       | h19586 ]                                                                         |
-|                          |                        |       |           [ named LBL: h19583 ARG0: x19582 CARG: "Burgundy" ] >                  |
-|                          |                        |       |   HCONS: < h19608 qeq h19601 h19585 qeq h19583 h19603 qeq h19581 >               |
-|                          |                        |       |   EQS: < h19598 eq h19601 u19597 eq x19599 h19591 eq h19601 u19590 eq x19599     |
-|                          |                        |       | x19607 eq x19599 h19595 eq h19611 i19594 eq x19607 x19584 eq x19582 h19581 eq    |
-|                          |                        |       | h19588 i19580 eq x19584 x19602 eq x19579 h19595 eq h19606 i19593 eq x19602 > ]   |
+| numberOfDoctoralStudents | University_of_Burgundy | 1299  | [ TOP: h4989                                                                     |
+|                          |                        |       |   INDEX: e4986 [ e TENSE: tensed ]                                               |
+|                          |                        |       |   RELS: < [ _have_v_1 LBL: h4989 ARG0: e4986 ARG1: i4987 ARG2: i4988 ]           |
+|                          |                        |       |           [ udef_q LBL: h5004 ARG0: x5001 RSTR: h5002 BODY: h5003 ]              |
+|                          |                        |       |           [ card LBL: h4985 ARG0: i4983 ARG1: u4984 CARG: "1299" ]               |
+|                          |                        |       |           [ _doctoral_a_1 LBL: h4992 ARG0: e4990 ARG1: u4991 ]                   |
+|                          |                        |       |           [ _student_n_of LBL: h4995 ARG0: x4993 ARG1: i4994 ]                   |
+|                          |                        |       |           [ def_udef_a_q LBL: h4999 ARG0: x4996 RSTR: h4997 BODY: h4998 ]        |
+|                          |                        |       |           [ _university_n_of LBL: h4975 ARG0: x4973 ARG1: i4974 ]                |
+|                          |                        |       |           [ explicit_or_proper_q LBL: h4981 ARG0: x4978 RSTR: h4979 BODY: h4980  |
+|                          |                        |       | ]                                                                                |
+|                          |                        |       |           [ named LBL: h4977 ARG0: x4976 CARG: "Burgundy" ] >                    |
+|                          |                        |       |   HCONS: < h5002 qeq h4995 h4979 qeq h4977 h4997 qeq h4975 >                     |
+|                          |                        |       |   EQS: < h4992 eq h4995 u4991 eq x4993 h4985 eq h4995 u4984 eq x4993 x5001 eq    |
+|                          |                        |       | x4993 h4989 eq h5005 i4988 eq x5001 x4978 eq x4976 h4975 eq h4982 i4974 eq x4978 |
+|                          |                        |       | x4996 eq x4973 h4989 eq h5000 i4987 eq x4996 > ]                                 |
 +--------------------------+------------------------+-------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------+

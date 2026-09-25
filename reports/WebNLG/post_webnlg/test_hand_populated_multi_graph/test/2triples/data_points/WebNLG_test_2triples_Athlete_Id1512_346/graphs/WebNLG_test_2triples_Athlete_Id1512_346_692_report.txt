@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_Athlete_Id1512_346_692
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+--------------------------------------------------------------------------------------------------+
-|                                           GOLD OUTPUTS                                           |
-+-------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                         | Generated? |
-+-------------------------------------------------------------------------------------+------------+
-| Piotr Hallmann was born in Gdynia, Poland which is led by the mayor.                | False      |
-| Piotr Hallmann was born in Gdynia, Poland which is under the leadership of mayor.   | False      |
-| Piotr Hallmann was born in Gdynia, Poland, which has a mayor as one of its leaders. | False      |
-+-------------------------------------------------------------------------------------+------------+
++-------------------------------------------------------------------------------------+
+|                                     GOLD OUTPUTS                                    |
++------------------------------------------------------------------------+------------+
+| Gold Output                                                            | Generated? |
++------------------------------------------------------------------------+------------+
+| Piotr Hallmann was born in Gdynia, Poland and weighs 70.308 kilograms. | False      |
+| Piotr Hallmann was born in Gdynia, Poland and weighs 70.308kg.         | False      |
+| Piotr Hallmann weighs 70.308 kg and was born in Gdynia, Poland.        | False      |
++------------------------------------------------------------------------+------------+
 
 +--------------------------------------------------------------------------------------+
 |                                     NODE METRICS                                     |
@@ -56,107 +56,92 @@ GRAPH NAME: WebNLG_test_2triples_Athlete_Id1512_346_692
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h22267                                                                    |
-|               |   INDEX: e22264 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h22258 ARG0: e22255 ARG1: u22256 ARG2: u22257 ]     |
-|               |           [ explicit_or_proper_q LBL: h22262 ARG0: x22259 RSTR: h22260 BODY:     |
-|               | h22261 ]                                                                         |
-|               |           [ loc_compound LBL: h22249 ARG0: e22246 ARG1: u22247 ARG2: u22248 ]    |
-|               |           [ explicit_or_proper_q LBL: h22253 ARG0: x22250 RSTR: h22251 BODY:     |
-|               | h22252 ]                                                                         |
-|               |           [ named LBL: h22245 ARG0: x22244 CARG: "Gdynia" ]                      |
-|               |           [ named LBL: h22243 ARG0: x22242 CARG: "Poland" ]                      |
-|               |           [ _born_a_of LBL: h22267 ARG0: e22264 ARG1: u22265 ARG2: u22266 ]      |
-|               |           [ explicit_or_proper_q LBL: h22271 ARG0: x22268 RSTR: h22269 BODY:     |
-|               | h22270 ]                                                                         |
-|               |           [ named LBL: h22241 ARG0: x22240 CARG: "Piotr Hallmann" ] >            |
-|               |   HCONS: < h22251 qeq h22245 h22260 qeq h22243 h22269 qeq h22241 >               |
-|               |   EQS: < x22250 eq x22244 h22249 eq h22254 u22248 eq x22250 h22249 eq h22243     |
-|               | u22247 eq x22242 x22259 eq x22242 h22258 eq h22263 u22257 eq x22259 x22268 eq    |
-|               | x22240 h22267 eq h22272 u22265 eq x22268 h22258 eq h22267 u22256 eq e22264 >     |
-|               |   SLOTS: < ARG2: u22266 > ]                                                      |
+| Original      | [ TOP: h271                                                                      |
+|               |   INDEX: e268 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_state LBL: h262 ARG0: e259 ARG1: u260 ARG2: u261 ]             |
+|               |           [ explicit_or_proper_q LBL: h266 ARG0: x263 RSTR: h264 BODY: h265 ]    |
+|               |           [ loc_compound LBL: h253 ARG0: e250 ARG1: u251 ARG2: u252 ]            |
+|               |           [ explicit_or_proper_q LBL: h257 ARG0: x254 RSTR: h255 BODY: h256 ]    |
+|               |           [ named LBL: h249 ARG0: x248 CARG: "Gdynia" ]                          |
+|               |           [ named LBL: h247 ARG0: x246 CARG: "Poland" ]                          |
+|               |           [ _born_a_of LBL: h271 ARG0: e268 ARG1: u269 ARG2: u270 ]              |
+|               |           [ explicit_or_proper_q LBL: h275 ARG0: x272 RSTR: h273 BODY: h274 ]    |
+|               |           [ named LBL: h245 ARG0: x244 CARG: "Piotr Hallmann" ] >                |
+|               |   HCONS: < h255 qeq h249 h264 qeq h247 h273 qeq h245 >                           |
+|               |   EQS: < x254 eq x248 h253 eq h258 u252 eq x254 h253 eq h247 u251 eq x246 x263   |
+|               | eq x246 h262 eq h267 u261 eq x263 x272 eq x244 h271 eq h276 u269 eq x272 h262 eq |
+|               | h271 u260 eq e268 >                                                              |
+|               |   SLOTS: < ARG2: u270 > ]                                                        |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h22258                                                                    |
-|               |   INDEX: e22264 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h22258 ARG0: e22255 ARG1: e22264 ARG2: x22242 ]     |
-|               |           [ explicit_or_proper_q LBL: h22262 ARG0: x22242 RSTR: h22260 BODY:     |
-|               | h22261 ]                                                                         |
-|               |           [ loc_compound LBL: h22243 ARG0: e22246 ARG1: x22242 ARG2: x22244 ]    |
-|               |           [ explicit_or_proper_q LBL: h22253 ARG0: x22244 RSTR: h22251 BODY:     |
-|               | h22252 ]                                                                         |
-|               |           [ named LBL: h22245 ARG0: x22244 CARG: "Gdynia" ]                      |
-|               |           [ named LBL: h22243 ARG0: x22242 CARG: "Poland" ]                      |
-|               |           [ _born_a_of LBL: h22258 ARG0: e22264 ARG1: x22240 ARG2: u22266 ]      |
-|               |           [ explicit_or_proper_q LBL: h22271 ARG0: x22240 RSTR: h22269 BODY:     |
-|               | h22270 ]                                                                         |
-|               |           [ named LBL: h22241 ARG0: x22240 CARG: "Piotr Hallmann" ] >            |
-|               |   HCONS: < h22251 qeq h22245 h22260 qeq h22243 h22269 qeq h22241 >               |
-|               |   SLOTS: < ARG2: u22266 > ]                                                      |
+| EQs Collapsed | [ TOP: h262                                                                      |
+|               |   INDEX: e268 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_state LBL: h262 ARG0: e259 ARG1: e268 ARG2: x246 ]             |
+|               |           [ explicit_or_proper_q LBL: h266 ARG0: x246 RSTR: h264 BODY: h265 ]    |
+|               |           [ loc_compound LBL: h247 ARG0: e250 ARG1: x246 ARG2: x248 ]            |
+|               |           [ explicit_or_proper_q LBL: h257 ARG0: x248 RSTR: h255 BODY: h256 ]    |
+|               |           [ named LBL: h249 ARG0: x248 CARG: "Gdynia" ]                          |
+|               |           [ named LBL: h247 ARG0: x246 CARG: "Poland" ]                          |
+|               |           [ _born_a_of LBL: h262 ARG0: e268 ARG1: x244 ARG2: u270 ]              |
+|               |           [ explicit_or_proper_q LBL: h275 ARG0: x244 RSTR: h273 BODY: h274 ]    |
+|               |           [ named LBL: h245 ARG0: x244 CARG: "Piotr Hallmann" ] >                |
+|               |   HCONS: < h255 qeq h249 h264 qeq h247 h273 qeq h245 >                           |
+|               |   SLOTS: < ARG2: u270 > ]                                                        |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h22273                                                                    |
-|               |   INDEX: e22264 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h22258 ARG0: e22255 ARG1: e22264 ARG2: x22242 ]     |
-|               |           [ explicit_or_proper_q LBL: h22262 ARG0: x22242 RSTR: h22260 BODY:     |
-|               | h22261 ]                                                                         |
-|               |           [ loc_compound LBL: h22243 ARG0: e22246 ARG1: x22242 ARG2: x22244 ]    |
-|               |           [ explicit_or_proper_q LBL: h22253 ARG0: x22244 RSTR: h22251 BODY:     |
-|               | h22252 ]                                                                         |
-|               |           [ named LBL: h22245 ARG0: x22244 CARG: "Gdynia" ]                      |
-|               |           [ named LBL: h22243 ARG0: x22242 CARG: "Poland" ]                      |
-|               |           [ _born_a_of LBL: h22258 ARG0: e22264 ARG1: x22240 ARG2: u22266 ]      |
-|               |           [ explicit_or_proper_q LBL: h22271 ARG0: x22240 RSTR: h22269 BODY:     |
-|               | h22270 ]                                                                         |
-|               |           [ named LBL: h22241 ARG0: x22240 CARG: "Piotr Hallmann" ] >            |
-|               |   HCONS: < h22251 qeq h22245 h22260 qeq h22243 h22269 qeq h22241 h22273 qeq      |
-|               | h22258 >                                                                         |
-|               |   SLOTS: < ARG2: u22266 > ]                                                      |
+| Prepped       | [ TOP: h277                                                                      |
+|               |   INDEX: e268 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_state LBL: h262 ARG0: e259 ARG1: e268 ARG2: x246 ]             |
+|               |           [ explicit_or_proper_q LBL: h266 ARG0: x246 RSTR: h264 BODY: h265 ]    |
+|               |           [ loc_compound LBL: h247 ARG0: e250 ARG1: x246 ARG2: x248 ]            |
+|               |           [ explicit_or_proper_q LBL: h257 ARG0: x248 RSTR: h255 BODY: h256 ]    |
+|               |           [ named LBL: h249 ARG0: x248 CARG: "Gdynia" ]                          |
+|               |           [ named LBL: h247 ARG0: x246 CARG: "Poland" ]                          |
+|               |           [ _born_a_of LBL: h262 ARG0: e268 ARG1: x244 ARG2: u270 ]              |
+|               |           [ explicit_or_proper_q LBL: h275 ARG0: x244 RSTR: h273 BODY: h274 ]    |
+|               |           [ named LBL: h245 ARG0: x244 CARG: "Piotr Hallmann" ] >                |
+|               |   HCONS: < h255 qeq h249 h264 qeq h247 h273 qeq h245 h277 qeq h262 >             |
+|               |   SLOTS: < ARG2: u270 > ]                                                        |
 +---------------+----------------------------------------------------------------------------------+
 
-+---------------------------------------------------------------------------------------------------+
-|                                            NODE SEMENTS                                           |
-+----------------+----------------------------------------------------------------------------------+
-| Node           | Generated SEMENT                                                                 |
-+----------------+----------------------------------------------------------------------------------+
-| Piotr_Hallmann | [ TOP: h22241                                                                    |
-|                |   INDEX: x22240                                                                  |
-|                |   RELS: < [ named LBL: h22241 ARG0: x22240 CARG: "Piotr Hallmann" ] > ]          |
-+----------------+----------------------------------------------------------------------------------+
-| Gdynia,_Poland | [ TOP: h22243                                                                    |
-|                |   INDEX: x22242                                                                  |
-|                |   RELS: < [ loc_compound LBL: h22249 ARG0: e22246 ARG1: u22247 ARG2: u22248 ]    |
-|                |           [ explicit_or_proper_q LBL: h22253 ARG0: x22250 RSTR: h22251 BODY:     |
-|                | h22252 ]                                                                         |
-|                |           [ named LBL: h22245 ARG0: x22244 CARG: "Gdynia" ]                      |
-|                |           [ named LBL: h22243 ARG0: x22242 CARG: "Poland" ] >                    |
-|                |   HCONS: < h22251 qeq h22245 >                                                   |
-|                |   EQS: < x22250 eq x22244 h22249 eq h22254 u22248 eq x22250 h22249 eq h22243     |
-|                | u22247 eq x22242 > ]                                                             |
-+----------------+----------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------+
+|                                          NODE SEMENTS                                          |
++----------------+-------------------------------------------------------------------------------+
+| Node           | Generated SEMENT                                                              |
++----------------+-------------------------------------------------------------------------------+
+| Piotr_Hallmann | [ TOP: h245                                                                   |
+|                |   INDEX: x244                                                                 |
+|                |   RELS: < [ named LBL: h245 ARG0: x244 CARG: "Piotr Hallmann" ] > ]           |
++----------------+-------------------------------------------------------------------------------+
+| Gdynia,_Poland | [ TOP: h247                                                                   |
+|                |   INDEX: x246                                                                 |
+|                |   RELS: < [ loc_compound LBL: h253 ARG0: e250 ARG1: u251 ARG2: u252 ]         |
+|                |           [ explicit_or_proper_q LBL: h257 ARG0: x254 RSTR: h255 BODY: h256 ] |
+|                |           [ named LBL: h249 ARG0: x248 CARG: "Gdynia" ]                       |
+|                |           [ named LBL: h247 ARG0: x246 CARG: "Poland" ] >                     |
+|                |   HCONS: < h255 qeq h249 >                                                    |
+|                |   EQS: < x254 eq x248 h253 eq h258 u252 eq x254 h253 eq h247 u251 eq x246 > ] |
++----------------+-------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------------------------+
 |                                                           EDGE SEMENTS                                                          |
 +------------+----------------+----------------+----------------------------------------------------------------------------------+
 | Edge       | Parent         | Child          | Generated SEMENT                                                                 |
 +------------+----------------+----------------+----------------------------------------------------------------------------------+
-| birthPlace | Piotr_Hallmann | Gdynia,_Poland | [ TOP: h22267                                                                    |
-|            |                |                |   INDEX: e22264 [ e TENSE: tensed ]                                              |
-|            |                |                |   RELS: < [ _in_p_state LBL: h22258 ARG0: e22255 ARG1: u22256 ARG2: u22257 ]     |
-|            |                |                |           [ explicit_or_proper_q LBL: h22262 ARG0: x22259 RSTR: h22260 BODY:     |
-|            |                |                | h22261 ]                                                                         |
-|            |                |                |           [ loc_compound LBL: h22249 ARG0: e22246 ARG1: u22247 ARG2: u22248 ]    |
-|            |                |                |           [ explicit_or_proper_q LBL: h22253 ARG0: x22250 RSTR: h22251 BODY:     |
-|            |                |                | h22252 ]                                                                         |
-|            |                |                |           [ named LBL: h22245 ARG0: x22244 CARG: "Gdynia" ]                      |
-|            |                |                |           [ named LBL: h22243 ARG0: x22242 CARG: "Poland" ]                      |
-|            |                |                |           [ _born_a_of LBL: h22267 ARG0: e22264 ARG1: u22265 ARG2: u22266 ]      |
-|            |                |                |           [ explicit_or_proper_q LBL: h22271 ARG0: x22268 RSTR: h22269 BODY:     |
-|            |                |                | h22270 ]                                                                         |
-|            |                |                |           [ named LBL: h22241 ARG0: x22240 CARG: "Piotr Hallmann" ] >            |
-|            |                |                |   HCONS: < h22251 qeq h22245 h22260 qeq h22243 h22269 qeq h22241 >               |
-|            |                |                |   EQS: < x22250 eq x22244 h22249 eq h22254 u22248 eq x22250 h22249 eq h22243     |
-|            |                |                | u22247 eq x22242 x22259 eq x22242 h22258 eq h22263 u22257 eq x22259 x22268 eq    |
-|            |                |                | x22240 h22267 eq h22272 u22265 eq x22268 h22258 eq h22267 u22256 eq e22264 >     |
-|            |                |                |   SLOTS: < ARG2: u22266 > ]                                                      |
+| birthPlace | Piotr_Hallmann | Gdynia,_Poland | [ TOP: h271                                                                      |
+|            |                |                |   INDEX: e268 [ e TENSE: tensed ]                                                |
+|            |                |                |   RELS: < [ _in_p_state LBL: h262 ARG0: e259 ARG1: u260 ARG2: u261 ]             |
+|            |                |                |           [ explicit_or_proper_q LBL: h266 ARG0: x263 RSTR: h264 BODY: h265 ]    |
+|            |                |                |           [ loc_compound LBL: h253 ARG0: e250 ARG1: u251 ARG2: u252 ]            |
+|            |                |                |           [ explicit_or_proper_q LBL: h257 ARG0: x254 RSTR: h255 BODY: h256 ]    |
+|            |                |                |           [ named LBL: h249 ARG0: x248 CARG: "Gdynia" ]                          |
+|            |                |                |           [ named LBL: h247 ARG0: x246 CARG: "Poland" ]                          |
+|            |                |                |           [ _born_a_of LBL: h271 ARG0: e268 ARG1: u269 ARG2: u270 ]              |
+|            |                |                |           [ explicit_or_proper_q LBL: h275 ARG0: x272 RSTR: h273 BODY: h274 ]    |
+|            |                |                |           [ named LBL: h245 ARG0: x244 CARG: "Piotr Hallmann" ] >                |
+|            |                |                |   HCONS: < h255 qeq h249 h264 qeq h247 h273 qeq h245 >                           |
+|            |                |                |   EQS: < x254 eq x248 h253 eq h258 u252 eq x254 h253 eq h247 u251 eq x246 x263   |
+|            |                |                | eq x246 h262 eq h267 u261 eq x263 x272 eq x244 h271 eq h276 u269 eq x272 h262 eq |
+|            |                |                | h271 u260 eq e268 >                                                              |
+|            |                |                |   SLOTS: < ARG2: u270 > ]                                                        |
 +------------+----------------+----------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------+

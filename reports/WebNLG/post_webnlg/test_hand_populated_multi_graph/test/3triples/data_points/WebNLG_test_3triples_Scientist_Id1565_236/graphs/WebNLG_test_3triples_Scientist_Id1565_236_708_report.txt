@@ -24,15 +24,14 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id1565_236_708
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+--------------------------------------------------------------------------------------------------+
-|                                           GOLD OUTPUTS                                           |
-+-------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                         | Generated? |
-+-------------------------------------------------------------------------------------+------------+
-| Lady Anne Monson was born in Darlington, Kingdom of England, on January 1st, 1726.  | False      |
-| Lady Anne Monson was born on January 1, 1726 in Darlington, the Kingdom of England. | False      |
-| Lady Anne Monson was born on January 1st, 1726 in Darlington, England.              | False      |
-+-------------------------------------------------------------------------------------+------------+
++-------------------------------------------------------------------------------------------------------------------------+
+|                                                       GOLD OUTPUTS                                                      |
++------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                | Generated? |
++------------------------------------------------------------------------------------------------------------+------------+
+| Lady Anne Monson was born in Darlington, a town within the Kingdom of England, which is now within the UK. | False      |
+| Lady Anne Monson was born in the Kingdom of England in a town called Darlington which is in the UK.        | False      |
++------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------+
 |                                      NODE METRICS                                      |
@@ -56,59 +55,58 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id1565_236_708
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h24061                                                                    |
-|               |   INDEX: e24058 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h24052 ARG0: e24049 ARG1: u24050 ARG2: u24051 ]     |
-|               |           [ explicit_or_proper_q LBL: h24056 ARG0: x24053 RSTR: h24054 BODY:     |
-|               | h24055 ]                                                                         |
-|               |           [ named LBL: h24048 ARG0: x24047 CARG: "Darlington" ]                  |
-|               |           [ _born_a_of LBL: h24061 ARG0: e24058 ARG1: u24059 ARG2: u24060 ]      |
-|               |           [ explicit_or_proper_q LBL: h24065 ARG0: x24062 RSTR: h24063 BODY:     |
-|               | h24064 ]                                                                         |
-|               |           [ compound LBL: h24041 ARG0: e24038 ARG1: u24039 ARG2: u24040 ]        |
-|               |           [ existential_q LBL: h24045 ARG0: x24042 RSTR: h24043 BODY: h24044 ]   |
-|               |           [ _lady_n_1 LBL: h24037 ARG0: x24036 [ x NUM: sg ] ]                   |
-|               |           [ named LBL: h24035 ARG0: x24034 CARG: "Anne Monson" ] >               |
-|               |   HCONS: < h24054 qeq h24048 h24043 qeq h24037 h24063 qeq h24035 >               |
-|               |   EQS: < x24053 eq x24047 h24052 eq h24057 u24051 eq x24053 x24042 eq x24036     |
-|               | h24041 eq h24046 u24040 eq x24042 h24041 eq h24035 u24039 eq x24034 x24062 eq    |
-|               | x24034 h24061 eq h24066 u24059 eq x24062 h24052 eq h24061 u24050 eq e24058 >     |
-|               |   SLOTS: < ARG2: u24060 > ]                                                      |
+| Original      | [ TOP: h7355                                                                     |
+|               |   INDEX: e7352 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_state LBL: h7346 ARG0: e7343 ARG1: u7344 ARG2: u7345 ]         |
+|               |           [ explicit_or_proper_q LBL: h7350 ARG0: x7347 RSTR: h7348 BODY: h7349  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7342 ARG0: x7341 CARG: "Darlington" ]                    |
+|               |           [ _born_a_of LBL: h7355 ARG0: e7352 ARG1: u7353 ARG2: u7354 ]          |
+|               |           [ explicit_or_proper_q LBL: h7359 ARG0: x7356 RSTR: h7357 BODY: h7358  |
+|               | ]                                                                                |
+|               |           [ compound LBL: h7335 ARG0: e7332 ARG1: u7333 ARG2: u7334 ]            |
+|               |           [ existential_q LBL: h7339 ARG0: x7336 RSTR: h7337 BODY: h7338 ]       |
+|               |           [ _lady_n_1 LBL: h7331 ARG0: x7330 [ x NUM: sg ] ]                     |
+|               |           [ named LBL: h7329 ARG0: x7328 CARG: "Anne Monson" ] >                 |
+|               |   HCONS: < h7348 qeq h7342 h7337 qeq h7331 h7357 qeq h7329 >                     |
+|               |   EQS: < x7347 eq x7341 h7346 eq h7351 u7345 eq x7347 x7336 eq x7330 h7335 eq    |
+|               | h7340 u7334 eq x7336 h7335 eq h7329 u7333 eq x7328 x7356 eq x7328 h7355 eq h7360 |
+|               | u7353 eq x7356 h7346 eq h7355 u7344 eq e7352 >                                   |
+|               |   SLOTS: < ARG2: u7354 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h24052                                                                    |
-|               |   INDEX: e24058 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h24052 ARG0: e24049 ARG1: e24058 ARG2: x24047 ]     |
-|               |           [ explicit_or_proper_q LBL: h24056 ARG0: x24047 RSTR: h24054 BODY:     |
-|               | h24055 ]                                                                         |
-|               |           [ named LBL: h24048 ARG0: x24047 CARG: "Darlington" ]                  |
-|               |           [ _born_a_of LBL: h24052 ARG0: e24058 ARG1: x24034 ARG2: u24060 ]      |
-|               |           [ explicit_or_proper_q LBL: h24065 ARG0: x24034 RSTR: h24063 BODY:     |
-|               | h24064 ]                                                                         |
-|               |           [ compound LBL: h24035 ARG0: e24038 ARG1: x24034 ARG2: x24036 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h24045 ARG0: x24036 RSTR: h24043 BODY: h24044 ]   |
-|               |           [ _lady_n_1 LBL: h24037 ARG0: x24036 ]                                 |
-|               |           [ named LBL: h24035 ARG0: x24034 CARG: "Anne Monson" ] >               |
-|               |   HCONS: < h24054 qeq h24048 h24043 qeq h24037 h24063 qeq h24035 >               |
-|               |   SLOTS: < ARG2: u24060 > ]                                                      |
+| EQs Collapsed | [ TOP: h7346                                                                     |
+|               |   INDEX: e7352 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_state LBL: h7346 ARG0: e7343 ARG1: e7352 ARG2: x7341 ]         |
+|               |           [ explicit_or_proper_q LBL: h7350 ARG0: x7341 RSTR: h7348 BODY: h7349  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7342 ARG0: x7341 CARG: "Darlington" ]                    |
+|               |           [ _born_a_of LBL: h7346 ARG0: e7352 ARG1: x7328 ARG2: u7354 ]          |
+|               |           [ explicit_or_proper_q LBL: h7359 ARG0: x7328 RSTR: h7357 BODY: h7358  |
+|               | ]                                                                                |
+|               |           [ compound LBL: h7329 ARG0: e7332 ARG1: x7328 ARG2: x7330 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h7339 ARG0: x7330 RSTR: h7337 BODY: h7338 ]       |
+|               |           [ _lady_n_1 LBL: h7331 ARG0: x7330 ]                                   |
+|               |           [ named LBL: h7329 ARG0: x7328 CARG: "Anne Monson" ] >                 |
+|               |   HCONS: < h7348 qeq h7342 h7337 qeq h7331 h7357 qeq h7329 >                     |
+|               |   SLOTS: < ARG2: u7354 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h24067                                                                    |
-|               |   INDEX: e24058 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h24052 ARG0: e24049 ARG1: e24058 ARG2: x24047 ]     |
-|               |           [ explicit_or_proper_q LBL: h24056 ARG0: x24047 RSTR: h24054 BODY:     |
-|               | h24055 ]                                                                         |
-|               |           [ named LBL: h24048 ARG0: x24047 CARG: "Darlington" ]                  |
-|               |           [ _born_a_of LBL: h24052 ARG0: e24058 ARG1: x24034 ARG2: u24060 ]      |
-|               |           [ explicit_or_proper_q LBL: h24065 ARG0: x24034 RSTR: h24063 BODY:     |
-|               | h24064 ]                                                                         |
-|               |           [ compound LBL: h24035 ARG0: e24038 ARG1: x24034 ARG2: x24036 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h24045 ARG0: x24036 RSTR: h24043 BODY: h24044 ]   |
-|               |           [ _lady_n_1 LBL: h24037 ARG0: x24036 ]                                 |
-|               |           [ named LBL: h24035 ARG0: x24034 CARG: "Anne Monson" ] >               |
-|               |   HCONS: < h24054 qeq h24048 h24043 qeq h24037 h24063 qeq h24035 h24067 qeq      |
-|               | h24052 >                                                                         |
-|               |   SLOTS: < ARG2: u24060 > ]                                                      |
+| Prepped       | [ TOP: h7361                                                                     |
+|               |   INDEX: e7352 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_state LBL: h7346 ARG0: e7343 ARG1: e7352 ARG2: x7341 ]         |
+|               |           [ explicit_or_proper_q LBL: h7350 ARG0: x7341 RSTR: h7348 BODY: h7349  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7342 ARG0: x7341 CARG: "Darlington" ]                    |
+|               |           [ _born_a_of LBL: h7346 ARG0: e7352 ARG1: x7328 ARG2: u7354 ]          |
+|               |           [ explicit_or_proper_q LBL: h7359 ARG0: x7328 RSTR: h7357 BODY: h7358  |
+|               | ]                                                                                |
+|               |           [ compound LBL: h7329 ARG0: e7332 ARG1: x7328 ARG2: x7330 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h7339 ARG0: x7330 RSTR: h7337 BODY: h7338 ]       |
+|               |           [ _lady_n_1 LBL: h7331 ARG0: x7330 ]                                   |
+|               |           [ named LBL: h7329 ARG0: x7328 CARG: "Anne Monson" ] >                 |
+|               |   HCONS: < h7348 qeq h7342 h7337 qeq h7331 h7357 qeq h7329 h7361 qeq h7346 >     |
+|               |   SLOTS: < ARG2: u7354 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------+
@@ -116,19 +114,19 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id1565_236_708
 +------------------+----------------------------------------------------------------------------------+
 | Node             | Generated SEMENT                                                                 |
 +------------------+----------------------------------------------------------------------------------+
-| Lady_Anne_Monson | [ TOP: h24035                                                                    |
-|                  |   INDEX: x24034                                                                  |
-|                  |   RELS: < [ compound LBL: h24041 ARG0: e24038 ARG1: u24039 ARG2: u24040 ]        |
-|                  |           [ existential_q LBL: h24045 ARG0: x24042 RSTR: h24043 BODY: h24044 ]   |
-|                  |           [ _lady_n_1 LBL: h24037 ARG0: x24036 [ x NUM: sg ] ]                   |
-|                  |           [ named LBL: h24035 ARG0: x24034 CARG: "Anne Monson" ] >               |
-|                  |   HCONS: < h24043 qeq h24037 >                                                   |
-|                  |   EQS: < x24042 eq x24036 h24041 eq h24046 u24040 eq x24042 h24041 eq h24035     |
-|                  | u24039 eq x24034 > ]                                                             |
+| Lady_Anne_Monson | [ TOP: h7329                                                                     |
+|                  |   INDEX: x7328                                                                   |
+|                  |   RELS: < [ compound LBL: h7335 ARG0: e7332 ARG1: u7333 ARG2: u7334 ]            |
+|                  |           [ existential_q LBL: h7339 ARG0: x7336 RSTR: h7337 BODY: h7338 ]       |
+|                  |           [ _lady_n_1 LBL: h7331 ARG0: x7330 [ x NUM: sg ] ]                     |
+|                  |           [ named LBL: h7329 ARG0: x7328 CARG: "Anne Monson" ] >                 |
+|                  |   HCONS: < h7337 qeq h7331 >                                                     |
+|                  |   EQS: < x7336 eq x7330 h7335 eq h7340 u7334 eq x7336 h7335 eq h7329 u7333 eq    |
+|                  | x7328 > ]                                                                        |
 +------------------+----------------------------------------------------------------------------------+
-| Darlington       | [ TOP: h24048                                                                    |
-|                  |   INDEX: x24047                                                                  |
-|                  |   RELS: < [ named LBL: h24048 ARG0: x24047 CARG: "Darlington" ] > ]              |
+| Darlington       | [ TOP: h7342                                                                     |
+|                  |   INDEX: x7341                                                                   |
+|                  |   RELS: < [ named LBL: h7342 ARG0: x7341 CARG: "Darlington" ] > ]                |
 +------------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -136,24 +134,24 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id1565_236_708
 +------------+------------------+------------+----------------------------------------------------------------------------------+
 | Edge       | Parent           | Child      | Generated SEMENT                                                                 |
 +------------+------------------+------------+----------------------------------------------------------------------------------+
-| birthPlace | Lady_Anne_Monson | Darlington | [ TOP: h24061                                                                    |
-|            |                  |            |   INDEX: e24058 [ e TENSE: tensed ]                                              |
-|            |                  |            |   RELS: < [ _in_p_state LBL: h24052 ARG0: e24049 ARG1: u24050 ARG2: u24051 ]     |
-|            |                  |            |           [ explicit_or_proper_q LBL: h24056 ARG0: x24053 RSTR: h24054 BODY:     |
-|            |                  |            | h24055 ]                                                                         |
-|            |                  |            |           [ named LBL: h24048 ARG0: x24047 CARG: "Darlington" ]                  |
-|            |                  |            |           [ _born_a_of LBL: h24061 ARG0: e24058 ARG1: u24059 ARG2: u24060 ]      |
-|            |                  |            |           [ explicit_or_proper_q LBL: h24065 ARG0: x24062 RSTR: h24063 BODY:     |
-|            |                  |            | h24064 ]                                                                         |
-|            |                  |            |           [ compound LBL: h24041 ARG0: e24038 ARG1: u24039 ARG2: u24040 ]        |
-|            |                  |            |           [ existential_q LBL: h24045 ARG0: x24042 RSTR: h24043 BODY: h24044 ]   |
-|            |                  |            |           [ _lady_n_1 LBL: h24037 ARG0: x24036 [ x NUM: sg ] ]                   |
-|            |                  |            |           [ named LBL: h24035 ARG0: x24034 CARG: "Anne Monson" ] >               |
-|            |                  |            |   HCONS: < h24054 qeq h24048 h24043 qeq h24037 h24063 qeq h24035 >               |
-|            |                  |            |   EQS: < x24053 eq x24047 h24052 eq h24057 u24051 eq x24053 x24042 eq x24036     |
-|            |                  |            | h24041 eq h24046 u24040 eq x24042 h24041 eq h24035 u24039 eq x24034 x24062 eq    |
-|            |                  |            | x24034 h24061 eq h24066 u24059 eq x24062 h24052 eq h24061 u24050 eq e24058 >     |
-|            |                  |            |   SLOTS: < ARG2: u24060 > ]                                                      |
+| birthPlace | Lady_Anne_Monson | Darlington | [ TOP: h7355                                                                     |
+|            |                  |            |   INDEX: e7352 [ e TENSE: tensed ]                                               |
+|            |                  |            |   RELS: < [ _in_p_state LBL: h7346 ARG0: e7343 ARG1: u7344 ARG2: u7345 ]         |
+|            |                  |            |           [ explicit_or_proper_q LBL: h7350 ARG0: x7347 RSTR: h7348 BODY: h7349  |
+|            |                  |            | ]                                                                                |
+|            |                  |            |           [ named LBL: h7342 ARG0: x7341 CARG: "Darlington" ]                    |
+|            |                  |            |           [ _born_a_of LBL: h7355 ARG0: e7352 ARG1: u7353 ARG2: u7354 ]          |
+|            |                  |            |           [ explicit_or_proper_q LBL: h7359 ARG0: x7356 RSTR: h7357 BODY: h7358  |
+|            |                  |            | ]                                                                                |
+|            |                  |            |           [ compound LBL: h7335 ARG0: e7332 ARG1: u7333 ARG2: u7334 ]            |
+|            |                  |            |           [ existential_q LBL: h7339 ARG0: x7336 RSTR: h7337 BODY: h7338 ]       |
+|            |                  |            |           [ _lady_n_1 LBL: h7331 ARG0: x7330 [ x NUM: sg ] ]                     |
+|            |                  |            |           [ named LBL: h7329 ARG0: x7328 CARG: "Anne Monson" ] >                 |
+|            |                  |            |   HCONS: < h7348 qeq h7342 h7337 qeq h7331 h7357 qeq h7329 >                     |
+|            |                  |            |   EQS: < x7347 eq x7341 h7346 eq h7351 u7345 eq x7347 x7336 eq x7330 h7335 eq    |
+|            |                  |            | h7340 u7334 eq x7336 h7335 eq h7329 u7333 eq x7328 x7356 eq x7328 h7355 eq h7360 |
+|            |                  |            | u7353 eq x7356 h7346 eq h7355 u7344 eq e7352 >                                   |
+|            |                  |            |   SLOTS: < ARG2: u7354 > ]                                                       |
 +------------+------------------+------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------+

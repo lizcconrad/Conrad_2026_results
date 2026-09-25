@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id1322_184_553
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                            GOLD OUTPUTS                                                                            |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                           | Generated? |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Expect A Miracle is a genre of instrumental music that was preceded by the Brian Kelly album Pools of Light and followed by the Afterplay album.      | False      |
-| Expect a Miracle by Brian Kelly is an instrumental album. It is preceded by Pools of Light and followed by Afterplay.                                 | False      |
-| The album Expect a Miracle, an instrumental music album by Brian Kelly, was preceded by the album Pools of Light and followed by the album Afterplay. | False      |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                     GOLD OUTPUTS                                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                            | Generated? |
++----------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Brain Kelly's Expect a Miracle was a compilation album that was preceded by Pools of Light and followed by Afterplay.                  | False      |
+| Expect a Miracle is a compilation album by Brian Kelly and came after the album Pools of Light, and before the album titled Afterplay. | False      |
+| Expect a Miracle is a compilation album, preceded by Pools of Light by Brian Kelly which is followed by the album Afterplay.           | False      |
++----------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +-----------------------------------------------------------------------------------------------------+
 |                                             NODE METRICS                                            |
@@ -56,65 +56,63 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id1322_184_553
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h18590                                                                    |
-|               |   INDEX: e18587 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _follow_v_1 LBL: h18590 ARG0: e18587 ARG1: i18588 ARG2: i18589 ]     |
-|               |           [ explicit_or_proper_q LBL: h18594 ARG0: x18591 RSTR: h18592 BODY:     |
-|               | h18593 ]                                                                         |
-|               |           [ named LBL: h18557 ARG0: x18556 CARG: "Expect a Miracle" ]            |
-|               |           [ appos LBL: h18576 ARG0: e18573 ARG1: x18574 ARG2: i18575 ]           |
-|               |           [ def_udef_a_q LBL: h18585 ARG0: x18582 RSTR: h18583 BODY: h18584 ]    |
-|               |           [ compound LBL: h18567 ARG0: e18564 ARG1: u18565 ARG2: u18566 ]        |
-|               |           [ existential_q LBL: h18571 ARG0: x18568 RSTR: h18569 BODY: h18570 ]   |
-|               |           [ named LBL: h18563 ARG0: x18562 [ x NUM: sg ] CARG: "Brian Kelly" ]   |
-|               |           [ _album_n_1 LBL: h18561 ARG0: x18560 ]                                |
-|               |           [ explicit_or_proper_q LBL: h18580 ARG0: x18577 RSTR: h18578 BODY:     |
-|               | h18579 ]                                                                         |
-|               |           [ named LBL: h18559 ARG0: x18558 CARG: "Afterplay" ] >                 |
-|               |   HCONS: < h18592 qeq h18557 h18569 qeq h18563 h18583 qeq h18561 h18578 qeq      |
-|               | h18559 >                                                                         |
-|               |   EQS: < x18591 eq x18556 h18590 eq h18595 i18589 eq x18591 x18568 eq x18562     |
-|               | h18567 eq h18572 u18566 eq x18568 h18567 eq h18561 u18565 eq x18560 x18582 eq    |
-|               | x18560 h18576 eq h18586 i18575 eq x18582 x18577 eq x18558 h18576 eq h18581       |
-|               | x18574 eq x18577 h18590 eq h18581 i18588 eq x18577 > ]                           |
+| Original      | [ TOP: h9807                                                                     |
+|               |   INDEX: e9804 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _follow_v_1 LBL: h9807 ARG0: e9804 ARG1: i9805 ARG2: i9806 ]         |
+|               |           [ explicit_or_proper_q LBL: h9811 ARG0: x9808 RSTR: h9809 BODY: h9810  |
+|               | ]                                                                                |
+|               |           [ named LBL: h9774 ARG0: x9773 CARG: "Expect a Miracle" ]              |
+|               |           [ appos LBL: h9793 ARG0: e9790 ARG1: x9791 ARG2: i9792 ]               |
+|               |           [ def_udef_a_q LBL: h9802 ARG0: x9799 RSTR: h9800 BODY: h9801 ]        |
+|               |           [ compound LBL: h9784 ARG0: e9781 ARG1: u9782 ARG2: u9783 ]            |
+|               |           [ existential_q LBL: h9788 ARG0: x9785 RSTR: h9786 BODY: h9787 ]       |
+|               |           [ named LBL: h9780 ARG0: x9779 [ x NUM: sg ] CARG: "Brian Kelly" ]     |
+|               |           [ _album_n_1 LBL: h9778 ARG0: x9777 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h9797 ARG0: x9794 RSTR: h9795 BODY: h9796  |
+|               | ]                                                                                |
+|               |           [ named LBL: h9776 ARG0: x9775 CARG: "Afterplay" ] >                   |
+|               |   HCONS: < h9809 qeq h9774 h9786 qeq h9780 h9800 qeq h9778 h9795 qeq h9776 >     |
+|               |   EQS: < x9808 eq x9773 h9807 eq h9812 i9806 eq x9808 x9785 eq x9779 h9784 eq    |
+|               | h9789 u9783 eq x9785 h9784 eq h9778 u9782 eq x9777 x9799 eq x9777 h9793 eq h9803 |
+|               | i9792 eq x9799 x9794 eq x9775 h9793 eq h9798 x9791 eq x9794 h9807 eq h9798 i9805 |
+|               | eq x9794 > ]                                                                     |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h18576                                                                    |
-|               |   INDEX: e18587 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _follow_v_1 LBL: h18576 ARG0: e18587 ARG1: x18558 ARG2: x18556 ]     |
-|               |           [ explicit_or_proper_q LBL: h18594 ARG0: x18556 RSTR: h18592 BODY:     |
-|               | h18593 ]                                                                         |
-|               |           [ named LBL: h18557 ARG0: x18556 CARG: "Expect a Miracle" ]            |
-|               |           [ appos LBL: h18576 ARG0: e18573 ARG1: x18558 ARG2: x18560 ]           |
-|               |           [ def_udef_a_q LBL: h18585 ARG0: x18560 RSTR: h18583 BODY: h18584 ]    |
-|               |           [ compound LBL: h18561 ARG0: e18564 ARG1: x18560 ARG2: x18562 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h18571 ARG0: x18562 RSTR: h18569 BODY: h18570 ]   |
-|               |           [ named LBL: h18563 ARG0: x18562 CARG: "Brian Kelly" ]                 |
-|               |           [ _album_n_1 LBL: h18561 ARG0: x18560 ]                                |
-|               |           [ explicit_or_proper_q LBL: h18580 ARG0: x18558 RSTR: h18578 BODY:     |
-|               | h18579 ]                                                                         |
-|               |           [ named LBL: h18559 ARG0: x18558 CARG: "Afterplay" ] >                 |
-|               |   HCONS: < h18592 qeq h18557 h18569 qeq h18563 h18583 qeq h18561 h18578 qeq      |
-|               | h18559 > ]                                                                       |
+| EQs Collapsed | [ TOP: h9793                                                                     |
+|               |   INDEX: e9804 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _follow_v_1 LBL: h9793 ARG0: e9804 ARG1: x9775 ARG2: x9773 ]         |
+|               |           [ explicit_or_proper_q LBL: h9811 ARG0: x9773 RSTR: h9809 BODY: h9810  |
+|               | ]                                                                                |
+|               |           [ named LBL: h9774 ARG0: x9773 CARG: "Expect a Miracle" ]              |
+|               |           [ appos LBL: h9793 ARG0: e9790 ARG1: x9775 ARG2: x9777 ]               |
+|               |           [ def_udef_a_q LBL: h9802 ARG0: x9777 RSTR: h9800 BODY: h9801 ]        |
+|               |           [ compound LBL: h9778 ARG0: e9781 ARG1: x9777 ARG2: x9779 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h9788 ARG0: x9779 RSTR: h9786 BODY: h9787 ]       |
+|               |           [ named LBL: h9780 ARG0: x9779 CARG: "Brian Kelly" ]                   |
+|               |           [ _album_n_1 LBL: h9778 ARG0: x9777 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h9797 ARG0: x9775 RSTR: h9795 BODY: h9796  |
+|               | ]                                                                                |
+|               |           [ named LBL: h9776 ARG0: x9775 CARG: "Afterplay" ] >                   |
+|               |   HCONS: < h9809 qeq h9774 h9786 qeq h9780 h9800 qeq h9778 h9795 qeq h9776 > ]   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h18596                                                                    |
-|               |   INDEX: e18587 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _follow_v_1 LBL: h18576 ARG0: e18587 ARG1: x18558 ARG2: x18556 ]     |
-|               |           [ explicit_or_proper_q LBL: h18594 ARG0: x18556 RSTR: h18592 BODY:     |
-|               | h18593 ]                                                                         |
-|               |           [ named LBL: h18557 ARG0: x18556 CARG: "Expect a Miracle" ]            |
-|               |           [ appos LBL: h18576 ARG0: e18573 ARG1: x18558 ARG2: x18560 ]           |
-|               |           [ def_udef_a_q LBL: h18585 ARG0: x18560 RSTR: h18583 BODY: h18584 ]    |
-|               |           [ compound LBL: h18561 ARG0: e18564 ARG1: x18560 ARG2: x18562 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h18571 ARG0: x18562 RSTR: h18569 BODY: h18570 ]   |
-|               |           [ named LBL: h18563 ARG0: x18562 CARG: "Brian Kelly" ]                 |
-|               |           [ _album_n_1 LBL: h18561 ARG0: x18560 ]                                |
-|               |           [ explicit_or_proper_q LBL: h18580 ARG0: x18558 RSTR: h18578 BODY:     |
-|               | h18579 ]                                                                         |
-|               |           [ named LBL: h18559 ARG0: x18558 CARG: "Afterplay" ] >                 |
-|               |   HCONS: < h18592 qeq h18557 h18569 qeq h18563 h18583 qeq h18561 h18578 qeq      |
-|               | h18559 h18596 qeq h18576 > ]                                                     |
+| Prepped       | [ TOP: h9813                                                                     |
+|               |   INDEX: e9804 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _follow_v_1 LBL: h9793 ARG0: e9804 ARG1: x9775 ARG2: x9773 ]         |
+|               |           [ explicit_or_proper_q LBL: h9811 ARG0: x9773 RSTR: h9809 BODY: h9810  |
+|               | ]                                                                                |
+|               |           [ named LBL: h9774 ARG0: x9773 CARG: "Expect a Miracle" ]              |
+|               |           [ appos LBL: h9793 ARG0: e9790 ARG1: x9775 ARG2: x9777 ]               |
+|               |           [ def_udef_a_q LBL: h9802 ARG0: x9777 RSTR: h9800 BODY: h9801 ]        |
+|               |           [ compound LBL: h9778 ARG0: e9781 ARG1: x9777 ARG2: x9779 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h9788 ARG0: x9779 RSTR: h9786 BODY: h9787 ]       |
+|               |           [ named LBL: h9780 ARG0: x9779 CARG: "Brian Kelly" ]                   |
+|               |           [ _album_n_1 LBL: h9778 ARG0: x9777 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h9797 ARG0: x9775 RSTR: h9795 BODY: h9796  |
+|               | ]                                                                                |
+|               |           [ named LBL: h9776 ARG0: x9775 CARG: "Afterplay" ] >                   |
+|               |   HCONS: < h9809 qeq h9774 h9786 qeq h9780 h9800 qeq h9778 h9795 qeq h9776 h9813 |
+|               | qeq h9793 > ]                                                                    |
 +---------------+----------------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------------------------+
@@ -122,26 +120,26 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id1322_184_553
 +-------------------------------+----------------------------------------------------------------------------------+
 | Node                          | Generated SEMENT                                                                 |
 +-------------------------------+----------------------------------------------------------------------------------+
-| Expect_a_Miracle              | [ TOP: h18557                                                                    |
-|                               |   INDEX: x18556                                                                  |
-|                               |   RELS: < [ named LBL: h18557 ARG0: x18556 CARG: "Expect a Miracle" ] > ]        |
+| Expect_a_Miracle              | [ TOP: h9774                                                                     |
+|                               |   INDEX: x9773                                                                   |
+|                               |   RELS: < [ named LBL: h9774 ARG0: x9773 CARG: "Expect a Miracle" ] > ]          |
 +-------------------------------+----------------------------------------------------------------------------------+
-| Afterplay_(Brian_Kelly_album) | [ TOP: h18581                                                                    |
-|                               |   INDEX: x18577                                                                  |
-|                               |   RELS: < [ appos LBL: h18576 ARG0: e18573 ARG1: x18574 ARG2: i18575 ]           |
-|                               |           [ def_udef_a_q LBL: h18585 ARG0: x18582 RSTR: h18583 BODY: h18584 ]    |
-|                               |           [ compound LBL: h18567 ARG0: e18564 ARG1: u18565 ARG2: u18566 ]        |
-|                               |           [ existential_q LBL: h18571 ARG0: x18568 RSTR: h18569 BODY: h18570 ]   |
-|                               |           [ named LBL: h18563 ARG0: x18562 [ x NUM: sg ] CARG: "Brian Kelly" ]   |
-|                               |           [ _album_n_1 LBL: h18561 ARG0: x18560 ]                                |
-|                               |           [ explicit_or_proper_q LBL: h18580 ARG0: x18577 RSTR: h18578 BODY:     |
-|                               | h18579 ]                                                                         |
-|                               |           [ named LBL: h18559 ARG0: x18558 CARG: "Afterplay" ] >                 |
-|                               |   HCONS: < h18569 qeq h18563 h18583 qeq h18561 h18578 qeq h18559 >               |
-|                               |   EQS: < x18568 eq x18562 h18567 eq h18572 u18566 eq x18568 h18567 eq h18561     |
-|                               | u18565 eq x18560 x18582 eq x18560 h18576 eq h18586 i18575 eq x18582 x18577 eq    |
-|                               | x18558 h18576 eq h18581 x18574 eq x18577 >                                       |
-|                               |   SLOTS: < BODY: h18579 > ]                                                      |
+| Afterplay_(Brian_Kelly_album) | [ TOP: h9798                                                                     |
+|                               |   INDEX: x9794                                                                   |
+|                               |   RELS: < [ appos LBL: h9793 ARG0: e9790 ARG1: x9791 ARG2: i9792 ]               |
+|                               |           [ def_udef_a_q LBL: h9802 ARG0: x9799 RSTR: h9800 BODY: h9801 ]        |
+|                               |           [ compound LBL: h9784 ARG0: e9781 ARG1: u9782 ARG2: u9783 ]            |
+|                               |           [ existential_q LBL: h9788 ARG0: x9785 RSTR: h9786 BODY: h9787 ]       |
+|                               |           [ named LBL: h9780 ARG0: x9779 [ x NUM: sg ] CARG: "Brian Kelly" ]     |
+|                               |           [ _album_n_1 LBL: h9778 ARG0: x9777 ]                                  |
+|                               |           [ explicit_or_proper_q LBL: h9797 ARG0: x9794 RSTR: h9795 BODY: h9796  |
+|                               | ]                                                                                |
+|                               |           [ named LBL: h9776 ARG0: x9775 CARG: "Afterplay" ] >                   |
+|                               |   HCONS: < h9786 qeq h9780 h9800 qeq h9778 h9795 qeq h9776 >                     |
+|                               |   EQS: < x9785 eq x9779 h9784 eq h9789 u9783 eq x9785 h9784 eq h9778 u9782 eq    |
+|                               | x9777 x9799 eq x9777 h9793 eq h9803 i9792 eq x9799 x9794 eq x9775 h9793 eq h9798 |
+|                               | x9791 eq x9794 >                                                                 |
+|                               |   SLOTS: < BODY: h9796 > ]                                                       |
 +-------------------------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -149,27 +147,26 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id1322_184_553
 +------------+------------------+-------------------------------+----------------------------------------------------------------------------------+
 | Edge       | Parent           | Child                         | Generated SEMENT                                                                 |
 +------------+------------------+-------------------------------+----------------------------------------------------------------------------------+
-| followedBy | Expect_a_Miracle | Afterplay_(Brian_Kelly_album) | [ TOP: h18590                                                                    |
-|            |                  |                               |   INDEX: e18587 [ e TENSE: tensed ]                                              |
-|            |                  |                               |   RELS: < [ _follow_v_1 LBL: h18590 ARG0: e18587 ARG1: i18588 ARG2: i18589 ]     |
-|            |                  |                               |           [ explicit_or_proper_q LBL: h18594 ARG0: x18591 RSTR: h18592 BODY:     |
-|            |                  |                               | h18593 ]                                                                         |
-|            |                  |                               |           [ named LBL: h18557 ARG0: x18556 CARG: "Expect a Miracle" ]            |
-|            |                  |                               |           [ appos LBL: h18576 ARG0: e18573 ARG1: x18574 ARG2: i18575 ]           |
-|            |                  |                               |           [ def_udef_a_q LBL: h18585 ARG0: x18582 RSTR: h18583 BODY: h18584 ]    |
-|            |                  |                               |           [ compound LBL: h18567 ARG0: e18564 ARG1: u18565 ARG2: u18566 ]        |
-|            |                  |                               |           [ existential_q LBL: h18571 ARG0: x18568 RSTR: h18569 BODY: h18570 ]   |
-|            |                  |                               |           [ named LBL: h18563 ARG0: x18562 [ x NUM: sg ] CARG: "Brian Kelly" ]   |
-|            |                  |                               |           [ _album_n_1 LBL: h18561 ARG0: x18560 ]                                |
-|            |                  |                               |           [ explicit_or_proper_q LBL: h18580 ARG0: x18577 RSTR: h18578 BODY:     |
-|            |                  |                               | h18579 ]                                                                         |
-|            |                  |                               |           [ named LBL: h18559 ARG0: x18558 CARG: "Afterplay" ] >                 |
-|            |                  |                               |   HCONS: < h18592 qeq h18557 h18569 qeq h18563 h18583 qeq h18561 h18578 qeq      |
-|            |                  |                               | h18559 >                                                                         |
-|            |                  |                               |   EQS: < x18591 eq x18556 h18590 eq h18595 i18589 eq x18591 x18568 eq x18562     |
-|            |                  |                               | h18567 eq h18572 u18566 eq x18568 h18567 eq h18561 u18565 eq x18560 x18582 eq    |
-|            |                  |                               | x18560 h18576 eq h18586 i18575 eq x18582 x18577 eq x18558 h18576 eq h18581       |
-|            |                  |                               | x18574 eq x18577 h18590 eq h18581 i18588 eq x18577 > ]                           |
+| followedBy | Expect_a_Miracle | Afterplay_(Brian_Kelly_album) | [ TOP: h9807                                                                     |
+|            |                  |                               |   INDEX: e9804 [ e TENSE: tensed ]                                               |
+|            |                  |                               |   RELS: < [ _follow_v_1 LBL: h9807 ARG0: e9804 ARG1: i9805 ARG2: i9806 ]         |
+|            |                  |                               |           [ explicit_or_proper_q LBL: h9811 ARG0: x9808 RSTR: h9809 BODY: h9810  |
+|            |                  |                               | ]                                                                                |
+|            |                  |                               |           [ named LBL: h9774 ARG0: x9773 CARG: "Expect a Miracle" ]              |
+|            |                  |                               |           [ appos LBL: h9793 ARG0: e9790 ARG1: x9791 ARG2: i9792 ]               |
+|            |                  |                               |           [ def_udef_a_q LBL: h9802 ARG0: x9799 RSTR: h9800 BODY: h9801 ]        |
+|            |                  |                               |           [ compound LBL: h9784 ARG0: e9781 ARG1: u9782 ARG2: u9783 ]            |
+|            |                  |                               |           [ existential_q LBL: h9788 ARG0: x9785 RSTR: h9786 BODY: h9787 ]       |
+|            |                  |                               |           [ named LBL: h9780 ARG0: x9779 [ x NUM: sg ] CARG: "Brian Kelly" ]     |
+|            |                  |                               |           [ _album_n_1 LBL: h9778 ARG0: x9777 ]                                  |
+|            |                  |                               |           [ explicit_or_proper_q LBL: h9797 ARG0: x9794 RSTR: h9795 BODY: h9796  |
+|            |                  |                               | ]                                                                                |
+|            |                  |                               |           [ named LBL: h9776 ARG0: x9775 CARG: "Afterplay" ] >                   |
+|            |                  |                               |   HCONS: < h9809 qeq h9774 h9786 qeq h9780 h9800 qeq h9778 h9795 qeq h9776 >     |
+|            |                  |                               |   EQS: < x9808 eq x9773 h9807 eq h9812 i9806 eq x9808 x9785 eq x9779 h9784 eq    |
+|            |                  |                               | h9789 u9783 eq x9785 h9784 eq h9778 u9782 eq x9777 x9799 eq x9777 h9793 eq h9803 |
+|            |                  |                               | i9792 eq x9799 x9794 eq x9775 h9793 eq h9798 x9791 eq x9794 h9807 eq h9798 i9805 |
+|            |                  |                               | eq x9794 > ]                                                                     |
 +------------+------------------+-------------------------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------+

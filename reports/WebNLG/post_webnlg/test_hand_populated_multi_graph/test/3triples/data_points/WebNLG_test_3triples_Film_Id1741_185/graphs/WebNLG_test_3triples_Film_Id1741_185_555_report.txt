@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id1741_185_555
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                        GOLD OUTPUTS                                                                       |
-+----------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                  | Generated? |
-+----------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Cecil Parker starred in the 1956 movie It's Great to Be Young, which was edited by Max Benedict, with Louis Levy as the music composer.      | False      |
-| Featuring Cecil Parker as a main role, It's Great to Be Young was edited by Max Benedict. The composer of music for the film was Louis Levy. | False      |
-| “It's Great to Be Young” is a 1956 movie edited by Max Benedict. The movie stars Cecil Parker, and includes music by Louis Levy.             | False      |
-+----------------------------------------------------------------------------------------------------------------------------------------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                GOLD OUTPUTS                                                                               |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                                  | Generated? |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| It's Great to Be Young includes John Mills and Cecil Parker in its cast, and includes music composed by Louis Levy.                                          | False      |
+| It's Great to be Young is a 1956 film starring John Mills and Cecil Parker. Louis Levy composed the music for the film.                                      | False      |
+| John Mills and Cecil Parker had lead and main roles, respectively, in the 1956 film It’s Great to be Young. The music composer for the movie was Louis Levy. | False      |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------------------------+
 |                                               NODE METRICS                                               |
@@ -56,82 +56,69 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id1741_185_555
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h18659                                                                    |
-|               |   INDEX: e18656 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _feature_v_cause LBL: h18659 ARG0: e18656 ARG1: i18657 ARG2: i18658  |
-|               | ]                                                                                |
-|               |           [ def_udef_a_q LBL: h18674 ARG0: x18671 RSTR: h18672 BODY: h18673 ]    |
-|               |           [ _compose_v_1 LBL: h18663 ARG0: e18660 ARG1: i18661 ARG2: i18662 ]    |
-|               |           [ explicit_or_proper_q LBL: h18667 ARG0: x18664 RSTR: h18665 BODY:     |
-|               | h18666 ]                                                                         |
-|               |           [ named LBL: h18655 ARG0: x18654 CARG: "Louis Levy" ]                  |
-|               |           [ _music_n_1 LBL: h18670 ARG0: x18669 ]                                |
-|               |           [ appos LBL: h18643 ARG0: e18640 ARG1: x18641 ARG2: i18642 ]           |
-|               |           [ def_udef_a_q LBL: h18652 ARG0: x18649 RSTR: h18650 BODY: h18651 ]    |
-|               |           [ compound LBL: h18639 ARG0: e18636 ARG1: u18637 ARG2: u18638 ]        |
-|               |           [ proper_q LBL: h18634 ARG0: x18631 [ x NUM: sg ] RSTR: h18632 BODY:   |
-|               | h18633 ]                                                                         |
-|               |           [ yofc LBL: h18630 ARG0: x18629 CARG: "1956" ]                         |
-|               |           [ _film_n_1 LBL: h18622 ARG0: x18621 ]                                 |
-|               |           [ explicit_or_proper_q LBL: h18647 ARG0: x18644 RSTR: h18645 BODY:     |
-|               | h18646 ]                                                                         |
-|               |           [ named LBL: h18620 ARG0: x18619 CARG: "It's Great to Be Young" ] >    |
-|               |   HCONS: < h18665 qeq h18655 h18672 qeq h18670 h18632 qeq h18630 h18650 qeq      |
-|               | h18622 h18645 qeq h18620 >                                                       |
-|               |   ICONS: < e18660 topic i18662 >                                                 |
-|               |   EQS: < x18664 eq x18654 h18663 eq h18668 i18661 eq x18664 h18663 eq h18670     |
-|               | i18662 eq x18669 x18671 eq x18669 h18659 eq h18675 i18658 eq x18671 x18631 eq    |
-|               | x18629 h18639 eq h18635 u18638 eq x18631 h18639 eq h18622 u18637 eq x18621       |
-|               | x18649 eq x18621 h18643 eq h18653 i18642 eq x18649 x18644 eq x18619 h18643 eq    |
-|               | h18648 x18641 eq x18644 h18659 eq h18648 i18657 eq x18644 > ]                    |
+| Original      | [ TOP: h433                                                                      |
+|               |   INDEX: e430 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _feature_v_cause LBL: h433 ARG0: e430 ARG1: i431 ARG2: i432 ]        |
+|               |           [ def_udef_a_q LBL: h448 ARG0: x445 RSTR: h446 BODY: h447 ]            |
+|               |           [ _compose_v_1 LBL: h437 ARG0: e434 ARG1: i435 ARG2: i436 ]            |
+|               |           [ explicit_or_proper_q LBL: h441 ARG0: x438 RSTR: h439 BODY: h440 ]    |
+|               |           [ named LBL: h429 ARG0: x428 CARG: "Louis Levy" ]                      |
+|               |           [ _music_n_1 LBL: h444 ARG0: x443 ]                                    |
+|               |           [ appos LBL: h417 ARG0: e414 ARG1: x415 ARG2: i416 ]                   |
+|               |           [ def_udef_a_q LBL: h426 ARG0: x423 RSTR: h424 BODY: h425 ]            |
+|               |           [ compound LBL: h413 ARG0: e410 ARG1: u411 ARG2: u412 ]                |
+|               |           [ proper_q LBL: h408 ARG0: x405 [ x NUM: sg ] RSTR: h406 BODY: h407 ]  |
+|               |           [ yofc LBL: h404 ARG0: x403 CARG: "1956" ]                             |
+|               |           [ _film_n_1 LBL: h396 ARG0: x395 ]                                     |
+|               |           [ explicit_or_proper_q LBL: h421 ARG0: x418 RSTR: h419 BODY: h420 ]    |
+|               |           [ named LBL: h394 ARG0: x393 CARG: "It's Great to Be Young" ] >        |
+|               |   HCONS: < h439 qeq h429 h446 qeq h444 h406 qeq h404 h424 qeq h396 h419 qeq h394 |
+|               | >                                                                                |
+|               |   ICONS: < e434 topic i436 >                                                     |
+|               |   EQS: < x438 eq x428 h437 eq h442 i435 eq x438 h437 eq h444 i436 eq x443 x445   |
+|               | eq x443 h433 eq h449 i432 eq x445 x405 eq x403 h413 eq h409 u412 eq x405 h413 eq |
+|               | h396 u411 eq x395 x423 eq x395 h417 eq h427 i416 eq x423 x418 eq x393 h417 eq    |
+|               | h422 x415 eq x418 h433 eq h422 i431 eq x418 > ]                                  |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h18643                                                                    |
-|               |   INDEX: e18656 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _feature_v_cause LBL: h18643 ARG0: e18656 ARG1: x18619 ARG2: x18669  |
-|               | ]                                                                                |
-|               |           [ def_udef_a_q LBL: h18674 ARG0: x18669 RSTR: h18672 BODY: h18673 ]    |
-|               |           [ _compose_v_1 LBL: h18663 ARG0: e18660 ARG1: x18654 ARG2: x18669 ]    |
-|               |           [ explicit_or_proper_q LBL: h18667 ARG0: x18654 RSTR: h18665 BODY:     |
-|               | h18666 ]                                                                         |
-|               |           [ named LBL: h18655 ARG0: x18654 CARG: "Louis Levy" ]                  |
-|               |           [ _music_n_1 LBL: h18663 ARG0: x18669 ]                                |
-|               |           [ appos LBL: h18643 ARG0: e18640 ARG1: x18619 ARG2: x18621 ]           |
-|               |           [ def_udef_a_q LBL: h18652 ARG0: x18621 RSTR: h18650 BODY: h18651 ]    |
-|               |           [ compound LBL: h18622 ARG0: e18636 ARG1: x18621 ARG2: x18629 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ proper_q LBL: h18634 ARG0: x18629 RSTR: h18632 BODY: h18633 ]        |
-|               |           [ yofc LBL: h18630 ARG0: x18629 CARG: "1956" ]                         |
-|               |           [ _film_n_1 LBL: h18622 ARG0: x18621 ]                                 |
-|               |           [ explicit_or_proper_q LBL: h18647 ARG0: x18619 RSTR: h18645 BODY:     |
-|               | h18646 ]                                                                         |
-|               |           [ named LBL: h18620 ARG0: x18619 CARG: "It's Great to Be Young" ] >    |
-|               |   HCONS: < h18665 qeq h18655 h18672 qeq h18663 h18632 qeq h18630 h18650 qeq      |
-|               | h18622 h18645 qeq h18620 >                                                       |
-|               |   ICONS: < e18660 topic x18669 > ]                                               |
+| EQs Collapsed | [ TOP: h417                                                                      |
+|               |   INDEX: e430 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _feature_v_cause LBL: h417 ARG0: e430 ARG1: x393 ARG2: x443 ]        |
+|               |           [ def_udef_a_q LBL: h448 ARG0: x443 RSTR: h446 BODY: h447 ]            |
+|               |           [ _compose_v_1 LBL: h437 ARG0: e434 ARG1: x428 ARG2: x443 ]            |
+|               |           [ explicit_or_proper_q LBL: h441 ARG0: x428 RSTR: h439 BODY: h440 ]    |
+|               |           [ named LBL: h429 ARG0: x428 CARG: "Louis Levy" ]                      |
+|               |           [ _music_n_1 LBL: h437 ARG0: x443 ]                                    |
+|               |           [ appos LBL: h417 ARG0: e414 ARG1: x393 ARG2: x395 ]                   |
+|               |           [ def_udef_a_q LBL: h426 ARG0: x395 RSTR: h424 BODY: h425 ]            |
+|               |           [ compound LBL: h396 ARG0: e410 ARG1: x395 ARG2: x403 [ x NUM: sg ] ]  |
+|               |           [ proper_q LBL: h408 ARG0: x403 RSTR: h406 BODY: h407 ]                |
+|               |           [ yofc LBL: h404 ARG0: x403 CARG: "1956" ]                             |
+|               |           [ _film_n_1 LBL: h396 ARG0: x395 ]                                     |
+|               |           [ explicit_or_proper_q LBL: h421 ARG0: x393 RSTR: h419 BODY: h420 ]    |
+|               |           [ named LBL: h394 ARG0: x393 CARG: "It's Great to Be Young" ] >        |
+|               |   HCONS: < h439 qeq h429 h446 qeq h437 h406 qeq h404 h424 qeq h396 h419 qeq h394 |
+|               | >                                                                                |
+|               |   ICONS: < e434 topic x443 > ]                                                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h18676                                                                    |
-|               |   INDEX: e18656 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _feature_v_cause LBL: h18643 ARG0: e18656 ARG1: x18619 ARG2: x18669  |
-|               | ]                                                                                |
-|               |           [ def_udef_a_q LBL: h18674 ARG0: x18669 RSTR: h18672 BODY: h18673 ]    |
-|               |           [ _compose_v_1 LBL: h18663 ARG0: e18660 ARG1: x18654 ARG2: x18669 ]    |
-|               |           [ explicit_or_proper_q LBL: h18667 ARG0: x18654 RSTR: h18665 BODY:     |
-|               | h18666 ]                                                                         |
-|               |           [ named LBL: h18655 ARG0: x18654 CARG: "Louis Levy" ]                  |
-|               |           [ _music_n_1 LBL: h18663 ARG0: x18669 ]                                |
-|               |           [ appos LBL: h18643 ARG0: e18640 ARG1: x18619 ARG2: x18621 ]           |
-|               |           [ def_udef_a_q LBL: h18652 ARG0: x18621 RSTR: h18650 BODY: h18651 ]    |
-|               |           [ compound LBL: h18622 ARG0: e18636 ARG1: x18621 ARG2: x18629 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ proper_q LBL: h18634 ARG0: x18629 RSTR: h18632 BODY: h18633 ]        |
-|               |           [ yofc LBL: h18630 ARG0: x18629 CARG: "1956" ]                         |
-|               |           [ _film_n_1 LBL: h18622 ARG0: x18621 ]                                 |
-|               |           [ explicit_or_proper_q LBL: h18647 ARG0: x18619 RSTR: h18645 BODY:     |
-|               | h18646 ]                                                                         |
-|               |           [ named LBL: h18620 ARG0: x18619 CARG: "It's Great to Be Young" ] >    |
-|               |   HCONS: < h18665 qeq h18655 h18672 qeq h18663 h18632 qeq h18630 h18650 qeq      |
-|               | h18622 h18645 qeq h18620 h18676 qeq h18643 >                                     |
-|               |   ICONS: < e18660 topic x18669 > ]                                               |
+| Prepped       | [ TOP: h450                                                                      |
+|               |   INDEX: e430 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _feature_v_cause LBL: h417 ARG0: e430 ARG1: x393 ARG2: x443 ]        |
+|               |           [ def_udef_a_q LBL: h448 ARG0: x443 RSTR: h446 BODY: h447 ]            |
+|               |           [ _compose_v_1 LBL: h437 ARG0: e434 ARG1: x428 ARG2: x443 ]            |
+|               |           [ explicit_or_proper_q LBL: h441 ARG0: x428 RSTR: h439 BODY: h440 ]    |
+|               |           [ named LBL: h429 ARG0: x428 CARG: "Louis Levy" ]                      |
+|               |           [ _music_n_1 LBL: h437 ARG0: x443 ]                                    |
+|               |           [ appos LBL: h417 ARG0: e414 ARG1: x393 ARG2: x395 ]                   |
+|               |           [ def_udef_a_q LBL: h426 ARG0: x395 RSTR: h424 BODY: h425 ]            |
+|               |           [ compound LBL: h396 ARG0: e410 ARG1: x395 ARG2: x403 [ x NUM: sg ] ]  |
+|               |           [ proper_q LBL: h408 ARG0: x403 RSTR: h406 BODY: h407 ]                |
+|               |           [ yofc LBL: h404 ARG0: x403 CARG: "1956" ]                             |
+|               |           [ _film_n_1 LBL: h396 ARG0: x395 ]                                     |
+|               |           [ explicit_or_proper_q LBL: h421 ARG0: x393 RSTR: h419 BODY: h420 ]    |
+|               |           [ named LBL: h394 ARG0: x393 CARG: "It's Great to Be Young" ] >        |
+|               |   HCONS: < h439 qeq h429 h446 qeq h437 h406 qeq h404 h424 qeq h396 h419 qeq h394 |
+|               | h450 qeq h417 >                                                                  |
+|               |   ICONS: < e434 topic x443 > ]                                                   |
 +---------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------+
@@ -139,27 +126,24 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id1741_185_555
 +------------------------------------+----------------------------------------------------------------------------------+
 | Node                               | Generated SEMENT                                                                 |
 +------------------------------------+----------------------------------------------------------------------------------+
-| It's_Great_to_Be_Young_(1956_film) | [ TOP: h18648                                                                    |
-|                                    |   INDEX: x18644                                                                  |
-|                                    |   RELS: < [ appos LBL: h18643 ARG0: e18640 ARG1: x18641 ARG2: i18642 ]           |
-|                                    |           [ def_udef_a_q LBL: h18652 ARG0: x18649 RSTR: h18650 BODY: h18651 ]    |
-|                                    |           [ compound LBL: h18639 ARG0: e18636 ARG1: u18637 ARG2: u18638 ]        |
-|                                    |           [ proper_q LBL: h18634 ARG0: x18631 [ x NUM: sg ] RSTR: h18632 BODY:   |
-|                                    | h18633 ]                                                                         |
-|                                    |           [ yofc LBL: h18630 ARG0: x18629 CARG: "1956" ]                         |
-|                                    |           [ _film_n_1 LBL: h18622 ARG0: x18621 ]                                 |
-|                                    |           [ explicit_or_proper_q LBL: h18647 ARG0: x18644 RSTR: h18645 BODY:     |
-|                                    | h18646 ]                                                                         |
-|                                    |           [ named LBL: h18620 ARG0: x18619 CARG: "It's Great to Be Young" ] >    |
-|                                    |   HCONS: < h18632 qeq h18630 h18650 qeq h18622 h18645 qeq h18620 >               |
-|                                    |   EQS: < x18631 eq x18629 h18639 eq h18635 u18638 eq x18631 h18639 eq h18622     |
-|                                    | u18637 eq x18621 x18649 eq x18621 h18643 eq h18653 i18642 eq x18649 x18644 eq    |
-|                                    | x18619 h18643 eq h18648 x18641 eq x18644 >                                       |
-|                                    |   SLOTS: < BODY: h18646 > ]                                                      |
+| It's_Great_to_Be_Young_(1956_film) | [ TOP: h422                                                                      |
+|                                    |   INDEX: x418                                                                    |
+|                                    |   RELS: < [ appos LBL: h417 ARG0: e414 ARG1: x415 ARG2: i416 ]                   |
+|                                    |           [ def_udef_a_q LBL: h426 ARG0: x423 RSTR: h424 BODY: h425 ]            |
+|                                    |           [ compound LBL: h413 ARG0: e410 ARG1: u411 ARG2: u412 ]                |
+|                                    |           [ proper_q LBL: h408 ARG0: x405 [ x NUM: sg ] RSTR: h406 BODY: h407 ]  |
+|                                    |           [ yofc LBL: h404 ARG0: x403 CARG: "1956" ]                             |
+|                                    |           [ _film_n_1 LBL: h396 ARG0: x395 ]                                     |
+|                                    |           [ explicit_or_proper_q LBL: h421 ARG0: x418 RSTR: h419 BODY: h420 ]    |
+|                                    |           [ named LBL: h394 ARG0: x393 CARG: "It's Great to Be Young" ] >        |
+|                                    |   HCONS: < h406 qeq h404 h424 qeq h396 h419 qeq h394 >                           |
+|                                    |   EQS: < x405 eq x403 h413 eq h409 u412 eq x405 h413 eq h396 u411 eq x395 x423   |
+|                                    | eq x395 h417 eq h427 i416 eq x423 x418 eq x393 h417 eq h422 x415 eq x418 >       |
+|                                    |   SLOTS: < BODY: h420 > ]                                                        |
 +------------------------------------+----------------------------------------------------------------------------------+
-| Louis_Levy                         | [ TOP: h18655                                                                    |
-|                                    |   INDEX: x18654                                                                  |
-|                                    |   RELS: < [ named LBL: h18655 ARG0: x18654 CARG: "Louis Levy" ] > ]              |
+| Louis_Levy                         | [ TOP: h429                                                                      |
+|                                    |   INDEX: x428                                                                    |
+|                                    |   RELS: < [ named LBL: h429 ARG0: x428 CARG: "Louis Levy" ] > ]                  |
 +------------------------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -167,34 +151,29 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id1741_185_555
 +---------------+------------------------------------+------------+----------------------------------------------------------------------------------+
 | Edge          | Parent                             | Child      | Generated SEMENT                                                                 |
 +---------------+------------------------------------+------------+----------------------------------------------------------------------------------+
-| musicComposer | It's_Great_to_Be_Young_(1956_film) | Louis_Levy | [ TOP: h18659                                                                    |
-|               |                                    |            |   INDEX: e18656 [ e TENSE: tensed ]                                              |
-|               |                                    |            |   RELS: < [ _feature_v_cause LBL: h18659 ARG0: e18656 ARG1: i18657 ARG2: i18658  |
-|               |                                    |            | ]                                                                                |
-|               |                                    |            |           [ def_udef_a_q LBL: h18674 ARG0: x18671 RSTR: h18672 BODY: h18673 ]    |
-|               |                                    |            |           [ _compose_v_1 LBL: h18663 ARG0: e18660 ARG1: i18661 ARG2: i18662 ]    |
-|               |                                    |            |           [ explicit_or_proper_q LBL: h18667 ARG0: x18664 RSTR: h18665 BODY:     |
-|               |                                    |            | h18666 ]                                                                         |
-|               |                                    |            |           [ named LBL: h18655 ARG0: x18654 CARG: "Louis Levy" ]                  |
-|               |                                    |            |           [ _music_n_1 LBL: h18670 ARG0: x18669 ]                                |
-|               |                                    |            |           [ appos LBL: h18643 ARG0: e18640 ARG1: x18641 ARG2: i18642 ]           |
-|               |                                    |            |           [ def_udef_a_q LBL: h18652 ARG0: x18649 RSTR: h18650 BODY: h18651 ]    |
-|               |                                    |            |           [ compound LBL: h18639 ARG0: e18636 ARG1: u18637 ARG2: u18638 ]        |
-|               |                                    |            |           [ proper_q LBL: h18634 ARG0: x18631 [ x NUM: sg ] RSTR: h18632 BODY:   |
-|               |                                    |            | h18633 ]                                                                         |
-|               |                                    |            |           [ yofc LBL: h18630 ARG0: x18629 CARG: "1956" ]                         |
-|               |                                    |            |           [ _film_n_1 LBL: h18622 ARG0: x18621 ]                                 |
-|               |                                    |            |           [ explicit_or_proper_q LBL: h18647 ARG0: x18644 RSTR: h18645 BODY:     |
-|               |                                    |            | h18646 ]                                                                         |
-|               |                                    |            |           [ named LBL: h18620 ARG0: x18619 CARG: "It's Great to Be Young" ] >    |
-|               |                                    |            |   HCONS: < h18665 qeq h18655 h18672 qeq h18670 h18632 qeq h18630 h18650 qeq      |
-|               |                                    |            | h18622 h18645 qeq h18620 >                                                       |
-|               |                                    |            |   ICONS: < e18660 topic i18662 >                                                 |
-|               |                                    |            |   EQS: < x18664 eq x18654 h18663 eq h18668 i18661 eq x18664 h18663 eq h18670     |
-|               |                                    |            | i18662 eq x18669 x18671 eq x18669 h18659 eq h18675 i18658 eq x18671 x18631 eq    |
-|               |                                    |            | x18629 h18639 eq h18635 u18638 eq x18631 h18639 eq h18622 u18637 eq x18621       |
-|               |                                    |            | x18649 eq x18621 h18643 eq h18653 i18642 eq x18649 x18644 eq x18619 h18643 eq    |
-|               |                                    |            | h18648 x18641 eq x18644 h18659 eq h18648 i18657 eq x18644 > ]                    |
+| musicComposer | It's_Great_to_Be_Young_(1956_film) | Louis_Levy | [ TOP: h433                                                                      |
+|               |                                    |            |   INDEX: e430 [ e TENSE: tensed ]                                                |
+|               |                                    |            |   RELS: < [ _feature_v_cause LBL: h433 ARG0: e430 ARG1: i431 ARG2: i432 ]        |
+|               |                                    |            |           [ def_udef_a_q LBL: h448 ARG0: x445 RSTR: h446 BODY: h447 ]            |
+|               |                                    |            |           [ _compose_v_1 LBL: h437 ARG0: e434 ARG1: i435 ARG2: i436 ]            |
+|               |                                    |            |           [ explicit_or_proper_q LBL: h441 ARG0: x438 RSTR: h439 BODY: h440 ]    |
+|               |                                    |            |           [ named LBL: h429 ARG0: x428 CARG: "Louis Levy" ]                      |
+|               |                                    |            |           [ _music_n_1 LBL: h444 ARG0: x443 ]                                    |
+|               |                                    |            |           [ appos LBL: h417 ARG0: e414 ARG1: x415 ARG2: i416 ]                   |
+|               |                                    |            |           [ def_udef_a_q LBL: h426 ARG0: x423 RSTR: h424 BODY: h425 ]            |
+|               |                                    |            |           [ compound LBL: h413 ARG0: e410 ARG1: u411 ARG2: u412 ]                |
+|               |                                    |            |           [ proper_q LBL: h408 ARG0: x405 [ x NUM: sg ] RSTR: h406 BODY: h407 ]  |
+|               |                                    |            |           [ yofc LBL: h404 ARG0: x403 CARG: "1956" ]                             |
+|               |                                    |            |           [ _film_n_1 LBL: h396 ARG0: x395 ]                                     |
+|               |                                    |            |           [ explicit_or_proper_q LBL: h421 ARG0: x418 RSTR: h419 BODY: h420 ]    |
+|               |                                    |            |           [ named LBL: h394 ARG0: x393 CARG: "It's Great to Be Young" ] >        |
+|               |                                    |            |   HCONS: < h439 qeq h429 h446 qeq h444 h406 qeq h404 h424 qeq h396 h419 qeq h394 |
+|               |                                    |            | >                                                                                |
+|               |                                    |            |   ICONS: < e434 topic i436 >                                                     |
+|               |                                    |            |   EQS: < x438 eq x428 h437 eq h442 i435 eq x438 h437 eq h444 i436 eq x443 x445   |
+|               |                                    |            | eq x443 h433 eq h449 i432 eq x445 x405 eq x403 h413 eq h409 u412 eq x405 h413 eq |
+|               |                                    |            | h396 u411 eq x395 x423 eq x395 h417 eq h427 i416 eq x423 x418 eq x393 h417 eq    |
+|               |                                    |            | h422 x415 eq x418 h433 eq h422 i431 eq x418 > ]                                  |
 +---------------+------------------------------------+------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------------------------+

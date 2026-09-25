@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id340_269_808
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                                             GOLD OUTPUTS                                                                                            |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                                                            | Generated? |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Olga Bondareva graduated from Leningrad State University and died in Saint Petersburg. Saint Petersburg was founded on May 27, 1703.                                                   | False      |
-| Olga Bondareva's alma matter was Leningrad State University, however she died not in Leningrad, but rather in the city of Saint Petersburg. Saint Petersburg was founded May 27, 1703. | False      |
-| Saint Petersburg, founded on May 27, 1703, is the resting place of Leningrad State University alumna Olga Bondareva.                                                                   | False      |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                  GOLD OUTPUTS                                                                  |
++-----------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                       | Generated? |
++-----------------------------------------------------------------------------------------------------------------------------------+------------+
+| Saint Petersburg was founded on May 27, 1703 and has a total area of 1439.0, Olga Bondareva passed away at Saint Petersburg.      | False      |
+| Saint Petersburg, where Olga Bondareva died, was founded on May 27, 1703 and consists of a total area of 1439.0 sq/km.            | False      |
+| Saint Petersburg, where Olga Bondareva died, was founded on the 27th of May, 1703 and has a total area of approximately 1439 km2. | False      |
++-----------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------+
 |                                      NODE METRICS                                      |
@@ -56,66 +56,61 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id340_269_808
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h27348                                                                    |
-|               |   INDEX: e27345 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h27339 ARG0: e27336 ARG1: u27337 ARG2: i27338 ]      |
-|               |           [ def_udef_a_q LBL: h27343 ARG0: x27340 RSTR: h27341 BODY: h27342 ]    |
-|               |           [ of_p LBL: h27330 ARG0: e27327 ARG1: x27328 ARG2: x27329 ]            |
-|               |           [ def_implicit_q LBL: h27334 ARG0: x27331 RSTR: h27332 BODY: h27333 ]  |
-|               |           [ mofy LBL: h27319 ARG0: x27317 [ x NUM: sg ] ARG1: i27318 CARG: "May" |
+| Original      | [ TOP: h5433                                                                     |
+|               |   INDEX: e5430 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _on_p_temp LBL: h5424 ARG0: e5421 ARG1: u5422 ARG2: i5423 ]          |
+|               |           [ def_udef_a_q LBL: h5428 ARG0: x5425 RSTR: h5426 BODY: h5427 ]        |
+|               |           [ of_p LBL: h5415 ARG0: e5412 ARG1: x5413 ARG2: x5414 ]                |
+|               |           [ def_implicit_q LBL: h5419 ARG0: x5416 RSTR: h5417 BODY: h5418 ]      |
+|               |           [ mofy LBL: h5404 ARG0: x5402 [ x NUM: sg ] ARG1: i5403 CARG: "May" ]  |
+|               |           [ dofm LBL: h5401 ARG0: x5399 ARG1: i5400 CARG: "27th" ]               |
+|               |           [ proper_q LBL: h5410 ARG0: x5407 RSTR: h5408 BODY: h5409 ]            |
+|               |           [ yofc LBL: h5406 ARG0: x5405 CARG: "1703" ]                           |
+|               |           [ _found_v_1 LBL: h5433 ARG0: e5430 ARG1: i5431 ARG2: i5432 ]          |
+|               |           [ explicit_or_proper_q LBL: h5437 ARG0: x5434 RSTR: h5435 BODY: h5436  |
 |               | ]                                                                                |
-|               |           [ dofm LBL: h27316 ARG0: x27314 ARG1: i27315 CARG: "27th" ]            |
-|               |           [ proper_q LBL: h27325 ARG0: x27322 RSTR: h27323 BODY: h27324 ]        |
-|               |           [ yofc LBL: h27321 ARG0: x27320 CARG: "1703" ]                         |
-|               |           [ _found_v_1 LBL: h27348 ARG0: e27345 ARG1: i27346 ARG2: i27347 ]      |
-|               |           [ explicit_or_proper_q LBL: h27352 ARG0: x27349 RSTR: h27350 BODY:     |
-|               | h27351 ]                                                                         |
-|               |           [ named LBL: h27313 ARG0: x27312 CARG: "Saint Petersburg" ] >          |
-|               |   HCONS: < h27332 qeq h27319 h27323 qeq h27321 h27341 qeq h27316 h27350 qeq      |
-|               | h27313 >                                                                         |
-|               |   EQS: < x27331 eq x27317 h27330 eq h27335 x27329 eq x27331 x27322 eq x27320     |
-|               | h27316 eq h27326 i27315 eq x27322 h27330 eq h27316 x27328 eq x27314 x27340 eq    |
-|               | x27314 h27339 eq h27344 i27338 eq x27340 x27349 eq x27312 h27348 eq h27353       |
-|               | i27347 eq x27349 h27339 eq h27348 u27337 eq e27345 >                             |
-|               |   SLOTS: < ARG1: i27346 > ]                                                      |
+|               |           [ named LBL: h5398 ARG0: x5397 CARG: "Saint Petersburg" ] >            |
+|               |   HCONS: < h5417 qeq h5404 h5408 qeq h5406 h5426 qeq h5401 h5435 qeq h5398 >     |
+|               |   EQS: < x5416 eq x5402 h5415 eq h5420 x5414 eq x5416 x5407 eq x5405 h5401 eq    |
+|               | h5411 i5400 eq x5407 h5415 eq h5401 x5413 eq x5399 x5425 eq x5399 h5424 eq h5429 |
+|               | i5423 eq x5425 x5434 eq x5397 h5433 eq h5438 i5432 eq x5434 h5424 eq h5433 u5422 |
+|               | eq e5430 >                                                                       |
+|               |   SLOTS: < ARG1: i5431 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h27339                                                                    |
-|               |   INDEX: e27345 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h27339 ARG0: e27336 ARG1: e27345 ARG2: x27314 ]      |
-|               |           [ def_udef_a_q LBL: h27343 ARG0: x27314 RSTR: h27341 BODY: h27342 ]    |
-|               |           [ of_p LBL: h27316 ARG0: e27327 ARG1: x27314 ARG2: x27317 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ def_implicit_q LBL: h27334 ARG0: x27317 RSTR: h27332 BODY: h27333 ]  |
-|               |           [ mofy LBL: h27319 ARG0: x27317 ARG1: i27318 CARG: "May" ]             |
-|               |           [ dofm LBL: h27316 ARG0: x27314 ARG1: x27320 CARG: "27th" ]            |
-|               |           [ proper_q LBL: h27325 ARG0: x27320 RSTR: h27323 BODY: h27324 ]        |
-|               |           [ yofc LBL: h27321 ARG0: x27320 CARG: "1703" ]                         |
-|               |           [ _found_v_1 LBL: h27339 ARG0: e27345 ARG1: i27346 ARG2: x27312 ]      |
-|               |           [ explicit_or_proper_q LBL: h27352 ARG0: x27312 RSTR: h27350 BODY:     |
-|               | h27351 ]                                                                         |
-|               |           [ named LBL: h27313 ARG0: x27312 CARG: "Saint Petersburg" ] >          |
-|               |   HCONS: < h27332 qeq h27319 h27323 qeq h27321 h27341 qeq h27316 h27350 qeq      |
-|               | h27313 >                                                                         |
-|               |   SLOTS: < ARG1: i27346 > ]                                                      |
+| EQs Collapsed | [ TOP: h5424                                                                     |
+|               |   INDEX: e5430 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _on_p_temp LBL: h5424 ARG0: e5421 ARG1: e5430 ARG2: x5399 ]          |
+|               |           [ def_udef_a_q LBL: h5428 ARG0: x5399 RSTR: h5426 BODY: h5427 ]        |
+|               |           [ of_p LBL: h5401 ARG0: e5412 ARG1: x5399 ARG2: x5402 [ x NUM: sg ] ]  |
+|               |           [ def_implicit_q LBL: h5419 ARG0: x5402 RSTR: h5417 BODY: h5418 ]      |
+|               |           [ mofy LBL: h5404 ARG0: x5402 ARG1: i5403 CARG: "May" ]                |
+|               |           [ dofm LBL: h5401 ARG0: x5399 ARG1: x5405 CARG: "27th" ]               |
+|               |           [ proper_q LBL: h5410 ARG0: x5405 RSTR: h5408 BODY: h5409 ]            |
+|               |           [ yofc LBL: h5406 ARG0: x5405 CARG: "1703" ]                           |
+|               |           [ _found_v_1 LBL: h5424 ARG0: e5430 ARG1: i5431 ARG2: x5397 ]          |
+|               |           [ explicit_or_proper_q LBL: h5437 ARG0: x5397 RSTR: h5435 BODY: h5436  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5398 ARG0: x5397 CARG: "Saint Petersburg" ] >            |
+|               |   HCONS: < h5417 qeq h5404 h5408 qeq h5406 h5426 qeq h5401 h5435 qeq h5398 >     |
+|               |   SLOTS: < ARG1: i5431 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h27354                                                                    |
-|               |   INDEX: e27345 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h27339 ARG0: e27336 ARG1: e27345 ARG2: x27314 ]      |
-|               |           [ def_udef_a_q LBL: h27343 ARG0: x27314 RSTR: h27341 BODY: h27342 ]    |
-|               |           [ of_p LBL: h27316 ARG0: e27327 ARG1: x27314 ARG2: x27317 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ def_implicit_q LBL: h27334 ARG0: x27317 RSTR: h27332 BODY: h27333 ]  |
-|               |           [ mofy LBL: h27319 ARG0: x27317 ARG1: i27318 CARG: "May" ]             |
-|               |           [ dofm LBL: h27316 ARG0: x27314 ARG1: x27320 CARG: "27th" ]            |
-|               |           [ proper_q LBL: h27325 ARG0: x27320 RSTR: h27323 BODY: h27324 ]        |
-|               |           [ yofc LBL: h27321 ARG0: x27320 CARG: "1703" ]                         |
-|               |           [ _found_v_1 LBL: h27339 ARG0: e27345 ARG1: i27346 ARG2: x27312 ]      |
-|               |           [ explicit_or_proper_q LBL: h27352 ARG0: x27312 RSTR: h27350 BODY:     |
-|               | h27351 ]                                                                         |
-|               |           [ named LBL: h27313 ARG0: x27312 CARG: "Saint Petersburg" ] >          |
-|               |   HCONS: < h27332 qeq h27319 h27323 qeq h27321 h27341 qeq h27316 h27350 qeq      |
-|               | h27313 h27354 qeq h27339 >                                                       |
-|               |   SLOTS: < ARG1: i27346 > ]                                                      |
+| Prepped       | [ TOP: h5439                                                                     |
+|               |   INDEX: e5430 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _on_p_temp LBL: h5424 ARG0: e5421 ARG1: e5430 ARG2: x5399 ]          |
+|               |           [ def_udef_a_q LBL: h5428 ARG0: x5399 RSTR: h5426 BODY: h5427 ]        |
+|               |           [ of_p LBL: h5401 ARG0: e5412 ARG1: x5399 ARG2: x5402 [ x NUM: sg ] ]  |
+|               |           [ def_implicit_q LBL: h5419 ARG0: x5402 RSTR: h5417 BODY: h5418 ]      |
+|               |           [ mofy LBL: h5404 ARG0: x5402 ARG1: i5403 CARG: "May" ]                |
+|               |           [ dofm LBL: h5401 ARG0: x5399 ARG1: x5405 CARG: "27th" ]               |
+|               |           [ proper_q LBL: h5410 ARG0: x5405 RSTR: h5408 BODY: h5409 ]            |
+|               |           [ yofc LBL: h5406 ARG0: x5405 CARG: "1703" ]                           |
+|               |           [ _found_v_1 LBL: h5424 ARG0: e5430 ARG1: i5431 ARG2: x5397 ]          |
+|               |           [ explicit_or_proper_q LBL: h5437 ARG0: x5397 RSTR: h5435 BODY: h5436  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5398 ARG0: x5397 CARG: "Saint Petersburg" ] >            |
+|               |   HCONS: < h5417 qeq h5404 h5408 qeq h5406 h5426 qeq h5401 h5435 qeq h5398 h5439 |
+|               | qeq h5424 >                                                                      |
+|               |   SLOTS: < ARG1: i5431 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------+
@@ -123,22 +118,21 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id340_269_808
 +------------------+----------------------------------------------------------------------------------+
 | Node             | Generated SEMENT                                                                 |
 +------------------+----------------------------------------------------------------------------------+
-| Saint_Petersburg | [ TOP: h27313                                                                    |
-|                  |   INDEX: x27312                                                                  |
-|                  |   RELS: < [ named LBL: h27313 ARG0: x27312 CARG: "Saint Petersburg" ] > ]        |
+| Saint_Petersburg | [ TOP: h5398                                                                     |
+|                  |   INDEX: x5397                                                                   |
+|                  |   RELS: < [ named LBL: h5398 ARG0: x5397 CARG: "Saint Petersburg" ] > ]          |
 +------------------+----------------------------------------------------------------------------------+
-| 1703-05-27       | [ TOP: h27316                                                                    |
-|                  |   INDEX: x27314                                                                  |
-|                  |   RELS: < [ of_p LBL: h27330 ARG0: e27327 ARG1: x27328 ARG2: x27329 ]            |
-|                  |           [ def_implicit_q LBL: h27334 ARG0: x27331 RSTR: h27332 BODY: h27333 ]  |
-|                  |           [ mofy LBL: h27319 ARG0: x27317 [ x NUM: sg ] ARG1: i27318 CARG: "May" |
-|                  | ]                                                                                |
-|                  |           [ dofm LBL: h27316 ARG0: x27314 ARG1: i27315 CARG: "27th" ]            |
-|                  |           [ proper_q LBL: h27325 ARG0: x27322 RSTR: h27323 BODY: h27324 ]        |
-|                  |           [ yofc LBL: h27321 ARG0: x27320 CARG: "1703" ] >                       |
-|                  |   HCONS: < h27332 qeq h27319 h27323 qeq h27321 >                                 |
-|                  |   EQS: < x27331 eq x27317 h27330 eq h27335 x27329 eq x27331 x27322 eq x27320     |
-|                  | h27316 eq h27326 i27315 eq x27322 h27330 eq h27316 x27328 eq x27314 > ]          |
+| 1703-05-27       | [ TOP: h5401                                                                     |
+|                  |   INDEX: x5399                                                                   |
+|                  |   RELS: < [ of_p LBL: h5415 ARG0: e5412 ARG1: x5413 ARG2: x5414 ]                |
+|                  |           [ def_implicit_q LBL: h5419 ARG0: x5416 RSTR: h5417 BODY: h5418 ]      |
+|                  |           [ mofy LBL: h5404 ARG0: x5402 [ x NUM: sg ] ARG1: i5403 CARG: "May" ]  |
+|                  |           [ dofm LBL: h5401 ARG0: x5399 ARG1: i5400 CARG: "27th" ]               |
+|                  |           [ proper_q LBL: h5410 ARG0: x5407 RSTR: h5408 BODY: h5409 ]            |
+|                  |           [ yofc LBL: h5406 ARG0: x5405 CARG: "1703" ] >                         |
+|                  |   HCONS: < h5417 qeq h5404 h5408 qeq h5406 >                                     |
+|                  |   EQS: < x5416 eq x5402 h5415 eq h5420 x5414 eq x5416 x5407 eq x5405 h5401 eq    |
+|                  | h5411 i5400 eq x5407 h5415 eq h5401 x5413 eq x5399 > ]                           |
 +------------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------------------------+
@@ -146,28 +140,26 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id340_269_808
 +--------------+------------------+------------+----------------------------------------------------------------------------------+
 | Edge         | Parent           | Child      | Generated SEMENT                                                                 |
 +--------------+------------------+------------+----------------------------------------------------------------------------------+
-| foundingDate | Saint_Petersburg | 1703-05-27 | [ TOP: h27348                                                                    |
-|              |                  |            |   INDEX: e27345 [ e TENSE: tensed ]                                              |
-|              |                  |            |   RELS: < [ _on_p_temp LBL: h27339 ARG0: e27336 ARG1: u27337 ARG2: i27338 ]      |
-|              |                  |            |           [ def_udef_a_q LBL: h27343 ARG0: x27340 RSTR: h27341 BODY: h27342 ]    |
-|              |                  |            |           [ of_p LBL: h27330 ARG0: e27327 ARG1: x27328 ARG2: x27329 ]            |
-|              |                  |            |           [ def_implicit_q LBL: h27334 ARG0: x27331 RSTR: h27332 BODY: h27333 ]  |
-|              |                  |            |           [ mofy LBL: h27319 ARG0: x27317 [ x NUM: sg ] ARG1: i27318 CARG: "May" |
+| foundingDate | Saint_Petersburg | 1703-05-27 | [ TOP: h5433                                                                     |
+|              |                  |            |   INDEX: e5430 [ e TENSE: tensed ]                                               |
+|              |                  |            |   RELS: < [ _on_p_temp LBL: h5424 ARG0: e5421 ARG1: u5422 ARG2: i5423 ]          |
+|              |                  |            |           [ def_udef_a_q LBL: h5428 ARG0: x5425 RSTR: h5426 BODY: h5427 ]        |
+|              |                  |            |           [ of_p LBL: h5415 ARG0: e5412 ARG1: x5413 ARG2: x5414 ]                |
+|              |                  |            |           [ def_implicit_q LBL: h5419 ARG0: x5416 RSTR: h5417 BODY: h5418 ]      |
+|              |                  |            |           [ mofy LBL: h5404 ARG0: x5402 [ x NUM: sg ] ARG1: i5403 CARG: "May" ]  |
+|              |                  |            |           [ dofm LBL: h5401 ARG0: x5399 ARG1: i5400 CARG: "27th" ]               |
+|              |                  |            |           [ proper_q LBL: h5410 ARG0: x5407 RSTR: h5408 BODY: h5409 ]            |
+|              |                  |            |           [ yofc LBL: h5406 ARG0: x5405 CARG: "1703" ]                           |
+|              |                  |            |           [ _found_v_1 LBL: h5433 ARG0: e5430 ARG1: i5431 ARG2: i5432 ]          |
+|              |                  |            |           [ explicit_or_proper_q LBL: h5437 ARG0: x5434 RSTR: h5435 BODY: h5436  |
 |              |                  |            | ]                                                                                |
-|              |                  |            |           [ dofm LBL: h27316 ARG0: x27314 ARG1: i27315 CARG: "27th" ]            |
-|              |                  |            |           [ proper_q LBL: h27325 ARG0: x27322 RSTR: h27323 BODY: h27324 ]        |
-|              |                  |            |           [ yofc LBL: h27321 ARG0: x27320 CARG: "1703" ]                         |
-|              |                  |            |           [ _found_v_1 LBL: h27348 ARG0: e27345 ARG1: i27346 ARG2: i27347 ]      |
-|              |                  |            |           [ explicit_or_proper_q LBL: h27352 ARG0: x27349 RSTR: h27350 BODY:     |
-|              |                  |            | h27351 ]                                                                         |
-|              |                  |            |           [ named LBL: h27313 ARG0: x27312 CARG: "Saint Petersburg" ] >          |
-|              |                  |            |   HCONS: < h27332 qeq h27319 h27323 qeq h27321 h27341 qeq h27316 h27350 qeq      |
-|              |                  |            | h27313 >                                                                         |
-|              |                  |            |   EQS: < x27331 eq x27317 h27330 eq h27335 x27329 eq x27331 x27322 eq x27320     |
-|              |                  |            | h27316 eq h27326 i27315 eq x27322 h27330 eq h27316 x27328 eq x27314 x27340 eq    |
-|              |                  |            | x27314 h27339 eq h27344 i27338 eq x27340 x27349 eq x27312 h27348 eq h27353       |
-|              |                  |            | i27347 eq x27349 h27339 eq h27348 u27337 eq e27345 >                             |
-|              |                  |            |   SLOTS: < ARG1: i27346 > ]                                                      |
+|              |                  |            |           [ named LBL: h5398 ARG0: x5397 CARG: "Saint Petersburg" ] >            |
+|              |                  |            |   HCONS: < h5417 qeq h5404 h5408 qeq h5406 h5426 qeq h5401 h5435 qeq h5398 >     |
+|              |                  |            |   EQS: < x5416 eq x5402 h5415 eq h5420 x5414 eq x5416 x5407 eq x5405 h5401 eq    |
+|              |                  |            | h5411 i5400 eq x5407 h5415 eq h5401 x5413 eq x5399 x5425 eq x5399 h5424 eq h5429 |
+|              |                  |            | i5423 eq x5425 x5434 eq x5397 h5433 eq h5438 i5432 eq x5434 h5424 eq h5433 u5422 |
+|              |                  |            | eq e5430 >                                                                       |
+|              |                  |            |   SLOTS: < ARG1: i5431 > ]                                                       |
 +--------------+------------------+------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------+

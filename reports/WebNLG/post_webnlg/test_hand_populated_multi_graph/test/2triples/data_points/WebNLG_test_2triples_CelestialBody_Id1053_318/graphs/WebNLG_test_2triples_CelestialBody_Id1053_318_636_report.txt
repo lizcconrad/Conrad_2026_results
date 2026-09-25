@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_CelestialBody_Id1053_318_636
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+------------------------------------------------------------------------------------------+
-|                                       GOLD OUTPUTS                                       |
-+-----------------------------------------------------------------------------+------------+
-| Gold Output                                                                 | Generated? |
-+-----------------------------------------------------------------------------+------------+
-| 1147 Stavropolis was discovered by Grigory Neujmin born on January 1, 1886. | False      |
-| Grigory Neujmin, born on Jan 1, 1886, discovered the 1147 Stavropolis.      | False      |
-| Grigory Neujmin, born on January 1, 1886, discovered 1147 Stavropolis.      | False      |
-+-----------------------------------------------------------------------------+------------+
++-----------------------------------------------------------------------------------------------+
+|                                          GOLD OUTPUTS                                         |
++----------------------------------------------------------------------------------+------------+
+| Gold Output                                                                      | Generated? |
++----------------------------------------------------------------------------------+------------+
+| Grigory Neujmin born in Tbilisi discovered 1147 Stavropolis.                     | False      |
+| Grigory Neujmin was born in the city of Tbilisi and discovered 1147 Stavropolis. | False      |
+| Grigory Neujmin, the man who found 1147 Stavropolis, was born in Tbilisi.        | False      |
++----------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------+
 |                                      NODE METRICS                                      |
@@ -56,73 +56,65 @@ GRAPH NAME: WebNLG_test_2triples_CelestialBody_Id1053_318_636
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h20438                                                                    |
-|               |   INDEX: e20435 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _discover_v_1 LBL: h20438 ARG0: e20435 ARG1: i20436 ARG2: i20437 ]   |
-|               |           [ explicit_or_proper_q LBL: h20447 ARG0: x20444 RSTR: h20445 BODY:     |
-|               | h20446 ]                                                                         |
-|               |           [ named LBL: h20432 ARG0: x20431 CARG: "1147 Stavropolis" ]            |
-|               |           [ explicit_or_proper_q LBL: h20442 ARG0: x20439 RSTR: h20440 BODY:     |
-|               | h20441 ]                                                                         |
-|               |           [ named LBL: h20434 ARG0: x20433 CARG: "Grigory Neujmin" ] >           |
-|               |   HCONS: < h20445 qeq h20432 h20440 qeq h20434 >                                 |
-|               |   EQS: < x20444 eq x20431 h20438 eq h20448 i20437 eq x20444 x20439 eq x20433     |
-|               | h20438 eq h20443 i20436 eq x20439 > ]                                            |
+| Original      | [ TOP: h898                                                                      |
+|               |   INDEX: e895 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _discover_v_1 LBL: h898 ARG0: e895 ARG1: i896 ARG2: i897 ]           |
+|               |           [ explicit_or_proper_q LBL: h907 ARG0: x904 RSTR: h905 BODY: h906 ]    |
+|               |           [ named LBL: h892 ARG0: x891 CARG: "1147 Stavropolis" ]                |
+|               |           [ explicit_or_proper_q LBL: h902 ARG0: x899 RSTR: h900 BODY: h901 ]    |
+|               |           [ named LBL: h894 ARG0: x893 CARG: "Grigory Neujmin" ] >               |
+|               |   HCONS: < h905 qeq h892 h900 qeq h894 >                                         |
+|               |   EQS: < x904 eq x891 h898 eq h908 i897 eq x904 x899 eq x893 h898 eq h903 i896   |
+|               | eq x899 > ]                                                                      |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h20438                                                                    |
-|               |   INDEX: e20435 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _discover_v_1 LBL: h20438 ARG0: e20435 ARG1: x20433 ARG2: x20431 ]   |
-|               |           [ explicit_or_proper_q LBL: h20447 ARG0: x20431 RSTR: h20445 BODY:     |
-|               | h20446 ]                                                                         |
-|               |           [ named LBL: h20432 ARG0: x20431 CARG: "1147 Stavropolis" ]            |
-|               |           [ explicit_or_proper_q LBL: h20442 ARG0: x20433 RSTR: h20440 BODY:     |
-|               | h20441 ]                                                                         |
-|               |           [ named LBL: h20434 ARG0: x20433 CARG: "Grigory Neujmin" ] >           |
-|               |   HCONS: < h20445 qeq h20432 h20440 qeq h20434 > ]                               |
+| EQs Collapsed | [ TOP: h898                                                                      |
+|               |   INDEX: e895 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _discover_v_1 LBL: h898 ARG0: e895 ARG1: x893 ARG2: x891 ]           |
+|               |           [ explicit_or_proper_q LBL: h907 ARG0: x891 RSTR: h905 BODY: h906 ]    |
+|               |           [ named LBL: h892 ARG0: x891 CARG: "1147 Stavropolis" ]                |
+|               |           [ explicit_or_proper_q LBL: h902 ARG0: x893 RSTR: h900 BODY: h901 ]    |
+|               |           [ named LBL: h894 ARG0: x893 CARG: "Grigory Neujmin" ] >               |
+|               |   HCONS: < h905 qeq h892 h900 qeq h894 > ]                                       |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h20449                                                                    |
-|               |   INDEX: e20435 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _discover_v_1 LBL: h20438 ARG0: e20435 ARG1: x20433 ARG2: x20431 ]   |
-|               |           [ explicit_or_proper_q LBL: h20447 ARG0: x20431 RSTR: h20445 BODY:     |
-|               | h20446 ]                                                                         |
-|               |           [ named LBL: h20432 ARG0: x20431 CARG: "1147 Stavropolis" ]            |
-|               |           [ explicit_or_proper_q LBL: h20442 ARG0: x20433 RSTR: h20440 BODY:     |
-|               | h20441 ]                                                                         |
-|               |           [ named LBL: h20434 ARG0: x20433 CARG: "Grigory Neujmin" ] >           |
-|               |   HCONS: < h20445 qeq h20432 h20440 qeq h20434 h20449 qeq h20438 > ]             |
+| Prepped       | [ TOP: h909                                                                      |
+|               |   INDEX: e895 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _discover_v_1 LBL: h898 ARG0: e895 ARG1: x893 ARG2: x891 ]           |
+|               |           [ explicit_or_proper_q LBL: h907 ARG0: x891 RSTR: h905 BODY: h906 ]    |
+|               |           [ named LBL: h892 ARG0: x891 CARG: "1147 Stavropolis" ]                |
+|               |           [ explicit_or_proper_q LBL: h902 ARG0: x893 RSTR: h900 BODY: h901 ]    |
+|               |           [ named LBL: h894 ARG0: x893 CARG: "Grigory Neujmin" ] >               |
+|               |   HCONS: < h905 qeq h892 h900 qeq h894 h909 qeq h898 > ]                         |
 +---------------+----------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-|                                         NODE SEMENTS                                         |
-+------------------+---------------------------------------------------------------------------+
-| Node             | Generated SEMENT                                                          |
-+------------------+---------------------------------------------------------------------------+
-| 1147_Stavropolis | [ TOP: h20432                                                             |
-|                  |   INDEX: x20431                                                           |
-|                  |   RELS: < [ named LBL: h20432 ARG0: x20431 CARG: "1147 Stavropolis" ] > ] |
-+------------------+---------------------------------------------------------------------------+
-| Grigory_Neujmin  | [ TOP: h20434                                                             |
-|                  |   INDEX: x20433                                                           |
-|                  |   RELS: < [ named LBL: h20434 ARG0: x20433 CARG: "Grigory Neujmin" ] > ]  |
-+------------------+---------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------+
+|                                       NODE SEMENTS                                       |
++------------------+-----------------------------------------------------------------------+
+| Node             | Generated SEMENT                                                      |
++------------------+-----------------------------------------------------------------------+
+| 1147_Stavropolis | [ TOP: h892                                                           |
+|                  |   INDEX: x891                                                         |
+|                  |   RELS: < [ named LBL: h892 ARG0: x891 CARG: "1147 Stavropolis" ] > ] |
++------------------+-----------------------------------------------------------------------+
+| Grigory_Neujmin  | [ TOP: h894                                                           |
+|                  |   INDEX: x893                                                         |
+|                  |   RELS: < [ named LBL: h894 ARG0: x893 CARG: "Grigory Neujmin" ] > ]  |
++------------------+-----------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------------------------------------------+
 |                                                            EDGE SEMENTS                                                            |
 +------------+------------------+-----------------+----------------------------------------------------------------------------------+
 | Edge       | Parent           | Child           | Generated SEMENT                                                                 |
 +------------+------------------+-----------------+----------------------------------------------------------------------------------+
-| discoverer | 1147_Stavropolis | Grigory_Neujmin | [ TOP: h20438                                                                    |
-|            |                  |                 |   INDEX: e20435 [ e TENSE: tensed ]                                              |
-|            |                  |                 |   RELS: < [ _discover_v_1 LBL: h20438 ARG0: e20435 ARG1: i20436 ARG2: i20437 ]   |
-|            |                  |                 |           [ explicit_or_proper_q LBL: h20447 ARG0: x20444 RSTR: h20445 BODY:     |
-|            |                  |                 | h20446 ]                                                                         |
-|            |                  |                 |           [ named LBL: h20432 ARG0: x20431 CARG: "1147 Stavropolis" ]            |
-|            |                  |                 |           [ explicit_or_proper_q LBL: h20442 ARG0: x20439 RSTR: h20440 BODY:     |
-|            |                  |                 | h20441 ]                                                                         |
-|            |                  |                 |           [ named LBL: h20434 ARG0: x20433 CARG: "Grigory Neujmin" ] >           |
-|            |                  |                 |   HCONS: < h20445 qeq h20432 h20440 qeq h20434 >                                 |
-|            |                  |                 |   EQS: < x20444 eq x20431 h20438 eq h20448 i20437 eq x20444 x20439 eq x20433     |
-|            |                  |                 | h20438 eq h20443 i20436 eq x20439 > ]                                            |
+| discoverer | 1147_Stavropolis | Grigory_Neujmin | [ TOP: h898                                                                      |
+|            |                  |                 |   INDEX: e895 [ e TENSE: tensed ]                                                |
+|            |                  |                 |   RELS: < [ _discover_v_1 LBL: h898 ARG0: e895 ARG1: i896 ARG2: i897 ]           |
+|            |                  |                 |           [ explicit_or_proper_q LBL: h907 ARG0: x904 RSTR: h905 BODY: h906 ]    |
+|            |                  |                 |           [ named LBL: h892 ARG0: x891 CARG: "1147 Stavropolis" ]                |
+|            |                  |                 |           [ explicit_or_proper_q LBL: h902 ARG0: x899 RSTR: h900 BODY: h901 ]    |
+|            |                  |                 |           [ named LBL: h894 ARG0: x893 CARG: "Grigory Neujmin" ] >               |
+|            |                  |                 |   HCONS: < h905 qeq h892 h900 qeq h894 >                                         |
+|            |                  |                 |   EQS: < x904 eq x891 h898 eq h908 i897 eq x904 x899 eq x893 h898 eq h903 i896   |
+|            |                  |                 | eq x899 > ]                                                                      |
 +------------+------------------+-----------------+----------------------------------------------------------------------------------+
 
 +------------------------------------------------------------------+

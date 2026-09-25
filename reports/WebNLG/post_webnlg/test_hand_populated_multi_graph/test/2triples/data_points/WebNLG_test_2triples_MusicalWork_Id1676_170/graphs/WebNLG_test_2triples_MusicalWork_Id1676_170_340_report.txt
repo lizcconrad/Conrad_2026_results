@@ -24,15 +24,14 @@ GRAPH NAME: WebNLG_test_2triples_MusicalWork_Id1676_170_340
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                               GOLD OUTPUTS                                                                              |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                                | Generated? |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Bootleg Series Volume 1: The Quine Tapes, released by the record label Polydor Records, was preceded by the album Squeeze.                                 | False      |
-| The Bootleg Series Volume I: The Quine Tapes was recorded through Polydor Records and preceded by the Velvet Underground and album Squeeze.                | False      |
-| The Quine Tapes was preceded by Squeeze by Velvet Underground both for Bootleg Series Volume 1, which was recorded under the Polydor Records record label. | False      |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------------+
+|                                                            GOLD OUTPUTS                                                           |
++----------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                          | Generated? |
++----------------------------------------------------------------------------------------------------------------------+------------+
+| The Velvet Underground album Squeeze was followed by the rock album, The Bootleg Series Volume I: The Quine Tapes.   | False      |
+| The rock album Bootleg Series Volume 1: The Quine Tapes by the Velvet Underground was preceded by the album Squeeze. | False      |
++----------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------------------------------+
 |                                                  NODE METRICS                                                  |
@@ -56,69 +55,58 @@ GRAPH NAME: WebNLG_test_2triples_MusicalWork_Id1676_170_340
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h11244                                                                    |
-|               |   INDEX: e11241 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _precede_v_1 LBL: h11244 ARG0: e11241 ARG1: i11242 ARG2: i11243 ]    |
-|               |           [ explicit_or_proper_q LBL: h11248 ARG0: x11245 RSTR: h11246 BODY:     |
-|               | h11247 ]                                                                         |
-|               |           [ named LBL: h11211 ARG0: x11210 CARG: "Bootleg Series Volume 1: The   |
-|               | Quine Tapes" ]                                                                   |
-|               |           [ appos LBL: h11230 ARG0: e11227 ARG1: x11228 ARG2: i11229 ]           |
-|               |           [ def_udef_a_q LBL: h11239 ARG0: x11236 RSTR: h11237 BODY: h11238 ]    |
-|               |           [ compound LBL: h11221 ARG0: e11218 ARG1: u11219 ARG2: u11220 ]        |
-|               |           [ existential_q LBL: h11225 ARG0: x11222 RSTR: h11223 BODY: h11224 ]   |
-|               |           [ named LBL: h11217 ARG0: x11216 [ x NUM: sg ] CARG: "The Velvet       |
+| Original      | [ TOP: h217                                                                      |
+|               |   INDEX: e214 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _precede_v_1 LBL: h217 ARG0: e214 ARG1: i215 ARG2: i216 ]            |
+|               |           [ explicit_or_proper_q LBL: h221 ARG0: x218 RSTR: h219 BODY: h220 ]    |
+|               |           [ named LBL: h184 ARG0: x183 CARG: "Bootleg Series Volume 1: The Quine |
+|               | Tapes" ]                                                                         |
+|               |           [ appos LBL: h203 ARG0: e200 ARG1: x201 ARG2: i202 ]                   |
+|               |           [ def_udef_a_q LBL: h212 ARG0: x209 RSTR: h210 BODY: h211 ]            |
+|               |           [ compound LBL: h194 ARG0: e191 ARG1: u192 ARG2: u193 ]                |
+|               |           [ existential_q LBL: h198 ARG0: x195 RSTR: h196 BODY: h197 ]           |
+|               |           [ named LBL: h190 ARG0: x189 [ x NUM: sg ] CARG: "The Velvet           |
 |               | Underground" ]                                                                   |
-|               |           [ _album_n_1 LBL: h11215 ARG0: x11214 ]                                |
-|               |           [ explicit_or_proper_q LBL: h11234 ARG0: x11231 RSTR: h11232 BODY:     |
-|               | h11233 ]                                                                         |
-|               |           [ named LBL: h11213 ARG0: x11212 CARG: "Squeeze" ] >                   |
-|               |   HCONS: < h11246 qeq h11211 h11223 qeq h11217 h11237 qeq h11215 h11232 qeq      |
-|               | h11213 >                                                                         |
-|               |   EQS: < x11245 eq x11210 h11244 eq h11249 i11243 eq x11245 x11222 eq x11216     |
-|               | h11221 eq h11226 u11220 eq x11222 h11221 eq h11215 u11219 eq x11214 x11236 eq    |
-|               | x11214 h11230 eq h11240 i11229 eq x11236 x11231 eq x11212 h11230 eq h11235       |
-|               | x11228 eq x11231 h11244 eq h11235 i11242 eq x11231 > ]                           |
+|               |           [ _album_n_1 LBL: h188 ARG0: x187 ]                                    |
+|               |           [ explicit_or_proper_q LBL: h207 ARG0: x204 RSTR: h205 BODY: h206 ]    |
+|               |           [ named LBL: h186 ARG0: x185 CARG: "Squeeze" ] >                       |
+|               |   HCONS: < h219 qeq h184 h196 qeq h190 h210 qeq h188 h205 qeq h186 >             |
+|               |   EQS: < x218 eq x183 h217 eq h222 i216 eq x218 x195 eq x189 h194 eq h199 u193   |
+|               | eq x195 h194 eq h188 u192 eq x187 x209 eq x187 h203 eq h213 i202 eq x209 x204 eq |
+|               | x185 h203 eq h208 x201 eq x204 h217 eq h208 i215 eq x204 > ]                     |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h11230                                                                    |
-|               |   INDEX: e11241 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _precede_v_1 LBL: h11230 ARG0: e11241 ARG1: x11212 ARG2: x11210 ]    |
-|               |           [ explicit_or_proper_q LBL: h11248 ARG0: x11210 RSTR: h11246 BODY:     |
-|               | h11247 ]                                                                         |
-|               |           [ named LBL: h11211 ARG0: x11210 CARG: "Bootleg Series Volume 1: The   |
-|               | Quine Tapes" ]                                                                   |
-|               |           [ appos LBL: h11230 ARG0: e11227 ARG1: x11212 ARG2: x11214 ]           |
-|               |           [ def_udef_a_q LBL: h11239 ARG0: x11214 RSTR: h11237 BODY: h11238 ]    |
-|               |           [ compound LBL: h11215 ARG0: e11218 ARG1: x11214 ARG2: x11216 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h11225 ARG0: x11216 RSTR: h11223 BODY: h11224 ]   |
-|               |           [ named LBL: h11217 ARG0: x11216 CARG: "The Velvet Underground" ]      |
-|               |           [ _album_n_1 LBL: h11215 ARG0: x11214 ]                                |
-|               |           [ explicit_or_proper_q LBL: h11234 ARG0: x11212 RSTR: h11232 BODY:     |
-|               | h11233 ]                                                                         |
-|               |           [ named LBL: h11213 ARG0: x11212 CARG: "Squeeze" ] >                   |
-|               |   HCONS: < h11246 qeq h11211 h11223 qeq h11217 h11237 qeq h11215 h11232 qeq      |
-|               | h11213 > ]                                                                       |
+| EQs Collapsed | [ TOP: h203                                                                      |
+|               |   INDEX: e214 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _precede_v_1 LBL: h203 ARG0: e214 ARG1: x185 ARG2: x183 ]            |
+|               |           [ explicit_or_proper_q LBL: h221 ARG0: x183 RSTR: h219 BODY: h220 ]    |
+|               |           [ named LBL: h184 ARG0: x183 CARG: "Bootleg Series Volume 1: The Quine |
+|               | Tapes" ]                                                                         |
+|               |           [ appos LBL: h203 ARG0: e200 ARG1: x185 ARG2: x187 ]                   |
+|               |           [ def_udef_a_q LBL: h212 ARG0: x187 RSTR: h210 BODY: h211 ]            |
+|               |           [ compound LBL: h188 ARG0: e191 ARG1: x187 ARG2: x189 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h198 ARG0: x189 RSTR: h196 BODY: h197 ]           |
+|               |           [ named LBL: h190 ARG0: x189 CARG: "The Velvet Underground" ]          |
+|               |           [ _album_n_1 LBL: h188 ARG0: x187 ]                                    |
+|               |           [ explicit_or_proper_q LBL: h207 ARG0: x185 RSTR: h205 BODY: h206 ]    |
+|               |           [ named LBL: h186 ARG0: x185 CARG: "Squeeze" ] >                       |
+|               |   HCONS: < h219 qeq h184 h196 qeq h190 h210 qeq h188 h205 qeq h186 > ]           |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h11250                                                                    |
-|               |   INDEX: e11241 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _precede_v_1 LBL: h11230 ARG0: e11241 ARG1: x11212 ARG2: x11210 ]    |
-|               |           [ explicit_or_proper_q LBL: h11248 ARG0: x11210 RSTR: h11246 BODY:     |
-|               | h11247 ]                                                                         |
-|               |           [ named LBL: h11211 ARG0: x11210 CARG: "Bootleg Series Volume 1: The   |
-|               | Quine Tapes" ]                                                                   |
-|               |           [ appos LBL: h11230 ARG0: e11227 ARG1: x11212 ARG2: x11214 ]           |
-|               |           [ def_udef_a_q LBL: h11239 ARG0: x11214 RSTR: h11237 BODY: h11238 ]    |
-|               |           [ compound LBL: h11215 ARG0: e11218 ARG1: x11214 ARG2: x11216 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h11225 ARG0: x11216 RSTR: h11223 BODY: h11224 ]   |
-|               |           [ named LBL: h11217 ARG0: x11216 CARG: "The Velvet Underground" ]      |
-|               |           [ _album_n_1 LBL: h11215 ARG0: x11214 ]                                |
-|               |           [ explicit_or_proper_q LBL: h11234 ARG0: x11212 RSTR: h11232 BODY:     |
-|               | h11233 ]                                                                         |
-|               |           [ named LBL: h11213 ARG0: x11212 CARG: "Squeeze" ] >                   |
-|               |   HCONS: < h11246 qeq h11211 h11223 qeq h11217 h11237 qeq h11215 h11232 qeq      |
-|               | h11213 h11250 qeq h11230 > ]                                                     |
+| Prepped       | [ TOP: h223                                                                      |
+|               |   INDEX: e214 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _precede_v_1 LBL: h203 ARG0: e214 ARG1: x185 ARG2: x183 ]            |
+|               |           [ explicit_or_proper_q LBL: h221 ARG0: x183 RSTR: h219 BODY: h220 ]    |
+|               |           [ named LBL: h184 ARG0: x183 CARG: "Bootleg Series Volume 1: The Quine |
+|               | Tapes" ]                                                                         |
+|               |           [ appos LBL: h203 ARG0: e200 ARG1: x185 ARG2: x187 ]                   |
+|               |           [ def_udef_a_q LBL: h212 ARG0: x187 RSTR: h210 BODY: h211 ]            |
+|               |           [ compound LBL: h188 ARG0: e191 ARG1: x187 ARG2: x189 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h198 ARG0: x189 RSTR: h196 BODY: h197 ]           |
+|               |           [ named LBL: h190 ARG0: x189 CARG: "The Velvet Underground" ]          |
+|               |           [ _album_n_1 LBL: h188 ARG0: x187 ]                                    |
+|               |           [ explicit_or_proper_q LBL: h207 ARG0: x185 RSTR: h205 BODY: h206 ]    |
+|               |           [ named LBL: h186 ARG0: x185 CARG: "Squeeze" ] >                       |
+|               |   HCONS: < h219 qeq h184 h196 qeq h190 h210 qeq h188 h205 qeq h186 h223 qeq h203 |
+|               | > ]                                                                              |
 +---------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -126,28 +114,26 @@ GRAPH NAME: WebNLG_test_2triples_MusicalWork_Id1676_170_340
 +------------------------------------------+----------------------------------------------------------------------------------+
 | Node                                     | Generated SEMENT                                                                 |
 +------------------------------------------+----------------------------------------------------------------------------------+
-| Bootleg_Series_Volume_1:_The_Quine_Tapes | [ TOP: h11211                                                                    |
-|                                          |   INDEX: x11210                                                                  |
-|                                          |   RELS: < [ named LBL: h11211 ARG0: x11210 CARG: "Bootleg Series Volume 1: The   |
-|                                          | Quine Tapes" ] > ]                                                               |
+| Bootleg_Series_Volume_1:_The_Quine_Tapes | [ TOP: h184                                                                      |
+|                                          |   INDEX: x183                                                                    |
+|                                          |   RELS: < [ named LBL: h184 ARG0: x183 CARG: "Bootleg Series Volume 1: The Quine |
+|                                          | Tapes" ] > ]                                                                     |
 +------------------------------------------+----------------------------------------------------------------------------------+
-| Squeeze_(The_Velvet_Underground_album)   | [ TOP: h11235                                                                    |
-|                                          |   INDEX: x11231                                                                  |
-|                                          |   RELS: < [ appos LBL: h11230 ARG0: e11227 ARG1: x11228 ARG2: i11229 ]           |
-|                                          |           [ def_udef_a_q LBL: h11239 ARG0: x11236 RSTR: h11237 BODY: h11238 ]    |
-|                                          |           [ compound LBL: h11221 ARG0: e11218 ARG1: u11219 ARG2: u11220 ]        |
-|                                          |           [ existential_q LBL: h11225 ARG0: x11222 RSTR: h11223 BODY: h11224 ]   |
-|                                          |           [ named LBL: h11217 ARG0: x11216 [ x NUM: sg ] CARG: "The Velvet       |
+| Squeeze_(The_Velvet_Underground_album)   | [ TOP: h208                                                                      |
+|                                          |   INDEX: x204                                                                    |
+|                                          |   RELS: < [ appos LBL: h203 ARG0: e200 ARG1: x201 ARG2: i202 ]                   |
+|                                          |           [ def_udef_a_q LBL: h212 ARG0: x209 RSTR: h210 BODY: h211 ]            |
+|                                          |           [ compound LBL: h194 ARG0: e191 ARG1: u192 ARG2: u193 ]                |
+|                                          |           [ existential_q LBL: h198 ARG0: x195 RSTR: h196 BODY: h197 ]           |
+|                                          |           [ named LBL: h190 ARG0: x189 [ x NUM: sg ] CARG: "The Velvet           |
 |                                          | Underground" ]                                                                   |
-|                                          |           [ _album_n_1 LBL: h11215 ARG0: x11214 ]                                |
-|                                          |           [ explicit_or_proper_q LBL: h11234 ARG0: x11231 RSTR: h11232 BODY:     |
-|                                          | h11233 ]                                                                         |
-|                                          |           [ named LBL: h11213 ARG0: x11212 CARG: "Squeeze" ] >                   |
-|                                          |   HCONS: < h11223 qeq h11217 h11237 qeq h11215 h11232 qeq h11213 >               |
-|                                          |   EQS: < x11222 eq x11216 h11221 eq h11226 u11220 eq x11222 h11221 eq h11215     |
-|                                          | u11219 eq x11214 x11236 eq x11214 h11230 eq h11240 i11229 eq x11236 x11231 eq    |
-|                                          | x11212 h11230 eq h11235 x11228 eq x11231 >                                       |
-|                                          |   SLOTS: < BODY: h11233 > ]                                                      |
+|                                          |           [ _album_n_1 LBL: h188 ARG0: x187 ]                                    |
+|                                          |           [ explicit_or_proper_q LBL: h207 ARG0: x204 RSTR: h205 BODY: h206 ]    |
+|                                          |           [ named LBL: h186 ARG0: x185 CARG: "Squeeze" ] >                       |
+|                                          |   HCONS: < h196 qeq h190 h210 qeq h188 h205 qeq h186 >                           |
+|                                          |   EQS: < x195 eq x189 h194 eq h199 u193 eq x195 h194 eq h188 u192 eq x187 x209   |
+|                                          | eq x187 h203 eq h213 i202 eq x209 x204 eq x185 h203 eq h208 x201 eq x204 >       |
+|                                          |   SLOTS: < BODY: h206 > ]                                                        |
 +------------------------------------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -155,29 +141,25 @@ GRAPH NAME: WebNLG_test_2triples_MusicalWork_Id1676_170_340
 +------------+------------------------------------------+----------------------------------------+----------------------------------------------------------------------------------+
 | Edge       | Parent                                   | Child                                  | Generated SEMENT                                                                 |
 +------------+------------------------------------------+----------------------------------------+----------------------------------------------------------------------------------+
-| precededBy | Bootleg_Series_Volume_1:_The_Quine_Tapes | Squeeze_(The_Velvet_Underground_album) | [ TOP: h11244                                                                    |
-|            |                                          |                                        |   INDEX: e11241 [ e TENSE: tensed ]                                              |
-|            |                                          |                                        |   RELS: < [ _precede_v_1 LBL: h11244 ARG0: e11241 ARG1: i11242 ARG2: i11243 ]    |
-|            |                                          |                                        |           [ explicit_or_proper_q LBL: h11248 ARG0: x11245 RSTR: h11246 BODY:     |
-|            |                                          |                                        | h11247 ]                                                                         |
-|            |                                          |                                        |           [ named LBL: h11211 ARG0: x11210 CARG: "Bootleg Series Volume 1: The   |
-|            |                                          |                                        | Quine Tapes" ]                                                                   |
-|            |                                          |                                        |           [ appos LBL: h11230 ARG0: e11227 ARG1: x11228 ARG2: i11229 ]           |
-|            |                                          |                                        |           [ def_udef_a_q LBL: h11239 ARG0: x11236 RSTR: h11237 BODY: h11238 ]    |
-|            |                                          |                                        |           [ compound LBL: h11221 ARG0: e11218 ARG1: u11219 ARG2: u11220 ]        |
-|            |                                          |                                        |           [ existential_q LBL: h11225 ARG0: x11222 RSTR: h11223 BODY: h11224 ]   |
-|            |                                          |                                        |           [ named LBL: h11217 ARG0: x11216 [ x NUM: sg ] CARG: "The Velvet       |
+| precededBy | Bootleg_Series_Volume_1:_The_Quine_Tapes | Squeeze_(The_Velvet_Underground_album) | [ TOP: h217                                                                      |
+|            |                                          |                                        |   INDEX: e214 [ e TENSE: tensed ]                                                |
+|            |                                          |                                        |   RELS: < [ _precede_v_1 LBL: h217 ARG0: e214 ARG1: i215 ARG2: i216 ]            |
+|            |                                          |                                        |           [ explicit_or_proper_q LBL: h221 ARG0: x218 RSTR: h219 BODY: h220 ]    |
+|            |                                          |                                        |           [ named LBL: h184 ARG0: x183 CARG: "Bootleg Series Volume 1: The Quine |
+|            |                                          |                                        | Tapes" ]                                                                         |
+|            |                                          |                                        |           [ appos LBL: h203 ARG0: e200 ARG1: x201 ARG2: i202 ]                   |
+|            |                                          |                                        |           [ def_udef_a_q LBL: h212 ARG0: x209 RSTR: h210 BODY: h211 ]            |
+|            |                                          |                                        |           [ compound LBL: h194 ARG0: e191 ARG1: u192 ARG2: u193 ]                |
+|            |                                          |                                        |           [ existential_q LBL: h198 ARG0: x195 RSTR: h196 BODY: h197 ]           |
+|            |                                          |                                        |           [ named LBL: h190 ARG0: x189 [ x NUM: sg ] CARG: "The Velvet           |
 |            |                                          |                                        | Underground" ]                                                                   |
-|            |                                          |                                        |           [ _album_n_1 LBL: h11215 ARG0: x11214 ]                                |
-|            |                                          |                                        |           [ explicit_or_proper_q LBL: h11234 ARG0: x11231 RSTR: h11232 BODY:     |
-|            |                                          |                                        | h11233 ]                                                                         |
-|            |                                          |                                        |           [ named LBL: h11213 ARG0: x11212 CARG: "Squeeze" ] >                   |
-|            |                                          |                                        |   HCONS: < h11246 qeq h11211 h11223 qeq h11217 h11237 qeq h11215 h11232 qeq      |
-|            |                                          |                                        | h11213 >                                                                         |
-|            |                                          |                                        |   EQS: < x11245 eq x11210 h11244 eq h11249 i11243 eq x11245 x11222 eq x11216     |
-|            |                                          |                                        | h11221 eq h11226 u11220 eq x11222 h11221 eq h11215 u11219 eq x11214 x11236 eq    |
-|            |                                          |                                        | x11214 h11230 eq h11240 i11229 eq x11236 x11231 eq x11212 h11230 eq h11235       |
-|            |                                          |                                        | x11228 eq x11231 h11244 eq h11235 i11242 eq x11231 > ]                           |
+|            |                                          |                                        |           [ _album_n_1 LBL: h188 ARG0: x187 ]                                    |
+|            |                                          |                                        |           [ explicit_or_proper_q LBL: h207 ARG0: x204 RSTR: h205 BODY: h206 ]    |
+|            |                                          |                                        |           [ named LBL: h186 ARG0: x185 CARG: "Squeeze" ] >                       |
+|            |                                          |                                        |   HCONS: < h219 qeq h184 h196 qeq h190 h210 qeq h188 h205 qeq h186 >             |
+|            |                                          |                                        |   EQS: < x218 eq x183 h217 eq h222 i216 eq x218 x195 eq x189 h194 eq h199 u193   |
+|            |                                          |                                        | eq x195 h194 eq h188 u192 eq x187 x209 eq x187 h203 eq h213 i202 eq x209 x204 eq |
+|            |                                          |                                        | x185 h203 eq h208 x201 eq x204 h217 eq h208 i215 eq x204 > ]                     |
 +------------+------------------------------------------+----------------------------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------+

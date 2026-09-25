@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Athlete_Id1582_168_505
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                  GOLD OUTPUTS                                                                 |
-+----------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                      | Generated? |
-+----------------------------------------------------------------------------------------------------------------------------------+------------+
-| Aleksandr Prudnikov (born February 24th, 1989) played at the Otkrytiye Arena for FC Spartak Moscow.                              | False      |
-| Aleksandr Prudnikov was born 1980-02-24 and he plays for FC Spartak Moscow whose home ground is Otkrytiye Arena.                 | False      |
-| Aleksandr Prudnikov, who was born on the 24th of February 1989, plays for FC Spartak Moscow whose ground is the Otkrytiye Arena. | False      |
-+----------------------------------------------------------------------------------------------------------------------------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                        GOLD OUTPUTS                                                                       |
++----------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                  | Generated? |
++----------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Aleksandr Prudnikov was born on 1989-02-24 and played for FC Spartak Moscow's youth team. Its team grounds are the Otkrytiye Arena.          | False      |
+| Aleksandr Prudnikov was born on February 24, 1989 and is a member of the youth side of FC Spartak Moscow which plays out of Otkrytiye Arena. | False      |
+| Aleksandr Prudnikov who was born on 24th February 1989, played youth football for FC Spartak Moscow who play at the Otkrytiye Arena.         | False      |
++----------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +-----------------------------------------------------------------------------------------+
 |                                       NODE METRICS                                      |
@@ -56,123 +56,111 @@ GRAPH NAME: WebNLG_test_3triples_Athlete_Id1582_168_505
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h16847                                                                    |
-|               |   INDEX: e16844 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_loc LBL: h16838 ARG0: e16835 ARG1: u16836 ARG2: u16837 ]       |
-|               |           [ explicit_or_proper_q LBL: h16842 ARG0: x16839 RSTR: h16840 BODY:     |
-|               | h16841 ]                                                                         |
-|               |           [ named LBL: h16834 ARG0: x16833 CARG: "Otkrytiye Arena" ]             |
-|               |           [ _play_v_1 LBL: h16847 ARG0: e16844 ARG1: i16845 ARG2: i16846 ]       |
-|               |           [ def_udef_a_q LBL: h16880 ARG0: x16877 RSTR: h16878 BODY: h16879 ]    |
-|               |           [ poss LBL: h16871 ARG0: e16868 ARG1: x16869 ARG2: i16870 ]            |
-|               |           [ pronoun_q LBL: h16853 ARG0: x16850 RSTR: h16851 BODY: h16852 ]       |
-|               |           [ pron LBL: h16849 ARG0: x16848 [ x PERS: 3 NUM: pl ] ]                |
-|               |           [ compound LBL: h16862 ARG0: e16859 ARG1: u16860 ARG2: u16861 ]        |
-|               |           [ existential_q LBL: h16866 ARG0: x16863 RSTR: h16864 BODY: h16865 ]   |
-|               |           [ _home_n_of-n LBL: h16858 ARG0: x16857 [ x NUM: sg ] ]                |
-|               |           [ _game_n_1 LBL: h16856 ARG0: x16855 ]                                 |
-|               |           [ explicit_or_proper_q LBL: h16875 ARG0: x16872 RSTR: h16873 BODY:     |
-|               | h16874 ]                                                                         |
-|               |           [ named LBL: h16832 ARG0: x16831 CARG: "FC Spartak Moscow" ] >         |
-|               |   HCONS: < h16840 qeq h16834 h16851 qeq h16849 h16864 qeq h16858 h16878 qeq      |
-|               | h16856 h16873 qeq h16832 >                                                       |
-|               |   EQS: < x16839 eq x16833 h16838 eq h16843 u16837 eq x16839 x16850 eq x16848     |
-|               | h16871 eq h16854 i16870 eq x16850 x16863 eq x16857 h16862 eq h16867 u16861 eq    |
-|               | x16863 h16862 eq h16856 u16860 eq x16855 h16871 eq h16856 x16869 eq x16855       |
-|               | x16877 eq x16855 h16847 eq h16881 i16846 eq x16877 x16872 eq x16831 h16847 eq    |
-|               | h16876 i16845 eq x16872 h16838 eq h16847 u16836 eq e16844 > ]                    |
+| Original      | [ TOP: h583                                                                      |
+|               |   INDEX: e580 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_loc LBL: h574 ARG0: e571 ARG1: u572 ARG2: u573 ]               |
+|               |           [ explicit_or_proper_q LBL: h578 ARG0: x575 RSTR: h576 BODY: h577 ]    |
+|               |           [ named LBL: h570 ARG0: x569 CARG: "Otkrytiye Arena" ]                 |
+|               |           [ _play_v_1 LBL: h583 ARG0: e580 ARG1: i581 ARG2: i582 ]               |
+|               |           [ def_udef_a_q LBL: h616 ARG0: x613 RSTR: h614 BODY: h615 ]            |
+|               |           [ poss LBL: h607 ARG0: e604 ARG1: x605 ARG2: i606 ]                    |
+|               |           [ pronoun_q LBL: h589 ARG0: x586 RSTR: h587 BODY: h588 ]               |
+|               |           [ pron LBL: h585 ARG0: x584 [ x PERS: 3 NUM: pl ] ]                    |
+|               |           [ compound LBL: h598 ARG0: e595 ARG1: u596 ARG2: u597 ]                |
+|               |           [ existential_q LBL: h602 ARG0: x599 RSTR: h600 BODY: h601 ]           |
+|               |           [ _home_n_of-n LBL: h594 ARG0: x593 [ x NUM: sg ] ]                    |
+|               |           [ _game_n_1 LBL: h592 ARG0: x591 ]                                     |
+|               |           [ explicit_or_proper_q LBL: h611 ARG0: x608 RSTR: h609 BODY: h610 ]    |
+|               |           [ named LBL: h568 ARG0: x567 CARG: "FC Spartak Moscow" ] >             |
+|               |   HCONS: < h576 qeq h570 h587 qeq h585 h600 qeq h594 h614 qeq h592 h609 qeq h568 |
+|               | >                                                                                |
+|               |   EQS: < x575 eq x569 h574 eq h579 u573 eq x575 x586 eq x584 h607 eq h590 i606   |
+|               | eq x586 x599 eq x593 h598 eq h603 u597 eq x599 h598 eq h592 u596 eq x591 h607 eq |
+|               | h592 x605 eq x591 x613 eq x591 h583 eq h617 i582 eq x613 x608 eq x567 h583 eq    |
+|               | h612 i581 eq x608 h574 eq h583 u572 eq e580 > ]                                  |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h16838                                                                    |
-|               |   INDEX: e16844 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_loc LBL: h16838 ARG0: e16835 ARG1: e16844 ARG2: x16833 ]       |
-|               |           [ explicit_or_proper_q LBL: h16842 ARG0: x16833 RSTR: h16840 BODY:     |
-|               | h16841 ]                                                                         |
-|               |           [ named LBL: h16834 ARG0: x16833 CARG: "Otkrytiye Arena" ]             |
-|               |           [ _play_v_1 LBL: h16838 ARG0: e16844 ARG1: x16831 ARG2: x16855 ]       |
-|               |           [ def_udef_a_q LBL: h16880 ARG0: x16855 RSTR: h16878 BODY: h16879 ]    |
-|               |           [ poss LBL: h16854 ARG0: e16868 ARG1: x16855 ARG2: x16848 [ x PERS: 3  |
-|               | NUM: pl ] ]                                                                      |
-|               |           [ pronoun_q LBL: h16853 ARG0: x16848 RSTR: h16851 BODY: h16852 ]       |
-|               |           [ pron LBL: h16849 ARG0: x16848 ]                                      |
-|               |           [ compound LBL: h16854 ARG0: e16859 ARG1: x16855 ARG2: x16857 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h16866 ARG0: x16857 RSTR: h16864 BODY: h16865 ]   |
-|               |           [ _home_n_of-n LBL: h16858 ARG0: x16857 ]                              |
-|               |           [ _game_n_1 LBL: h16854 ARG0: x16855 ]                                 |
-|               |           [ explicit_or_proper_q LBL: h16875 ARG0: x16831 RSTR: h16873 BODY:     |
-|               | h16874 ]                                                                         |
-|               |           [ named LBL: h16832 ARG0: x16831 CARG: "FC Spartak Moscow" ] >         |
-|               |   HCONS: < h16840 qeq h16834 h16851 qeq h16849 h16864 qeq h16858 h16878 qeq      |
-|               | h16854 h16873 qeq h16832 > ]                                                     |
+| EQs Collapsed | [ TOP: h574                                                                      |
+|               |   INDEX: e580 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_loc LBL: h574 ARG0: e571 ARG1: e580 ARG2: x569 ]               |
+|               |           [ explicit_or_proper_q LBL: h578 ARG0: x569 RSTR: h576 BODY: h577 ]    |
+|               |           [ named LBL: h570 ARG0: x569 CARG: "Otkrytiye Arena" ]                 |
+|               |           [ _play_v_1 LBL: h574 ARG0: e580 ARG1: x567 ARG2: x591 ]               |
+|               |           [ def_udef_a_q LBL: h616 ARG0: x591 RSTR: h614 BODY: h615 ]            |
+|               |           [ poss LBL: h590 ARG0: e604 ARG1: x591 ARG2: x584 [ x PERS: 3 NUM: pl  |
+|               | ] ]                                                                              |
+|               |           [ pronoun_q LBL: h589 ARG0: x584 RSTR: h587 BODY: h588 ]               |
+|               |           [ pron LBL: h585 ARG0: x584 ]                                          |
+|               |           [ compound LBL: h590 ARG0: e595 ARG1: x591 ARG2: x593 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h602 ARG0: x593 RSTR: h600 BODY: h601 ]           |
+|               |           [ _home_n_of-n LBL: h594 ARG0: x593 ]                                  |
+|               |           [ _game_n_1 LBL: h590 ARG0: x591 ]                                     |
+|               |           [ explicit_or_proper_q LBL: h611 ARG0: x567 RSTR: h609 BODY: h610 ]    |
+|               |           [ named LBL: h568 ARG0: x567 CARG: "FC Spartak Moscow" ] >             |
+|               |   HCONS: < h576 qeq h570 h587 qeq h585 h600 qeq h594 h614 qeq h590 h609 qeq h568 |
+|               | > ]                                                                              |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h16882                                                                    |
-|               |   INDEX: e16844 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_loc LBL: h16838 ARG0: e16835 ARG1: e16844 ARG2: x16833 ]       |
-|               |           [ explicit_or_proper_q LBL: h16842 ARG0: x16833 RSTR: h16840 BODY:     |
-|               | h16841 ]                                                                         |
-|               |           [ named LBL: h16834 ARG0: x16833 CARG: "Otkrytiye Arena" ]             |
-|               |           [ _play_v_1 LBL: h16838 ARG0: e16844 ARG1: x16831 ARG2: x16855 ]       |
-|               |           [ def_udef_a_q LBL: h16880 ARG0: x16855 RSTR: h16878 BODY: h16879 ]    |
-|               |           [ poss LBL: h16854 ARG0: e16868 ARG1: x16855 ARG2: x16848 [ x PERS: 3  |
-|               | NUM: pl ] ]                                                                      |
-|               |           [ pronoun_q LBL: h16853 ARG0: x16848 RSTR: h16851 BODY: h16852 ]       |
-|               |           [ pron LBL: h16849 ARG0: x16848 ]                                      |
-|               |           [ compound LBL: h16854 ARG0: e16859 ARG1: x16855 ARG2: x16857 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h16866 ARG0: x16857 RSTR: h16864 BODY: h16865 ]   |
-|               |           [ _home_n_of-n LBL: h16858 ARG0: x16857 ]                              |
-|               |           [ _game_n_1 LBL: h16854 ARG0: x16855 ]                                 |
-|               |           [ explicit_or_proper_q LBL: h16875 ARG0: x16831 RSTR: h16873 BODY:     |
-|               | h16874 ]                                                                         |
-|               |           [ named LBL: h16832 ARG0: x16831 CARG: "FC Spartak Moscow" ] >         |
-|               |   HCONS: < h16840 qeq h16834 h16851 qeq h16849 h16864 qeq h16858 h16878 qeq      |
-|               | h16854 h16873 qeq h16832 h16882 qeq h16838 > ]                                   |
+| Prepped       | [ TOP: h618                                                                      |
+|               |   INDEX: e580 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_loc LBL: h574 ARG0: e571 ARG1: e580 ARG2: x569 ]               |
+|               |           [ explicit_or_proper_q LBL: h578 ARG0: x569 RSTR: h576 BODY: h577 ]    |
+|               |           [ named LBL: h570 ARG0: x569 CARG: "Otkrytiye Arena" ]                 |
+|               |           [ _play_v_1 LBL: h574 ARG0: e580 ARG1: x567 ARG2: x591 ]               |
+|               |           [ def_udef_a_q LBL: h616 ARG0: x591 RSTR: h614 BODY: h615 ]            |
+|               |           [ poss LBL: h590 ARG0: e604 ARG1: x591 ARG2: x584 [ x PERS: 3 NUM: pl  |
+|               | ] ]                                                                              |
+|               |           [ pronoun_q LBL: h589 ARG0: x584 RSTR: h587 BODY: h588 ]               |
+|               |           [ pron LBL: h585 ARG0: x584 ]                                          |
+|               |           [ compound LBL: h590 ARG0: e595 ARG1: x591 ARG2: x593 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h602 ARG0: x593 RSTR: h600 BODY: h601 ]           |
+|               |           [ _home_n_of-n LBL: h594 ARG0: x593 ]                                  |
+|               |           [ _game_n_1 LBL: h590 ARG0: x591 ]                                     |
+|               |           [ explicit_or_proper_q LBL: h611 ARG0: x567 RSTR: h609 BODY: h610 ]    |
+|               |           [ named LBL: h568 ARG0: x567 CARG: "FC Spartak Moscow" ] >             |
+|               |   HCONS: < h576 qeq h570 h587 qeq h585 h600 qeq h594 h614 qeq h590 h609 qeq h568 |
+|               | h618 qeq h574 > ]                                                                |
 +---------------+----------------------------------------------------------------------------------+
 
-+------------------------------------------------------------------------------------------------+
-|                                          NODE SEMENTS                                          |
-+-------------------+----------------------------------------------------------------------------+
-| Node              | Generated SEMENT                                                           |
-+-------------------+----------------------------------------------------------------------------+
-| FC_Spartak_Moscow | [ TOP: h16832                                                              |
-|                   |   INDEX: x16831                                                            |
-|                   |   RELS: < [ named LBL: h16832 ARG0: x16831 CARG: "FC Spartak Moscow" ] > ] |
-+-------------------+----------------------------------------------------------------------------+
-| Otkrytiye_Arena   | [ TOP: h16834                                                              |
-|                   |   INDEX: x16833                                                            |
-|                   |   RELS: < [ named LBL: h16834 ARG0: x16833 CARG: "Otkrytiye Arena" ] > ]   |
-+-------------------+----------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+|                                        NODE SEMENTS                                        |
++-------------------+------------------------------------------------------------------------+
+| Node              | Generated SEMENT                                                       |
++-------------------+------------------------------------------------------------------------+
+| FC_Spartak_Moscow | [ TOP: h568                                                            |
+|                   |   INDEX: x567                                                          |
+|                   |   RELS: < [ named LBL: h568 ARG0: x567 CARG: "FC Spartak Moscow" ] > ] |
++-------------------+------------------------------------------------------------------------+
+| Otkrytiye_Arena   | [ TOP: h570                                                            |
+|                   |   INDEX: x569                                                          |
+|                   |   RELS: < [ named LBL: h570 ARG0: x569 CARG: "Otkrytiye Arena" ] > ]   |
++-------------------+------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------------------------+
 |                                                           EDGE SEMENTS                                                          |
 +--------+-------------------+-----------------+----------------------------------------------------------------------------------+
 | Edge   | Parent            | Child           | Generated SEMENT                                                                 |
 +--------+-------------------+-----------------+----------------------------------------------------------------------------------+
-| ground | FC_Spartak_Moscow | Otkrytiye_Arena | [ TOP: h16847                                                                    |
-|        |                   |                 |   INDEX: e16844 [ e TENSE: tensed ]                                              |
-|        |                   |                 |   RELS: < [ _in_p_loc LBL: h16838 ARG0: e16835 ARG1: u16836 ARG2: u16837 ]       |
-|        |                   |                 |           [ explicit_or_proper_q LBL: h16842 ARG0: x16839 RSTR: h16840 BODY:     |
-|        |                   |                 | h16841 ]                                                                         |
-|        |                   |                 |           [ named LBL: h16834 ARG0: x16833 CARG: "Otkrytiye Arena" ]             |
-|        |                   |                 |           [ _play_v_1 LBL: h16847 ARG0: e16844 ARG1: i16845 ARG2: i16846 ]       |
-|        |                   |                 |           [ def_udef_a_q LBL: h16880 ARG0: x16877 RSTR: h16878 BODY: h16879 ]    |
-|        |                   |                 |           [ poss LBL: h16871 ARG0: e16868 ARG1: x16869 ARG2: i16870 ]            |
-|        |                   |                 |           [ pronoun_q LBL: h16853 ARG0: x16850 RSTR: h16851 BODY: h16852 ]       |
-|        |                   |                 |           [ pron LBL: h16849 ARG0: x16848 [ x PERS: 3 NUM: pl ] ]                |
-|        |                   |                 |           [ compound LBL: h16862 ARG0: e16859 ARG1: u16860 ARG2: u16861 ]        |
-|        |                   |                 |           [ existential_q LBL: h16866 ARG0: x16863 RSTR: h16864 BODY: h16865 ]   |
-|        |                   |                 |           [ _home_n_of-n LBL: h16858 ARG0: x16857 [ x NUM: sg ] ]                |
-|        |                   |                 |           [ _game_n_1 LBL: h16856 ARG0: x16855 ]                                 |
-|        |                   |                 |           [ explicit_or_proper_q LBL: h16875 ARG0: x16872 RSTR: h16873 BODY:     |
-|        |                   |                 | h16874 ]                                                                         |
-|        |                   |                 |           [ named LBL: h16832 ARG0: x16831 CARG: "FC Spartak Moscow" ] >         |
-|        |                   |                 |   HCONS: < h16840 qeq h16834 h16851 qeq h16849 h16864 qeq h16858 h16878 qeq      |
-|        |                   |                 | h16856 h16873 qeq h16832 >                                                       |
-|        |                   |                 |   EQS: < x16839 eq x16833 h16838 eq h16843 u16837 eq x16839 x16850 eq x16848     |
-|        |                   |                 | h16871 eq h16854 i16870 eq x16850 x16863 eq x16857 h16862 eq h16867 u16861 eq    |
-|        |                   |                 | x16863 h16862 eq h16856 u16860 eq x16855 h16871 eq h16856 x16869 eq x16855       |
-|        |                   |                 | x16877 eq x16855 h16847 eq h16881 i16846 eq x16877 x16872 eq x16831 h16847 eq    |
-|        |                   |                 | h16876 i16845 eq x16872 h16838 eq h16847 u16836 eq e16844 > ]                    |
+| ground | FC_Spartak_Moscow | Otkrytiye_Arena | [ TOP: h583                                                                      |
+|        |                   |                 |   INDEX: e580 [ e TENSE: tensed ]                                                |
+|        |                   |                 |   RELS: < [ _in_p_loc LBL: h574 ARG0: e571 ARG1: u572 ARG2: u573 ]               |
+|        |                   |                 |           [ explicit_or_proper_q LBL: h578 ARG0: x575 RSTR: h576 BODY: h577 ]    |
+|        |                   |                 |           [ named LBL: h570 ARG0: x569 CARG: "Otkrytiye Arena" ]                 |
+|        |                   |                 |           [ _play_v_1 LBL: h583 ARG0: e580 ARG1: i581 ARG2: i582 ]               |
+|        |                   |                 |           [ def_udef_a_q LBL: h616 ARG0: x613 RSTR: h614 BODY: h615 ]            |
+|        |                   |                 |           [ poss LBL: h607 ARG0: e604 ARG1: x605 ARG2: i606 ]                    |
+|        |                   |                 |           [ pronoun_q LBL: h589 ARG0: x586 RSTR: h587 BODY: h588 ]               |
+|        |                   |                 |           [ pron LBL: h585 ARG0: x584 [ x PERS: 3 NUM: pl ] ]                    |
+|        |                   |                 |           [ compound LBL: h598 ARG0: e595 ARG1: u596 ARG2: u597 ]                |
+|        |                   |                 |           [ existential_q LBL: h602 ARG0: x599 RSTR: h600 BODY: h601 ]           |
+|        |                   |                 |           [ _home_n_of-n LBL: h594 ARG0: x593 [ x NUM: sg ] ]                    |
+|        |                   |                 |           [ _game_n_1 LBL: h592 ARG0: x591 ]                                     |
+|        |                   |                 |           [ explicit_or_proper_q LBL: h611 ARG0: x608 RSTR: h609 BODY: h610 ]    |
+|        |                   |                 |           [ named LBL: h568 ARG0: x567 CARG: "FC Spartak Moscow" ] >             |
+|        |                   |                 |   HCONS: < h576 qeq h570 h587 qeq h585 h600 qeq h594 h614 qeq h592 h609 qeq h568 |
+|        |                   |                 | >                                                                                |
+|        |                   |                 |   EQS: < x575 eq x569 h574 eq h579 u573 eq x575 x586 eq x584 h607 eq h590 i606   |
+|        |                   |                 | eq x586 x599 eq x593 h598 eq h603 u597 eq x599 h598 eq h592 u596 eq x591 h607 eq |
+|        |                   |                 | h592 x605 eq x591 x613 eq x591 h583 eq h617 i582 eq x613 x608 eq x567 h583 eq    |
+|        |                   |                 | h612 i581 eq x608 h574 eq h583 u572 eq e580 > ]                                  |
 +--------+-------------------+-----------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------+

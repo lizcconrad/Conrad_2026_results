@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_City_Id1469_324_972
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                           GOLD OUTPUTS                                                                          |
-+----------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                        | Generated? |
-+----------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Ciudad Ayala is in the UTC offset -6 time zone. The Pacific Standard Time Zone, along with Pacific Daylight Time, is the timezone of Ciudad Ayala. | False      |
-| Ciudad Ayala with a UTC offset of -6 is located in the Pacific Daylight time zone while in the Pacific Standard Time Zone.                         | False      |
-| The UTC offset of Ciudad Ayala is -6, its time zone is Pacific Daylight Time and the Pacific Standard Time Zone.                                   | False      |
-+----------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                       GOLD OUTPUTS                                                                       |
++---------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                 | Generated? |
++---------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Ciudad Ayala (UTC offset of -6) has a population density of 1604.0; its elevation above sea level is 1147.0.                                | False      |
+| Ciudad Ayala city has a population density of 1604.0, it falls into UTC offset -6 timezone and its elevation above the sea level is 1147.0. | False      |
+| Ciudad Ayala has a population density of 1,604, and it is 1,147 meters above sea level. The city has a UTC offset of -6.                    | False      |
++---------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +------------------------------------------------------------------------------------+
 |                                    NODE METRICS                                    |
@@ -56,104 +56,101 @@ GRAPH NAME: WebNLG_test_3triples_City_Id1469_324_972
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h32529                                                                    |
-|               |   INDEX: e32526 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h32529 ARG0: e32526 ARG1: p32527 ARG2: i32528 ]        |
-|               |           [ number_q LBL: h32538 ARG0: x32535 RSTR: h32536 BODY: h32537 ]        |
-|               |           [ card LBL: h32503 ARG0: i32501 ARG1: u32502 CARG: "-6" ]              |
-|               |           [ def_udef_a_q LBL: h32533 ARG0: x32530 RSTR: h32531 BODY: h32532 ]    |
-|               |           [ _of_p LBL: h32507 ARG0: e32504 ARG1: u32505 ARG2: i32506 ]           |
-|               |           [ explicit_or_proper_q LBL: h32524 ARG0: x32521 RSTR: h32522 BODY:     |
-|               | h32523 ]                                                                         |
-|               |           [ named LBL: h32500 ARG0: x32499 CARG: "Ciudad Ayala" ]                |
-|               |           [ compound LBL: h32515 ARG0: e32512 ARG1: u32513 ARG2: u32514 ]        |
-|               |           [ existential_q LBL: h32519 ARG0: x32516 RSTR: h32517 BODY: h32518 ]   |
-|               |           [ named LBL: h32511 ARG0: x32510 [ x NUM: sg ] CARG: "UTC" ]           |
-|               |           [ _offset_n_1 LBL: h32509 ARG0: x32508 ] >                             |
-|               |   HCONS: < h32536 qeq h32503 h32522 qeq h32500 h32517 qeq h32511 h32531 qeq      |
-|               | h32509 >                                                                         |
-|               |   EQS: < x32535 eq i32501 h32529 eq h32539 i32528 eq x32535 x32521 eq x32499     |
-|               | h32507 eq h32525 i32506 eq x32521 x32516 eq x32510 h32515 eq h32520 u32514 eq    |
-|               | x32516 h32515 eq h32509 u32513 eq x32508 h32507 eq h32509 u32505 eq x32508       |
-|               | x32530 eq x32508 h32529 eq h32534 p32527 eq x32530 > ]                           |
+| Original      | [ TOP: h3026                                                                     |
+|               |   INDEX: e3023 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h3026 ARG0: e3023 ARG1: p3024 ARG2: i3025 ]            |
+|               |           [ number_q LBL: h3035 ARG0: x3032 RSTR: h3033 BODY: h3034 ]            |
+|               |           [ card LBL: h3000 ARG0: i2998 ARG1: u2999 CARG: "-6" ]                 |
+|               |           [ def_udef_a_q LBL: h3030 ARG0: x3027 RSTR: h3028 BODY: h3029 ]        |
+|               |           [ _of_p LBL: h3004 ARG0: e3001 ARG1: u3002 ARG2: i3003 ]               |
+|               |           [ explicit_or_proper_q LBL: h3021 ARG0: x3018 RSTR: h3019 BODY: h3020  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2997 ARG0: x2996 CARG: "Ciudad Ayala" ]                  |
+|               |           [ compound LBL: h3012 ARG0: e3009 ARG1: u3010 ARG2: u3011 ]            |
+|               |           [ existential_q LBL: h3016 ARG0: x3013 RSTR: h3014 BODY: h3015 ]       |
+|               |           [ named LBL: h3008 ARG0: x3007 [ x NUM: sg ] CARG: "UTC" ]             |
+|               |           [ _offset_n_1 LBL: h3006 ARG0: x3005 ] >                               |
+|               |   HCONS: < h3033 qeq h3000 h3019 qeq h2997 h3014 qeq h3008 h3028 qeq h3006 >     |
+|               |   EQS: < x3032 eq i2998 h3026 eq h3036 i3025 eq x3032 x3018 eq x2996 h3004 eq    |
+|               | h3022 i3003 eq x3018 x3013 eq x3007 h3012 eq h3017 u3011 eq x3013 h3012 eq h3006 |
+|               | u3010 eq x3005 h3004 eq h3006 u3002 eq x3005 x3027 eq x3005 h3026 eq h3031 p3024 |
+|               | eq x3027 > ]                                                                     |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h32529                                                                    |
-|               |   INDEX: e32526 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h32529 ARG0: e32526 ARG1: x32508 ARG2: x32535 ]        |
-|               |           [ number_q LBL: h32538 ARG0: x32535 RSTR: h32536 BODY: h32537 ]        |
-|               |           [ card LBL: h32503 ARG0: x32535 ARG1: u32502 CARG: "-6" ]              |
-|               |           [ def_udef_a_q LBL: h32533 ARG0: x32508 RSTR: h32531 BODY: h32532 ]    |
-|               |           [ _of_p LBL: h32507 ARG0: e32504 ARG1: x32508 ARG2: x32499 ]           |
-|               |           [ explicit_or_proper_q LBL: h32524 ARG0: x32499 RSTR: h32522 BODY:     |
-|               | h32523 ]                                                                         |
-|               |           [ named LBL: h32500 ARG0: x32499 CARG: "Ciudad Ayala" ]                |
-|               |           [ compound LBL: h32507 ARG0: e32512 ARG1: x32508 ARG2: x32510 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h32519 ARG0: x32510 RSTR: h32517 BODY: h32518 ]   |
-|               |           [ named LBL: h32511 ARG0: x32510 CARG: "UTC" ]                         |
-|               |           [ _offset_n_1 LBL: h32507 ARG0: x32508 ] >                             |
-|               |   HCONS: < h32536 qeq h32503 h32522 qeq h32500 h32517 qeq h32511 h32531 qeq      |
-|               | h32507 > ]                                                                       |
+| EQs Collapsed | [ TOP: h3026                                                                     |
+|               |   INDEX: e3023 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h3026 ARG0: e3023 ARG1: x3005 ARG2: x3032 ]            |
+|               |           [ number_q LBL: h3035 ARG0: x3032 RSTR: h3033 BODY: h3034 ]            |
+|               |           [ card LBL: h3000 ARG0: x3032 ARG1: u2999 CARG: "-6" ]                 |
+|               |           [ def_udef_a_q LBL: h3030 ARG0: x3005 RSTR: h3028 BODY: h3029 ]        |
+|               |           [ _of_p LBL: h3004 ARG0: e3001 ARG1: x3005 ARG2: x2996 ]               |
+|               |           [ explicit_or_proper_q LBL: h3021 ARG0: x2996 RSTR: h3019 BODY: h3020  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2997 ARG0: x2996 CARG: "Ciudad Ayala" ]                  |
+|               |           [ compound LBL: h3004 ARG0: e3009 ARG1: x3005 ARG2: x3007 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h3016 ARG0: x3007 RSTR: h3014 BODY: h3015 ]       |
+|               |           [ named LBL: h3008 ARG0: x3007 CARG: "UTC" ]                           |
+|               |           [ _offset_n_1 LBL: h3004 ARG0: x3005 ] >                               |
+|               |   HCONS: < h3033 qeq h3000 h3019 qeq h2997 h3014 qeq h3008 h3028 qeq h3004 > ]   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h32540                                                                    |
-|               |   INDEX: e32526 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h32529 ARG0: e32526 ARG1: x32508 ARG2: x32535 ]        |
-|               |           [ number_q LBL: h32538 ARG0: x32535 RSTR: h32536 BODY: h32537 ]        |
-|               |           [ card LBL: h32503 ARG0: x32535 ARG1: u32502 CARG: "-6" ]              |
-|               |           [ def_udef_a_q LBL: h32533 ARG0: x32508 RSTR: h32531 BODY: h32532 ]    |
-|               |           [ _of_p LBL: h32507 ARG0: e32504 ARG1: x32508 ARG2: x32499 ]           |
-|               |           [ explicit_or_proper_q LBL: h32524 ARG0: x32499 RSTR: h32522 BODY:     |
-|               | h32523 ]                                                                         |
-|               |           [ named LBL: h32500 ARG0: x32499 CARG: "Ciudad Ayala" ]                |
-|               |           [ compound LBL: h32507 ARG0: e32512 ARG1: x32508 ARG2: x32510 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h32519 ARG0: x32510 RSTR: h32517 BODY: h32518 ]   |
-|               |           [ named LBL: h32511 ARG0: x32510 CARG: "UTC" ]                         |
-|               |           [ _offset_n_1 LBL: h32507 ARG0: x32508 ] >                             |
-|               |   HCONS: < h32536 qeq h32503 h32522 qeq h32500 h32517 qeq h32511 h32531 qeq      |
-|               | h32507 h32540 qeq h32529 > ]                                                     |
+| Prepped       | [ TOP: h3037                                                                     |
+|               |   INDEX: e3023 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h3026 ARG0: e3023 ARG1: x3005 ARG2: x3032 ]            |
+|               |           [ number_q LBL: h3035 ARG0: x3032 RSTR: h3033 BODY: h3034 ]            |
+|               |           [ card LBL: h3000 ARG0: x3032 ARG1: u2999 CARG: "-6" ]                 |
+|               |           [ def_udef_a_q LBL: h3030 ARG0: x3005 RSTR: h3028 BODY: h3029 ]        |
+|               |           [ _of_p LBL: h3004 ARG0: e3001 ARG1: x3005 ARG2: x2996 ]               |
+|               |           [ explicit_or_proper_q LBL: h3021 ARG0: x2996 RSTR: h3019 BODY: h3020  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2997 ARG0: x2996 CARG: "Ciudad Ayala" ]                  |
+|               |           [ compound LBL: h3004 ARG0: e3009 ARG1: x3005 ARG2: x3007 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h3016 ARG0: x3007 RSTR: h3014 BODY: h3015 ]       |
+|               |           [ named LBL: h3008 ARG0: x3007 CARG: "UTC" ]                           |
+|               |           [ _offset_n_1 LBL: h3004 ARG0: x3005 ] >                               |
+|               |   HCONS: < h3033 qeq h3000 h3019 qeq h2997 h3014 qeq h3008 h3028 qeq h3004 h3037 |
+|               | qeq h3026 > ]                                                                    |
 +---------------+----------------------------------------------------------------------------------+
 
-+--------------------------------------------------------------------------------------+
-|                                     NODE SEMENTS                                     |
-+--------------+-----------------------------------------------------------------------+
-| Node         | Generated SEMENT                                                      |
-+--------------+-----------------------------------------------------------------------+
-| Ciudad_Ayala | [ TOP: h32500                                                         |
-|              |   INDEX: x32499                                                       |
-|              |   RELS: < [ named LBL: h32500 ARG0: x32499 CARG: "Ciudad Ayala" ] > ] |
-+--------------+-----------------------------------------------------------------------+
-| −6           | [ TOP: h32503                                                         |
-|              |   INDEX: i32501                                                       |
-|              |   RELS: < [ card LBL: h32503 ARG0: i32501 ARG1: u32502 CARG: "-6" ] > |
-|              |   SLOTS: < ARG1: u32502 > ]                                           |
-+--------------+-----------------------------------------------------------------------+
++------------------------------------------------------------------------------------+
+|                                    NODE SEMENTS                                    |
++--------------+---------------------------------------------------------------------+
+| Node         | Generated SEMENT                                                    |
++--------------+---------------------------------------------------------------------+
+| Ciudad_Ayala | [ TOP: h2997                                                        |
+|              |   INDEX: x2996                                                      |
+|              |   RELS: < [ named LBL: h2997 ARG0: x2996 CARG: "Ciudad Ayala" ] > ] |
++--------------+---------------------------------------------------------------------+
+| −6           | [ TOP: h3000                                                        |
+|              |   INDEX: i2998                                                      |
+|              |   RELS: < [ card LBL: h3000 ARG0: i2998 ARG1: u2999 CARG: "-6" ] >  |
+|              |   SLOTS: < ARG1: u2999 > ]                                          |
++--------------+---------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------------+
 |                                                     EDGE SEMENTS                                                    |
 +-----------+--------------+-------+----------------------------------------------------------------------------------+
 | Edge      | Parent       | Child | Generated SEMENT                                                                 |
 +-----------+--------------+-------+----------------------------------------------------------------------------------+
-| utcOffset | Ciudad_Ayala | −6    | [ TOP: h32529                                                                    |
-|           |              |       |   INDEX: e32526 [ e SF: prop TENSE: tensed ]                                     |
-|           |              |       |   RELS: < [ _be_v_id LBL: h32529 ARG0: e32526 ARG1: p32527 ARG2: i32528 ]        |
-|           |              |       |           [ number_q LBL: h32538 ARG0: x32535 RSTR: h32536 BODY: h32537 ]        |
-|           |              |       |           [ card LBL: h32503 ARG0: i32501 ARG1: u32502 CARG: "-6" ]              |
-|           |              |       |           [ def_udef_a_q LBL: h32533 ARG0: x32530 RSTR: h32531 BODY: h32532 ]    |
-|           |              |       |           [ _of_p LBL: h32507 ARG0: e32504 ARG1: u32505 ARG2: i32506 ]           |
-|           |              |       |           [ explicit_or_proper_q LBL: h32524 ARG0: x32521 RSTR: h32522 BODY:     |
-|           |              |       | h32523 ]                                                                         |
-|           |              |       |           [ named LBL: h32500 ARG0: x32499 CARG: "Ciudad Ayala" ]                |
-|           |              |       |           [ compound LBL: h32515 ARG0: e32512 ARG1: u32513 ARG2: u32514 ]        |
-|           |              |       |           [ existential_q LBL: h32519 ARG0: x32516 RSTR: h32517 BODY: h32518 ]   |
-|           |              |       |           [ named LBL: h32511 ARG0: x32510 [ x NUM: sg ] CARG: "UTC" ]           |
-|           |              |       |           [ _offset_n_1 LBL: h32509 ARG0: x32508 ] >                             |
-|           |              |       |   HCONS: < h32536 qeq h32503 h32522 qeq h32500 h32517 qeq h32511 h32531 qeq      |
-|           |              |       | h32509 >                                                                         |
-|           |              |       |   EQS: < x32535 eq i32501 h32529 eq h32539 i32528 eq x32535 x32521 eq x32499     |
-|           |              |       | h32507 eq h32525 i32506 eq x32521 x32516 eq x32510 h32515 eq h32520 u32514 eq    |
-|           |              |       | x32516 h32515 eq h32509 u32513 eq x32508 h32507 eq h32509 u32505 eq x32508       |
-|           |              |       | x32530 eq x32508 h32529 eq h32534 p32527 eq x32530 > ]                           |
+| utcOffset | Ciudad_Ayala | −6    | [ TOP: h3026                                                                     |
+|           |              |       |   INDEX: e3023 [ e SF: prop TENSE: tensed ]                                      |
+|           |              |       |   RELS: < [ _be_v_id LBL: h3026 ARG0: e3023 ARG1: p3024 ARG2: i3025 ]            |
+|           |              |       |           [ number_q LBL: h3035 ARG0: x3032 RSTR: h3033 BODY: h3034 ]            |
+|           |              |       |           [ card LBL: h3000 ARG0: i2998 ARG1: u2999 CARG: "-6" ]                 |
+|           |              |       |           [ def_udef_a_q LBL: h3030 ARG0: x3027 RSTR: h3028 BODY: h3029 ]        |
+|           |              |       |           [ _of_p LBL: h3004 ARG0: e3001 ARG1: u3002 ARG2: i3003 ]               |
+|           |              |       |           [ explicit_or_proper_q LBL: h3021 ARG0: x3018 RSTR: h3019 BODY: h3020  |
+|           |              |       | ]                                                                                |
+|           |              |       |           [ named LBL: h2997 ARG0: x2996 CARG: "Ciudad Ayala" ]                  |
+|           |              |       |           [ compound LBL: h3012 ARG0: e3009 ARG1: u3010 ARG2: u3011 ]            |
+|           |              |       |           [ existential_q LBL: h3016 ARG0: x3013 RSTR: h3014 BODY: h3015 ]       |
+|           |              |       |           [ named LBL: h3008 ARG0: x3007 [ x NUM: sg ] CARG: "UTC" ]             |
+|           |              |       |           [ _offset_n_1 LBL: h3006 ARG0: x3005 ] >                               |
+|           |              |       |   HCONS: < h3033 qeq h3000 h3019 qeq h2997 h3014 qeq h3008 h3028 qeq h3006 >     |
+|           |              |       |   EQS: < x3032 eq i2998 h3026 eq h3036 i3025 eq x3032 x3018 eq x2996 h3004 eq    |
+|           |              |       | h3022 i3003 eq x3018 x3013 eq x3007 h3012 eq h3017 u3011 eq x3013 h3012 eq h3006 |
+|           |              |       | u3010 eq x3005 h3004 eq h3006 u3002 eq x3005 x3027 eq x3005 h3026 eq h3031 p3024 |
+|           |              |       | eq x3027 > ]                                                                     |
 +-----------+--------------+-------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------+

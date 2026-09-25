@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id212_254_764
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                           GOLD OUTPUTS                                                                           |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                         | Generated? |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Bootleg Series Volume 1: The Quine Tapes was recorded in St Louis, Missouri, in the United States, in English, the primary language of the country. | False      |
-| The Bootleg Series Volume I: The Quine Tapes was recorded in St. Louis, Missouri, in the United States where English is the spoken language.        | False      |
-| The Quine Tapes were recorded in St. Louis, Missouri, United States in which the de facto national language is English.                             | False      |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                                         GOLD OUTPUTS                                                                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                                                                                    | Generated? |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Bootleg Series Volume 1: The Quine Tapes was recorded in St. Louis, Missouri and San Francisco, which has a 628 area code.                                                                                     | False      |
+| Bootleg Series Volume 1: The Quine Tapes were recorded in St. Louis, Missouri and San Francisco, where 628 is an area code.                                                                                    | False      |
+| The Bootleg Series Volume 1: The Quine Tapes were recorded in San Francisco where the area code was 628. The location that the Bootleg Series The Quine Tapes Volume 1 was recorded was in St. Louis Missouri. | False      |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------------------------------+
 |                                                  NODE METRICS                                                  |
@@ -56,63 +56,62 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id212_254_764
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h25999                                                                    |
-|               |   INDEX: e25996 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h25990 ARG0: e25987 ARG1: u25988 ARG2: u25989 ]     |
-|               |           [ explicit_or_proper_q LBL: h25994 ARG0: x25991 RSTR: h25992 BODY:     |
-|               | h25993 ]                                                                         |
-|               |           [ loc_compound LBL: h25981 ARG0: e25978 ARG1: u25979 ARG2: u25980 ]    |
-|               |           [ explicit_or_proper_q LBL: h25985 ARG0: x25982 RSTR: h25983 BODY:     |
-|               | h25984 ]                                                                         |
-|               |           [ named LBL: h25977 ARG0: x25976 CARG: "St. Louis" ]                   |
-|               |           [ named LBL: h25975 ARG0: x25974 CARG: "Missouri" ]                    |
-|               |           [ _record_v_1 LBL: h25999 ARG0: e25996 ARG1: i25997 ARG2: i25998 ]     |
-|               |           [ explicit_or_proper_q LBL: h26003 ARG0: x26000 RSTR: h26001 BODY:     |
-|               | h26002 ]                                                                         |
-|               |           [ named LBL: h25973 ARG0: x25972 CARG: "Bootleg Series Volume 1: The   |
+| Original      | [ TOP: h4266                                                                     |
+|               |   INDEX: e4263 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_state LBL: h4257 ARG0: e4254 ARG1: u4255 ARG2: u4256 ]         |
+|               |           [ explicit_or_proper_q LBL: h4261 ARG0: x4258 RSTR: h4259 BODY: h4260  |
+|               | ]                                                                                |
+|               |           [ loc_compound LBL: h4248 ARG0: e4245 ARG1: u4246 ARG2: u4247 ]        |
+|               |           [ explicit_or_proper_q LBL: h4252 ARG0: x4249 RSTR: h4250 BODY: h4251  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4244 ARG0: x4243 CARG: "St. Louis" ]                     |
+|               |           [ named LBL: h4242 ARG0: x4241 CARG: "Missouri" ]                      |
+|               |           [ _record_v_1 LBL: h4266 ARG0: e4263 ARG1: i4264 ARG2: i4265 ]         |
+|               |           [ explicit_or_proper_q LBL: h4270 ARG0: x4267 RSTR: h4268 BODY: h4269  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4240 ARG0: x4239 CARG: "Bootleg Series Volume 1: The     |
 |               | Quine Tapes" ] >                                                                 |
-|               |   HCONS: < h25983 qeq h25977 h25992 qeq h25975 h26001 qeq h25973 >               |
-|               |   EQS: < x25982 eq x25976 h25981 eq h25986 u25980 eq x25982 h25981 eq h25975     |
-|               | u25979 eq x25974 x25991 eq x25974 h25990 eq h25995 u25989 eq x25991 x26000 eq    |
-|               | x25972 h25999 eq h26004 i25998 eq x26000 h25990 eq h25999 u25988 eq e25996 >     |
-|               |   SLOTS: < ARG1: i25997 > ]                                                      |
+|               |   HCONS: < h4250 qeq h4244 h4259 qeq h4242 h4268 qeq h4240 >                     |
+|               |   EQS: < x4249 eq x4243 h4248 eq h4253 u4247 eq x4249 h4248 eq h4242 u4246 eq    |
+|               | x4241 x4258 eq x4241 h4257 eq h4262 u4256 eq x4258 x4267 eq x4239 h4266 eq h4271 |
+|               | i4265 eq x4267 h4257 eq h4266 u4255 eq e4263 >                                   |
+|               |   SLOTS: < ARG1: i4264 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h25990                                                                    |
-|               |   INDEX: e25996 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h25990 ARG0: e25987 ARG1: e25996 ARG2: x25974 ]     |
-|               |           [ explicit_or_proper_q LBL: h25994 ARG0: x25974 RSTR: h25992 BODY:     |
-|               | h25993 ]                                                                         |
-|               |           [ loc_compound LBL: h25975 ARG0: e25978 ARG1: x25974 ARG2: x25976 ]    |
-|               |           [ explicit_or_proper_q LBL: h25985 ARG0: x25976 RSTR: h25983 BODY:     |
-|               | h25984 ]                                                                         |
-|               |           [ named LBL: h25977 ARG0: x25976 CARG: "St. Louis" ]                   |
-|               |           [ named LBL: h25975 ARG0: x25974 CARG: "Missouri" ]                    |
-|               |           [ _record_v_1 LBL: h25990 ARG0: e25996 ARG1: i25997 ARG2: x25972 ]     |
-|               |           [ explicit_or_proper_q LBL: h26003 ARG0: x25972 RSTR: h26001 BODY:     |
-|               | h26002 ]                                                                         |
-|               |           [ named LBL: h25973 ARG0: x25972 CARG: "Bootleg Series Volume 1: The   |
+| EQs Collapsed | [ TOP: h4257                                                                     |
+|               |   INDEX: e4263 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_state LBL: h4257 ARG0: e4254 ARG1: e4263 ARG2: x4241 ]         |
+|               |           [ explicit_or_proper_q LBL: h4261 ARG0: x4241 RSTR: h4259 BODY: h4260  |
+|               | ]                                                                                |
+|               |           [ loc_compound LBL: h4242 ARG0: e4245 ARG1: x4241 ARG2: x4243 ]        |
+|               |           [ explicit_or_proper_q LBL: h4252 ARG0: x4243 RSTR: h4250 BODY: h4251  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4244 ARG0: x4243 CARG: "St. Louis" ]                     |
+|               |           [ named LBL: h4242 ARG0: x4241 CARG: "Missouri" ]                      |
+|               |           [ _record_v_1 LBL: h4257 ARG0: e4263 ARG1: i4264 ARG2: x4239 ]         |
+|               |           [ explicit_or_proper_q LBL: h4270 ARG0: x4239 RSTR: h4268 BODY: h4269  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4240 ARG0: x4239 CARG: "Bootleg Series Volume 1: The     |
 |               | Quine Tapes" ] >                                                                 |
-|               |   HCONS: < h25983 qeq h25977 h25992 qeq h25975 h26001 qeq h25973 >               |
-|               |   SLOTS: < ARG1: i25997 > ]                                                      |
+|               |   HCONS: < h4250 qeq h4244 h4259 qeq h4242 h4268 qeq h4240 >                     |
+|               |   SLOTS: < ARG1: i4264 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h26005                                                                    |
-|               |   INDEX: e25996 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h25990 ARG0: e25987 ARG1: e25996 ARG2: x25974 ]     |
-|               |           [ explicit_or_proper_q LBL: h25994 ARG0: x25974 RSTR: h25992 BODY:     |
-|               | h25993 ]                                                                         |
-|               |           [ loc_compound LBL: h25975 ARG0: e25978 ARG1: x25974 ARG2: x25976 ]    |
-|               |           [ explicit_or_proper_q LBL: h25985 ARG0: x25976 RSTR: h25983 BODY:     |
-|               | h25984 ]                                                                         |
-|               |           [ named LBL: h25977 ARG0: x25976 CARG: "St. Louis" ]                   |
-|               |           [ named LBL: h25975 ARG0: x25974 CARG: "Missouri" ]                    |
-|               |           [ _record_v_1 LBL: h25990 ARG0: e25996 ARG1: i25997 ARG2: x25972 ]     |
-|               |           [ explicit_or_proper_q LBL: h26003 ARG0: x25972 RSTR: h26001 BODY:     |
-|               | h26002 ]                                                                         |
-|               |           [ named LBL: h25973 ARG0: x25972 CARG: "Bootleg Series Volume 1: The   |
+| Prepped       | [ TOP: h4272                                                                     |
+|               |   INDEX: e4263 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_state LBL: h4257 ARG0: e4254 ARG1: e4263 ARG2: x4241 ]         |
+|               |           [ explicit_or_proper_q LBL: h4261 ARG0: x4241 RSTR: h4259 BODY: h4260  |
+|               | ]                                                                                |
+|               |           [ loc_compound LBL: h4242 ARG0: e4245 ARG1: x4241 ARG2: x4243 ]        |
+|               |           [ explicit_or_proper_q LBL: h4252 ARG0: x4243 RSTR: h4250 BODY: h4251  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4244 ARG0: x4243 CARG: "St. Louis" ]                     |
+|               |           [ named LBL: h4242 ARG0: x4241 CARG: "Missouri" ]                      |
+|               |           [ _record_v_1 LBL: h4257 ARG0: e4263 ARG1: i4264 ARG2: x4239 ]         |
+|               |           [ explicit_or_proper_q LBL: h4270 ARG0: x4239 RSTR: h4268 BODY: h4269  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4240 ARG0: x4239 CARG: "Bootleg Series Volume 1: The     |
 |               | Quine Tapes" ] >                                                                 |
-|               |   HCONS: < h25983 qeq h25977 h25992 qeq h25975 h26001 qeq h25973 h26005 qeq      |
-|               | h25990 >                                                                         |
-|               |   SLOTS: < ARG1: i25997 > ]                                                      |
+|               |   HCONS: < h4250 qeq h4244 h4259 qeq h4242 h4268 qeq h4240 h4272 qeq h4257 >     |
+|               |   SLOTS: < ARG1: i4264 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -120,21 +119,21 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id212_254_764
 +------------------------------------------+----------------------------------------------------------------------------------+
 | Node                                     | Generated SEMENT                                                                 |
 +------------------------------------------+----------------------------------------------------------------------------------+
-| Bootleg_Series_Volume_1:_The_Quine_Tapes | [ TOP: h25973                                                                    |
-|                                          |   INDEX: x25972                                                                  |
-|                                          |   RELS: < [ named LBL: h25973 ARG0: x25972 CARG: "Bootleg Series Volume 1: The   |
+| Bootleg_Series_Volume_1:_The_Quine_Tapes | [ TOP: h4240                                                                     |
+|                                          |   INDEX: x4239                                                                   |
+|                                          |   RELS: < [ named LBL: h4240 ARG0: x4239 CARG: "Bootleg Series Volume 1: The     |
 |                                          | Quine Tapes" ] > ]                                                               |
 +------------------------------------------+----------------------------------------------------------------------------------+
-| St._Louis,_Missouri                      | [ TOP: h25975                                                                    |
-|                                          |   INDEX: x25974                                                                  |
-|                                          |   RELS: < [ loc_compound LBL: h25981 ARG0: e25978 ARG1: u25979 ARG2: u25980 ]    |
-|                                          |           [ explicit_or_proper_q LBL: h25985 ARG0: x25982 RSTR: h25983 BODY:     |
-|                                          | h25984 ]                                                                         |
-|                                          |           [ named LBL: h25977 ARG0: x25976 CARG: "St. Louis" ]                   |
-|                                          |           [ named LBL: h25975 ARG0: x25974 CARG: "Missouri" ] >                  |
-|                                          |   HCONS: < h25983 qeq h25977 >                                                   |
-|                                          |   EQS: < x25982 eq x25976 h25981 eq h25986 u25980 eq x25982 h25981 eq h25975     |
-|                                          | u25979 eq x25974 > ]                                                             |
+| St._Louis,_Missouri                      | [ TOP: h4242                                                                     |
+|                                          |   INDEX: x4241                                                                   |
+|                                          |   RELS: < [ loc_compound LBL: h4248 ARG0: e4245 ARG1: u4246 ARG2: u4247 ]        |
+|                                          |           [ explicit_or_proper_q LBL: h4252 ARG0: x4249 RSTR: h4250 BODY: h4251  |
+|                                          | ]                                                                                |
+|                                          |           [ named LBL: h4244 ARG0: x4243 CARG: "St. Louis" ]                     |
+|                                          |           [ named LBL: h4242 ARG0: x4241 CARG: "Missouri" ] >                    |
+|                                          |   HCONS: < h4250 qeq h4244 >                                                     |
+|                                          |   EQS: < x4249 eq x4243 h4248 eq h4253 u4247 eq x4249 h4248 eq h4242 u4246 eq    |
+|                                          | x4241 > ]                                                                        |
 +------------------------------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -142,26 +141,26 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id212_254_764
 +------------+------------------------------------------+---------------------+----------------------------------------------------------------------------------+
 | Edge       | Parent                                   | Child               | Generated SEMENT                                                                 |
 +------------+------------------------------------------+---------------------+----------------------------------------------------------------------------------+
-| recordedIn | Bootleg_Series_Volume_1:_The_Quine_Tapes | St._Louis,_Missouri | [ TOP: h25999                                                                    |
-|            |                                          |                     |   INDEX: e25996 [ e TENSE: tensed ]                                              |
-|            |                                          |                     |   RELS: < [ _in_p_state LBL: h25990 ARG0: e25987 ARG1: u25988 ARG2: u25989 ]     |
-|            |                                          |                     |           [ explicit_or_proper_q LBL: h25994 ARG0: x25991 RSTR: h25992 BODY:     |
-|            |                                          |                     | h25993 ]                                                                         |
-|            |                                          |                     |           [ loc_compound LBL: h25981 ARG0: e25978 ARG1: u25979 ARG2: u25980 ]    |
-|            |                                          |                     |           [ explicit_or_proper_q LBL: h25985 ARG0: x25982 RSTR: h25983 BODY:     |
-|            |                                          |                     | h25984 ]                                                                         |
-|            |                                          |                     |           [ named LBL: h25977 ARG0: x25976 CARG: "St. Louis" ]                   |
-|            |                                          |                     |           [ named LBL: h25975 ARG0: x25974 CARG: "Missouri" ]                    |
-|            |                                          |                     |           [ _record_v_1 LBL: h25999 ARG0: e25996 ARG1: i25997 ARG2: i25998 ]     |
-|            |                                          |                     |           [ explicit_or_proper_q LBL: h26003 ARG0: x26000 RSTR: h26001 BODY:     |
-|            |                                          |                     | h26002 ]                                                                         |
-|            |                                          |                     |           [ named LBL: h25973 ARG0: x25972 CARG: "Bootleg Series Volume 1: The   |
+| recordedIn | Bootleg_Series_Volume_1:_The_Quine_Tapes | St._Louis,_Missouri | [ TOP: h4266                                                                     |
+|            |                                          |                     |   INDEX: e4263 [ e TENSE: tensed ]                                               |
+|            |                                          |                     |   RELS: < [ _in_p_state LBL: h4257 ARG0: e4254 ARG1: u4255 ARG2: u4256 ]         |
+|            |                                          |                     |           [ explicit_or_proper_q LBL: h4261 ARG0: x4258 RSTR: h4259 BODY: h4260  |
+|            |                                          |                     | ]                                                                                |
+|            |                                          |                     |           [ loc_compound LBL: h4248 ARG0: e4245 ARG1: u4246 ARG2: u4247 ]        |
+|            |                                          |                     |           [ explicit_or_proper_q LBL: h4252 ARG0: x4249 RSTR: h4250 BODY: h4251  |
+|            |                                          |                     | ]                                                                                |
+|            |                                          |                     |           [ named LBL: h4244 ARG0: x4243 CARG: "St. Louis" ]                     |
+|            |                                          |                     |           [ named LBL: h4242 ARG0: x4241 CARG: "Missouri" ]                      |
+|            |                                          |                     |           [ _record_v_1 LBL: h4266 ARG0: e4263 ARG1: i4264 ARG2: i4265 ]         |
+|            |                                          |                     |           [ explicit_or_proper_q LBL: h4270 ARG0: x4267 RSTR: h4268 BODY: h4269  |
+|            |                                          |                     | ]                                                                                |
+|            |                                          |                     |           [ named LBL: h4240 ARG0: x4239 CARG: "Bootleg Series Volume 1: The     |
 |            |                                          |                     | Quine Tapes" ] >                                                                 |
-|            |                                          |                     |   HCONS: < h25983 qeq h25977 h25992 qeq h25975 h26001 qeq h25973 >               |
-|            |                                          |                     |   EQS: < x25982 eq x25976 h25981 eq h25986 u25980 eq x25982 h25981 eq h25975     |
-|            |                                          |                     | u25979 eq x25974 x25991 eq x25974 h25990 eq h25995 u25989 eq x25991 x26000 eq    |
-|            |                                          |                     | x25972 h25999 eq h26004 i25998 eq x26000 h25990 eq h25999 u25988 eq e25996 >     |
-|            |                                          |                     |   SLOTS: < ARG1: i25997 > ]                                                      |
+|            |                                          |                     |   HCONS: < h4250 qeq h4244 h4259 qeq h4242 h4268 qeq h4240 >                     |
+|            |                                          |                     |   EQS: < x4249 eq x4243 h4248 eq h4253 u4247 eq x4249 h4248 eq h4242 u4246 eq    |
+|            |                                          |                     | x4241 x4258 eq x4241 h4257 eq h4262 u4256 eq x4258 x4267 eq x4239 h4266 eq h4271 |
+|            |                                          |                     | i4265 eq x4267 h4257 eq h4266 u4255 eq e4263 >                                   |
+|            |                                          |                     |   SLOTS: < ARG1: i4264 > ]                                                       |
 +------------+------------------------------------------+---------------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------+

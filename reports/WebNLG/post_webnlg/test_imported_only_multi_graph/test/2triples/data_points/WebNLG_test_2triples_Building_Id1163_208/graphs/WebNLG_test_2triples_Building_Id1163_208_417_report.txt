@@ -24,14 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_Building_Id1163_208_417
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                    GOLD OUTPUTS                                                                   |
-+--------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                          | Generated? |
-+--------------------------------------------------------------------------------------------------------------------------------------+------------+
-| The College of WIlliam and Mary is the current owner of Alan B. Miller Hall and the Mason School of Business is the current tenants. | False      |
-| The Mason School Of Business are the current tenants of Alan B Miller Hall, and the college of William and Mary is its owner.        | False      |
-+--------------------------------------------------------------------------------------------------------------------------------------+------------+
++-------------------------------------------------------------------------------------------------------------------------+
+|                                                       GOLD OUTPUTS                                                      |
++------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                | Generated? |
++------------------------------------------------------------------------------------------------------------+------------+
+| Alan B. Miller Hall (owned by the College of William and Mary) is at 101 Ukrop Way.                        | False      |
+| The College of William and Mary is the owner of the Alan B. Miller Hall, whose address is "101 Ukrop Way". | False      |
+| The college of William and Mary is the owner of the Alan B. Miller Hall, 101 Ukrop Way.                    | False      |
++------------------------------------------------------------------------------------------------------------+------------+
 
 +-------------------------------------------------------------------------------------------------+
 |                                           NODE METRICS                                          |
@@ -55,73 +56,65 @@ GRAPH NAME: WebNLG_test_2triples_Building_Id1163_208_417
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h2815                                                                     |
-|               |   INDEX: e2812 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _own_v_1 LBL: h2815 ARG0: e2812 ARG1: i2813 ARG2: i2814 ]            |
-|               |           [ explicit_or_proper_q LBL: h2824 ARG0: x2821 RSTR: h2822 BODY: h2823  |
-|               | ]                                                                                |
-|               |           [ named LBL: h2809 ARG0: x2808 CARG: "Alan B. Miller Hall" ]           |
-|               |           [ explicit_or_proper_q LBL: h2819 ARG0: x2816 RSTR: h2817 BODY: h2818  |
-|               | ]                                                                                |
-|               |           [ named LBL: h2811 ARG0: x2810 CARG: "College of William & Mary" ] >   |
-|               |   HCONS: < h2822 qeq h2809 h2817 qeq h2811 >                                     |
-|               |   EQS: < x2821 eq x2808 h2815 eq h2825 i2814 eq x2821 x2816 eq x2810 h2815 eq    |
-|               | h2820 i2813 eq x2816 > ]                                                         |
+| Original      | [ TOP: h338                                                                      |
+|               |   INDEX: e335 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _own_v_1 LBL: h338 ARG0: e335 ARG1: i336 ARG2: i337 ]                |
+|               |           [ explicit_or_proper_q LBL: h347 ARG0: x344 RSTR: h345 BODY: h346 ]    |
+|               |           [ named LBL: h332 ARG0: x331 CARG: "Alan B. Miller Hall" ]             |
+|               |           [ explicit_or_proper_q LBL: h342 ARG0: x339 RSTR: h340 BODY: h341 ]    |
+|               |           [ named LBL: h334 ARG0: x333 CARG: "College of William & Mary" ] >     |
+|               |   HCONS: < h345 qeq h332 h340 qeq h334 >                                         |
+|               |   EQS: < x344 eq x331 h338 eq h348 i337 eq x344 x339 eq x333 h338 eq h343 i336   |
+|               | eq x339 > ]                                                                      |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h2815                                                                     |
-|               |   INDEX: e2812 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _own_v_1 LBL: h2815 ARG0: e2812 ARG1: x2810 ARG2: x2808 ]            |
-|               |           [ explicit_or_proper_q LBL: h2824 ARG0: x2808 RSTR: h2822 BODY: h2823  |
-|               | ]                                                                                |
-|               |           [ named LBL: h2809 ARG0: x2808 CARG: "Alan B. Miller Hall" ]           |
-|               |           [ explicit_or_proper_q LBL: h2819 ARG0: x2810 RSTR: h2817 BODY: h2818  |
-|               | ]                                                                                |
-|               |           [ named LBL: h2811 ARG0: x2810 CARG: "College of William & Mary" ] >   |
-|               |   HCONS: < h2822 qeq h2809 h2817 qeq h2811 > ]                                   |
+| EQs Collapsed | [ TOP: h338                                                                      |
+|               |   INDEX: e335 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _own_v_1 LBL: h338 ARG0: e335 ARG1: x333 ARG2: x331 ]                |
+|               |           [ explicit_or_proper_q LBL: h347 ARG0: x331 RSTR: h345 BODY: h346 ]    |
+|               |           [ named LBL: h332 ARG0: x331 CARG: "Alan B. Miller Hall" ]             |
+|               |           [ explicit_or_proper_q LBL: h342 ARG0: x333 RSTR: h340 BODY: h341 ]    |
+|               |           [ named LBL: h334 ARG0: x333 CARG: "College of William & Mary" ] >     |
+|               |   HCONS: < h345 qeq h332 h340 qeq h334 > ]                                       |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h2826                                                                     |
-|               |   INDEX: e2812 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _own_v_1 LBL: h2815 ARG0: e2812 ARG1: x2810 ARG2: x2808 ]            |
-|               |           [ explicit_or_proper_q LBL: h2824 ARG0: x2808 RSTR: h2822 BODY: h2823  |
-|               | ]                                                                                |
-|               |           [ named LBL: h2809 ARG0: x2808 CARG: "Alan B. Miller Hall" ]           |
-|               |           [ explicit_or_proper_q LBL: h2819 ARG0: x2810 RSTR: h2817 BODY: h2818  |
-|               | ]                                                                                |
-|               |           [ named LBL: h2811 ARG0: x2810 CARG: "College of William & Mary" ] >   |
-|               |   HCONS: < h2822 qeq h2809 h2817 qeq h2811 h2826 qeq h2815 > ]                   |
+| Prepped       | [ TOP: h349                                                                      |
+|               |   INDEX: e335 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _own_v_1 LBL: h338 ARG0: e335 ARG1: x333 ARG2: x331 ]                |
+|               |           [ explicit_or_proper_q LBL: h347 ARG0: x331 RSTR: h345 BODY: h346 ]    |
+|               |           [ named LBL: h332 ARG0: x331 CARG: "Alan B. Miller Hall" ]             |
+|               |           [ explicit_or_proper_q LBL: h342 ARG0: x333 RSTR: h340 BODY: h341 ]    |
+|               |           [ named LBL: h334 ARG0: x333 CARG: "College of William & Mary" ] >     |
+|               |   HCONS: < h345 qeq h332 h340 qeq h334 h349 qeq h338 > ]                         |
 +---------------+----------------------------------------------------------------------------------+
 
-+--------------------------------------------------------------------------------------------------------------+
-|                                                 NODE SEMENTS                                                 |
-+---------------------------+----------------------------------------------------------------------------------+
-| Node                      | Generated SEMENT                                                                 |
-+---------------------------+----------------------------------------------------------------------------------+
-| Alan_B._Miller_Hall       | [ TOP: h2809                                                                     |
-|                           |   INDEX: x2808                                                                   |
-|                           |   RELS: < [ named LBL: h2809 ARG0: x2808 CARG: "Alan B. Miller Hall" ] > ]       |
-+---------------------------+----------------------------------------------------------------------------------+
-| College_of_William_&_Mary | [ TOP: h2811                                                                     |
-|                           |   INDEX: x2810                                                                   |
-|                           |   RELS: < [ named LBL: h2811 ARG0: x2810 CARG: "College of William & Mary" ] > ] |
-+---------------------------+----------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------+
+|                                                NODE SEMENTS                                                |
++---------------------------+--------------------------------------------------------------------------------+
+| Node                      | Generated SEMENT                                                               |
++---------------------------+--------------------------------------------------------------------------------+
+| Alan_B._Miller_Hall       | [ TOP: h332                                                                    |
+|                           |   INDEX: x331                                                                  |
+|                           |   RELS: < [ named LBL: h332 ARG0: x331 CARG: "Alan B. Miller Hall" ] > ]       |
++---------------------------+--------------------------------------------------------------------------------+
+| College_of_William_&_Mary | [ TOP: h334                                                                    |
+|                           |   INDEX: x333                                                                  |
+|                           |   RELS: < [ named LBL: h334 ARG0: x333 CARG: "College of William & Mary" ] > ] |
++---------------------------+--------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                                EDGE SEMENTS                                                                |
 +-------+---------------------+---------------------------+----------------------------------------------------------------------------------+
 | Edge  | Parent              | Child                     | Generated SEMENT                                                                 |
 +-------+---------------------+---------------------------+----------------------------------------------------------------------------------+
-| owner | Alan_B._Miller_Hall | College_of_William_&_Mary | [ TOP: h2815                                                                     |
-|       |                     |                           |   INDEX: e2812 [ e TENSE: tensed ]                                               |
-|       |                     |                           |   RELS: < [ _own_v_1 LBL: h2815 ARG0: e2812 ARG1: i2813 ARG2: i2814 ]            |
-|       |                     |                           |           [ explicit_or_proper_q LBL: h2824 ARG0: x2821 RSTR: h2822 BODY: h2823  |
-|       |                     |                           | ]                                                                                |
-|       |                     |                           |           [ named LBL: h2809 ARG0: x2808 CARG: "Alan B. Miller Hall" ]           |
-|       |                     |                           |           [ explicit_or_proper_q LBL: h2819 ARG0: x2816 RSTR: h2817 BODY: h2818  |
-|       |                     |                           | ]                                                                                |
-|       |                     |                           |           [ named LBL: h2811 ARG0: x2810 CARG: "College of William & Mary" ] >   |
-|       |                     |                           |   HCONS: < h2822 qeq h2809 h2817 qeq h2811 >                                     |
-|       |                     |                           |   EQS: < x2821 eq x2808 h2815 eq h2825 i2814 eq x2821 x2816 eq x2810 h2815 eq    |
-|       |                     |                           | h2820 i2813 eq x2816 > ]                                                         |
+| owner | Alan_B._Miller_Hall | College_of_William_&_Mary | [ TOP: h338                                                                      |
+|       |                     |                           |   INDEX: e335 [ e TENSE: tensed ]                                                |
+|       |                     |                           |   RELS: < [ _own_v_1 LBL: h338 ARG0: e335 ARG1: i336 ARG2: i337 ]                |
+|       |                     |                           |           [ explicit_or_proper_q LBL: h347 ARG0: x344 RSTR: h345 BODY: h346 ]    |
+|       |                     |                           |           [ named LBL: h332 ARG0: x331 CARG: "Alan B. Miller Hall" ]             |
+|       |                     |                           |           [ explicit_or_proper_q LBL: h342 ARG0: x339 RSTR: h340 BODY: h341 ]    |
+|       |                     |                           |           [ named LBL: h334 ARG0: x333 CARG: "College of William & Mary" ] >     |
+|       |                     |                           |   HCONS: < h345 qeq h332 h340 qeq h334 >                                         |
+|       |                     |                           |   EQS: < x344 eq x331 h338 eq h348 i337 eq x344 x339 eq x333 h338 eq h343 i336   |
+|       |                     |                           | eq x339 > ]                                                                      |
 +-------+---------------------+---------------------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------+

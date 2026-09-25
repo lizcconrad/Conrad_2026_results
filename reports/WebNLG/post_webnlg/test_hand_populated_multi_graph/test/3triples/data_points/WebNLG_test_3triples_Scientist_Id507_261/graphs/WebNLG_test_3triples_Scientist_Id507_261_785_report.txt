@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id507_261_785
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+--------------------------------------------------------------------------------------------------------------------------+
-|                                                       GOLD OUTPUTS                                                       |
-+-------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                 | Generated? |
-+-------------------------------------------------------------------------------------------------------------+------------+
-| Born in Darlington on January 1, 1726, Lady Anne Monson died on February 18th, 1776.                        | False      |
-| Lady Anne Monson was born in Darlington on January 1, 1726, and died on February 18, 1776.                  | False      |
-| Lady Anne Monson was born in Darlington on the 1st of January, 1726 and died on the 18th of February, 1776. | False      |
-+-------------------------------------------------------------------------------------------------------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                 GOLD OUTPUTS                                                                |
++--------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                    | Generated? |
++--------------------------------------------------------------------------------------------------------------------------------+------------+
+| George Monson was married to Lady Anne Monson, a botanist, who died on February 18, 1776.                                      | False      |
+| Lady Anne Monson is the spouse of George Monson. Her professional field of study was botany, and she died on 18 February 1776. | False      |
+| Lady Anne Monson, a professional botanist who was married to George Monson, died on February 18th, 1776.                       | False      |
++--------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------+
 |                                      NODE METRICS                                      |
@@ -56,75 +56,66 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id507_261_785
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h26710                                                                    |
-|               |   INDEX: e26708 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h26702 ARG0: e26699 ARG1: u26700 ARG2: i26701 ]      |
-|               |           [ def_udef_a_q LBL: h26706 ARG0: x26703 RSTR: h26704 BODY: h26705 ]    |
-|               |           [ of_p LBL: h26693 ARG0: e26690 ARG1: x26691 ARG2: x26692 ]            |
-|               |           [ def_implicit_q LBL: h26697 ARG0: x26694 RSTR: h26695 BODY: h26696 ]  |
-|               |           [ mofy LBL: h26682 ARG0: x26680 [ x NUM: sg ] ARG1: i26681 CARG: "Feb" |
-|               | ]                                                                                |
-|               |           [ dofm LBL: h26679 ARG0: x26677 ARG1: i26678 CARG: "18th" ]            |
-|               |           [ proper_q LBL: h26688 ARG0: x26685 RSTR: h26686 BODY: h26687 ]        |
-|               |           [ yofc LBL: h26684 ARG0: x26683 CARG: "1776" ]                         |
-|               |           [ _die_v_1 LBL: h26710 ARG0: e26708 ARG1: i26709 ]                     |
-|               |           [ explicit_or_proper_q LBL: h26714 ARG0: x26711 RSTR: h26712 BODY:     |
-|               | h26713 ]                                                                         |
-|               |           [ compound LBL: h26671 ARG0: e26668 ARG1: u26669 ARG2: u26670 ]        |
-|               |           [ existential_q LBL: h26675 ARG0: x26672 RSTR: h26673 BODY: h26674 ]   |
-|               |           [ _lady_n_1 LBL: h26667 ARG0: x26666 [ x NUM: sg ] ]                   |
-|               |           [ named LBL: h26665 ARG0: x26664 CARG: "Anne Monson" ] >               |
-|               |   HCONS: < h26695 qeq h26682 h26686 qeq h26684 h26704 qeq h26679 h26673 qeq      |
-|               | h26667 h26712 qeq h26665 >                                                       |
-|               |   EQS: < x26694 eq x26680 h26693 eq h26698 x26692 eq x26694 x26685 eq x26683     |
-|               | h26679 eq h26689 i26678 eq x26685 h26693 eq h26679 x26691 eq x26677 x26703 eq    |
-|               | x26677 h26702 eq h26707 i26701 eq x26703 x26672 eq x26666 h26671 eq h26676       |
-|               | u26670 eq x26672 h26671 eq h26665 u26669 eq x26664 x26711 eq x26664 h26710 eq    |
-|               | h26715 i26709 eq x26711 h26702 eq h26710 u26700 eq e26708 > ]                    |
+| Original      | [ TOP: h699                                                                      |
+|               |   INDEX: e697 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _on_p_temp LBL: h691 ARG0: e688 ARG1: u689 ARG2: i690 ]              |
+|               |           [ def_udef_a_q LBL: h695 ARG0: x692 RSTR: h693 BODY: h694 ]            |
+|               |           [ of_p LBL: h682 ARG0: e679 ARG1: x680 ARG2: x681 ]                    |
+|               |           [ def_implicit_q LBL: h686 ARG0: x683 RSTR: h684 BODY: h685 ]          |
+|               |           [ mofy LBL: h671 ARG0: x669 [ x NUM: sg ] ARG1: i670 CARG: "Feb" ]     |
+|               |           [ dofm LBL: h668 ARG0: x666 ARG1: i667 CARG: "18th" ]                  |
+|               |           [ proper_q LBL: h677 ARG0: x674 RSTR: h675 BODY: h676 ]                |
+|               |           [ yofc LBL: h673 ARG0: x672 CARG: "1776" ]                             |
+|               |           [ _die_v_1 LBL: h699 ARG0: e697 ARG1: i698 ]                           |
+|               |           [ explicit_or_proper_q LBL: h703 ARG0: x700 RSTR: h701 BODY: h702 ]    |
+|               |           [ compound LBL: h660 ARG0: e657 ARG1: u658 ARG2: u659 ]                |
+|               |           [ existential_q LBL: h664 ARG0: x661 RSTR: h662 BODY: h663 ]           |
+|               |           [ _lady_n_1 LBL: h656 ARG0: x655 [ x NUM: sg ] ]                       |
+|               |           [ named LBL: h654 ARG0: x653 CARG: "Anne Monson" ] >                   |
+|               |   HCONS: < h684 qeq h671 h675 qeq h673 h693 qeq h668 h662 qeq h656 h701 qeq h654 |
+|               | >                                                                                |
+|               |   EQS: < x683 eq x669 h682 eq h687 x681 eq x683 x674 eq x672 h668 eq h678 i667   |
+|               | eq x674 h682 eq h668 x680 eq x666 x692 eq x666 h691 eq h696 i690 eq x692 x661 eq |
+|               | x655 h660 eq h665 u659 eq x661 h660 eq h654 u658 eq x653 x700 eq x653 h699 eq    |
+|               | h704 i698 eq x700 h691 eq h699 u689 eq e697 > ]                                  |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h26702                                                                    |
-|               |   INDEX: e26708 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h26702 ARG0: e26699 ARG1: e26708 ARG2: x26677 ]      |
-|               |           [ def_udef_a_q LBL: h26706 ARG0: x26677 RSTR: h26704 BODY: h26705 ]    |
-|               |           [ of_p LBL: h26679 ARG0: e26690 ARG1: x26677 ARG2: x26680 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ def_implicit_q LBL: h26697 ARG0: x26680 RSTR: h26695 BODY: h26696 ]  |
-|               |           [ mofy LBL: h26682 ARG0: x26680 ARG1: i26681 CARG: "Feb" ]             |
-|               |           [ dofm LBL: h26679 ARG0: x26677 ARG1: x26683 CARG: "18th" ]            |
-|               |           [ proper_q LBL: h26688 ARG0: x26683 RSTR: h26686 BODY: h26687 ]        |
-|               |           [ yofc LBL: h26684 ARG0: x26683 CARG: "1776" ]                         |
-|               |           [ _die_v_1 LBL: h26702 ARG0: e26708 ARG1: x26664 ]                     |
-|               |           [ explicit_or_proper_q LBL: h26714 ARG0: x26664 RSTR: h26712 BODY:     |
-|               | h26713 ]                                                                         |
-|               |           [ compound LBL: h26665 ARG0: e26668 ARG1: x26664 ARG2: x26666 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h26675 ARG0: x26666 RSTR: h26673 BODY: h26674 ]   |
-|               |           [ _lady_n_1 LBL: h26667 ARG0: x26666 ]                                 |
-|               |           [ named LBL: h26665 ARG0: x26664 CARG: "Anne Monson" ] >               |
-|               |   HCONS: < h26695 qeq h26682 h26686 qeq h26684 h26704 qeq h26679 h26673 qeq      |
-|               | h26667 h26712 qeq h26665 > ]                                                     |
+| EQs Collapsed | [ TOP: h691                                                                      |
+|               |   INDEX: e697 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _on_p_temp LBL: h691 ARG0: e688 ARG1: e697 ARG2: x666 ]              |
+|               |           [ def_udef_a_q LBL: h695 ARG0: x666 RSTR: h693 BODY: h694 ]            |
+|               |           [ of_p LBL: h668 ARG0: e679 ARG1: x666 ARG2: x669 [ x NUM: sg ] ]      |
+|               |           [ def_implicit_q LBL: h686 ARG0: x669 RSTR: h684 BODY: h685 ]          |
+|               |           [ mofy LBL: h671 ARG0: x669 ARG1: i670 CARG: "Feb" ]                   |
+|               |           [ dofm LBL: h668 ARG0: x666 ARG1: x672 CARG: "18th" ]                  |
+|               |           [ proper_q LBL: h677 ARG0: x672 RSTR: h675 BODY: h676 ]                |
+|               |           [ yofc LBL: h673 ARG0: x672 CARG: "1776" ]                             |
+|               |           [ _die_v_1 LBL: h691 ARG0: e697 ARG1: x653 ]                           |
+|               |           [ explicit_or_proper_q LBL: h703 ARG0: x653 RSTR: h701 BODY: h702 ]    |
+|               |           [ compound LBL: h654 ARG0: e657 ARG1: x653 ARG2: x655 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h664 ARG0: x655 RSTR: h662 BODY: h663 ]           |
+|               |           [ _lady_n_1 LBL: h656 ARG0: x655 ]                                     |
+|               |           [ named LBL: h654 ARG0: x653 CARG: "Anne Monson" ] >                   |
+|               |   HCONS: < h684 qeq h671 h675 qeq h673 h693 qeq h668 h662 qeq h656 h701 qeq h654 |
+|               | > ]                                                                              |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h26716                                                                    |
-|               |   INDEX: e26708 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h26702 ARG0: e26699 ARG1: e26708 ARG2: x26677 ]      |
-|               |           [ def_udef_a_q LBL: h26706 ARG0: x26677 RSTR: h26704 BODY: h26705 ]    |
-|               |           [ of_p LBL: h26679 ARG0: e26690 ARG1: x26677 ARG2: x26680 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ def_implicit_q LBL: h26697 ARG0: x26680 RSTR: h26695 BODY: h26696 ]  |
-|               |           [ mofy LBL: h26682 ARG0: x26680 ARG1: i26681 CARG: "Feb" ]             |
-|               |           [ dofm LBL: h26679 ARG0: x26677 ARG1: x26683 CARG: "18th" ]            |
-|               |           [ proper_q LBL: h26688 ARG0: x26683 RSTR: h26686 BODY: h26687 ]        |
-|               |           [ yofc LBL: h26684 ARG0: x26683 CARG: "1776" ]                         |
-|               |           [ _die_v_1 LBL: h26702 ARG0: e26708 ARG1: x26664 ]                     |
-|               |           [ explicit_or_proper_q LBL: h26714 ARG0: x26664 RSTR: h26712 BODY:     |
-|               | h26713 ]                                                                         |
-|               |           [ compound LBL: h26665 ARG0: e26668 ARG1: x26664 ARG2: x26666 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h26675 ARG0: x26666 RSTR: h26673 BODY: h26674 ]   |
-|               |           [ _lady_n_1 LBL: h26667 ARG0: x26666 ]                                 |
-|               |           [ named LBL: h26665 ARG0: x26664 CARG: "Anne Monson" ] >               |
-|               |   HCONS: < h26695 qeq h26682 h26686 qeq h26684 h26704 qeq h26679 h26673 qeq      |
-|               | h26667 h26712 qeq h26665 h26716 qeq h26702 > ]                                   |
+| Prepped       | [ TOP: h705                                                                      |
+|               |   INDEX: e697 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _on_p_temp LBL: h691 ARG0: e688 ARG1: e697 ARG2: x666 ]              |
+|               |           [ def_udef_a_q LBL: h695 ARG0: x666 RSTR: h693 BODY: h694 ]            |
+|               |           [ of_p LBL: h668 ARG0: e679 ARG1: x666 ARG2: x669 [ x NUM: sg ] ]      |
+|               |           [ def_implicit_q LBL: h686 ARG0: x669 RSTR: h684 BODY: h685 ]          |
+|               |           [ mofy LBL: h671 ARG0: x669 ARG1: i670 CARG: "Feb" ]                   |
+|               |           [ dofm LBL: h668 ARG0: x666 ARG1: x672 CARG: "18th" ]                  |
+|               |           [ proper_q LBL: h677 ARG0: x672 RSTR: h675 BODY: h676 ]                |
+|               |           [ yofc LBL: h673 ARG0: x672 CARG: "1776" ]                             |
+|               |           [ _die_v_1 LBL: h691 ARG0: e697 ARG1: x653 ]                           |
+|               |           [ explicit_or_proper_q LBL: h703 ARG0: x653 RSTR: h701 BODY: h702 ]    |
+|               |           [ compound LBL: h654 ARG0: e657 ARG1: x653 ARG2: x655 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h664 ARG0: x655 RSTR: h662 BODY: h663 ]           |
+|               |           [ _lady_n_1 LBL: h656 ARG0: x655 ]                                     |
+|               |           [ named LBL: h654 ARG0: x653 CARG: "Anne Monson" ] >                   |
+|               |   HCONS: < h684 qeq h671 h675 qeq h673 h693 qeq h668 h662 qeq h656 h701 qeq h654 |
+|               | h705 qeq h691 > ]                                                                |
 +---------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------+
@@ -132,28 +123,26 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id507_261_785
 +------------------+----------------------------------------------------------------------------------+
 | Node             | Generated SEMENT                                                                 |
 +------------------+----------------------------------------------------------------------------------+
-| Lady_Anne_Monson | [ TOP: h26665                                                                    |
-|                  |   INDEX: x26664                                                                  |
-|                  |   RELS: < [ compound LBL: h26671 ARG0: e26668 ARG1: u26669 ARG2: u26670 ]        |
-|                  |           [ existential_q LBL: h26675 ARG0: x26672 RSTR: h26673 BODY: h26674 ]   |
-|                  |           [ _lady_n_1 LBL: h26667 ARG0: x26666 [ x NUM: sg ] ]                   |
-|                  |           [ named LBL: h26665 ARG0: x26664 CARG: "Anne Monson" ] >               |
-|                  |   HCONS: < h26673 qeq h26667 >                                                   |
-|                  |   EQS: < x26672 eq x26666 h26671 eq h26676 u26670 eq x26672 h26671 eq h26665     |
-|                  | u26669 eq x26664 > ]                                                             |
+| Lady_Anne_Monson | [ TOP: h654                                                                      |
+|                  |   INDEX: x653                                                                    |
+|                  |   RELS: < [ compound LBL: h660 ARG0: e657 ARG1: u658 ARG2: u659 ]                |
+|                  |           [ existential_q LBL: h664 ARG0: x661 RSTR: h662 BODY: h663 ]           |
+|                  |           [ _lady_n_1 LBL: h656 ARG0: x655 [ x NUM: sg ] ]                       |
+|                  |           [ named LBL: h654 ARG0: x653 CARG: "Anne Monson" ] >                   |
+|                  |   HCONS: < h662 qeq h656 >                                                       |
+|                  |   EQS: < x661 eq x655 h660 eq h665 u659 eq x661 h660 eq h654 u658 eq x653 > ]    |
 +------------------+----------------------------------------------------------------------------------+
-| 1776-02-18       | [ TOP: h26679                                                                    |
-|                  |   INDEX: x26677                                                                  |
-|                  |   RELS: < [ of_p LBL: h26693 ARG0: e26690 ARG1: x26691 ARG2: x26692 ]            |
-|                  |           [ def_implicit_q LBL: h26697 ARG0: x26694 RSTR: h26695 BODY: h26696 ]  |
-|                  |           [ mofy LBL: h26682 ARG0: x26680 [ x NUM: sg ] ARG1: i26681 CARG: "Feb" |
-|                  | ]                                                                                |
-|                  |           [ dofm LBL: h26679 ARG0: x26677 ARG1: i26678 CARG: "18th" ]            |
-|                  |           [ proper_q LBL: h26688 ARG0: x26685 RSTR: h26686 BODY: h26687 ]        |
-|                  |           [ yofc LBL: h26684 ARG0: x26683 CARG: "1776" ] >                       |
-|                  |   HCONS: < h26695 qeq h26682 h26686 qeq h26684 >                                 |
-|                  |   EQS: < x26694 eq x26680 h26693 eq h26698 x26692 eq x26694 x26685 eq x26683     |
-|                  | h26679 eq h26689 i26678 eq x26685 h26693 eq h26679 x26691 eq x26677 > ]          |
+| 1776-02-18       | [ TOP: h668                                                                      |
+|                  |   INDEX: x666                                                                    |
+|                  |   RELS: < [ of_p LBL: h682 ARG0: e679 ARG1: x680 ARG2: x681 ]                    |
+|                  |           [ def_implicit_q LBL: h686 ARG0: x683 RSTR: h684 BODY: h685 ]          |
+|                  |           [ mofy LBL: h671 ARG0: x669 [ x NUM: sg ] ARG1: i670 CARG: "Feb" ]     |
+|                  |           [ dofm LBL: h668 ARG0: x666 ARG1: i667 CARG: "18th" ]                  |
+|                  |           [ proper_q LBL: h677 ARG0: x674 RSTR: h675 BODY: h676 ]                |
+|                  |           [ yofc LBL: h673 ARG0: x672 CARG: "1776" ] >                           |
+|                  |   HCONS: < h684 qeq h671 h675 qeq h673 >                                         |
+|                  |   EQS: < x683 eq x669 h682 eq h687 x681 eq x683 x674 eq x672 h668 eq h678 i667   |
+|                  | eq x674 h682 eq h668 x680 eq x666 > ]                                            |
 +------------------+----------------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------------------------------------+
@@ -161,31 +150,28 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id507_261_785
 +-----------+------------------+------------+----------------------------------------------------------------------------------+
 | Edge      | Parent           | Child      | Generated SEMENT                                                                 |
 +-----------+------------------+------------+----------------------------------------------------------------------------------+
-| deathDate | Lady_Anne_Monson | 1776-02-18 | [ TOP: h26710                                                                    |
-|           |                  |            |   INDEX: e26708 [ e TENSE: tensed ]                                              |
-|           |                  |            |   RELS: < [ _on_p_temp LBL: h26702 ARG0: e26699 ARG1: u26700 ARG2: i26701 ]      |
-|           |                  |            |           [ def_udef_a_q LBL: h26706 ARG0: x26703 RSTR: h26704 BODY: h26705 ]    |
-|           |                  |            |           [ of_p LBL: h26693 ARG0: e26690 ARG1: x26691 ARG2: x26692 ]            |
-|           |                  |            |           [ def_implicit_q LBL: h26697 ARG0: x26694 RSTR: h26695 BODY: h26696 ]  |
-|           |                  |            |           [ mofy LBL: h26682 ARG0: x26680 [ x NUM: sg ] ARG1: i26681 CARG: "Feb" |
-|           |                  |            | ]                                                                                |
-|           |                  |            |           [ dofm LBL: h26679 ARG0: x26677 ARG1: i26678 CARG: "18th" ]            |
-|           |                  |            |           [ proper_q LBL: h26688 ARG0: x26685 RSTR: h26686 BODY: h26687 ]        |
-|           |                  |            |           [ yofc LBL: h26684 ARG0: x26683 CARG: "1776" ]                         |
-|           |                  |            |           [ _die_v_1 LBL: h26710 ARG0: e26708 ARG1: i26709 ]                     |
-|           |                  |            |           [ explicit_or_proper_q LBL: h26714 ARG0: x26711 RSTR: h26712 BODY:     |
-|           |                  |            | h26713 ]                                                                         |
-|           |                  |            |           [ compound LBL: h26671 ARG0: e26668 ARG1: u26669 ARG2: u26670 ]        |
-|           |                  |            |           [ existential_q LBL: h26675 ARG0: x26672 RSTR: h26673 BODY: h26674 ]   |
-|           |                  |            |           [ _lady_n_1 LBL: h26667 ARG0: x26666 [ x NUM: sg ] ]                   |
-|           |                  |            |           [ named LBL: h26665 ARG0: x26664 CARG: "Anne Monson" ] >               |
-|           |                  |            |   HCONS: < h26695 qeq h26682 h26686 qeq h26684 h26704 qeq h26679 h26673 qeq      |
-|           |                  |            | h26667 h26712 qeq h26665 >                                                       |
-|           |                  |            |   EQS: < x26694 eq x26680 h26693 eq h26698 x26692 eq x26694 x26685 eq x26683     |
-|           |                  |            | h26679 eq h26689 i26678 eq x26685 h26693 eq h26679 x26691 eq x26677 x26703 eq    |
-|           |                  |            | x26677 h26702 eq h26707 i26701 eq x26703 x26672 eq x26666 h26671 eq h26676       |
-|           |                  |            | u26670 eq x26672 h26671 eq h26665 u26669 eq x26664 x26711 eq x26664 h26710 eq    |
-|           |                  |            | h26715 i26709 eq x26711 h26702 eq h26710 u26700 eq e26708 > ]                    |
+| deathDate | Lady_Anne_Monson | 1776-02-18 | [ TOP: h699                                                                      |
+|           |                  |            |   INDEX: e697 [ e TENSE: tensed ]                                                |
+|           |                  |            |   RELS: < [ _on_p_temp LBL: h691 ARG0: e688 ARG1: u689 ARG2: i690 ]              |
+|           |                  |            |           [ def_udef_a_q LBL: h695 ARG0: x692 RSTR: h693 BODY: h694 ]            |
+|           |                  |            |           [ of_p LBL: h682 ARG0: e679 ARG1: x680 ARG2: x681 ]                    |
+|           |                  |            |           [ def_implicit_q LBL: h686 ARG0: x683 RSTR: h684 BODY: h685 ]          |
+|           |                  |            |           [ mofy LBL: h671 ARG0: x669 [ x NUM: sg ] ARG1: i670 CARG: "Feb" ]     |
+|           |                  |            |           [ dofm LBL: h668 ARG0: x666 ARG1: i667 CARG: "18th" ]                  |
+|           |                  |            |           [ proper_q LBL: h677 ARG0: x674 RSTR: h675 BODY: h676 ]                |
+|           |                  |            |           [ yofc LBL: h673 ARG0: x672 CARG: "1776" ]                             |
+|           |                  |            |           [ _die_v_1 LBL: h699 ARG0: e697 ARG1: i698 ]                           |
+|           |                  |            |           [ explicit_or_proper_q LBL: h703 ARG0: x700 RSTR: h701 BODY: h702 ]    |
+|           |                  |            |           [ compound LBL: h660 ARG0: e657 ARG1: u658 ARG2: u659 ]                |
+|           |                  |            |           [ existential_q LBL: h664 ARG0: x661 RSTR: h662 BODY: h663 ]           |
+|           |                  |            |           [ _lady_n_1 LBL: h656 ARG0: x655 [ x NUM: sg ] ]                       |
+|           |                  |            |           [ named LBL: h654 ARG0: x653 CARG: "Anne Monson" ] >                   |
+|           |                  |            |   HCONS: < h684 qeq h671 h675 qeq h673 h693 qeq h668 h662 qeq h656 h701 qeq h654 |
+|           |                  |            | >                                                                                |
+|           |                  |            |   EQS: < x683 eq x669 h682 eq h687 x681 eq x683 x674 eq x672 h668 eq h678 i667   |
+|           |                  |            | eq x674 h682 eq h668 x680 eq x666 x692 eq x666 h691 eq h696 i690 eq x692 x661 eq |
+|           |                  |            | x655 h660 eq h665 u659 eq x661 h660 eq h654 u658 eq x653 x700 eq x653 h699 eq    |
+|           |                  |            | h704 i698 eq x700 h691 eq h699 u689 eq e697 > ]                                  |
 +-----------+------------------+------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------+

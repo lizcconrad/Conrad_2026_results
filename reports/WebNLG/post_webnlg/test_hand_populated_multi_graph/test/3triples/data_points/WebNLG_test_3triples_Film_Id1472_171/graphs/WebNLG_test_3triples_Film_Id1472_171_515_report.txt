@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id1472_171_515
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                         GOLD OUTPUTS                                                                         |
-+-------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                     | Generated? |
-+-------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Bernard Knowles was the cinematographer of the film "English Without Tears' which was edited by Alan Jaggs and produced by Anatole de Grunwald. | False      |
-| English Without Tears was edited by Alan Jaggs, produced by Anatole de Grunwald, with Bernard Knowles as the cinematographer.                   | False      |
-| English Without Tears was produced by Anatole de Grunwald, film editor Alan Jaggs and cinematographer Bernard Knowles.                          | False      |
-+-------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                  GOLD OUTPUTS                                                                  |
++-----------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                       | Generated? |
++-----------------------------------------------------------------------------------------------------------------------------------+------------+
+| "English Without Tears" features cinematography by Bernard Knowles. It was produced and written by Anatole de Grunwald.           | False      |
+| Anatole de Grunwald wrote and produced English Without Tears which had Bernard Knowles as the cinematographer.                    | False      |
+| English Without Tears is a film written and produced by Anatole de Grunwald. Bernard Knowles was in charge of the cinematography. | False      |
++-----------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +---------------------------------------------------------------------------------------------+
 |                                         NODE METRICS                                        |
@@ -56,88 +56,87 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id1472_171_515
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h17266                                                                    |
-|               |   INDEX: e17263 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h17266 ARG0: e17263 ARG1: p17264 ARG2: i17265 ]        |
-|               |           [ explicit_or_proper_q LBL: h17275 ARG0: x17272 RSTR: h17273 BODY:     |
-|               | h17274 ]                                                                         |
-|               |           [ named LBL: h17251 ARG0: x17250 CARG: "Bernard Knowles" ]             |
-|               |           [ def_udef_a_q LBL: h17270 ARG0: x17267 RSTR: h17268 BODY: h17269 ]    |
-|               |           [ _for_p LBL: h17255 ARG0: i17252 ARG1: u17253 ARG2: u17254 ]          |
-|               |           [ explicit_or_proper_q LBL: h17261 ARG0: x17258 RSTR: h17259 BODY:     |
-|               | h17260 ]                                                                         |
-|               |           [ named LBL: h17249 ARG0: x17248 CARG: "English Without Tears" ]       |
-|               |           [ _cinematographer_n_1 LBL: h17257 ARG0: x17256 ] >                    |
-|               |   HCONS: < h17273 qeq h17251 h17259 qeq h17249 h17268 qeq h17257 >               |
-|               |   EQS: < x17272 eq x17250 h17266 eq h17276 i17265 eq x17272 x17258 eq x17248     |
-|               | h17255 eq h17262 u17254 eq x17258 h17255 eq h17257 u17253 eq x17256 x17267 eq    |
-|               | x17256 h17266 eq h17271 p17264 eq x17267 > ]                                     |
+| Original      | [ TOP: h1869                                                                     |
+|               |   INDEX: e1866 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h1869 ARG0: e1866 ARG1: p1867 ARG2: i1868 ]            |
+|               |           [ explicit_or_proper_q LBL: h1878 ARG0: x1875 RSTR: h1876 BODY: h1877  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1854 ARG0: x1853 CARG: "Bernard Knowles" ]               |
+|               |           [ def_udef_a_q LBL: h1873 ARG0: x1870 RSTR: h1871 BODY: h1872 ]        |
+|               |           [ _for_p LBL: h1858 ARG0: i1855 ARG1: u1856 ARG2: u1857 ]              |
+|               |           [ explicit_or_proper_q LBL: h1864 ARG0: x1861 RSTR: h1862 BODY: h1863  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1852 ARG0: x1851 CARG: "English Without Tears" ]         |
+|               |           [ _cinematographer_n_1 LBL: h1860 ARG0: x1859 ] >                      |
+|               |   HCONS: < h1876 qeq h1854 h1862 qeq h1852 h1871 qeq h1860 >                     |
+|               |   EQS: < x1875 eq x1853 h1869 eq h1879 i1868 eq x1875 x1861 eq x1851 h1858 eq    |
+|               | h1865 u1857 eq x1861 h1858 eq h1860 u1856 eq x1859 x1870 eq x1859 h1869 eq h1874 |
+|               | p1867 eq x1870 > ]                                                               |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h17266                                                                    |
-|               |   INDEX: e17263 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h17266 ARG0: e17263 ARG1: x17256 ARG2: x17250 ]        |
-|               |           [ explicit_or_proper_q LBL: h17275 ARG0: x17250 RSTR: h17273 BODY:     |
-|               | h17274 ]                                                                         |
-|               |           [ named LBL: h17251 ARG0: x17250 CARG: "Bernard Knowles" ]             |
-|               |           [ def_udef_a_q LBL: h17270 ARG0: x17256 RSTR: h17268 BODY: h17269 ]    |
-|               |           [ _for_p LBL: h17255 ARG0: i17252 ARG1: x17256 ARG2: x17248 ]          |
-|               |           [ explicit_or_proper_q LBL: h17261 ARG0: x17248 RSTR: h17259 BODY:     |
-|               | h17260 ]                                                                         |
-|               |           [ named LBL: h17249 ARG0: x17248 CARG: "English Without Tears" ]       |
-|               |           [ _cinematographer_n_1 LBL: h17255 ARG0: x17256 ] >                    |
-|               |   HCONS: < h17273 qeq h17251 h17259 qeq h17249 h17268 qeq h17255 > ]             |
+| EQs Collapsed | [ TOP: h1869                                                                     |
+|               |   INDEX: e1866 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h1869 ARG0: e1866 ARG1: x1859 ARG2: x1853 ]            |
+|               |           [ explicit_or_proper_q LBL: h1878 ARG0: x1853 RSTR: h1876 BODY: h1877  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1854 ARG0: x1853 CARG: "Bernard Knowles" ]               |
+|               |           [ def_udef_a_q LBL: h1873 ARG0: x1859 RSTR: h1871 BODY: h1872 ]        |
+|               |           [ _for_p LBL: h1858 ARG0: i1855 ARG1: x1859 ARG2: x1851 ]              |
+|               |           [ explicit_or_proper_q LBL: h1864 ARG0: x1851 RSTR: h1862 BODY: h1863  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1852 ARG0: x1851 CARG: "English Without Tears" ]         |
+|               |           [ _cinematographer_n_1 LBL: h1858 ARG0: x1859 ] >                      |
+|               |   HCONS: < h1876 qeq h1854 h1862 qeq h1852 h1871 qeq h1858 > ]                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h17277                                                                    |
-|               |   INDEX: e17263 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h17266 ARG0: e17263 ARG1: x17256 ARG2: x17250 ]        |
-|               |           [ explicit_or_proper_q LBL: h17275 ARG0: x17250 RSTR: h17273 BODY:     |
-|               | h17274 ]                                                                         |
-|               |           [ named LBL: h17251 ARG0: x17250 CARG: "Bernard Knowles" ]             |
-|               |           [ def_udef_a_q LBL: h17270 ARG0: x17256 RSTR: h17268 BODY: h17269 ]    |
-|               |           [ _for_p LBL: h17255 ARG0: i17252 ARG1: x17256 ARG2: x17248 ]          |
-|               |           [ explicit_or_proper_q LBL: h17261 ARG0: x17248 RSTR: h17259 BODY:     |
-|               | h17260 ]                                                                         |
-|               |           [ named LBL: h17249 ARG0: x17248 CARG: "English Without Tears" ]       |
-|               |           [ _cinematographer_n_1 LBL: h17255 ARG0: x17256 ] >                    |
-|               |   HCONS: < h17273 qeq h17251 h17259 qeq h17249 h17268 qeq h17255 h17277 qeq      |
-|               | h17266 > ]                                                                       |
+| Prepped       | [ TOP: h1880                                                                     |
+|               |   INDEX: e1866 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h1869 ARG0: e1866 ARG1: x1859 ARG2: x1853 ]            |
+|               |           [ explicit_or_proper_q LBL: h1878 ARG0: x1853 RSTR: h1876 BODY: h1877  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1854 ARG0: x1853 CARG: "Bernard Knowles" ]               |
+|               |           [ def_udef_a_q LBL: h1873 ARG0: x1859 RSTR: h1871 BODY: h1872 ]        |
+|               |           [ _for_p LBL: h1858 ARG0: i1855 ARG1: x1859 ARG2: x1851 ]              |
+|               |           [ explicit_or_proper_q LBL: h1864 ARG0: x1851 RSTR: h1862 BODY: h1863  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1852 ARG0: x1851 CARG: "English Without Tears" ]         |
+|               |           [ _cinematographer_n_1 LBL: h1858 ARG0: x1859 ] >                      |
+|               |   HCONS: < h1876 qeq h1854 h1862 qeq h1852 h1871 qeq h1858 h1880 qeq h1869 > ]   |
 +---------------+----------------------------------------------------------------------------------+
 
-+--------------------------------------------------------------------------------------------------------+
-|                                              NODE SEMENTS                                              |
-+-----------------------+--------------------------------------------------------------------------------+
-| Node                  | Generated SEMENT                                                               |
-+-----------------------+--------------------------------------------------------------------------------+
-| English_Without_Tears | [ TOP: h17249                                                                  |
-|                       |   INDEX: x17248                                                                |
-|                       |   RELS: < [ named LBL: h17249 ARG0: x17248 CARG: "English Without Tears" ] > ] |
-+-----------------------+--------------------------------------------------------------------------------+
-| Bernard_Knowles       | [ TOP: h17251                                                                  |
-|                       |   INDEX: x17250                                                                |
-|                       |   RELS: < [ named LBL: h17251 ARG0: x17250 CARG: "Bernard Knowles" ] > ]       |
-+-----------------------+--------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------+
+|                                             NODE SEMENTS                                             |
++-----------------------+------------------------------------------------------------------------------+
+| Node                  | Generated SEMENT                                                             |
++-----------------------+------------------------------------------------------------------------------+
+| English_Without_Tears | [ TOP: h1852                                                                 |
+|                       |   INDEX: x1851                                                               |
+|                       |   RELS: < [ named LBL: h1852 ARG0: x1851 CARG: "English Without Tears" ] > ] |
++-----------------------+------------------------------------------------------------------------------+
+| Bernard_Knowles       | [ TOP: h1854                                                                 |
+|                       |   INDEX: x1853                                                               |
+|                       |   RELS: < [ named LBL: h1854 ARG0: x1853 CARG: "Bernard Knowles" ] > ]       |
++-----------------------+------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                                 EDGE SEMENTS                                                                |
 +----------------+-----------------------+-----------------+----------------------------------------------------------------------------------+
 | Edge           | Parent                | Child           | Generated SEMENT                                                                 |
 +----------------+-----------------------+-----------------+----------------------------------------------------------------------------------+
-| cinematography | English_Without_Tears | Bernard_Knowles | [ TOP: h17266                                                                    |
-|                |                       |                 |   INDEX: e17263 [ e SF: prop TENSE: tensed ]                                     |
-|                |                       |                 |   RELS: < [ _be_v_id LBL: h17266 ARG0: e17263 ARG1: p17264 ARG2: i17265 ]        |
-|                |                       |                 |           [ explicit_or_proper_q LBL: h17275 ARG0: x17272 RSTR: h17273 BODY:     |
-|                |                       |                 | h17274 ]                                                                         |
-|                |                       |                 |           [ named LBL: h17251 ARG0: x17250 CARG: "Bernard Knowles" ]             |
-|                |                       |                 |           [ def_udef_a_q LBL: h17270 ARG0: x17267 RSTR: h17268 BODY: h17269 ]    |
-|                |                       |                 |           [ _for_p LBL: h17255 ARG0: i17252 ARG1: u17253 ARG2: u17254 ]          |
-|                |                       |                 |           [ explicit_or_proper_q LBL: h17261 ARG0: x17258 RSTR: h17259 BODY:     |
-|                |                       |                 | h17260 ]                                                                         |
-|                |                       |                 |           [ named LBL: h17249 ARG0: x17248 CARG: "English Without Tears" ]       |
-|                |                       |                 |           [ _cinematographer_n_1 LBL: h17257 ARG0: x17256 ] >                    |
-|                |                       |                 |   HCONS: < h17273 qeq h17251 h17259 qeq h17249 h17268 qeq h17257 >               |
-|                |                       |                 |   EQS: < x17272 eq x17250 h17266 eq h17276 i17265 eq x17272 x17258 eq x17248     |
-|                |                       |                 | h17255 eq h17262 u17254 eq x17258 h17255 eq h17257 u17253 eq x17256 x17267 eq    |
-|                |                       |                 | x17256 h17266 eq h17271 p17264 eq x17267 > ]                                     |
+| cinematography | English_Without_Tears | Bernard_Knowles | [ TOP: h1869                                                                     |
+|                |                       |                 |   INDEX: e1866 [ e SF: prop TENSE: tensed ]                                      |
+|                |                       |                 |   RELS: < [ _be_v_id LBL: h1869 ARG0: e1866 ARG1: p1867 ARG2: i1868 ]            |
+|                |                       |                 |           [ explicit_or_proper_q LBL: h1878 ARG0: x1875 RSTR: h1876 BODY: h1877  |
+|                |                       |                 | ]                                                                                |
+|                |                       |                 |           [ named LBL: h1854 ARG0: x1853 CARG: "Bernard Knowles" ]               |
+|                |                       |                 |           [ def_udef_a_q LBL: h1873 ARG0: x1870 RSTR: h1871 BODY: h1872 ]        |
+|                |                       |                 |           [ _for_p LBL: h1858 ARG0: i1855 ARG1: u1856 ARG2: u1857 ]              |
+|                |                       |                 |           [ explicit_or_proper_q LBL: h1864 ARG0: x1861 RSTR: h1862 BODY: h1863  |
+|                |                       |                 | ]                                                                                |
+|                |                       |                 |           [ named LBL: h1852 ARG0: x1851 CARG: "English Without Tears" ]         |
+|                |                       |                 |           [ _cinematographer_n_1 LBL: h1860 ARG0: x1859 ] >                      |
+|                |                       |                 |   HCONS: < h1876 qeq h1854 h1862 qeq h1852 h1871 qeq h1860 >                     |
+|                |                       |                 |   EQS: < x1875 eq x1853 h1869 eq h1879 i1868 eq x1875 x1861 eq x1851 h1858 eq    |
+|                |                       |                 | h1865 u1857 eq x1861 h1858 eq h1860 u1856 eq x1859 x1870 eq x1859 h1869 eq h1874 |
+|                |                       |                 | p1867 eq x1870 > ]                                                               |
 +----------------+-----------------------+-----------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------+

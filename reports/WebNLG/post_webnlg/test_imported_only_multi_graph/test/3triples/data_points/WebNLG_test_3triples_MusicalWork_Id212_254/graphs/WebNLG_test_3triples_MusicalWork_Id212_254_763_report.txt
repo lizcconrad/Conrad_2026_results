@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id212_254_763
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                           GOLD OUTPUTS                                                                           |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                         | Generated? |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Bootleg Series Volume 1: The Quine Tapes was recorded in St Louis, Missouri, in the United States, in English, the primary language of the country. | False      |
-| The Bootleg Series Volume I: The Quine Tapes was recorded in St. Louis, Missouri, in the United States where English is the spoken language.        | False      |
-| The Quine Tapes were recorded in St. Louis, Missouri, United States in which the de facto national language is English.                             | False      |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------+
+|                                                              GOLD OUTPUTS                                                              |
++---------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                               | Generated? |
++---------------------------------------------------------------------------------------------------------------------------+------------+
+| Darinka Dentcheva lives in the US state of New Jersey. In the States, English is the official language.                   | False      |
+| Darinka Dentcheva resides in New Jersey, United States where the national language is English.                            | False      |
+| Darinka Dentcheva's current residence is in New Jersey, United States where the most commonly spoken language is English. | False      |
++---------------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------+
 |                                      NODE METRICS                                      |
@@ -56,118 +56,109 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id212_254_763
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h5387                                                                     |
-|               |   INDEX: e5384 [ e SF: prop TENSE: tensed ]                                      |
-|               |   RELS: < [ _be_v_id LBL: h5387 ARG0: e5384 ARG1: p5385 ARG2: i5386 ]            |
-|               |           [ def_udef_a_q LBL: h5396 ARG0: x5393 RSTR: h5394 BODY: h5395 ]        |
-|               |           [ compound LBL: h5363 ARG0: e5360 ARG1: u5361 ARG2: u5362 ]            |
-|               |           [ existential_q LBL: h5367 ARG0: x5364 RSTR: h5365 BODY: h5366 ]       |
-|               |           [ named LBL: h5359 ARG0: x5358 [ x NUM: sg ] CARG: "English" ]         |
-|               |           [ _language_n_1 LBL: h5357 ARG0: x5356 ]                               |
-|               |           [ def_udef_a_q LBL: h5391 ARG0: x5388 RSTR: h5389 BODY: h5390 ]        |
-|               |           [ _in_p_state LBL: h5372 ARG0: e5369 ARG1: u5370 ARG2: u5371 ]         |
-|               |           [ explicit_or_proper_q LBL: h5376 ARG0: x5373 RSTR: h5374 BODY: h5375  |
-|               | ]                                                                                |
-|               |           [ named_pl LBL: h5355 ARG0: x5354 [ x NUM: pl ] CARG: "United States"  |
-|               | ]                                                                                |
-|               |           [ _speak_v_to LBL: h5381 ARG0: e5378 ARG1: i5379 ARG2: i5380 ]         |
-|               |           [ _language_n_1 LBL: h5383 ARG0: x5382 ] >                             |
-|               |   HCONS: < h5365 qeq h5359 h5394 qeq h5357 h5374 qeq h5355 h5389 qeq h5383 >     |
-|               |   ICONS: < e5378 topic i5380 >                                                   |
-|               |   EQS: < x5364 eq x5358 h5363 eq h5368 u5362 eq x5364 h5363 eq h5357 u5361 eq    |
-|               | x5356 x5393 eq x5356 h5387 eq h5397 i5386 eq x5393 x5373 eq x5354 h5372 eq h5377 |
-|               | u5371 eq x5373 h5372 eq h5381 u5370 eq e5378 h5381 eq h5383 i5380 eq x5382 x5388 |
-|               | eq x5382 h5387 eq h5392 p5385 eq x5388 > ]                                       |
+| Original      | [ TOP: h405                                                                      |
+|               |   INDEX: e402 [ e SF: prop TENSE: tensed ]                                       |
+|               |   RELS: < [ _be_v_id LBL: h405 ARG0: e402 ARG1: p403 ARG2: i404 ]                |
+|               |           [ def_udef_a_q LBL: h414 ARG0: x411 RSTR: h412 BODY: h413 ]            |
+|               |           [ compound LBL: h381 ARG0: e378 ARG1: u379 ARG2: u380 ]                |
+|               |           [ existential_q LBL: h385 ARG0: x382 RSTR: h383 BODY: h384 ]           |
+|               |           [ named LBL: h377 ARG0: x376 [ x NUM: sg ] CARG: "English" ]           |
+|               |           [ _language_n_1 LBL: h375 ARG0: x374 ]                                 |
+|               |           [ def_udef_a_q LBL: h409 ARG0: x406 RSTR: h407 BODY: h408 ]            |
+|               |           [ _in_p_state LBL: h390 ARG0: e387 ARG1: u388 ARG2: u389 ]             |
+|               |           [ explicit_or_proper_q LBL: h394 ARG0: x391 RSTR: h392 BODY: h393 ]    |
+|               |           [ named_pl LBL: h373 ARG0: x372 [ x NUM: pl ] CARG: "United States" ]  |
+|               |           [ _speak_v_to LBL: h399 ARG0: e396 ARG1: i397 ARG2: i398 ]             |
+|               |           [ _language_n_1 LBL: h401 ARG0: x400 ] >                               |
+|               |   HCONS: < h383 qeq h377 h412 qeq h375 h392 qeq h373 h407 qeq h401 >             |
+|               |   ICONS: < e396 topic i398 >                                                     |
+|               |   EQS: < x382 eq x376 h381 eq h386 u380 eq x382 h381 eq h375 u379 eq x374 x411   |
+|               | eq x374 h405 eq h415 i404 eq x411 x391 eq x372 h390 eq h395 u389 eq x391 h390 eq |
+|               | h399 u388 eq e396 h399 eq h401 i398 eq x400 x406 eq x400 h405 eq h410 p403 eq    |
+|               | x406 > ]                                                                         |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h5387                                                                     |
-|               |   INDEX: e5384 [ e SF: prop TENSE: tensed ]                                      |
-|               |   RELS: < [ _be_v_id LBL: h5387 ARG0: e5384 ARG1: x5382 ARG2: x5356 ]            |
-|               |           [ def_udef_a_q LBL: h5396 ARG0: x5356 RSTR: h5394 BODY: h5395 ]        |
-|               |           [ compound LBL: h5357 ARG0: e5360 ARG1: x5356 ARG2: x5358 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ existential_q LBL: h5367 ARG0: x5358 RSTR: h5365 BODY: h5366 ]       |
-|               |           [ named LBL: h5359 ARG0: x5358 CARG: "English" ]                       |
-|               |           [ _language_n_1 LBL: h5357 ARG0: x5356 ]                               |
-|               |           [ def_udef_a_q LBL: h5391 ARG0: x5382 RSTR: h5389 BODY: h5390 ]        |
-|               |           [ _in_p_state LBL: h5372 ARG0: e5369 ARG1: e5378 ARG2: x5354 [ x NUM:  |
-|               | pl ] ]                                                                           |
-|               |           [ explicit_or_proper_q LBL: h5376 ARG0: x5354 RSTR: h5374 BODY: h5375  |
+| EQs Collapsed | [ TOP: h405                                                                      |
+|               |   INDEX: e402 [ e SF: prop TENSE: tensed ]                                       |
+|               |   RELS: < [ _be_v_id LBL: h405 ARG0: e402 ARG1: x400 ARG2: x374 ]                |
+|               |           [ def_udef_a_q LBL: h414 ARG0: x374 RSTR: h412 BODY: h413 ]            |
+|               |           [ compound LBL: h375 ARG0: e378 ARG1: x374 ARG2: x376 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h385 ARG0: x376 RSTR: h383 BODY: h384 ]           |
+|               |           [ named LBL: h377 ARG0: x376 CARG: "English" ]                         |
+|               |           [ _language_n_1 LBL: h375 ARG0: x374 ]                                 |
+|               |           [ def_udef_a_q LBL: h409 ARG0: x400 RSTR: h407 BODY: h408 ]            |
+|               |           [ _in_p_state LBL: h390 ARG0: e387 ARG1: e396 ARG2: x372 [ x NUM: pl ] |
 |               | ]                                                                                |
-|               |           [ named_pl LBL: h5355 ARG0: x5354 CARG: "United States" ]              |
-|               |           [ _speak_v_to LBL: h5372 ARG0: e5378 ARG1: i5379 ARG2: x5382 ]         |
-|               |           [ _language_n_1 LBL: h5372 ARG0: x5382 ] >                             |
-|               |   HCONS: < h5365 qeq h5359 h5394 qeq h5357 h5374 qeq h5355 h5389 qeq h5372 >     |
-|               |   ICONS: < e5378 topic x5382 > ]                                                 |
+|               |           [ explicit_or_proper_q LBL: h394 ARG0: x372 RSTR: h392 BODY: h393 ]    |
+|               |           [ named_pl LBL: h373 ARG0: x372 CARG: "United States" ]                |
+|               |           [ _speak_v_to LBL: h390 ARG0: e396 ARG1: i397 ARG2: x400 ]             |
+|               |           [ _language_n_1 LBL: h390 ARG0: x400 ] >                               |
+|               |   HCONS: < h383 qeq h377 h412 qeq h375 h392 qeq h373 h407 qeq h390 >             |
+|               |   ICONS: < e396 topic x400 > ]                                                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h5398                                                                     |
-|               |   INDEX: e5384 [ e SF: prop TENSE: tensed ]                                      |
-|               |   RELS: < [ _be_v_id LBL: h5387 ARG0: e5384 ARG1: x5382 ARG2: x5356 ]            |
-|               |           [ def_udef_a_q LBL: h5396 ARG0: x5356 RSTR: h5394 BODY: h5395 ]        |
-|               |           [ compound LBL: h5357 ARG0: e5360 ARG1: x5356 ARG2: x5358 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ existential_q LBL: h5367 ARG0: x5358 RSTR: h5365 BODY: h5366 ]       |
-|               |           [ named LBL: h5359 ARG0: x5358 CARG: "English" ]                       |
-|               |           [ _language_n_1 LBL: h5357 ARG0: x5356 ]                               |
-|               |           [ def_udef_a_q LBL: h5391 ARG0: x5382 RSTR: h5389 BODY: h5390 ]        |
-|               |           [ _in_p_state LBL: h5372 ARG0: e5369 ARG1: e5378 ARG2: x5354 [ x NUM:  |
-|               | pl ] ]                                                                           |
-|               |           [ explicit_or_proper_q LBL: h5376 ARG0: x5354 RSTR: h5374 BODY: h5375  |
+| Prepped       | [ TOP: h416                                                                      |
+|               |   INDEX: e402 [ e SF: prop TENSE: tensed ]                                       |
+|               |   RELS: < [ _be_v_id LBL: h405 ARG0: e402 ARG1: x400 ARG2: x374 ]                |
+|               |           [ def_udef_a_q LBL: h414 ARG0: x374 RSTR: h412 BODY: h413 ]            |
+|               |           [ compound LBL: h375 ARG0: e378 ARG1: x374 ARG2: x376 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h385 ARG0: x376 RSTR: h383 BODY: h384 ]           |
+|               |           [ named LBL: h377 ARG0: x376 CARG: "English" ]                         |
+|               |           [ _language_n_1 LBL: h375 ARG0: x374 ]                                 |
+|               |           [ def_udef_a_q LBL: h409 ARG0: x400 RSTR: h407 BODY: h408 ]            |
+|               |           [ _in_p_state LBL: h390 ARG0: e387 ARG1: e396 ARG2: x372 [ x NUM: pl ] |
 |               | ]                                                                                |
-|               |           [ named_pl LBL: h5355 ARG0: x5354 CARG: "United States" ]              |
-|               |           [ _speak_v_to LBL: h5372 ARG0: e5378 ARG1: i5379 ARG2: x5382 ]         |
-|               |           [ _language_n_1 LBL: h5372 ARG0: x5382 ] >                             |
-|               |   HCONS: < h5365 qeq h5359 h5394 qeq h5357 h5374 qeq h5355 h5389 qeq h5372 h5398 |
-|               | qeq h5387 >                                                                      |
-|               |   ICONS: < e5378 topic x5382 > ]                                                 |
+|               |           [ explicit_or_proper_q LBL: h394 ARG0: x372 RSTR: h392 BODY: h393 ]    |
+|               |           [ named_pl LBL: h373 ARG0: x372 CARG: "United States" ]                |
+|               |           [ _speak_v_to LBL: h390 ARG0: e396 ARG1: i397 ARG2: x400 ]             |
+|               |           [ _language_n_1 LBL: h390 ARG0: x400 ] >                               |
+|               |   HCONS: < h383 qeq h377 h412 qeq h375 h392 qeq h373 h407 qeq h390 h416 qeq h405 |
+|               | >                                                                                |
+|               |   ICONS: < e396 topic x400 > ]                                                   |
 +---------------+----------------------------------------------------------------------------------+
 
-+-----------------------------------------------------------------------------------------------------+
-|                                             NODE SEMENTS                                            |
-+------------------+----------------------------------------------------------------------------------+
-| Node             | Generated SEMENT                                                                 |
-+------------------+----------------------------------------------------------------------------------+
-| United_States    | [ TOP: h5355                                                                     |
-|                  |   INDEX: x5354 [ x NUM: pl ]                                                     |
-|                  |   RELS: < [ named_pl LBL: h5355 ARG0: x5354 CARG: "United States" ] > ]          |
-+------------------+----------------------------------------------------------------------------------+
-| English_language | [ TOP: h5357                                                                     |
-|                  |   INDEX: x5356                                                                   |
-|                  |   RELS: < [ compound LBL: h5363 ARG0: e5360 ARG1: u5361 ARG2: u5362 ]            |
-|                  |           [ existential_q LBL: h5367 ARG0: x5364 RSTR: h5365 BODY: h5366 ]       |
-|                  |           [ named LBL: h5359 ARG0: x5358 [ x NUM: sg ] CARG: "English" ]         |
-|                  |           [ _language_n_1 LBL: h5357 ARG0: x5356 ] >                             |
-|                  |   HCONS: < h5365 qeq h5359 >                                                     |
-|                  |   EQS: < x5364 eq x5358 h5363 eq h5368 u5362 eq x5364 h5363 eq h5357 u5361 eq    |
-|                  | x5356 > ]                                                                        |
-+------------------+----------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------+
+|                                           NODE SEMENTS                                           |
++------------------+-------------------------------------------------------------------------------+
+| Node             | Generated SEMENT                                                              |
++------------------+-------------------------------------------------------------------------------+
+| United_States    | [ TOP: h373                                                                   |
+|                  |   INDEX: x372 [ x NUM: pl ]                                                   |
+|                  |   RELS: < [ named_pl LBL: h373 ARG0: x372 CARG: "United States" ] > ]         |
++------------------+-------------------------------------------------------------------------------+
+| English_language | [ TOP: h375                                                                   |
+|                  |   INDEX: x374                                                                 |
+|                  |   RELS: < [ compound LBL: h381 ARG0: e378 ARG1: u379 ARG2: u380 ]             |
+|                  |           [ existential_q LBL: h385 ARG0: x382 RSTR: h383 BODY: h384 ]        |
+|                  |           [ named LBL: h377 ARG0: x376 [ x NUM: sg ] CARG: "English" ]        |
+|                  |           [ _language_n_1 LBL: h375 ARG0: x374 ] >                            |
+|                  |   HCONS: < h383 qeq h377 >                                                    |
+|                  |   EQS: < x382 eq x376 h381 eq h386 u380 eq x382 h381 eq h375 u379 eq x374 > ] |
++------------------+-------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------------------------------------------------+
 |                                                          EDGE SEMENTS                                                          |
 +----------+---------------+------------------+----------------------------------------------------------------------------------+
 | Edge     | Parent        | Child            | Generated SEMENT                                                                 |
 +----------+---------------+------------------+----------------------------------------------------------------------------------+
-| language | United_States | English_language | [ TOP: h5387                                                                     |
-|          |               |                  |   INDEX: e5384 [ e SF: prop TENSE: tensed ]                                      |
-|          |               |                  |   RELS: < [ _be_v_id LBL: h5387 ARG0: e5384 ARG1: p5385 ARG2: i5386 ]            |
-|          |               |                  |           [ def_udef_a_q LBL: h5396 ARG0: x5393 RSTR: h5394 BODY: h5395 ]        |
-|          |               |                  |           [ compound LBL: h5363 ARG0: e5360 ARG1: u5361 ARG2: u5362 ]            |
-|          |               |                  |           [ existential_q LBL: h5367 ARG0: x5364 RSTR: h5365 BODY: h5366 ]       |
-|          |               |                  |           [ named LBL: h5359 ARG0: x5358 [ x NUM: sg ] CARG: "English" ]         |
-|          |               |                  |           [ _language_n_1 LBL: h5357 ARG0: x5356 ]                               |
-|          |               |                  |           [ def_udef_a_q LBL: h5391 ARG0: x5388 RSTR: h5389 BODY: h5390 ]        |
-|          |               |                  |           [ _in_p_state LBL: h5372 ARG0: e5369 ARG1: u5370 ARG2: u5371 ]         |
-|          |               |                  |           [ explicit_or_proper_q LBL: h5376 ARG0: x5373 RSTR: h5374 BODY: h5375  |
-|          |               |                  | ]                                                                                |
-|          |               |                  |           [ named_pl LBL: h5355 ARG0: x5354 [ x NUM: pl ] CARG: "United States"  |
-|          |               |                  | ]                                                                                |
-|          |               |                  |           [ _speak_v_to LBL: h5381 ARG0: e5378 ARG1: i5379 ARG2: i5380 ]         |
-|          |               |                  |           [ _language_n_1 LBL: h5383 ARG0: x5382 ] >                             |
-|          |               |                  |   HCONS: < h5365 qeq h5359 h5394 qeq h5357 h5374 qeq h5355 h5389 qeq h5383 >     |
-|          |               |                  |   ICONS: < e5378 topic i5380 >                                                   |
-|          |               |                  |   EQS: < x5364 eq x5358 h5363 eq h5368 u5362 eq x5364 h5363 eq h5357 u5361 eq    |
-|          |               |                  | x5356 x5393 eq x5356 h5387 eq h5397 i5386 eq x5393 x5373 eq x5354 h5372 eq h5377 |
-|          |               |                  | u5371 eq x5373 h5372 eq h5381 u5370 eq e5378 h5381 eq h5383 i5380 eq x5382 x5388 |
-|          |               |                  | eq x5382 h5387 eq h5392 p5385 eq x5388 > ]                                       |
+| language | United_States | English_language | [ TOP: h405                                                                      |
+|          |               |                  |   INDEX: e402 [ e SF: prop TENSE: tensed ]                                       |
+|          |               |                  |   RELS: < [ _be_v_id LBL: h405 ARG0: e402 ARG1: p403 ARG2: i404 ]                |
+|          |               |                  |           [ def_udef_a_q LBL: h414 ARG0: x411 RSTR: h412 BODY: h413 ]            |
+|          |               |                  |           [ compound LBL: h381 ARG0: e378 ARG1: u379 ARG2: u380 ]                |
+|          |               |                  |           [ existential_q LBL: h385 ARG0: x382 RSTR: h383 BODY: h384 ]           |
+|          |               |                  |           [ named LBL: h377 ARG0: x376 [ x NUM: sg ] CARG: "English" ]           |
+|          |               |                  |           [ _language_n_1 LBL: h375 ARG0: x374 ]                                 |
+|          |               |                  |           [ def_udef_a_q LBL: h409 ARG0: x406 RSTR: h407 BODY: h408 ]            |
+|          |               |                  |           [ _in_p_state LBL: h390 ARG0: e387 ARG1: u388 ARG2: u389 ]             |
+|          |               |                  |           [ explicit_or_proper_q LBL: h394 ARG0: x391 RSTR: h392 BODY: h393 ]    |
+|          |               |                  |           [ named_pl LBL: h373 ARG0: x372 [ x NUM: pl ] CARG: "United States" ]  |
+|          |               |                  |           [ _speak_v_to LBL: h399 ARG0: e396 ARG1: i397 ARG2: i398 ]             |
+|          |               |                  |           [ _language_n_1 LBL: h401 ARG0: x400 ] >                               |
+|          |               |                  |   HCONS: < h383 qeq h377 h412 qeq h375 h392 qeq h373 h407 qeq h401 >             |
+|          |               |                  |   ICONS: < e396 topic i398 >                                                     |
+|          |               |                  |   EQS: < x382 eq x376 h381 eq h386 u380 eq x382 h381 eq h375 u379 eq x374 x411   |
+|          |               |                  | eq x374 h405 eq h415 i404 eq x411 x391 eq x372 h390 eq h395 u389 eq x391 h390 eq |
+|          |               |                  | h399 u388 eq e396 h399 eq h401 i398 eq x400 x406 eq x400 h405 eq h410 p403 eq    |
+|          |               |                  | x406 > ]                                                                         |
 +----------+---------------+------------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------+

@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Airport_Id1550_297_892
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                                      GOLD OUTPUTS                                                                                      |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                                               | Generated? |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Bedford Aerodrome is located in Thurleigh, which has the postal code MK44. The ICAO location identifier for Bedford Aerodrome is EGBF.                                    | False      |
-| The Bedford Aerodrome is located in Thurleigh, the postal code of which is MK44. Bedford Aerodrome's International Civil Aviation Organization (ICAO) identifier is EGBF. | False      |
-| The ICAO location identifier for the Bedford Aerodrome is EGBF which is located in Thurleigh, whose postal code is MK44.                                                  | False      |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                GOLD OUTPUTS                                                                                |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                                   | Generated? |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Bedford Aerodrome with MotorSport Vision as its operator and runway length of 1095.0 has EGBF as International Civil Aviation Organization (ICAO) identifier. | False      |
+| MotorSport Vision is the operating organization for the Bedford Aerodrome which has a runway length of 1095 and its ICAO location identifier is EGBF.         | False      |
+| The runway length at the Bedford Aerodrome is 1095, and it is operated by MotorSport Vision. Its ICAO location identifier is EGBF.                            | False      |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +-----------------------------------------------------------------------------------------+
 |                                       NODE METRICS                                      |
@@ -56,139 +56,137 @@ GRAPH NAME: WebNLG_test_3triples_Airport_Id1550_297_892
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h29909                                                                    |
-|               |   INDEX: e29905 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _use_v_as LBL: h29909 ARG0: e29905 ARG1: i29906 ARG2: p29907 ARG3:   |
-|               | i29908 ]                                                                         |
-|               |           [ explicit_or_proper_q LBL: h29913 ARG0: x29910 RSTR: h29911 BODY:     |
-|               | h29912 ]                                                                         |
-|               |           [ named LBL: h29902 ARG0: x29901 CARG: "Bedford Aerodrome" ]           |
-|               |           [ explicit_or_proper_q LBL: h29918 ARG0: x29915 RSTR: h29916 BODY:     |
-|               | h29917 ]                                                                         |
-|               |           [ named LBL: h29904 ARG0: x29903 CARG: "EGBF" ]                        |
-|               |           [ def_udef_a_q LBL: h29958 ARG0: x29955 RSTR: h29956 BODY: h29957 ]    |
-|               |           [ poss LBL: h29954 ARG0: e29951 ARG1: x29952 ARG2: i29953 ]            |
-|               |           [ pronoun_q LBL: h29925 ARG0: x29922 RSTR: h29923 BODY: h29924 ]       |
-|               |           [ pron LBL: h29921 ARG0: x29920 [ x PERS: 3 NUM: sg ] ]                |
-|               |           [ compound LBL: h29945 ARG0: e29942 ARG1: u29943 ARG2: u29944 ]        |
-|               |           [ existential_q LBL: h29949 ARG0: x29946 RSTR: h29947 BODY: h29948 ]   |
-|               |           [ compound LBL: h29936 ARG0: e29933 ARG1: u29934 ARG2: u29935 ]        |
-|               |           [ existential_q LBL: h29940 ARG0: x29937 RSTR: h29938 BODY: h29939 ]   |
-|               |           [ named LBL: h29932 ARG0: x29931 [ x NUM: sg ] CARG: "ICAO" ]          |
-|               |           [ _location_n_1 LBL: h29930 ARG0: x29929 [ x NUM: sg ] ]               |
-|               |           [ _identifier_n_1 LBL: h29928 ARG0: x29927 ] >                         |
-|               |   HCONS: < h29911 qeq h29902 h29916 qeq h29904 h29923 qeq h29921 h29938 qeq      |
-|               | h29932 h29947 qeq h29930 h29956 qeq h29928 >                                     |
-|               |   EQS: < x29910 eq x29901 h29909 eq h29914 i29906 eq x29910 x29915 eq x29903     |
-|               | h29909 eq h29919 p29907 eq x29915 x29922 eq x29920 h29954 eq h29926 i29953 eq    |
-|               | x29922 x29937 eq x29931 h29936 eq h29941 u29935 eq x29937 h29936 eq h29930       |
-|               | u29934 eq x29929 x29946 eq x29929 h29945 eq h29950 u29944 eq x29946 h29945 eq    |
-|               | h29928 u29943 eq x29927 h29954 eq h29928 x29952 eq x29927 x29955 eq x29927       |
-|               | h29909 eq h29959 i29908 eq x29955 > ]                                            |
+| Original      | [ TOP: h4050                                                                     |
+|               |   INDEX: e4046 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _use_v_as LBL: h4050 ARG0: e4046 ARG1: i4047 ARG2: p4048 ARG3: i4049 |
+|               | ]                                                                                |
+|               |           [ explicit_or_proper_q LBL: h4054 ARG0: x4051 RSTR: h4052 BODY: h4053  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4043 ARG0: x4042 CARG: "Bedford Aerodrome" ]             |
+|               |           [ explicit_or_proper_q LBL: h4059 ARG0: x4056 RSTR: h4057 BODY: h4058  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4045 ARG0: x4044 CARG: "EGBF" ]                          |
+|               |           [ def_udef_a_q LBL: h4099 ARG0: x4096 RSTR: h4097 BODY: h4098 ]        |
+|               |           [ poss LBL: h4095 ARG0: e4092 ARG1: x4093 ARG2: i4094 ]                |
+|               |           [ pronoun_q LBL: h4066 ARG0: x4063 RSTR: h4064 BODY: h4065 ]           |
+|               |           [ pron LBL: h4062 ARG0: x4061 [ x PERS: 3 NUM: sg ] ]                  |
+|               |           [ compound LBL: h4086 ARG0: e4083 ARG1: u4084 ARG2: u4085 ]            |
+|               |           [ existential_q LBL: h4090 ARG0: x4087 RSTR: h4088 BODY: h4089 ]       |
+|               |           [ compound LBL: h4077 ARG0: e4074 ARG1: u4075 ARG2: u4076 ]            |
+|               |           [ existential_q LBL: h4081 ARG0: x4078 RSTR: h4079 BODY: h4080 ]       |
+|               |           [ named LBL: h4073 ARG0: x4072 [ x NUM: sg ] CARG: "ICAO" ]            |
+|               |           [ _location_n_1 LBL: h4071 ARG0: x4070 [ x NUM: sg ] ]                 |
+|               |           [ _identifier_n_1 LBL: h4069 ARG0: x4068 ] >                           |
+|               |   HCONS: < h4052 qeq h4043 h4057 qeq h4045 h4064 qeq h4062 h4079 qeq h4073 h4088 |
+|               | qeq h4071 h4097 qeq h4069 >                                                      |
+|               |   EQS: < x4051 eq x4042 h4050 eq h4055 i4047 eq x4051 x4056 eq x4044 h4050 eq    |
+|               | h4060 p4048 eq x4056 x4063 eq x4061 h4095 eq h4067 i4094 eq x4063 x4078 eq x4072 |
+|               | h4077 eq h4082 u4076 eq x4078 h4077 eq h4071 u4075 eq x4070 x4087 eq x4070 h4086 |
+|               | eq h4091 u4085 eq x4087 h4086 eq h4069 u4084 eq x4068 h4095 eq h4069 x4093 eq    |
+|               | x4068 x4096 eq x4068 h4050 eq h4100 i4049 eq x4096 > ]                           |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h29909                                                                    |
-|               |   INDEX: e29905 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _use_v_as LBL: h29909 ARG0: e29905 ARG1: x29901 ARG2: x29903 ARG3:   |
-|               | x29927 ]                                                                         |
-|               |           [ explicit_or_proper_q LBL: h29913 ARG0: x29901 RSTR: h29911 BODY:     |
-|               | h29912 ]                                                                         |
-|               |           [ named LBL: h29902 ARG0: x29901 CARG: "Bedford Aerodrome" ]           |
-|               |           [ explicit_or_proper_q LBL: h29918 ARG0: x29903 RSTR: h29916 BODY:     |
-|               | h29917 ]                                                                         |
-|               |           [ named LBL: h29904 ARG0: x29903 CARG: "EGBF" ]                        |
-|               |           [ def_udef_a_q LBL: h29958 ARG0: x29927 RSTR: h29956 BODY: h29957 ]    |
-|               |           [ poss LBL: h29926 ARG0: e29951 ARG1: x29927 ARG2: x29920 [ x PERS: 3  |
-|               | NUM: sg ] ]                                                                      |
-|               |           [ pronoun_q LBL: h29925 ARG0: x29920 RSTR: h29923 BODY: h29924 ]       |
-|               |           [ pron LBL: h29921 ARG0: x29920 ]                                      |
-|               |           [ compound LBL: h29926 ARG0: e29942 ARG1: x29927 ARG2: x29929 [ x NUM: |
+| EQs Collapsed | [ TOP: h4050                                                                     |
+|               |   INDEX: e4046 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _use_v_as LBL: h4050 ARG0: e4046 ARG1: x4042 ARG2: x4044 ARG3: x4068 |
+|               | ]                                                                                |
+|               |           [ explicit_or_proper_q LBL: h4054 ARG0: x4042 RSTR: h4052 BODY: h4053  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4043 ARG0: x4042 CARG: "Bedford Aerodrome" ]             |
+|               |           [ explicit_or_proper_q LBL: h4059 ARG0: x4044 RSTR: h4057 BODY: h4058  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4045 ARG0: x4044 CARG: "EGBF" ]                          |
+|               |           [ def_udef_a_q LBL: h4099 ARG0: x4068 RSTR: h4097 BODY: h4098 ]        |
+|               |           [ poss LBL: h4067 ARG0: e4092 ARG1: x4068 ARG2: x4061 [ x PERS: 3 NUM: |
 |               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h29949 ARG0: x29929 RSTR: h29947 BODY: h29948 ]   |
-|               |           [ compound LBL: h29930 ARG0: e29933 ARG1: x29929 ARG2: x29931 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h29940 ARG0: x29931 RSTR: h29938 BODY: h29939 ]   |
-|               |           [ named LBL: h29932 ARG0: x29931 CARG: "ICAO" ]                        |
-|               |           [ _location_n_1 LBL: h29930 ARG0: x29929 ]                             |
-|               |           [ _identifier_n_1 LBL: h29926 ARG0: x29927 ] >                         |
-|               |   HCONS: < h29911 qeq h29902 h29916 qeq h29904 h29923 qeq h29921 h29938 qeq      |
-|               | h29932 h29947 qeq h29930 h29956 qeq h29926 > ]                                   |
+|               |           [ pronoun_q LBL: h4066 ARG0: x4061 RSTR: h4064 BODY: h4065 ]           |
+|               |           [ pron LBL: h4062 ARG0: x4061 ]                                        |
+|               |           [ compound LBL: h4067 ARG0: e4083 ARG1: x4068 ARG2: x4070 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h4090 ARG0: x4070 RSTR: h4088 BODY: h4089 ]       |
+|               |           [ compound LBL: h4071 ARG0: e4074 ARG1: x4070 ARG2: x4072 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h4081 ARG0: x4072 RSTR: h4079 BODY: h4080 ]       |
+|               |           [ named LBL: h4073 ARG0: x4072 CARG: "ICAO" ]                          |
+|               |           [ _location_n_1 LBL: h4071 ARG0: x4070 ]                               |
+|               |           [ _identifier_n_1 LBL: h4067 ARG0: x4068 ] >                           |
+|               |   HCONS: < h4052 qeq h4043 h4057 qeq h4045 h4064 qeq h4062 h4079 qeq h4073 h4088 |
+|               | qeq h4071 h4097 qeq h4067 > ]                                                    |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h29960                                                                    |
-|               |   INDEX: e29905 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _use_v_as LBL: h29909 ARG0: e29905 ARG1: x29901 ARG2: x29903 ARG3:   |
-|               | x29927 ]                                                                         |
-|               |           [ explicit_or_proper_q LBL: h29913 ARG0: x29901 RSTR: h29911 BODY:     |
-|               | h29912 ]                                                                         |
-|               |           [ named LBL: h29902 ARG0: x29901 CARG: "Bedford Aerodrome" ]           |
-|               |           [ explicit_or_proper_q LBL: h29918 ARG0: x29903 RSTR: h29916 BODY:     |
-|               | h29917 ]                                                                         |
-|               |           [ named LBL: h29904 ARG0: x29903 CARG: "EGBF" ]                        |
-|               |           [ def_udef_a_q LBL: h29958 ARG0: x29927 RSTR: h29956 BODY: h29957 ]    |
-|               |           [ poss LBL: h29926 ARG0: e29951 ARG1: x29927 ARG2: x29920 [ x PERS: 3  |
-|               | NUM: sg ] ]                                                                      |
-|               |           [ pronoun_q LBL: h29925 ARG0: x29920 RSTR: h29923 BODY: h29924 ]       |
-|               |           [ pron LBL: h29921 ARG0: x29920 ]                                      |
-|               |           [ compound LBL: h29926 ARG0: e29942 ARG1: x29927 ARG2: x29929 [ x NUM: |
+| Prepped       | [ TOP: h4101                                                                     |
+|               |   INDEX: e4046 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _use_v_as LBL: h4050 ARG0: e4046 ARG1: x4042 ARG2: x4044 ARG3: x4068 |
+|               | ]                                                                                |
+|               |           [ explicit_or_proper_q LBL: h4054 ARG0: x4042 RSTR: h4052 BODY: h4053  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4043 ARG0: x4042 CARG: "Bedford Aerodrome" ]             |
+|               |           [ explicit_or_proper_q LBL: h4059 ARG0: x4044 RSTR: h4057 BODY: h4058  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4045 ARG0: x4044 CARG: "EGBF" ]                          |
+|               |           [ def_udef_a_q LBL: h4099 ARG0: x4068 RSTR: h4097 BODY: h4098 ]        |
+|               |           [ poss LBL: h4067 ARG0: e4092 ARG1: x4068 ARG2: x4061 [ x PERS: 3 NUM: |
 |               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h29949 ARG0: x29929 RSTR: h29947 BODY: h29948 ]   |
-|               |           [ compound LBL: h29930 ARG0: e29933 ARG1: x29929 ARG2: x29931 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h29940 ARG0: x29931 RSTR: h29938 BODY: h29939 ]   |
-|               |           [ named LBL: h29932 ARG0: x29931 CARG: "ICAO" ]                        |
-|               |           [ _location_n_1 LBL: h29930 ARG0: x29929 ]                             |
-|               |           [ _identifier_n_1 LBL: h29926 ARG0: x29927 ] >                         |
-|               |   HCONS: < h29911 qeq h29902 h29916 qeq h29904 h29923 qeq h29921 h29938 qeq      |
-|               | h29932 h29947 qeq h29930 h29956 qeq h29926 h29960 qeq h29909 > ]                 |
+|               |           [ pronoun_q LBL: h4066 ARG0: x4061 RSTR: h4064 BODY: h4065 ]           |
+|               |           [ pron LBL: h4062 ARG0: x4061 ]                                        |
+|               |           [ compound LBL: h4067 ARG0: e4083 ARG1: x4068 ARG2: x4070 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h4090 ARG0: x4070 RSTR: h4088 BODY: h4089 ]       |
+|               |           [ compound LBL: h4071 ARG0: e4074 ARG1: x4070 ARG2: x4072 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h4081 ARG0: x4072 RSTR: h4079 BODY: h4080 ]       |
+|               |           [ named LBL: h4073 ARG0: x4072 CARG: "ICAO" ]                          |
+|               |           [ _location_n_1 LBL: h4071 ARG0: x4070 ]                               |
+|               |           [ _identifier_n_1 LBL: h4067 ARG0: x4068 ] >                           |
+|               |   HCONS: < h4052 qeq h4043 h4057 qeq h4045 h4064 qeq h4062 h4079 qeq h4073 h4088 |
+|               | qeq h4071 h4097 qeq h4067 h4101 qeq h4050 > ]                                    |
 +---------------+----------------------------------------------------------------------------------+
 
-+------------------------------------------------------------------------------------------------+
-|                                          NODE SEMENTS                                          |
-+-------------------+----------------------------------------------------------------------------+
-| Node              | Generated SEMENT                                                           |
-+-------------------+----------------------------------------------------------------------------+
-| Bedford_Aerodrome | [ TOP: h29902                                                              |
-|                   |   INDEX: x29901                                                            |
-|                   |   RELS: < [ named LBL: h29902 ARG0: x29901 CARG: "Bedford Aerodrome" ] > ] |
-+-------------------+----------------------------------------------------------------------------+
-| EGBF              | [ TOP: h29904                                                              |
-|                   |   INDEX: x29903                                                            |
-|                   |   RELS: < [ named LBL: h29904 ARG0: x29903 CARG: "EGBF" ] > ]              |
-+-------------------+----------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------+
+|                                         NODE SEMENTS                                         |
++-------------------+--------------------------------------------------------------------------+
+| Node              | Generated SEMENT                                                         |
++-------------------+--------------------------------------------------------------------------+
+| Bedford_Aerodrome | [ TOP: h4043                                                             |
+|                   |   INDEX: x4042                                                           |
+|                   |   RELS: < [ named LBL: h4043 ARG0: x4042 CARG: "Bedford Aerodrome" ] > ] |
++-------------------+--------------------------------------------------------------------------+
+| EGBF              | [ TOP: h4045                                                             |
+|                   |   INDEX: x4044                                                           |
+|                   |   RELS: < [ named LBL: h4045 ARG0: x4044 CARG: "EGBF" ] > ]              |
++-------------------+--------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------------------------------+
 |                                                              EDGE SEMENTS                                                             |
 +------------------------+-------------------+-------+----------------------------------------------------------------------------------+
 | Edge                   | Parent            | Child | Generated SEMENT                                                                 |
 +------------------------+-------------------+-------+----------------------------------------------------------------------------------+
-| icaoLocationIdentifier | Bedford_Aerodrome | EGBF  | [ TOP: h29909                                                                    |
-|                        |                   |       |   INDEX: e29905 [ e TENSE: tensed ]                                              |
-|                        |                   |       |   RELS: < [ _use_v_as LBL: h29909 ARG0: e29905 ARG1: i29906 ARG2: p29907 ARG3:   |
-|                        |                   |       | i29908 ]                                                                         |
-|                        |                   |       |           [ explicit_or_proper_q LBL: h29913 ARG0: x29910 RSTR: h29911 BODY:     |
-|                        |                   |       | h29912 ]                                                                         |
-|                        |                   |       |           [ named LBL: h29902 ARG0: x29901 CARG: "Bedford Aerodrome" ]           |
-|                        |                   |       |           [ explicit_or_proper_q LBL: h29918 ARG0: x29915 RSTR: h29916 BODY:     |
-|                        |                   |       | h29917 ]                                                                         |
-|                        |                   |       |           [ named LBL: h29904 ARG0: x29903 CARG: "EGBF" ]                        |
-|                        |                   |       |           [ def_udef_a_q LBL: h29958 ARG0: x29955 RSTR: h29956 BODY: h29957 ]    |
-|                        |                   |       |           [ poss LBL: h29954 ARG0: e29951 ARG1: x29952 ARG2: i29953 ]            |
-|                        |                   |       |           [ pronoun_q LBL: h29925 ARG0: x29922 RSTR: h29923 BODY: h29924 ]       |
-|                        |                   |       |           [ pron LBL: h29921 ARG0: x29920 [ x PERS: 3 NUM: sg ] ]                |
-|                        |                   |       |           [ compound LBL: h29945 ARG0: e29942 ARG1: u29943 ARG2: u29944 ]        |
-|                        |                   |       |           [ existential_q LBL: h29949 ARG0: x29946 RSTR: h29947 BODY: h29948 ]   |
-|                        |                   |       |           [ compound LBL: h29936 ARG0: e29933 ARG1: u29934 ARG2: u29935 ]        |
-|                        |                   |       |           [ existential_q LBL: h29940 ARG0: x29937 RSTR: h29938 BODY: h29939 ]   |
-|                        |                   |       |           [ named LBL: h29932 ARG0: x29931 [ x NUM: sg ] CARG: "ICAO" ]          |
-|                        |                   |       |           [ _location_n_1 LBL: h29930 ARG0: x29929 [ x NUM: sg ] ]               |
-|                        |                   |       |           [ _identifier_n_1 LBL: h29928 ARG0: x29927 ] >                         |
-|                        |                   |       |   HCONS: < h29911 qeq h29902 h29916 qeq h29904 h29923 qeq h29921 h29938 qeq      |
-|                        |                   |       | h29932 h29947 qeq h29930 h29956 qeq h29928 >                                     |
-|                        |                   |       |   EQS: < x29910 eq x29901 h29909 eq h29914 i29906 eq x29910 x29915 eq x29903     |
-|                        |                   |       | h29909 eq h29919 p29907 eq x29915 x29922 eq x29920 h29954 eq h29926 i29953 eq    |
-|                        |                   |       | x29922 x29937 eq x29931 h29936 eq h29941 u29935 eq x29937 h29936 eq h29930       |
-|                        |                   |       | u29934 eq x29929 x29946 eq x29929 h29945 eq h29950 u29944 eq x29946 h29945 eq    |
-|                        |                   |       | h29928 u29943 eq x29927 h29954 eq h29928 x29952 eq x29927 x29955 eq x29927       |
-|                        |                   |       | h29909 eq h29959 i29908 eq x29955 > ]                                            |
+| icaoLocationIdentifier | Bedford_Aerodrome | EGBF  | [ TOP: h4050                                                                     |
+|                        |                   |       |   INDEX: e4046 [ e TENSE: tensed ]                                               |
+|                        |                   |       |   RELS: < [ _use_v_as LBL: h4050 ARG0: e4046 ARG1: i4047 ARG2: p4048 ARG3: i4049 |
+|                        |                   |       | ]                                                                                |
+|                        |                   |       |           [ explicit_or_proper_q LBL: h4054 ARG0: x4051 RSTR: h4052 BODY: h4053  |
+|                        |                   |       | ]                                                                                |
+|                        |                   |       |           [ named LBL: h4043 ARG0: x4042 CARG: "Bedford Aerodrome" ]             |
+|                        |                   |       |           [ explicit_or_proper_q LBL: h4059 ARG0: x4056 RSTR: h4057 BODY: h4058  |
+|                        |                   |       | ]                                                                                |
+|                        |                   |       |           [ named LBL: h4045 ARG0: x4044 CARG: "EGBF" ]                          |
+|                        |                   |       |           [ def_udef_a_q LBL: h4099 ARG0: x4096 RSTR: h4097 BODY: h4098 ]        |
+|                        |                   |       |           [ poss LBL: h4095 ARG0: e4092 ARG1: x4093 ARG2: i4094 ]                |
+|                        |                   |       |           [ pronoun_q LBL: h4066 ARG0: x4063 RSTR: h4064 BODY: h4065 ]           |
+|                        |                   |       |           [ pron LBL: h4062 ARG0: x4061 [ x PERS: 3 NUM: sg ] ]                  |
+|                        |                   |       |           [ compound LBL: h4086 ARG0: e4083 ARG1: u4084 ARG2: u4085 ]            |
+|                        |                   |       |           [ existential_q LBL: h4090 ARG0: x4087 RSTR: h4088 BODY: h4089 ]       |
+|                        |                   |       |           [ compound LBL: h4077 ARG0: e4074 ARG1: u4075 ARG2: u4076 ]            |
+|                        |                   |       |           [ existential_q LBL: h4081 ARG0: x4078 RSTR: h4079 BODY: h4080 ]       |
+|                        |                   |       |           [ named LBL: h4073 ARG0: x4072 [ x NUM: sg ] CARG: "ICAO" ]            |
+|                        |                   |       |           [ _location_n_1 LBL: h4071 ARG0: x4070 [ x NUM: sg ] ]                 |
+|                        |                   |       |           [ _identifier_n_1 LBL: h4069 ARG0: x4068 ] >                           |
+|                        |                   |       |   HCONS: < h4052 qeq h4043 h4057 qeq h4045 h4064 qeq h4062 h4079 qeq h4073 h4088 |
+|                        |                   |       | qeq h4071 h4097 qeq h4069 >                                                      |
+|                        |                   |       |   EQS: < x4051 eq x4042 h4050 eq h4055 i4047 eq x4051 x4056 eq x4044 h4050 eq    |
+|                        |                   |       | h4060 p4048 eq x4056 x4063 eq x4061 h4095 eq h4067 i4094 eq x4063 x4078 eq x4072 |
+|                        |                   |       | h4077 eq h4082 u4076 eq x4078 h4077 eq h4071 u4075 eq x4070 x4087 eq x4070 h4086 |
+|                        |                   |       | eq h4091 u4085 eq x4087 h4086 eq h4069 u4084 eq x4068 h4095 eq h4069 x4093 eq    |
+|                        |                   |       | x4068 x4096 eq x4068 h4050 eq h4100 i4049 eq x4096 > ]                           |
 +------------------------+-------------------+-------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------+

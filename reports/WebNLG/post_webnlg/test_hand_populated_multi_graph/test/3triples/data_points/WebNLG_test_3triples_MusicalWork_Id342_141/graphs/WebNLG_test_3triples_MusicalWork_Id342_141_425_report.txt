@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id342_141_425
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                                 GOLD OUTPUTS                                                                                 |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                                     | Generated? |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| The runtime of the album Turn Me On is 35.1 minutes, with Punk blues as the genre of the album and the artist of the Turn Me On album is the Honeymoon Killers. | False      |
-| The total length of the Turn Me On punk blues album by the American band The Honeymoon Killers is 35 minutes 10 seconds.                                        | False      |
-| Turn Me On is a punk blues album by the Honeymoon Killers which runs 35.1 minutes.                                                                              | False      |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+|                                                         GOLD OUTPUTS                                                        |
++----------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                    | Generated? |
++----------------------------------------------------------------------------------------------------------------+------------+
+| The album Turn Me On is a punk blues album by the American band The Honeymoon Killers in the noise rock genre. | False      |
+| The artist the Honeymoon Killers released their noise rock and punk blues album, Turn Me On.                   | False      |
+| The noise rock punk blues album by the Honeymoon Killers is titled Turn Me On.                                 | False      |
++----------------------------------------------------------------------------------------------------------------+------------+
 
 +------------------------------------------------------------------------------------------+
 |                                       NODE METRICS                                       |
@@ -56,64 +56,62 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id342_141_425
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h14334                                                                    |
-|               |   INDEX: e14331 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _perform_v_1 LBL: h14334 ARG0: e14331 ARG1: i14332 ARG2: i14333 ]    |
-|               |           [ def_udef_a_q LBL: h14338 ARG0: x14335 RSTR: h14336 BODY: h14337 ]    |
-|               |           [ compound LBL: h14325 ARG0: e14322 ARG1: u14323 ARG2: u14324 ]        |
-|               |           [ existential_q LBL: h14329 ARG0: x14326 RSTR: h14327 BODY: h14328 ]   |
-|               |           [ unk_n LBL: h14321 ARG0: x14320 [ x NUM: sg IND: + ] CARG: "punk" ]   |
-|               |           [ unk_n LBL: h14319 ARG0: x14318 [ x IND: - ] CARG: "blues" ]          |
-|               |           [ appos LBL: h14307 ARG0: e14304 ARG1: x14305 ARG2: i14306 ]           |
-|               |           [ def_udef_a_q LBL: h14316 ARG0: x14313 RSTR: h14314 BODY: h14315 ]    |
-|               |           [ _album_n_1 LBL: h14303 ARG0: x14302 ]                                |
-|               |           [ explicit_or_proper_q LBL: h14311 ARG0: x14308 RSTR: h14309 BODY:     |
-|               | h14310 ]                                                                         |
-|               |           [ named LBL: h14301 ARG0: x14300 CARG: "Turn Me On" ] >                |
-|               |   HCONS: < h14327 qeq h14321 h14336 qeq h14319 h14314 qeq h14303 h14309 qeq      |
-|               | h14301 >                                                                         |
-|               |   EQS: < x14326 eq x14320 h14325 eq h14330 u14324 eq x14326 h14325 eq h14319     |
-|               | u14323 eq x14318 x14335 eq x14318 h14334 eq h14339 i14333 eq x14335 x14313 eq    |
-|               | x14302 h14307 eq h14317 i14306 eq x14313 x14308 eq x14300 h14307 eq h14312       |
-|               | x14305 eq x14308 h14334 eq h14312 i14332 eq x14308 > ]                           |
+| Original      | [ TOP: h2003                                                                     |
+|               |   INDEX: e2000 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _perform_v_1 LBL: h2003 ARG0: e2000 ARG1: i2001 ARG2: i2002 ]        |
+|               |           [ def_udef_a_q LBL: h2007 ARG0: x2004 RSTR: h2005 BODY: h2006 ]        |
+|               |           [ compound LBL: h1994 ARG0: e1991 ARG1: u1992 ARG2: u1993 ]            |
+|               |           [ existential_q LBL: h1998 ARG0: x1995 RSTR: h1996 BODY: h1997 ]       |
+|               |           [ unk_n LBL: h1990 ARG0: x1989 [ x NUM: sg IND: + ] CARG: "punk" ]     |
+|               |           [ unk_n LBL: h1988 ARG0: x1987 [ x IND: - ] CARG: "blues" ]            |
+|               |           [ appos LBL: h1976 ARG0: e1973 ARG1: x1974 ARG2: i1975 ]               |
+|               |           [ def_udef_a_q LBL: h1985 ARG0: x1982 RSTR: h1983 BODY: h1984 ]        |
+|               |           [ _album_n_1 LBL: h1972 ARG0: x1971 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h1980 ARG0: x1977 RSTR: h1978 BODY: h1979  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1970 ARG0: x1969 CARG: "Turn Me On" ] >                  |
+|               |   HCONS: < h1996 qeq h1990 h2005 qeq h1988 h1983 qeq h1972 h1978 qeq h1970 >     |
+|               |   EQS: < x1995 eq x1989 h1994 eq h1999 u1993 eq x1995 h1994 eq h1988 u1992 eq    |
+|               | x1987 x2004 eq x1987 h2003 eq h2008 i2002 eq x2004 x1982 eq x1971 h1976 eq h1986 |
+|               | i1975 eq x1982 x1977 eq x1969 h1976 eq h1981 x1974 eq x1977 h2003 eq h1981 i2001 |
+|               | eq x1977 > ]                                                                     |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h14307                                                                    |
-|               |   INDEX: e14331 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _perform_v_1 LBL: h14307 ARG0: e14331 ARG1: x14300 ARG2: x14318 [ x  |
-|               | IND: - ] ]                                                                       |
-|               |           [ def_udef_a_q LBL: h14338 ARG0: x14318 RSTR: h14336 BODY: h14337 ]    |
-|               |           [ compound LBL: h14319 ARG0: e14322 ARG1: x14318 ARG2: x14320 [ x NUM: |
-|               | sg IND: + ] ]                                                                    |
-|               |           [ existential_q LBL: h14329 ARG0: x14320 RSTR: h14327 BODY: h14328 ]   |
-|               |           [ unk_n LBL: h14321 ARG0: x14320 CARG: "punk" ]                        |
-|               |           [ unk_n LBL: h14319 ARG0: x14318 CARG: "blues" ]                       |
-|               |           [ appos LBL: h14307 ARG0: e14304 ARG1: x14300 ARG2: x14302 ]           |
-|               |           [ def_udef_a_q LBL: h14316 ARG0: x14302 RSTR: h14314 BODY: h14315 ]    |
-|               |           [ _album_n_1 LBL: h14303 ARG0: x14302 ]                                |
-|               |           [ explicit_or_proper_q LBL: h14311 ARG0: x14300 RSTR: h14309 BODY:     |
-|               | h14310 ]                                                                         |
-|               |           [ named LBL: h14301 ARG0: x14300 CARG: "Turn Me On" ] >                |
-|               |   HCONS: < h14327 qeq h14321 h14336 qeq h14319 h14314 qeq h14303 h14309 qeq      |
-|               | h14301 > ]                                                                       |
+| EQs Collapsed | [ TOP: h1976                                                                     |
+|               |   INDEX: e2000 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _perform_v_1 LBL: h1976 ARG0: e2000 ARG1: x1969 ARG2: x1987 [ x IND: |
+|               | - ] ]                                                                            |
+|               |           [ def_udef_a_q LBL: h2007 ARG0: x1987 RSTR: h2005 BODY: h2006 ]        |
+|               |           [ compound LBL: h1988 ARG0: e1991 ARG1: x1987 ARG2: x1989 [ x NUM: sg  |
+|               | IND: + ] ]                                                                       |
+|               |           [ existential_q LBL: h1998 ARG0: x1989 RSTR: h1996 BODY: h1997 ]       |
+|               |           [ unk_n LBL: h1990 ARG0: x1989 CARG: "punk" ]                          |
+|               |           [ unk_n LBL: h1988 ARG0: x1987 CARG: "blues" ]                         |
+|               |           [ appos LBL: h1976 ARG0: e1973 ARG1: x1969 ARG2: x1971 ]               |
+|               |           [ def_udef_a_q LBL: h1985 ARG0: x1971 RSTR: h1983 BODY: h1984 ]        |
+|               |           [ _album_n_1 LBL: h1972 ARG0: x1971 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h1980 ARG0: x1969 RSTR: h1978 BODY: h1979  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1970 ARG0: x1969 CARG: "Turn Me On" ] >                  |
+|               |   HCONS: < h1996 qeq h1990 h2005 qeq h1988 h1983 qeq h1972 h1978 qeq h1970 > ]   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h14340                                                                    |
-|               |   INDEX: e14331 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _perform_v_1 LBL: h14307 ARG0: e14331 ARG1: x14300 ARG2: x14318 [ x  |
-|               | IND: - ] ]                                                                       |
-|               |           [ def_udef_a_q LBL: h14338 ARG0: x14318 RSTR: h14336 BODY: h14337 ]    |
-|               |           [ compound LBL: h14319 ARG0: e14322 ARG1: x14318 ARG2: x14320 [ x NUM: |
-|               | sg IND: + ] ]                                                                    |
-|               |           [ existential_q LBL: h14329 ARG0: x14320 RSTR: h14327 BODY: h14328 ]   |
-|               |           [ unk_n LBL: h14321 ARG0: x14320 CARG: "punk" ]                        |
-|               |           [ unk_n LBL: h14319 ARG0: x14318 CARG: "blues" ]                       |
-|               |           [ appos LBL: h14307 ARG0: e14304 ARG1: x14300 ARG2: x14302 ]           |
-|               |           [ def_udef_a_q LBL: h14316 ARG0: x14302 RSTR: h14314 BODY: h14315 ]    |
-|               |           [ _album_n_1 LBL: h14303 ARG0: x14302 ]                                |
-|               |           [ explicit_or_proper_q LBL: h14311 ARG0: x14300 RSTR: h14309 BODY:     |
-|               | h14310 ]                                                                         |
-|               |           [ named LBL: h14301 ARG0: x14300 CARG: "Turn Me On" ] >                |
-|               |   HCONS: < h14327 qeq h14321 h14336 qeq h14319 h14314 qeq h14303 h14309 qeq      |
-|               | h14301 h14340 qeq h14307 > ]                                                     |
+| Prepped       | [ TOP: h2009                                                                     |
+|               |   INDEX: e2000 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _perform_v_1 LBL: h1976 ARG0: e2000 ARG1: x1969 ARG2: x1987 [ x IND: |
+|               | - ] ]                                                                            |
+|               |           [ def_udef_a_q LBL: h2007 ARG0: x1987 RSTR: h2005 BODY: h2006 ]        |
+|               |           [ compound LBL: h1988 ARG0: e1991 ARG1: x1987 ARG2: x1989 [ x NUM: sg  |
+|               | IND: + ] ]                                                                       |
+|               |           [ existential_q LBL: h1998 ARG0: x1989 RSTR: h1996 BODY: h1997 ]       |
+|               |           [ unk_n LBL: h1990 ARG0: x1989 CARG: "punk" ]                          |
+|               |           [ unk_n LBL: h1988 ARG0: x1987 CARG: "blues" ]                         |
+|               |           [ appos LBL: h1976 ARG0: e1973 ARG1: x1969 ARG2: x1971 ]               |
+|               |           [ def_udef_a_q LBL: h1985 ARG0: x1971 RSTR: h1983 BODY: h1984 ]        |
+|               |           [ _album_n_1 LBL: h1972 ARG0: x1971 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h1980 ARG0: x1969 RSTR: h1978 BODY: h1979  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1970 ARG0: x1969 CARG: "Turn Me On" ] >                  |
+|               |   HCONS: < h1996 qeq h1990 h2005 qeq h1988 h1983 qeq h1972 h1978 qeq h1970 h2009 |
+|               | qeq h1976 > ]                                                                    |
 +---------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------------+
@@ -121,28 +119,28 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id342_141_425
 +--------------------+----------------------------------------------------------------------------------+
 | Node               | Generated SEMENT                                                                 |
 +--------------------+----------------------------------------------------------------------------------+
-| Turn_Me_On_(album) | [ TOP: h14312                                                                    |
-|                    |   INDEX: x14308                                                                  |
-|                    |   RELS: < [ appos LBL: h14307 ARG0: e14304 ARG1: x14305 ARG2: i14306 ]           |
-|                    |           [ def_udef_a_q LBL: h14316 ARG0: x14313 RSTR: h14314 BODY: h14315 ]    |
-|                    |           [ _album_n_1 LBL: h14303 ARG0: x14302 ]                                |
-|                    |           [ explicit_or_proper_q LBL: h14311 ARG0: x14308 RSTR: h14309 BODY:     |
-|                    | h14310 ]                                                                         |
-|                    |           [ named LBL: h14301 ARG0: x14300 CARG: "Turn Me On" ] >                |
-|                    |   HCONS: < h14314 qeq h14303 h14309 qeq h14301 >                                 |
-|                    |   EQS: < x14313 eq x14302 h14307 eq h14317 i14306 eq x14313 x14308 eq x14300     |
-|                    | h14307 eq h14312 x14305 eq x14308 >                                              |
-|                    |   SLOTS: < BODY: h14310 > ]                                                      |
+| Turn_Me_On_(album) | [ TOP: h1981                                                                     |
+|                    |   INDEX: x1977                                                                   |
+|                    |   RELS: < [ appos LBL: h1976 ARG0: e1973 ARG1: x1974 ARG2: i1975 ]               |
+|                    |           [ def_udef_a_q LBL: h1985 ARG0: x1982 RSTR: h1983 BODY: h1984 ]        |
+|                    |           [ _album_n_1 LBL: h1972 ARG0: x1971 ]                                  |
+|                    |           [ explicit_or_proper_q LBL: h1980 ARG0: x1977 RSTR: h1978 BODY: h1979  |
+|                    | ]                                                                                |
+|                    |           [ named LBL: h1970 ARG0: x1969 CARG: "Turn Me On" ] >                  |
+|                    |   HCONS: < h1983 qeq h1972 h1978 qeq h1970 >                                     |
+|                    |   EQS: < x1982 eq x1971 h1976 eq h1986 i1975 eq x1982 x1977 eq x1969 h1976 eq    |
+|                    | h1981 x1974 eq x1977 >                                                           |
+|                    |   SLOTS: < BODY: h1979 > ]                                                       |
 +--------------------+----------------------------------------------------------------------------------+
-| Punk_blues         | [ TOP: h14319                                                                    |
-|                    |   INDEX: x14318 [ x IND: - ]                                                     |
-|                    |   RELS: < [ compound LBL: h14325 ARG0: e14322 ARG1: u14323 ARG2: u14324 ]        |
-|                    |           [ existential_q LBL: h14329 ARG0: x14326 RSTR: h14327 BODY: h14328 ]   |
-|                    |           [ unk_n LBL: h14321 ARG0: x14320 [ x NUM: sg IND: + ] CARG: "punk" ]   |
-|                    |           [ unk_n LBL: h14319 ARG0: x14318 CARG: "blues" ] >                     |
-|                    |   HCONS: < h14327 qeq h14321 >                                                   |
-|                    |   EQS: < x14326 eq x14320 h14325 eq h14330 u14324 eq x14326 h14325 eq h14319     |
-|                    | u14323 eq x14318 > ]                                                             |
+| Punk_blues         | [ TOP: h1988                                                                     |
+|                    |   INDEX: x1987 [ x IND: - ]                                                      |
+|                    |   RELS: < [ compound LBL: h1994 ARG0: e1991 ARG1: u1992 ARG2: u1993 ]            |
+|                    |           [ existential_q LBL: h1998 ARG0: x1995 RSTR: h1996 BODY: h1997 ]       |
+|                    |           [ unk_n LBL: h1990 ARG0: x1989 [ x NUM: sg IND: + ] CARG: "punk" ]     |
+|                    |           [ unk_n LBL: h1988 ARG0: x1987 CARG: "blues" ] >                       |
+|                    |   HCONS: < h1996 qeq h1990 >                                                     |
+|                    |   EQS: < x1995 eq x1989 h1994 eq h1999 u1993 eq x1995 h1994 eq h1988 u1992 eq    |
+|                    | x1987 > ]                                                                        |
 +--------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------+
@@ -150,26 +148,25 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id342_141_425
 +-------+--------------------+------------+----------------------------------------------------------------------------------+
 | Edge  | Parent             | Child      | Generated SEMENT                                                                 |
 +-------+--------------------+------------+----------------------------------------------------------------------------------+
-| genre | Turn_Me_On_(album) | Punk_blues | [ TOP: h14334                                                                    |
-|       |                    |            |   INDEX: e14331 [ e TENSE: tensed ]                                              |
-|       |                    |            |   RELS: < [ _perform_v_1 LBL: h14334 ARG0: e14331 ARG1: i14332 ARG2: i14333 ]    |
-|       |                    |            |           [ def_udef_a_q LBL: h14338 ARG0: x14335 RSTR: h14336 BODY: h14337 ]    |
-|       |                    |            |           [ compound LBL: h14325 ARG0: e14322 ARG1: u14323 ARG2: u14324 ]        |
-|       |                    |            |           [ existential_q LBL: h14329 ARG0: x14326 RSTR: h14327 BODY: h14328 ]   |
-|       |                    |            |           [ unk_n LBL: h14321 ARG0: x14320 [ x NUM: sg IND: + ] CARG: "punk" ]   |
-|       |                    |            |           [ unk_n LBL: h14319 ARG0: x14318 [ x IND: - ] CARG: "blues" ]          |
-|       |                    |            |           [ appos LBL: h14307 ARG0: e14304 ARG1: x14305 ARG2: i14306 ]           |
-|       |                    |            |           [ def_udef_a_q LBL: h14316 ARG0: x14313 RSTR: h14314 BODY: h14315 ]    |
-|       |                    |            |           [ _album_n_1 LBL: h14303 ARG0: x14302 ]                                |
-|       |                    |            |           [ explicit_or_proper_q LBL: h14311 ARG0: x14308 RSTR: h14309 BODY:     |
-|       |                    |            | h14310 ]                                                                         |
-|       |                    |            |           [ named LBL: h14301 ARG0: x14300 CARG: "Turn Me On" ] >                |
-|       |                    |            |   HCONS: < h14327 qeq h14321 h14336 qeq h14319 h14314 qeq h14303 h14309 qeq      |
-|       |                    |            | h14301 >                                                                         |
-|       |                    |            |   EQS: < x14326 eq x14320 h14325 eq h14330 u14324 eq x14326 h14325 eq h14319     |
-|       |                    |            | u14323 eq x14318 x14335 eq x14318 h14334 eq h14339 i14333 eq x14335 x14313 eq    |
-|       |                    |            | x14302 h14307 eq h14317 i14306 eq x14313 x14308 eq x14300 h14307 eq h14312       |
-|       |                    |            | x14305 eq x14308 h14334 eq h14312 i14332 eq x14308 > ]                           |
+| genre | Turn_Me_On_(album) | Punk_blues | [ TOP: h2003                                                                     |
+|       |                    |            |   INDEX: e2000 [ e TENSE: tensed ]                                               |
+|       |                    |            |   RELS: < [ _perform_v_1 LBL: h2003 ARG0: e2000 ARG1: i2001 ARG2: i2002 ]        |
+|       |                    |            |           [ def_udef_a_q LBL: h2007 ARG0: x2004 RSTR: h2005 BODY: h2006 ]        |
+|       |                    |            |           [ compound LBL: h1994 ARG0: e1991 ARG1: u1992 ARG2: u1993 ]            |
+|       |                    |            |           [ existential_q LBL: h1998 ARG0: x1995 RSTR: h1996 BODY: h1997 ]       |
+|       |                    |            |           [ unk_n LBL: h1990 ARG0: x1989 [ x NUM: sg IND: + ] CARG: "punk" ]     |
+|       |                    |            |           [ unk_n LBL: h1988 ARG0: x1987 [ x IND: - ] CARG: "blues" ]            |
+|       |                    |            |           [ appos LBL: h1976 ARG0: e1973 ARG1: x1974 ARG2: i1975 ]               |
+|       |                    |            |           [ def_udef_a_q LBL: h1985 ARG0: x1982 RSTR: h1983 BODY: h1984 ]        |
+|       |                    |            |           [ _album_n_1 LBL: h1972 ARG0: x1971 ]                                  |
+|       |                    |            |           [ explicit_or_proper_q LBL: h1980 ARG0: x1977 RSTR: h1978 BODY: h1979  |
+|       |                    |            | ]                                                                                |
+|       |                    |            |           [ named LBL: h1970 ARG0: x1969 CARG: "Turn Me On" ] >                  |
+|       |                    |            |   HCONS: < h1996 qeq h1990 h2005 qeq h1988 h1983 qeq h1972 h1978 qeq h1970 >     |
+|       |                    |            |   EQS: < x1995 eq x1989 h1994 eq h1999 u1993 eq x1995 h1994 eq h1988 u1992 eq    |
+|       |                    |            | x1987 x2004 eq x1987 h2003 eq h2008 i2002 eq x2004 x1982 eq x1971 h1976 eq h1986 |
+|       |                    |            | i1975 eq x1982 x1977 eq x1969 h1976 eq h1981 x1974 eq x1977 h2003 eq h1981 i2001 |
+|       |                    |            | eq x1977 > ]                                                                     |
 +-------+--------------------+------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------+

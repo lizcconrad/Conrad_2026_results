@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_MeanOfTransportation_Id877_237_711
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+----------------------------------------------------------------------------------------------------------------------------------+
-|                                                           GOLD OUTPUTS                                                           |
-+---------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                         | Generated? |
-+---------------------------------------------------------------------------------------------------------------------+------------+
-| Pontiac makes the Rageous coupe at its plant in Detroit.                                                            | False      |
-| The Pontiac Rageous was a car with a coupe body style, manufactured by Pontiac and its assembly line is in Detroit. | False      |
-| The Pontiac Rageous which has a coupe body style, was a car manufactured by Pontiac in Detroit.                     | False      |
-+---------------------------------------------------------------------------------------------------------------------+------------+
++-----------------------------------------------------------------------------------------------------------------+
+|                                                   GOLD OUTPUTS                                                  |
++----------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                        | Generated? |
++----------------------------------------------------------------------------------------------------+------------+
+| Ending in 1997, the Pontiac Rageous was assembled in Detroit, Michigan.                            | False      |
+| Ending its production in 1997, the Pontiac Rageous was assembled in Detroit, Michigan.             | False      |
+| The Pontiac Rageous assembled in Michigan with assembly line in Detroit was last produced in 1997. | False      |
++----------------------------------------------------------------------------------------------------+------------+
 
 +---------------------------------------------------------------------------------------+
 |                                      NODE METRICS                                     |
@@ -56,53 +56,49 @@ GRAPH NAME: WebNLG_test_3triples_MeanOfTransportation_Id877_237_711
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h24174                                                                    |
-|               |   INDEX: e24171 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _assemble_v_cause LBL: h24174 ARG0: e24171 ARG1: i24172 ARG2: i24173 |
+| Original      | [ TOP: h4930                                                                     |
+|               |   INDEX: e4927 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _assemble_v_cause LBL: h4930 ARG0: e4927 ARG1: i4928 ARG2: i4929 ]   |
+|               |           [ def_udef_a_q LBL: h4939 ARG0: x4936 RSTR: h4937 BODY: h4938 ]        |
+|               |           [ compound LBL: h4919 ARG0: e4916 ARG1: u4917 ARG2: u4918 ]            |
+|               |           [ existential_q LBL: h4923 ARG0: x4920 RSTR: h4921 BODY: h4922 ]       |
+|               |           [ named LBL: h4915 ARG0: x4914 [ x NUM: sg ] CARG: "Pontiac" ]         |
+|               |           [ named LBL: h4913 ARG0: x4912 CARG: "Rageous" ]                       |
+|               |           [ explicit_or_proper_q LBL: h4934 ARG0: x4931 RSTR: h4932 BODY: h4933  |
 |               | ]                                                                                |
-|               |           [ def_udef_a_q LBL: h24183 ARG0: x24180 RSTR: h24181 BODY: h24182 ]    |
-|               |           [ compound LBL: h24163 ARG0: e24160 ARG1: u24161 ARG2: u24162 ]        |
-|               |           [ existential_q LBL: h24167 ARG0: x24164 RSTR: h24165 BODY: h24166 ]   |
-|               |           [ named LBL: h24159 ARG0: x24158 [ x NUM: sg ] CARG: "Pontiac" ]       |
-|               |           [ named LBL: h24157 ARG0: x24156 CARG: "Rageous" ]                     |
-|               |           [ explicit_or_proper_q LBL: h24178 ARG0: x24175 RSTR: h24176 BODY:     |
-|               | h24177 ]                                                                         |
-|               |           [ named LBL: h24170 ARG0: x24169 CARG: "Detroit" ] >                   |
-|               |   HCONS: < h24165 qeq h24159 h24181 qeq h24157 h24176 qeq h24170 >               |
-|               |   EQS: < x24164 eq x24158 h24163 eq h24168 u24162 eq x24164 h24163 eq h24157     |
-|               | u24161 eq x24156 x24180 eq x24156 h24174 eq h24184 i24173 eq x24180 x24175 eq    |
-|               | x24169 h24174 eq h24179 i24172 eq x24175 > ]                                     |
+|               |           [ named LBL: h4926 ARG0: x4925 CARG: "Detroit" ] >                     |
+|               |   HCONS: < h4921 qeq h4915 h4937 qeq h4913 h4932 qeq h4926 >                     |
+|               |   EQS: < x4920 eq x4914 h4919 eq h4924 u4918 eq x4920 h4919 eq h4913 u4917 eq    |
+|               | x4912 x4936 eq x4912 h4930 eq h4940 i4929 eq x4936 x4931 eq x4925 h4930 eq h4935 |
+|               | i4928 eq x4931 > ]                                                               |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h24174                                                                    |
-|               |   INDEX: e24171 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _assemble_v_cause LBL: h24174 ARG0: e24171 ARG1: x24169 ARG2: x24156 |
+| EQs Collapsed | [ TOP: h4930                                                                     |
+|               |   INDEX: e4927 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _assemble_v_cause LBL: h4930 ARG0: e4927 ARG1: x4925 ARG2: x4912 ]   |
+|               |           [ def_udef_a_q LBL: h4939 ARG0: x4912 RSTR: h4937 BODY: h4938 ]        |
+|               |           [ compound LBL: h4913 ARG0: e4916 ARG1: x4912 ARG2: x4914 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h4923 ARG0: x4914 RSTR: h4921 BODY: h4922 ]       |
+|               |           [ named LBL: h4915 ARG0: x4914 CARG: "Pontiac" ]                       |
+|               |           [ named LBL: h4913 ARG0: x4912 CARG: "Rageous" ]                       |
+|               |           [ explicit_or_proper_q LBL: h4934 ARG0: x4925 RSTR: h4932 BODY: h4933  |
 |               | ]                                                                                |
-|               |           [ def_udef_a_q LBL: h24183 ARG0: x24156 RSTR: h24181 BODY: h24182 ]    |
-|               |           [ compound LBL: h24157 ARG0: e24160 ARG1: x24156 ARG2: x24158 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h24167 ARG0: x24158 RSTR: h24165 BODY: h24166 ]   |
-|               |           [ named LBL: h24159 ARG0: x24158 CARG: "Pontiac" ]                     |
-|               |           [ named LBL: h24157 ARG0: x24156 CARG: "Rageous" ]                     |
-|               |           [ explicit_or_proper_q LBL: h24178 ARG0: x24169 RSTR: h24176 BODY:     |
-|               | h24177 ]                                                                         |
-|               |           [ named LBL: h24170 ARG0: x24169 CARG: "Detroit" ] >                   |
-|               |   HCONS: < h24165 qeq h24159 h24181 qeq h24157 h24176 qeq h24170 > ]             |
+|               |           [ named LBL: h4926 ARG0: x4925 CARG: "Detroit" ] >                     |
+|               |   HCONS: < h4921 qeq h4915 h4937 qeq h4913 h4932 qeq h4926 > ]                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h24185                                                                    |
-|               |   INDEX: e24171 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _assemble_v_cause LBL: h24174 ARG0: e24171 ARG1: x24169 ARG2: x24156 |
+| Prepped       | [ TOP: h4941                                                                     |
+|               |   INDEX: e4927 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _assemble_v_cause LBL: h4930 ARG0: e4927 ARG1: x4925 ARG2: x4912 ]   |
+|               |           [ def_udef_a_q LBL: h4939 ARG0: x4912 RSTR: h4937 BODY: h4938 ]        |
+|               |           [ compound LBL: h4913 ARG0: e4916 ARG1: x4912 ARG2: x4914 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h4923 ARG0: x4914 RSTR: h4921 BODY: h4922 ]       |
+|               |           [ named LBL: h4915 ARG0: x4914 CARG: "Pontiac" ]                       |
+|               |           [ named LBL: h4913 ARG0: x4912 CARG: "Rageous" ]                       |
+|               |           [ explicit_or_proper_q LBL: h4934 ARG0: x4925 RSTR: h4932 BODY: h4933  |
 |               | ]                                                                                |
-|               |           [ def_udef_a_q LBL: h24183 ARG0: x24156 RSTR: h24181 BODY: h24182 ]    |
-|               |           [ compound LBL: h24157 ARG0: e24160 ARG1: x24156 ARG2: x24158 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h24167 ARG0: x24158 RSTR: h24165 BODY: h24166 ]   |
-|               |           [ named LBL: h24159 ARG0: x24158 CARG: "Pontiac" ]                     |
-|               |           [ named LBL: h24157 ARG0: x24156 CARG: "Rageous" ]                     |
-|               |           [ explicit_or_proper_q LBL: h24178 ARG0: x24169 RSTR: h24176 BODY:     |
-|               | h24177 ]                                                                         |
-|               |           [ named LBL: h24170 ARG0: x24169 CARG: "Detroit" ] >                   |
-|               |   HCONS: < h24165 qeq h24159 h24181 qeq h24157 h24176 qeq h24170 h24185 qeq      |
-|               | h24174 > ]                                                                       |
+|               |           [ named LBL: h4926 ARG0: x4925 CARG: "Detroit" ] >                     |
+|               |   HCONS: < h4921 qeq h4915 h4937 qeq h4913 h4932 qeq h4926 h4941 qeq h4930 > ]   |
 +---------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------+
@@ -110,19 +106,19 @@ GRAPH NAME: WebNLG_test_3triples_MeanOfTransportation_Id877_237_711
 +-----------------+----------------------------------------------------------------------------------+
 | Node            | Generated SEMENT                                                                 |
 +-----------------+----------------------------------------------------------------------------------+
-| Pontiac_Rageous | [ TOP: h24157                                                                    |
-|                 |   INDEX: x24156 [ x QUANT: def_udef_a_q ]                                        |
-|                 |   RELS: < [ compound LBL: h24163 ARG0: e24160 ARG1: u24161 ARG2: u24162 ]        |
-|                 |           [ existential_q LBL: h24167 ARG0: x24164 RSTR: h24165 BODY: h24166 ]   |
-|                 |           [ named LBL: h24159 ARG0: x24158 [ x NUM: sg ] CARG: "Pontiac" ]       |
-|                 |           [ named LBL: h24157 ARG0: x24156 CARG: "Rageous" ] >                   |
-|                 |   HCONS: < h24165 qeq h24159 >                                                   |
-|                 |   EQS: < x24164 eq x24158 h24163 eq h24168 u24162 eq x24164 h24163 eq h24157     |
-|                 | u24161 eq x24156 > ]                                                             |
+| Pontiac_Rageous | [ TOP: h4913                                                                     |
+|                 |   INDEX: x4912 [ x QUANT: def_udef_a_q ]                                         |
+|                 |   RELS: < [ compound LBL: h4919 ARG0: e4916 ARG1: u4917 ARG2: u4918 ]            |
+|                 |           [ existential_q LBL: h4923 ARG0: x4920 RSTR: h4921 BODY: h4922 ]       |
+|                 |           [ named LBL: h4915 ARG0: x4914 [ x NUM: sg ] CARG: "Pontiac" ]         |
+|                 |           [ named LBL: h4913 ARG0: x4912 CARG: "Rageous" ] >                     |
+|                 |   HCONS: < h4921 qeq h4915 >                                                     |
+|                 |   EQS: < x4920 eq x4914 h4919 eq h4924 u4918 eq x4920 h4919 eq h4913 u4917 eq    |
+|                 | x4912 > ]                                                                        |
 +-----------------+----------------------------------------------------------------------------------+
-| Detroit         | [ TOP: h24170                                                                    |
-|                 |   INDEX: x24169                                                                  |
-|                 |   RELS: < [ named LBL: h24170 ARG0: x24169 CARG: "Detroit" ] > ]                 |
+| Detroit         | [ TOP: h4926                                                                     |
+|                 |   INDEX: x4925                                                                   |
+|                 |   RELS: < [ named LBL: h4926 ARG0: x4925 CARG: "Detroit" ] > ]                   |
 +-----------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------------------------------+
@@ -130,22 +126,21 @@ GRAPH NAME: WebNLG_test_3triples_MeanOfTransportation_Id877_237_711
 +----------+-----------------+---------+----------------------------------------------------------------------------------+
 | Edge     | Parent          | Child   | Generated SEMENT                                                                 |
 +----------+-----------------+---------+----------------------------------------------------------------------------------+
-| assembly | Pontiac_Rageous | Detroit | [ TOP: h24174                                                                    |
-|          |                 |         |   INDEX: e24171 [ e TENSE: tensed ]                                              |
-|          |                 |         |   RELS: < [ _assemble_v_cause LBL: h24174 ARG0: e24171 ARG1: i24172 ARG2: i24173 |
+| assembly | Pontiac_Rageous | Detroit | [ TOP: h4930                                                                     |
+|          |                 |         |   INDEX: e4927 [ e TENSE: tensed ]                                               |
+|          |                 |         |   RELS: < [ _assemble_v_cause LBL: h4930 ARG0: e4927 ARG1: i4928 ARG2: i4929 ]   |
+|          |                 |         |           [ def_udef_a_q LBL: h4939 ARG0: x4936 RSTR: h4937 BODY: h4938 ]        |
+|          |                 |         |           [ compound LBL: h4919 ARG0: e4916 ARG1: u4917 ARG2: u4918 ]            |
+|          |                 |         |           [ existential_q LBL: h4923 ARG0: x4920 RSTR: h4921 BODY: h4922 ]       |
+|          |                 |         |           [ named LBL: h4915 ARG0: x4914 [ x NUM: sg ] CARG: "Pontiac" ]         |
+|          |                 |         |           [ named LBL: h4913 ARG0: x4912 CARG: "Rageous" ]                       |
+|          |                 |         |           [ explicit_or_proper_q LBL: h4934 ARG0: x4931 RSTR: h4932 BODY: h4933  |
 |          |                 |         | ]                                                                                |
-|          |                 |         |           [ def_udef_a_q LBL: h24183 ARG0: x24180 RSTR: h24181 BODY: h24182 ]    |
-|          |                 |         |           [ compound LBL: h24163 ARG0: e24160 ARG1: u24161 ARG2: u24162 ]        |
-|          |                 |         |           [ existential_q LBL: h24167 ARG0: x24164 RSTR: h24165 BODY: h24166 ]   |
-|          |                 |         |           [ named LBL: h24159 ARG0: x24158 [ x NUM: sg ] CARG: "Pontiac" ]       |
-|          |                 |         |           [ named LBL: h24157 ARG0: x24156 CARG: "Rageous" ]                     |
-|          |                 |         |           [ explicit_or_proper_q LBL: h24178 ARG0: x24175 RSTR: h24176 BODY:     |
-|          |                 |         | h24177 ]                                                                         |
-|          |                 |         |           [ named LBL: h24170 ARG0: x24169 CARG: "Detroit" ] >                   |
-|          |                 |         |   HCONS: < h24165 qeq h24159 h24181 qeq h24157 h24176 qeq h24170 >               |
-|          |                 |         |   EQS: < x24164 eq x24158 h24163 eq h24168 u24162 eq x24164 h24163 eq h24157     |
-|          |                 |         | u24161 eq x24156 x24180 eq x24156 h24174 eq h24184 i24173 eq x24180 x24175 eq    |
-|          |                 |         | x24169 h24174 eq h24179 i24172 eq x24175 > ]                                     |
+|          |                 |         |           [ named LBL: h4926 ARG0: x4925 CARG: "Detroit" ] >                     |
+|          |                 |         |   HCONS: < h4921 qeq h4915 h4937 qeq h4913 h4932 qeq h4926 >                     |
+|          |                 |         |   EQS: < x4920 eq x4914 h4919 eq h4924 u4918 eq x4920 h4919 eq h4913 u4917 eq    |
+|          |                 |         | x4912 x4936 eq x4912 h4930 eq h4940 i4929 eq x4936 x4931 eq x4925 h4930 eq h4935 |
+|          |                 |         | i4928 eq x4931 > ]                                                               |
 +----------+-----------------+---------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------+

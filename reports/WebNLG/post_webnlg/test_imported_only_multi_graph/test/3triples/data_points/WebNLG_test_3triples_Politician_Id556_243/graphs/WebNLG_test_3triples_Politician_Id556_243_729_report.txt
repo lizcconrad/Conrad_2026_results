@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Politician_Id556_243_729
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                 GOLD OUTPUTS                                                                |
-+--------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                    | Generated? |
-+--------------------------------------------------------------------------------------------------------------------------------+------------+
-| Abraham A. Ribicoff was born in the USA and was married to Casey Ribicoff. He was succeeded by John N. Dempsey.                | False      |
-| Abraham Ribicoff was born in the USA. He was married to Casey Ribicoff and was succeeded by John N. Dempsey.                   | False      |
-| The United States was the birthplace of Abraham A. Ribicoff. He was married to Casey Ribicoff and he preceded John N. Dempsey. | False      |
-+--------------------------------------------------------------------------------------------------------------------------------+------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+|                                                            GOLD OUTPUTS                                                            |
++-----------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                           | Generated? |
++-----------------------------------------------------------------------------------------------------------------------+------------+
+| Abraham A. Ribicoff (place of birth: Connecticut) is from the United States. His wife is Casey Ribicoff.              | False      |
+| Abraham A. Ribicoff was born in Connecticut in the USA and is an American citizen. His wife was named Casey Ribicoff. | False      |
+| Abraham A.Ribicoff (born in Connecticut) is from the United States. His wife is Casey Ribicoff.                       | False      |
++-----------------------------------------------------------------------------------------------------------------------+------------+
 
 +-------------------------------------------------------------------------------------------+
 |                                        NODE METRICS                                       |
@@ -56,81 +56,73 @@ GRAPH NAME: WebNLG_test_3triples_Politician_Id556_243_729
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h5157                                                                     |
-|               |   INDEX: e5154 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _to_p_state LBL: h5148 ARG0: e5145 ARG1: u5146 ARG2: i5147 ]         |
-|               |           [ explicit_or_proper_q LBL: h5152 ARG0: x5149 RSTR: h5150 BODY: h5151  |
-|               | ]                                                                                |
-|               |           [ named LBL: h5144 ARG0: x5143 CARG: "Casey Ribicoff" ]                |
-|               |           [ _marry_v_1 LBL: h5157 ARG0: e5154 ARG1: i5155 ARG2: i5156 ]          |
-|               |           [ explicit_or_proper_q LBL: h5161 ARG0: x5158 RSTR: h5159 BODY: h5160  |
-|               | ]                                                                                |
-|               |           [ named LBL: h5142 ARG0: x5141 CARG: "Abraham A. Ribicoff" ] >         |
-|               |   HCONS: < h5150 qeq h5144 h5159 qeq h5142 >                                     |
-|               |   EQS: < x5149 eq x5143 h5148 eq h5153 i5147 eq x5149 x5158 eq x5141 h5157 eq    |
-|               | h5162 i5156 eq x5158 h5148 eq h5157 u5146 eq e5154 >                             |
-|               |   SLOTS: < ARG1: i5155 > ]                                                       |
+| Original      | [ TOP: h639                                                                      |
+|               |   INDEX: e636 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _to_p_state LBL: h630 ARG0: e627 ARG1: u628 ARG2: i629 ]             |
+|               |           [ explicit_or_proper_q LBL: h634 ARG0: x631 RSTR: h632 BODY: h633 ]    |
+|               |           [ named LBL: h626 ARG0: x625 CARG: "Casey Ribicoff" ]                  |
+|               |           [ _marry_v_1 LBL: h639 ARG0: e636 ARG1: i637 ARG2: i638 ]              |
+|               |           [ explicit_or_proper_q LBL: h643 ARG0: x640 RSTR: h641 BODY: h642 ]    |
+|               |           [ named LBL: h624 ARG0: x623 CARG: "Abraham A. Ribicoff" ] >           |
+|               |   HCONS: < h632 qeq h626 h641 qeq h624 >                                         |
+|               |   EQS: < x631 eq x625 h630 eq h635 i629 eq x631 x640 eq x623 h639 eq h644 i638   |
+|               | eq x640 h630 eq h639 u628 eq e636 >                                              |
+|               |   SLOTS: < ARG1: i637 > ]                                                        |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h5148                                                                     |
-|               |   INDEX: e5154 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _to_p_state LBL: h5148 ARG0: e5145 ARG1: e5154 ARG2: x5143 ]         |
-|               |           [ explicit_or_proper_q LBL: h5152 ARG0: x5143 RSTR: h5150 BODY: h5151  |
-|               | ]                                                                                |
-|               |           [ named LBL: h5144 ARG0: x5143 CARG: "Casey Ribicoff" ]                |
-|               |           [ _marry_v_1 LBL: h5148 ARG0: e5154 ARG1: i5155 ARG2: x5141 ]          |
-|               |           [ explicit_or_proper_q LBL: h5161 ARG0: x5141 RSTR: h5159 BODY: h5160  |
-|               | ]                                                                                |
-|               |           [ named LBL: h5142 ARG0: x5141 CARG: "Abraham A. Ribicoff" ] >         |
-|               |   HCONS: < h5150 qeq h5144 h5159 qeq h5142 >                                     |
-|               |   SLOTS: < ARG1: i5155 > ]                                                       |
+| EQs Collapsed | [ TOP: h630                                                                      |
+|               |   INDEX: e636 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _to_p_state LBL: h630 ARG0: e627 ARG1: e636 ARG2: x625 ]             |
+|               |           [ explicit_or_proper_q LBL: h634 ARG0: x625 RSTR: h632 BODY: h633 ]    |
+|               |           [ named LBL: h626 ARG0: x625 CARG: "Casey Ribicoff" ]                  |
+|               |           [ _marry_v_1 LBL: h630 ARG0: e636 ARG1: i637 ARG2: x623 ]              |
+|               |           [ explicit_or_proper_q LBL: h643 ARG0: x623 RSTR: h641 BODY: h642 ]    |
+|               |           [ named LBL: h624 ARG0: x623 CARG: "Abraham A. Ribicoff" ] >           |
+|               |   HCONS: < h632 qeq h626 h641 qeq h624 >                                         |
+|               |   SLOTS: < ARG1: i637 > ]                                                        |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h5163                                                                     |
-|               |   INDEX: e5154 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _to_p_state LBL: h5148 ARG0: e5145 ARG1: e5154 ARG2: x5143 ]         |
-|               |           [ explicit_or_proper_q LBL: h5152 ARG0: x5143 RSTR: h5150 BODY: h5151  |
-|               | ]                                                                                |
-|               |           [ named LBL: h5144 ARG0: x5143 CARG: "Casey Ribicoff" ]                |
-|               |           [ _marry_v_1 LBL: h5148 ARG0: e5154 ARG1: i5155 ARG2: x5141 ]          |
-|               |           [ explicit_or_proper_q LBL: h5161 ARG0: x5141 RSTR: h5159 BODY: h5160  |
-|               | ]                                                                                |
-|               |           [ named LBL: h5142 ARG0: x5141 CARG: "Abraham A. Ribicoff" ] >         |
-|               |   HCONS: < h5150 qeq h5144 h5159 qeq h5142 h5163 qeq h5148 >                     |
-|               |   SLOTS: < ARG1: i5155 > ]                                                       |
+| Prepped       | [ TOP: h645                                                                      |
+|               |   INDEX: e636 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _to_p_state LBL: h630 ARG0: e627 ARG1: e636 ARG2: x625 ]             |
+|               |           [ explicit_or_proper_q LBL: h634 ARG0: x625 RSTR: h632 BODY: h633 ]    |
+|               |           [ named LBL: h626 ARG0: x625 CARG: "Casey Ribicoff" ]                  |
+|               |           [ _marry_v_1 LBL: h630 ARG0: e636 ARG1: i637 ARG2: x623 ]              |
+|               |           [ explicit_or_proper_q LBL: h643 ARG0: x623 RSTR: h641 BODY: h642 ]    |
+|               |           [ named LBL: h624 ARG0: x623 CARG: "Abraham A. Ribicoff" ] >           |
+|               |   HCONS: < h632 qeq h626 h641 qeq h624 h645 qeq h630 >                           |
+|               |   SLOTS: < ARG1: i637 > ]                                                        |
 +---------------+----------------------------------------------------------------------------------+
 
-+--------------------------------------------------------------------------------------------------+
-|                                           NODE SEMENTS                                           |
-+---------------------+----------------------------------------------------------------------------+
-| Node                | Generated SEMENT                                                           |
-+---------------------+----------------------------------------------------------------------------+
-| Abraham_A._Ribicoff | [ TOP: h5142                                                               |
-|                     |   INDEX: x5141                                                             |
-|                     |   RELS: < [ named LBL: h5142 ARG0: x5141 CARG: "Abraham A. Ribicoff" ] > ] |
-+---------------------+----------------------------------------------------------------------------+
-| Casey_Ribicoff      | [ TOP: h5144                                                               |
-|                     |   INDEX: x5143                                                             |
-|                     |   RELS: < [ named LBL: h5144 ARG0: x5143 CARG: "Casey Ribicoff" ] > ]      |
-+---------------------+----------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------+
+|                                          NODE SEMENTS                                          |
++---------------------+--------------------------------------------------------------------------+
+| Node                | Generated SEMENT                                                         |
++---------------------+--------------------------------------------------------------------------+
+| Abraham_A._Ribicoff | [ TOP: h624                                                              |
+|                     |   INDEX: x623                                                            |
+|                     |   RELS: < [ named LBL: h624 ARG0: x623 CARG: "Abraham A. Ribicoff" ] > ] |
++---------------------+--------------------------------------------------------------------------+
+| Casey_Ribicoff      | [ TOP: h626                                                              |
+|                     |   INDEX: x625                                                            |
+|                     |   RELS: < [ named LBL: h626 ARG0: x625 CARG: "Casey Ribicoff" ] > ]      |
++---------------------+--------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------------+
 |                                                           EDGE SEMENTS                                                           |
 +--------+---------------------+----------------+----------------------------------------------------------------------------------+
 | Edge   | Parent              | Child          | Generated SEMENT                                                                 |
 +--------+---------------------+----------------+----------------------------------------------------------------------------------+
-| spouse | Abraham_A._Ribicoff | Casey_Ribicoff | [ TOP: h5157                                                                     |
-|        |                     |                |   INDEX: e5154 [ e TENSE: tensed ]                                               |
-|        |                     |                |   RELS: < [ _to_p_state LBL: h5148 ARG0: e5145 ARG1: u5146 ARG2: i5147 ]         |
-|        |                     |                |           [ explicit_or_proper_q LBL: h5152 ARG0: x5149 RSTR: h5150 BODY: h5151  |
-|        |                     |                | ]                                                                                |
-|        |                     |                |           [ named LBL: h5144 ARG0: x5143 CARG: "Casey Ribicoff" ]                |
-|        |                     |                |           [ _marry_v_1 LBL: h5157 ARG0: e5154 ARG1: i5155 ARG2: i5156 ]          |
-|        |                     |                |           [ explicit_or_proper_q LBL: h5161 ARG0: x5158 RSTR: h5159 BODY: h5160  |
-|        |                     |                | ]                                                                                |
-|        |                     |                |           [ named LBL: h5142 ARG0: x5141 CARG: "Abraham A. Ribicoff" ] >         |
-|        |                     |                |   HCONS: < h5150 qeq h5144 h5159 qeq h5142 >                                     |
-|        |                     |                |   EQS: < x5149 eq x5143 h5148 eq h5153 i5147 eq x5149 x5158 eq x5141 h5157 eq    |
-|        |                     |                | h5162 i5156 eq x5158 h5148 eq h5157 u5146 eq e5154 >                             |
-|        |                     |                |   SLOTS: < ARG1: i5155 > ]                                                       |
+| spouse | Abraham_A._Ribicoff | Casey_Ribicoff | [ TOP: h639                                                                      |
+|        |                     |                |   INDEX: e636 [ e TENSE: tensed ]                                                |
+|        |                     |                |   RELS: < [ _to_p_state LBL: h630 ARG0: e627 ARG1: u628 ARG2: i629 ]             |
+|        |                     |                |           [ explicit_or_proper_q LBL: h634 ARG0: x631 RSTR: h632 BODY: h633 ]    |
+|        |                     |                |           [ named LBL: h626 ARG0: x625 CARG: "Casey Ribicoff" ]                  |
+|        |                     |                |           [ _marry_v_1 LBL: h639 ARG0: e636 ARG1: i637 ARG2: i638 ]              |
+|        |                     |                |           [ explicit_or_proper_q LBL: h643 ARG0: x640 RSTR: h641 BODY: h642 ]    |
+|        |                     |                |           [ named LBL: h624 ARG0: x623 CARG: "Abraham A. Ribicoff" ] >           |
+|        |                     |                |   HCONS: < h632 qeq h626 h641 qeq h624 >                                         |
+|        |                     |                |   EQS: < x631 eq x625 h630 eq h635 i629 eq x631 x640 eq x623 h639 eq h644 i638   |
+|        |                     |                | eq x640 h630 eq h639 u628 eq e636 >                                              |
+|        |                     |                |   SLOTS: < ARG1: i637 > ]                                                        |
 +--------+---------------------+----------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------+

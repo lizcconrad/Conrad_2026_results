@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id1521_291_874
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-----------------------------------------------------------------------------------------------------------------+
-|                                                   GOLD OUTPUTS                                                  |
-+----------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                        | Generated? |
-+----------------------------------------------------------------------------------------------------+------------+
-| Expect a Miracle is a compilation album produced by Brian Kelly with a runtime of 54.56 minutes.   | False      |
-| Expect a Miracle, produced by Brian Kelly, is a compilation album with a runtime of 54.56.         | False      |
-| The compilation album Expect a Miracle, which was produced by Brian Kelly, has a runtime of 54:56. | False      |
-+----------------------------------------------------------------------------------------------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                 GOLD OUTPUTS                                                                                |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                                    | Generated? |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| "Expect a Miracle", with a total runtime of 54:56, and in which was preceded by the album, "Pools of Light", were both productions by the work of Brian Kelly. | False      |
+| Expect a Miracle was produced by Brian Kelly and runs for 54:56 minutes. It is preceded by the album Pools of Light, also by Brian Kelly.                      | False      |
+| The 54.56 minutes Brian Kelly album Expect a miracle was preceded by the album Pools of Light.                                                                 | False      |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------+
 |                                      NODE METRICS                                      |
@@ -56,89 +56,88 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id1521_291_874
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h29387                                                                    |
-|               |   INDEX: e29384 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h29387 ARG0: e29384 ARG1: i29385 ARG2: i29386 ]       |
-|               |           [ def_udef_a_q LBL: h29410 ARG0: x29407 RSTR: h29408 BODY: h29409 ]    |
-|               |           [ _of_p LBL: h29391 ARG0: e29388 ARG1: u29389 ARG2: i29390 ]           |
-|               |           [ number_q LBL: h29400 ARG0: x29397 RSTR: h29398 BODY: h29399 ]        |
-|               |           [ card LBL: h29383 ARG0: i29381 ARG1: u29382 CARG: "54.56" ]           |
-|               |           [ _total_a_1 LBL: h29394 ARG0: e29392 ARG1: u29393 ]                   |
-|               |           [ _runtime_n_1 LBL: h29396 ARG0: x29395 ]                              |
-|               |           [ explicit_or_proper_q LBL: h29405 ARG0: x29402 RSTR: h29403 BODY:     |
-|               | h29404 ]                                                                         |
-|               |           [ named LBL: h29380 ARG0: x29379 CARG: "Expect a Miracle" ] >          |
-|               |   HCONS: < h29398 qeq h29383 h29408 qeq h29396 h29403 qeq h29380 >               |
-|               |   EQS: < x29397 eq i29381 h29391 eq h29401 i29390 eq x29397 h29394 eq h29396     |
-|               | u29393 eq x29395 h29391 eq h29396 u29389 eq x29395 x29407 eq x29395 h29387 eq    |
-|               | h29411 i29386 eq x29407 x29402 eq x29379 h29387 eq h29406 i29385 eq x29402 > ]   |
+| Original      | [ TOP: h8092                                                                     |
+|               |   INDEX: e8089 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h8092 ARG0: e8089 ARG1: i8090 ARG2: i8091 ]           |
+|               |           [ def_udef_a_q LBL: h8115 ARG0: x8112 RSTR: h8113 BODY: h8114 ]        |
+|               |           [ _of_p LBL: h8096 ARG0: e8093 ARG1: u8094 ARG2: i8095 ]               |
+|               |           [ number_q LBL: h8105 ARG0: x8102 RSTR: h8103 BODY: h8104 ]            |
+|               |           [ card LBL: h8088 ARG0: i8086 ARG1: u8087 CARG: "54.56" ]              |
+|               |           [ _total_a_1 LBL: h8099 ARG0: e8097 ARG1: u8098 ]                      |
+|               |           [ _runtime_n_1 LBL: h8101 ARG0: x8100 ]                                |
+|               |           [ explicit_or_proper_q LBL: h8110 ARG0: x8107 RSTR: h8108 BODY: h8109  |
+|               | ]                                                                                |
+|               |           [ named LBL: h8085 ARG0: x8084 CARG: "Expect a Miracle" ] >            |
+|               |   HCONS: < h8103 qeq h8088 h8113 qeq h8101 h8108 qeq h8085 >                     |
+|               |   EQS: < x8102 eq i8086 h8096 eq h8106 i8095 eq x8102 h8099 eq h8101 u8098 eq    |
+|               | x8100 h8096 eq h8101 u8094 eq x8100 x8112 eq x8100 h8092 eq h8116 i8091 eq x8112 |
+|               | x8107 eq x8084 h8092 eq h8111 i8090 eq x8107 > ]                                 |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h29387                                                                    |
-|               |   INDEX: e29384 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h29387 ARG0: e29384 ARG1: x29379 ARG2: x29395 ]       |
-|               |           [ def_udef_a_q LBL: h29410 ARG0: x29395 RSTR: h29408 BODY: h29409 ]    |
-|               |           [ _of_p LBL: h29391 ARG0: e29388 ARG1: x29395 ARG2: x29397 ]           |
-|               |           [ number_q LBL: h29400 ARG0: x29397 RSTR: h29398 BODY: h29399 ]        |
-|               |           [ card LBL: h29383 ARG0: x29397 ARG1: u29382 CARG: "54.56" ]           |
-|               |           [ _total_a_1 LBL: h29391 ARG0: e29392 ARG1: x29395 ]                   |
-|               |           [ _runtime_n_1 LBL: h29391 ARG0: x29395 ]                              |
-|               |           [ explicit_or_proper_q LBL: h29405 ARG0: x29379 RSTR: h29403 BODY:     |
-|               | h29404 ]                                                                         |
-|               |           [ named LBL: h29380 ARG0: x29379 CARG: "Expect a Miracle" ] >          |
-|               |   HCONS: < h29398 qeq h29383 h29408 qeq h29391 h29403 qeq h29380 > ]             |
+| EQs Collapsed | [ TOP: h8092                                                                     |
+|               |   INDEX: e8089 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h8092 ARG0: e8089 ARG1: x8084 ARG2: x8100 ]           |
+|               |           [ def_udef_a_q LBL: h8115 ARG0: x8100 RSTR: h8113 BODY: h8114 ]        |
+|               |           [ _of_p LBL: h8096 ARG0: e8093 ARG1: x8100 ARG2: x8102 ]               |
+|               |           [ number_q LBL: h8105 ARG0: x8102 RSTR: h8103 BODY: h8104 ]            |
+|               |           [ card LBL: h8088 ARG0: x8102 ARG1: u8087 CARG: "54.56" ]              |
+|               |           [ _total_a_1 LBL: h8096 ARG0: e8097 ARG1: x8100 ]                      |
+|               |           [ _runtime_n_1 LBL: h8096 ARG0: x8100 ]                                |
+|               |           [ explicit_or_proper_q LBL: h8110 ARG0: x8084 RSTR: h8108 BODY: h8109  |
+|               | ]                                                                                |
+|               |           [ named LBL: h8085 ARG0: x8084 CARG: "Expect a Miracle" ] >            |
+|               |   HCONS: < h8103 qeq h8088 h8113 qeq h8096 h8108 qeq h8085 > ]                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h29412                                                                    |
-|               |   INDEX: e29384 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h29387 ARG0: e29384 ARG1: x29379 ARG2: x29395 ]       |
-|               |           [ def_udef_a_q LBL: h29410 ARG0: x29395 RSTR: h29408 BODY: h29409 ]    |
-|               |           [ _of_p LBL: h29391 ARG0: e29388 ARG1: x29395 ARG2: x29397 ]           |
-|               |           [ number_q LBL: h29400 ARG0: x29397 RSTR: h29398 BODY: h29399 ]        |
-|               |           [ card LBL: h29383 ARG0: x29397 ARG1: u29382 CARG: "54.56" ]           |
-|               |           [ _total_a_1 LBL: h29391 ARG0: e29392 ARG1: x29395 ]                   |
-|               |           [ _runtime_n_1 LBL: h29391 ARG0: x29395 ]                              |
-|               |           [ explicit_or_proper_q LBL: h29405 ARG0: x29379 RSTR: h29403 BODY:     |
-|               | h29404 ]                                                                         |
-|               |           [ named LBL: h29380 ARG0: x29379 CARG: "Expect a Miracle" ] >          |
-|               |   HCONS: < h29398 qeq h29383 h29408 qeq h29391 h29403 qeq h29380 h29412 qeq      |
-|               | h29387 > ]                                                                       |
+| Prepped       | [ TOP: h8117                                                                     |
+|               |   INDEX: e8089 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h8092 ARG0: e8089 ARG1: x8084 ARG2: x8100 ]           |
+|               |           [ def_udef_a_q LBL: h8115 ARG0: x8100 RSTR: h8113 BODY: h8114 ]        |
+|               |           [ _of_p LBL: h8096 ARG0: e8093 ARG1: x8100 ARG2: x8102 ]               |
+|               |           [ number_q LBL: h8105 ARG0: x8102 RSTR: h8103 BODY: h8104 ]            |
+|               |           [ card LBL: h8088 ARG0: x8102 ARG1: u8087 CARG: "54.56" ]              |
+|               |           [ _total_a_1 LBL: h8096 ARG0: e8097 ARG1: x8100 ]                      |
+|               |           [ _runtime_n_1 LBL: h8096 ARG0: x8100 ]                                |
+|               |           [ explicit_or_proper_q LBL: h8110 ARG0: x8084 RSTR: h8108 BODY: h8109  |
+|               | ]                                                                                |
+|               |           [ named LBL: h8085 ARG0: x8084 CARG: "Expect a Miracle" ] >            |
+|               |   HCONS: < h8103 qeq h8088 h8113 qeq h8096 h8108 qeq h8085 h8117 qeq h8092 > ]   |
 +---------------+----------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-|                                         NODE SEMENTS                                         |
-+------------------+---------------------------------------------------------------------------+
-| Node             | Generated SEMENT                                                          |
-+------------------+---------------------------------------------------------------------------+
-| Expect_a_Miracle | [ TOP: h29380                                                             |
-|                  |   INDEX: x29379                                                           |
-|                  |   RELS: < [ named LBL: h29380 ARG0: x29379 CARG: "Expect a Miracle" ] > ] |
-+------------------+---------------------------------------------------------------------------+
-| 54.56            | [ TOP: h29383                                                             |
-|                  |   INDEX: i29381                                                           |
-|                  |   RELS: < [ card LBL: h29383 ARG0: i29381 ARG1: u29382 CARG: "54.56" ] >  |
-|                  |   SLOTS: < ARG1: u29382 > ]                                               |
-+------------------+---------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+|                                        NODE SEMENTS                                        |
++------------------+-------------------------------------------------------------------------+
+| Node             | Generated SEMENT                                                        |
++------------------+-------------------------------------------------------------------------+
+| Expect_a_Miracle | [ TOP: h8085                                                            |
+|                  |   INDEX: x8084                                                          |
+|                  |   RELS: < [ named LBL: h8085 ARG0: x8084 CARG: "Expect a Miracle" ] > ] |
++------------------+-------------------------------------------------------------------------+
+| 54.56            | [ TOP: h8088                                                            |
+|                  |   INDEX: i8086                                                          |
+|                  |   RELS: < [ card LBL: h8088 ARG0: i8086 ARG1: u8087 CARG: "54.56" ] >   |
+|                  |   SLOTS: < ARG1: u8087 > ]                                              |
++------------------+-------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------+
 |                                                      EDGE SEMENTS                                                     |
 +---------+------------------+-------+----------------------------------------------------------------------------------+
 | Edge    | Parent           | Child | Generated SEMENT                                                                 |
 +---------+------------------+-------+----------------------------------------------------------------------------------+
-| runtime | Expect_a_Miracle | 54.56 | [ TOP: h29387                                                                    |
-|         |                  |       |   INDEX: e29384 [ e TENSE: tensed ]                                              |
-|         |                  |       |   RELS: < [ _have_v_1 LBL: h29387 ARG0: e29384 ARG1: i29385 ARG2: i29386 ]       |
-|         |                  |       |           [ def_udef_a_q LBL: h29410 ARG0: x29407 RSTR: h29408 BODY: h29409 ]    |
-|         |                  |       |           [ _of_p LBL: h29391 ARG0: e29388 ARG1: u29389 ARG2: i29390 ]           |
-|         |                  |       |           [ number_q LBL: h29400 ARG0: x29397 RSTR: h29398 BODY: h29399 ]        |
-|         |                  |       |           [ card LBL: h29383 ARG0: i29381 ARG1: u29382 CARG: "54.56" ]           |
-|         |                  |       |           [ _total_a_1 LBL: h29394 ARG0: e29392 ARG1: u29393 ]                   |
-|         |                  |       |           [ _runtime_n_1 LBL: h29396 ARG0: x29395 ]                              |
-|         |                  |       |           [ explicit_or_proper_q LBL: h29405 ARG0: x29402 RSTR: h29403 BODY:     |
-|         |                  |       | h29404 ]                                                                         |
-|         |                  |       |           [ named LBL: h29380 ARG0: x29379 CARG: "Expect a Miracle" ] >          |
-|         |                  |       |   HCONS: < h29398 qeq h29383 h29408 qeq h29396 h29403 qeq h29380 >               |
-|         |                  |       |   EQS: < x29397 eq i29381 h29391 eq h29401 i29390 eq x29397 h29394 eq h29396     |
-|         |                  |       | u29393 eq x29395 h29391 eq h29396 u29389 eq x29395 x29407 eq x29395 h29387 eq    |
-|         |                  |       | h29411 i29386 eq x29407 x29402 eq x29379 h29387 eq h29406 i29385 eq x29402 > ]   |
+| runtime | Expect_a_Miracle | 54.56 | [ TOP: h8092                                                                     |
+|         |                  |       |   INDEX: e8089 [ e TENSE: tensed ]                                               |
+|         |                  |       |   RELS: < [ _have_v_1 LBL: h8092 ARG0: e8089 ARG1: i8090 ARG2: i8091 ]           |
+|         |                  |       |           [ def_udef_a_q LBL: h8115 ARG0: x8112 RSTR: h8113 BODY: h8114 ]        |
+|         |                  |       |           [ _of_p LBL: h8096 ARG0: e8093 ARG1: u8094 ARG2: i8095 ]               |
+|         |                  |       |           [ number_q LBL: h8105 ARG0: x8102 RSTR: h8103 BODY: h8104 ]            |
+|         |                  |       |           [ card LBL: h8088 ARG0: i8086 ARG1: u8087 CARG: "54.56" ]              |
+|         |                  |       |           [ _total_a_1 LBL: h8099 ARG0: e8097 ARG1: u8098 ]                      |
+|         |                  |       |           [ _runtime_n_1 LBL: h8101 ARG0: x8100 ]                                |
+|         |                  |       |           [ explicit_or_proper_q LBL: h8110 ARG0: x8107 RSTR: h8108 BODY: h8109  |
+|         |                  |       | ]                                                                                |
+|         |                  |       |           [ named LBL: h8085 ARG0: x8084 CARG: "Expect a Miracle" ] >            |
+|         |                  |       |   HCONS: < h8103 qeq h8088 h8113 qeq h8101 h8108 qeq h8085 >                     |
+|         |                  |       |   EQS: < x8102 eq i8086 h8096 eq h8106 i8095 eq x8102 h8099 eq h8101 u8098 eq    |
+|         |                  |       | x8100 h8096 eq h8101 u8094 eq x8100 x8112 eq x8100 h8092 eq h8116 i8091 eq x8112 |
+|         |                  |       | x8107 eq x8084 h8092 eq h8111 i8090 eq x8107 > ]                                 |
 +---------+------------------+-------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------+

@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_Astronaut_Id1617_250_500
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-|                                                              GOLD OUTPUTS                                                             |
-+--------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                              | Generated? |
-+--------------------------------------------------------------------------------------------------------------------------+------------+
-| Buzz Aldrin graduated from Massachusetts Institute of Technology with a Sc.D in 1963 and was a crew member of Apollo 11. | False      |
-| Buzz Aldrin, a member of the Apollo 11 crew, received his Sc. D. from MIT in 1963.                                       | False      |
-| Buzz Aldrin, who graduated from MIT in 1963 with a Sc.D., was a crew member on Apollo 11.                                | False      |
-+--------------------------------------------------------------------------------------------------------------------------+------------+
++---------------------------------------------------------------------------------------+
+|                                      GOLD OUTPUTS                                     |
++--------------------------------------------------------------------------+------------+
+| Gold Output                                                              | Generated? |
++--------------------------------------------------------------------------+------------+
+| An Apollo 11 crew member, Buzz Aldrin, was born on January 20, 1930.     | False      |
+| Buzz Aldrin (born on 1930-01-20),was a crew member on Apollo 11.         | False      |
+| Buzz Aldrin, part of the Apollo 11 crew, was born on January 20th, 1930. | False      |
++--------------------------------------------------------------------------+------------+
 
 +-----------------------------------------------------------------------------------+
 |                                    NODE METRICS                                   |
@@ -56,103 +56,88 @@ GRAPH NAME: WebNLG_test_2triples_Astronaut_Id1617_250_500
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h16312                                                                    |
-|               |   INDEX: e16309 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _serve_v_as LBL: h16312 ARG0: e16309 ARG1: i16310 ARG2: i16311 ]     |
-|               |           [ def_udef_a_q LBL: h16341 ARG0: x16338 RSTR: h16339 BODY: h16340 ]    |
-|               |           [ compound LBL: h16327 ARG0: e16324 ARG1: u16325 ARG2: u16326 ]        |
-|               |           [ existential_q LBL: h16331 ARG0: x16328 RSTR: h16329 BODY: h16330 ]   |
-|               |           [ _crew_n_of LBL: h16323 ARG0: x16321 [ x NUM: sg ] ARG1: i16322 ]     |
-|               |           [ _member_n_of LBL: h16315 ARG0: x16313 ARG1: i16314 ]                 |
-|               |           [ explicit_or_proper_q LBL: h16319 ARG0: x16316 RSTR: h16317 BODY:     |
-|               | h16318 ]                                                                         |
-|               |           [ named LBL: h16308 ARG0: x16307 CARG: "Apollo 11" ]                   |
-|               |           [ explicit_or_proper_q LBL: h16336 ARG0: x16333 RSTR: h16334 BODY:     |
-|               | h16335 ]                                                                         |
-|               |           [ named LBL: h16306 ARG0: x16305 CARG: "Buzz Aldrin" ] >               |
-|               |   HCONS: < h16329 qeq h16323 h16317 qeq h16308 h16339 qeq h16315 h16334 qeq      |
-|               | h16306 >                                                                         |
-|               |   EQS: < x16328 eq x16321 h16327 eq h16332 u16326 eq x16328 x16316 eq x16307     |
-|               | h16315 eq h16320 i16314 eq x16316 h16327 eq h16315 u16325 eq x16313 x16338 eq    |
-|               | x16313 h16312 eq h16342 i16311 eq x16338 x16333 eq x16305 h16312 eq h16337       |
-|               | i16310 eq x16333 > ]                                                             |
+| Original      | [ TOP: h439                                                                      |
+|               |   INDEX: e436 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _serve_v_as LBL: h439 ARG0: e436 ARG1: i437 ARG2: i438 ]             |
+|               |           [ def_udef_a_q LBL: h468 ARG0: x465 RSTR: h466 BODY: h467 ]            |
+|               |           [ compound LBL: h454 ARG0: e451 ARG1: u452 ARG2: u453 ]                |
+|               |           [ existential_q LBL: h458 ARG0: x455 RSTR: h456 BODY: h457 ]           |
+|               |           [ _crew_n_of LBL: h450 ARG0: x448 [ x NUM: sg ] ARG1: i449 ]           |
+|               |           [ _member_n_of LBL: h442 ARG0: x440 ARG1: i441 ]                       |
+|               |           [ explicit_or_proper_q LBL: h446 ARG0: x443 RSTR: h444 BODY: h445 ]    |
+|               |           [ named LBL: h435 ARG0: x434 CARG: "Apollo 11" ]                       |
+|               |           [ explicit_or_proper_q LBL: h463 ARG0: x460 RSTR: h461 BODY: h462 ]    |
+|               |           [ named LBL: h433 ARG0: x432 CARG: "Buzz Aldrin" ] >                   |
+|               |   HCONS: < h456 qeq h450 h444 qeq h435 h466 qeq h442 h461 qeq h433 >             |
+|               |   EQS: < x455 eq x448 h454 eq h459 u453 eq x455 x443 eq x434 h442 eq h447 i441   |
+|               | eq x443 h454 eq h442 u452 eq x440 x465 eq x440 h439 eq h469 i438 eq x465 x460 eq |
+|               | x432 h439 eq h464 i437 eq x460 > ]                                               |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h16312                                                                    |
-|               |   INDEX: e16309 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _serve_v_as LBL: h16312 ARG0: e16309 ARG1: x16305 ARG2: x16313 ]     |
-|               |           [ def_udef_a_q LBL: h16341 ARG0: x16313 RSTR: h16339 BODY: h16340 ]    |
-|               |           [ compound LBL: h16315 ARG0: e16324 ARG1: x16313 ARG2: x16321 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h16331 ARG0: x16321 RSTR: h16329 BODY: h16330 ]   |
-|               |           [ _crew_n_of LBL: h16323 ARG0: x16321 ARG1: i16322 ]                   |
-|               |           [ _member_n_of LBL: h16315 ARG0: x16313 ARG1: x16307 ]                 |
-|               |           [ explicit_or_proper_q LBL: h16319 ARG0: x16307 RSTR: h16317 BODY:     |
-|               | h16318 ]                                                                         |
-|               |           [ named LBL: h16308 ARG0: x16307 CARG: "Apollo 11" ]                   |
-|               |           [ explicit_or_proper_q LBL: h16336 ARG0: x16305 RSTR: h16334 BODY:     |
-|               | h16335 ]                                                                         |
-|               |           [ named LBL: h16306 ARG0: x16305 CARG: "Buzz Aldrin" ] >               |
-|               |   HCONS: < h16329 qeq h16323 h16317 qeq h16308 h16339 qeq h16315 h16334 qeq      |
-|               | h16306 > ]                                                                       |
+| EQs Collapsed | [ TOP: h439                                                                      |
+|               |   INDEX: e436 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _serve_v_as LBL: h439 ARG0: e436 ARG1: x432 ARG2: x440 ]             |
+|               |           [ def_udef_a_q LBL: h468 ARG0: x440 RSTR: h466 BODY: h467 ]            |
+|               |           [ compound LBL: h442 ARG0: e451 ARG1: x440 ARG2: x448 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h458 ARG0: x448 RSTR: h456 BODY: h457 ]           |
+|               |           [ _crew_n_of LBL: h450 ARG0: x448 ARG1: i449 ]                         |
+|               |           [ _member_n_of LBL: h442 ARG0: x440 ARG1: x434 ]                       |
+|               |           [ explicit_or_proper_q LBL: h446 ARG0: x434 RSTR: h444 BODY: h445 ]    |
+|               |           [ named LBL: h435 ARG0: x434 CARG: "Apollo 11" ]                       |
+|               |           [ explicit_or_proper_q LBL: h463 ARG0: x432 RSTR: h461 BODY: h462 ]    |
+|               |           [ named LBL: h433 ARG0: x432 CARG: "Buzz Aldrin" ] >                   |
+|               |   HCONS: < h456 qeq h450 h444 qeq h435 h466 qeq h442 h461 qeq h433 > ]           |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h16343                                                                    |
-|               |   INDEX: e16309 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _serve_v_as LBL: h16312 ARG0: e16309 ARG1: x16305 ARG2: x16313 ]     |
-|               |           [ def_udef_a_q LBL: h16341 ARG0: x16313 RSTR: h16339 BODY: h16340 ]    |
-|               |           [ compound LBL: h16315 ARG0: e16324 ARG1: x16313 ARG2: x16321 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h16331 ARG0: x16321 RSTR: h16329 BODY: h16330 ]   |
-|               |           [ _crew_n_of LBL: h16323 ARG0: x16321 ARG1: i16322 ]                   |
-|               |           [ _member_n_of LBL: h16315 ARG0: x16313 ARG1: x16307 ]                 |
-|               |           [ explicit_or_proper_q LBL: h16319 ARG0: x16307 RSTR: h16317 BODY:     |
-|               | h16318 ]                                                                         |
-|               |           [ named LBL: h16308 ARG0: x16307 CARG: "Apollo 11" ]                   |
-|               |           [ explicit_or_proper_q LBL: h16336 ARG0: x16305 RSTR: h16334 BODY:     |
-|               | h16335 ]                                                                         |
-|               |           [ named LBL: h16306 ARG0: x16305 CARG: "Buzz Aldrin" ] >               |
-|               |   HCONS: < h16329 qeq h16323 h16317 qeq h16308 h16339 qeq h16315 h16334 qeq      |
-|               | h16306 h16343 qeq h16312 > ]                                                     |
+| Prepped       | [ TOP: h470                                                                      |
+|               |   INDEX: e436 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _serve_v_as LBL: h439 ARG0: e436 ARG1: x432 ARG2: x440 ]             |
+|               |           [ def_udef_a_q LBL: h468 ARG0: x440 RSTR: h466 BODY: h467 ]            |
+|               |           [ compound LBL: h442 ARG0: e451 ARG1: x440 ARG2: x448 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h458 ARG0: x448 RSTR: h456 BODY: h457 ]           |
+|               |           [ _crew_n_of LBL: h450 ARG0: x448 ARG1: i449 ]                         |
+|               |           [ _member_n_of LBL: h442 ARG0: x440 ARG1: x434 ]                       |
+|               |           [ explicit_or_proper_q LBL: h446 ARG0: x434 RSTR: h444 BODY: h445 ]    |
+|               |           [ named LBL: h435 ARG0: x434 CARG: "Apollo 11" ]                       |
+|               |           [ explicit_or_proper_q LBL: h463 ARG0: x432 RSTR: h461 BODY: h462 ]    |
+|               |           [ named LBL: h433 ARG0: x432 CARG: "Buzz Aldrin" ] >                   |
+|               |   HCONS: < h456 qeq h450 h444 qeq h435 h466 qeq h442 h461 qeq h433 h470 qeq h439 |
+|               | > ]                                                                              |
 +---------------+----------------------------------------------------------------------------------+
 
-+------------------------------------------------------------------------------------+
-|                                    NODE SEMENTS                                    |
-+-------------+----------------------------------------------------------------------+
-| Node        | Generated SEMENT                                                     |
-+-------------+----------------------------------------------------------------------+
-| Buzz_Aldrin | [ TOP: h16306                                                        |
-|             |   INDEX: x16305                                                      |
-|             |   RELS: < [ named LBL: h16306 ARG0: x16305 CARG: "Buzz Aldrin" ] > ] |
-+-------------+----------------------------------------------------------------------+
-| Apollo_11   | [ TOP: h16308                                                        |
-|             |   INDEX: x16307                                                      |
-|             |   RELS: < [ named LBL: h16308 ARG0: x16307 CARG: "Apollo 11" ] > ]   |
-+-------------+----------------------------------------------------------------------+
++--------------------------------------------------------------------------------+
+|                                  NODE SEMENTS                                  |
++-------------+------------------------------------------------------------------+
+| Node        | Generated SEMENT                                                 |
++-------------+------------------------------------------------------------------+
+| Buzz_Aldrin | [ TOP: h433                                                      |
+|             |   INDEX: x432                                                    |
+|             |   RELS: < [ named LBL: h433 ARG0: x432 CARG: "Buzz Aldrin" ] > ] |
++-------------+------------------------------------------------------------------+
+| Apollo_11   | [ TOP: h435                                                      |
+|             |   INDEX: x434                                                    |
+|             |   RELS: < [ named LBL: h435 ARG0: x434 CARG: "Apollo 11" ] > ]   |
++-------------+------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------+
 |                                                     EDGE SEMENTS                                                     |
 +---------+-------------+-----------+----------------------------------------------------------------------------------+
 | Edge    | Parent      | Child     | Generated SEMENT                                                                 |
 +---------+-------------+-----------+----------------------------------------------------------------------------------+
-| mission | Buzz_Aldrin | Apollo_11 | [ TOP: h16312                                                                    |
-|         |             |           |   INDEX: e16309 [ e TENSE: tensed ]                                              |
-|         |             |           |   RELS: < [ _serve_v_as LBL: h16312 ARG0: e16309 ARG1: i16310 ARG2: i16311 ]     |
-|         |             |           |           [ def_udef_a_q LBL: h16341 ARG0: x16338 RSTR: h16339 BODY: h16340 ]    |
-|         |             |           |           [ compound LBL: h16327 ARG0: e16324 ARG1: u16325 ARG2: u16326 ]        |
-|         |             |           |           [ existential_q LBL: h16331 ARG0: x16328 RSTR: h16329 BODY: h16330 ]   |
-|         |             |           |           [ _crew_n_of LBL: h16323 ARG0: x16321 [ x NUM: sg ] ARG1: i16322 ]     |
-|         |             |           |           [ _member_n_of LBL: h16315 ARG0: x16313 ARG1: i16314 ]                 |
-|         |             |           |           [ explicit_or_proper_q LBL: h16319 ARG0: x16316 RSTR: h16317 BODY:     |
-|         |             |           | h16318 ]                                                                         |
-|         |             |           |           [ named LBL: h16308 ARG0: x16307 CARG: "Apollo 11" ]                   |
-|         |             |           |           [ explicit_or_proper_q LBL: h16336 ARG0: x16333 RSTR: h16334 BODY:     |
-|         |             |           | h16335 ]                                                                         |
-|         |             |           |           [ named LBL: h16306 ARG0: x16305 CARG: "Buzz Aldrin" ] >               |
-|         |             |           |   HCONS: < h16329 qeq h16323 h16317 qeq h16308 h16339 qeq h16315 h16334 qeq      |
-|         |             |           | h16306 >                                                                         |
-|         |             |           |   EQS: < x16328 eq x16321 h16327 eq h16332 u16326 eq x16328 x16316 eq x16307     |
-|         |             |           | h16315 eq h16320 i16314 eq x16316 h16327 eq h16315 u16325 eq x16313 x16338 eq    |
-|         |             |           | x16313 h16312 eq h16342 i16311 eq x16338 x16333 eq x16305 h16312 eq h16337       |
-|         |             |           | i16310 eq x16333 > ]                                                             |
+| mission | Buzz_Aldrin | Apollo_11 | [ TOP: h439                                                                      |
+|         |             |           |   INDEX: e436 [ e TENSE: tensed ]                                                |
+|         |             |           |   RELS: < [ _serve_v_as LBL: h439 ARG0: e436 ARG1: i437 ARG2: i438 ]             |
+|         |             |           |           [ def_udef_a_q LBL: h468 ARG0: x465 RSTR: h466 BODY: h467 ]            |
+|         |             |           |           [ compound LBL: h454 ARG0: e451 ARG1: u452 ARG2: u453 ]                |
+|         |             |           |           [ existential_q LBL: h458 ARG0: x455 RSTR: h456 BODY: h457 ]           |
+|         |             |           |           [ _crew_n_of LBL: h450 ARG0: x448 [ x NUM: sg ] ARG1: i449 ]           |
+|         |             |           |           [ _member_n_of LBL: h442 ARG0: x440 ARG1: i441 ]                       |
+|         |             |           |           [ explicit_or_proper_q LBL: h446 ARG0: x443 RSTR: h444 BODY: h445 ]    |
+|         |             |           |           [ named LBL: h435 ARG0: x434 CARG: "Apollo 11" ]                       |
+|         |             |           |           [ explicit_or_proper_q LBL: h463 ARG0: x460 RSTR: h461 BODY: h462 ]    |
+|         |             |           |           [ named LBL: h433 ARG0: x432 CARG: "Buzz Aldrin" ] >                   |
+|         |             |           |   HCONS: < h456 qeq h450 h444 qeq h435 h466 qeq h442 h461 qeq h433 >             |
+|         |             |           |   EQS: < x455 eq x448 h454 eq h459 u453 eq x455 x443 eq x434 h442 eq h447 i441   |
+|         |             |           | eq x443 h454 eq h442 u452 eq x440 x465 eq x440 h439 eq h469 i438 eq x465 x460 eq |
+|         |             |           | x432 h439 eq h464 i437 eq x460 > ]                                               |
 +---------+-------------+-----------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------+

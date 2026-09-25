@@ -24,14 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Artist_Id1404_90_270
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+--------------------------------------------------------------------------------------------------------+
-|                                              GOLD OUTPUTS                                              |
-+-------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                               | Generated? |
-+-------------------------------------------------------------------------------------------+------------+
-| Liselotte Grschebina was born in Karlsruhe on May 2nd, 1908 and died on June 14th, 1994.  | False      |
-| Liselotte Grschebina was born in Karlsruhe on May 2nd, 1908, and died on June 14th, 1994. | False      |
-+-------------------------------------------------------------------------------------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                GOLD OUTPUTS                                                                |
++-------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                   | Generated? |
++-------------------------------------------------------------------------------------------------------------------------------+------------+
+| Liselotte Grschebina was a photographer born in Karlsruhe. The postal code of Karlsruhe is 76131-76229.                       | False      |
+| Liselotte Grschebina was a professional photographer born in Karlsruhe whose postal codes are 76131-76229.                    | False      |
+| Liselotte Grschebina was a professional photographer who was born in Karlsruhe, whose postal codes range from 76131 to 76229. | False      |
++-------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +--------------------------------------------------------------------------------------------+
 |                                        NODE METRICS                                        |
@@ -55,81 +56,73 @@ GRAPH NAME: WebNLG_test_3triples_Artist_Id1404_90_270
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h9303                                                                     |
-|               |   INDEX: e9300 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _in_p_state LBL: h9294 ARG0: e9291 ARG1: u9292 ARG2: u9293 ]         |
-|               |           [ explicit_or_proper_q LBL: h9298 ARG0: x9295 RSTR: h9296 BODY: h9297  |
-|               | ]                                                                                |
-|               |           [ named LBL: h9290 ARG0: x9289 CARG: "Karlsruhe" ]                     |
-|               |           [ _born_a_of LBL: h9303 ARG0: e9300 ARG1: u9301 ARG2: u9302 ]          |
-|               |           [ explicit_or_proper_q LBL: h9307 ARG0: x9304 RSTR: h9305 BODY: h9306  |
-|               | ]                                                                                |
-|               |           [ named LBL: h9288 ARG0: x9287 CARG: "Liselotte Grschebina" ] >        |
-|               |   HCONS: < h9296 qeq h9290 h9305 qeq h9288 >                                     |
-|               |   EQS: < x9295 eq x9289 h9294 eq h9299 u9293 eq x9295 x9304 eq x9287 h9303 eq    |
-|               | h9308 u9301 eq x9304 h9294 eq h9303 u9292 eq e9300 >                             |
-|               |   SLOTS: < ARG2: u9302 > ]                                                       |
+| Original      | [ TOP: h203                                                                      |
+|               |   INDEX: e200 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_state LBL: h194 ARG0: e191 ARG1: u192 ARG2: u193 ]             |
+|               |           [ explicit_or_proper_q LBL: h198 ARG0: x195 RSTR: h196 BODY: h197 ]    |
+|               |           [ named LBL: h190 ARG0: x189 CARG: "Karlsruhe" ]                       |
+|               |           [ _born_a_of LBL: h203 ARG0: e200 ARG1: u201 ARG2: u202 ]              |
+|               |           [ explicit_or_proper_q LBL: h207 ARG0: x204 RSTR: h205 BODY: h206 ]    |
+|               |           [ named LBL: h188 ARG0: x187 CARG: "Liselotte Grschebina" ] >          |
+|               |   HCONS: < h196 qeq h190 h205 qeq h188 >                                         |
+|               |   EQS: < x195 eq x189 h194 eq h199 u193 eq x195 x204 eq x187 h203 eq h208 u201   |
+|               | eq x204 h194 eq h203 u192 eq e200 >                                              |
+|               |   SLOTS: < ARG2: u202 > ]                                                        |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h9294                                                                     |
-|               |   INDEX: e9300 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _in_p_state LBL: h9294 ARG0: e9291 ARG1: e9300 ARG2: x9289 ]         |
-|               |           [ explicit_or_proper_q LBL: h9298 ARG0: x9289 RSTR: h9296 BODY: h9297  |
-|               | ]                                                                                |
-|               |           [ named LBL: h9290 ARG0: x9289 CARG: "Karlsruhe" ]                     |
-|               |           [ _born_a_of LBL: h9294 ARG0: e9300 ARG1: x9287 ARG2: u9302 ]          |
-|               |           [ explicit_or_proper_q LBL: h9307 ARG0: x9287 RSTR: h9305 BODY: h9306  |
-|               | ]                                                                                |
-|               |           [ named LBL: h9288 ARG0: x9287 CARG: "Liselotte Grschebina" ] >        |
-|               |   HCONS: < h9296 qeq h9290 h9305 qeq h9288 >                                     |
-|               |   SLOTS: < ARG2: u9302 > ]                                                       |
+| EQs Collapsed | [ TOP: h194                                                                      |
+|               |   INDEX: e200 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_state LBL: h194 ARG0: e191 ARG1: e200 ARG2: x189 ]             |
+|               |           [ explicit_or_proper_q LBL: h198 ARG0: x189 RSTR: h196 BODY: h197 ]    |
+|               |           [ named LBL: h190 ARG0: x189 CARG: "Karlsruhe" ]                       |
+|               |           [ _born_a_of LBL: h194 ARG0: e200 ARG1: x187 ARG2: u202 ]              |
+|               |           [ explicit_or_proper_q LBL: h207 ARG0: x187 RSTR: h205 BODY: h206 ]    |
+|               |           [ named LBL: h188 ARG0: x187 CARG: "Liselotte Grschebina" ] >          |
+|               |   HCONS: < h196 qeq h190 h205 qeq h188 >                                         |
+|               |   SLOTS: < ARG2: u202 > ]                                                        |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h9309                                                                     |
-|               |   INDEX: e9300 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _in_p_state LBL: h9294 ARG0: e9291 ARG1: e9300 ARG2: x9289 ]         |
-|               |           [ explicit_or_proper_q LBL: h9298 ARG0: x9289 RSTR: h9296 BODY: h9297  |
-|               | ]                                                                                |
-|               |           [ named LBL: h9290 ARG0: x9289 CARG: "Karlsruhe" ]                     |
-|               |           [ _born_a_of LBL: h9294 ARG0: e9300 ARG1: x9287 ARG2: u9302 ]          |
-|               |           [ explicit_or_proper_q LBL: h9307 ARG0: x9287 RSTR: h9305 BODY: h9306  |
-|               | ]                                                                                |
-|               |           [ named LBL: h9288 ARG0: x9287 CARG: "Liselotte Grschebina" ] >        |
-|               |   HCONS: < h9296 qeq h9290 h9305 qeq h9288 h9309 qeq h9294 >                     |
-|               |   SLOTS: < ARG2: u9302 > ]                                                       |
+| Prepped       | [ TOP: h209                                                                      |
+|               |   INDEX: e200 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_state LBL: h194 ARG0: e191 ARG1: e200 ARG2: x189 ]             |
+|               |           [ explicit_or_proper_q LBL: h198 ARG0: x189 RSTR: h196 BODY: h197 ]    |
+|               |           [ named LBL: h190 ARG0: x189 CARG: "Karlsruhe" ]                       |
+|               |           [ _born_a_of LBL: h194 ARG0: e200 ARG1: x187 ARG2: u202 ]              |
+|               |           [ explicit_or_proper_q LBL: h207 ARG0: x187 RSTR: h205 BODY: h206 ]    |
+|               |           [ named LBL: h188 ARG0: x187 CARG: "Liselotte Grschebina" ] >          |
+|               |   HCONS: < h196 qeq h190 h205 qeq h188 h209 qeq h194 >                           |
+|               |   SLOTS: < ARG2: u202 > ]                                                        |
 +---------------+----------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------------+
-|                                            NODE SEMENTS                                            |
-+----------------------+-----------------------------------------------------------------------------+
-| Node                 | Generated SEMENT                                                            |
-+----------------------+-----------------------------------------------------------------------------+
-| Liselotte_Grschebina | [ TOP: h9288                                                                |
-|                      |   INDEX: x9287                                                              |
-|                      |   RELS: < [ named LBL: h9288 ARG0: x9287 CARG: "Liselotte Grschebina" ] > ] |
-+----------------------+-----------------------------------------------------------------------------+
-| Karlsruhe            | [ TOP: h9290                                                                |
-|                      |   INDEX: x9289                                                              |
-|                      |   RELS: < [ named LBL: h9290 ARG0: x9289 CARG: "Karlsruhe" ] > ]            |
-+----------------------+-----------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------+
+|                                           NODE SEMENTS                                           |
++----------------------+---------------------------------------------------------------------------+
+| Node                 | Generated SEMENT                                                          |
++----------------------+---------------------------------------------------------------------------+
+| Liselotte_Grschebina | [ TOP: h188                                                               |
+|                      |   INDEX: x187                                                             |
+|                      |   RELS: < [ named LBL: h188 ARG0: x187 CARG: "Liselotte Grschebina" ] > ] |
++----------------------+---------------------------------------------------------------------------+
+| Karlsruhe            | [ TOP: h190                                                               |
+|                      |   INDEX: x189                                                             |
+|                      |   RELS: < [ named LBL: h190 ARG0: x189 CARG: "Karlsruhe" ] > ]            |
++----------------------+---------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------------+
 |                                                           EDGE SEMENTS                                                           |
 +------------+----------------------+-----------+----------------------------------------------------------------------------------+
 | Edge       | Parent               | Child     | Generated SEMENT                                                                 |
 +------------+----------------------+-----------+----------------------------------------------------------------------------------+
-| birthPlace | Liselotte_Grschebina | Karlsruhe | [ TOP: h9303                                                                     |
-|            |                      |           |   INDEX: e9300 [ e TENSE: tensed ]                                               |
-|            |                      |           |   RELS: < [ _in_p_state LBL: h9294 ARG0: e9291 ARG1: u9292 ARG2: u9293 ]         |
-|            |                      |           |           [ explicit_or_proper_q LBL: h9298 ARG0: x9295 RSTR: h9296 BODY: h9297  |
-|            |                      |           | ]                                                                                |
-|            |                      |           |           [ named LBL: h9290 ARG0: x9289 CARG: "Karlsruhe" ]                     |
-|            |                      |           |           [ _born_a_of LBL: h9303 ARG0: e9300 ARG1: u9301 ARG2: u9302 ]          |
-|            |                      |           |           [ explicit_or_proper_q LBL: h9307 ARG0: x9304 RSTR: h9305 BODY: h9306  |
-|            |                      |           | ]                                                                                |
-|            |                      |           |           [ named LBL: h9288 ARG0: x9287 CARG: "Liselotte Grschebina" ] >        |
-|            |                      |           |   HCONS: < h9296 qeq h9290 h9305 qeq h9288 >                                     |
-|            |                      |           |   EQS: < x9295 eq x9289 h9294 eq h9299 u9293 eq x9295 x9304 eq x9287 h9303 eq    |
-|            |                      |           | h9308 u9301 eq x9304 h9294 eq h9303 u9292 eq e9300 >                             |
-|            |                      |           |   SLOTS: < ARG2: u9302 > ]                                                       |
+| birthPlace | Liselotte_Grschebina | Karlsruhe | [ TOP: h203                                                                      |
+|            |                      |           |   INDEX: e200 [ e TENSE: tensed ]                                                |
+|            |                      |           |   RELS: < [ _in_p_state LBL: h194 ARG0: e191 ARG1: u192 ARG2: u193 ]             |
+|            |                      |           |           [ explicit_or_proper_q LBL: h198 ARG0: x195 RSTR: h196 BODY: h197 ]    |
+|            |                      |           |           [ named LBL: h190 ARG0: x189 CARG: "Karlsruhe" ]                       |
+|            |                      |           |           [ _born_a_of LBL: h203 ARG0: e200 ARG1: u201 ARG2: u202 ]              |
+|            |                      |           |           [ explicit_or_proper_q LBL: h207 ARG0: x204 RSTR: h205 BODY: h206 ]    |
+|            |                      |           |           [ named LBL: h188 ARG0: x187 CARG: "Liselotte Grschebina" ] >          |
+|            |                      |           |   HCONS: < h196 qeq h190 h205 qeq h188 >                                         |
+|            |                      |           |   EQS: < x195 eq x189 h194 eq h199 u193 eq x195 x204 eq x187 h203 eq h208 u201   |
+|            |                      |           | eq x204 h194 eq h203 u192 eq e200 >                                              |
+|            |                      |           |   SLOTS: < ARG2: u202 > ]                                                        |
 +------------+----------------------+-----------+----------------------------------------------------------------------------------+
 
 +------------------------------------------------------------+

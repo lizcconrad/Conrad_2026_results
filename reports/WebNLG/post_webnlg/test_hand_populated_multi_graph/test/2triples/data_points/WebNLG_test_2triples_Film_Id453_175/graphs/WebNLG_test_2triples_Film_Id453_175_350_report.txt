@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_Film_Id453_175_350
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-----------------------------------------------------------------------------------------------+
-|                                          GOLD OUTPUTS                                         |
-+----------------------------------------------------------------------------------+------------+
-| Gold Output                                                                      | Generated? |
-+----------------------------------------------------------------------------------+------------+
-| "English Without Tears" was written by Anatole de Grunwald and Terence Rattigan. | False      |
-| Anatole de Grunwald and Terence Rattigan wrote English Without Tears.            | False      |
-| English Without Tears was written by Anatole de Grunwald and Terence Rattigan.   | False      |
-+----------------------------------------------------------------------------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------+
+|                                                           GOLD OUTPUTS                                                           |
++---------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                         | Generated? |
++---------------------------------------------------------------------------------------------------------------------+------------+
+| Anatole de Grunwald's English Without tears cinematography was done by Bernard Knowles.                             | False      |
+| Bernard Knowles is the cinematographer of the movie English Without Tears which was written by Anatole de Grunwald. | False      |
+| Bernard Knowles was the cinematographer of the film English Without Tears, written by Anatole de Grunwald.          | False      |
++---------------------------------------------------------------------------------------------------------------------+------------+
 
 +---------------------------------------------------------------------------------------------+
 |                                         NODE METRICS                                        |
@@ -51,79 +51,69 @@ GRAPH NAME: WebNLG_test_2triples_Film_Id453_175_350
 | writer | English_Without_Tears | Anatole_de_Grunwald | True         | True          | Covered          | Included          |
 +--------+-----------------------+---------------------+--------------+---------------+------------------+-------------------+
 
-+--------------------------------------------------------------------------------------------------+
-|                                        GENERATED SEMENTS                                         |
-+---------------+----------------------------------------------------------------------------------+
-| Version       | SEMENT                                                                           |
-+---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h11540                                                                    |
-|               |   INDEX: e11537 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _write_v_to LBL: h11540 ARG0: e11537 ARG1: i11538 ARG2: i11539 ]     |
-|               |           [ explicit_or_proper_q LBL: h11549 ARG0: x11546 RSTR: h11547 BODY:     |
-|               | h11548 ]                                                                         |
-|               |           [ named LBL: h11534 ARG0: x11533 CARG: "English Without Tears" ]       |
-|               |           [ explicit_or_proper_q LBL: h11544 ARG0: x11541 RSTR: h11542 BODY:     |
-|               | h11543 ]                                                                         |
-|               |           [ named LBL: h11536 ARG0: x11535 CARG: "Anatole de Grunwald" ] >       |
-|               |   HCONS: < h11547 qeq h11534 h11542 qeq h11536 >                                 |
-|               |   EQS: < x11546 eq x11533 h11540 eq h11550 i11539 eq x11546 x11541 eq x11535     |
-|               | h11540 eq h11545 i11538 eq x11541 > ]                                            |
-+---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h11540                                                                    |
-|               |   INDEX: e11537 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _write_v_to LBL: h11540 ARG0: e11537 ARG1: x11535 ARG2: x11533 ]     |
-|               |           [ explicit_or_proper_q LBL: h11549 ARG0: x11533 RSTR: h11547 BODY:     |
-|               | h11548 ]                                                                         |
-|               |           [ named LBL: h11534 ARG0: x11533 CARG: "English Without Tears" ]       |
-|               |           [ explicit_or_proper_q LBL: h11544 ARG0: x11535 RSTR: h11542 BODY:     |
-|               | h11543 ]                                                                         |
-|               |           [ named LBL: h11536 ARG0: x11535 CARG: "Anatole de Grunwald" ] >       |
-|               |   HCONS: < h11547 qeq h11534 h11542 qeq h11536 > ]                               |
-+---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h11551                                                                    |
-|               |   INDEX: e11537 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _write_v_to LBL: h11540 ARG0: e11537 ARG1: x11535 ARG2: x11533 ]     |
-|               |           [ explicit_or_proper_q LBL: h11549 ARG0: x11533 RSTR: h11547 BODY:     |
-|               | h11548 ]                                                                         |
-|               |           [ named LBL: h11534 ARG0: x11533 CARG: "English Without Tears" ]       |
-|               |           [ explicit_or_proper_q LBL: h11544 ARG0: x11535 RSTR: h11542 BODY:     |
-|               | h11543 ]                                                                         |
-|               |           [ named LBL: h11536 ARG0: x11535 CARG: "Anatole de Grunwald" ] >       |
-|               |   HCONS: < h11547 qeq h11534 h11542 qeq h11536 h11551 qeq h11540 > ]             |
-+---------------+----------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------+
+|                                     GENERATED SEMENTS                                     |
++---------------+---------------------------------------------------------------------------+
+| Version       | SEMENT                                                                    |
++---------------+---------------------------------------------------------------------------+
+| Original      | [ TOP: h8                                                                 |
+|               |   INDEX: e5 [ e TENSE: tensed ]                                           |
+|               |   RELS: < [ _write_v_to LBL: h8 ARG0: e5 ARG1: i6 ARG2: i7 ]              |
+|               |           [ explicit_or_proper_q LBL: h17 ARG0: x14 RSTR: h15 BODY: h16 ] |
+|               |           [ named LBL: h2 ARG0: x1 CARG: "English Without Tears" ]        |
+|               |           [ explicit_or_proper_q LBL: h12 ARG0: x9 RSTR: h10 BODY: h11 ]  |
+|               |           [ named LBL: h4 ARG0: x3 CARG: "Anatole de Grunwald" ] >        |
+|               |   HCONS: < h15 qeq h2 h10 qeq h4 >                                        |
+|               |   EQS: < x14 eq x1 h8 eq h18 i7 eq x14 x9 eq x3 h8 eq h13 i6 eq x9 > ]    |
++---------------+---------------------------------------------------------------------------+
+| EQs Collapsed | [ TOP: h13                                                                |
+|               |   INDEX: e5 [ e TENSE: tensed ]                                           |
+|               |   RELS: < [ _write_v_to LBL: h13 ARG0: e5 ARG1: x3 ARG2: x1 ]             |
+|               |           [ explicit_or_proper_q LBL: h17 ARG0: x1 RSTR: h15 BODY: h16 ]  |
+|               |           [ named LBL: h2 ARG0: x1 CARG: "English Without Tears" ]        |
+|               |           [ explicit_or_proper_q LBL: h12 ARG0: x3 RSTR: h10 BODY: h11 ]  |
+|               |           [ named LBL: h4 ARG0: x3 CARG: "Anatole de Grunwald" ] >        |
+|               |   HCONS: < h15 qeq h2 h10 qeq h4 > ]                                      |
++---------------+---------------------------------------------------------------------------+
+| Prepped       | [ TOP: h19                                                                |
+|               |   INDEX: e5 [ e TENSE: tensed ]                                           |
+|               |   RELS: < [ _write_v_to LBL: h13 ARG0: e5 ARG1: x3 ARG2: x1 ]             |
+|               |           [ explicit_or_proper_q LBL: h17 ARG0: x1 RSTR: h15 BODY: h16 ]  |
+|               |           [ named LBL: h2 ARG0: x1 CARG: "English Without Tears" ]        |
+|               |           [ explicit_or_proper_q LBL: h12 ARG0: x3 RSTR: h10 BODY: h11 ]  |
+|               |           [ named LBL: h4 ARG0: x3 CARG: "Anatole de Grunwald" ] >        |
+|               |   HCONS: < h15 qeq h2 h10 qeq h4 h19 qeq h13 > ]                          |
++---------------+---------------------------------------------------------------------------+
 
-+--------------------------------------------------------------------------------------------------------+
-|                                              NODE SEMENTS                                              |
-+-----------------------+--------------------------------------------------------------------------------+
-| Node                  | Generated SEMENT                                                               |
-+-----------------------+--------------------------------------------------------------------------------+
-| English_Without_Tears | [ TOP: h11534                                                                  |
-|                       |   INDEX: x11533                                                                |
-|                       |   RELS: < [ named LBL: h11534 ARG0: x11533 CARG: "English Without Tears" ] > ] |
-+-----------------------+--------------------------------------------------------------------------------+
-| Anatole_de_Grunwald   | [ TOP: h11536                                                                  |
-|                       |   INDEX: x11535                                                                |
-|                       |   RELS: < [ named LBL: h11536 ARG0: x11535 CARG: "Anatole de Grunwald" ] > ]   |
-+-----------------------+--------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------+
+|                                          NODE SEMENTS                                          |
++-----------------------+------------------------------------------------------------------------+
+| Node                  | Generated SEMENT                                                       |
++-----------------------+------------------------------------------------------------------------+
+| English_Without_Tears | [ TOP: h2                                                              |
+|                       |   INDEX: x1                                                            |
+|                       |   RELS: < [ named LBL: h2 ARG0: x1 CARG: "English Without Tears" ] > ] |
++-----------------------+------------------------------------------------------------------------+
+| Anatole_de_Grunwald   | [ TOP: h4                                                              |
+|                       |   INDEX: x3                                                            |
+|                       |   RELS: < [ named LBL: h4 ARG0: x3 CARG: "Anatole de Grunwald" ] > ]   |
++-----------------------+------------------------------------------------------------------------+
 
-+-----------------------------------------------------------------------------------------------------------------------------------------+
-|                                                               EDGE SEMENTS                                                              |
-+--------+-----------------------+---------------------+----------------------------------------------------------------------------------+
-| Edge   | Parent                | Child               | Generated SEMENT                                                                 |
-+--------+-----------------------+---------------------+----------------------------------------------------------------------------------+
-| writer | English_Without_Tears | Anatole_de_Grunwald | [ TOP: h11540                                                                    |
-|        |                       |                     |   INDEX: e11537 [ e TENSE: tensed ]                                              |
-|        |                       |                     |   RELS: < [ _write_v_to LBL: h11540 ARG0: e11537 ARG1: i11538 ARG2: i11539 ]     |
-|        |                       |                     |           [ explicit_or_proper_q LBL: h11549 ARG0: x11546 RSTR: h11547 BODY:     |
-|        |                       |                     | h11548 ]                                                                         |
-|        |                       |                     |           [ named LBL: h11534 ARG0: x11533 CARG: "English Without Tears" ]       |
-|        |                       |                     |           [ explicit_or_proper_q LBL: h11544 ARG0: x11541 RSTR: h11542 BODY:     |
-|        |                       |                     | h11543 ]                                                                         |
-|        |                       |                     |           [ named LBL: h11536 ARG0: x11535 CARG: "Anatole de Grunwald" ] >       |
-|        |                       |                     |   HCONS: < h11547 qeq h11534 h11542 qeq h11536 >                                 |
-|        |                       |                     |   EQS: < x11546 eq x11533 h11540 eq h11550 i11539 eq x11546 x11541 eq x11535     |
-|        |                       |                     | h11540 eq h11545 i11538 eq x11541 > ]                                            |
-+--------+-----------------------+---------------------+----------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------+
+|                                                           EDGE SEMENTS                                                           |
++--------+-----------------------+---------------------+---------------------------------------------------------------------------+
+| Edge   | Parent                | Child               | Generated SEMENT                                                          |
++--------+-----------------------+---------------------+---------------------------------------------------------------------------+
+| writer | English_Without_Tears | Anatole_de_Grunwald | [ TOP: h8                                                                 |
+|        |                       |                     |   INDEX: e5 [ e TENSE: tensed ]                                           |
+|        |                       |                     |   RELS: < [ _write_v_to LBL: h8 ARG0: e5 ARG1: i6 ARG2: i7 ]              |
+|        |                       |                     |           [ explicit_or_proper_q LBL: h17 ARG0: x14 RSTR: h15 BODY: h16 ] |
+|        |                       |                     |           [ named LBL: h2 ARG0: x1 CARG: "English Without Tears" ]        |
+|        |                       |                     |           [ explicit_or_proper_q LBL: h12 ARG0: x9 RSTR: h10 BODY: h11 ]  |
+|        |                       |                     |           [ named LBL: h4 ARG0: x3 CARG: "Anatole de Grunwald" ] >        |
+|        |                       |                     |   HCONS: < h15 qeq h2 h10 qeq h4 >                                        |
+|        |                       |                     |   EQS: < x14 eq x1 h8 eq h18 i7 eq x14 x9 eq x3 h8 eq h13 i6 eq x9 > ]    |
++--------+-----------------------+---------------------+---------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------+
 |                         GENERATED ENGLISH TEXT                         |

@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id784_223_670
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                                      GOLD OUTPUTS                                                                                     |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                                              | Generated? |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Bootleg Series Volume 1: The Quine Tapes is by The Velvet Underground with a runtime of 230:05, and was recorded in the United States.                                   | False      |
-| Music group the Velvet Underground released album Bootleg Series Volume 1: The Quine Tapes, which has a runtime of 230.05 minutes and was recorded in the United States. | False      |
-| The Velvet Underground recorded the 230.05 minute long album Bootleg Series Volume 1: The Quine Tapes in the United States.                                              | False      |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                           GOLD OUTPUTS                                                                           |
++-----------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                         | Generated? |
++-----------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Music group the Velvet Underground both produced and released The Bootleg Series Volume I: The Quine Tapes, which have a runtime of 230.05 minutes. | False      |
+| The Velvet Underground created the album Bootleg Series Volume 1: The Quine Tapes produced by The Velvet Underground which is 230.05 minutes long.  | False      |
+| The album Bootleg Series Volume 1: The Quine Tapes is produced by The Velvet underground and has a run time of 230:05.                              | False      |
++-----------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------------------------------+
 |                                                  NODE METRICS                                                  |
@@ -56,54 +56,53 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id784_223_670
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h22632                                                                    |
-|               |   INDEX: e22629 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h22632 ARG0: e22629 ARG1: i22630 ARG2: i22631 ]       |
-|               |           [ def_udef_a_q LBL: h22655 ARG0: x22652 RSTR: h22653 BODY: h22654 ]    |
-|               |           [ _of_p LBL: h22636 ARG0: e22633 ARG1: u22634 ARG2: i22635 ]           |
-|               |           [ number_q LBL: h22645 ARG0: x22642 RSTR: h22643 BODY: h22644 ]        |
-|               |           [ card LBL: h22628 ARG0: i22626 ARG1: u22627 CARG: "230.05" ]          |
-|               |           [ _total_a_1 LBL: h22639 ARG0: e22637 ARG1: u22638 ]                   |
-|               |           [ _runtime_n_1 LBL: h22641 ARG0: x22640 ]                              |
-|               |           [ explicit_or_proper_q LBL: h22650 ARG0: x22647 RSTR: h22648 BODY:     |
-|               | h22649 ]                                                                         |
-|               |           [ named LBL: h22625 ARG0: x22624 CARG: "Bootleg Series Volume 1: The   |
+| Original      | [ TOP: h9508                                                                     |
+|               |   INDEX: e9505 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h9508 ARG0: e9505 ARG1: i9506 ARG2: i9507 ]           |
+|               |           [ def_udef_a_q LBL: h9531 ARG0: x9528 RSTR: h9529 BODY: h9530 ]        |
+|               |           [ _of_p LBL: h9512 ARG0: e9509 ARG1: u9510 ARG2: i9511 ]               |
+|               |           [ number_q LBL: h9521 ARG0: x9518 RSTR: h9519 BODY: h9520 ]            |
+|               |           [ card LBL: h9504 ARG0: i9502 ARG1: u9503 CARG: "230.05" ]             |
+|               |           [ _total_a_1 LBL: h9515 ARG0: e9513 ARG1: u9514 ]                      |
+|               |           [ _runtime_n_1 LBL: h9517 ARG0: x9516 ]                                |
+|               |           [ explicit_or_proper_q LBL: h9526 ARG0: x9523 RSTR: h9524 BODY: h9525  |
+|               | ]                                                                                |
+|               |           [ named LBL: h9501 ARG0: x9500 CARG: "Bootleg Series Volume 1: The     |
 |               | Quine Tapes" ] >                                                                 |
-|               |   HCONS: < h22643 qeq h22628 h22653 qeq h22641 h22648 qeq h22625 >               |
-|               |   EQS: < x22642 eq i22626 h22636 eq h22646 i22635 eq x22642 h22639 eq h22641     |
-|               | u22638 eq x22640 h22636 eq h22641 u22634 eq x22640 x22652 eq x22640 h22632 eq    |
-|               | h22656 i22631 eq x22652 x22647 eq x22624 h22632 eq h22651 i22630 eq x22647 > ]   |
+|               |   HCONS: < h9519 qeq h9504 h9529 qeq h9517 h9524 qeq h9501 >                     |
+|               |   EQS: < x9518 eq i9502 h9512 eq h9522 i9511 eq x9518 h9515 eq h9517 u9514 eq    |
+|               | x9516 h9512 eq h9517 u9510 eq x9516 x9528 eq x9516 h9508 eq h9532 i9507 eq x9528 |
+|               | x9523 eq x9500 h9508 eq h9527 i9506 eq x9523 > ]                                 |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h22632                                                                    |
-|               |   INDEX: e22629 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h22632 ARG0: e22629 ARG1: x22624 ARG2: x22640 ]       |
-|               |           [ def_udef_a_q LBL: h22655 ARG0: x22640 RSTR: h22653 BODY: h22654 ]    |
-|               |           [ _of_p LBL: h22636 ARG0: e22633 ARG1: x22640 ARG2: x22642 ]           |
-|               |           [ number_q LBL: h22645 ARG0: x22642 RSTR: h22643 BODY: h22644 ]        |
-|               |           [ card LBL: h22628 ARG0: x22642 ARG1: u22627 CARG: "230.05" ]          |
-|               |           [ _total_a_1 LBL: h22636 ARG0: e22637 ARG1: x22640 ]                   |
-|               |           [ _runtime_n_1 LBL: h22636 ARG0: x22640 ]                              |
-|               |           [ explicit_or_proper_q LBL: h22650 ARG0: x22624 RSTR: h22648 BODY:     |
-|               | h22649 ]                                                                         |
-|               |           [ named LBL: h22625 ARG0: x22624 CARG: "Bootleg Series Volume 1: The   |
+| EQs Collapsed | [ TOP: h9508                                                                     |
+|               |   INDEX: e9505 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h9508 ARG0: e9505 ARG1: x9500 ARG2: x9516 ]           |
+|               |           [ def_udef_a_q LBL: h9531 ARG0: x9516 RSTR: h9529 BODY: h9530 ]        |
+|               |           [ _of_p LBL: h9512 ARG0: e9509 ARG1: x9516 ARG2: x9518 ]               |
+|               |           [ number_q LBL: h9521 ARG0: x9518 RSTR: h9519 BODY: h9520 ]            |
+|               |           [ card LBL: h9504 ARG0: x9518 ARG1: u9503 CARG: "230.05" ]             |
+|               |           [ _total_a_1 LBL: h9512 ARG0: e9513 ARG1: x9516 ]                      |
+|               |           [ _runtime_n_1 LBL: h9512 ARG0: x9516 ]                                |
+|               |           [ explicit_or_proper_q LBL: h9526 ARG0: x9500 RSTR: h9524 BODY: h9525  |
+|               | ]                                                                                |
+|               |           [ named LBL: h9501 ARG0: x9500 CARG: "Bootleg Series Volume 1: The     |
 |               | Quine Tapes" ] >                                                                 |
-|               |   HCONS: < h22643 qeq h22628 h22653 qeq h22636 h22648 qeq h22625 > ]             |
+|               |   HCONS: < h9519 qeq h9504 h9529 qeq h9512 h9524 qeq h9501 > ]                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h22657                                                                    |
-|               |   INDEX: e22629 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h22632 ARG0: e22629 ARG1: x22624 ARG2: x22640 ]       |
-|               |           [ def_udef_a_q LBL: h22655 ARG0: x22640 RSTR: h22653 BODY: h22654 ]    |
-|               |           [ _of_p LBL: h22636 ARG0: e22633 ARG1: x22640 ARG2: x22642 ]           |
-|               |           [ number_q LBL: h22645 ARG0: x22642 RSTR: h22643 BODY: h22644 ]        |
-|               |           [ card LBL: h22628 ARG0: x22642 ARG1: u22627 CARG: "230.05" ]          |
-|               |           [ _total_a_1 LBL: h22636 ARG0: e22637 ARG1: x22640 ]                   |
-|               |           [ _runtime_n_1 LBL: h22636 ARG0: x22640 ]                              |
-|               |           [ explicit_or_proper_q LBL: h22650 ARG0: x22624 RSTR: h22648 BODY:     |
-|               | h22649 ]                                                                         |
-|               |           [ named LBL: h22625 ARG0: x22624 CARG: "Bootleg Series Volume 1: The   |
+| Prepped       | [ TOP: h9533                                                                     |
+|               |   INDEX: e9505 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h9508 ARG0: e9505 ARG1: x9500 ARG2: x9516 ]           |
+|               |           [ def_udef_a_q LBL: h9531 ARG0: x9516 RSTR: h9529 BODY: h9530 ]        |
+|               |           [ _of_p LBL: h9512 ARG0: e9509 ARG1: x9516 ARG2: x9518 ]               |
+|               |           [ number_q LBL: h9521 ARG0: x9518 RSTR: h9519 BODY: h9520 ]            |
+|               |           [ card LBL: h9504 ARG0: x9518 ARG1: u9503 CARG: "230.05" ]             |
+|               |           [ _total_a_1 LBL: h9512 ARG0: e9513 ARG1: x9516 ]                      |
+|               |           [ _runtime_n_1 LBL: h9512 ARG0: x9516 ]                                |
+|               |           [ explicit_or_proper_q LBL: h9526 ARG0: x9500 RSTR: h9524 BODY: h9525  |
+|               | ]                                                                                |
+|               |           [ named LBL: h9501 ARG0: x9500 CARG: "Bootleg Series Volume 1: The     |
 |               | Quine Tapes" ] >                                                                 |
-|               |   HCONS: < h22643 qeq h22628 h22653 qeq h22636 h22648 qeq h22625 h22657 qeq      |
-|               | h22632 > ]                                                                       |
+|               |   HCONS: < h9519 qeq h9504 h9529 qeq h9512 h9524 qeq h9501 h9533 qeq h9508 > ]   |
 +---------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -111,15 +110,15 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id784_223_670
 +------------------------------------------+----------------------------------------------------------------------------------+
 | Node                                     | Generated SEMENT                                                                 |
 +------------------------------------------+----------------------------------------------------------------------------------+
-| Bootleg_Series_Volume_1:_The_Quine_Tapes | [ TOP: h22625                                                                    |
-|                                          |   INDEX: x22624                                                                  |
-|                                          |   RELS: < [ named LBL: h22625 ARG0: x22624 CARG: "Bootleg Series Volume 1: The   |
+| Bootleg_Series_Volume_1:_The_Quine_Tapes | [ TOP: h9501                                                                     |
+|                                          |   INDEX: x9500                                                                   |
+|                                          |   RELS: < [ named LBL: h9501 ARG0: x9500 CARG: "Bootleg Series Volume 1: The     |
 |                                          | Quine Tapes" ] > ]                                                               |
 +------------------------------------------+----------------------------------------------------------------------------------+
-| 230.05                                   | [ TOP: h22628                                                                    |
-|                                          |   INDEX: i22626                                                                  |
-|                                          |   RELS: < [ card LBL: h22628 ARG0: i22626 ARG1: u22627 CARG: "230.05" ] >        |
-|                                          |   SLOTS: < ARG1: u22627 > ]                                                      |
+| 230.05                                   | [ TOP: h9504                                                                     |
+|                                          |   INDEX: i9502                                                                   |
+|                                          |   RELS: < [ card LBL: h9504 ARG0: i9502 ARG1: u9503 CARG: "230.05" ] >           |
+|                                          |   SLOTS: < ARG1: u9503 > ]                                                       |
 +------------------------------------------+----------------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -127,23 +126,23 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id784_223_670
 +---------+------------------------------------------+--------+----------------------------------------------------------------------------------+
 | Edge    | Parent                                   | Child  | Generated SEMENT                                                                 |
 +---------+------------------------------------------+--------+----------------------------------------------------------------------------------+
-| runtime | Bootleg_Series_Volume_1:_The_Quine_Tapes | 230.05 | [ TOP: h22632                                                                    |
-|         |                                          |        |   INDEX: e22629 [ e TENSE: tensed ]                                              |
-|         |                                          |        |   RELS: < [ _have_v_1 LBL: h22632 ARG0: e22629 ARG1: i22630 ARG2: i22631 ]       |
-|         |                                          |        |           [ def_udef_a_q LBL: h22655 ARG0: x22652 RSTR: h22653 BODY: h22654 ]    |
-|         |                                          |        |           [ _of_p LBL: h22636 ARG0: e22633 ARG1: u22634 ARG2: i22635 ]           |
-|         |                                          |        |           [ number_q LBL: h22645 ARG0: x22642 RSTR: h22643 BODY: h22644 ]        |
-|         |                                          |        |           [ card LBL: h22628 ARG0: i22626 ARG1: u22627 CARG: "230.05" ]          |
-|         |                                          |        |           [ _total_a_1 LBL: h22639 ARG0: e22637 ARG1: u22638 ]                   |
-|         |                                          |        |           [ _runtime_n_1 LBL: h22641 ARG0: x22640 ]                              |
-|         |                                          |        |           [ explicit_or_proper_q LBL: h22650 ARG0: x22647 RSTR: h22648 BODY:     |
-|         |                                          |        | h22649 ]                                                                         |
-|         |                                          |        |           [ named LBL: h22625 ARG0: x22624 CARG: "Bootleg Series Volume 1: The   |
+| runtime | Bootleg_Series_Volume_1:_The_Quine_Tapes | 230.05 | [ TOP: h9508                                                                     |
+|         |                                          |        |   INDEX: e9505 [ e TENSE: tensed ]                                               |
+|         |                                          |        |   RELS: < [ _have_v_1 LBL: h9508 ARG0: e9505 ARG1: i9506 ARG2: i9507 ]           |
+|         |                                          |        |           [ def_udef_a_q LBL: h9531 ARG0: x9528 RSTR: h9529 BODY: h9530 ]        |
+|         |                                          |        |           [ _of_p LBL: h9512 ARG0: e9509 ARG1: u9510 ARG2: i9511 ]               |
+|         |                                          |        |           [ number_q LBL: h9521 ARG0: x9518 RSTR: h9519 BODY: h9520 ]            |
+|         |                                          |        |           [ card LBL: h9504 ARG0: i9502 ARG1: u9503 CARG: "230.05" ]             |
+|         |                                          |        |           [ _total_a_1 LBL: h9515 ARG0: e9513 ARG1: u9514 ]                      |
+|         |                                          |        |           [ _runtime_n_1 LBL: h9517 ARG0: x9516 ]                                |
+|         |                                          |        |           [ explicit_or_proper_q LBL: h9526 ARG0: x9523 RSTR: h9524 BODY: h9525  |
+|         |                                          |        | ]                                                                                |
+|         |                                          |        |           [ named LBL: h9501 ARG0: x9500 CARG: "Bootleg Series Volume 1: The     |
 |         |                                          |        | Quine Tapes" ] >                                                                 |
-|         |                                          |        |   HCONS: < h22643 qeq h22628 h22653 qeq h22641 h22648 qeq h22625 >               |
-|         |                                          |        |   EQS: < x22642 eq i22626 h22636 eq h22646 i22635 eq x22642 h22639 eq h22641     |
-|         |                                          |        | u22638 eq x22640 h22636 eq h22641 u22634 eq x22640 x22652 eq x22640 h22632 eq    |
-|         |                                          |        | h22656 i22631 eq x22652 x22647 eq x22624 h22632 eq h22651 i22630 eq x22647 > ]   |
+|         |                                          |        |   HCONS: < h9519 qeq h9504 h9529 qeq h9517 h9524 qeq h9501 >                     |
+|         |                                          |        |   EQS: < x9518 eq i9502 h9512 eq h9522 i9511 eq x9518 h9515 eq h9517 u9514 eq    |
+|         |                                          |        | x9516 h9512 eq h9517 u9510 eq x9516 x9528 eq x9516 h9508 eq h9532 i9507 eq x9528 |
+|         |                                          |        | x9523 eq x9500 h9508 eq h9527 i9506 eq x9523 > ]                                 |
 +---------+------------------------------------------+--------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------+

@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_CelestialBody_Id781_290_580
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+---------------------------------------------------------------------------------------------------------------+
-|                                                  GOLD OUTPUTS                                                 |
-+--------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                      | Generated? |
-+--------------------------------------------------------------------------------------------------+------------+
-| 1147 Stavropolis is an asteroid with apoapsis of 418476000000.0 AU, discovered on 11 June 1929.  | False      |
-| 1147 Stavropolis, discovered on June 11, 1929, has an apoapsis of 418476000000.0.                | False      |
-| Discovered on June 11, 1929, 1147 Stavropolis is an asteroid with an apoapsis of 418476000000.0. | False      |
-+--------------------------------------------------------------------------------------------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+|                                                             GOLD OUTPUTS                                                             |
++-------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                             | Generated? |
++-------------------------------------------------------------------------------------------------------------------------+------------+
+| 1147 Stavropolis was discovered by Grigory Neujmin and has an apoapsis of 418476000000.0.                               | False      |
+| 1147 Stavropolis was discovered by Grigory Neujmin. The 1147 Stavropolis asteroid has an apoapsis of 418476000000.0 AU. | False      |
+| Grigory Neujmin discovered 1147 Stavropolis which has 418476000000.0 apoapsis.                                          | False      |
++-------------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------+
 |                                      NODE METRICS                                      |
@@ -56,88 +56,86 @@ GRAPH NAME: WebNLG_test_2triples_CelestialBody_Id781_290_580
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h18764                                                                    |
-|               |   INDEX: e18761 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h18764 ARG0: e18761 ARG1: p18762 ARG2: i18763 ]        |
-|               |           [ number_q LBL: h18773 ARG0: x18770 RSTR: h18771 BODY: h18772 ]        |
-|               |           [ card LBL: h18749 ARG0: i18747 ARG1: u18748 CARG: "418476000000.0" ]  |
-|               |           [ def_udef_a_q LBL: h18768 ARG0: x18765 RSTR: h18766 BODY: h18767 ]    |
-|               |           [ _of_p LBL: h18753 ARG0: e18750 ARG1: u18751 ARG2: i18752 ]           |
-|               |           [ explicit_or_proper_q LBL: h18757 ARG0: x18754 RSTR: h18755 BODY:     |
-|               | h18756 ]                                                                         |
-|               |           [ named LBL: h18746 ARG0: x18745 CARG: "1147 Stavropolis" ]            |
-|               |           [ unk_n LBL: h18760 ARG0: x18759 [ x IND: + ] CARG: "apoapsis" ] >     |
-|               |   HCONS: < h18771 qeq h18749 h18755 qeq h18746 h18766 qeq h18760 >               |
-|               |   EQS: < x18770 eq i18747 h18764 eq h18774 i18763 eq x18770 x18754 eq x18745     |
-|               | h18753 eq h18758 i18752 eq x18754 h18753 eq h18760 u18751 eq x18759 x18765 eq    |
-|               | x18759 h18764 eq h18769 p18762 eq x18765 > ]                                     |
+| Original      | [ TOP: h5528                                                                     |
+|               |   INDEX: e5525 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h5528 ARG0: e5525 ARG1: p5526 ARG2: i5527 ]            |
+|               |           [ number_q LBL: h5537 ARG0: x5534 RSTR: h5535 BODY: h5536 ]            |
+|               |           [ card LBL: h5513 ARG0: i5511 ARG1: u5512 CARG: "418476000000.0" ]     |
+|               |           [ def_udef_a_q LBL: h5532 ARG0: x5529 RSTR: h5530 BODY: h5531 ]        |
+|               |           [ _of_p LBL: h5517 ARG0: e5514 ARG1: u5515 ARG2: i5516 ]               |
+|               |           [ explicit_or_proper_q LBL: h5521 ARG0: x5518 RSTR: h5519 BODY: h5520  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5510 ARG0: x5509 CARG: "1147 Stavropolis" ]              |
+|               |           [ unk_n LBL: h5524 ARG0: x5523 [ x IND: + ] CARG: "apoapsis" ] >       |
+|               |   HCONS: < h5535 qeq h5513 h5519 qeq h5510 h5530 qeq h5524 >                     |
+|               |   EQS: < x5534 eq i5511 h5528 eq h5538 i5527 eq x5534 x5518 eq x5509 h5517 eq    |
+|               | h5522 i5516 eq x5518 h5517 eq h5524 u5515 eq x5523 x5529 eq x5523 h5528 eq h5533 |
+|               | p5526 eq x5529 > ]                                                               |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h18764                                                                    |
-|               |   INDEX: e18761 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h18764 ARG0: e18761 ARG1: x18759 [ x IND: + ] ARG2:    |
-|               | x18770 ]                                                                         |
-|               |           [ number_q LBL: h18773 ARG0: x18770 RSTR: h18771 BODY: h18772 ]        |
-|               |           [ card LBL: h18749 ARG0: x18770 ARG1: u18748 CARG: "418476000000.0" ]  |
-|               |           [ def_udef_a_q LBL: h18768 ARG0: x18759 RSTR: h18766 BODY: h18767 ]    |
-|               |           [ _of_p LBL: h18753 ARG0: e18750 ARG1: x18759 ARG2: x18745 ]           |
-|               |           [ explicit_or_proper_q LBL: h18757 ARG0: x18745 RSTR: h18755 BODY:     |
-|               | h18756 ]                                                                         |
-|               |           [ named LBL: h18746 ARG0: x18745 CARG: "1147 Stavropolis" ]            |
-|               |           [ unk_n LBL: h18753 ARG0: x18759 CARG: "apoapsis" ] >                  |
-|               |   HCONS: < h18771 qeq h18749 h18755 qeq h18746 h18766 qeq h18753 > ]             |
+| EQs Collapsed | [ TOP: h5528                                                                     |
+|               |   INDEX: e5525 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h5528 ARG0: e5525 ARG1: x5523 [ x IND: + ] ARG2: x5534 |
+|               | ]                                                                                |
+|               |           [ number_q LBL: h5537 ARG0: x5534 RSTR: h5535 BODY: h5536 ]            |
+|               |           [ card LBL: h5513 ARG0: x5534 ARG1: u5512 CARG: "418476000000.0" ]     |
+|               |           [ def_udef_a_q LBL: h5532 ARG0: x5523 RSTR: h5530 BODY: h5531 ]        |
+|               |           [ _of_p LBL: h5517 ARG0: e5514 ARG1: x5523 ARG2: x5509 ]               |
+|               |           [ explicit_or_proper_q LBL: h5521 ARG0: x5509 RSTR: h5519 BODY: h5520  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5510 ARG0: x5509 CARG: "1147 Stavropolis" ]              |
+|               |           [ unk_n LBL: h5517 ARG0: x5523 CARG: "apoapsis" ] >                    |
+|               |   HCONS: < h5535 qeq h5513 h5519 qeq h5510 h5530 qeq h5517 > ]                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h18775                                                                    |
-|               |   INDEX: e18761 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h18764 ARG0: e18761 ARG1: x18759 [ x IND: + ] ARG2:    |
-|               | x18770 ]                                                                         |
-|               |           [ number_q LBL: h18773 ARG0: x18770 RSTR: h18771 BODY: h18772 ]        |
-|               |           [ card LBL: h18749 ARG0: x18770 ARG1: u18748 CARG: "418476000000.0" ]  |
-|               |           [ def_udef_a_q LBL: h18768 ARG0: x18759 RSTR: h18766 BODY: h18767 ]    |
-|               |           [ _of_p LBL: h18753 ARG0: e18750 ARG1: x18759 ARG2: x18745 ]           |
-|               |           [ explicit_or_proper_q LBL: h18757 ARG0: x18745 RSTR: h18755 BODY:     |
-|               | h18756 ]                                                                         |
-|               |           [ named LBL: h18746 ARG0: x18745 CARG: "1147 Stavropolis" ]            |
-|               |           [ unk_n LBL: h18753 ARG0: x18759 CARG: "apoapsis" ] >                  |
-|               |   HCONS: < h18771 qeq h18749 h18755 qeq h18746 h18766 qeq h18753 h18775 qeq      |
-|               | h18764 > ]                                                                       |
+| Prepped       | [ TOP: h5539                                                                     |
+|               |   INDEX: e5525 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h5528 ARG0: e5525 ARG1: x5523 [ x IND: + ] ARG2: x5534 |
+|               | ]                                                                                |
+|               |           [ number_q LBL: h5537 ARG0: x5534 RSTR: h5535 BODY: h5536 ]            |
+|               |           [ card LBL: h5513 ARG0: x5534 ARG1: u5512 CARG: "418476000000.0" ]     |
+|               |           [ def_udef_a_q LBL: h5532 ARG0: x5523 RSTR: h5530 BODY: h5531 ]        |
+|               |           [ _of_p LBL: h5517 ARG0: e5514 ARG1: x5523 ARG2: x5509 ]               |
+|               |           [ explicit_or_proper_q LBL: h5521 ARG0: x5509 RSTR: h5519 BODY: h5520  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5510 ARG0: x5509 CARG: "1147 Stavropolis" ]              |
+|               |           [ unk_n LBL: h5517 ARG0: x5523 CARG: "apoapsis" ] >                    |
+|               |   HCONS: < h5535 qeq h5513 h5519 qeq h5510 h5530 qeq h5517 h5539 qeq h5528 > ]   |
 +---------------+----------------------------------------------------------------------------------+
 
-+-----------------------------------------------------------------------------------------------------+
-|                                             NODE SEMENTS                                            |
-+------------------+----------------------------------------------------------------------------------+
-| Node             | Generated SEMENT                                                                 |
-+------------------+----------------------------------------------------------------------------------+
-| 1147_Stavropolis | [ TOP: h18746                                                                    |
-|                  |   INDEX: x18745                                                                  |
-|                  |   RELS: < [ named LBL: h18746 ARG0: x18745 CARG: "1147 Stavropolis" ] > ]        |
-+------------------+----------------------------------------------------------------------------------+
-| 418476000000.0   | [ TOP: h18749                                                                    |
-|                  |   INDEX: i18747                                                                  |
-|                  |   RELS: < [ card LBL: h18749 ARG0: i18747 ARG1: u18748 CARG: "418476000000.0" ]  |
-|                  | >                                                                                |
-|                  |   SLOTS: < ARG1: u18748 > ]                                                      |
-+------------------+----------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+
+|                                            NODE SEMENTS                                           |
++------------------+--------------------------------------------------------------------------------+
+| Node             | Generated SEMENT                                                               |
++------------------+--------------------------------------------------------------------------------+
+| 1147_Stavropolis | [ TOP: h5510                                                                   |
+|                  |   INDEX: x5509                                                                 |
+|                  |   RELS: < [ named LBL: h5510 ARG0: x5509 CARG: "1147 Stavropolis" ] > ]        |
++------------------+--------------------------------------------------------------------------------+
+| 418476000000.0   | [ TOP: h5513                                                                   |
+|                  |   INDEX: i5511                                                                 |
+|                  |   RELS: < [ card LBL: h5513 ARG0: i5511 ARG1: u5512 CARG: "418476000000.0" ] > |
+|                  |   SLOTS: < ARG1: u5512 > ]                                                     |
++------------------+--------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------------------------+
 |                                                           EDGE SEMENTS                                                          |
 +----------+------------------+----------------+----------------------------------------------------------------------------------+
 | Edge     | Parent           | Child          | Generated SEMENT                                                                 |
 +----------+------------------+----------------+----------------------------------------------------------------------------------+
-| apoapsis | 1147_Stavropolis | 418476000000.0 | [ TOP: h18764                                                                    |
-|          |                  |                |   INDEX: e18761 [ e SF: prop TENSE: tensed ]                                     |
-|          |                  |                |   RELS: < [ _be_v_id LBL: h18764 ARG0: e18761 ARG1: p18762 ARG2: i18763 ]        |
-|          |                  |                |           [ number_q LBL: h18773 ARG0: x18770 RSTR: h18771 BODY: h18772 ]        |
-|          |                  |                |           [ card LBL: h18749 ARG0: i18747 ARG1: u18748 CARG: "418476000000.0" ]  |
-|          |                  |                |           [ def_udef_a_q LBL: h18768 ARG0: x18765 RSTR: h18766 BODY: h18767 ]    |
-|          |                  |                |           [ _of_p LBL: h18753 ARG0: e18750 ARG1: u18751 ARG2: i18752 ]           |
-|          |                  |                |           [ explicit_or_proper_q LBL: h18757 ARG0: x18754 RSTR: h18755 BODY:     |
-|          |                  |                | h18756 ]                                                                         |
-|          |                  |                |           [ named LBL: h18746 ARG0: x18745 CARG: "1147 Stavropolis" ]            |
-|          |                  |                |           [ unk_n LBL: h18760 ARG0: x18759 [ x IND: + ] CARG: "apoapsis" ] >     |
-|          |                  |                |   HCONS: < h18771 qeq h18749 h18755 qeq h18746 h18766 qeq h18760 >               |
-|          |                  |                |   EQS: < x18770 eq i18747 h18764 eq h18774 i18763 eq x18770 x18754 eq x18745     |
-|          |                  |                | h18753 eq h18758 i18752 eq x18754 h18753 eq h18760 u18751 eq x18759 x18765 eq    |
-|          |                  |                | x18759 h18764 eq h18769 p18762 eq x18765 > ]                                     |
+| apoapsis | 1147_Stavropolis | 418476000000.0 | [ TOP: h5528                                                                     |
+|          |                  |                |   INDEX: e5525 [ e SF: prop TENSE: tensed ]                                      |
+|          |                  |                |   RELS: < [ _be_v_id LBL: h5528 ARG0: e5525 ARG1: p5526 ARG2: i5527 ]            |
+|          |                  |                |           [ number_q LBL: h5537 ARG0: x5534 RSTR: h5535 BODY: h5536 ]            |
+|          |                  |                |           [ card LBL: h5513 ARG0: i5511 ARG1: u5512 CARG: "418476000000.0" ]     |
+|          |                  |                |           [ def_udef_a_q LBL: h5532 ARG0: x5529 RSTR: h5530 BODY: h5531 ]        |
+|          |                  |                |           [ _of_p LBL: h5517 ARG0: e5514 ARG1: u5515 ARG2: i5516 ]               |
+|          |                  |                |           [ explicit_or_proper_q LBL: h5521 ARG0: x5518 RSTR: h5519 BODY: h5520  |
+|          |                  |                | ]                                                                                |
+|          |                  |                |           [ named LBL: h5510 ARG0: x5509 CARG: "1147 Stavropolis" ]              |
+|          |                  |                |           [ unk_n LBL: h5524 ARG0: x5523 [ x IND: + ] CARG: "apoapsis" ] >       |
+|          |                  |                |   HCONS: < h5535 qeq h5513 h5519 qeq h5510 h5530 qeq h5524 >                     |
+|          |                  |                |   EQS: < x5534 eq i5511 h5528 eq h5538 i5527 eq x5534 x5518 eq x5509 h5517 eq    |
+|          |                  |                | h5522 i5516 eq x5518 h5517 eq h5524 u5515 eq x5523 x5529 eq x5523 h5528 eq h5533 |
+|          |                  |                | p5526 eq x5529 > ]                                                               |
 +----------+------------------+----------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------+

@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_Artist_Id1292_228_456
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-------------------------------------------------------------------------------------------+
-|                                        GOLD OUTPUTS                                       |
-+------------------------------------------------------------------------------+------------+
-| Gold Output                                                                  | Generated? |
-+------------------------------------------------------------------------------+------------+
-| Aaron Turner from the band Twilight started performing in 1995.              | False      |
-| Aaron Turner started performing in 1995 and played with the band Twilight.   | False      |
-| Aaron Turner, who played with the band Twilight, started performing in 1995. | False      |
-+------------------------------------------------------------------------------+------------+
++------------------------------------------------------------------------------+
+|                                 GOLD OUTPUTS                                 |
++-----------------------------------------------------------------+------------+
+| Gold Output                                                     | Generated? |
++-----------------------------------------------------------------+------------+
+| Aaron Turner played electric guitar with the band Twilight.     | False      |
+| Aaron Turner played the electric guitar with the Band Twilight. | False      |
+| Aaron Turner plays the electric guitar with the band Twilight.  | False      |
++-----------------------------------------------------------------+------------+
 
 +---------------------------------------------------------------------------------------+
 |                                      NODE METRICS                                     |
@@ -56,57 +56,56 @@ GRAPH NAME: WebNLG_test_2triples_Artist_Id1292_228_456
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h15002                                                                    |
-|               |   INDEX: e14998 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _associate_v_with LBL: h15002 ARG0: e14998 ARG1: i14999 ARG2: p15000 |
-|               | ARG3: i15001 ]                                                                   |
-|               |           [ appos LBL: h14987 ARG0: e14984 ARG1: x14985 ARG2: i14986 ]           |
-|               |           [ def_udef_a_q LBL: h14996 ARG0: x14993 RSTR: h14994 BODY: h14995 ]    |
-|               |           [ _band_n_1 LBL: h14983 ARG0: x14982 ]                                 |
-|               |           [ explicit_or_proper_q LBL: h14991 ARG0: x14988 RSTR: h14989 BODY:     |
-|               | h14990 ]                                                                         |
-|               |           [ named LBL: h14981 ARG0: x14980 CARG: "Twilight" ]                    |
-|               |           [ explicit_or_proper_q LBL: h15006 ARG0: x15003 RSTR: h15004 BODY:     |
-|               | h15005 ]                                                                         |
-|               |           [ named LBL: h14979 ARG0: x14978 CARG: "Aaron Turner" ] >              |
-|               |   HCONS: < h14994 qeq h14983 h14989 qeq h14981 h15004 qeq h14979 >               |
-|               |   EQS: < x14993 eq x14982 h14987 eq h14997 i14986 eq x14993 x14988 eq x14980     |
-|               | h14987 eq h14992 x14985 eq x14988 h15002 eq h14992 i15001 eq x14988 x15003 eq    |
-|               | x14978 h15002 eq h15007 p15000 eq x15003 >                                       |
-|               |   SLOTS: < ARG1: i14999 > ]                                                      |
+| Original      | [ TOP: h9412                                                                     |
+|               |   INDEX: e9408 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _associate_v_with LBL: h9412 ARG0: e9408 ARG1: i9409 ARG2: p9410     |
+|               | ARG3: i9411 ]                                                                    |
+|               |           [ appos LBL: h9397 ARG0: e9394 ARG1: x9395 ARG2: i9396 ]               |
+|               |           [ def_udef_a_q LBL: h9406 ARG0: x9403 RSTR: h9404 BODY: h9405 ]        |
+|               |           [ _band_n_1 LBL: h9393 ARG0: x9392 ]                                   |
+|               |           [ explicit_or_proper_q LBL: h9401 ARG0: x9398 RSTR: h9399 BODY: h9400  |
+|               | ]                                                                                |
+|               |           [ named LBL: h9391 ARG0: x9390 CARG: "Twilight" ]                      |
+|               |           [ explicit_or_proper_q LBL: h9416 ARG0: x9413 RSTR: h9414 BODY: h9415  |
+|               | ]                                                                                |
+|               |           [ named LBL: h9389 ARG0: x9388 CARG: "Aaron Turner" ] >                |
+|               |   HCONS: < h9404 qeq h9393 h9399 qeq h9391 h9414 qeq h9389 >                     |
+|               |   EQS: < x9403 eq x9392 h9397 eq h9407 i9396 eq x9403 x9398 eq x9390 h9397 eq    |
+|               | h9402 x9395 eq x9398 h9412 eq h9402 i9411 eq x9398 x9413 eq x9388 h9412 eq h9417 |
+|               | p9410 eq x9413 >                                                                 |
+|               |   SLOTS: < ARG1: i9409 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h14987                                                                    |
-|               |   INDEX: e14998 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _associate_v_with LBL: h14987 ARG0: e14998 ARG1: i14999 ARG2: x14978 |
-|               | ARG3: x14980 ]                                                                   |
-|               |           [ appos LBL: h14987 ARG0: e14984 ARG1: x14980 ARG2: x14982 ]           |
-|               |           [ def_udef_a_q LBL: h14996 ARG0: x14982 RSTR: h14994 BODY: h14995 ]    |
-|               |           [ _band_n_1 LBL: h14983 ARG0: x14982 ]                                 |
-|               |           [ explicit_or_proper_q LBL: h14991 ARG0: x14980 RSTR: h14989 BODY:     |
-|               | h14990 ]                                                                         |
-|               |           [ named LBL: h14981 ARG0: x14980 CARG: "Twilight" ]                    |
-|               |           [ explicit_or_proper_q LBL: h15006 ARG0: x14978 RSTR: h15004 BODY:     |
-|               | h15005 ]                                                                         |
-|               |           [ named LBL: h14979 ARG0: x14978 CARG: "Aaron Turner" ] >              |
-|               |   HCONS: < h14994 qeq h14983 h14989 qeq h14981 h15004 qeq h14979 >               |
-|               |   SLOTS: < ARG1: i14999 > ]                                                      |
+| EQs Collapsed | [ TOP: h9397                                                                     |
+|               |   INDEX: e9408 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _associate_v_with LBL: h9397 ARG0: e9408 ARG1: i9409 ARG2: x9388     |
+|               | ARG3: x9390 ]                                                                    |
+|               |           [ appos LBL: h9397 ARG0: e9394 ARG1: x9390 ARG2: x9392 ]               |
+|               |           [ def_udef_a_q LBL: h9406 ARG0: x9392 RSTR: h9404 BODY: h9405 ]        |
+|               |           [ _band_n_1 LBL: h9393 ARG0: x9392 ]                                   |
+|               |           [ explicit_or_proper_q LBL: h9401 ARG0: x9390 RSTR: h9399 BODY: h9400  |
+|               | ]                                                                                |
+|               |           [ named LBL: h9391 ARG0: x9390 CARG: "Twilight" ]                      |
+|               |           [ explicit_or_proper_q LBL: h9416 ARG0: x9388 RSTR: h9414 BODY: h9415  |
+|               | ]                                                                                |
+|               |           [ named LBL: h9389 ARG0: x9388 CARG: "Aaron Turner" ] >                |
+|               |   HCONS: < h9404 qeq h9393 h9399 qeq h9391 h9414 qeq h9389 >                     |
+|               |   SLOTS: < ARG1: i9409 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h15008                                                                    |
-|               |   INDEX: e14998 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _associate_v_with LBL: h14987 ARG0: e14998 ARG1: i14999 ARG2: x14978 |
-|               | ARG3: x14980 ]                                                                   |
-|               |           [ appos LBL: h14987 ARG0: e14984 ARG1: x14980 ARG2: x14982 ]           |
-|               |           [ def_udef_a_q LBL: h14996 ARG0: x14982 RSTR: h14994 BODY: h14995 ]    |
-|               |           [ _band_n_1 LBL: h14983 ARG0: x14982 ]                                 |
-|               |           [ explicit_or_proper_q LBL: h14991 ARG0: x14980 RSTR: h14989 BODY:     |
-|               | h14990 ]                                                                         |
-|               |           [ named LBL: h14981 ARG0: x14980 CARG: "Twilight" ]                    |
-|               |           [ explicit_or_proper_q LBL: h15006 ARG0: x14978 RSTR: h15004 BODY:     |
-|               | h15005 ]                                                                         |
-|               |           [ named LBL: h14979 ARG0: x14978 CARG: "Aaron Turner" ] >              |
-|               |   HCONS: < h14994 qeq h14983 h14989 qeq h14981 h15004 qeq h14979 h15008 qeq      |
-|               | h14987 >                                                                         |
-|               |   SLOTS: < ARG1: i14999 > ]                                                      |
+| Prepped       | [ TOP: h9418                                                                     |
+|               |   INDEX: e9408 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _associate_v_with LBL: h9397 ARG0: e9408 ARG1: i9409 ARG2: x9388     |
+|               | ARG3: x9390 ]                                                                    |
+|               |           [ appos LBL: h9397 ARG0: e9394 ARG1: x9390 ARG2: x9392 ]               |
+|               |           [ def_udef_a_q LBL: h9406 ARG0: x9392 RSTR: h9404 BODY: h9405 ]        |
+|               |           [ _band_n_1 LBL: h9393 ARG0: x9392 ]                                   |
+|               |           [ explicit_or_proper_q LBL: h9401 ARG0: x9390 RSTR: h9399 BODY: h9400  |
+|               | ]                                                                                |
+|               |           [ named LBL: h9391 ARG0: x9390 CARG: "Twilight" ]                      |
+|               |           [ explicit_or_proper_q LBL: h9416 ARG0: x9388 RSTR: h9414 BODY: h9415  |
+|               | ]                                                                                |
+|               |           [ named LBL: h9389 ARG0: x9388 CARG: "Aaron Turner" ] >                |
+|               |   HCONS: < h9404 qeq h9393 h9399 qeq h9391 h9414 qeq h9389 h9418 qeq h9397 >     |
+|               |   SLOTS: < ARG1: i9409 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------+
@@ -114,22 +113,22 @@ GRAPH NAME: WebNLG_test_2triples_Artist_Id1292_228_456
 +-----------------+----------------------------------------------------------------------------------+
 | Node            | Generated SEMENT                                                                 |
 +-----------------+----------------------------------------------------------------------------------+
-| Aaron_Turner    | [ TOP: h14979                                                                    |
-|                 |   INDEX: x14978                                                                  |
-|                 |   RELS: < [ named LBL: h14979 ARG0: x14978 CARG: "Aaron Turner" ] > ]            |
+| Aaron_Turner    | [ TOP: h9389                                                                     |
+|                 |   INDEX: x9388                                                                   |
+|                 |   RELS: < [ named LBL: h9389 ARG0: x9388 CARG: "Aaron Turner" ] > ]              |
 +-----------------+----------------------------------------------------------------------------------+
-| Twilight_(band) | [ TOP: h14992                                                                    |
-|                 |   INDEX: x14988                                                                  |
-|                 |   RELS: < [ appos LBL: h14987 ARG0: e14984 ARG1: x14985 ARG2: i14986 ]           |
-|                 |           [ def_udef_a_q LBL: h14996 ARG0: x14993 RSTR: h14994 BODY: h14995 ]    |
-|                 |           [ _band_n_1 LBL: h14983 ARG0: x14982 ]                                 |
-|                 |           [ explicit_or_proper_q LBL: h14991 ARG0: x14988 RSTR: h14989 BODY:     |
-|                 | h14990 ]                                                                         |
-|                 |           [ named LBL: h14981 ARG0: x14980 CARG: "Twilight" ] >                  |
-|                 |   HCONS: < h14994 qeq h14983 h14989 qeq h14981 >                                 |
-|                 |   EQS: < x14993 eq x14982 h14987 eq h14997 i14986 eq x14993 x14988 eq x14980     |
-|                 | h14987 eq h14992 x14985 eq x14988 >                                              |
-|                 |   SLOTS: < BODY: h14990 > ]                                                      |
+| Twilight_(band) | [ TOP: h9402                                                                     |
+|                 |   INDEX: x9398                                                                   |
+|                 |   RELS: < [ appos LBL: h9397 ARG0: e9394 ARG1: x9395 ARG2: i9396 ]               |
+|                 |           [ def_udef_a_q LBL: h9406 ARG0: x9403 RSTR: h9404 BODY: h9405 ]        |
+|                 |           [ _band_n_1 LBL: h9393 ARG0: x9392 ]                                   |
+|                 |           [ explicit_or_proper_q LBL: h9401 ARG0: x9398 RSTR: h9399 BODY: h9400  |
+|                 | ]                                                                                |
+|                 |           [ named LBL: h9391 ARG0: x9390 CARG: "Twilight" ] >                    |
+|                 |   HCONS: < h9404 qeq h9393 h9399 qeq h9391 >                                     |
+|                 |   EQS: < x9403 eq x9392 h9397 eq h9407 i9396 eq x9403 x9398 eq x9390 h9397 eq    |
+|                 | h9402 x9395 eq x9398 >                                                           |
+|                 |   SLOTS: < BODY: h9400 > ]                                                       |
 +-----------------+----------------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -137,24 +136,24 @@ GRAPH NAME: WebNLG_test_2triples_Artist_Id1292_228_456
 +----------------------------------------+--------------+-----------------+----------------------------------------------------------------------------------+
 | Edge                                   | Parent       | Child           | Generated SEMENT                                                                 |
 +----------------------------------------+--------------+-----------------+----------------------------------------------------------------------------------+
-| associatedBand/associatedMusicalArtist | Aaron_Turner | Twilight_(band) | [ TOP: h15002                                                                    |
-|                                        |              |                 |   INDEX: e14998 [ e TENSE: tensed ]                                              |
-|                                        |              |                 |   RELS: < [ _associate_v_with LBL: h15002 ARG0: e14998 ARG1: i14999 ARG2: p15000 |
-|                                        |              |                 | ARG3: i15001 ]                                                                   |
-|                                        |              |                 |           [ appos LBL: h14987 ARG0: e14984 ARG1: x14985 ARG2: i14986 ]           |
-|                                        |              |                 |           [ def_udef_a_q LBL: h14996 ARG0: x14993 RSTR: h14994 BODY: h14995 ]    |
-|                                        |              |                 |           [ _band_n_1 LBL: h14983 ARG0: x14982 ]                                 |
-|                                        |              |                 |           [ explicit_or_proper_q LBL: h14991 ARG0: x14988 RSTR: h14989 BODY:     |
-|                                        |              |                 | h14990 ]                                                                         |
-|                                        |              |                 |           [ named LBL: h14981 ARG0: x14980 CARG: "Twilight" ]                    |
-|                                        |              |                 |           [ explicit_or_proper_q LBL: h15006 ARG0: x15003 RSTR: h15004 BODY:     |
-|                                        |              |                 | h15005 ]                                                                         |
-|                                        |              |                 |           [ named LBL: h14979 ARG0: x14978 CARG: "Aaron Turner" ] >              |
-|                                        |              |                 |   HCONS: < h14994 qeq h14983 h14989 qeq h14981 h15004 qeq h14979 >               |
-|                                        |              |                 |   EQS: < x14993 eq x14982 h14987 eq h14997 i14986 eq x14993 x14988 eq x14980     |
-|                                        |              |                 | h14987 eq h14992 x14985 eq x14988 h15002 eq h14992 i15001 eq x14988 x15003 eq    |
-|                                        |              |                 | x14978 h15002 eq h15007 p15000 eq x15003 >                                       |
-|                                        |              |                 |   SLOTS: < ARG1: i14999 > ]                                                      |
+| associatedBand/associatedMusicalArtist | Aaron_Turner | Twilight_(band) | [ TOP: h9412                                                                     |
+|                                        |              |                 |   INDEX: e9408 [ e TENSE: tensed ]                                               |
+|                                        |              |                 |   RELS: < [ _associate_v_with LBL: h9412 ARG0: e9408 ARG1: i9409 ARG2: p9410     |
+|                                        |              |                 | ARG3: i9411 ]                                                                    |
+|                                        |              |                 |           [ appos LBL: h9397 ARG0: e9394 ARG1: x9395 ARG2: i9396 ]               |
+|                                        |              |                 |           [ def_udef_a_q LBL: h9406 ARG0: x9403 RSTR: h9404 BODY: h9405 ]        |
+|                                        |              |                 |           [ _band_n_1 LBL: h9393 ARG0: x9392 ]                                   |
+|                                        |              |                 |           [ explicit_or_proper_q LBL: h9401 ARG0: x9398 RSTR: h9399 BODY: h9400  |
+|                                        |              |                 | ]                                                                                |
+|                                        |              |                 |           [ named LBL: h9391 ARG0: x9390 CARG: "Twilight" ]                      |
+|                                        |              |                 |           [ explicit_or_proper_q LBL: h9416 ARG0: x9413 RSTR: h9414 BODY: h9415  |
+|                                        |              |                 | ]                                                                                |
+|                                        |              |                 |           [ named LBL: h9389 ARG0: x9388 CARG: "Aaron Turner" ] >                |
+|                                        |              |                 |   HCONS: < h9404 qeq h9393 h9399 qeq h9391 h9414 qeq h9389 >                     |
+|                                        |              |                 |   EQS: < x9403 eq x9392 h9397 eq h9407 i9396 eq x9403 x9398 eq x9390 h9397 eq    |
+|                                        |              |                 | h9402 x9395 eq x9398 h9412 eq h9402 i9411 eq x9398 x9413 eq x9388 h9412 eq h9417 |
+|                                        |              |                 | p9410 eq x9413 >                                                                 |
+|                                        |              |                 |   SLOTS: < ARG1: i9409 > ]                                                       |
 +----------------------------------------+--------------+-----------------+----------------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------+

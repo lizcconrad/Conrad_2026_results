@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Astronaut_Id1398_165_496
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+---------------------------------------------------------------------------------------------------+
-|                                            GOLD OUTPUTS                                           |
-+--------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                          | Generated? |
-+--------------------------------------------------------------------------------------+------------+
-| Alan Shepard was born in New Hampshire on November 18, 1923, but died in California. | False      |
-| Alan Shepard, born November 18th, 1923 in New Hampshire, later died in California.   | False      |
-| Alan Shepard, born in New Hampshire on Nov 18, 1923, died in California.             | False      |
-+--------------------------------------------------------------------------------------+------------+
++---------------------------------------------------------------------------------------------+
+|                                         GOLD OUTPUTS                                        |
++--------------------------------------------------------------------------------+------------+
+| Gold Output                                                                    | Generated? |
++--------------------------------------------------------------------------------+------------+
+| Alan Shepard, a test pilot born in New Hampshire, died in California.          | False      |
+| Alan Shepard, a test pilot that died in California, was born in New Hampshire. | False      |
+| Test pilot Alan Shepard, born in New Hampshire, later died in California.      | False      |
++--------------------------------------------------------------------------------+------------+
 
 +------------------------------------------------------------------------------------+
 |                                    NODE METRICS                                    |
@@ -56,77 +56,69 @@ GRAPH NAME: WebNLG_test_3triples_Astronaut_Id1398_165_496
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h3527                                                                     |
-|               |   INDEX: e3525 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _in_p_state LBL: h3519 ARG0: e3516 ARG1: u3517 ARG2: u3518 ]         |
-|               |           [ explicit_or_proper_q LBL: h3523 ARG0: x3520 RSTR: h3521 BODY: h3522  |
-|               | ]                                                                                |
-|               |           [ named LBL: h3515 ARG0: x3514 CARG: "California" ]                    |
-|               |           [ _die_v_1 LBL: h3527 ARG0: e3525 ARG1: i3526 ]                        |
-|               |           [ explicit_or_proper_q LBL: h3531 ARG0: x3528 RSTR: h3529 BODY: h3530  |
-|               | ]                                                                                |
-|               |           [ named LBL: h3513 ARG0: x3512 CARG: "Alan Shepard" ] >                |
-|               |   HCONS: < h3521 qeq h3515 h3529 qeq h3513 >                                     |
-|               |   EQS: < x3520 eq x3514 h3519 eq h3524 u3518 eq x3520 x3528 eq x3512 h3527 eq    |
-|               | h3532 i3526 eq x3528 h3519 eq h3527 u3517 eq e3525 > ]                           |
+| Original      | [ TOP: h691                                                                      |
+|               |   INDEX: e689 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_state LBL: h683 ARG0: e680 ARG1: u681 ARG2: u682 ]             |
+|               |           [ explicit_or_proper_q LBL: h687 ARG0: x684 RSTR: h685 BODY: h686 ]    |
+|               |           [ named LBL: h679 ARG0: x678 CARG: "California" ]                      |
+|               |           [ _die_v_1 LBL: h691 ARG0: e689 ARG1: i690 ]                           |
+|               |           [ explicit_or_proper_q LBL: h695 ARG0: x692 RSTR: h693 BODY: h694 ]    |
+|               |           [ named LBL: h677 ARG0: x676 CARG: "Alan Shepard" ] >                  |
+|               |   HCONS: < h685 qeq h679 h693 qeq h677 >                                         |
+|               |   EQS: < x684 eq x678 h683 eq h688 u682 eq x684 x692 eq x676 h691 eq h696 i690   |
+|               | eq x692 h683 eq h691 u681 eq e689 > ]                                            |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h3519                                                                     |
-|               |   INDEX: e3525 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _in_p_state LBL: h3519 ARG0: e3516 ARG1: e3525 ARG2: x3514 ]         |
-|               |           [ explicit_or_proper_q LBL: h3523 ARG0: x3514 RSTR: h3521 BODY: h3522  |
-|               | ]                                                                                |
-|               |           [ named LBL: h3515 ARG0: x3514 CARG: "California" ]                    |
-|               |           [ _die_v_1 LBL: h3519 ARG0: e3525 ARG1: x3512 ]                        |
-|               |           [ explicit_or_proper_q LBL: h3531 ARG0: x3512 RSTR: h3529 BODY: h3530  |
-|               | ]                                                                                |
-|               |           [ named LBL: h3513 ARG0: x3512 CARG: "Alan Shepard" ] >                |
-|               |   HCONS: < h3521 qeq h3515 h3529 qeq h3513 > ]                                   |
+| EQs Collapsed | [ TOP: h683                                                                      |
+|               |   INDEX: e689 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_state LBL: h683 ARG0: e680 ARG1: e689 ARG2: x678 ]             |
+|               |           [ explicit_or_proper_q LBL: h687 ARG0: x678 RSTR: h685 BODY: h686 ]    |
+|               |           [ named LBL: h679 ARG0: x678 CARG: "California" ]                      |
+|               |           [ _die_v_1 LBL: h683 ARG0: e689 ARG1: x676 ]                           |
+|               |           [ explicit_or_proper_q LBL: h695 ARG0: x676 RSTR: h693 BODY: h694 ]    |
+|               |           [ named LBL: h677 ARG0: x676 CARG: "Alan Shepard" ] >                  |
+|               |   HCONS: < h685 qeq h679 h693 qeq h677 > ]                                       |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h3533                                                                     |
-|               |   INDEX: e3525 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _in_p_state LBL: h3519 ARG0: e3516 ARG1: e3525 ARG2: x3514 ]         |
-|               |           [ explicit_or_proper_q LBL: h3523 ARG0: x3514 RSTR: h3521 BODY: h3522  |
-|               | ]                                                                                |
-|               |           [ named LBL: h3515 ARG0: x3514 CARG: "California" ]                    |
-|               |           [ _die_v_1 LBL: h3519 ARG0: e3525 ARG1: x3512 ]                        |
-|               |           [ explicit_or_proper_q LBL: h3531 ARG0: x3512 RSTR: h3529 BODY: h3530  |
-|               | ]                                                                                |
-|               |           [ named LBL: h3513 ARG0: x3512 CARG: "Alan Shepard" ] >                |
-|               |   HCONS: < h3521 qeq h3515 h3529 qeq h3513 h3533 qeq h3519 > ]                   |
+| Prepped       | [ TOP: h697                                                                      |
+|               |   INDEX: e689 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_state LBL: h683 ARG0: e680 ARG1: e689 ARG2: x678 ]             |
+|               |           [ explicit_or_proper_q LBL: h687 ARG0: x678 RSTR: h685 BODY: h686 ]    |
+|               |           [ named LBL: h679 ARG0: x678 CARG: "California" ]                      |
+|               |           [ _die_v_1 LBL: h683 ARG0: e689 ARG1: x676 ]                           |
+|               |           [ explicit_or_proper_q LBL: h695 ARG0: x676 RSTR: h693 BODY: h694 ]    |
+|               |           [ named LBL: h677 ARG0: x676 CARG: "Alan Shepard" ] >                  |
+|               |   HCONS: < h685 qeq h679 h693 qeq h677 h697 qeq h683 > ]                         |
 +---------------+----------------------------------------------------------------------------------+
 
-+------------------------------------------------------------------------------------+
-|                                    NODE SEMENTS                                    |
-+--------------+---------------------------------------------------------------------+
-| Node         | Generated SEMENT                                                    |
-+--------------+---------------------------------------------------------------------+
-| Alan_Shepard | [ TOP: h3513                                                        |
-|              |   INDEX: x3512                                                      |
-|              |   RELS: < [ named LBL: h3513 ARG0: x3512 CARG: "Alan Shepard" ] > ] |
-+--------------+---------------------------------------------------------------------+
-| California   | [ TOP: h3515                                                        |
-|              |   INDEX: x3514                                                      |
-|              |   RELS: < [ named LBL: h3515 ARG0: x3514 CARG: "California" ] > ]   |
-+--------------+---------------------------------------------------------------------+
++----------------------------------------------------------------------------------+
+|                                   NODE SEMENTS                                   |
++--------------+-------------------------------------------------------------------+
+| Node         | Generated SEMENT                                                  |
++--------------+-------------------------------------------------------------------+
+| Alan_Shepard | [ TOP: h677                                                       |
+|              |   INDEX: x676                                                     |
+|              |   RELS: < [ named LBL: h677 ARG0: x676 CARG: "Alan Shepard" ] > ] |
++--------------+-------------------------------------------------------------------+
+| California   | [ TOP: h679                                                       |
+|              |   INDEX: x678                                                     |
+|              |   RELS: < [ named LBL: h679 ARG0: x678 CARG: "California" ] > ]   |
++--------------+-------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------------------+
 |                                                        EDGE SEMENTS                                                       |
 +------------+--------------+------------+----------------------------------------------------------------------------------+
 | Edge       | Parent       | Child      | Generated SEMENT                                                                 |
 +------------+--------------+------------+----------------------------------------------------------------------------------+
-| deathPlace | Alan_Shepard | California | [ TOP: h3527                                                                     |
-|            |              |            |   INDEX: e3525 [ e TENSE: tensed ]                                               |
-|            |              |            |   RELS: < [ _in_p_state LBL: h3519 ARG0: e3516 ARG1: u3517 ARG2: u3518 ]         |
-|            |              |            |           [ explicit_or_proper_q LBL: h3523 ARG0: x3520 RSTR: h3521 BODY: h3522  |
-|            |              |            | ]                                                                                |
-|            |              |            |           [ named LBL: h3515 ARG0: x3514 CARG: "California" ]                    |
-|            |              |            |           [ _die_v_1 LBL: h3527 ARG0: e3525 ARG1: i3526 ]                        |
-|            |              |            |           [ explicit_or_proper_q LBL: h3531 ARG0: x3528 RSTR: h3529 BODY: h3530  |
-|            |              |            | ]                                                                                |
-|            |              |            |           [ named LBL: h3513 ARG0: x3512 CARG: "Alan Shepard" ] >                |
-|            |              |            |   HCONS: < h3521 qeq h3515 h3529 qeq h3513 >                                     |
-|            |              |            |   EQS: < x3520 eq x3514 h3519 eq h3524 u3518 eq x3520 x3528 eq x3512 h3527 eq    |
-|            |              |            | h3532 i3526 eq x3528 h3519 eq h3527 u3517 eq e3525 > ]                           |
+| deathPlace | Alan_Shepard | California | [ TOP: h691                                                                      |
+|            |              |            |   INDEX: e689 [ e TENSE: tensed ]                                                |
+|            |              |            |   RELS: < [ _in_p_state LBL: h683 ARG0: e680 ARG1: u681 ARG2: u682 ]             |
+|            |              |            |           [ explicit_or_proper_q LBL: h687 ARG0: x684 RSTR: h685 BODY: h686 ]    |
+|            |              |            |           [ named LBL: h679 ARG0: x678 CARG: "California" ]                      |
+|            |              |            |           [ _die_v_1 LBL: h691 ARG0: e689 ARG1: i690 ]                           |
+|            |              |            |           [ explicit_or_proper_q LBL: h695 ARG0: x692 RSTR: h693 BODY: h694 ]    |
+|            |              |            |           [ named LBL: h677 ARG0: x676 CARG: "Alan Shepard" ] >                  |
+|            |              |            |   HCONS: < h685 qeq h679 h693 qeq h677 >                                         |
+|            |              |            |   EQS: < x684 eq x678 h683 eq h688 u682 eq x684 x692 eq x676 h691 eq h696 i690   |
+|            |              |            | eq x692 h683 eq h691 u681 eq e689 > ]                                            |
 +------------+--------------+------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------+

@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_Astronaut_Id1050_241_483
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+--------------------------------------------------------------------+
-|                            GOLD OUTPUTS                            |
-+-------------------------------------------------------+------------+
-| Gold Output                                           | Generated? |
-+-------------------------------------------------------+------------+
-| Nie Haisheng was born on 10/13/1964 in Zaoyang.       | False      |
-| Nie Haisheng was born on October 13, 1964 in Zaoyang. | False      |
-| Nie Haisheng was born on October 13, 1984 in Zaoyang. | False      |
-+-------------------------------------------------------+------------+
++-------------------------------------------------------------------------------------------------------------+
+|                                                 GOLD OUTPUTS                                                |
++------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                    | Generated? |
++------------------------------------------------------------------------------------------------+------------+
+| Nie Haisheng was born on October 13, 1964 in the People's Republic of China.                   | False      |
+| Nie Haisheng was born on the 13th of October, 1964 and is from the People's Republic of China. | False      |
+| Nie Haisheng, born on 10/13/1964, is a citizen of the People's Republic of China.              | False      |
++------------------------------------------------------------------------------------------------+------------+
 
 +------------------------------------------------------------------------------------+
 |                                    NODE METRICS                                    |
@@ -56,66 +56,61 @@ GRAPH NAME: WebNLG_test_2triples_Astronaut_Id1050_241_483
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h15794                                                                    |
-|               |   INDEX: e15791 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h15785 ARG0: e15782 ARG1: u15783 ARG2: i15784 ]      |
-|               |           [ def_udef_a_q LBL: h15789 ARG0: x15786 RSTR: h15787 BODY: h15788 ]    |
-|               |           [ of_p LBL: h15776 ARG0: e15773 ARG1: x15774 ARG2: x15775 ]            |
-|               |           [ def_implicit_q LBL: h15780 ARG0: x15777 RSTR: h15778 BODY: h15779 ]  |
-|               |           [ mofy LBL: h15765 ARG0: x15763 [ x NUM: sg ] ARG1: i15764 CARG: "Oct" |
+| Original      | [ TOP: h1462                                                                     |
+|               |   INDEX: e1459 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _on_p_temp LBL: h1453 ARG0: e1450 ARG1: u1451 ARG2: i1452 ]          |
+|               |           [ def_udef_a_q LBL: h1457 ARG0: x1454 RSTR: h1455 BODY: h1456 ]        |
+|               |           [ of_p LBL: h1444 ARG0: e1441 ARG1: x1442 ARG2: x1443 ]                |
+|               |           [ def_implicit_q LBL: h1448 ARG0: x1445 RSTR: h1446 BODY: h1447 ]      |
+|               |           [ mofy LBL: h1433 ARG0: x1431 [ x NUM: sg ] ARG1: i1432 CARG: "Oct" ]  |
+|               |           [ dofm LBL: h1430 ARG0: x1428 ARG1: i1429 CARG: "13th" ]               |
+|               |           [ proper_q LBL: h1439 ARG0: x1436 RSTR: h1437 BODY: h1438 ]            |
+|               |           [ yofc LBL: h1435 ARG0: x1434 CARG: "1964" ]                           |
+|               |           [ _born_a_of LBL: h1462 ARG0: e1459 ARG1: u1460 ARG2: u1461 ]          |
+|               |           [ explicit_or_proper_q LBL: h1466 ARG0: x1463 RSTR: h1464 BODY: h1465  |
 |               | ]                                                                                |
-|               |           [ dofm LBL: h15762 ARG0: x15760 ARG1: i15761 CARG: "13th" ]            |
-|               |           [ proper_q LBL: h15771 ARG0: x15768 RSTR: h15769 BODY: h15770 ]        |
-|               |           [ yofc LBL: h15767 ARG0: x15766 CARG: "1964" ]                         |
-|               |           [ _born_a_of LBL: h15794 ARG0: e15791 ARG1: u15792 ARG2: u15793 ]      |
-|               |           [ explicit_or_proper_q LBL: h15798 ARG0: x15795 RSTR: h15796 BODY:     |
-|               | h15797 ]                                                                         |
-|               |           [ named LBL: h15759 ARG0: x15758 CARG: "Nie Haisheng" ] >              |
-|               |   HCONS: < h15778 qeq h15765 h15769 qeq h15767 h15787 qeq h15762 h15796 qeq      |
-|               | h15759 >                                                                         |
-|               |   EQS: < x15777 eq x15763 h15776 eq h15781 x15775 eq x15777 x15768 eq x15766     |
-|               | h15762 eq h15772 i15761 eq x15768 h15776 eq h15762 x15774 eq x15760 x15786 eq    |
-|               | x15760 h15785 eq h15790 i15784 eq x15786 x15795 eq x15758 h15794 eq h15799       |
-|               | u15792 eq x15795 h15785 eq h15794 u15783 eq e15791 >                             |
-|               |   SLOTS: < ARG2: u15793 > ]                                                      |
+|               |           [ named LBL: h1427 ARG0: x1426 CARG: "Nie Haisheng" ] >                |
+|               |   HCONS: < h1446 qeq h1433 h1437 qeq h1435 h1455 qeq h1430 h1464 qeq h1427 >     |
+|               |   EQS: < x1445 eq x1431 h1444 eq h1449 x1443 eq x1445 x1436 eq x1434 h1430 eq    |
+|               | h1440 i1429 eq x1436 h1444 eq h1430 x1442 eq x1428 x1454 eq x1428 h1453 eq h1458 |
+|               | i1452 eq x1454 x1463 eq x1426 h1462 eq h1467 u1460 eq x1463 h1453 eq h1462 u1451 |
+|               | eq e1459 >                                                                       |
+|               |   SLOTS: < ARG2: u1461 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h15785                                                                    |
-|               |   INDEX: e15791 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h15785 ARG0: e15782 ARG1: e15791 ARG2: x15760 ]      |
-|               |           [ def_udef_a_q LBL: h15789 ARG0: x15760 RSTR: h15787 BODY: h15788 ]    |
-|               |           [ of_p LBL: h15762 ARG0: e15773 ARG1: x15760 ARG2: x15763 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ def_implicit_q LBL: h15780 ARG0: x15763 RSTR: h15778 BODY: h15779 ]  |
-|               |           [ mofy LBL: h15765 ARG0: x15763 ARG1: i15764 CARG: "Oct" ]             |
-|               |           [ dofm LBL: h15762 ARG0: x15760 ARG1: x15766 CARG: "13th" ]            |
-|               |           [ proper_q LBL: h15771 ARG0: x15766 RSTR: h15769 BODY: h15770 ]        |
-|               |           [ yofc LBL: h15767 ARG0: x15766 CARG: "1964" ]                         |
-|               |           [ _born_a_of LBL: h15785 ARG0: e15791 ARG1: x15758 ARG2: u15793 ]      |
-|               |           [ explicit_or_proper_q LBL: h15798 ARG0: x15758 RSTR: h15796 BODY:     |
-|               | h15797 ]                                                                         |
-|               |           [ named LBL: h15759 ARG0: x15758 CARG: "Nie Haisheng" ] >              |
-|               |   HCONS: < h15778 qeq h15765 h15769 qeq h15767 h15787 qeq h15762 h15796 qeq      |
-|               | h15759 >                                                                         |
-|               |   SLOTS: < ARG2: u15793 > ]                                                      |
+| EQs Collapsed | [ TOP: h1453                                                                     |
+|               |   INDEX: e1459 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _on_p_temp LBL: h1453 ARG0: e1450 ARG1: e1459 ARG2: x1428 ]          |
+|               |           [ def_udef_a_q LBL: h1457 ARG0: x1428 RSTR: h1455 BODY: h1456 ]        |
+|               |           [ of_p LBL: h1430 ARG0: e1441 ARG1: x1428 ARG2: x1431 [ x NUM: sg ] ]  |
+|               |           [ def_implicit_q LBL: h1448 ARG0: x1431 RSTR: h1446 BODY: h1447 ]      |
+|               |           [ mofy LBL: h1433 ARG0: x1431 ARG1: i1432 CARG: "Oct" ]                |
+|               |           [ dofm LBL: h1430 ARG0: x1428 ARG1: x1434 CARG: "13th" ]               |
+|               |           [ proper_q LBL: h1439 ARG0: x1434 RSTR: h1437 BODY: h1438 ]            |
+|               |           [ yofc LBL: h1435 ARG0: x1434 CARG: "1964" ]                           |
+|               |           [ _born_a_of LBL: h1453 ARG0: e1459 ARG1: x1426 ARG2: u1461 ]          |
+|               |           [ explicit_or_proper_q LBL: h1466 ARG0: x1426 RSTR: h1464 BODY: h1465  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1427 ARG0: x1426 CARG: "Nie Haisheng" ] >                |
+|               |   HCONS: < h1446 qeq h1433 h1437 qeq h1435 h1455 qeq h1430 h1464 qeq h1427 >     |
+|               |   SLOTS: < ARG2: u1461 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h15800                                                                    |
-|               |   INDEX: e15791 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h15785 ARG0: e15782 ARG1: e15791 ARG2: x15760 ]      |
-|               |           [ def_udef_a_q LBL: h15789 ARG0: x15760 RSTR: h15787 BODY: h15788 ]    |
-|               |           [ of_p LBL: h15762 ARG0: e15773 ARG1: x15760 ARG2: x15763 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ def_implicit_q LBL: h15780 ARG0: x15763 RSTR: h15778 BODY: h15779 ]  |
-|               |           [ mofy LBL: h15765 ARG0: x15763 ARG1: i15764 CARG: "Oct" ]             |
-|               |           [ dofm LBL: h15762 ARG0: x15760 ARG1: x15766 CARG: "13th" ]            |
-|               |           [ proper_q LBL: h15771 ARG0: x15766 RSTR: h15769 BODY: h15770 ]        |
-|               |           [ yofc LBL: h15767 ARG0: x15766 CARG: "1964" ]                         |
-|               |           [ _born_a_of LBL: h15785 ARG0: e15791 ARG1: x15758 ARG2: u15793 ]      |
-|               |           [ explicit_or_proper_q LBL: h15798 ARG0: x15758 RSTR: h15796 BODY:     |
-|               | h15797 ]                                                                         |
-|               |           [ named LBL: h15759 ARG0: x15758 CARG: "Nie Haisheng" ] >              |
-|               |   HCONS: < h15778 qeq h15765 h15769 qeq h15767 h15787 qeq h15762 h15796 qeq      |
-|               | h15759 h15800 qeq h15785 >                                                       |
-|               |   SLOTS: < ARG2: u15793 > ]                                                      |
+| Prepped       | [ TOP: h1468                                                                     |
+|               |   INDEX: e1459 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _on_p_temp LBL: h1453 ARG0: e1450 ARG1: e1459 ARG2: x1428 ]          |
+|               |           [ def_udef_a_q LBL: h1457 ARG0: x1428 RSTR: h1455 BODY: h1456 ]        |
+|               |           [ of_p LBL: h1430 ARG0: e1441 ARG1: x1428 ARG2: x1431 [ x NUM: sg ] ]  |
+|               |           [ def_implicit_q LBL: h1448 ARG0: x1431 RSTR: h1446 BODY: h1447 ]      |
+|               |           [ mofy LBL: h1433 ARG0: x1431 ARG1: i1432 CARG: "Oct" ]                |
+|               |           [ dofm LBL: h1430 ARG0: x1428 ARG1: x1434 CARG: "13th" ]               |
+|               |           [ proper_q LBL: h1439 ARG0: x1434 RSTR: h1437 BODY: h1438 ]            |
+|               |           [ yofc LBL: h1435 ARG0: x1434 CARG: "1964" ]                           |
+|               |           [ _born_a_of LBL: h1453 ARG0: e1459 ARG1: x1426 ARG2: u1461 ]          |
+|               |           [ explicit_or_proper_q LBL: h1466 ARG0: x1426 RSTR: h1464 BODY: h1465  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1427 ARG0: x1426 CARG: "Nie Haisheng" ] >                |
+|               |   HCONS: < h1446 qeq h1433 h1437 qeq h1435 h1455 qeq h1430 h1464 qeq h1427 h1468 |
+|               | qeq h1453 >                                                                      |
+|               |   SLOTS: < ARG2: u1461 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------+
@@ -123,22 +118,21 @@ GRAPH NAME: WebNLG_test_2triples_Astronaut_Id1050_241_483
 +--------------+----------------------------------------------------------------------------------+
 | Node         | Generated SEMENT                                                                 |
 +--------------+----------------------------------------------------------------------------------+
-| Nie_Haisheng | [ TOP: h15759                                                                    |
-|              |   INDEX: x15758                                                                  |
-|              |   RELS: < [ named LBL: h15759 ARG0: x15758 CARG: "Nie Haisheng" ] > ]            |
+| Nie_Haisheng | [ TOP: h1427                                                                     |
+|              |   INDEX: x1426                                                                   |
+|              |   RELS: < [ named LBL: h1427 ARG0: x1426 CARG: "Nie Haisheng" ] > ]              |
 +--------------+----------------------------------------------------------------------------------+
-| 1964-10-13   | [ TOP: h15762                                                                    |
-|              |   INDEX: x15760                                                                  |
-|              |   RELS: < [ of_p LBL: h15776 ARG0: e15773 ARG1: x15774 ARG2: x15775 ]            |
-|              |           [ def_implicit_q LBL: h15780 ARG0: x15777 RSTR: h15778 BODY: h15779 ]  |
-|              |           [ mofy LBL: h15765 ARG0: x15763 [ x NUM: sg ] ARG1: i15764 CARG: "Oct" |
-|              | ]                                                                                |
-|              |           [ dofm LBL: h15762 ARG0: x15760 ARG1: i15761 CARG: "13th" ]            |
-|              |           [ proper_q LBL: h15771 ARG0: x15768 RSTR: h15769 BODY: h15770 ]        |
-|              |           [ yofc LBL: h15767 ARG0: x15766 CARG: "1964" ] >                       |
-|              |   HCONS: < h15778 qeq h15765 h15769 qeq h15767 >                                 |
-|              |   EQS: < x15777 eq x15763 h15776 eq h15781 x15775 eq x15777 x15768 eq x15766     |
-|              | h15762 eq h15772 i15761 eq x15768 h15776 eq h15762 x15774 eq x15760 > ]          |
+| 1964-10-13   | [ TOP: h1430                                                                     |
+|              |   INDEX: x1428                                                                   |
+|              |   RELS: < [ of_p LBL: h1444 ARG0: e1441 ARG1: x1442 ARG2: x1443 ]                |
+|              |           [ def_implicit_q LBL: h1448 ARG0: x1445 RSTR: h1446 BODY: h1447 ]      |
+|              |           [ mofy LBL: h1433 ARG0: x1431 [ x NUM: sg ] ARG1: i1432 CARG: "Oct" ]  |
+|              |           [ dofm LBL: h1430 ARG0: x1428 ARG1: i1429 CARG: "13th" ]               |
+|              |           [ proper_q LBL: h1439 ARG0: x1436 RSTR: h1437 BODY: h1438 ]            |
+|              |           [ yofc LBL: h1435 ARG0: x1434 CARG: "1964" ] >                         |
+|              |   HCONS: < h1446 qeq h1433 h1437 qeq h1435 >                                     |
+|              |   EQS: < x1445 eq x1431 h1444 eq h1449 x1443 eq x1445 x1436 eq x1434 h1430 eq    |
+|              | h1440 i1429 eq x1436 h1444 eq h1430 x1442 eq x1428 > ]                           |
 +--------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -146,28 +140,26 @@ GRAPH NAME: WebNLG_test_2triples_Astronaut_Id1050_241_483
 +-----------+--------------+------------+----------------------------------------------------------------------------------+
 | Edge      | Parent       | Child      | Generated SEMENT                                                                 |
 +-----------+--------------+------------+----------------------------------------------------------------------------------+
-| birthDate | Nie_Haisheng | 1964-10-13 | [ TOP: h15794                                                                    |
-|           |              |            |   INDEX: e15791 [ e TENSE: tensed ]                                              |
-|           |              |            |   RELS: < [ _on_p_temp LBL: h15785 ARG0: e15782 ARG1: u15783 ARG2: i15784 ]      |
-|           |              |            |           [ def_udef_a_q LBL: h15789 ARG0: x15786 RSTR: h15787 BODY: h15788 ]    |
-|           |              |            |           [ of_p LBL: h15776 ARG0: e15773 ARG1: x15774 ARG2: x15775 ]            |
-|           |              |            |           [ def_implicit_q LBL: h15780 ARG0: x15777 RSTR: h15778 BODY: h15779 ]  |
-|           |              |            |           [ mofy LBL: h15765 ARG0: x15763 [ x NUM: sg ] ARG1: i15764 CARG: "Oct" |
+| birthDate | Nie_Haisheng | 1964-10-13 | [ TOP: h1462                                                                     |
+|           |              |            |   INDEX: e1459 [ e TENSE: tensed ]                                               |
+|           |              |            |   RELS: < [ _on_p_temp LBL: h1453 ARG0: e1450 ARG1: u1451 ARG2: i1452 ]          |
+|           |              |            |           [ def_udef_a_q LBL: h1457 ARG0: x1454 RSTR: h1455 BODY: h1456 ]        |
+|           |              |            |           [ of_p LBL: h1444 ARG0: e1441 ARG1: x1442 ARG2: x1443 ]                |
+|           |              |            |           [ def_implicit_q LBL: h1448 ARG0: x1445 RSTR: h1446 BODY: h1447 ]      |
+|           |              |            |           [ mofy LBL: h1433 ARG0: x1431 [ x NUM: sg ] ARG1: i1432 CARG: "Oct" ]  |
+|           |              |            |           [ dofm LBL: h1430 ARG0: x1428 ARG1: i1429 CARG: "13th" ]               |
+|           |              |            |           [ proper_q LBL: h1439 ARG0: x1436 RSTR: h1437 BODY: h1438 ]            |
+|           |              |            |           [ yofc LBL: h1435 ARG0: x1434 CARG: "1964" ]                           |
+|           |              |            |           [ _born_a_of LBL: h1462 ARG0: e1459 ARG1: u1460 ARG2: u1461 ]          |
+|           |              |            |           [ explicit_or_proper_q LBL: h1466 ARG0: x1463 RSTR: h1464 BODY: h1465  |
 |           |              |            | ]                                                                                |
-|           |              |            |           [ dofm LBL: h15762 ARG0: x15760 ARG1: i15761 CARG: "13th" ]            |
-|           |              |            |           [ proper_q LBL: h15771 ARG0: x15768 RSTR: h15769 BODY: h15770 ]        |
-|           |              |            |           [ yofc LBL: h15767 ARG0: x15766 CARG: "1964" ]                         |
-|           |              |            |           [ _born_a_of LBL: h15794 ARG0: e15791 ARG1: u15792 ARG2: u15793 ]      |
-|           |              |            |           [ explicit_or_proper_q LBL: h15798 ARG0: x15795 RSTR: h15796 BODY:     |
-|           |              |            | h15797 ]                                                                         |
-|           |              |            |           [ named LBL: h15759 ARG0: x15758 CARG: "Nie Haisheng" ] >              |
-|           |              |            |   HCONS: < h15778 qeq h15765 h15769 qeq h15767 h15787 qeq h15762 h15796 qeq      |
-|           |              |            | h15759 >                                                                         |
-|           |              |            |   EQS: < x15777 eq x15763 h15776 eq h15781 x15775 eq x15777 x15768 eq x15766     |
-|           |              |            | h15762 eq h15772 i15761 eq x15768 h15776 eq h15762 x15774 eq x15760 x15786 eq    |
-|           |              |            | x15760 h15785 eq h15790 i15784 eq x15786 x15795 eq x15758 h15794 eq h15799       |
-|           |              |            | u15792 eq x15795 h15785 eq h15794 u15783 eq e15791 >                             |
-|           |              |            |   SLOTS: < ARG2: u15793 > ]                                                      |
+|           |              |            |           [ named LBL: h1427 ARG0: x1426 CARG: "Nie Haisheng" ] >                |
+|           |              |            |   HCONS: < h1446 qeq h1433 h1437 qeq h1435 h1455 qeq h1430 h1464 qeq h1427 >     |
+|           |              |            |   EQS: < x1445 eq x1431 h1444 eq h1449 x1443 eq x1445 x1436 eq x1434 h1430 eq    |
+|           |              |            | h1440 i1429 eq x1436 h1444 eq h1430 x1442 eq x1428 x1454 eq x1428 h1453 eq h1458 |
+|           |              |            | i1452 eq x1454 x1463 eq x1426 h1462 eq h1467 u1460 eq x1463 h1453 eq h1462 u1451 |
+|           |              |            | eq e1459 >                                                                       |
+|           |              |            |   SLOTS: < ARG2: u1461 > ]                                                       |
 +-----------+--------------+------------+----------------------------------------------------------------------------------+
 
 +------------------------------------------------------------+

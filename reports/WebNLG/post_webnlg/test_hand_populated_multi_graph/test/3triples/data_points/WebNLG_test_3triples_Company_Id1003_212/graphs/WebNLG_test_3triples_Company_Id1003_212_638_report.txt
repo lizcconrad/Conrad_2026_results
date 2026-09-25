@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Company_Id1003_212_638
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-----------------------------------------------------------------------------------------------------------------+
-|                                                   GOLD OUTPUTS                                                  |
-+----------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                        | Generated? |
-+----------------------------------------------------------------------------------------------------+------------+
-| Hypermarcas, a pharmaceutical drug producer located in Brazil, was founded January 1, 2001.        | False      |
-| Hypermarcas, which is located in Brazil, was founded on 2001-01-01 and makes drugs.                | False      |
-| Hypermarcas, whose main product is drugs, was founded on January 1, 2001 and is located in Brazil. | False      |
-+----------------------------------------------------------------------------------------------------+------------+
++-------------------------------------------------------------------------------------------------------------------------+
+|                                                       GOLD OUTPUTS                                                      |
++------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                | Generated? |
++------------------------------------------------------------------------------------------------------------+------------+
+| Hypermarcas is a CEO led pharmaceutical company founded on January 1, 2001.                                | False      |
+| Hypermarcas, a company in the pharmaceuticals industry, founded on January 1, 2001, is managed by the CEO. | False      |
+| Hypermarcas, founded on 2001-01-01, is in the pharmaceutical industry; its key person is their CEO.        | False      |
++------------------------------------------------------------------------------------------------------------+------------+
 
 +-----------------------------------------------------------------------------------+
 |                                    NODE METRICS                                   |
@@ -56,66 +56,61 @@ GRAPH NAME: WebNLG_test_3triples_Company_Id1003_212_638
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h21531                                                                    |
-|               |   INDEX: e21528 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h21522 ARG0: e21519 ARG1: u21520 ARG2: i21521 ]      |
-|               |           [ def_udef_a_q LBL: h21526 ARG0: x21523 RSTR: h21524 BODY: h21525 ]    |
-|               |           [ of_p LBL: h21513 ARG0: e21510 ARG1: x21511 ARG2: x21512 ]            |
-|               |           [ def_implicit_q LBL: h21517 ARG0: x21514 RSTR: h21515 BODY: h21516 ]  |
-|               |           [ mofy LBL: h21502 ARG0: x21500 [ x NUM: sg ] ARG1: i21501 CARG: "Jan" |
+| Original      | [ TOP: h6131                                                                     |
+|               |   INDEX: e6128 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _on_p_temp LBL: h6122 ARG0: e6119 ARG1: u6120 ARG2: i6121 ]          |
+|               |           [ def_udef_a_q LBL: h6126 ARG0: x6123 RSTR: h6124 BODY: h6125 ]        |
+|               |           [ of_p LBL: h6113 ARG0: e6110 ARG1: x6111 ARG2: x6112 ]                |
+|               |           [ def_implicit_q LBL: h6117 ARG0: x6114 RSTR: h6115 BODY: h6116 ]      |
+|               |           [ mofy LBL: h6102 ARG0: x6100 [ x NUM: sg ] ARG1: i6101 CARG: "Jan" ]  |
+|               |           [ dofm LBL: h6099 ARG0: x6097 ARG1: i6098 CARG: "1st" ]                |
+|               |           [ proper_q LBL: h6108 ARG0: x6105 RSTR: h6106 BODY: h6107 ]            |
+|               |           [ yofc LBL: h6104 ARG0: x6103 CARG: "2001" ]                           |
+|               |           [ _found_v_1 LBL: h6131 ARG0: e6128 ARG1: i6129 ARG2: i6130 ]          |
+|               |           [ explicit_or_proper_q LBL: h6135 ARG0: x6132 RSTR: h6133 BODY: h6134  |
 |               | ]                                                                                |
-|               |           [ dofm LBL: h21499 ARG0: x21497 ARG1: i21498 CARG: "1st" ]             |
-|               |           [ proper_q LBL: h21508 ARG0: x21505 RSTR: h21506 BODY: h21507 ]        |
-|               |           [ yofc LBL: h21504 ARG0: x21503 CARG: "2001" ]                         |
-|               |           [ _found_v_1 LBL: h21531 ARG0: e21528 ARG1: i21529 ARG2: i21530 ]      |
-|               |           [ explicit_or_proper_q LBL: h21535 ARG0: x21532 RSTR: h21533 BODY:     |
-|               | h21534 ]                                                                         |
-|               |           [ named LBL: h21496 ARG0: x21495 CARG: "Hypermarcas" ] >               |
-|               |   HCONS: < h21515 qeq h21502 h21506 qeq h21504 h21524 qeq h21499 h21533 qeq      |
-|               | h21496 >                                                                         |
-|               |   EQS: < x21514 eq x21500 h21513 eq h21518 x21512 eq x21514 x21505 eq x21503     |
-|               | h21499 eq h21509 i21498 eq x21505 h21513 eq h21499 x21511 eq x21497 x21523 eq    |
-|               | x21497 h21522 eq h21527 i21521 eq x21523 x21532 eq x21495 h21531 eq h21536       |
-|               | i21530 eq x21532 h21522 eq h21531 u21520 eq e21528 >                             |
-|               |   SLOTS: < ARG1: i21529 > ]                                                      |
+|               |           [ named LBL: h6096 ARG0: x6095 CARG: "Hypermarcas" ] >                 |
+|               |   HCONS: < h6115 qeq h6102 h6106 qeq h6104 h6124 qeq h6099 h6133 qeq h6096 >     |
+|               |   EQS: < x6114 eq x6100 h6113 eq h6118 x6112 eq x6114 x6105 eq x6103 h6099 eq    |
+|               | h6109 i6098 eq x6105 h6113 eq h6099 x6111 eq x6097 x6123 eq x6097 h6122 eq h6127 |
+|               | i6121 eq x6123 x6132 eq x6095 h6131 eq h6136 i6130 eq x6132 h6122 eq h6131 u6120 |
+|               | eq e6128 >                                                                       |
+|               |   SLOTS: < ARG1: i6129 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h21522                                                                    |
-|               |   INDEX: e21528 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h21522 ARG0: e21519 ARG1: e21528 ARG2: x21497 ]      |
-|               |           [ def_udef_a_q LBL: h21526 ARG0: x21497 RSTR: h21524 BODY: h21525 ]    |
-|               |           [ of_p LBL: h21499 ARG0: e21510 ARG1: x21497 ARG2: x21500 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ def_implicit_q LBL: h21517 ARG0: x21500 RSTR: h21515 BODY: h21516 ]  |
-|               |           [ mofy LBL: h21502 ARG0: x21500 ARG1: i21501 CARG: "Jan" ]             |
-|               |           [ dofm LBL: h21499 ARG0: x21497 ARG1: x21503 CARG: "1st" ]             |
-|               |           [ proper_q LBL: h21508 ARG0: x21503 RSTR: h21506 BODY: h21507 ]        |
-|               |           [ yofc LBL: h21504 ARG0: x21503 CARG: "2001" ]                         |
-|               |           [ _found_v_1 LBL: h21522 ARG0: e21528 ARG1: i21529 ARG2: x21495 ]      |
-|               |           [ explicit_or_proper_q LBL: h21535 ARG0: x21495 RSTR: h21533 BODY:     |
-|               | h21534 ]                                                                         |
-|               |           [ named LBL: h21496 ARG0: x21495 CARG: "Hypermarcas" ] >               |
-|               |   HCONS: < h21515 qeq h21502 h21506 qeq h21504 h21524 qeq h21499 h21533 qeq      |
-|               | h21496 >                                                                         |
-|               |   SLOTS: < ARG1: i21529 > ]                                                      |
+| EQs Collapsed | [ TOP: h6122                                                                     |
+|               |   INDEX: e6128 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _on_p_temp LBL: h6122 ARG0: e6119 ARG1: e6128 ARG2: x6097 ]          |
+|               |           [ def_udef_a_q LBL: h6126 ARG0: x6097 RSTR: h6124 BODY: h6125 ]        |
+|               |           [ of_p LBL: h6099 ARG0: e6110 ARG1: x6097 ARG2: x6100 [ x NUM: sg ] ]  |
+|               |           [ def_implicit_q LBL: h6117 ARG0: x6100 RSTR: h6115 BODY: h6116 ]      |
+|               |           [ mofy LBL: h6102 ARG0: x6100 ARG1: i6101 CARG: "Jan" ]                |
+|               |           [ dofm LBL: h6099 ARG0: x6097 ARG1: x6103 CARG: "1st" ]                |
+|               |           [ proper_q LBL: h6108 ARG0: x6103 RSTR: h6106 BODY: h6107 ]            |
+|               |           [ yofc LBL: h6104 ARG0: x6103 CARG: "2001" ]                           |
+|               |           [ _found_v_1 LBL: h6122 ARG0: e6128 ARG1: i6129 ARG2: x6095 ]          |
+|               |           [ explicit_or_proper_q LBL: h6135 ARG0: x6095 RSTR: h6133 BODY: h6134  |
+|               | ]                                                                                |
+|               |           [ named LBL: h6096 ARG0: x6095 CARG: "Hypermarcas" ] >                 |
+|               |   HCONS: < h6115 qeq h6102 h6106 qeq h6104 h6124 qeq h6099 h6133 qeq h6096 >     |
+|               |   SLOTS: < ARG1: i6129 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h21537                                                                    |
-|               |   INDEX: e21528 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h21522 ARG0: e21519 ARG1: e21528 ARG2: x21497 ]      |
-|               |           [ def_udef_a_q LBL: h21526 ARG0: x21497 RSTR: h21524 BODY: h21525 ]    |
-|               |           [ of_p LBL: h21499 ARG0: e21510 ARG1: x21497 ARG2: x21500 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ def_implicit_q LBL: h21517 ARG0: x21500 RSTR: h21515 BODY: h21516 ]  |
-|               |           [ mofy LBL: h21502 ARG0: x21500 ARG1: i21501 CARG: "Jan" ]             |
-|               |           [ dofm LBL: h21499 ARG0: x21497 ARG1: x21503 CARG: "1st" ]             |
-|               |           [ proper_q LBL: h21508 ARG0: x21503 RSTR: h21506 BODY: h21507 ]        |
-|               |           [ yofc LBL: h21504 ARG0: x21503 CARG: "2001" ]                         |
-|               |           [ _found_v_1 LBL: h21522 ARG0: e21528 ARG1: i21529 ARG2: x21495 ]      |
-|               |           [ explicit_or_proper_q LBL: h21535 ARG0: x21495 RSTR: h21533 BODY:     |
-|               | h21534 ]                                                                         |
-|               |           [ named LBL: h21496 ARG0: x21495 CARG: "Hypermarcas" ] >               |
-|               |   HCONS: < h21515 qeq h21502 h21506 qeq h21504 h21524 qeq h21499 h21533 qeq      |
-|               | h21496 h21537 qeq h21522 >                                                       |
-|               |   SLOTS: < ARG1: i21529 > ]                                                      |
+| Prepped       | [ TOP: h6137                                                                     |
+|               |   INDEX: e6128 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _on_p_temp LBL: h6122 ARG0: e6119 ARG1: e6128 ARG2: x6097 ]          |
+|               |           [ def_udef_a_q LBL: h6126 ARG0: x6097 RSTR: h6124 BODY: h6125 ]        |
+|               |           [ of_p LBL: h6099 ARG0: e6110 ARG1: x6097 ARG2: x6100 [ x NUM: sg ] ]  |
+|               |           [ def_implicit_q LBL: h6117 ARG0: x6100 RSTR: h6115 BODY: h6116 ]      |
+|               |           [ mofy LBL: h6102 ARG0: x6100 ARG1: i6101 CARG: "Jan" ]                |
+|               |           [ dofm LBL: h6099 ARG0: x6097 ARG1: x6103 CARG: "1st" ]                |
+|               |           [ proper_q LBL: h6108 ARG0: x6103 RSTR: h6106 BODY: h6107 ]            |
+|               |           [ yofc LBL: h6104 ARG0: x6103 CARG: "2001" ]                           |
+|               |           [ _found_v_1 LBL: h6122 ARG0: e6128 ARG1: i6129 ARG2: x6095 ]          |
+|               |           [ explicit_or_proper_q LBL: h6135 ARG0: x6095 RSTR: h6133 BODY: h6134  |
+|               | ]                                                                                |
+|               |           [ named LBL: h6096 ARG0: x6095 CARG: "Hypermarcas" ] >                 |
+|               |   HCONS: < h6115 qeq h6102 h6106 qeq h6104 h6124 qeq h6099 h6133 qeq h6096 h6137 |
+|               | qeq h6122 >                                                                      |
+|               |   SLOTS: < ARG1: i6129 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------+
@@ -123,22 +118,21 @@ GRAPH NAME: WebNLG_test_3triples_Company_Id1003_212_638
 +-------------+----------------------------------------------------------------------------------+
 | Node        | Generated SEMENT                                                                 |
 +-------------+----------------------------------------------------------------------------------+
-| Hypermarcas | [ TOP: h21496                                                                    |
-|             |   INDEX: x21495                                                                  |
-|             |   RELS: < [ named LBL: h21496 ARG0: x21495 CARG: "Hypermarcas" ] > ]             |
+| Hypermarcas | [ TOP: h6096                                                                     |
+|             |   INDEX: x6095                                                                   |
+|             |   RELS: < [ named LBL: h6096 ARG0: x6095 CARG: "Hypermarcas" ] > ]               |
 +-------------+----------------------------------------------------------------------------------+
-| 2001-01-01  | [ TOP: h21499                                                                    |
-|             |   INDEX: x21497                                                                  |
-|             |   RELS: < [ of_p LBL: h21513 ARG0: e21510 ARG1: x21511 ARG2: x21512 ]            |
-|             |           [ def_implicit_q LBL: h21517 ARG0: x21514 RSTR: h21515 BODY: h21516 ]  |
-|             |           [ mofy LBL: h21502 ARG0: x21500 [ x NUM: sg ] ARG1: i21501 CARG: "Jan" |
-|             | ]                                                                                |
-|             |           [ dofm LBL: h21499 ARG0: x21497 ARG1: i21498 CARG: "1st" ]             |
-|             |           [ proper_q LBL: h21508 ARG0: x21505 RSTR: h21506 BODY: h21507 ]        |
-|             |           [ yofc LBL: h21504 ARG0: x21503 CARG: "2001" ] >                       |
-|             |   HCONS: < h21515 qeq h21502 h21506 qeq h21504 >                                 |
-|             |   EQS: < x21514 eq x21500 h21513 eq h21518 x21512 eq x21514 x21505 eq x21503     |
-|             | h21499 eq h21509 i21498 eq x21505 h21513 eq h21499 x21511 eq x21497 > ]          |
+| 2001-01-01  | [ TOP: h6099                                                                     |
+|             |   INDEX: x6097                                                                   |
+|             |   RELS: < [ of_p LBL: h6113 ARG0: e6110 ARG1: x6111 ARG2: x6112 ]                |
+|             |           [ def_implicit_q LBL: h6117 ARG0: x6114 RSTR: h6115 BODY: h6116 ]      |
+|             |           [ mofy LBL: h6102 ARG0: x6100 [ x NUM: sg ] ARG1: i6101 CARG: "Jan" ]  |
+|             |           [ dofm LBL: h6099 ARG0: x6097 ARG1: i6098 CARG: "1st" ]                |
+|             |           [ proper_q LBL: h6108 ARG0: x6105 RSTR: h6106 BODY: h6107 ]            |
+|             |           [ yofc LBL: h6104 ARG0: x6103 CARG: "2001" ] >                         |
+|             |   HCONS: < h6115 qeq h6102 h6106 qeq h6104 >                                     |
+|             |   EQS: < x6114 eq x6100 h6113 eq h6118 x6112 eq x6114 x6105 eq x6103 h6099 eq    |
+|             | h6109 i6098 eq x6105 h6113 eq h6099 x6111 eq x6097 > ]                           |
 +-------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------+
@@ -146,28 +140,26 @@ GRAPH NAME: WebNLG_test_3triples_Company_Id1003_212_638
 +--------------+-------------+------------+----------------------------------------------------------------------------------+
 | Edge         | Parent      | Child      | Generated SEMENT                                                                 |
 +--------------+-------------+------------+----------------------------------------------------------------------------------+
-| foundingDate | Hypermarcas | 2001-01-01 | [ TOP: h21531                                                                    |
-|              |             |            |   INDEX: e21528 [ e TENSE: tensed ]                                              |
-|              |             |            |   RELS: < [ _on_p_temp LBL: h21522 ARG0: e21519 ARG1: u21520 ARG2: i21521 ]      |
-|              |             |            |           [ def_udef_a_q LBL: h21526 ARG0: x21523 RSTR: h21524 BODY: h21525 ]    |
-|              |             |            |           [ of_p LBL: h21513 ARG0: e21510 ARG1: x21511 ARG2: x21512 ]            |
-|              |             |            |           [ def_implicit_q LBL: h21517 ARG0: x21514 RSTR: h21515 BODY: h21516 ]  |
-|              |             |            |           [ mofy LBL: h21502 ARG0: x21500 [ x NUM: sg ] ARG1: i21501 CARG: "Jan" |
+| foundingDate | Hypermarcas | 2001-01-01 | [ TOP: h6131                                                                     |
+|              |             |            |   INDEX: e6128 [ e TENSE: tensed ]                                               |
+|              |             |            |   RELS: < [ _on_p_temp LBL: h6122 ARG0: e6119 ARG1: u6120 ARG2: i6121 ]          |
+|              |             |            |           [ def_udef_a_q LBL: h6126 ARG0: x6123 RSTR: h6124 BODY: h6125 ]        |
+|              |             |            |           [ of_p LBL: h6113 ARG0: e6110 ARG1: x6111 ARG2: x6112 ]                |
+|              |             |            |           [ def_implicit_q LBL: h6117 ARG0: x6114 RSTR: h6115 BODY: h6116 ]      |
+|              |             |            |           [ mofy LBL: h6102 ARG0: x6100 [ x NUM: sg ] ARG1: i6101 CARG: "Jan" ]  |
+|              |             |            |           [ dofm LBL: h6099 ARG0: x6097 ARG1: i6098 CARG: "1st" ]                |
+|              |             |            |           [ proper_q LBL: h6108 ARG0: x6105 RSTR: h6106 BODY: h6107 ]            |
+|              |             |            |           [ yofc LBL: h6104 ARG0: x6103 CARG: "2001" ]                           |
+|              |             |            |           [ _found_v_1 LBL: h6131 ARG0: e6128 ARG1: i6129 ARG2: i6130 ]          |
+|              |             |            |           [ explicit_or_proper_q LBL: h6135 ARG0: x6132 RSTR: h6133 BODY: h6134  |
 |              |             |            | ]                                                                                |
-|              |             |            |           [ dofm LBL: h21499 ARG0: x21497 ARG1: i21498 CARG: "1st" ]             |
-|              |             |            |           [ proper_q LBL: h21508 ARG0: x21505 RSTR: h21506 BODY: h21507 ]        |
-|              |             |            |           [ yofc LBL: h21504 ARG0: x21503 CARG: "2001" ]                         |
-|              |             |            |           [ _found_v_1 LBL: h21531 ARG0: e21528 ARG1: i21529 ARG2: i21530 ]      |
-|              |             |            |           [ explicit_or_proper_q LBL: h21535 ARG0: x21532 RSTR: h21533 BODY:     |
-|              |             |            | h21534 ]                                                                         |
-|              |             |            |           [ named LBL: h21496 ARG0: x21495 CARG: "Hypermarcas" ] >               |
-|              |             |            |   HCONS: < h21515 qeq h21502 h21506 qeq h21504 h21524 qeq h21499 h21533 qeq      |
-|              |             |            | h21496 >                                                                         |
-|              |             |            |   EQS: < x21514 eq x21500 h21513 eq h21518 x21512 eq x21514 x21505 eq x21503     |
-|              |             |            | h21499 eq h21509 i21498 eq x21505 h21513 eq h21499 x21511 eq x21497 x21523 eq    |
-|              |             |            | x21497 h21522 eq h21527 i21521 eq x21523 x21532 eq x21495 h21531 eq h21536       |
-|              |             |            | i21530 eq x21532 h21522 eq h21531 u21520 eq e21528 >                             |
-|              |             |            |   SLOTS: < ARG1: i21529 > ]                                                      |
+|              |             |            |           [ named LBL: h6096 ARG0: x6095 CARG: "Hypermarcas" ] >                 |
+|              |             |            |   HCONS: < h6115 qeq h6102 h6106 qeq h6104 h6124 qeq h6099 h6133 qeq h6096 >     |
+|              |             |            |   EQS: < x6114 eq x6100 h6113 eq h6118 x6112 eq x6114 x6105 eq x6103 h6099 eq    |
+|              |             |            | h6109 i6098 eq x6105 h6113 eq h6099 x6111 eq x6097 x6123 eq x6097 h6122 eq h6127 |
+|              |             |            | i6121 eq x6123 x6132 eq x6095 h6131 eq h6136 i6130 eq x6132 h6122 eq h6131 u6120 |
+|              |             |            | eq e6128 >                                                                       |
+|              |             |            |   SLOTS: < ARG1: i6129 > ]                                                       |
 +--------------+-------------+------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------+

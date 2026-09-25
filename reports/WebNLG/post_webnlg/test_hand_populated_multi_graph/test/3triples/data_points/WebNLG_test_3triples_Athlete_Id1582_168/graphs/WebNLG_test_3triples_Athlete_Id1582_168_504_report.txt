@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Athlete_Id1582_168_504
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                  GOLD OUTPUTS                                                                 |
-+----------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                      | Generated? |
-+----------------------------------------------------------------------------------------------------------------------------------+------------+
-| Aleksandr Prudnikov (born February 24th, 1989) played at the Otkrytiye Arena for FC Spartak Moscow.                              | False      |
-| Aleksandr Prudnikov was born 1980-02-24 and he plays for FC Spartak Moscow whose home ground is Otkrytiye Arena.                 | False      |
-| Aleksandr Prudnikov, who was born on the 24th of February 1989, plays for FC Spartak Moscow whose ground is the Otkrytiye Arena. | False      |
-+----------------------------------------------------------------------------------------------------------------------------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                        GOLD OUTPUTS                                                                       |
++----------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                  | Generated? |
++----------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Aleksandr Prudnikov was born on 1989-02-24 and played for FC Spartak Moscow's youth team. Its team grounds are the Otkrytiye Arena.          | False      |
+| Aleksandr Prudnikov was born on February 24, 1989 and is a member of the youth side of FC Spartak Moscow which plays out of Otkrytiye Arena. | False      |
+| Aleksandr Prudnikov who was born on 24th February 1989, played youth football for FC Spartak Moscow who play at the Otkrytiye Arena.         | False      |
++----------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +-------------------------------------------------------------------------------------------+
 |                                        NODE METRICS                                       |
@@ -56,66 +56,57 @@ GRAPH NAME: WebNLG_test_3triples_Athlete_Id1582_168_504
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h16824                                                                    |
-|               |   INDEX: e16821 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h16815 ARG0: e16812 ARG1: u16813 ARG2: i16814 ]      |
-|               |           [ def_udef_a_q LBL: h16819 ARG0: x16816 RSTR: h16817 BODY: h16818 ]    |
-|               |           [ of_p LBL: h16806 ARG0: e16803 ARG1: x16804 ARG2: x16805 ]            |
-|               |           [ def_implicit_q LBL: h16810 ARG0: x16807 RSTR: h16808 BODY: h16809 ]  |
-|               |           [ mofy LBL: h16795 ARG0: x16793 [ x NUM: sg ] ARG1: i16794 CARG: "Feb" |
-|               | ]                                                                                |
-|               |           [ dofm LBL: h16792 ARG0: x16790 ARG1: i16791 CARG: "24th" ]            |
-|               |           [ proper_q LBL: h16801 ARG0: x16798 RSTR: h16799 BODY: h16800 ]        |
-|               |           [ yofc LBL: h16797 ARG0: x16796 CARG: "1989" ]                         |
-|               |           [ _born_a_of LBL: h16824 ARG0: e16821 ARG1: u16822 ARG2: u16823 ]      |
-|               |           [ explicit_or_proper_q LBL: h16828 ARG0: x16825 RSTR: h16826 BODY:     |
-|               | h16827 ]                                                                         |
-|               |           [ named LBL: h16789 ARG0: x16788 CARG: "Aleksandr Prudnikov" ] >       |
-|               |   HCONS: < h16808 qeq h16795 h16799 qeq h16797 h16817 qeq h16792 h16826 qeq      |
-|               | h16789 >                                                                         |
-|               |   EQS: < x16807 eq x16793 h16806 eq h16811 x16805 eq x16807 x16798 eq x16796     |
-|               | h16792 eq h16802 i16791 eq x16798 h16806 eq h16792 x16804 eq x16790 x16816 eq    |
-|               | x16790 h16815 eq h16820 i16814 eq x16816 x16825 eq x16788 h16824 eq h16829       |
-|               | u16822 eq x16825 h16815 eq h16824 u16813 eq e16821 >                             |
-|               |   SLOTS: < ARG2: u16823 > ]                                                      |
+| Original      | [ TOP: h537                                                                      |
+|               |   INDEX: e534 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _on_p_temp LBL: h528 ARG0: e525 ARG1: u526 ARG2: i527 ]              |
+|               |           [ def_udef_a_q LBL: h532 ARG0: x529 RSTR: h530 BODY: h531 ]            |
+|               |           [ of_p LBL: h519 ARG0: e516 ARG1: x517 ARG2: x518 ]                    |
+|               |           [ def_implicit_q LBL: h523 ARG0: x520 RSTR: h521 BODY: h522 ]          |
+|               |           [ mofy LBL: h508 ARG0: x506 [ x NUM: sg ] ARG1: i507 CARG: "Feb" ]     |
+|               |           [ dofm LBL: h505 ARG0: x503 ARG1: i504 CARG: "24th" ]                  |
+|               |           [ proper_q LBL: h514 ARG0: x511 RSTR: h512 BODY: h513 ]                |
+|               |           [ yofc LBL: h510 ARG0: x509 CARG: "1989" ]                             |
+|               |           [ _born_a_of LBL: h537 ARG0: e534 ARG1: u535 ARG2: u536 ]              |
+|               |           [ explicit_or_proper_q LBL: h541 ARG0: x538 RSTR: h539 BODY: h540 ]    |
+|               |           [ named LBL: h502 ARG0: x501 CARG: "Aleksandr Prudnikov" ] >           |
+|               |   HCONS: < h521 qeq h508 h512 qeq h510 h530 qeq h505 h539 qeq h502 >             |
+|               |   EQS: < x520 eq x506 h519 eq h524 x518 eq x520 x511 eq x509 h505 eq h515 i504   |
+|               | eq x511 h519 eq h505 x517 eq x503 x529 eq x503 h528 eq h533 i527 eq x529 x538 eq |
+|               | x501 h537 eq h542 u535 eq x538 h528 eq h537 u526 eq e534 >                       |
+|               |   SLOTS: < ARG2: u536 > ]                                                        |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h16815                                                                    |
-|               |   INDEX: e16821 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h16815 ARG0: e16812 ARG1: e16821 ARG2: x16790 ]      |
-|               |           [ def_udef_a_q LBL: h16819 ARG0: x16790 RSTR: h16817 BODY: h16818 ]    |
-|               |           [ of_p LBL: h16792 ARG0: e16803 ARG1: x16790 ARG2: x16793 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ def_implicit_q LBL: h16810 ARG0: x16793 RSTR: h16808 BODY: h16809 ]  |
-|               |           [ mofy LBL: h16795 ARG0: x16793 ARG1: i16794 CARG: "Feb" ]             |
-|               |           [ dofm LBL: h16792 ARG0: x16790 ARG1: x16796 CARG: "24th" ]            |
-|               |           [ proper_q LBL: h16801 ARG0: x16796 RSTR: h16799 BODY: h16800 ]        |
-|               |           [ yofc LBL: h16797 ARG0: x16796 CARG: "1989" ]                         |
-|               |           [ _born_a_of LBL: h16815 ARG0: e16821 ARG1: x16788 ARG2: u16823 ]      |
-|               |           [ explicit_or_proper_q LBL: h16828 ARG0: x16788 RSTR: h16826 BODY:     |
-|               | h16827 ]                                                                         |
-|               |           [ named LBL: h16789 ARG0: x16788 CARG: "Aleksandr Prudnikov" ] >       |
-|               |   HCONS: < h16808 qeq h16795 h16799 qeq h16797 h16817 qeq h16792 h16826 qeq      |
-|               | h16789 >                                                                         |
-|               |   SLOTS: < ARG2: u16823 > ]                                                      |
+| EQs Collapsed | [ TOP: h528                                                                      |
+|               |   INDEX: e534 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _on_p_temp LBL: h528 ARG0: e525 ARG1: e534 ARG2: x503 ]              |
+|               |           [ def_udef_a_q LBL: h532 ARG0: x503 RSTR: h530 BODY: h531 ]            |
+|               |           [ of_p LBL: h505 ARG0: e516 ARG1: x503 ARG2: x506 [ x NUM: sg ] ]      |
+|               |           [ def_implicit_q LBL: h523 ARG0: x506 RSTR: h521 BODY: h522 ]          |
+|               |           [ mofy LBL: h508 ARG0: x506 ARG1: i507 CARG: "Feb" ]                   |
+|               |           [ dofm LBL: h505 ARG0: x503 ARG1: x509 CARG: "24th" ]                  |
+|               |           [ proper_q LBL: h514 ARG0: x509 RSTR: h512 BODY: h513 ]                |
+|               |           [ yofc LBL: h510 ARG0: x509 CARG: "1989" ]                             |
+|               |           [ _born_a_of LBL: h528 ARG0: e534 ARG1: x501 ARG2: u536 ]              |
+|               |           [ explicit_or_proper_q LBL: h541 ARG0: x501 RSTR: h539 BODY: h540 ]    |
+|               |           [ named LBL: h502 ARG0: x501 CARG: "Aleksandr Prudnikov" ] >           |
+|               |   HCONS: < h521 qeq h508 h512 qeq h510 h530 qeq h505 h539 qeq h502 >             |
+|               |   SLOTS: < ARG2: u536 > ]                                                        |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h16830                                                                    |
-|               |   INDEX: e16821 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h16815 ARG0: e16812 ARG1: e16821 ARG2: x16790 ]      |
-|               |           [ def_udef_a_q LBL: h16819 ARG0: x16790 RSTR: h16817 BODY: h16818 ]    |
-|               |           [ of_p LBL: h16792 ARG0: e16803 ARG1: x16790 ARG2: x16793 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ def_implicit_q LBL: h16810 ARG0: x16793 RSTR: h16808 BODY: h16809 ]  |
-|               |           [ mofy LBL: h16795 ARG0: x16793 ARG1: i16794 CARG: "Feb" ]             |
-|               |           [ dofm LBL: h16792 ARG0: x16790 ARG1: x16796 CARG: "24th" ]            |
-|               |           [ proper_q LBL: h16801 ARG0: x16796 RSTR: h16799 BODY: h16800 ]        |
-|               |           [ yofc LBL: h16797 ARG0: x16796 CARG: "1989" ]                         |
-|               |           [ _born_a_of LBL: h16815 ARG0: e16821 ARG1: x16788 ARG2: u16823 ]      |
-|               |           [ explicit_or_proper_q LBL: h16828 ARG0: x16788 RSTR: h16826 BODY:     |
-|               | h16827 ]                                                                         |
-|               |           [ named LBL: h16789 ARG0: x16788 CARG: "Aleksandr Prudnikov" ] >       |
-|               |   HCONS: < h16808 qeq h16795 h16799 qeq h16797 h16817 qeq h16792 h16826 qeq      |
-|               | h16789 h16830 qeq h16815 >                                                       |
-|               |   SLOTS: < ARG2: u16823 > ]                                                      |
+| Prepped       | [ TOP: h543                                                                      |
+|               |   INDEX: e534 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _on_p_temp LBL: h528 ARG0: e525 ARG1: e534 ARG2: x503 ]              |
+|               |           [ def_udef_a_q LBL: h532 ARG0: x503 RSTR: h530 BODY: h531 ]            |
+|               |           [ of_p LBL: h505 ARG0: e516 ARG1: x503 ARG2: x506 [ x NUM: sg ] ]      |
+|               |           [ def_implicit_q LBL: h523 ARG0: x506 RSTR: h521 BODY: h522 ]          |
+|               |           [ mofy LBL: h508 ARG0: x506 ARG1: i507 CARG: "Feb" ]                   |
+|               |           [ dofm LBL: h505 ARG0: x503 ARG1: x509 CARG: "24th" ]                  |
+|               |           [ proper_q LBL: h514 ARG0: x509 RSTR: h512 BODY: h513 ]                |
+|               |           [ yofc LBL: h510 ARG0: x509 CARG: "1989" ]                             |
+|               |           [ _born_a_of LBL: h528 ARG0: e534 ARG1: x501 ARG2: u536 ]              |
+|               |           [ explicit_or_proper_q LBL: h541 ARG0: x501 RSTR: h539 BODY: h540 ]    |
+|               |           [ named LBL: h502 ARG0: x501 CARG: "Aleksandr Prudnikov" ] >           |
+|               |   HCONS: < h521 qeq h508 h512 qeq h510 h530 qeq h505 h539 qeq h502 h543 qeq h528 |
+|               | >                                                                                |
+|               |   SLOTS: < ARG2: u536 > ]                                                        |
 +---------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------------------------+
@@ -123,22 +114,21 @@ GRAPH NAME: WebNLG_test_3triples_Athlete_Id1582_168_504
 +---------------------+----------------------------------------------------------------------------------+
 | Node                | Generated SEMENT                                                                 |
 +---------------------+----------------------------------------------------------------------------------+
-| Aleksandr_Prudnikov | [ TOP: h16789                                                                    |
-|                     |   INDEX: x16788                                                                  |
-|                     |   RELS: < [ named LBL: h16789 ARG0: x16788 CARG: "Aleksandr Prudnikov" ] > ]     |
+| Aleksandr_Prudnikov | [ TOP: h502                                                                      |
+|                     |   INDEX: x501                                                                    |
+|                     |   RELS: < [ named LBL: h502 ARG0: x501 CARG: "Aleksandr Prudnikov" ] > ]         |
 +---------------------+----------------------------------------------------------------------------------+
-| 1989-02-24          | [ TOP: h16792                                                                    |
-|                     |   INDEX: x16790                                                                  |
-|                     |   RELS: < [ of_p LBL: h16806 ARG0: e16803 ARG1: x16804 ARG2: x16805 ]            |
-|                     |           [ def_implicit_q LBL: h16810 ARG0: x16807 RSTR: h16808 BODY: h16809 ]  |
-|                     |           [ mofy LBL: h16795 ARG0: x16793 [ x NUM: sg ] ARG1: i16794 CARG: "Feb" |
-|                     | ]                                                                                |
-|                     |           [ dofm LBL: h16792 ARG0: x16790 ARG1: i16791 CARG: "24th" ]            |
-|                     |           [ proper_q LBL: h16801 ARG0: x16798 RSTR: h16799 BODY: h16800 ]        |
-|                     |           [ yofc LBL: h16797 ARG0: x16796 CARG: "1989" ] >                       |
-|                     |   HCONS: < h16808 qeq h16795 h16799 qeq h16797 >                                 |
-|                     |   EQS: < x16807 eq x16793 h16806 eq h16811 x16805 eq x16807 x16798 eq x16796     |
-|                     | h16792 eq h16802 i16791 eq x16798 h16806 eq h16792 x16804 eq x16790 > ]          |
+| 1989-02-24          | [ TOP: h505                                                                      |
+|                     |   INDEX: x503                                                                    |
+|                     |   RELS: < [ of_p LBL: h519 ARG0: e516 ARG1: x517 ARG2: x518 ]                    |
+|                     |           [ def_implicit_q LBL: h523 ARG0: x520 RSTR: h521 BODY: h522 ]          |
+|                     |           [ mofy LBL: h508 ARG0: x506 [ x NUM: sg ] ARG1: i507 CARG: "Feb" ]     |
+|                     |           [ dofm LBL: h505 ARG0: x503 ARG1: i504 CARG: "24th" ]                  |
+|                     |           [ proper_q LBL: h514 ARG0: x511 RSTR: h512 BODY: h513 ]                |
+|                     |           [ yofc LBL: h510 ARG0: x509 CARG: "1989" ] >                           |
+|                     |   HCONS: < h521 qeq h508 h512 qeq h510 >                                         |
+|                     |   EQS: < x520 eq x506 h519 eq h524 x518 eq x520 x511 eq x509 h505 eq h515 i504   |
+|                     | eq x511 h519 eq h505 x517 eq x503 > ]                                            |
 +---------------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------------------------+
@@ -146,28 +136,24 @@ GRAPH NAME: WebNLG_test_3triples_Athlete_Id1582_168_504
 +-----------+---------------------+------------+----------------------------------------------------------------------------------+
 | Edge      | Parent              | Child      | Generated SEMENT                                                                 |
 +-----------+---------------------+------------+----------------------------------------------------------------------------------+
-| birthDate | Aleksandr_Prudnikov | 1989-02-24 | [ TOP: h16824                                                                    |
-|           |                     |            |   INDEX: e16821 [ e TENSE: tensed ]                                              |
-|           |                     |            |   RELS: < [ _on_p_temp LBL: h16815 ARG0: e16812 ARG1: u16813 ARG2: i16814 ]      |
-|           |                     |            |           [ def_udef_a_q LBL: h16819 ARG0: x16816 RSTR: h16817 BODY: h16818 ]    |
-|           |                     |            |           [ of_p LBL: h16806 ARG0: e16803 ARG1: x16804 ARG2: x16805 ]            |
-|           |                     |            |           [ def_implicit_q LBL: h16810 ARG0: x16807 RSTR: h16808 BODY: h16809 ]  |
-|           |                     |            |           [ mofy LBL: h16795 ARG0: x16793 [ x NUM: sg ] ARG1: i16794 CARG: "Feb" |
-|           |                     |            | ]                                                                                |
-|           |                     |            |           [ dofm LBL: h16792 ARG0: x16790 ARG1: i16791 CARG: "24th" ]            |
-|           |                     |            |           [ proper_q LBL: h16801 ARG0: x16798 RSTR: h16799 BODY: h16800 ]        |
-|           |                     |            |           [ yofc LBL: h16797 ARG0: x16796 CARG: "1989" ]                         |
-|           |                     |            |           [ _born_a_of LBL: h16824 ARG0: e16821 ARG1: u16822 ARG2: u16823 ]      |
-|           |                     |            |           [ explicit_or_proper_q LBL: h16828 ARG0: x16825 RSTR: h16826 BODY:     |
-|           |                     |            | h16827 ]                                                                         |
-|           |                     |            |           [ named LBL: h16789 ARG0: x16788 CARG: "Aleksandr Prudnikov" ] >       |
-|           |                     |            |   HCONS: < h16808 qeq h16795 h16799 qeq h16797 h16817 qeq h16792 h16826 qeq      |
-|           |                     |            | h16789 >                                                                         |
-|           |                     |            |   EQS: < x16807 eq x16793 h16806 eq h16811 x16805 eq x16807 x16798 eq x16796     |
-|           |                     |            | h16792 eq h16802 i16791 eq x16798 h16806 eq h16792 x16804 eq x16790 x16816 eq    |
-|           |                     |            | x16790 h16815 eq h16820 i16814 eq x16816 x16825 eq x16788 h16824 eq h16829       |
-|           |                     |            | u16822 eq x16825 h16815 eq h16824 u16813 eq e16821 >                             |
-|           |                     |            |   SLOTS: < ARG2: u16823 > ]                                                      |
+| birthDate | Aleksandr_Prudnikov | 1989-02-24 | [ TOP: h537                                                                      |
+|           |                     |            |   INDEX: e534 [ e TENSE: tensed ]                                                |
+|           |                     |            |   RELS: < [ _on_p_temp LBL: h528 ARG0: e525 ARG1: u526 ARG2: i527 ]              |
+|           |                     |            |           [ def_udef_a_q LBL: h532 ARG0: x529 RSTR: h530 BODY: h531 ]            |
+|           |                     |            |           [ of_p LBL: h519 ARG0: e516 ARG1: x517 ARG2: x518 ]                    |
+|           |                     |            |           [ def_implicit_q LBL: h523 ARG0: x520 RSTR: h521 BODY: h522 ]          |
+|           |                     |            |           [ mofy LBL: h508 ARG0: x506 [ x NUM: sg ] ARG1: i507 CARG: "Feb" ]     |
+|           |                     |            |           [ dofm LBL: h505 ARG0: x503 ARG1: i504 CARG: "24th" ]                  |
+|           |                     |            |           [ proper_q LBL: h514 ARG0: x511 RSTR: h512 BODY: h513 ]                |
+|           |                     |            |           [ yofc LBL: h510 ARG0: x509 CARG: "1989" ]                             |
+|           |                     |            |           [ _born_a_of LBL: h537 ARG0: e534 ARG1: u535 ARG2: u536 ]              |
+|           |                     |            |           [ explicit_or_proper_q LBL: h541 ARG0: x538 RSTR: h539 BODY: h540 ]    |
+|           |                     |            |           [ named LBL: h502 ARG0: x501 CARG: "Aleksandr Prudnikov" ] >           |
+|           |                     |            |   HCONS: < h521 qeq h508 h512 qeq h510 h530 qeq h505 h539 qeq h502 >             |
+|           |                     |            |   EQS: < x520 eq x506 h519 eq h524 x518 eq x520 x511 eq x509 h505 eq h515 i504   |
+|           |                     |            | eq x511 h519 eq h505 x517 eq x503 x529 eq x503 h528 eq h533 i527 eq x529 x538 eq |
+|           |                     |            | x501 h537 eq h542 u535 eq x538 h528 eq h537 u526 eq e534 >                       |
+|           |                     |            |   SLOTS: < ARG2: u536 > ]                                                        |
 +-----------+---------------------+------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------+

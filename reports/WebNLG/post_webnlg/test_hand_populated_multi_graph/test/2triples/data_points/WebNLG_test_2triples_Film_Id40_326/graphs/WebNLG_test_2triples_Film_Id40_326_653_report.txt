@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_Film_Id40_326_653
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+----------------------------------------------------------------------------------------------------------------+
-|                                                  GOLD OUTPUTS                                                  |
-+---------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                       | Generated? |
-+---------------------------------------------------------------------------------------------------+------------+
-| Born in 1878, Harry Carey later grew up to write and star in the movie McVeagh of the South Seas. | False      |
-| Harry Carey, born in 1878, wrote and appeared in the movie McVeagh of the South Seas.             | False      |
-| Harry Carey, who was born in 1878, wrote and starred the film of McVeagh of the South Seas.       | False      |
-+---------------------------------------------------------------------------------------------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------+
+|                                                              GOLD OUTPUTS                                                             |
++--------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                              | Generated? |
++--------------------------------------------------------------------------------------------------------------------------+------------+
+| 'McVeagh of the South Seas' was written by Harry Carey and is registered in IMDb with the ID 0004319.                    | False      |
+| McVeagh of the South Seas with IMDb ID 0004319 is written by Harry Carey (actor, born in 1878).                          | False      |
+| The film McVeagh of the South Seas has been written by Harry Carey, who was born in 1878, and has an IMDb id of 0004319. | False      |
++--------------------------------------------------------------------------------------------------------------------------+------------+
 
 +-----------------------------------------------------------------------------------------------------+
 |                                             NODE METRICS                                            |
@@ -56,67 +56,64 @@ GRAPH NAME: WebNLG_test_2triples_Film_Id40_326_653
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h21037                                                                    |
-|               |   INDEX: e21034 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _write_v_to LBL: h21037 ARG0: e21034 ARG1: i21035 ARG2: i21036 ]     |
-|               |           [ explicit_or_proper_q LBL: h21041 ARG0: x21038 RSTR: h21039 BODY:     |
-|               | h21040 ]                                                                         |
-|               |           [ named LBL: h20994 ARG0: x20993 CARG: "McVeagh of the South Seas" ]   |
-|               |           [ appos LBL: h21023 ARG0: e21020 ARG1: x21021 ARG2: i21022 ]           |
-|               |           [ def_udef_a_q LBL: h21032 ARG0: x21029 RSTR: h21030 BODY: h21031 ]    |
-|               |           [ _in_p_temp LBL: h21000 ARG0: e20997 ARG1: u20998 ARG2: i20999 ]      |
-|               |           [ proper_q LBL: h21012 ARG0: x21009 RSTR: h21010 BODY: h21011 ]        |
-|               |           [ yofc LBL: h21008 ARG0: x21007 CARG: "1878" ]                         |
-|               |           [ _born_a_of LBL: h21017 ARG0: e21014 ARG1: u21015 ARG2: u21016 ]      |
-|               |           [ _actor_n_1 LBL: h21019 ARG0: x21018 ]                                |
-|               |           [ explicit_or_proper_q LBL: h21027 ARG0: x21024 RSTR: h21025 BODY:     |
-|               | h21026 ]                                                                         |
-|               |           [ named LBL: h20996 ARG0: x20995 CARG: "Harry Carey" ] >               |
-|               |   HCONS: < h21039 qeq h20994 h21010 qeq h21008 h21030 qeq h21019 h21025 qeq      |
-|               | h20996 >                                                                         |
-|               |   EQS: < x21038 eq x20993 h21037 eq h21042 i21036 eq x21038 x21009 eq x21007     |
-|               | h21000 eq h21013 i20999 eq x21009 h21000 eq h21017 u20998 eq e21014 h21017 eq    |
-|               | h21019 u21015 eq x21018 x21029 eq x21018 h21023 eq h21033 i21022 eq x21029       |
-|               | x21024 eq x20995 h21023 eq h21028 x21021 eq x21024 h21037 eq h21028 i21035 eq    |
-|               | x21024 > ]                                                                       |
+| Original      | [ TOP: h6142                                                                     |
+|               |   INDEX: e6139 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _write_v_to LBL: h6142 ARG0: e6139 ARG1: i6140 ARG2: i6141 ]         |
+|               |           [ explicit_or_proper_q LBL: h6146 ARG0: x6143 RSTR: h6144 BODY: h6145  |
+|               | ]                                                                                |
+|               |           [ named LBL: h6099 ARG0: x6098 CARG: "McVeagh of the South Seas" ]     |
+|               |           [ appos LBL: h6128 ARG0: e6125 ARG1: x6126 ARG2: i6127 ]               |
+|               |           [ def_udef_a_q LBL: h6137 ARG0: x6134 RSTR: h6135 BODY: h6136 ]        |
+|               |           [ _in_p_temp LBL: h6105 ARG0: e6102 ARG1: u6103 ARG2: i6104 ]          |
+|               |           [ proper_q LBL: h6117 ARG0: x6114 RSTR: h6115 BODY: h6116 ]            |
+|               |           [ yofc LBL: h6113 ARG0: x6112 CARG: "1878" ]                           |
+|               |           [ _born_a_of LBL: h6122 ARG0: e6119 ARG1: u6120 ARG2: u6121 ]          |
+|               |           [ _actor_n_1 LBL: h6124 ARG0: x6123 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h6132 ARG0: x6129 RSTR: h6130 BODY: h6131  |
+|               | ]                                                                                |
+|               |           [ named LBL: h6101 ARG0: x6100 CARG: "Harry Carey" ] >                 |
+|               |   HCONS: < h6144 qeq h6099 h6115 qeq h6113 h6135 qeq h6124 h6130 qeq h6101 >     |
+|               |   EQS: < x6143 eq x6098 h6142 eq h6147 i6141 eq x6143 x6114 eq x6112 h6105 eq    |
+|               | h6118 i6104 eq x6114 h6105 eq h6122 u6103 eq e6119 h6122 eq h6124 u6120 eq x6123 |
+|               | x6134 eq x6123 h6128 eq h6138 i6127 eq x6134 x6129 eq x6100 h6128 eq h6133 x6126 |
+|               | eq x6129 h6142 eq h6133 i6140 eq x6129 > ]                                       |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h21023                                                                    |
-|               |   INDEX: e21034 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _write_v_to LBL: h21023 ARG0: e21034 ARG1: x20995 ARG2: x20993 ]     |
-|               |           [ explicit_or_proper_q LBL: h21041 ARG0: x20993 RSTR: h21039 BODY:     |
-|               | h21040 ]                                                                         |
-|               |           [ named LBL: h20994 ARG0: x20993 CARG: "McVeagh of the South Seas" ]   |
-|               |           [ appos LBL: h21023 ARG0: e21020 ARG1: x20995 ARG2: x21018 ]           |
-|               |           [ def_udef_a_q LBL: h21032 ARG0: x21018 RSTR: h21030 BODY: h21031 ]    |
-|               |           [ _in_p_temp LBL: h21000 ARG0: e20997 ARG1: e21014 ARG2: x21007 ]      |
-|               |           [ proper_q LBL: h21012 ARG0: x21007 RSTR: h21010 BODY: h21011 ]        |
-|               |           [ yofc LBL: h21008 ARG0: x21007 CARG: "1878" ]                         |
-|               |           [ _born_a_of LBL: h21000 ARG0: e21014 ARG1: x21018 ARG2: u21016 ]      |
-|               |           [ _actor_n_1 LBL: h21000 ARG0: x21018 ]                                |
-|               |           [ explicit_or_proper_q LBL: h21027 ARG0: x20995 RSTR: h21025 BODY:     |
-|               | h21026 ]                                                                         |
-|               |           [ named LBL: h20996 ARG0: x20995 CARG: "Harry Carey" ] >               |
-|               |   HCONS: < h21039 qeq h20994 h21010 qeq h21008 h21030 qeq h21000 h21025 qeq      |
-|               | h20996 > ]                                                                       |
+| EQs Collapsed | [ TOP: h6128                                                                     |
+|               |   INDEX: e6139 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _write_v_to LBL: h6128 ARG0: e6139 ARG1: x6100 ARG2: x6098 ]         |
+|               |           [ explicit_or_proper_q LBL: h6146 ARG0: x6098 RSTR: h6144 BODY: h6145  |
+|               | ]                                                                                |
+|               |           [ named LBL: h6099 ARG0: x6098 CARG: "McVeagh of the South Seas" ]     |
+|               |           [ appos LBL: h6128 ARG0: e6125 ARG1: x6100 ARG2: x6123 ]               |
+|               |           [ def_udef_a_q LBL: h6137 ARG0: x6123 RSTR: h6135 BODY: h6136 ]        |
+|               |           [ _in_p_temp LBL: h6105 ARG0: e6102 ARG1: e6119 ARG2: x6112 ]          |
+|               |           [ proper_q LBL: h6117 ARG0: x6112 RSTR: h6115 BODY: h6116 ]            |
+|               |           [ yofc LBL: h6113 ARG0: x6112 CARG: "1878" ]                           |
+|               |           [ _born_a_of LBL: h6105 ARG0: e6119 ARG1: x6123 ARG2: u6121 ]          |
+|               |           [ _actor_n_1 LBL: h6105 ARG0: x6123 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h6132 ARG0: x6100 RSTR: h6130 BODY: h6131  |
+|               | ]                                                                                |
+|               |           [ named LBL: h6101 ARG0: x6100 CARG: "Harry Carey" ] >                 |
+|               |   HCONS: < h6144 qeq h6099 h6115 qeq h6113 h6135 qeq h6105 h6130 qeq h6101 > ]   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h21043                                                                    |
-|               |   INDEX: e21034 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _write_v_to LBL: h21023 ARG0: e21034 ARG1: x20995 ARG2: x20993 ]     |
-|               |           [ explicit_or_proper_q LBL: h21041 ARG0: x20993 RSTR: h21039 BODY:     |
-|               | h21040 ]                                                                         |
-|               |           [ named LBL: h20994 ARG0: x20993 CARG: "McVeagh of the South Seas" ]   |
-|               |           [ appos LBL: h21023 ARG0: e21020 ARG1: x20995 ARG2: x21018 ]           |
-|               |           [ def_udef_a_q LBL: h21032 ARG0: x21018 RSTR: h21030 BODY: h21031 ]    |
-|               |           [ _in_p_temp LBL: h21000 ARG0: e20997 ARG1: e21014 ARG2: x21007 ]      |
-|               |           [ proper_q LBL: h21012 ARG0: x21007 RSTR: h21010 BODY: h21011 ]        |
-|               |           [ yofc LBL: h21008 ARG0: x21007 CARG: "1878" ]                         |
-|               |           [ _born_a_of LBL: h21000 ARG0: e21014 ARG1: x21018 ARG2: u21016 ]      |
-|               |           [ _actor_n_1 LBL: h21000 ARG0: x21018 ]                                |
-|               |           [ explicit_or_proper_q LBL: h21027 ARG0: x20995 RSTR: h21025 BODY:     |
-|               | h21026 ]                                                                         |
-|               |           [ named LBL: h20996 ARG0: x20995 CARG: "Harry Carey" ] >               |
-|               |   HCONS: < h21039 qeq h20994 h21010 qeq h21008 h21030 qeq h21000 h21025 qeq      |
-|               | h20996 h21043 qeq h21023 > ]                                                     |
+| Prepped       | [ TOP: h6148                                                                     |
+|               |   INDEX: e6139 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _write_v_to LBL: h6128 ARG0: e6139 ARG1: x6100 ARG2: x6098 ]         |
+|               |           [ explicit_or_proper_q LBL: h6146 ARG0: x6098 RSTR: h6144 BODY: h6145  |
+|               | ]                                                                                |
+|               |           [ named LBL: h6099 ARG0: x6098 CARG: "McVeagh of the South Seas" ]     |
+|               |           [ appos LBL: h6128 ARG0: e6125 ARG1: x6100 ARG2: x6123 ]               |
+|               |           [ def_udef_a_q LBL: h6137 ARG0: x6123 RSTR: h6135 BODY: h6136 ]        |
+|               |           [ _in_p_temp LBL: h6105 ARG0: e6102 ARG1: e6119 ARG2: x6112 ]          |
+|               |           [ proper_q LBL: h6117 ARG0: x6112 RSTR: h6115 BODY: h6116 ]            |
+|               |           [ yofc LBL: h6113 ARG0: x6112 CARG: "1878" ]                           |
+|               |           [ _born_a_of LBL: h6105 ARG0: e6119 ARG1: x6123 ARG2: u6121 ]          |
+|               |           [ _actor_n_1 LBL: h6105 ARG0: x6123 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h6132 ARG0: x6100 RSTR: h6130 BODY: h6131  |
+|               | ]                                                                                |
+|               |           [ named LBL: h6101 ARG0: x6100 CARG: "Harry Carey" ] >                 |
+|               |   HCONS: < h6144 qeq h6099 h6115 qeq h6113 h6135 qeq h6105 h6130 qeq h6101 h6148 |
+|               | qeq h6128 > ]                                                                    |
 +---------------+----------------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------------------------+
@@ -124,28 +121,27 @@ GRAPH NAME: WebNLG_test_2triples_Film_Id40_326_653
 +-------------------------------+----------------------------------------------------------------------------------+
 | Node                          | Generated SEMENT                                                                 |
 +-------------------------------+----------------------------------------------------------------------------------+
-| McVeagh_of_the_South_Seas     | [ TOP: h20994                                                                    |
-|                               |   INDEX: x20993                                                                  |
-|                               |   RELS: < [ named LBL: h20994 ARG0: x20993 CARG: "McVeagh of the South Seas" ] > |
-|                               | ]                                                                                |
+| McVeagh_of_the_South_Seas     | [ TOP: h6099                                                                     |
+|                               |   INDEX: x6098                                                                   |
+|                               |   RELS: < [ named LBL: h6099 ARG0: x6098 CARG: "McVeagh of the South Seas" ] > ] |
 +-------------------------------+----------------------------------------------------------------------------------+
-| Harry_Carey_(actor_born_1878) | [ TOP: h21028                                                                    |
-|                               |   INDEX: x21024                                                                  |
-|                               |   RELS: < [ appos LBL: h21023 ARG0: e21020 ARG1: x21021 ARG2: i21022 ]           |
-|                               |           [ def_udef_a_q LBL: h21032 ARG0: x21029 RSTR: h21030 BODY: h21031 ]    |
-|                               |           [ _in_p_temp LBL: h21000 ARG0: e20997 ARG1: u20998 ARG2: i20999 ]      |
-|                               |           [ proper_q LBL: h21012 ARG0: x21009 RSTR: h21010 BODY: h21011 ]        |
-|                               |           [ yofc LBL: h21008 ARG0: x21007 CARG: "1878" ]                         |
-|                               |           [ _born_a_of LBL: h21017 ARG0: e21014 ARG1: u21015 ARG2: u21016 ]      |
-|                               |           [ _actor_n_1 LBL: h21019 ARG0: x21018 ]                                |
-|                               |           [ explicit_or_proper_q LBL: h21027 ARG0: x21024 RSTR: h21025 BODY:     |
-|                               | h21026 ]                                                                         |
-|                               |           [ named LBL: h20996 ARG0: x20995 CARG: "Harry Carey" ] >               |
-|                               |   HCONS: < h21010 qeq h21008 h21030 qeq h21019 h21025 qeq h20996 >               |
-|                               |   EQS: < x21009 eq x21007 h21000 eq h21013 i20999 eq x21009 h21000 eq h21017     |
-|                               | u20998 eq e21014 h21017 eq h21019 u21015 eq x21018 x21029 eq x21018 h21023 eq    |
-|                               | h21033 i21022 eq x21029 x21024 eq x20995 h21023 eq h21028 x21021 eq x21024 >     |
-|                               |   SLOTS: < BODY: h21026 > ]                                                      |
+| Harry_Carey_(actor_born_1878) | [ TOP: h6133                                                                     |
+|                               |   INDEX: x6129                                                                   |
+|                               |   RELS: < [ appos LBL: h6128 ARG0: e6125 ARG1: x6126 ARG2: i6127 ]               |
+|                               |           [ def_udef_a_q LBL: h6137 ARG0: x6134 RSTR: h6135 BODY: h6136 ]        |
+|                               |           [ _in_p_temp LBL: h6105 ARG0: e6102 ARG1: u6103 ARG2: i6104 ]          |
+|                               |           [ proper_q LBL: h6117 ARG0: x6114 RSTR: h6115 BODY: h6116 ]            |
+|                               |           [ yofc LBL: h6113 ARG0: x6112 CARG: "1878" ]                           |
+|                               |           [ _born_a_of LBL: h6122 ARG0: e6119 ARG1: u6120 ARG2: u6121 ]          |
+|                               |           [ _actor_n_1 LBL: h6124 ARG0: x6123 ]                                  |
+|                               |           [ explicit_or_proper_q LBL: h6132 ARG0: x6129 RSTR: h6130 BODY: h6131  |
+|                               | ]                                                                                |
+|                               |           [ named LBL: h6101 ARG0: x6100 CARG: "Harry Carey" ] >                 |
+|                               |   HCONS: < h6115 qeq h6113 h6135 qeq h6124 h6130 qeq h6101 >                     |
+|                               |   EQS: < x6114 eq x6112 h6105 eq h6118 i6104 eq x6114 h6105 eq h6122 u6103 eq    |
+|                               | e6119 h6122 eq h6124 u6120 eq x6123 x6134 eq x6123 h6128 eq h6138 i6127 eq x6134 |
+|                               | x6129 eq x6100 h6128 eq h6133 x6126 eq x6129 >                                   |
+|                               |   SLOTS: < BODY: h6131 > ]                                                       |
 +-------------------------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -153,29 +149,27 @@ GRAPH NAME: WebNLG_test_2triples_Film_Id40_326_653
 +--------+---------------------------+-------------------------------+----------------------------------------------------------------------------------+
 | Edge   | Parent                    | Child                         | Generated SEMENT                                                                 |
 +--------+---------------------------+-------------------------------+----------------------------------------------------------------------------------+
-| writer | McVeagh_of_the_South_Seas | Harry_Carey_(actor_born_1878) | [ TOP: h21037                                                                    |
-|        |                           |                               |   INDEX: e21034 [ e TENSE: tensed ]                                              |
-|        |                           |                               |   RELS: < [ _write_v_to LBL: h21037 ARG0: e21034 ARG1: i21035 ARG2: i21036 ]     |
-|        |                           |                               |           [ explicit_or_proper_q LBL: h21041 ARG0: x21038 RSTR: h21039 BODY:     |
-|        |                           |                               | h21040 ]                                                                         |
-|        |                           |                               |           [ named LBL: h20994 ARG0: x20993 CARG: "McVeagh of the South Seas" ]   |
-|        |                           |                               |           [ appos LBL: h21023 ARG0: e21020 ARG1: x21021 ARG2: i21022 ]           |
-|        |                           |                               |           [ def_udef_a_q LBL: h21032 ARG0: x21029 RSTR: h21030 BODY: h21031 ]    |
-|        |                           |                               |           [ _in_p_temp LBL: h21000 ARG0: e20997 ARG1: u20998 ARG2: i20999 ]      |
-|        |                           |                               |           [ proper_q LBL: h21012 ARG0: x21009 RSTR: h21010 BODY: h21011 ]        |
-|        |                           |                               |           [ yofc LBL: h21008 ARG0: x21007 CARG: "1878" ]                         |
-|        |                           |                               |           [ _born_a_of LBL: h21017 ARG0: e21014 ARG1: u21015 ARG2: u21016 ]      |
-|        |                           |                               |           [ _actor_n_1 LBL: h21019 ARG0: x21018 ]                                |
-|        |                           |                               |           [ explicit_or_proper_q LBL: h21027 ARG0: x21024 RSTR: h21025 BODY:     |
-|        |                           |                               | h21026 ]                                                                         |
-|        |                           |                               |           [ named LBL: h20996 ARG0: x20995 CARG: "Harry Carey" ] >               |
-|        |                           |                               |   HCONS: < h21039 qeq h20994 h21010 qeq h21008 h21030 qeq h21019 h21025 qeq      |
-|        |                           |                               | h20996 >                                                                         |
-|        |                           |                               |   EQS: < x21038 eq x20993 h21037 eq h21042 i21036 eq x21038 x21009 eq x21007     |
-|        |                           |                               | h21000 eq h21013 i20999 eq x21009 h21000 eq h21017 u20998 eq e21014 h21017 eq    |
-|        |                           |                               | h21019 u21015 eq x21018 x21029 eq x21018 h21023 eq h21033 i21022 eq x21029       |
-|        |                           |                               | x21024 eq x20995 h21023 eq h21028 x21021 eq x21024 h21037 eq h21028 i21035 eq    |
-|        |                           |                               | x21024 > ]                                                                       |
+| writer | McVeagh_of_the_South_Seas | Harry_Carey_(actor_born_1878) | [ TOP: h6142                                                                     |
+|        |                           |                               |   INDEX: e6139 [ e TENSE: tensed ]                                               |
+|        |                           |                               |   RELS: < [ _write_v_to LBL: h6142 ARG0: e6139 ARG1: i6140 ARG2: i6141 ]         |
+|        |                           |                               |           [ explicit_or_proper_q LBL: h6146 ARG0: x6143 RSTR: h6144 BODY: h6145  |
+|        |                           |                               | ]                                                                                |
+|        |                           |                               |           [ named LBL: h6099 ARG0: x6098 CARG: "McVeagh of the South Seas" ]     |
+|        |                           |                               |           [ appos LBL: h6128 ARG0: e6125 ARG1: x6126 ARG2: i6127 ]               |
+|        |                           |                               |           [ def_udef_a_q LBL: h6137 ARG0: x6134 RSTR: h6135 BODY: h6136 ]        |
+|        |                           |                               |           [ _in_p_temp LBL: h6105 ARG0: e6102 ARG1: u6103 ARG2: i6104 ]          |
+|        |                           |                               |           [ proper_q LBL: h6117 ARG0: x6114 RSTR: h6115 BODY: h6116 ]            |
+|        |                           |                               |           [ yofc LBL: h6113 ARG0: x6112 CARG: "1878" ]                           |
+|        |                           |                               |           [ _born_a_of LBL: h6122 ARG0: e6119 ARG1: u6120 ARG2: u6121 ]          |
+|        |                           |                               |           [ _actor_n_1 LBL: h6124 ARG0: x6123 ]                                  |
+|        |                           |                               |           [ explicit_or_proper_q LBL: h6132 ARG0: x6129 RSTR: h6130 BODY: h6131  |
+|        |                           |                               | ]                                                                                |
+|        |                           |                               |           [ named LBL: h6101 ARG0: x6100 CARG: "Harry Carey" ] >                 |
+|        |                           |                               |   HCONS: < h6144 qeq h6099 h6115 qeq h6113 h6135 qeq h6124 h6130 qeq h6101 >     |
+|        |                           |                               |   EQS: < x6143 eq x6098 h6142 eq h6147 i6141 eq x6143 x6114 eq x6112 h6105 eq    |
+|        |                           |                               | h6118 i6104 eq x6114 h6105 eq h6122 u6103 eq e6119 h6122 eq h6124 u6120 eq x6123 |
+|        |                           |                               | x6134 eq x6123 h6128 eq h6138 i6127 eq x6134 x6129 eq x6100 h6128 eq h6133 x6126 |
+|        |                           |                               | eq x6129 h6142 eq h6133 i6140 eq x6129 > ]                                       |
 +--------+---------------------------+-------------------------------+----------------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------+

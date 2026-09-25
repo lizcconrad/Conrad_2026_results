@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_Scientist_Id977_265_531
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+---------------------------------------------------------------------------------------------------------------+
-|                                                  GOLD OUTPUTS                                                 |
-+--------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                      | Generated? |
-+--------------------------------------------------------------------------------------------------+------------+
-| Lady Anne Monson was born in Winchester, the capital of the Kingdom of England.                  | False      |
-| Lady Anne Monson was born in the Kingdom of England where Winchester was previously the capital. | False      |
-| Lady Anne Monson was born in the Kingdom of England whose capital was previously Winchester.     | False      |
-+--------------------------------------------------------------------------------------------------+------------+
++--------------------------------------------------------------------------------------------------------------+
+|                                                 GOLD OUTPUTS                                                 |
++-------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                     | Generated? |
++-------------------------------------------------------------------------------------------------+------------+
+| British national Lady Anne Monson lived in the Kingdom of England whose capital was Winchester. | False      |
+| Lady Anne Monson was from the Kingdom of England whose capital city was Winchester.             | False      |
+| Lady Anne Monson’s nationality is English, where the capital is Winchester.                     | False      |
++-------------------------------------------------------------------------------------------------+------------+
 
 +------------------------------------------------------------------------------------------+
 |                                       NODE METRICS                                       |
@@ -56,88 +56,87 @@ GRAPH NAME: WebNLG_test_2triples_Scientist_Id977_265_531
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h17305                                                                    |
-|               |   INDEX: e17302 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h17305 ARG0: e17302 ARG1: p17303 ARG2: i17304 ]        |
-|               |           [ explicit_or_proper_q LBL: h17314 ARG0: x17311 RSTR: h17312 BODY:     |
-|               | h17313 ]                                                                         |
-|               |           [ named LBL: h17290 ARG0: x17289 CARG: "Winchester" ]                  |
-|               |           [ def_udef_a_q LBL: h17309 ARG0: x17306 RSTR: h17307 BODY: h17308 ]    |
-|               |           [ _of_p LBL: h17294 ARG0: e17291 ARG1: u17292 ARG2: i17293 ]           |
-|               |           [ explicit_or_proper_q LBL: h17300 ARG0: x17297 RSTR: h17298 BODY:     |
-|               | h17299 ]                                                                         |
-|               |           [ named LBL: h17288 ARG0: x17287 CARG: "Kingdom of England" ]          |
-|               |           [ _capital_n_1 LBL: h17296 ARG0: x17295 ] >                            |
-|               |   HCONS: < h17312 qeq h17290 h17298 qeq h17288 h17307 qeq h17296 >               |
-|               |   EQS: < x17311 eq x17289 h17305 eq h17315 i17304 eq x17311 x17297 eq x17287     |
-|               | h17294 eq h17301 i17293 eq x17297 h17294 eq h17296 u17292 eq x17295 x17306 eq    |
-|               | x17295 h17305 eq h17310 p17303 eq x17306 > ]                                     |
+| Original      | [ TOP: h7135                                                                     |
+|               |   INDEX: e7132 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h7135 ARG0: e7132 ARG1: p7133 ARG2: i7134 ]            |
+|               |           [ explicit_or_proper_q LBL: h7144 ARG0: x7141 RSTR: h7142 BODY: h7143  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7120 ARG0: x7119 CARG: "Winchester" ]                    |
+|               |           [ def_udef_a_q LBL: h7139 ARG0: x7136 RSTR: h7137 BODY: h7138 ]        |
+|               |           [ _of_p LBL: h7124 ARG0: e7121 ARG1: u7122 ARG2: i7123 ]               |
+|               |           [ explicit_or_proper_q LBL: h7130 ARG0: x7127 RSTR: h7128 BODY: h7129  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7118 ARG0: x7117 CARG: "Kingdom of England" ]            |
+|               |           [ _capital_n_1 LBL: h7126 ARG0: x7125 ] >                              |
+|               |   HCONS: < h7142 qeq h7120 h7128 qeq h7118 h7137 qeq h7126 >                     |
+|               |   EQS: < x7141 eq x7119 h7135 eq h7145 i7134 eq x7141 x7127 eq x7117 h7124 eq    |
+|               | h7131 i7123 eq x7127 h7124 eq h7126 u7122 eq x7125 x7136 eq x7125 h7135 eq h7140 |
+|               | p7133 eq x7136 > ]                                                               |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h17305                                                                    |
-|               |   INDEX: e17302 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h17305 ARG0: e17302 ARG1: x17295 ARG2: x17289 ]        |
-|               |           [ explicit_or_proper_q LBL: h17314 ARG0: x17289 RSTR: h17312 BODY:     |
-|               | h17313 ]                                                                         |
-|               |           [ named LBL: h17290 ARG0: x17289 CARG: "Winchester" ]                  |
-|               |           [ def_udef_a_q LBL: h17309 ARG0: x17295 RSTR: h17307 BODY: h17308 ]    |
-|               |           [ _of_p LBL: h17294 ARG0: e17291 ARG1: x17295 ARG2: x17287 ]           |
-|               |           [ explicit_or_proper_q LBL: h17300 ARG0: x17287 RSTR: h17298 BODY:     |
-|               | h17299 ]                                                                         |
-|               |           [ named LBL: h17288 ARG0: x17287 CARG: "Kingdom of England" ]          |
-|               |           [ _capital_n_1 LBL: h17294 ARG0: x17295 ] >                            |
-|               |   HCONS: < h17312 qeq h17290 h17298 qeq h17288 h17307 qeq h17294 > ]             |
+| EQs Collapsed | [ TOP: h7135                                                                     |
+|               |   INDEX: e7132 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h7135 ARG0: e7132 ARG1: x7125 ARG2: x7119 ]            |
+|               |           [ explicit_or_proper_q LBL: h7144 ARG0: x7119 RSTR: h7142 BODY: h7143  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7120 ARG0: x7119 CARG: "Winchester" ]                    |
+|               |           [ def_udef_a_q LBL: h7139 ARG0: x7125 RSTR: h7137 BODY: h7138 ]        |
+|               |           [ _of_p LBL: h7124 ARG0: e7121 ARG1: x7125 ARG2: x7117 ]               |
+|               |           [ explicit_or_proper_q LBL: h7130 ARG0: x7117 RSTR: h7128 BODY: h7129  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7118 ARG0: x7117 CARG: "Kingdom of England" ]            |
+|               |           [ _capital_n_1 LBL: h7124 ARG0: x7125 ] >                              |
+|               |   HCONS: < h7142 qeq h7120 h7128 qeq h7118 h7137 qeq h7124 > ]                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h17316                                                                    |
-|               |   INDEX: e17302 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h17305 ARG0: e17302 ARG1: x17295 ARG2: x17289 ]        |
-|               |           [ explicit_or_proper_q LBL: h17314 ARG0: x17289 RSTR: h17312 BODY:     |
-|               | h17313 ]                                                                         |
-|               |           [ named LBL: h17290 ARG0: x17289 CARG: "Winchester" ]                  |
-|               |           [ def_udef_a_q LBL: h17309 ARG0: x17295 RSTR: h17307 BODY: h17308 ]    |
-|               |           [ _of_p LBL: h17294 ARG0: e17291 ARG1: x17295 ARG2: x17287 ]           |
-|               |           [ explicit_or_proper_q LBL: h17300 ARG0: x17287 RSTR: h17298 BODY:     |
-|               | h17299 ]                                                                         |
-|               |           [ named LBL: h17288 ARG0: x17287 CARG: "Kingdom of England" ]          |
-|               |           [ _capital_n_1 LBL: h17294 ARG0: x17295 ] >                            |
-|               |   HCONS: < h17312 qeq h17290 h17298 qeq h17288 h17307 qeq h17294 h17316 qeq      |
-|               | h17305 > ]                                                                       |
+| Prepped       | [ TOP: h7146                                                                     |
+|               |   INDEX: e7132 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h7135 ARG0: e7132 ARG1: x7125 ARG2: x7119 ]            |
+|               |           [ explicit_or_proper_q LBL: h7144 ARG0: x7119 RSTR: h7142 BODY: h7143  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7120 ARG0: x7119 CARG: "Winchester" ]                    |
+|               |           [ def_udef_a_q LBL: h7139 ARG0: x7125 RSTR: h7137 BODY: h7138 ]        |
+|               |           [ _of_p LBL: h7124 ARG0: e7121 ARG1: x7125 ARG2: x7117 ]               |
+|               |           [ explicit_or_proper_q LBL: h7130 ARG0: x7117 RSTR: h7128 BODY: h7129  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7118 ARG0: x7117 CARG: "Kingdom of England" ]            |
+|               |           [ _capital_n_1 LBL: h7124 ARG0: x7125 ] >                              |
+|               |   HCONS: < h7142 qeq h7120 h7128 qeq h7118 h7137 qeq h7124 h7146 qeq h7135 > ]   |
 +---------------+----------------------------------------------------------------------------------+
 
-+--------------------------------------------------------------------------------------------------+
-|                                           NODE SEMENTS                                           |
-+--------------------+-----------------------------------------------------------------------------+
-| Node               | Generated SEMENT                                                            |
-+--------------------+-----------------------------------------------------------------------------+
-| Kingdom_of_England | [ TOP: h17288                                                               |
-|                    |   INDEX: x17287                                                             |
-|                    |   RELS: < [ named LBL: h17288 ARG0: x17287 CARG: "Kingdom of England" ] > ] |
-+--------------------+-----------------------------------------------------------------------------+
-| Winchester         | [ TOP: h17290                                                               |
-|                    |   INDEX: x17289                                                             |
-|                    |   RELS: < [ named LBL: h17290 ARG0: x17289 CARG: "Winchester" ] > ]         |
-+--------------------+-----------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------+
+|                                          NODE SEMENTS                                          |
++--------------------+---------------------------------------------------------------------------+
+| Node               | Generated SEMENT                                                          |
++--------------------+---------------------------------------------------------------------------+
+| Kingdom_of_England | [ TOP: h7118                                                              |
+|                    |   INDEX: x7117                                                            |
+|                    |   RELS: < [ named LBL: h7118 ARG0: x7117 CARG: "Kingdom of England" ] > ] |
++--------------------+---------------------------------------------------------------------------+
+| Winchester         | [ TOP: h7120                                                              |
+|                    |   INDEX: x7119                                                            |
+|                    |   RELS: < [ named LBL: h7120 ARG0: x7119 CARG: "Winchester" ] > ]         |
++--------------------+---------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------------------------------------+
 |                                                         EDGE SEMENTS                                                         |
 +---------+--------------------+------------+----------------------------------------------------------------------------------+
 | Edge    | Parent             | Child      | Generated SEMENT                                                                 |
 +---------+--------------------+------------+----------------------------------------------------------------------------------+
-| capital | Kingdom_of_England | Winchester | [ TOP: h17305                                                                    |
-|         |                    |            |   INDEX: e17302 [ e SF: prop TENSE: tensed ]                                     |
-|         |                    |            |   RELS: < [ _be_v_id LBL: h17305 ARG0: e17302 ARG1: p17303 ARG2: i17304 ]        |
-|         |                    |            |           [ explicit_or_proper_q LBL: h17314 ARG0: x17311 RSTR: h17312 BODY:     |
-|         |                    |            | h17313 ]                                                                         |
-|         |                    |            |           [ named LBL: h17290 ARG0: x17289 CARG: "Winchester" ]                  |
-|         |                    |            |           [ def_udef_a_q LBL: h17309 ARG0: x17306 RSTR: h17307 BODY: h17308 ]    |
-|         |                    |            |           [ _of_p LBL: h17294 ARG0: e17291 ARG1: u17292 ARG2: i17293 ]           |
-|         |                    |            |           [ explicit_or_proper_q LBL: h17300 ARG0: x17297 RSTR: h17298 BODY:     |
-|         |                    |            | h17299 ]                                                                         |
-|         |                    |            |           [ named LBL: h17288 ARG0: x17287 CARG: "Kingdom of England" ]          |
-|         |                    |            |           [ _capital_n_1 LBL: h17296 ARG0: x17295 ] >                            |
-|         |                    |            |   HCONS: < h17312 qeq h17290 h17298 qeq h17288 h17307 qeq h17296 >               |
-|         |                    |            |   EQS: < x17311 eq x17289 h17305 eq h17315 i17304 eq x17311 x17297 eq x17287     |
-|         |                    |            | h17294 eq h17301 i17293 eq x17297 h17294 eq h17296 u17292 eq x17295 x17306 eq    |
-|         |                    |            | x17295 h17305 eq h17310 p17303 eq x17306 > ]                                     |
+| capital | Kingdom_of_England | Winchester | [ TOP: h7135                                                                     |
+|         |                    |            |   INDEX: e7132 [ e SF: prop TENSE: tensed ]                                      |
+|         |                    |            |   RELS: < [ _be_v_id LBL: h7135 ARG0: e7132 ARG1: p7133 ARG2: i7134 ]            |
+|         |                    |            |           [ explicit_or_proper_q LBL: h7144 ARG0: x7141 RSTR: h7142 BODY: h7143  |
+|         |                    |            | ]                                                                                |
+|         |                    |            |           [ named LBL: h7120 ARG0: x7119 CARG: "Winchester" ]                    |
+|         |                    |            |           [ def_udef_a_q LBL: h7139 ARG0: x7136 RSTR: h7137 BODY: h7138 ]        |
+|         |                    |            |           [ _of_p LBL: h7124 ARG0: e7121 ARG1: u7122 ARG2: i7123 ]               |
+|         |                    |            |           [ explicit_or_proper_q LBL: h7130 ARG0: x7127 RSTR: h7128 BODY: h7129  |
+|         |                    |            | ]                                                                                |
+|         |                    |            |           [ named LBL: h7118 ARG0: x7117 CARG: "Kingdom of England" ]            |
+|         |                    |            |           [ _capital_n_1 LBL: h7126 ARG0: x7125 ] >                              |
+|         |                    |            |   HCONS: < h7142 qeq h7120 h7128 qeq h7118 h7137 qeq h7126 >                     |
+|         |                    |            |   EQS: < x7141 eq x7119 h7135 eq h7145 i7134 eq x7141 x7127 eq x7117 h7124 eq    |
+|         |                    |            | h7131 i7123 eq x7127 h7124 eq h7126 u7122 eq x7125 x7136 eq x7125 h7135 eq h7140 |
+|         |                    |            | p7133 eq x7136 > ]                                                               |
 +---------+--------------------+------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------+

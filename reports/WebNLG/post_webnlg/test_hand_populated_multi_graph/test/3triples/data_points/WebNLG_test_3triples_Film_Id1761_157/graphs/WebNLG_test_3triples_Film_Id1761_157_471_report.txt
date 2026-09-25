@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id1761_157_471
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                     GOLD OUTPUTS                                                                    |
-+----------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                            | Generated? |
-+----------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Nicholas Brodszky composed music of the movie English Without Tears with a running time of 89 minutes and release date was 07-28-1944. | False      |
-| The 89 minute film, English Without Tears, released on July 1944, was composed by Nicholas Brodszky.                                   | False      |
-| The music of the 89 minute long film, English Without Tears (released 1944-07-28) is composed by Nicholas Brodszky.                    | False      |
-+----------------------------------------------------------------------------------------------------------------------------------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                          GOLD OUTPUTS                                                                         |
++--------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                      | Generated? |
++--------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Alan Jaggs was the editor and Nicholas Brodszky was the composer in a 89 minute film called 'English Without Tears.'                             | False      |
+| English Without Tears is a film with a running time of 89 minutes, which was edited by Alan Jaggs, with Nicholas Brodszky as the music composer. | False      |
+| The 89-minute-long movie English Without Tears includes music composed by Nicholas Brodszky. Alan Jaggs was in charge of the editing.            | False      |
++--------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +---------------------------------------------------------------------------------------------+
 |                                         NODE METRICS                                        |
@@ -56,89 +56,88 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id1761_157_471
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h15762                                                                    |
-|               |   INDEX: e15759 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h15762 ARG0: e15759 ARG1: i15760 ARG2: i15761 ]       |
-|               |           [ def_udef_a_q LBL: h15785 ARG0: x15782 RSTR: h15783 BODY: h15784 ]    |
-|               |           [ _of_p LBL: h15766 ARG0: e15763 ARG1: u15764 ARG2: i15765 ]           |
-|               |           [ number_q LBL: h15775 ARG0: x15772 RSTR: h15773 BODY: h15774 ]        |
-|               |           [ card LBL: h15758 ARG0: i15756 ARG1: u15757 CARG: "89.0" ]            |
-|               |           [ _total_a_1 LBL: h15769 ARG0: e15767 ARG1: u15768 ]                   |
-|               |           [ _runtime_n_1 LBL: h15771 ARG0: x15770 ]                              |
-|               |           [ explicit_or_proper_q LBL: h15780 ARG0: x15777 RSTR: h15778 BODY:     |
-|               | h15779 ]                                                                         |
-|               |           [ named LBL: h15755 ARG0: x15754 CARG: "English Without Tears" ] >     |
-|               |   HCONS: < h15773 qeq h15758 h15783 qeq h15771 h15778 qeq h15755 >               |
-|               |   EQS: < x15772 eq i15756 h15766 eq h15776 i15765 eq x15772 h15769 eq h15771     |
-|               | u15768 eq x15770 h15766 eq h15771 u15764 eq x15770 x15782 eq x15770 h15762 eq    |
-|               | h15786 i15761 eq x15782 x15777 eq x15754 h15762 eq h15781 i15760 eq x15777 > ]   |
+| Original      | [ TOP: h6735                                                                     |
+|               |   INDEX: e6732 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h6735 ARG0: e6732 ARG1: i6733 ARG2: i6734 ]           |
+|               |           [ def_udef_a_q LBL: h6758 ARG0: x6755 RSTR: h6756 BODY: h6757 ]        |
+|               |           [ _of_p LBL: h6739 ARG0: e6736 ARG1: u6737 ARG2: i6738 ]               |
+|               |           [ number_q LBL: h6748 ARG0: x6745 RSTR: h6746 BODY: h6747 ]            |
+|               |           [ card LBL: h6731 ARG0: i6729 ARG1: u6730 CARG: "89.0" ]               |
+|               |           [ _total_a_1 LBL: h6742 ARG0: e6740 ARG1: u6741 ]                      |
+|               |           [ _runtime_n_1 LBL: h6744 ARG0: x6743 ]                                |
+|               |           [ explicit_or_proper_q LBL: h6753 ARG0: x6750 RSTR: h6751 BODY: h6752  |
+|               | ]                                                                                |
+|               |           [ named LBL: h6728 ARG0: x6727 CARG: "English Without Tears" ] >       |
+|               |   HCONS: < h6746 qeq h6731 h6756 qeq h6744 h6751 qeq h6728 >                     |
+|               |   EQS: < x6745 eq i6729 h6739 eq h6749 i6738 eq x6745 h6742 eq h6744 u6741 eq    |
+|               | x6743 h6739 eq h6744 u6737 eq x6743 x6755 eq x6743 h6735 eq h6759 i6734 eq x6755 |
+|               | x6750 eq x6727 h6735 eq h6754 i6733 eq x6750 > ]                                 |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h15762                                                                    |
-|               |   INDEX: e15759 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h15762 ARG0: e15759 ARG1: x15754 ARG2: x15770 ]       |
-|               |           [ def_udef_a_q LBL: h15785 ARG0: x15770 RSTR: h15783 BODY: h15784 ]    |
-|               |           [ _of_p LBL: h15766 ARG0: e15763 ARG1: x15770 ARG2: x15772 ]           |
-|               |           [ number_q LBL: h15775 ARG0: x15772 RSTR: h15773 BODY: h15774 ]        |
-|               |           [ card LBL: h15758 ARG0: x15772 ARG1: u15757 CARG: "89.0" ]            |
-|               |           [ _total_a_1 LBL: h15766 ARG0: e15767 ARG1: x15770 ]                   |
-|               |           [ _runtime_n_1 LBL: h15766 ARG0: x15770 ]                              |
-|               |           [ explicit_or_proper_q LBL: h15780 ARG0: x15754 RSTR: h15778 BODY:     |
-|               | h15779 ]                                                                         |
-|               |           [ named LBL: h15755 ARG0: x15754 CARG: "English Without Tears" ] >     |
-|               |   HCONS: < h15773 qeq h15758 h15783 qeq h15766 h15778 qeq h15755 > ]             |
+| EQs Collapsed | [ TOP: h6735                                                                     |
+|               |   INDEX: e6732 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h6735 ARG0: e6732 ARG1: x6727 ARG2: x6743 ]           |
+|               |           [ def_udef_a_q LBL: h6758 ARG0: x6743 RSTR: h6756 BODY: h6757 ]        |
+|               |           [ _of_p LBL: h6739 ARG0: e6736 ARG1: x6743 ARG2: x6745 ]               |
+|               |           [ number_q LBL: h6748 ARG0: x6745 RSTR: h6746 BODY: h6747 ]            |
+|               |           [ card LBL: h6731 ARG0: x6745 ARG1: u6730 CARG: "89.0" ]               |
+|               |           [ _total_a_1 LBL: h6739 ARG0: e6740 ARG1: x6743 ]                      |
+|               |           [ _runtime_n_1 LBL: h6739 ARG0: x6743 ]                                |
+|               |           [ explicit_or_proper_q LBL: h6753 ARG0: x6727 RSTR: h6751 BODY: h6752  |
+|               | ]                                                                                |
+|               |           [ named LBL: h6728 ARG0: x6727 CARG: "English Without Tears" ] >       |
+|               |   HCONS: < h6746 qeq h6731 h6756 qeq h6739 h6751 qeq h6728 > ]                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h15787                                                                    |
-|               |   INDEX: e15759 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h15762 ARG0: e15759 ARG1: x15754 ARG2: x15770 ]       |
-|               |           [ def_udef_a_q LBL: h15785 ARG0: x15770 RSTR: h15783 BODY: h15784 ]    |
-|               |           [ _of_p LBL: h15766 ARG0: e15763 ARG1: x15770 ARG2: x15772 ]           |
-|               |           [ number_q LBL: h15775 ARG0: x15772 RSTR: h15773 BODY: h15774 ]        |
-|               |           [ card LBL: h15758 ARG0: x15772 ARG1: u15757 CARG: "89.0" ]            |
-|               |           [ _total_a_1 LBL: h15766 ARG0: e15767 ARG1: x15770 ]                   |
-|               |           [ _runtime_n_1 LBL: h15766 ARG0: x15770 ]                              |
-|               |           [ explicit_or_proper_q LBL: h15780 ARG0: x15754 RSTR: h15778 BODY:     |
-|               | h15779 ]                                                                         |
-|               |           [ named LBL: h15755 ARG0: x15754 CARG: "English Without Tears" ] >     |
-|               |   HCONS: < h15773 qeq h15758 h15783 qeq h15766 h15778 qeq h15755 h15787 qeq      |
-|               | h15762 > ]                                                                       |
+| Prepped       | [ TOP: h6760                                                                     |
+|               |   INDEX: e6732 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h6735 ARG0: e6732 ARG1: x6727 ARG2: x6743 ]           |
+|               |           [ def_udef_a_q LBL: h6758 ARG0: x6743 RSTR: h6756 BODY: h6757 ]        |
+|               |           [ _of_p LBL: h6739 ARG0: e6736 ARG1: x6743 ARG2: x6745 ]               |
+|               |           [ number_q LBL: h6748 ARG0: x6745 RSTR: h6746 BODY: h6747 ]            |
+|               |           [ card LBL: h6731 ARG0: x6745 ARG1: u6730 CARG: "89.0" ]               |
+|               |           [ _total_a_1 LBL: h6739 ARG0: e6740 ARG1: x6743 ]                      |
+|               |           [ _runtime_n_1 LBL: h6739 ARG0: x6743 ]                                |
+|               |           [ explicit_or_proper_q LBL: h6753 ARG0: x6727 RSTR: h6751 BODY: h6752  |
+|               | ]                                                                                |
+|               |           [ named LBL: h6728 ARG0: x6727 CARG: "English Without Tears" ] >       |
+|               |   HCONS: < h6746 qeq h6731 h6756 qeq h6739 h6751 qeq h6728 h6760 qeq h6735 > ]   |
 +---------------+----------------------------------------------------------------------------------+
 
-+--------------------------------------------------------------------------------------------------------+
-|                                              NODE SEMENTS                                              |
-+-----------------------+--------------------------------------------------------------------------------+
-| Node                  | Generated SEMENT                                                               |
-+-----------------------+--------------------------------------------------------------------------------+
-| English_Without_Tears | [ TOP: h15755                                                                  |
-|                       |   INDEX: x15754                                                                |
-|                       |   RELS: < [ named LBL: h15755 ARG0: x15754 CARG: "English Without Tears" ] > ] |
-+-----------------------+--------------------------------------------------------------------------------+
-| 89.0                  | [ TOP: h15758                                                                  |
-|                       |   INDEX: i15756                                                                |
-|                       |   RELS: < [ card LBL: h15758 ARG0: i15756 ARG1: u15757 CARG: "89.0" ] >        |
-|                       |   SLOTS: < ARG1: u15757 > ]                                                    |
-+-----------------------+--------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------+
+|                                             NODE SEMENTS                                             |
++-----------------------+------------------------------------------------------------------------------+
+| Node                  | Generated SEMENT                                                             |
++-----------------------+------------------------------------------------------------------------------+
+| English_Without_Tears | [ TOP: h6728                                                                 |
+|                       |   INDEX: x6727                                                               |
+|                       |   RELS: < [ named LBL: h6728 ARG0: x6727 CARG: "English Without Tears" ] > ] |
++-----------------------+------------------------------------------------------------------------------+
+| 89.0                  | [ TOP: h6731                                                                 |
+|                       |   INDEX: i6729                                                               |
+|                       |   RELS: < [ card LBL: h6731 ARG0: i6729 ARG1: u6730 CARG: "89.0" ] >         |
+|                       |   SLOTS: < ARG1: u6730 > ]                                                   |
++-----------------------+------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------+
 |                                                        EDGE SEMENTS                                                        |
 +---------+-----------------------+-------+----------------------------------------------------------------------------------+
 | Edge    | Parent                | Child | Generated SEMENT                                                                 |
 +---------+-----------------------+-------+----------------------------------------------------------------------------------+
-| runtime | English_Without_Tears | 89.0  | [ TOP: h15762                                                                    |
-|         |                       |       |   INDEX: e15759 [ e TENSE: tensed ]                                              |
-|         |                       |       |   RELS: < [ _have_v_1 LBL: h15762 ARG0: e15759 ARG1: i15760 ARG2: i15761 ]       |
-|         |                       |       |           [ def_udef_a_q LBL: h15785 ARG0: x15782 RSTR: h15783 BODY: h15784 ]    |
-|         |                       |       |           [ _of_p LBL: h15766 ARG0: e15763 ARG1: u15764 ARG2: i15765 ]           |
-|         |                       |       |           [ number_q LBL: h15775 ARG0: x15772 RSTR: h15773 BODY: h15774 ]        |
-|         |                       |       |           [ card LBL: h15758 ARG0: i15756 ARG1: u15757 CARG: "89.0" ]            |
-|         |                       |       |           [ _total_a_1 LBL: h15769 ARG0: e15767 ARG1: u15768 ]                   |
-|         |                       |       |           [ _runtime_n_1 LBL: h15771 ARG0: x15770 ]                              |
-|         |                       |       |           [ explicit_or_proper_q LBL: h15780 ARG0: x15777 RSTR: h15778 BODY:     |
-|         |                       |       | h15779 ]                                                                         |
-|         |                       |       |           [ named LBL: h15755 ARG0: x15754 CARG: "English Without Tears" ] >     |
-|         |                       |       |   HCONS: < h15773 qeq h15758 h15783 qeq h15771 h15778 qeq h15755 >               |
-|         |                       |       |   EQS: < x15772 eq i15756 h15766 eq h15776 i15765 eq x15772 h15769 eq h15771     |
-|         |                       |       | u15768 eq x15770 h15766 eq h15771 u15764 eq x15770 x15782 eq x15770 h15762 eq    |
-|         |                       |       | h15786 i15761 eq x15782 x15777 eq x15754 h15762 eq h15781 i15760 eq x15777 > ]   |
+| runtime | English_Without_Tears | 89.0  | [ TOP: h6735                                                                     |
+|         |                       |       |   INDEX: e6732 [ e TENSE: tensed ]                                               |
+|         |                       |       |   RELS: < [ _have_v_1 LBL: h6735 ARG0: e6732 ARG1: i6733 ARG2: i6734 ]           |
+|         |                       |       |           [ def_udef_a_q LBL: h6758 ARG0: x6755 RSTR: h6756 BODY: h6757 ]        |
+|         |                       |       |           [ _of_p LBL: h6739 ARG0: e6736 ARG1: u6737 ARG2: i6738 ]               |
+|         |                       |       |           [ number_q LBL: h6748 ARG0: x6745 RSTR: h6746 BODY: h6747 ]            |
+|         |                       |       |           [ card LBL: h6731 ARG0: i6729 ARG1: u6730 CARG: "89.0" ]               |
+|         |                       |       |           [ _total_a_1 LBL: h6742 ARG0: e6740 ARG1: u6741 ]                      |
+|         |                       |       |           [ _runtime_n_1 LBL: h6744 ARG0: x6743 ]                                |
+|         |                       |       |           [ explicit_or_proper_q LBL: h6753 ARG0: x6750 RSTR: h6751 BODY: h6752  |
+|         |                       |       | ]                                                                                |
+|         |                       |       |           [ named LBL: h6728 ARG0: x6727 CARG: "English Without Tears" ] >       |
+|         |                       |       |   HCONS: < h6746 qeq h6731 h6756 qeq h6744 h6751 qeq h6728 >                     |
+|         |                       |       |   EQS: < x6745 eq i6729 h6739 eq h6749 i6738 eq x6745 h6742 eq h6744 u6741 eq    |
+|         |                       |       | x6743 h6739 eq h6744 u6737 eq x6743 x6755 eq x6743 h6735 eq h6759 i6734 eq x6755 |
+|         |                       |       | x6750 eq x6727 h6735 eq h6754 i6733 eq x6750 > ]                                 |
 +---------+-----------------------+-------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------+

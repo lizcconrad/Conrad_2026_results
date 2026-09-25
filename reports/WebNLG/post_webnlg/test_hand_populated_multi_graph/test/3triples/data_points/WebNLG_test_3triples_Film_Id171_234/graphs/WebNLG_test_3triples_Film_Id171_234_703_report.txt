@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id171_234_703
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                       GOLD OUTPUTS                                                                       |
-+---------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                 | Generated? |
-+---------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| 'McVeagh of the South Seas' (a film registered in IMDb, ID 0004319) was directed by Cyril Bruce and Harry Carey, an actor born in 1878.     | False      |
-| McVeagh of the South Seas (IMDb ID 0004319) is a film starring Harry Carey and was directed by Harry Carey and Cyril Bruce.                 | False      |
-| The movie McVeagh of the South Seas' IMDb id is 0004319. It was directed by Cyril Bruce and starred actor Harry Carey who was born in 1878. | False      |
-+---------------------------------------------------------------------------------------------------------------------------------------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                            GOLD OUTPUTS                                                                            |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                           | Generated? |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| 'McVeagh of the South Seas' was directed by Cyril Bruce and actor Harry Carey, born in 1878. Harry Carey also played in the film.                     | False      |
+| Harry Carey (born 1878) was a movie actor and starred in and directed McVeagh of the South Seas. Cyril Bruce also directed McVeagh of the South Seas. | False      |
+| Harry Carey, born in 1878, both directed and had a role in McVeagh of the South Seas. The film was also directed by Cyril Bruce.                      | False      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +-------------------------------------------------------------------------------------------------+
 |                                           NODE METRICS                                          |
@@ -56,48 +56,46 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id171_234_703
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h23799                                                                    |
-|               |   INDEX: e23796 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h23799 ARG0: e23796 ARG1: p23797 ARG2: i23798 ]        |
-|               |           [ def_udef_a_q LBL: h23808 ARG0: x23805 RSTR: h23806 BODY: h23807 ]    |
-|               |           [ _director_n_of LBL: h23790 ARG0: x23788 ARG1: i23789 ]               |
-|               |           [ explicit_or_proper_q LBL: h23794 ARG0: x23791 RSTR: h23792 BODY:     |
-|               | h23793 ]                                                                         |
-|               |           [ named LBL: h23785 ARG0: x23784 CARG: "McVeagh of the South Seas" ]   |
-|               |           [ explicit_or_proper_q LBL: h23803 ARG0: x23800 RSTR: h23801 BODY:     |
-|               | h23802 ]                                                                         |
-|               |           [ named LBL: h23787 ARG0: x23786 CARG: "Cyril Bruce" ] >               |
-|               |   HCONS: < h23792 qeq h23785 h23806 qeq h23790 h23801 qeq h23787 >               |
-|               |   EQS: < x23791 eq x23784 h23790 eq h23795 i23789 eq x23791 x23805 eq x23788     |
-|               | h23799 eq h23809 i23798 eq x23805 x23800 eq x23786 h23799 eq h23804 p23797 eq    |
-|               | x23800 > ]                                                                       |
+| Original      | [ TOP: h5201                                                                     |
+|               |   INDEX: e5198 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h5201 ARG0: e5198 ARG1: p5199 ARG2: i5200 ]            |
+|               |           [ def_udef_a_q LBL: h5210 ARG0: x5207 RSTR: h5208 BODY: h5209 ]        |
+|               |           [ _director_n_of LBL: h5192 ARG0: x5190 ARG1: i5191 ]                  |
+|               |           [ explicit_or_proper_q LBL: h5196 ARG0: x5193 RSTR: h5194 BODY: h5195  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5187 ARG0: x5186 CARG: "McVeagh of the South Seas" ]     |
+|               |           [ explicit_or_proper_q LBL: h5205 ARG0: x5202 RSTR: h5203 BODY: h5204  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5189 ARG0: x5188 CARG: "Cyril Bruce" ] >                 |
+|               |   HCONS: < h5194 qeq h5187 h5208 qeq h5192 h5203 qeq h5189 >                     |
+|               |   EQS: < x5193 eq x5186 h5192 eq h5197 i5191 eq x5193 x5207 eq x5190 h5201 eq    |
+|               | h5211 i5200 eq x5207 x5202 eq x5188 h5201 eq h5206 p5199 eq x5202 > ]            |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h23799                                                                    |
-|               |   INDEX: e23796 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h23799 ARG0: e23796 ARG1: x23786 ARG2: x23788 ]        |
-|               |           [ def_udef_a_q LBL: h23808 ARG0: x23788 RSTR: h23806 BODY: h23807 ]    |
-|               |           [ _director_n_of LBL: h23790 ARG0: x23788 ARG1: x23784 ]               |
-|               |           [ explicit_or_proper_q LBL: h23794 ARG0: x23784 RSTR: h23792 BODY:     |
-|               | h23793 ]                                                                         |
-|               |           [ named LBL: h23785 ARG0: x23784 CARG: "McVeagh of the South Seas" ]   |
-|               |           [ explicit_or_proper_q LBL: h23803 ARG0: x23786 RSTR: h23801 BODY:     |
-|               | h23802 ]                                                                         |
-|               |           [ named LBL: h23787 ARG0: x23786 CARG: "Cyril Bruce" ] >               |
-|               |   HCONS: < h23792 qeq h23785 h23806 qeq h23790 h23801 qeq h23787 > ]             |
+| EQs Collapsed | [ TOP: h5201                                                                     |
+|               |   INDEX: e5198 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h5201 ARG0: e5198 ARG1: x5188 ARG2: x5190 ]            |
+|               |           [ def_udef_a_q LBL: h5210 ARG0: x5190 RSTR: h5208 BODY: h5209 ]        |
+|               |           [ _director_n_of LBL: h5192 ARG0: x5190 ARG1: x5186 ]                  |
+|               |           [ explicit_or_proper_q LBL: h5196 ARG0: x5186 RSTR: h5194 BODY: h5195  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5187 ARG0: x5186 CARG: "McVeagh of the South Seas" ]     |
+|               |           [ explicit_or_proper_q LBL: h5205 ARG0: x5188 RSTR: h5203 BODY: h5204  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5189 ARG0: x5188 CARG: "Cyril Bruce" ] >                 |
+|               |   HCONS: < h5194 qeq h5187 h5208 qeq h5192 h5203 qeq h5189 > ]                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h23810                                                                    |
-|               |   INDEX: e23796 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h23799 ARG0: e23796 ARG1: x23786 ARG2: x23788 ]        |
-|               |           [ def_udef_a_q LBL: h23808 ARG0: x23788 RSTR: h23806 BODY: h23807 ]    |
-|               |           [ _director_n_of LBL: h23790 ARG0: x23788 ARG1: x23784 ]               |
-|               |           [ explicit_or_proper_q LBL: h23794 ARG0: x23784 RSTR: h23792 BODY:     |
-|               | h23793 ]                                                                         |
-|               |           [ named LBL: h23785 ARG0: x23784 CARG: "McVeagh of the South Seas" ]   |
-|               |           [ explicit_or_proper_q LBL: h23803 ARG0: x23786 RSTR: h23801 BODY:     |
-|               | h23802 ]                                                                         |
-|               |           [ named LBL: h23787 ARG0: x23786 CARG: "Cyril Bruce" ] >               |
-|               |   HCONS: < h23792 qeq h23785 h23806 qeq h23790 h23801 qeq h23787 h23810 qeq      |
-|               | h23799 > ]                                                                       |
+| Prepped       | [ TOP: h5212                                                                     |
+|               |   INDEX: e5198 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h5201 ARG0: e5198 ARG1: x5188 ARG2: x5190 ]            |
+|               |           [ def_udef_a_q LBL: h5210 ARG0: x5190 RSTR: h5208 BODY: h5209 ]        |
+|               |           [ _director_n_of LBL: h5192 ARG0: x5190 ARG1: x5186 ]                  |
+|               |           [ explicit_or_proper_q LBL: h5196 ARG0: x5186 RSTR: h5194 BODY: h5195  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5187 ARG0: x5186 CARG: "McVeagh of the South Seas" ]     |
+|               |           [ explicit_or_proper_q LBL: h5205 ARG0: x5188 RSTR: h5203 BODY: h5204  |
+|               | ]                                                                                |
+|               |           [ named LBL: h5189 ARG0: x5188 CARG: "Cyril Bruce" ] >                 |
+|               |   HCONS: < h5194 qeq h5187 h5208 qeq h5192 h5203 qeq h5189 h5212 qeq h5201 > ]   |
 +---------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------------------------------+
@@ -105,14 +103,13 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id171_234_703
 +---------------------------+----------------------------------------------------------------------------------+
 | Node                      | Generated SEMENT                                                                 |
 +---------------------------+----------------------------------------------------------------------------------+
-| McVeagh_of_the_South_Seas | [ TOP: h23785                                                                    |
-|                           |   INDEX: x23784                                                                  |
-|                           |   RELS: < [ named LBL: h23785 ARG0: x23784 CARG: "McVeagh of the South Seas" ] > |
-|                           | ]                                                                                |
+| McVeagh_of_the_South_Seas | [ TOP: h5187                                                                     |
+|                           |   INDEX: x5186                                                                   |
+|                           |   RELS: < [ named LBL: h5187 ARG0: x5186 CARG: "McVeagh of the South Seas" ] > ] |
 +---------------------------+----------------------------------------------------------------------------------+
-| Cyril_Bruce               | [ TOP: h23787                                                                    |
-|                           |   INDEX: x23786                                                                  |
-|                           |   RELS: < [ named LBL: h23787 ARG0: x23786 CARG: "Cyril Bruce" ] > ]             |
+| Cyril_Bruce               | [ TOP: h5189                                                                     |
+|                           |   INDEX: x5188                                                                   |
+|                           |   RELS: < [ named LBL: h5189 ARG0: x5188 CARG: "Cyril Bruce" ] > ]               |
 +---------------------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------------------------------+
@@ -120,21 +117,20 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id171_234_703
 +----------+---------------------------+-------------+----------------------------------------------------------------------------------+
 | Edge     | Parent                    | Child       | Generated SEMENT                                                                 |
 +----------+---------------------------+-------------+----------------------------------------------------------------------------------+
-| director | McVeagh_of_the_South_Seas | Cyril_Bruce | [ TOP: h23799                                                                    |
-|          |                           |             |   INDEX: e23796 [ e SF: prop TENSE: tensed ]                                     |
-|          |                           |             |   RELS: < [ _be_v_id LBL: h23799 ARG0: e23796 ARG1: p23797 ARG2: i23798 ]        |
-|          |                           |             |           [ def_udef_a_q LBL: h23808 ARG0: x23805 RSTR: h23806 BODY: h23807 ]    |
-|          |                           |             |           [ _director_n_of LBL: h23790 ARG0: x23788 ARG1: i23789 ]               |
-|          |                           |             |           [ explicit_or_proper_q LBL: h23794 ARG0: x23791 RSTR: h23792 BODY:     |
-|          |                           |             | h23793 ]                                                                         |
-|          |                           |             |           [ named LBL: h23785 ARG0: x23784 CARG: "McVeagh of the South Seas" ]   |
-|          |                           |             |           [ explicit_or_proper_q LBL: h23803 ARG0: x23800 RSTR: h23801 BODY:     |
-|          |                           |             | h23802 ]                                                                         |
-|          |                           |             |           [ named LBL: h23787 ARG0: x23786 CARG: "Cyril Bruce" ] >               |
-|          |                           |             |   HCONS: < h23792 qeq h23785 h23806 qeq h23790 h23801 qeq h23787 >               |
-|          |                           |             |   EQS: < x23791 eq x23784 h23790 eq h23795 i23789 eq x23791 x23805 eq x23788     |
-|          |                           |             | h23799 eq h23809 i23798 eq x23805 x23800 eq x23786 h23799 eq h23804 p23797 eq    |
-|          |                           |             | x23800 > ]                                                                       |
+| director | McVeagh_of_the_South_Seas | Cyril_Bruce | [ TOP: h5201                                                                     |
+|          |                           |             |   INDEX: e5198 [ e SF: prop TENSE: tensed ]                                      |
+|          |                           |             |   RELS: < [ _be_v_id LBL: h5201 ARG0: e5198 ARG1: p5199 ARG2: i5200 ]            |
+|          |                           |             |           [ def_udef_a_q LBL: h5210 ARG0: x5207 RSTR: h5208 BODY: h5209 ]        |
+|          |                           |             |           [ _director_n_of LBL: h5192 ARG0: x5190 ARG1: i5191 ]                  |
+|          |                           |             |           [ explicit_or_proper_q LBL: h5196 ARG0: x5193 RSTR: h5194 BODY: h5195  |
+|          |                           |             | ]                                                                                |
+|          |                           |             |           [ named LBL: h5187 ARG0: x5186 CARG: "McVeagh of the South Seas" ]     |
+|          |                           |             |           [ explicit_or_proper_q LBL: h5205 ARG0: x5202 RSTR: h5203 BODY: h5204  |
+|          |                           |             | ]                                                                                |
+|          |                           |             |           [ named LBL: h5189 ARG0: x5188 CARG: "Cyril Bruce" ] >                 |
+|          |                           |             |   HCONS: < h5194 qeq h5187 h5208 qeq h5192 h5203 qeq h5189 >                     |
+|          |                           |             |   EQS: < x5193 eq x5186 h5192 eq h5197 i5191 eq x5193 x5207 eq x5190 h5201 eq    |
+|          |                           |             | h5211 i5200 eq x5207 x5202 eq x5188 h5201 eq h5206 p5199 eq x5202 > ]            |
 +----------+---------------------------+-------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------+

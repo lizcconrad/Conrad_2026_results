@@ -24,14 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_University_Id735_317_951
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                  GOLD OUTPUTS                                                                  |
-+-----------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                       | Generated? |
-+-----------------------------------------------------------------------------------------------------------------------------------+------------+
-| The University of Burgundy has 2900 staff members, 27400 students, and 1299 doctoral students.                                    | False      |
-| With 2900 staff members, The University of Burgundy services 27400 students, 1299 of whom are working on their doctorate degrees. | False      |
-+-----------------------------------------------------------------------------------------------------------------------------------+------------+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                GOLD OUTPUTS                                                               |
++------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                  | Generated? |
++------------------------------------------------------------------------------------------------------------------------------+------------+
+| In Dijon, 2900 staff members from the University of Burgundy service the student body which includes 1299 doctoral students. | False      |
+| The University of Burgundy in Dijon has 2900 staff members and 1299 doctoral students.                                       | False      |
+| The University of Burgundy, located in Dijon, employs 2900 staff members including 1299 doctoral students.                   | False      |
++------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------------+
 |                                         NODE METRICS                                         |
@@ -55,62 +56,60 @@ GRAPH NAME: WebNLG_test_3triples_University_Id735_317_951
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h31899                                                                    |
-|               |   INDEX: e31896 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h31899 ARG0: e31896 ARG1: i31897 ARG2: i31898 ]       |
-|               |           [ udef_q LBL: h31921 ARG0: x31918 RSTR: h31919 BODY: h31920 ]          |
-|               |           [ card LBL: h31895 ARG0: i31893 ARG1: u31894 CARG: "2900" ]            |
-|               |           [ compound LBL: h31907 ARG0: e31904 ARG1: u31905 ARG2: u31906 ]        |
-|               |           [ existential_q LBL: h31911 ARG0: x31908 RSTR: h31909 BODY: h31910 ]   |
-|               |           [ _staff_n_of LBL: h31903 ARG0: x31902 [ x NUM: sg ] ]                 |
-|               |           [ _member_n_of LBL: h31901 ARG0: x31900 ]                              |
-|               |           [ def_udef_a_q LBL: h31916 ARG0: x31913 RSTR: h31914 BODY: h31915 ]    |
-|               |           [ _university_n_of LBL: h31885 ARG0: x31883 ARG1: i31884 ]             |
-|               |           [ explicit_or_proper_q LBL: h31891 ARG0: x31888 RSTR: h31889 BODY:     |
-|               | h31890 ]                                                                         |
-|               |           [ named LBL: h31887 ARG0: x31886 CARG: "Burgundy" ] >                  |
-|               |   HCONS: < h31909 qeq h31903 h31919 qeq h31901 h31889 qeq h31887 h31914 qeq      |
-|               | h31885 >                                                                         |
-|               |   EQS: < x31908 eq x31902 h31907 eq h31912 u31906 eq x31908 h31907 eq h31901     |
-|               | u31905 eq x31900 h31895 eq h31901 u31894 eq x31900 x31918 eq x31900 h31899 eq    |
-|               | h31922 i31898 eq x31918 x31888 eq x31886 h31885 eq h31892 i31884 eq x31888       |
-|               | x31913 eq x31883 h31899 eq h31917 i31897 eq x31913 > ]                           |
+| Original      | [ TOP: h6653                                                                     |
+|               |   INDEX: e6650 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h6653 ARG0: e6650 ARG1: i6651 ARG2: i6652 ]           |
+|               |           [ udef_q LBL: h6675 ARG0: x6672 RSTR: h6673 BODY: h6674 ]              |
+|               |           [ card LBL: h6649 ARG0: i6647 ARG1: u6648 CARG: "2900" ]               |
+|               |           [ compound LBL: h6661 ARG0: e6658 ARG1: u6659 ARG2: u6660 ]            |
+|               |           [ existential_q LBL: h6665 ARG0: x6662 RSTR: h6663 BODY: h6664 ]       |
+|               |           [ _staff_n_of LBL: h6657 ARG0: x6656 [ x NUM: sg ] ]                   |
+|               |           [ _member_n_of LBL: h6655 ARG0: x6654 ]                                |
+|               |           [ def_udef_a_q LBL: h6670 ARG0: x6667 RSTR: h6668 BODY: h6669 ]        |
+|               |           [ _university_n_of LBL: h6639 ARG0: x6637 ARG1: i6638 ]                |
+|               |           [ explicit_or_proper_q LBL: h6645 ARG0: x6642 RSTR: h6643 BODY: h6644  |
+|               | ]                                                                                |
+|               |           [ named LBL: h6641 ARG0: x6640 CARG: "Burgundy" ] >                    |
+|               |   HCONS: < h6663 qeq h6657 h6673 qeq h6655 h6643 qeq h6641 h6668 qeq h6639 >     |
+|               |   EQS: < x6662 eq x6656 h6661 eq h6666 u6660 eq x6662 h6661 eq h6655 u6659 eq    |
+|               | x6654 h6649 eq h6655 u6648 eq x6654 x6672 eq x6654 h6653 eq h6676 i6652 eq x6672 |
+|               | x6642 eq x6640 h6639 eq h6646 i6638 eq x6642 x6667 eq x6637 h6653 eq h6671 i6651 |
+|               | eq x6667 > ]                                                                     |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h31899                                                                    |
-|               |   INDEX: e31896 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h31899 ARG0: e31896 ARG1: x31883 ARG2: x31900 ]       |
-|               |           [ udef_q LBL: h31921 ARG0: x31900 RSTR: h31919 BODY: h31920 ]          |
-|               |           [ card LBL: h31895 ARG0: i31893 ARG1: x31900 CARG: "2900" ]            |
-|               |           [ compound LBL: h31895 ARG0: e31904 ARG1: x31900 ARG2: x31902 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h31911 ARG0: x31902 RSTR: h31909 BODY: h31910 ]   |
-|               |           [ _staff_n_of LBL: h31903 ARG0: x31902 ]                               |
-|               |           [ _member_n_of LBL: h31895 ARG0: x31900 ]                              |
-|               |           [ def_udef_a_q LBL: h31916 ARG0: x31883 RSTR: h31914 BODY: h31915 ]    |
-|               |           [ _university_n_of LBL: h31885 ARG0: x31883 ARG1: x31886 ]             |
-|               |           [ explicit_or_proper_q LBL: h31891 ARG0: x31886 RSTR: h31889 BODY:     |
-|               | h31890 ]                                                                         |
-|               |           [ named LBL: h31887 ARG0: x31886 CARG: "Burgundy" ] >                  |
-|               |   HCONS: < h31909 qeq h31903 h31919 qeq h31895 h31889 qeq h31887 h31914 qeq      |
-|               | h31885 > ]                                                                       |
+| EQs Collapsed | [ TOP: h6653                                                                     |
+|               |   INDEX: e6650 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h6653 ARG0: e6650 ARG1: x6637 ARG2: x6654 ]           |
+|               |           [ udef_q LBL: h6675 ARG0: x6654 RSTR: h6673 BODY: h6674 ]              |
+|               |           [ card LBL: h6649 ARG0: i6647 ARG1: x6654 CARG: "2900" ]               |
+|               |           [ compound LBL: h6649 ARG0: e6658 ARG1: x6654 ARG2: x6656 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h6665 ARG0: x6656 RSTR: h6663 BODY: h6664 ]       |
+|               |           [ _staff_n_of LBL: h6657 ARG0: x6656 ]                                 |
+|               |           [ _member_n_of LBL: h6649 ARG0: x6654 ]                                |
+|               |           [ def_udef_a_q LBL: h6670 ARG0: x6637 RSTR: h6668 BODY: h6669 ]        |
+|               |           [ _university_n_of LBL: h6639 ARG0: x6637 ARG1: x6640 ]                |
+|               |           [ explicit_or_proper_q LBL: h6645 ARG0: x6640 RSTR: h6643 BODY: h6644  |
+|               | ]                                                                                |
+|               |           [ named LBL: h6641 ARG0: x6640 CARG: "Burgundy" ] >                    |
+|               |   HCONS: < h6663 qeq h6657 h6673 qeq h6649 h6643 qeq h6641 h6668 qeq h6639 > ]   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h31923                                                                    |
-|               |   INDEX: e31896 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h31899 ARG0: e31896 ARG1: x31883 ARG2: x31900 ]       |
-|               |           [ udef_q LBL: h31921 ARG0: x31900 RSTR: h31919 BODY: h31920 ]          |
-|               |           [ card LBL: h31895 ARG0: i31893 ARG1: x31900 CARG: "2900" ]            |
-|               |           [ compound LBL: h31895 ARG0: e31904 ARG1: x31900 ARG2: x31902 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h31911 ARG0: x31902 RSTR: h31909 BODY: h31910 ]   |
-|               |           [ _staff_n_of LBL: h31903 ARG0: x31902 ]                               |
-|               |           [ _member_n_of LBL: h31895 ARG0: x31900 ]                              |
-|               |           [ def_udef_a_q LBL: h31916 ARG0: x31883 RSTR: h31914 BODY: h31915 ]    |
-|               |           [ _university_n_of LBL: h31885 ARG0: x31883 ARG1: x31886 ]             |
-|               |           [ explicit_or_proper_q LBL: h31891 ARG0: x31886 RSTR: h31889 BODY:     |
-|               | h31890 ]                                                                         |
-|               |           [ named LBL: h31887 ARG0: x31886 CARG: "Burgundy" ] >                  |
-|               |   HCONS: < h31909 qeq h31903 h31919 qeq h31895 h31889 qeq h31887 h31914 qeq      |
-|               | h31885 h31923 qeq h31899 > ]                                                     |
+| Prepped       | [ TOP: h6677                                                                     |
+|               |   INDEX: e6650 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h6653 ARG0: e6650 ARG1: x6637 ARG2: x6654 ]           |
+|               |           [ udef_q LBL: h6675 ARG0: x6654 RSTR: h6673 BODY: h6674 ]              |
+|               |           [ card LBL: h6649 ARG0: i6647 ARG1: x6654 CARG: "2900" ]               |
+|               |           [ compound LBL: h6649 ARG0: e6658 ARG1: x6654 ARG2: x6656 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h6665 ARG0: x6656 RSTR: h6663 BODY: h6664 ]       |
+|               |           [ _staff_n_of LBL: h6657 ARG0: x6656 ]                                 |
+|               |           [ _member_n_of LBL: h6649 ARG0: x6654 ]                                |
+|               |           [ def_udef_a_q LBL: h6670 ARG0: x6637 RSTR: h6668 BODY: h6669 ]        |
+|               |           [ _university_n_of LBL: h6639 ARG0: x6637 ARG1: x6640 ]                |
+|               |           [ explicit_or_proper_q LBL: h6645 ARG0: x6640 RSTR: h6643 BODY: h6644  |
+|               | ]                                                                                |
+|               |           [ named LBL: h6641 ARG0: x6640 CARG: "Burgundy" ] >                    |
+|               |   HCONS: < h6663 qeq h6657 h6673 qeq h6649 h6643 qeq h6641 h6668 qeq h6639 h6677 |
+|               | qeq h6653 > ]                                                                    |
 +---------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------+
@@ -118,19 +117,19 @@ GRAPH NAME: WebNLG_test_3triples_University_Id735_317_951
 +------------------------+----------------------------------------------------------------------------------+
 | Node                   | Generated SEMENT                                                                 |
 +------------------------+----------------------------------------------------------------------------------+
-| University_of_Burgundy | [ TOP: h31885                                                                    |
-|                        |   INDEX: x31883                                                                  |
-|                        |   RELS: < [ _university_n_of LBL: h31885 ARG0: x31883 ARG1: i31884 ]             |
-|                        |           [ explicit_or_proper_q LBL: h31891 ARG0: x31888 RSTR: h31889 BODY:     |
-|                        | h31890 ]                                                                         |
-|                        |           [ named LBL: h31887 ARG0: x31886 CARG: "Burgundy" ] >                  |
-|                        |   HCONS: < h31889 qeq h31887 >                                                   |
-|                        |   EQS: < x31888 eq x31886 h31885 eq h31892 i31884 eq x31888 > ]                  |
+| University_of_Burgundy | [ TOP: h6639                                                                     |
+|                        |   INDEX: x6637                                                                   |
+|                        |   RELS: < [ _university_n_of LBL: h6639 ARG0: x6637 ARG1: i6638 ]                |
+|                        |           [ explicit_or_proper_q LBL: h6645 ARG0: x6642 RSTR: h6643 BODY: h6644  |
+|                        | ]                                                                                |
+|                        |           [ named LBL: h6641 ARG0: x6640 CARG: "Burgundy" ] >                    |
+|                        |   HCONS: < h6643 qeq h6641 >                                                     |
+|                        |   EQS: < x6642 eq x6640 h6639 eq h6646 i6638 eq x6642 > ]                        |
 +------------------------+----------------------------------------------------------------------------------+
-| 2900                   | [ TOP: h31895                                                                    |
-|                        |   INDEX: i31893                                                                  |
-|                        |   RELS: < [ card LBL: h31895 ARG0: i31893 ARG1: u31894 CARG: "2900" ] >          |
-|                        |   SLOTS: < ARG1: u31894 > ]                                                      |
+| 2900                   | [ TOP: h6649                                                                     |
+|                        |   INDEX: i6647                                                                   |
+|                        |   RELS: < [ card LBL: h6649 ARG0: i6647 ARG1: u6648 CARG: "2900" ] >             |
+|                        |   SLOTS: < ARG1: u6648 > ]                                                       |
 +------------------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -138,26 +137,25 @@ GRAPH NAME: WebNLG_test_3triples_University_Id735_317_951
 +-------+------------------------+-------+----------------------------------------------------------------------------------+
 | Edge  | Parent                 | Child | Generated SEMENT                                                                 |
 +-------+------------------------+-------+----------------------------------------------------------------------------------+
-| staff | University_of_Burgundy | 2900  | [ TOP: h31899                                                                    |
-|       |                        |       |   INDEX: e31896 [ e TENSE: tensed ]                                              |
-|       |                        |       |   RELS: < [ _have_v_1 LBL: h31899 ARG0: e31896 ARG1: i31897 ARG2: i31898 ]       |
-|       |                        |       |           [ udef_q LBL: h31921 ARG0: x31918 RSTR: h31919 BODY: h31920 ]          |
-|       |                        |       |           [ card LBL: h31895 ARG0: i31893 ARG1: u31894 CARG: "2900" ]            |
-|       |                        |       |           [ compound LBL: h31907 ARG0: e31904 ARG1: u31905 ARG2: u31906 ]        |
-|       |                        |       |           [ existential_q LBL: h31911 ARG0: x31908 RSTR: h31909 BODY: h31910 ]   |
-|       |                        |       |           [ _staff_n_of LBL: h31903 ARG0: x31902 [ x NUM: sg ] ]                 |
-|       |                        |       |           [ _member_n_of LBL: h31901 ARG0: x31900 ]                              |
-|       |                        |       |           [ def_udef_a_q LBL: h31916 ARG0: x31913 RSTR: h31914 BODY: h31915 ]    |
-|       |                        |       |           [ _university_n_of LBL: h31885 ARG0: x31883 ARG1: i31884 ]             |
-|       |                        |       |           [ explicit_or_proper_q LBL: h31891 ARG0: x31888 RSTR: h31889 BODY:     |
-|       |                        |       | h31890 ]                                                                         |
-|       |                        |       |           [ named LBL: h31887 ARG0: x31886 CARG: "Burgundy" ] >                  |
-|       |                        |       |   HCONS: < h31909 qeq h31903 h31919 qeq h31901 h31889 qeq h31887 h31914 qeq      |
-|       |                        |       | h31885 >                                                                         |
-|       |                        |       |   EQS: < x31908 eq x31902 h31907 eq h31912 u31906 eq x31908 h31907 eq h31901     |
-|       |                        |       | u31905 eq x31900 h31895 eq h31901 u31894 eq x31900 x31918 eq x31900 h31899 eq    |
-|       |                        |       | h31922 i31898 eq x31918 x31888 eq x31886 h31885 eq h31892 i31884 eq x31888       |
-|       |                        |       | x31913 eq x31883 h31899 eq h31917 i31897 eq x31913 > ]                           |
+| staff | University_of_Burgundy | 2900  | [ TOP: h6653                                                                     |
+|       |                        |       |   INDEX: e6650 [ e TENSE: tensed ]                                               |
+|       |                        |       |   RELS: < [ _have_v_1 LBL: h6653 ARG0: e6650 ARG1: i6651 ARG2: i6652 ]           |
+|       |                        |       |           [ udef_q LBL: h6675 ARG0: x6672 RSTR: h6673 BODY: h6674 ]              |
+|       |                        |       |           [ card LBL: h6649 ARG0: i6647 ARG1: u6648 CARG: "2900" ]               |
+|       |                        |       |           [ compound LBL: h6661 ARG0: e6658 ARG1: u6659 ARG2: u6660 ]            |
+|       |                        |       |           [ existential_q LBL: h6665 ARG0: x6662 RSTR: h6663 BODY: h6664 ]       |
+|       |                        |       |           [ _staff_n_of LBL: h6657 ARG0: x6656 [ x NUM: sg ] ]                   |
+|       |                        |       |           [ _member_n_of LBL: h6655 ARG0: x6654 ]                                |
+|       |                        |       |           [ def_udef_a_q LBL: h6670 ARG0: x6667 RSTR: h6668 BODY: h6669 ]        |
+|       |                        |       |           [ _university_n_of LBL: h6639 ARG0: x6637 ARG1: i6638 ]                |
+|       |                        |       |           [ explicit_or_proper_q LBL: h6645 ARG0: x6642 RSTR: h6643 BODY: h6644  |
+|       |                        |       | ]                                                                                |
+|       |                        |       |           [ named LBL: h6641 ARG0: x6640 CARG: "Burgundy" ] >                    |
+|       |                        |       |   HCONS: < h6663 qeq h6657 h6673 qeq h6655 h6643 qeq h6641 h6668 qeq h6639 >     |
+|       |                        |       |   EQS: < x6662 eq x6656 h6661 eq h6666 u6660 eq x6662 h6661 eq h6655 u6659 eq    |
+|       |                        |       | x6654 h6649 eq h6655 u6648 eq x6654 x6672 eq x6654 h6653 eq h6676 i6652 eq x6672 |
+|       |                        |       | x6642 eq x6640 h6639 eq h6646 i6638 eq x6642 x6667 eq x6637 h6653 eq h6671 i6651 |
+|       |                        |       | eq x6667 > ]                                                                     |
 +-------+------------------------+-------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------+

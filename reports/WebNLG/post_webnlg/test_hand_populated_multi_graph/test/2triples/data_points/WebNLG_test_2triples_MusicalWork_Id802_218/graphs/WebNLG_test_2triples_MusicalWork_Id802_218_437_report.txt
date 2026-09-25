@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_2triples_MusicalWork_Id802_218_437
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-----------------------------------------------------------------------------------------+
-|                                       GOLD OUTPUTS                                      |
-+----------------------------------------------------------------------------+------------+
-| Gold Output                                                                | Generated? |
-+----------------------------------------------------------------------------+------------+
-| Punk blues and noise rock are genre of the album Turn Me On.               | False      |
-| Turn Me On is a punk blues album of the musical genre known as noise rock. | False      |
-| Turn Me On's genre can be defined as punk blues and noise rock.            | False      |
-+----------------------------------------------------------------------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                    GOLD OUTPUTS                                                                   |
++--------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                          | Generated? |
++--------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Noise pop is a fusion genre of noise rock an example of which is Turn Me On album.                                                   | False      |
+| Noise pop is a fusion genre, having elements from noise rock, which is the genre of the album Turn Me On, among other things.        | False      |
+| The album Turn Me On is an example of the genre known as noise rock, a fusion genre having elements of noise pop among other things. | False      |
++--------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +------------------------------------------------------------------------------------------+
 |                                       NODE METRICS                                       |
@@ -56,62 +56,60 @@ GRAPH NAME: WebNLG_test_2triples_MusicalWork_Id802_218_437
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h14372                                                                    |
-|               |   INDEX: e14369 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _perform_v_1 LBL: h14372 ARG0: e14369 ARG1: i14370 ARG2: i14371 ]    |
-|               |           [ def_udef_a_q LBL: h14376 ARG0: x14373 RSTR: h14374 BODY: h14375 ]    |
-|               |           [ compound LBL: h14363 ARG0: e14360 ARG1: u14361 ARG2: u14362 ]        |
-|               |           [ existential_q LBL: h14367 ARG0: x14364 RSTR: h14365 BODY: h14366 ]   |
-|               |           [ _noise_n_1 LBL: h14359 ARG0: x14358 [ x NUM: sg ] ]                  |
-|               |           [ _rock_n_1 LBL: h14357 ARG0: x14356 ]                                 |
-|               |           [ appos LBL: h14345 ARG0: e14342 ARG1: x14343 ARG2: i14344 ]           |
-|               |           [ def_udef_a_q LBL: h14354 ARG0: x14351 RSTR: h14352 BODY: h14353 ]    |
-|               |           [ _album_n_1 LBL: h14341 ARG0: x14340 ]                                |
-|               |           [ explicit_or_proper_q LBL: h14349 ARG0: x14346 RSTR: h14347 BODY:     |
-|               | h14348 ]                                                                         |
-|               |           [ named LBL: h14339 ARG0: x14338 CARG: "Turn Me On" ] >                |
-|               |   HCONS: < h14365 qeq h14359 h14374 qeq h14357 h14352 qeq h14341 h14347 qeq      |
-|               | h14339 >                                                                         |
-|               |   EQS: < x14364 eq x14358 h14363 eq h14368 u14362 eq x14364 h14363 eq h14357     |
-|               | u14361 eq x14356 x14373 eq x14356 h14372 eq h14377 i14371 eq x14373 x14351 eq    |
-|               | x14340 h14345 eq h14355 i14344 eq x14351 x14346 eq x14338 h14345 eq h14350       |
-|               | x14343 eq x14346 h14372 eq h14350 i14370 eq x14346 > ]                           |
+| Original      | [ TOP: h2384                                                                     |
+|               |   INDEX: e2381 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _perform_v_1 LBL: h2384 ARG0: e2381 ARG1: i2382 ARG2: i2383 ]        |
+|               |           [ def_udef_a_q LBL: h2388 ARG0: x2385 RSTR: h2386 BODY: h2387 ]        |
+|               |           [ compound LBL: h2375 ARG0: e2372 ARG1: u2373 ARG2: u2374 ]            |
+|               |           [ existential_q LBL: h2379 ARG0: x2376 RSTR: h2377 BODY: h2378 ]       |
+|               |           [ _noise_n_1 LBL: h2371 ARG0: x2370 [ x NUM: sg ] ]                    |
+|               |           [ _rock_n_1 LBL: h2369 ARG0: x2368 ]                                   |
+|               |           [ appos LBL: h2357 ARG0: e2354 ARG1: x2355 ARG2: i2356 ]               |
+|               |           [ def_udef_a_q LBL: h2366 ARG0: x2363 RSTR: h2364 BODY: h2365 ]        |
+|               |           [ _album_n_1 LBL: h2353 ARG0: x2352 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h2361 ARG0: x2358 RSTR: h2359 BODY: h2360  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2351 ARG0: x2350 CARG: "Turn Me On" ] >                  |
+|               |   HCONS: < h2377 qeq h2371 h2386 qeq h2369 h2364 qeq h2353 h2359 qeq h2351 >     |
+|               |   EQS: < x2376 eq x2370 h2375 eq h2380 u2374 eq x2376 h2375 eq h2369 u2373 eq    |
+|               | x2368 x2385 eq x2368 h2384 eq h2389 i2383 eq x2385 x2363 eq x2352 h2357 eq h2367 |
+|               | i2356 eq x2363 x2358 eq x2350 h2357 eq h2362 x2355 eq x2358 h2384 eq h2362 i2382 |
+|               | eq x2358 > ]                                                                     |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h14345                                                                    |
-|               |   INDEX: e14369 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _perform_v_1 LBL: h14345 ARG0: e14369 ARG1: x14338 ARG2: x14356 ]    |
-|               |           [ def_udef_a_q LBL: h14376 ARG0: x14356 RSTR: h14374 BODY: h14375 ]    |
-|               |           [ compound LBL: h14357 ARG0: e14360 ARG1: x14356 ARG2: x14358 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h14367 ARG0: x14358 RSTR: h14365 BODY: h14366 ]   |
-|               |           [ _noise_n_1 LBL: h14359 ARG0: x14358 ]                                |
-|               |           [ _rock_n_1 LBL: h14357 ARG0: x14356 ]                                 |
-|               |           [ appos LBL: h14345 ARG0: e14342 ARG1: x14338 ARG2: x14340 ]           |
-|               |           [ def_udef_a_q LBL: h14354 ARG0: x14340 RSTR: h14352 BODY: h14353 ]    |
-|               |           [ _album_n_1 LBL: h14341 ARG0: x14340 ]                                |
-|               |           [ explicit_or_proper_q LBL: h14349 ARG0: x14338 RSTR: h14347 BODY:     |
-|               | h14348 ]                                                                         |
-|               |           [ named LBL: h14339 ARG0: x14338 CARG: "Turn Me On" ] >                |
-|               |   HCONS: < h14365 qeq h14359 h14374 qeq h14357 h14352 qeq h14341 h14347 qeq      |
-|               | h14339 > ]                                                                       |
+| EQs Collapsed | [ TOP: h2357                                                                     |
+|               |   INDEX: e2381 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _perform_v_1 LBL: h2357 ARG0: e2381 ARG1: x2350 ARG2: x2368 ]        |
+|               |           [ def_udef_a_q LBL: h2388 ARG0: x2368 RSTR: h2386 BODY: h2387 ]        |
+|               |           [ compound LBL: h2369 ARG0: e2372 ARG1: x2368 ARG2: x2370 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h2379 ARG0: x2370 RSTR: h2377 BODY: h2378 ]       |
+|               |           [ _noise_n_1 LBL: h2371 ARG0: x2370 ]                                  |
+|               |           [ _rock_n_1 LBL: h2369 ARG0: x2368 ]                                   |
+|               |           [ appos LBL: h2357 ARG0: e2354 ARG1: x2350 ARG2: x2352 ]               |
+|               |           [ def_udef_a_q LBL: h2366 ARG0: x2352 RSTR: h2364 BODY: h2365 ]        |
+|               |           [ _album_n_1 LBL: h2353 ARG0: x2352 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h2361 ARG0: x2350 RSTR: h2359 BODY: h2360  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2351 ARG0: x2350 CARG: "Turn Me On" ] >                  |
+|               |   HCONS: < h2377 qeq h2371 h2386 qeq h2369 h2364 qeq h2353 h2359 qeq h2351 > ]   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h14378                                                                    |
-|               |   INDEX: e14369 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _perform_v_1 LBL: h14345 ARG0: e14369 ARG1: x14338 ARG2: x14356 ]    |
-|               |           [ def_udef_a_q LBL: h14376 ARG0: x14356 RSTR: h14374 BODY: h14375 ]    |
-|               |           [ compound LBL: h14357 ARG0: e14360 ARG1: x14356 ARG2: x14358 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h14367 ARG0: x14358 RSTR: h14365 BODY: h14366 ]   |
-|               |           [ _noise_n_1 LBL: h14359 ARG0: x14358 ]                                |
-|               |           [ _rock_n_1 LBL: h14357 ARG0: x14356 ]                                 |
-|               |           [ appos LBL: h14345 ARG0: e14342 ARG1: x14338 ARG2: x14340 ]           |
-|               |           [ def_udef_a_q LBL: h14354 ARG0: x14340 RSTR: h14352 BODY: h14353 ]    |
-|               |           [ _album_n_1 LBL: h14341 ARG0: x14340 ]                                |
-|               |           [ explicit_or_proper_q LBL: h14349 ARG0: x14338 RSTR: h14347 BODY:     |
-|               | h14348 ]                                                                         |
-|               |           [ named LBL: h14339 ARG0: x14338 CARG: "Turn Me On" ] >                |
-|               |   HCONS: < h14365 qeq h14359 h14374 qeq h14357 h14352 qeq h14341 h14347 qeq      |
-|               | h14339 h14378 qeq h14345 > ]                                                     |
+| Prepped       | [ TOP: h2390                                                                     |
+|               |   INDEX: e2381 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _perform_v_1 LBL: h2357 ARG0: e2381 ARG1: x2350 ARG2: x2368 ]        |
+|               |           [ def_udef_a_q LBL: h2388 ARG0: x2368 RSTR: h2386 BODY: h2387 ]        |
+|               |           [ compound LBL: h2369 ARG0: e2372 ARG1: x2368 ARG2: x2370 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h2379 ARG0: x2370 RSTR: h2377 BODY: h2378 ]       |
+|               |           [ _noise_n_1 LBL: h2371 ARG0: x2370 ]                                  |
+|               |           [ _rock_n_1 LBL: h2369 ARG0: x2368 ]                                   |
+|               |           [ appos LBL: h2357 ARG0: e2354 ARG1: x2350 ARG2: x2352 ]               |
+|               |           [ def_udef_a_q LBL: h2366 ARG0: x2352 RSTR: h2364 BODY: h2365 ]        |
+|               |           [ _album_n_1 LBL: h2353 ARG0: x2352 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h2361 ARG0: x2350 RSTR: h2359 BODY: h2360  |
+|               | ]                                                                                |
+|               |           [ named LBL: h2351 ARG0: x2350 CARG: "Turn Me On" ] >                  |
+|               |   HCONS: < h2377 qeq h2371 h2386 qeq h2369 h2364 qeq h2353 h2359 qeq h2351 h2390 |
+|               | qeq h2357 > ]                                                                    |
 +---------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------------+
@@ -119,28 +117,28 @@ GRAPH NAME: WebNLG_test_2triples_MusicalWork_Id802_218_437
 +--------------------+----------------------------------------------------------------------------------+
 | Node               | Generated SEMENT                                                                 |
 +--------------------+----------------------------------------------------------------------------------+
-| Turn_Me_On_(album) | [ TOP: h14350                                                                    |
-|                    |   INDEX: x14346                                                                  |
-|                    |   RELS: < [ appos LBL: h14345 ARG0: e14342 ARG1: x14343 ARG2: i14344 ]           |
-|                    |           [ def_udef_a_q LBL: h14354 ARG0: x14351 RSTR: h14352 BODY: h14353 ]    |
-|                    |           [ _album_n_1 LBL: h14341 ARG0: x14340 ]                                |
-|                    |           [ explicit_or_proper_q LBL: h14349 ARG0: x14346 RSTR: h14347 BODY:     |
-|                    | h14348 ]                                                                         |
-|                    |           [ named LBL: h14339 ARG0: x14338 CARG: "Turn Me On" ] >                |
-|                    |   HCONS: < h14352 qeq h14341 h14347 qeq h14339 >                                 |
-|                    |   EQS: < x14351 eq x14340 h14345 eq h14355 i14344 eq x14351 x14346 eq x14338     |
-|                    | h14345 eq h14350 x14343 eq x14346 >                                              |
-|                    |   SLOTS: < BODY: h14348 > ]                                                      |
+| Turn_Me_On_(album) | [ TOP: h2362                                                                     |
+|                    |   INDEX: x2358                                                                   |
+|                    |   RELS: < [ appos LBL: h2357 ARG0: e2354 ARG1: x2355 ARG2: i2356 ]               |
+|                    |           [ def_udef_a_q LBL: h2366 ARG0: x2363 RSTR: h2364 BODY: h2365 ]        |
+|                    |           [ _album_n_1 LBL: h2353 ARG0: x2352 ]                                  |
+|                    |           [ explicit_or_proper_q LBL: h2361 ARG0: x2358 RSTR: h2359 BODY: h2360  |
+|                    | ]                                                                                |
+|                    |           [ named LBL: h2351 ARG0: x2350 CARG: "Turn Me On" ] >                  |
+|                    |   HCONS: < h2364 qeq h2353 h2359 qeq h2351 >                                     |
+|                    |   EQS: < x2363 eq x2352 h2357 eq h2367 i2356 eq x2363 x2358 eq x2350 h2357 eq    |
+|                    | h2362 x2355 eq x2358 >                                                           |
+|                    |   SLOTS: < BODY: h2360 > ]                                                       |
 +--------------------+----------------------------------------------------------------------------------+
-| Noise_rock         | [ TOP: h14357                                                                    |
-|                    |   INDEX: x14356                                                                  |
-|                    |   RELS: < [ compound LBL: h14363 ARG0: e14360 ARG1: u14361 ARG2: u14362 ]        |
-|                    |           [ existential_q LBL: h14367 ARG0: x14364 RSTR: h14365 BODY: h14366 ]   |
-|                    |           [ _noise_n_1 LBL: h14359 ARG0: x14358 [ x NUM: sg ] ]                  |
-|                    |           [ _rock_n_1 LBL: h14357 ARG0: x14356 ] >                               |
-|                    |   HCONS: < h14365 qeq h14359 >                                                   |
-|                    |   EQS: < x14364 eq x14358 h14363 eq h14368 u14362 eq x14364 h14363 eq h14357     |
-|                    | u14361 eq x14356 > ]                                                             |
+| Noise_rock         | [ TOP: h2369                                                                     |
+|                    |   INDEX: x2368                                                                   |
+|                    |   RELS: < [ compound LBL: h2375 ARG0: e2372 ARG1: u2373 ARG2: u2374 ]            |
+|                    |           [ existential_q LBL: h2379 ARG0: x2376 RSTR: h2377 BODY: h2378 ]       |
+|                    |           [ _noise_n_1 LBL: h2371 ARG0: x2370 [ x NUM: sg ] ]                    |
+|                    |           [ _rock_n_1 LBL: h2369 ARG0: x2368 ] >                                 |
+|                    |   HCONS: < h2377 qeq h2371 >                                                     |
+|                    |   EQS: < x2376 eq x2370 h2375 eq h2380 u2374 eq x2376 h2375 eq h2369 u2373 eq    |
+|                    | x2368 > ]                                                                        |
 +--------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------+
@@ -148,26 +146,25 @@ GRAPH NAME: WebNLG_test_2triples_MusicalWork_Id802_218_437
 +-------+--------------------+------------+----------------------------------------------------------------------------------+
 | Edge  | Parent             | Child      | Generated SEMENT                                                                 |
 +-------+--------------------+------------+----------------------------------------------------------------------------------+
-| genre | Turn_Me_On_(album) | Noise_rock | [ TOP: h14372                                                                    |
-|       |                    |            |   INDEX: e14369 [ e TENSE: tensed ]                                              |
-|       |                    |            |   RELS: < [ _perform_v_1 LBL: h14372 ARG0: e14369 ARG1: i14370 ARG2: i14371 ]    |
-|       |                    |            |           [ def_udef_a_q LBL: h14376 ARG0: x14373 RSTR: h14374 BODY: h14375 ]    |
-|       |                    |            |           [ compound LBL: h14363 ARG0: e14360 ARG1: u14361 ARG2: u14362 ]        |
-|       |                    |            |           [ existential_q LBL: h14367 ARG0: x14364 RSTR: h14365 BODY: h14366 ]   |
-|       |                    |            |           [ _noise_n_1 LBL: h14359 ARG0: x14358 [ x NUM: sg ] ]                  |
-|       |                    |            |           [ _rock_n_1 LBL: h14357 ARG0: x14356 ]                                 |
-|       |                    |            |           [ appos LBL: h14345 ARG0: e14342 ARG1: x14343 ARG2: i14344 ]           |
-|       |                    |            |           [ def_udef_a_q LBL: h14354 ARG0: x14351 RSTR: h14352 BODY: h14353 ]    |
-|       |                    |            |           [ _album_n_1 LBL: h14341 ARG0: x14340 ]                                |
-|       |                    |            |           [ explicit_or_proper_q LBL: h14349 ARG0: x14346 RSTR: h14347 BODY:     |
-|       |                    |            | h14348 ]                                                                         |
-|       |                    |            |           [ named LBL: h14339 ARG0: x14338 CARG: "Turn Me On" ] >                |
-|       |                    |            |   HCONS: < h14365 qeq h14359 h14374 qeq h14357 h14352 qeq h14341 h14347 qeq      |
-|       |                    |            | h14339 >                                                                         |
-|       |                    |            |   EQS: < x14364 eq x14358 h14363 eq h14368 u14362 eq x14364 h14363 eq h14357     |
-|       |                    |            | u14361 eq x14356 x14373 eq x14356 h14372 eq h14377 i14371 eq x14373 x14351 eq    |
-|       |                    |            | x14340 h14345 eq h14355 i14344 eq x14351 x14346 eq x14338 h14345 eq h14350       |
-|       |                    |            | x14343 eq x14346 h14372 eq h14350 i14370 eq x14346 > ]                           |
+| genre | Turn_Me_On_(album) | Noise_rock | [ TOP: h2384                                                                     |
+|       |                    |            |   INDEX: e2381 [ e TENSE: tensed ]                                               |
+|       |                    |            |   RELS: < [ _perform_v_1 LBL: h2384 ARG0: e2381 ARG1: i2382 ARG2: i2383 ]        |
+|       |                    |            |           [ def_udef_a_q LBL: h2388 ARG0: x2385 RSTR: h2386 BODY: h2387 ]        |
+|       |                    |            |           [ compound LBL: h2375 ARG0: e2372 ARG1: u2373 ARG2: u2374 ]            |
+|       |                    |            |           [ existential_q LBL: h2379 ARG0: x2376 RSTR: h2377 BODY: h2378 ]       |
+|       |                    |            |           [ _noise_n_1 LBL: h2371 ARG0: x2370 [ x NUM: sg ] ]                    |
+|       |                    |            |           [ _rock_n_1 LBL: h2369 ARG0: x2368 ]                                   |
+|       |                    |            |           [ appos LBL: h2357 ARG0: e2354 ARG1: x2355 ARG2: i2356 ]               |
+|       |                    |            |           [ def_udef_a_q LBL: h2366 ARG0: x2363 RSTR: h2364 BODY: h2365 ]        |
+|       |                    |            |           [ _album_n_1 LBL: h2353 ARG0: x2352 ]                                  |
+|       |                    |            |           [ explicit_or_proper_q LBL: h2361 ARG0: x2358 RSTR: h2359 BODY: h2360  |
+|       |                    |            | ]                                                                                |
+|       |                    |            |           [ named LBL: h2351 ARG0: x2350 CARG: "Turn Me On" ] >                  |
+|       |                    |            |   HCONS: < h2377 qeq h2371 h2386 qeq h2369 h2364 qeq h2353 h2359 qeq h2351 >     |
+|       |                    |            |   EQS: < x2376 eq x2370 h2375 eq h2380 u2374 eq x2376 h2375 eq h2369 u2373 eq    |
+|       |                    |            | x2368 x2385 eq x2368 h2384 eq h2389 i2383 eq x2385 x2363 eq x2352 h2357 eq h2367 |
+|       |                    |            | i2356 eq x2363 x2358 eq x2350 h2357 eq h2362 x2355 eq x2358 h2384 eq h2362 i2382 |
+|       |                    |            | eq x2358 > ]                                                                     |
 +-------+--------------------+------------+----------------------------------------------------------------------------------+
 
 +------------------------------------------------------------------+

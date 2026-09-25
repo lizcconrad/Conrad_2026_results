@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_CelestialBody_Id313_314_943
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                       GOLD OUTPUTS                                                                      |
-+--------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                | Generated? |
-+--------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| 1147 Stavropolis has an absolute magnitude of 11.5. Its apoapsis is 418476000000.0 and the orbital period of the asteroid is 1249.6 days.  | False      |
-| The absolute magnitude of 1147 Stavropolis is 11.5. The orbital period of the asteroid is 1249.6 days, and the apoapsis is 418476000000.0. | False      |
-| The asteroid 1147 Stavropolis has an apoapsis of 418476000000.0 AU, an orbital period of 1249.6, and an absolute magnitude of 11.5.        | False      |
-+--------------------------------------------------------------------------------------------------------------------------------------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                      GOLD OUTPUTS                                                                      |
++-------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                               | Generated? |
++-------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| 1147 Stavropolis was discovered by Grigory Neujmin. Its apoapsis is 418476000000.0 and the orbital period of the asteroid is 1249.6 days. | False      |
+| 1147 Stavropolis, discovered by Grigory Neujmin, has an apoapsis of 418476000000.0 AU and an orbital period of 1249.6.                    | False      |
+| The apoapsis of 1147 Stavropolis is 418476000000.0. Its orbital period of is 1249.6 days, and it was discovered by Grigory Neujmin.       | False      |
++-------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------+
 |                                      NODE METRICS                                      |
@@ -56,85 +56,84 @@ GRAPH NAME: WebNLG_test_3triples_CelestialBody_Id313_314_943
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h31590                                                                    |
-|               |   INDEX: e31587 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h31590 ARG0: e31587 ARG1: i31588 ARG2: u31589 ]       |
-|               |           [ def_udef_a_q LBL: h31610 ARG0: x31607 RSTR: h31608 BODY: h31609 ]    |
-|               |           [ _orbital_a_1 LBL: h31593 ARG0: e31591 ARG1: u31592 ]                 |
-|               |           [ _period_n_of LBL: h31596 ARG0: x31594 ARG1: i31595 ]                 |
-|               |           [ number_q LBL: h31600 ARG0: x31597 RSTR: h31598 BODY: h31599 ]        |
-|               |           [ card LBL: h31586 ARG0: i31584 ARG1: u31585 CARG: "1249.6" ]          |
-|               |           [ explicit_or_proper_q LBL: h31605 ARG0: x31602 RSTR: h31603 BODY:     |
-|               | h31604 ]                                                                         |
-|               |           [ named LBL: h31583 ARG0: x31582 CARG: "1147 Stavropolis" ] >          |
-|               |   HCONS: < h31598 qeq h31586 h31608 qeq h31596 h31603 qeq h31583 >               |
-|               |   EQS: < x31597 eq i31584 h31596 eq h31601 i31595 eq x31597 h31593 eq h31596     |
-|               | u31592 eq x31594 x31607 eq x31594 h31590 eq h31611 u31589 eq x31607 x31602 eq    |
-|               | x31582 h31590 eq h31606 i31588 eq x31602 > ]                                     |
+| Original      | [ TOP: h7676                                                                     |
+|               |   INDEX: e7673 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h7676 ARG0: e7673 ARG1: i7674 ARG2: u7675 ]           |
+|               |           [ def_udef_a_q LBL: h7696 ARG0: x7693 RSTR: h7694 BODY: h7695 ]        |
+|               |           [ _orbital_a_1 LBL: h7679 ARG0: e7677 ARG1: u7678 ]                    |
+|               |           [ _period_n_of LBL: h7682 ARG0: x7680 ARG1: i7681 ]                    |
+|               |           [ number_q LBL: h7686 ARG0: x7683 RSTR: h7684 BODY: h7685 ]            |
+|               |           [ card LBL: h7672 ARG0: i7670 ARG1: u7671 CARG: "1249.6" ]             |
+|               |           [ explicit_or_proper_q LBL: h7691 ARG0: x7688 RSTR: h7689 BODY: h7690  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7669 ARG0: x7668 CARG: "1147 Stavropolis" ] >            |
+|               |   HCONS: < h7684 qeq h7672 h7694 qeq h7682 h7689 qeq h7669 >                     |
+|               |   EQS: < x7683 eq i7670 h7682 eq h7687 i7681 eq x7683 h7679 eq h7682 u7678 eq    |
+|               | x7680 x7693 eq x7680 h7676 eq h7697 u7675 eq x7693 x7688 eq x7668 h7676 eq h7692 |
+|               | i7674 eq x7688 > ]                                                               |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h31590                                                                    |
-|               |   INDEX: e31587 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h31590 ARG0: e31587 ARG1: x31582 ARG2: x31594 ]       |
-|               |           [ def_udef_a_q LBL: h31610 ARG0: x31594 RSTR: h31608 BODY: h31609 ]    |
-|               |           [ _orbital_a_1 LBL: h31593 ARG0: e31591 ARG1: x31594 ]                 |
-|               |           [ _period_n_of LBL: h31593 ARG0: x31594 ARG1: x31597 ]                 |
-|               |           [ number_q LBL: h31600 ARG0: x31597 RSTR: h31598 BODY: h31599 ]        |
-|               |           [ card LBL: h31586 ARG0: x31597 ARG1: u31585 CARG: "1249.6" ]          |
-|               |           [ explicit_or_proper_q LBL: h31605 ARG0: x31582 RSTR: h31603 BODY:     |
-|               | h31604 ]                                                                         |
-|               |           [ named LBL: h31583 ARG0: x31582 CARG: "1147 Stavropolis" ] >          |
-|               |   HCONS: < h31598 qeq h31586 h31608 qeq h31593 h31603 qeq h31583 > ]             |
+| EQs Collapsed | [ TOP: h7676                                                                     |
+|               |   INDEX: e7673 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h7676 ARG0: e7673 ARG1: x7668 ARG2: x7680 ]           |
+|               |           [ def_udef_a_q LBL: h7696 ARG0: x7680 RSTR: h7694 BODY: h7695 ]        |
+|               |           [ _orbital_a_1 LBL: h7679 ARG0: e7677 ARG1: x7680 ]                    |
+|               |           [ _period_n_of LBL: h7679 ARG0: x7680 ARG1: x7683 ]                    |
+|               |           [ number_q LBL: h7686 ARG0: x7683 RSTR: h7684 BODY: h7685 ]            |
+|               |           [ card LBL: h7672 ARG0: x7683 ARG1: u7671 CARG: "1249.6" ]             |
+|               |           [ explicit_or_proper_q LBL: h7691 ARG0: x7668 RSTR: h7689 BODY: h7690  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7669 ARG0: x7668 CARG: "1147 Stavropolis" ] >            |
+|               |   HCONS: < h7684 qeq h7672 h7694 qeq h7679 h7689 qeq h7669 > ]                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h31612                                                                    |
-|               |   INDEX: e31587 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h31590 ARG0: e31587 ARG1: x31582 ARG2: x31594 ]       |
-|               |           [ def_udef_a_q LBL: h31610 ARG0: x31594 RSTR: h31608 BODY: h31609 ]    |
-|               |           [ _orbital_a_1 LBL: h31593 ARG0: e31591 ARG1: x31594 ]                 |
-|               |           [ _period_n_of LBL: h31593 ARG0: x31594 ARG1: x31597 ]                 |
-|               |           [ number_q LBL: h31600 ARG0: x31597 RSTR: h31598 BODY: h31599 ]        |
-|               |           [ card LBL: h31586 ARG0: x31597 ARG1: u31585 CARG: "1249.6" ]          |
-|               |           [ explicit_or_proper_q LBL: h31605 ARG0: x31582 RSTR: h31603 BODY:     |
-|               | h31604 ]                                                                         |
-|               |           [ named LBL: h31583 ARG0: x31582 CARG: "1147 Stavropolis" ] >          |
-|               |   HCONS: < h31598 qeq h31586 h31608 qeq h31593 h31603 qeq h31583 h31612 qeq      |
-|               | h31590 > ]                                                                       |
+| Prepped       | [ TOP: h7698                                                                     |
+|               |   INDEX: e7673 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h7676 ARG0: e7673 ARG1: x7668 ARG2: x7680 ]           |
+|               |           [ def_udef_a_q LBL: h7696 ARG0: x7680 RSTR: h7694 BODY: h7695 ]        |
+|               |           [ _orbital_a_1 LBL: h7679 ARG0: e7677 ARG1: x7680 ]                    |
+|               |           [ _period_n_of LBL: h7679 ARG0: x7680 ARG1: x7683 ]                    |
+|               |           [ number_q LBL: h7686 ARG0: x7683 RSTR: h7684 BODY: h7685 ]            |
+|               |           [ card LBL: h7672 ARG0: x7683 ARG1: u7671 CARG: "1249.6" ]             |
+|               |           [ explicit_or_proper_q LBL: h7691 ARG0: x7668 RSTR: h7689 BODY: h7690  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7669 ARG0: x7668 CARG: "1147 Stavropolis" ] >            |
+|               |   HCONS: < h7684 qeq h7672 h7694 qeq h7679 h7689 qeq h7669 h7698 qeq h7676 > ]   |
 +---------------+----------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-|                                         NODE SEMENTS                                         |
-+------------------+---------------------------------------------------------------------------+
-| Node             | Generated SEMENT                                                          |
-+------------------+---------------------------------------------------------------------------+
-| 1147_Stavropolis | [ TOP: h31583                                                             |
-|                  |   INDEX: x31582                                                           |
-|                  |   RELS: < [ named LBL: h31583 ARG0: x31582 CARG: "1147 Stavropolis" ] > ] |
-+------------------+---------------------------------------------------------------------------+
-| 1249.6           | [ TOP: h31586                                                             |
-|                  |   INDEX: i31584                                                           |
-|                  |   RELS: < [ card LBL: h31586 ARG0: i31584 ARG1: u31585 CARG: "1249.6" ] > |
-|                  |   SLOTS: < ARG1: u31585 > ]                                               |
-+------------------+---------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+|                                        NODE SEMENTS                                        |
++------------------+-------------------------------------------------------------------------+
+| Node             | Generated SEMENT                                                        |
++------------------+-------------------------------------------------------------------------+
+| 1147_Stavropolis | [ TOP: h7669                                                            |
+|                  |   INDEX: x7668                                                          |
+|                  |   RELS: < [ named LBL: h7669 ARG0: x7668 CARG: "1147 Stavropolis" ] > ] |
++------------------+-------------------------------------------------------------------------+
+| 1249.6           | [ TOP: h7672                                                            |
+|                  |   INDEX: i7670                                                          |
+|                  |   RELS: < [ card LBL: h7672 ARG0: i7670 ARG1: u7671 CARG: "1249.6" ] >  |
+|                  |   SLOTS: < ARG1: u7671 > ]                                              |
++------------------+-------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------------------------------------+
 |                                                         EDGE SEMENTS                                                         |
 +---------------+------------------+--------+----------------------------------------------------------------------------------+
 | Edge          | Parent           | Child  | Generated SEMENT                                                                 |
 +---------------+------------------+--------+----------------------------------------------------------------------------------+
-| orbitalPeriod | 1147_Stavropolis | 1249.6 | [ TOP: h31590                                                                    |
-|               |                  |        |   INDEX: e31587 [ e TENSE: tensed ]                                              |
-|               |                  |        |   RELS: < [ _have_v_1 LBL: h31590 ARG0: e31587 ARG1: i31588 ARG2: u31589 ]       |
-|               |                  |        |           [ def_udef_a_q LBL: h31610 ARG0: x31607 RSTR: h31608 BODY: h31609 ]    |
-|               |                  |        |           [ _orbital_a_1 LBL: h31593 ARG0: e31591 ARG1: u31592 ]                 |
-|               |                  |        |           [ _period_n_of LBL: h31596 ARG0: x31594 ARG1: i31595 ]                 |
-|               |                  |        |           [ number_q LBL: h31600 ARG0: x31597 RSTR: h31598 BODY: h31599 ]        |
-|               |                  |        |           [ card LBL: h31586 ARG0: i31584 ARG1: u31585 CARG: "1249.6" ]          |
-|               |                  |        |           [ explicit_or_proper_q LBL: h31605 ARG0: x31602 RSTR: h31603 BODY:     |
-|               |                  |        | h31604 ]                                                                         |
-|               |                  |        |           [ named LBL: h31583 ARG0: x31582 CARG: "1147 Stavropolis" ] >          |
-|               |                  |        |   HCONS: < h31598 qeq h31586 h31608 qeq h31596 h31603 qeq h31583 >               |
-|               |                  |        |   EQS: < x31597 eq i31584 h31596 eq h31601 i31595 eq x31597 h31593 eq h31596     |
-|               |                  |        | u31592 eq x31594 x31607 eq x31594 h31590 eq h31611 u31589 eq x31607 x31602 eq    |
-|               |                  |        | x31582 h31590 eq h31606 i31588 eq x31602 > ]                                     |
+| orbitalPeriod | 1147_Stavropolis | 1249.6 | [ TOP: h7676                                                                     |
+|               |                  |        |   INDEX: e7673 [ e TENSE: tensed ]                                               |
+|               |                  |        |   RELS: < [ _have_v_1 LBL: h7676 ARG0: e7673 ARG1: i7674 ARG2: u7675 ]           |
+|               |                  |        |           [ def_udef_a_q LBL: h7696 ARG0: x7693 RSTR: h7694 BODY: h7695 ]        |
+|               |                  |        |           [ _orbital_a_1 LBL: h7679 ARG0: e7677 ARG1: u7678 ]                    |
+|               |                  |        |           [ _period_n_of LBL: h7682 ARG0: x7680 ARG1: i7681 ]                    |
+|               |                  |        |           [ number_q LBL: h7686 ARG0: x7683 RSTR: h7684 BODY: h7685 ]            |
+|               |                  |        |           [ card LBL: h7672 ARG0: i7670 ARG1: u7671 CARG: "1249.6" ]             |
+|               |                  |        |           [ explicit_or_proper_q LBL: h7691 ARG0: x7688 RSTR: h7689 BODY: h7690  |
+|               |                  |        | ]                                                                                |
+|               |                  |        |           [ named LBL: h7669 ARG0: x7668 CARG: "1147 Stavropolis" ] >            |
+|               |                  |        |   HCONS: < h7684 qeq h7672 h7694 qeq h7682 h7689 qeq h7669 >                     |
+|               |                  |        |   EQS: < x7683 eq i7670 h7682 eq h7687 i7681 eq x7683 h7679 eq h7682 u7678 eq    |
+|               |                  |        | x7680 x7693 eq x7680 h7676 eq h7697 u7675 eq x7693 x7688 eq x7668 h7676 eq h7692 |
+|               |                  |        | i7674 eq x7688 > ]                                                               |
 +---------------+------------------+--------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------+

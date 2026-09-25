@@ -24,17 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id1508_195_585
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-----------------------------------------------------------------------------------------------------------------------+
-|                                                      GOLD OUTPUTS                                                     |
-+----------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                              | Generated? |
-+----------------------------------------------------------------------------------------------------------+------------+
-| Crucial Blast record label released Year of No Light's post metal album titled Nord.                     | False      |
-| Nord is a post metal album by Year of No Light and was released by Crucial Blast record label.           | False      |
-| Nord is a post-metal album by Year of No Light, released under the record label Crucial Blast.           | False      |
-| The post-metal genre album Nord, by the group Year of No Light, was released on the Crucial Blast label. | False      |
-| Year of No Light released a post metal album called Nord, which Crucial Blast record label released.     | False      |
-+----------------------------------------------------------------------------------------------------------+------------+
++----------------------------------------------------------------------------------------------------------------+
+|                                                  GOLD OUTPUTS                                                  |
++---------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                       | Generated? |
++---------------------------------------------------------------------------------------------------+------------+
+| Nord, an album in the post metal genre was released on 06-09-2006 by the artist Year of No Light. | False      |
+| The Year of No Light album Nord genre is post-metal genre was released on 2006-09-06.             | False      |
+| The post-metal band, Nord released their album Year of No Light on September 6, 2006.             | False      |
++---------------------------------------------------------------------------------------------------+------------+
 
 +-----------------------------------------------------------------------------------------------------+
 |                                             NODE METRICS                                            |
@@ -58,66 +56,54 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id1508_195_585
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h19746                                                                    |
-|               |   INDEX: e19743 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _by_p_loc LBL: h19746 ARG0: e19743 ARG1: u19744 ARG2: i19745 ]       |
-|               |           [ explicit_or_proper_q LBL: h19750 ARG0: x19747 RSTR: h19748 BODY:     |
-|               | h19749 ]                                                                         |
-|               |           [ named LBL: h19742 ARG0: x19741 CARG: "Year of No Light" ]            |
-|               |           [ appos LBL: h19730 ARG0: e19727 ARG1: x19728 ARG2: i19729 ]           |
-|               |           [ def_udef_a_q LBL: h19739 ARG0: x19736 RSTR: h19737 BODY: h19738 ]    |
-|               |           [ compound LBL: h19721 ARG0: e19718 ARG1: u19719 ARG2: u19720 ]        |
-|               |           [ existential_q LBL: h19725 ARG0: x19722 RSTR: h19723 BODY: h19724 ]   |
-|               |           [ named LBL: h19717 ARG0: x19716 [ x NUM: sg ] CARG: "Year of No       |
-|               | Light" ]                                                                         |
-|               |           [ _album_n_1 LBL: h19715 ARG0: x19714 ]                                |
-|               |           [ explicit_or_proper_q LBL: h19734 ARG0: x19731 RSTR: h19732 BODY:     |
-|               | h19733 ]                                                                         |
-|               |           [ named LBL: h19713 ARG0: x19712 CARG: "Nord" ] >                      |
-|               |   HCONS: < h19748 qeq h19742 h19723 qeq h19717 h19737 qeq h19715 h19732 qeq      |
-|               | h19713 >                                                                         |
-|               |   EQS: < x19747 eq x19741 h19746 eq h19751 i19745 eq x19747 x19722 eq x19716     |
-|               | h19721 eq h19726 u19720 eq x19722 h19721 eq h19715 u19719 eq x19714 x19736 eq    |
-|               | x19714 h19730 eq h19740 i19729 eq x19736 x19731 eq x19712 h19730 eq h19735       |
-|               | x19728 eq x19731 h19746 eq h19735 u19744 eq x19731 > ]                           |
+| Original      | [ TOP: h813                                                                      |
+|               |   INDEX: e810 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _by_p_loc LBL: h813 ARG0: e810 ARG1: u811 ARG2: i812 ]               |
+|               |           [ explicit_or_proper_q LBL: h817 ARG0: x814 RSTR: h815 BODY: h816 ]    |
+|               |           [ named LBL: h809 ARG0: x808 CARG: "Year of No Light" ]                |
+|               |           [ appos LBL: h797 ARG0: e794 ARG1: x795 ARG2: i796 ]                   |
+|               |           [ def_udef_a_q LBL: h806 ARG0: x803 RSTR: h804 BODY: h805 ]            |
+|               |           [ compound LBL: h788 ARG0: e785 ARG1: u786 ARG2: u787 ]                |
+|               |           [ existential_q LBL: h792 ARG0: x789 RSTR: h790 BODY: h791 ]           |
+|               |           [ named LBL: h784 ARG0: x783 [ x NUM: sg ] CARG: "Year of No Light" ]  |
+|               |           [ _album_n_1 LBL: h782 ARG0: x781 ]                                    |
+|               |           [ explicit_or_proper_q LBL: h801 ARG0: x798 RSTR: h799 BODY: h800 ]    |
+|               |           [ named LBL: h780 ARG0: x779 CARG: "Nord" ] >                          |
+|               |   HCONS: < h815 qeq h809 h790 qeq h784 h804 qeq h782 h799 qeq h780 >             |
+|               |   EQS: < x814 eq x808 h813 eq h818 i812 eq x814 x789 eq x783 h788 eq h793 u787   |
+|               | eq x789 h788 eq h782 u786 eq x781 x803 eq x781 h797 eq h807 i796 eq x803 x798 eq |
+|               | x779 h797 eq h802 x795 eq x798 h813 eq h802 u811 eq x798 > ]                     |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h19730                                                                    |
-|               |   INDEX: e19743 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _by_p_loc LBL: h19730 ARG0: e19743 ARG1: x19712 ARG2: x19741 ]       |
-|               |           [ explicit_or_proper_q LBL: h19750 ARG0: x19741 RSTR: h19748 BODY:     |
-|               | h19749 ]                                                                         |
-|               |           [ named LBL: h19742 ARG0: x19741 CARG: "Year of No Light" ]            |
-|               |           [ appos LBL: h19730 ARG0: e19727 ARG1: x19712 ARG2: x19714 ]           |
-|               |           [ def_udef_a_q LBL: h19739 ARG0: x19714 RSTR: h19737 BODY: h19738 ]    |
-|               |           [ compound LBL: h19715 ARG0: e19718 ARG1: x19714 ARG2: x19716 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h19725 ARG0: x19716 RSTR: h19723 BODY: h19724 ]   |
-|               |           [ named LBL: h19717 ARG0: x19716 CARG: "Year of No Light" ]            |
-|               |           [ _album_n_1 LBL: h19715 ARG0: x19714 ]                                |
-|               |           [ explicit_or_proper_q LBL: h19734 ARG0: x19712 RSTR: h19732 BODY:     |
-|               | h19733 ]                                                                         |
-|               |           [ named LBL: h19713 ARG0: x19712 CARG: "Nord" ] >                      |
-|               |   HCONS: < h19748 qeq h19742 h19723 qeq h19717 h19737 qeq h19715 h19732 qeq      |
-|               | h19713 > ]                                                                       |
+| EQs Collapsed | [ TOP: h797                                                                      |
+|               |   INDEX: e810 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _by_p_loc LBL: h797 ARG0: e810 ARG1: x779 ARG2: x808 ]               |
+|               |           [ explicit_or_proper_q LBL: h817 ARG0: x808 RSTR: h815 BODY: h816 ]    |
+|               |           [ named LBL: h809 ARG0: x808 CARG: "Year of No Light" ]                |
+|               |           [ appos LBL: h797 ARG0: e794 ARG1: x779 ARG2: x781 ]                   |
+|               |           [ def_udef_a_q LBL: h806 ARG0: x781 RSTR: h804 BODY: h805 ]            |
+|               |           [ compound LBL: h782 ARG0: e785 ARG1: x781 ARG2: x783 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h792 ARG0: x783 RSTR: h790 BODY: h791 ]           |
+|               |           [ named LBL: h784 ARG0: x783 CARG: "Year of No Light" ]                |
+|               |           [ _album_n_1 LBL: h782 ARG0: x781 ]                                    |
+|               |           [ explicit_or_proper_q LBL: h801 ARG0: x779 RSTR: h799 BODY: h800 ]    |
+|               |           [ named LBL: h780 ARG0: x779 CARG: "Nord" ] >                          |
+|               |   HCONS: < h815 qeq h809 h790 qeq h784 h804 qeq h782 h799 qeq h780 > ]           |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h19752                                                                    |
-|               |   INDEX: e19743 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _by_p_loc LBL: h19730 ARG0: e19743 ARG1: x19712 ARG2: x19741 ]       |
-|               |           [ explicit_or_proper_q LBL: h19750 ARG0: x19741 RSTR: h19748 BODY:     |
-|               | h19749 ]                                                                         |
-|               |           [ named LBL: h19742 ARG0: x19741 CARG: "Year of No Light" ]            |
-|               |           [ appos LBL: h19730 ARG0: e19727 ARG1: x19712 ARG2: x19714 ]           |
-|               |           [ def_udef_a_q LBL: h19739 ARG0: x19714 RSTR: h19737 BODY: h19738 ]    |
-|               |           [ compound LBL: h19715 ARG0: e19718 ARG1: x19714 ARG2: x19716 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h19725 ARG0: x19716 RSTR: h19723 BODY: h19724 ]   |
-|               |           [ named LBL: h19717 ARG0: x19716 CARG: "Year of No Light" ]            |
-|               |           [ _album_n_1 LBL: h19715 ARG0: x19714 ]                                |
-|               |           [ explicit_or_proper_q LBL: h19734 ARG0: x19712 RSTR: h19732 BODY:     |
-|               | h19733 ]                                                                         |
-|               |           [ named LBL: h19713 ARG0: x19712 CARG: "Nord" ] >                      |
-|               |   HCONS: < h19748 qeq h19742 h19723 qeq h19717 h19737 qeq h19715 h19732 qeq      |
-|               | h19713 h19752 qeq h19730 > ]                                                     |
+| Prepped       | [ TOP: h819                                                                      |
+|               |   INDEX: e810 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _by_p_loc LBL: h797 ARG0: e810 ARG1: x779 ARG2: x808 ]               |
+|               |           [ explicit_or_proper_q LBL: h817 ARG0: x808 RSTR: h815 BODY: h816 ]    |
+|               |           [ named LBL: h809 ARG0: x808 CARG: "Year of No Light" ]                |
+|               |           [ appos LBL: h797 ARG0: e794 ARG1: x779 ARG2: x781 ]                   |
+|               |           [ def_udef_a_q LBL: h806 ARG0: x781 RSTR: h804 BODY: h805 ]            |
+|               |           [ compound LBL: h782 ARG0: e785 ARG1: x781 ARG2: x783 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h792 ARG0: x783 RSTR: h790 BODY: h791 ]           |
+|               |           [ named LBL: h784 ARG0: x783 CARG: "Year of No Light" ]                |
+|               |           [ _album_n_1 LBL: h782 ARG0: x781 ]                                    |
+|               |           [ explicit_or_proper_q LBL: h801 ARG0: x779 RSTR: h799 BODY: h800 ]    |
+|               |           [ named LBL: h780 ARG0: x779 CARG: "Nord" ] >                          |
+|               |   HCONS: < h815 qeq h809 h790 qeq h784 h804 qeq h782 h799 qeq h780 h819 qeq h797 |
+|               | > ]                                                                              |
 +---------------+----------------------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------------------------+
@@ -125,27 +111,24 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id1508_195_585
 +-------------------------------+----------------------------------------------------------------------------------+
 | Node                          | Generated SEMENT                                                                 |
 +-------------------------------+----------------------------------------------------------------------------------+
-| Nord_(Year_of_No_Light_album) | [ TOP: h19735                                                                    |
-|                               |   INDEX: x19731                                                                  |
-|                               |   RELS: < [ appos LBL: h19730 ARG0: e19727 ARG1: x19728 ARG2: i19729 ]           |
-|                               |           [ def_udef_a_q LBL: h19739 ARG0: x19736 RSTR: h19737 BODY: h19738 ]    |
-|                               |           [ compound LBL: h19721 ARG0: e19718 ARG1: u19719 ARG2: u19720 ]        |
-|                               |           [ existential_q LBL: h19725 ARG0: x19722 RSTR: h19723 BODY: h19724 ]   |
-|                               |           [ named LBL: h19717 ARG0: x19716 [ x NUM: sg ] CARG: "Year of No       |
-|                               | Light" ]                                                                         |
-|                               |           [ _album_n_1 LBL: h19715 ARG0: x19714 ]                                |
-|                               |           [ explicit_or_proper_q LBL: h19734 ARG0: x19731 RSTR: h19732 BODY:     |
-|                               | h19733 ]                                                                         |
-|                               |           [ named LBL: h19713 ARG0: x19712 CARG: "Nord" ] >                      |
-|                               |   HCONS: < h19723 qeq h19717 h19737 qeq h19715 h19732 qeq h19713 >               |
-|                               |   EQS: < x19722 eq x19716 h19721 eq h19726 u19720 eq x19722 h19721 eq h19715     |
-|                               | u19719 eq x19714 x19736 eq x19714 h19730 eq h19740 i19729 eq x19736 x19731 eq    |
-|                               | x19712 h19730 eq h19735 x19728 eq x19731 >                                       |
-|                               |   SLOTS: < BODY: h19733 > ]                                                      |
+| Nord_(Year_of_No_Light_album) | [ TOP: h802                                                                      |
+|                               |   INDEX: x798                                                                    |
+|                               |   RELS: < [ appos LBL: h797 ARG0: e794 ARG1: x795 ARG2: i796 ]                   |
+|                               |           [ def_udef_a_q LBL: h806 ARG0: x803 RSTR: h804 BODY: h805 ]            |
+|                               |           [ compound LBL: h788 ARG0: e785 ARG1: u786 ARG2: u787 ]                |
+|                               |           [ existential_q LBL: h792 ARG0: x789 RSTR: h790 BODY: h791 ]           |
+|                               |           [ named LBL: h784 ARG0: x783 [ x NUM: sg ] CARG: "Year of No Light" ]  |
+|                               |           [ _album_n_1 LBL: h782 ARG0: x781 ]                                    |
+|                               |           [ explicit_or_proper_q LBL: h801 ARG0: x798 RSTR: h799 BODY: h800 ]    |
+|                               |           [ named LBL: h780 ARG0: x779 CARG: "Nord" ] >                          |
+|                               |   HCONS: < h790 qeq h784 h804 qeq h782 h799 qeq h780 >                           |
+|                               |   EQS: < x789 eq x783 h788 eq h793 u787 eq x789 h788 eq h782 u786 eq x781 x803   |
+|                               | eq x781 h797 eq h807 i796 eq x803 x798 eq x779 h797 eq h802 x795 eq x798 >       |
+|                               |   SLOTS: < BODY: h800 > ]                                                        |
 +-------------------------------+----------------------------------------------------------------------------------+
-| Year_of_No_Light              | [ TOP: h19742                                                                    |
-|                               |   INDEX: x19741                                                                  |
-|                               |   RELS: < [ named LBL: h19742 ARG0: x19741 CARG: "Year of No Light" ] > ]        |
+| Year_of_No_Light              | [ TOP: h809                                                                      |
+|                               |   INDEX: x808                                                                    |
+|                               |   RELS: < [ named LBL: h809 ARG0: x808 CARG: "Year of No Light" ] > ]            |
 +-------------------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -153,28 +136,23 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id1508_195_585
 +--------+-------------------------------+------------------+----------------------------------------------------------------------------------+
 | Edge   | Parent                        | Child            | Generated SEMENT                                                                 |
 +--------+-------------------------------+------------------+----------------------------------------------------------------------------------+
-| artist | Nord_(Year_of_No_Light_album) | Year_of_No_Light | [ TOP: h19746                                                                    |
-|        |                               |                  |   INDEX: e19743 [ e TENSE: tensed ]                                              |
-|        |                               |                  |   RELS: < [ _by_p_loc LBL: h19746 ARG0: e19743 ARG1: u19744 ARG2: i19745 ]       |
-|        |                               |                  |           [ explicit_or_proper_q LBL: h19750 ARG0: x19747 RSTR: h19748 BODY:     |
-|        |                               |                  | h19749 ]                                                                         |
-|        |                               |                  |           [ named LBL: h19742 ARG0: x19741 CARG: "Year of No Light" ]            |
-|        |                               |                  |           [ appos LBL: h19730 ARG0: e19727 ARG1: x19728 ARG2: i19729 ]           |
-|        |                               |                  |           [ def_udef_a_q LBL: h19739 ARG0: x19736 RSTR: h19737 BODY: h19738 ]    |
-|        |                               |                  |           [ compound LBL: h19721 ARG0: e19718 ARG1: u19719 ARG2: u19720 ]        |
-|        |                               |                  |           [ existential_q LBL: h19725 ARG0: x19722 RSTR: h19723 BODY: h19724 ]   |
-|        |                               |                  |           [ named LBL: h19717 ARG0: x19716 [ x NUM: sg ] CARG: "Year of No       |
-|        |                               |                  | Light" ]                                                                         |
-|        |                               |                  |           [ _album_n_1 LBL: h19715 ARG0: x19714 ]                                |
-|        |                               |                  |           [ explicit_or_proper_q LBL: h19734 ARG0: x19731 RSTR: h19732 BODY:     |
-|        |                               |                  | h19733 ]                                                                         |
-|        |                               |                  |           [ named LBL: h19713 ARG0: x19712 CARG: "Nord" ] >                      |
-|        |                               |                  |   HCONS: < h19748 qeq h19742 h19723 qeq h19717 h19737 qeq h19715 h19732 qeq      |
-|        |                               |                  | h19713 >                                                                         |
-|        |                               |                  |   EQS: < x19747 eq x19741 h19746 eq h19751 i19745 eq x19747 x19722 eq x19716     |
-|        |                               |                  | h19721 eq h19726 u19720 eq x19722 h19721 eq h19715 u19719 eq x19714 x19736 eq    |
-|        |                               |                  | x19714 h19730 eq h19740 i19729 eq x19736 x19731 eq x19712 h19730 eq h19735       |
-|        |                               |                  | x19728 eq x19731 h19746 eq h19735 u19744 eq x19731 > ]                           |
+| artist | Nord_(Year_of_No_Light_album) | Year_of_No_Light | [ TOP: h813                                                                      |
+|        |                               |                  |   INDEX: e810 [ e TENSE: tensed ]                                                |
+|        |                               |                  |   RELS: < [ _by_p_loc LBL: h813 ARG0: e810 ARG1: u811 ARG2: i812 ]               |
+|        |                               |                  |           [ explicit_or_proper_q LBL: h817 ARG0: x814 RSTR: h815 BODY: h816 ]    |
+|        |                               |                  |           [ named LBL: h809 ARG0: x808 CARG: "Year of No Light" ]                |
+|        |                               |                  |           [ appos LBL: h797 ARG0: e794 ARG1: x795 ARG2: i796 ]                   |
+|        |                               |                  |           [ def_udef_a_q LBL: h806 ARG0: x803 RSTR: h804 BODY: h805 ]            |
+|        |                               |                  |           [ compound LBL: h788 ARG0: e785 ARG1: u786 ARG2: u787 ]                |
+|        |                               |                  |           [ existential_q LBL: h792 ARG0: x789 RSTR: h790 BODY: h791 ]           |
+|        |                               |                  |           [ named LBL: h784 ARG0: x783 [ x NUM: sg ] CARG: "Year of No Light" ]  |
+|        |                               |                  |           [ _album_n_1 LBL: h782 ARG0: x781 ]                                    |
+|        |                               |                  |           [ explicit_or_proper_q LBL: h801 ARG0: x798 RSTR: h799 BODY: h800 ]    |
+|        |                               |                  |           [ named LBL: h780 ARG0: x779 CARG: "Nord" ] >                          |
+|        |                               |                  |   HCONS: < h815 qeq h809 h790 qeq h784 h804 qeq h782 h799 qeq h780 >             |
+|        |                               |                  |   EQS: < x814 eq x808 h813 eq h818 i812 eq x814 x789 eq x783 h788 eq h793 u787   |
+|        |                               |                  | eq x789 h788 eq h782 u786 eq x781 x803 eq x781 h797 eq h807 i796 eq x803 x798 eq |
+|        |                               |                  | x779 h797 eq h802 x795 eq x798 h813 eq h802 u811 eq x798 > ]                     |
 +--------+-------------------------------+------------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------+

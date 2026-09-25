@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id223_246_738
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+----------------------------------------------------------------------------------------------------------------+
-|                                                  GOLD OUTPUTS                                                  |
-+---------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                       | Generated? |
-+---------------------------------------------------------------------------------------------------+------------+
-| Super Capers is a movie in English, which was edited by Stacy Katzman and starred Michael Rooker. | False      |
-| Super Capers is an English language film starring Michael Rooker and edited by Stacy Katzman.     | False      |
-| The English-language film Super Capers was edited by Stacy Katzman and played by Michael Rooker.  | False      |
-+---------------------------------------------------------------------------------------------------+------------+
++--------------------------------------------------------------------------------------------------------------+
+|                                                 GOLD OUTPUTS                                                 |
++-------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                     | Generated? |
++-------------------------------------------------------------------------------------------------+------------+
+| Both Michael Rooker and Tom Sizemore starred in Super Capers which was edited by Stacy Katzman. | False      |
+| Stacy Katzman edited Super Capers starring Michael Rooker and Tom Sizemore.                     | False      |
+| The film Super Capers starred Tom Sizemore and Michael Rooker and was edited by Stacy Katzman.  | False      |
++-------------------------------------------------------------------------------------------------+------------+
 
 +-------------------------------------------------------------------------------------+
 |                                     NODE METRICS                                    |
@@ -56,73 +56,73 @@ GRAPH NAME: WebNLG_test_3triples_Film_Id223_246_738
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h25210                                                                    |
-|               |   INDEX: e25207 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _edit_v_1 LBL: h25210 ARG0: e25207 ARG1: i25208 ARG2: i25209 ]       |
-|               |           [ explicit_or_proper_q LBL: h25219 ARG0: x25216 RSTR: h25217 BODY:     |
-|               | h25218 ]                                                                         |
-|               |           [ named LBL: h25204 ARG0: x25203 CARG: "Super Capers" ]                |
-|               |           [ explicit_or_proper_q LBL: h25214 ARG0: x25211 RSTR: h25212 BODY:     |
-|               | h25213 ]                                                                         |
-|               |           [ named LBL: h25206 ARG0: x25205 CARG: "Stacy Katzman" ] >             |
-|               |   HCONS: < h25217 qeq h25204 h25212 qeq h25206 >                                 |
-|               |   EQS: < x25216 eq x25203 h25210 eq h25220 i25209 eq x25216 x25211 eq x25205     |
-|               | h25210 eq h25215 i25208 eq x25211 > ]                                            |
+| Original      | [ TOP: h6531                                                                     |
+|               |   INDEX: e6528 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _edit_v_1 LBL: h6531 ARG0: e6528 ARG1: i6529 ARG2: i6530 ]           |
+|               |           [ explicit_or_proper_q LBL: h6540 ARG0: x6537 RSTR: h6538 BODY: h6539  |
+|               | ]                                                                                |
+|               |           [ named LBL: h6525 ARG0: x6524 CARG: "Super Capers" ]                  |
+|               |           [ explicit_or_proper_q LBL: h6535 ARG0: x6532 RSTR: h6533 BODY: h6534  |
+|               | ]                                                                                |
+|               |           [ named LBL: h6527 ARG0: x6526 CARG: "Stacy Katzman" ] >               |
+|               |   HCONS: < h6538 qeq h6525 h6533 qeq h6527 >                                     |
+|               |   EQS: < x6537 eq x6524 h6531 eq h6541 i6530 eq x6537 x6532 eq x6526 h6531 eq    |
+|               | h6536 i6529 eq x6532 > ]                                                         |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h25210                                                                    |
-|               |   INDEX: e25207 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _edit_v_1 LBL: h25210 ARG0: e25207 ARG1: x25205 ARG2: x25203 ]       |
-|               |           [ explicit_or_proper_q LBL: h25219 ARG0: x25203 RSTR: h25217 BODY:     |
-|               | h25218 ]                                                                         |
-|               |           [ named LBL: h25204 ARG0: x25203 CARG: "Super Capers" ]                |
-|               |           [ explicit_or_proper_q LBL: h25214 ARG0: x25205 RSTR: h25212 BODY:     |
-|               | h25213 ]                                                                         |
-|               |           [ named LBL: h25206 ARG0: x25205 CARG: "Stacy Katzman" ] >             |
-|               |   HCONS: < h25217 qeq h25204 h25212 qeq h25206 > ]                               |
+| EQs Collapsed | [ TOP: h6531                                                                     |
+|               |   INDEX: e6528 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _edit_v_1 LBL: h6531 ARG0: e6528 ARG1: x6526 ARG2: x6524 ]           |
+|               |           [ explicit_or_proper_q LBL: h6540 ARG0: x6524 RSTR: h6538 BODY: h6539  |
+|               | ]                                                                                |
+|               |           [ named LBL: h6525 ARG0: x6524 CARG: "Super Capers" ]                  |
+|               |           [ explicit_or_proper_q LBL: h6535 ARG0: x6526 RSTR: h6533 BODY: h6534  |
+|               | ]                                                                                |
+|               |           [ named LBL: h6527 ARG0: x6526 CARG: "Stacy Katzman" ] >               |
+|               |   HCONS: < h6538 qeq h6525 h6533 qeq h6527 > ]                                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h25221                                                                    |
-|               |   INDEX: e25207 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _edit_v_1 LBL: h25210 ARG0: e25207 ARG1: x25205 ARG2: x25203 ]       |
-|               |           [ explicit_or_proper_q LBL: h25219 ARG0: x25203 RSTR: h25217 BODY:     |
-|               | h25218 ]                                                                         |
-|               |           [ named LBL: h25204 ARG0: x25203 CARG: "Super Capers" ]                |
-|               |           [ explicit_or_proper_q LBL: h25214 ARG0: x25205 RSTR: h25212 BODY:     |
-|               | h25213 ]                                                                         |
-|               |           [ named LBL: h25206 ARG0: x25205 CARG: "Stacy Katzman" ] >             |
-|               |   HCONS: < h25217 qeq h25204 h25212 qeq h25206 h25221 qeq h25210 > ]             |
+| Prepped       | [ TOP: h6542                                                                     |
+|               |   INDEX: e6528 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _edit_v_1 LBL: h6531 ARG0: e6528 ARG1: x6526 ARG2: x6524 ]           |
+|               |           [ explicit_or_proper_q LBL: h6540 ARG0: x6524 RSTR: h6538 BODY: h6539  |
+|               | ]                                                                                |
+|               |           [ named LBL: h6525 ARG0: x6524 CARG: "Super Capers" ]                  |
+|               |           [ explicit_or_proper_q LBL: h6535 ARG0: x6526 RSTR: h6533 BODY: h6534  |
+|               | ]                                                                                |
+|               |           [ named LBL: h6527 ARG0: x6526 CARG: "Stacy Katzman" ] >               |
+|               |   HCONS: < h6538 qeq h6525 h6533 qeq h6527 h6542 qeq h6531 > ]                   |
 +---------------+----------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------+
-|                                      NODE SEMENTS                                      |
-+---------------+------------------------------------------------------------------------+
-| Node          | Generated SEMENT                                                       |
-+---------------+------------------------------------------------------------------------+
-| Super_Capers  | [ TOP: h25204                                                          |
-|               |   INDEX: x25203                                                        |
-|               |   RELS: < [ named LBL: h25204 ARG0: x25203 CARG: "Super Capers" ] > ]  |
-+---------------+------------------------------------------------------------------------+
-| Stacy_Katzman | [ TOP: h25206                                                          |
-|               |   INDEX: x25205                                                        |
-|               |   RELS: < [ named LBL: h25206 ARG0: x25205 CARG: "Stacy Katzman" ] > ] |
-+---------------+------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------+
+|                                     NODE SEMENTS                                     |
++---------------+----------------------------------------------------------------------+
+| Node          | Generated SEMENT                                                     |
++---------------+----------------------------------------------------------------------+
+| Super_Capers  | [ TOP: h6525                                                         |
+|               |   INDEX: x6524                                                       |
+|               |   RELS: < [ named LBL: h6525 ARG0: x6524 CARG: "Super Capers" ] > ]  |
++---------------+----------------------------------------------------------------------+
+| Stacy_Katzman | [ TOP: h6527                                                         |
+|               |   INDEX: x6526                                                       |
+|               |   RELS: < [ named LBL: h6527 ARG0: x6526 CARG: "Stacy Katzman" ] > ] |
++---------------+----------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------------------+
 |                                                        EDGE SEMENTS                                                       |
 +---------+--------------+---------------+----------------------------------------------------------------------------------+
 | Edge    | Parent       | Child         | Generated SEMENT                                                                 |
 +---------+--------------+---------------+----------------------------------------------------------------------------------+
-| editing | Super_Capers | Stacy_Katzman | [ TOP: h25210                                                                    |
-|         |              |               |   INDEX: e25207 [ e TENSE: tensed ]                                              |
-|         |              |               |   RELS: < [ _edit_v_1 LBL: h25210 ARG0: e25207 ARG1: i25208 ARG2: i25209 ]       |
-|         |              |               |           [ explicit_or_proper_q LBL: h25219 ARG0: x25216 RSTR: h25217 BODY:     |
-|         |              |               | h25218 ]                                                                         |
-|         |              |               |           [ named LBL: h25204 ARG0: x25203 CARG: "Super Capers" ]                |
-|         |              |               |           [ explicit_or_proper_q LBL: h25214 ARG0: x25211 RSTR: h25212 BODY:     |
-|         |              |               | h25213 ]                                                                         |
-|         |              |               |           [ named LBL: h25206 ARG0: x25205 CARG: "Stacy Katzman" ] >             |
-|         |              |               |   HCONS: < h25217 qeq h25204 h25212 qeq h25206 >                                 |
-|         |              |               |   EQS: < x25216 eq x25203 h25210 eq h25220 i25209 eq x25216 x25211 eq x25205     |
-|         |              |               | h25210 eq h25215 i25208 eq x25211 > ]                                            |
+| editing | Super_Capers | Stacy_Katzman | [ TOP: h6531                                                                     |
+|         |              |               |   INDEX: e6528 [ e TENSE: tensed ]                                               |
+|         |              |               |   RELS: < [ _edit_v_1 LBL: h6531 ARG0: e6528 ARG1: i6529 ARG2: i6530 ]           |
+|         |              |               |           [ explicit_or_proper_q LBL: h6540 ARG0: x6537 RSTR: h6538 BODY: h6539  |
+|         |              |               | ]                                                                                |
+|         |              |               |           [ named LBL: h6525 ARG0: x6524 CARG: "Super Capers" ]                  |
+|         |              |               |           [ explicit_or_proper_q LBL: h6535 ARG0: x6532 RSTR: h6533 BODY: h6534  |
+|         |              |               | ]                                                                                |
+|         |              |               |           [ named LBL: h6527 ARG0: x6526 CARG: "Stacy Katzman" ] >               |
+|         |              |               |   HCONS: < h6538 qeq h6525 h6533 qeq h6527 >                                     |
+|         |              |               |   EQS: < x6537 eq x6524 h6531 eq h6541 i6530 eq x6537 x6532 eq x6526 h6531 eq    |
+|         |              |               | h6536 i6529 eq x6532 > ]                                                         |
 +---------+--------------+---------------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------+

@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id1016_294_883
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+----------------------------------------------------------------------------------------------------------------------------+
-|                                                        GOLD OUTPUTS                                                        |
-+---------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                   | Generated? |
-+---------------------------------------------------------------------------------------------------------------+------------+
-| Brandon Carter, born in England on January 1, 1942, had Dennis William Sciama as his doctoral advisor.        | False      |
-| Brandon Carter, who was born in England on 01-01-1942, has a doctoral advisor named Dennis William Sciama.    | False      |
-| Dennis William Sciama was the doctoral advisor of Brandon Carter who was born in England on January 1st 1942. | False      |
-+---------------------------------------------------------------------------------------------------------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                             GOLD OUTPUTS                                                                             |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                             | Generated? |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Brandon Carter (born on January 1st 1942) was advised by Dennis William Sciama for his doctorate in General Relativity, Carter's professional field.    | False      |
+| Brandon Carter, a professional in the field of general relativity who learned from Dennis William Sciama, was born on January 1st, 1942.                | False      |
+| Physicist Brandon Carter, born January 1st, 1942, is a professional in the field of General Relativity. His doctoral advisor was Dennis William Sciama. | False      |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +--------------------------------------------------------------------------------------+
 |                                     NODE METRICS                                     |
@@ -56,66 +56,61 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id1016_294_883
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h29672                                                                    |
-|               |   INDEX: e29669 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h29663 ARG0: e29660 ARG1: u29661 ARG2: i29662 ]      |
-|               |           [ def_udef_a_q LBL: h29667 ARG0: x29664 RSTR: h29665 BODY: h29666 ]    |
-|               |           [ of_p LBL: h29654 ARG0: e29651 ARG1: x29652 ARG2: x29653 ]            |
-|               |           [ def_implicit_q LBL: h29658 ARG0: x29655 RSTR: h29656 BODY: h29657 ]  |
-|               |           [ mofy LBL: h29643 ARG0: x29641 [ x NUM: sg ] ARG1: i29642 CARG: "Jan" |
+| Original      | [ TOP: h7487                                                                     |
+|               |   INDEX: e7484 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _on_p_temp LBL: h7478 ARG0: e7475 ARG1: u7476 ARG2: i7477 ]          |
+|               |           [ def_udef_a_q LBL: h7482 ARG0: x7479 RSTR: h7480 BODY: h7481 ]        |
+|               |           [ of_p LBL: h7469 ARG0: e7466 ARG1: x7467 ARG2: x7468 ]                |
+|               |           [ def_implicit_q LBL: h7473 ARG0: x7470 RSTR: h7471 BODY: h7472 ]      |
+|               |           [ mofy LBL: h7458 ARG0: x7456 [ x NUM: sg ] ARG1: i7457 CARG: "Jan" ]  |
+|               |           [ dofm LBL: h7455 ARG0: x7453 ARG1: i7454 CARG: "1st" ]                |
+|               |           [ proper_q LBL: h7464 ARG0: x7461 RSTR: h7462 BODY: h7463 ]            |
+|               |           [ yofc LBL: h7460 ARG0: x7459 CARG: "1942" ]                           |
+|               |           [ _born_a_of LBL: h7487 ARG0: e7484 ARG1: u7485 ARG2: u7486 ]          |
+|               |           [ explicit_or_proper_q LBL: h7491 ARG0: x7488 RSTR: h7489 BODY: h7490  |
 |               | ]                                                                                |
-|               |           [ dofm LBL: h29640 ARG0: x29638 ARG1: i29639 CARG: "1st" ]             |
-|               |           [ proper_q LBL: h29649 ARG0: x29646 RSTR: h29647 BODY: h29648 ]        |
-|               |           [ yofc LBL: h29645 ARG0: x29644 CARG: "1942" ]                         |
-|               |           [ _born_a_of LBL: h29672 ARG0: e29669 ARG1: u29670 ARG2: u29671 ]      |
-|               |           [ explicit_or_proper_q LBL: h29676 ARG0: x29673 RSTR: h29674 BODY:     |
-|               | h29675 ]                                                                         |
-|               |           [ named LBL: h29637 ARG0: x29636 CARG: "Brandon Carter" ] >            |
-|               |   HCONS: < h29656 qeq h29643 h29647 qeq h29645 h29665 qeq h29640 h29674 qeq      |
-|               | h29637 >                                                                         |
-|               |   EQS: < x29655 eq x29641 h29654 eq h29659 x29653 eq x29655 x29646 eq x29644     |
-|               | h29640 eq h29650 i29639 eq x29646 h29654 eq h29640 x29652 eq x29638 x29664 eq    |
-|               | x29638 h29663 eq h29668 i29662 eq x29664 x29673 eq x29636 h29672 eq h29677       |
-|               | u29670 eq x29673 h29663 eq h29672 u29661 eq e29669 >                             |
-|               |   SLOTS: < ARG2: u29671 > ]                                                      |
+|               |           [ named LBL: h7452 ARG0: x7451 CARG: "Brandon Carter" ] >              |
+|               |   HCONS: < h7471 qeq h7458 h7462 qeq h7460 h7480 qeq h7455 h7489 qeq h7452 >     |
+|               |   EQS: < x7470 eq x7456 h7469 eq h7474 x7468 eq x7470 x7461 eq x7459 h7455 eq    |
+|               | h7465 i7454 eq x7461 h7469 eq h7455 x7467 eq x7453 x7479 eq x7453 h7478 eq h7483 |
+|               | i7477 eq x7479 x7488 eq x7451 h7487 eq h7492 u7485 eq x7488 h7478 eq h7487 u7476 |
+|               | eq e7484 >                                                                       |
+|               |   SLOTS: < ARG2: u7486 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h29663                                                                    |
-|               |   INDEX: e29669 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h29663 ARG0: e29660 ARG1: e29669 ARG2: x29638 ]      |
-|               |           [ def_udef_a_q LBL: h29667 ARG0: x29638 RSTR: h29665 BODY: h29666 ]    |
-|               |           [ of_p LBL: h29640 ARG0: e29651 ARG1: x29638 ARG2: x29641 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ def_implicit_q LBL: h29658 ARG0: x29641 RSTR: h29656 BODY: h29657 ]  |
-|               |           [ mofy LBL: h29643 ARG0: x29641 ARG1: i29642 CARG: "Jan" ]             |
-|               |           [ dofm LBL: h29640 ARG0: x29638 ARG1: x29644 CARG: "1st" ]             |
-|               |           [ proper_q LBL: h29649 ARG0: x29644 RSTR: h29647 BODY: h29648 ]        |
-|               |           [ yofc LBL: h29645 ARG0: x29644 CARG: "1942" ]                         |
-|               |           [ _born_a_of LBL: h29663 ARG0: e29669 ARG1: x29636 ARG2: u29671 ]      |
-|               |           [ explicit_or_proper_q LBL: h29676 ARG0: x29636 RSTR: h29674 BODY:     |
-|               | h29675 ]                                                                         |
-|               |           [ named LBL: h29637 ARG0: x29636 CARG: "Brandon Carter" ] >            |
-|               |   HCONS: < h29656 qeq h29643 h29647 qeq h29645 h29665 qeq h29640 h29674 qeq      |
-|               | h29637 >                                                                         |
-|               |   SLOTS: < ARG2: u29671 > ]                                                      |
+| EQs Collapsed | [ TOP: h7478                                                                     |
+|               |   INDEX: e7484 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _on_p_temp LBL: h7478 ARG0: e7475 ARG1: e7484 ARG2: x7453 ]          |
+|               |           [ def_udef_a_q LBL: h7482 ARG0: x7453 RSTR: h7480 BODY: h7481 ]        |
+|               |           [ of_p LBL: h7455 ARG0: e7466 ARG1: x7453 ARG2: x7456 [ x NUM: sg ] ]  |
+|               |           [ def_implicit_q LBL: h7473 ARG0: x7456 RSTR: h7471 BODY: h7472 ]      |
+|               |           [ mofy LBL: h7458 ARG0: x7456 ARG1: i7457 CARG: "Jan" ]                |
+|               |           [ dofm LBL: h7455 ARG0: x7453 ARG1: x7459 CARG: "1st" ]                |
+|               |           [ proper_q LBL: h7464 ARG0: x7459 RSTR: h7462 BODY: h7463 ]            |
+|               |           [ yofc LBL: h7460 ARG0: x7459 CARG: "1942" ]                           |
+|               |           [ _born_a_of LBL: h7478 ARG0: e7484 ARG1: x7451 ARG2: u7486 ]          |
+|               |           [ explicit_or_proper_q LBL: h7491 ARG0: x7451 RSTR: h7489 BODY: h7490  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7452 ARG0: x7451 CARG: "Brandon Carter" ] >              |
+|               |   HCONS: < h7471 qeq h7458 h7462 qeq h7460 h7480 qeq h7455 h7489 qeq h7452 >     |
+|               |   SLOTS: < ARG2: u7486 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h29678                                                                    |
-|               |   INDEX: e29669 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h29663 ARG0: e29660 ARG1: e29669 ARG2: x29638 ]      |
-|               |           [ def_udef_a_q LBL: h29667 ARG0: x29638 RSTR: h29665 BODY: h29666 ]    |
-|               |           [ of_p LBL: h29640 ARG0: e29651 ARG1: x29638 ARG2: x29641 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ def_implicit_q LBL: h29658 ARG0: x29641 RSTR: h29656 BODY: h29657 ]  |
-|               |           [ mofy LBL: h29643 ARG0: x29641 ARG1: i29642 CARG: "Jan" ]             |
-|               |           [ dofm LBL: h29640 ARG0: x29638 ARG1: x29644 CARG: "1st" ]             |
-|               |           [ proper_q LBL: h29649 ARG0: x29644 RSTR: h29647 BODY: h29648 ]        |
-|               |           [ yofc LBL: h29645 ARG0: x29644 CARG: "1942" ]                         |
-|               |           [ _born_a_of LBL: h29663 ARG0: e29669 ARG1: x29636 ARG2: u29671 ]      |
-|               |           [ explicit_or_proper_q LBL: h29676 ARG0: x29636 RSTR: h29674 BODY:     |
-|               | h29675 ]                                                                         |
-|               |           [ named LBL: h29637 ARG0: x29636 CARG: "Brandon Carter" ] >            |
-|               |   HCONS: < h29656 qeq h29643 h29647 qeq h29645 h29665 qeq h29640 h29674 qeq      |
-|               | h29637 h29678 qeq h29663 >                                                       |
-|               |   SLOTS: < ARG2: u29671 > ]                                                      |
+| Prepped       | [ TOP: h7493                                                                     |
+|               |   INDEX: e7484 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _on_p_temp LBL: h7478 ARG0: e7475 ARG1: e7484 ARG2: x7453 ]          |
+|               |           [ def_udef_a_q LBL: h7482 ARG0: x7453 RSTR: h7480 BODY: h7481 ]        |
+|               |           [ of_p LBL: h7455 ARG0: e7466 ARG1: x7453 ARG2: x7456 [ x NUM: sg ] ]  |
+|               |           [ def_implicit_q LBL: h7473 ARG0: x7456 RSTR: h7471 BODY: h7472 ]      |
+|               |           [ mofy LBL: h7458 ARG0: x7456 ARG1: i7457 CARG: "Jan" ]                |
+|               |           [ dofm LBL: h7455 ARG0: x7453 ARG1: x7459 CARG: "1st" ]                |
+|               |           [ proper_q LBL: h7464 ARG0: x7459 RSTR: h7462 BODY: h7463 ]            |
+|               |           [ yofc LBL: h7460 ARG0: x7459 CARG: "1942" ]                           |
+|               |           [ _born_a_of LBL: h7478 ARG0: e7484 ARG1: x7451 ARG2: u7486 ]          |
+|               |           [ explicit_or_proper_q LBL: h7491 ARG0: x7451 RSTR: h7489 BODY: h7490  |
+|               | ]                                                                                |
+|               |           [ named LBL: h7452 ARG0: x7451 CARG: "Brandon Carter" ] >              |
+|               |   HCONS: < h7471 qeq h7458 h7462 qeq h7460 h7480 qeq h7455 h7489 qeq h7452 h7493 |
+|               | qeq h7478 >                                                                      |
+|               |   SLOTS: < ARG2: u7486 > ]                                                       |
 +---------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------+
@@ -123,22 +118,21 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id1016_294_883
 +----------------+----------------------------------------------------------------------------------+
 | Node           | Generated SEMENT                                                                 |
 +----------------+----------------------------------------------------------------------------------+
-| Brandon_Carter | [ TOP: h29637                                                                    |
-|                |   INDEX: x29636                                                                  |
-|                |   RELS: < [ named LBL: h29637 ARG0: x29636 CARG: "Brandon Carter" ] > ]          |
+| Brandon_Carter | [ TOP: h7452                                                                     |
+|                |   INDEX: x7451                                                                   |
+|                |   RELS: < [ named LBL: h7452 ARG0: x7451 CARG: "Brandon Carter" ] > ]            |
 +----------------+----------------------------------------------------------------------------------+
-| 1942-01-01     | [ TOP: h29640                                                                    |
-|                |   INDEX: x29638                                                                  |
-|                |   RELS: < [ of_p LBL: h29654 ARG0: e29651 ARG1: x29652 ARG2: x29653 ]            |
-|                |           [ def_implicit_q LBL: h29658 ARG0: x29655 RSTR: h29656 BODY: h29657 ]  |
-|                |           [ mofy LBL: h29643 ARG0: x29641 [ x NUM: sg ] ARG1: i29642 CARG: "Jan" |
-|                | ]                                                                                |
-|                |           [ dofm LBL: h29640 ARG0: x29638 ARG1: i29639 CARG: "1st" ]             |
-|                |           [ proper_q LBL: h29649 ARG0: x29646 RSTR: h29647 BODY: h29648 ]        |
-|                |           [ yofc LBL: h29645 ARG0: x29644 CARG: "1942" ] >                       |
-|                |   HCONS: < h29656 qeq h29643 h29647 qeq h29645 >                                 |
-|                |   EQS: < x29655 eq x29641 h29654 eq h29659 x29653 eq x29655 x29646 eq x29644     |
-|                | h29640 eq h29650 i29639 eq x29646 h29654 eq h29640 x29652 eq x29638 > ]          |
+| 1942-01-01     | [ TOP: h7455                                                                     |
+|                |   INDEX: x7453                                                                   |
+|                |   RELS: < [ of_p LBL: h7469 ARG0: e7466 ARG1: x7467 ARG2: x7468 ]                |
+|                |           [ def_implicit_q LBL: h7473 ARG0: x7470 RSTR: h7471 BODY: h7472 ]      |
+|                |           [ mofy LBL: h7458 ARG0: x7456 [ x NUM: sg ] ARG1: i7457 CARG: "Jan" ]  |
+|                |           [ dofm LBL: h7455 ARG0: x7453 ARG1: i7454 CARG: "1st" ]                |
+|                |           [ proper_q LBL: h7464 ARG0: x7461 RSTR: h7462 BODY: h7463 ]            |
+|                |           [ yofc LBL: h7460 ARG0: x7459 CARG: "1942" ] >                         |
+|                |   HCONS: < h7471 qeq h7458 h7462 qeq h7460 >                                     |
+|                |   EQS: < x7470 eq x7456 h7469 eq h7474 x7468 eq x7470 x7461 eq x7459 h7455 eq    |
+|                | h7465 i7454 eq x7461 h7469 eq h7455 x7467 eq x7453 > ]                           |
 +----------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------+
@@ -146,28 +140,26 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id1016_294_883
 +-----------+----------------+------------+----------------------------------------------------------------------------------+
 | Edge      | Parent         | Child      | Generated SEMENT                                                                 |
 +-----------+----------------+------------+----------------------------------------------------------------------------------+
-| birthDate | Brandon_Carter | 1942-01-01 | [ TOP: h29672                                                                    |
-|           |                |            |   INDEX: e29669 [ e TENSE: tensed ]                                              |
-|           |                |            |   RELS: < [ _on_p_temp LBL: h29663 ARG0: e29660 ARG1: u29661 ARG2: i29662 ]      |
-|           |                |            |           [ def_udef_a_q LBL: h29667 ARG0: x29664 RSTR: h29665 BODY: h29666 ]    |
-|           |                |            |           [ of_p LBL: h29654 ARG0: e29651 ARG1: x29652 ARG2: x29653 ]            |
-|           |                |            |           [ def_implicit_q LBL: h29658 ARG0: x29655 RSTR: h29656 BODY: h29657 ]  |
-|           |                |            |           [ mofy LBL: h29643 ARG0: x29641 [ x NUM: sg ] ARG1: i29642 CARG: "Jan" |
+| birthDate | Brandon_Carter | 1942-01-01 | [ TOP: h7487                                                                     |
+|           |                |            |   INDEX: e7484 [ e TENSE: tensed ]                                               |
+|           |                |            |   RELS: < [ _on_p_temp LBL: h7478 ARG0: e7475 ARG1: u7476 ARG2: i7477 ]          |
+|           |                |            |           [ def_udef_a_q LBL: h7482 ARG0: x7479 RSTR: h7480 BODY: h7481 ]        |
+|           |                |            |           [ of_p LBL: h7469 ARG0: e7466 ARG1: x7467 ARG2: x7468 ]                |
+|           |                |            |           [ def_implicit_q LBL: h7473 ARG0: x7470 RSTR: h7471 BODY: h7472 ]      |
+|           |                |            |           [ mofy LBL: h7458 ARG0: x7456 [ x NUM: sg ] ARG1: i7457 CARG: "Jan" ]  |
+|           |                |            |           [ dofm LBL: h7455 ARG0: x7453 ARG1: i7454 CARG: "1st" ]                |
+|           |                |            |           [ proper_q LBL: h7464 ARG0: x7461 RSTR: h7462 BODY: h7463 ]            |
+|           |                |            |           [ yofc LBL: h7460 ARG0: x7459 CARG: "1942" ]                           |
+|           |                |            |           [ _born_a_of LBL: h7487 ARG0: e7484 ARG1: u7485 ARG2: u7486 ]          |
+|           |                |            |           [ explicit_or_proper_q LBL: h7491 ARG0: x7488 RSTR: h7489 BODY: h7490  |
 |           |                |            | ]                                                                                |
-|           |                |            |           [ dofm LBL: h29640 ARG0: x29638 ARG1: i29639 CARG: "1st" ]             |
-|           |                |            |           [ proper_q LBL: h29649 ARG0: x29646 RSTR: h29647 BODY: h29648 ]        |
-|           |                |            |           [ yofc LBL: h29645 ARG0: x29644 CARG: "1942" ]                         |
-|           |                |            |           [ _born_a_of LBL: h29672 ARG0: e29669 ARG1: u29670 ARG2: u29671 ]      |
-|           |                |            |           [ explicit_or_proper_q LBL: h29676 ARG0: x29673 RSTR: h29674 BODY:     |
-|           |                |            | h29675 ]                                                                         |
-|           |                |            |           [ named LBL: h29637 ARG0: x29636 CARG: "Brandon Carter" ] >            |
-|           |                |            |   HCONS: < h29656 qeq h29643 h29647 qeq h29645 h29665 qeq h29640 h29674 qeq      |
-|           |                |            | h29637 >                                                                         |
-|           |                |            |   EQS: < x29655 eq x29641 h29654 eq h29659 x29653 eq x29655 x29646 eq x29644     |
-|           |                |            | h29640 eq h29650 i29639 eq x29646 h29654 eq h29640 x29652 eq x29638 x29664 eq    |
-|           |                |            | x29638 h29663 eq h29668 i29662 eq x29664 x29673 eq x29636 h29672 eq h29677       |
-|           |                |            | u29670 eq x29673 h29663 eq h29672 u29661 eq e29669 >                             |
-|           |                |            |   SLOTS: < ARG2: u29671 > ]                                                      |
+|           |                |            |           [ named LBL: h7452 ARG0: x7451 CARG: "Brandon Carter" ] >              |
+|           |                |            |   HCONS: < h7471 qeq h7458 h7462 qeq h7460 h7480 qeq h7455 h7489 qeq h7452 >     |
+|           |                |            |   EQS: < x7470 eq x7456 h7469 eq h7474 x7468 eq x7470 x7461 eq x7459 h7455 eq    |
+|           |                |            | h7465 i7454 eq x7461 h7469 eq h7455 x7467 eq x7453 x7479 eq x7453 h7478 eq h7483 |
+|           |                |            | i7477 eq x7479 x7488 eq x7451 h7487 eq h7492 u7485 eq x7488 h7478 eq h7487 u7476 |
+|           |                |            | eq e7484 >                                                                       |
+|           |                |            |   SLOTS: < ARG2: u7486 > ]                                                       |
 +-----------+----------------+------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------+

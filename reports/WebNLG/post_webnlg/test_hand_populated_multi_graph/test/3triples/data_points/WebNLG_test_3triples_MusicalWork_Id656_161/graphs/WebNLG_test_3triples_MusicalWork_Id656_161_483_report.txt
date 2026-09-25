@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id656_161_483
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                                       GOLD OUTPUTS                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                                                 | Generated? |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Following the albums, Let it Breed and Love American Style, Turn me on was released at a length of 35 minutes and 10 seconds.                                               | False      |
-| Preceded by the Love American Style album and the Let it Breed album, the album Turn Me On has a runtime of just over 35 minutes.                                           | False      |
-| The album Turn Me On (which has run time of 35.1 minutes) was preceded by the album Let It Breed; Let It Breed is preceded by the release of the album Love American Style. | False      |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+|                                                               GOLD OUTPUTS                                                              |
++----------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                | Generated? |
++----------------------------------------------------------------------------------------------------------------------------+------------+
+| The American band, the Honeymoon Killers, self-produced its album called Turn Me On, which has a run time of 35.1 minutes. | False      |
+| The Honeymoon Killers' album Turn Me On runs 35.1 minutes. The Honeymoon Killers also produced the album.                  | False      |
+| The album Turn Me On (produced by American band the Honeymoon Killers) is 35 minutes 10 seconds long.                      | False      |
++----------------------------------------------------------------------------------------------------------------------------+------------+
 
 +------------------------------------------------------------------------------------------+
 |                                       NODE METRICS                                       |
@@ -56,64 +56,61 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id656_161_483
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h16171                                                                    |
-|               |   INDEX: e16168 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h16171 ARG0: e16168 ARG1: i16169 ARG2: i16170 ]       |
-|               |           [ def_udef_a_q LBL: h16189 ARG0: x16186 RSTR: h16187 BODY: h16188 ]    |
-|               |           [ _of_p LBL: h16175 ARG0: e16172 ARG1: u16173 ARG2: i16174 ]           |
-|               |           [ number_q LBL: h16184 ARG0: x16181 RSTR: h16182 BODY: h16183 ]        |
-|               |           [ card LBL: h16167 ARG0: i16165 ARG1: u16166 CARG: "35.1" ]            |
-|               |           [ _total_a_1 LBL: h16178 ARG0: e16176 ARG1: u16177 ]                   |
-|               |           [ _runtime_n_1 LBL: h16180 ARG0: x16179 ]                              |
-|               |           [ appos LBL: h16154 ARG0: e16151 ARG1: x16152 ARG2: i16153 ]           |
-|               |           [ def_udef_a_q LBL: h16163 ARG0: x16160 RSTR: h16161 BODY: h16162 ]    |
-|               |           [ _album_n_1 LBL: h16150 ARG0: x16149 ]                                |
-|               |           [ explicit_or_proper_q LBL: h16158 ARG0: x16155 RSTR: h16156 BODY:     |
-|               | h16157 ]                                                                         |
-|               |           [ named LBL: h16148 ARG0: x16147 CARG: "Turn Me On" ] >                |
-|               |   HCONS: < h16182 qeq h16167 h16187 qeq h16180 h16161 qeq h16150 h16156 qeq      |
-|               | h16148 >                                                                         |
-|               |   EQS: < x16181 eq i16165 h16175 eq h16185 i16174 eq x16181 h16178 eq h16180     |
-|               | u16177 eq x16179 h16175 eq h16180 u16173 eq x16179 x16186 eq x16179 h16171 eq    |
-|               | h16190 i16170 eq x16186 x16160 eq x16149 h16154 eq h16164 i16153 eq x16160       |
-|               | x16155 eq x16147 h16154 eq h16159 x16152 eq x16155 h16171 eq h16159 i16169 eq    |
-|               | x16155 > ]                                                                       |
+| Original      | [ TOP: h8362                                                                     |
+|               |   INDEX: e8359 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h8362 ARG0: e8359 ARG1: i8360 ARG2: i8361 ]           |
+|               |           [ def_udef_a_q LBL: h8380 ARG0: x8377 RSTR: h8378 BODY: h8379 ]        |
+|               |           [ _of_p LBL: h8366 ARG0: e8363 ARG1: u8364 ARG2: i8365 ]               |
+|               |           [ number_q LBL: h8375 ARG0: x8372 RSTR: h8373 BODY: h8374 ]            |
+|               |           [ card LBL: h8358 ARG0: i8356 ARG1: u8357 CARG: "35.1" ]               |
+|               |           [ _total_a_1 LBL: h8369 ARG0: e8367 ARG1: u8368 ]                      |
+|               |           [ _runtime_n_1 LBL: h8371 ARG0: x8370 ]                                |
+|               |           [ appos LBL: h8345 ARG0: e8342 ARG1: x8343 ARG2: i8344 ]               |
+|               |           [ def_udef_a_q LBL: h8354 ARG0: x8351 RSTR: h8352 BODY: h8353 ]        |
+|               |           [ _album_n_1 LBL: h8341 ARG0: x8340 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h8349 ARG0: x8346 RSTR: h8347 BODY: h8348  |
+|               | ]                                                                                |
+|               |           [ named LBL: h8339 ARG0: x8338 CARG: "Turn Me On" ] >                  |
+|               |   HCONS: < h8373 qeq h8358 h8378 qeq h8371 h8352 qeq h8341 h8347 qeq h8339 >     |
+|               |   EQS: < x8372 eq i8356 h8366 eq h8376 i8365 eq x8372 h8369 eq h8371 u8368 eq    |
+|               | x8370 h8366 eq h8371 u8364 eq x8370 x8377 eq x8370 h8362 eq h8381 i8361 eq x8377 |
+|               | x8351 eq x8340 h8345 eq h8355 i8344 eq x8351 x8346 eq x8338 h8345 eq h8350 x8343 |
+|               | eq x8346 h8362 eq h8350 i8360 eq x8346 > ]                                       |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h16154                                                                    |
-|               |   INDEX: e16168 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h16154 ARG0: e16168 ARG1: x16147 ARG2: x16179 ]       |
-|               |           [ def_udef_a_q LBL: h16189 ARG0: x16179 RSTR: h16187 BODY: h16188 ]    |
-|               |           [ _of_p LBL: h16175 ARG0: e16172 ARG1: x16179 ARG2: x16181 ]           |
-|               |           [ number_q LBL: h16184 ARG0: x16181 RSTR: h16182 BODY: h16183 ]        |
-|               |           [ card LBL: h16167 ARG0: x16181 ARG1: u16166 CARG: "35.1" ]            |
-|               |           [ _total_a_1 LBL: h16175 ARG0: e16176 ARG1: x16179 ]                   |
-|               |           [ _runtime_n_1 LBL: h16175 ARG0: x16179 ]                              |
-|               |           [ appos LBL: h16154 ARG0: e16151 ARG1: x16147 ARG2: x16149 ]           |
-|               |           [ def_udef_a_q LBL: h16163 ARG0: x16149 RSTR: h16161 BODY: h16162 ]    |
-|               |           [ _album_n_1 LBL: h16150 ARG0: x16149 ]                                |
-|               |           [ explicit_or_proper_q LBL: h16158 ARG0: x16147 RSTR: h16156 BODY:     |
-|               | h16157 ]                                                                         |
-|               |           [ named LBL: h16148 ARG0: x16147 CARG: "Turn Me On" ] >                |
-|               |   HCONS: < h16182 qeq h16167 h16187 qeq h16175 h16161 qeq h16150 h16156 qeq      |
-|               | h16148 > ]                                                                       |
+| EQs Collapsed | [ TOP: h8345                                                                     |
+|               |   INDEX: e8359 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h8345 ARG0: e8359 ARG1: x8338 ARG2: x8370 ]           |
+|               |           [ def_udef_a_q LBL: h8380 ARG0: x8370 RSTR: h8378 BODY: h8379 ]        |
+|               |           [ _of_p LBL: h8366 ARG0: e8363 ARG1: x8370 ARG2: x8372 ]               |
+|               |           [ number_q LBL: h8375 ARG0: x8372 RSTR: h8373 BODY: h8374 ]            |
+|               |           [ card LBL: h8358 ARG0: x8372 ARG1: u8357 CARG: "35.1" ]               |
+|               |           [ _total_a_1 LBL: h8366 ARG0: e8367 ARG1: x8370 ]                      |
+|               |           [ _runtime_n_1 LBL: h8366 ARG0: x8370 ]                                |
+|               |           [ appos LBL: h8345 ARG0: e8342 ARG1: x8338 ARG2: x8340 ]               |
+|               |           [ def_udef_a_q LBL: h8354 ARG0: x8340 RSTR: h8352 BODY: h8353 ]        |
+|               |           [ _album_n_1 LBL: h8341 ARG0: x8340 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h8349 ARG0: x8338 RSTR: h8347 BODY: h8348  |
+|               | ]                                                                                |
+|               |           [ named LBL: h8339 ARG0: x8338 CARG: "Turn Me On" ] >                  |
+|               |   HCONS: < h8373 qeq h8358 h8378 qeq h8366 h8352 qeq h8341 h8347 qeq h8339 > ]   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h16191                                                                    |
-|               |   INDEX: e16168 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _have_v_1 LBL: h16154 ARG0: e16168 ARG1: x16147 ARG2: x16179 ]       |
-|               |           [ def_udef_a_q LBL: h16189 ARG0: x16179 RSTR: h16187 BODY: h16188 ]    |
-|               |           [ _of_p LBL: h16175 ARG0: e16172 ARG1: x16179 ARG2: x16181 ]           |
-|               |           [ number_q LBL: h16184 ARG0: x16181 RSTR: h16182 BODY: h16183 ]        |
-|               |           [ card LBL: h16167 ARG0: x16181 ARG1: u16166 CARG: "35.1" ]            |
-|               |           [ _total_a_1 LBL: h16175 ARG0: e16176 ARG1: x16179 ]                   |
-|               |           [ _runtime_n_1 LBL: h16175 ARG0: x16179 ]                              |
-|               |           [ appos LBL: h16154 ARG0: e16151 ARG1: x16147 ARG2: x16149 ]           |
-|               |           [ def_udef_a_q LBL: h16163 ARG0: x16149 RSTR: h16161 BODY: h16162 ]    |
-|               |           [ _album_n_1 LBL: h16150 ARG0: x16149 ]                                |
-|               |           [ explicit_or_proper_q LBL: h16158 ARG0: x16147 RSTR: h16156 BODY:     |
-|               | h16157 ]                                                                         |
-|               |           [ named LBL: h16148 ARG0: x16147 CARG: "Turn Me On" ] >                |
-|               |   HCONS: < h16182 qeq h16167 h16187 qeq h16175 h16161 qeq h16150 h16156 qeq      |
-|               | h16148 h16191 qeq h16154 > ]                                                     |
+| Prepped       | [ TOP: h8382                                                                     |
+|               |   INDEX: e8359 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _have_v_1 LBL: h8345 ARG0: e8359 ARG1: x8338 ARG2: x8370 ]           |
+|               |           [ def_udef_a_q LBL: h8380 ARG0: x8370 RSTR: h8378 BODY: h8379 ]        |
+|               |           [ _of_p LBL: h8366 ARG0: e8363 ARG1: x8370 ARG2: x8372 ]               |
+|               |           [ number_q LBL: h8375 ARG0: x8372 RSTR: h8373 BODY: h8374 ]            |
+|               |           [ card LBL: h8358 ARG0: x8372 ARG1: u8357 CARG: "35.1" ]               |
+|               |           [ _total_a_1 LBL: h8366 ARG0: e8367 ARG1: x8370 ]                      |
+|               |           [ _runtime_n_1 LBL: h8366 ARG0: x8370 ]                                |
+|               |           [ appos LBL: h8345 ARG0: e8342 ARG1: x8338 ARG2: x8340 ]               |
+|               |           [ def_udef_a_q LBL: h8354 ARG0: x8340 RSTR: h8352 BODY: h8353 ]        |
+|               |           [ _album_n_1 LBL: h8341 ARG0: x8340 ]                                  |
+|               |           [ explicit_or_proper_q LBL: h8349 ARG0: x8338 RSTR: h8347 BODY: h8348  |
+|               | ]                                                                                |
+|               |           [ named LBL: h8339 ARG0: x8338 CARG: "Turn Me On" ] >                  |
+|               |   HCONS: < h8373 qeq h8358 h8378 qeq h8366 h8352 qeq h8341 h8347 qeq h8339 h8382 |
+|               | qeq h8345 > ]                                                                    |
 +---------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------------+
@@ -121,23 +118,23 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id656_161_483
 +--------------------+----------------------------------------------------------------------------------+
 | Node               | Generated SEMENT                                                                 |
 +--------------------+----------------------------------------------------------------------------------+
-| Turn_Me_On_(album) | [ TOP: h16159                                                                    |
-|                    |   INDEX: x16155                                                                  |
-|                    |   RELS: < [ appos LBL: h16154 ARG0: e16151 ARG1: x16152 ARG2: i16153 ]           |
-|                    |           [ def_udef_a_q LBL: h16163 ARG0: x16160 RSTR: h16161 BODY: h16162 ]    |
-|                    |           [ _album_n_1 LBL: h16150 ARG0: x16149 ]                                |
-|                    |           [ explicit_or_proper_q LBL: h16158 ARG0: x16155 RSTR: h16156 BODY:     |
-|                    | h16157 ]                                                                         |
-|                    |           [ named LBL: h16148 ARG0: x16147 CARG: "Turn Me On" ] >                |
-|                    |   HCONS: < h16161 qeq h16150 h16156 qeq h16148 >                                 |
-|                    |   EQS: < x16160 eq x16149 h16154 eq h16164 i16153 eq x16160 x16155 eq x16147     |
-|                    | h16154 eq h16159 x16152 eq x16155 >                                              |
-|                    |   SLOTS: < BODY: h16157 > ]                                                      |
+| Turn_Me_On_(album) | [ TOP: h8350                                                                     |
+|                    |   INDEX: x8346                                                                   |
+|                    |   RELS: < [ appos LBL: h8345 ARG0: e8342 ARG1: x8343 ARG2: i8344 ]               |
+|                    |           [ def_udef_a_q LBL: h8354 ARG0: x8351 RSTR: h8352 BODY: h8353 ]        |
+|                    |           [ _album_n_1 LBL: h8341 ARG0: x8340 ]                                  |
+|                    |           [ explicit_or_proper_q LBL: h8349 ARG0: x8346 RSTR: h8347 BODY: h8348  |
+|                    | ]                                                                                |
+|                    |           [ named LBL: h8339 ARG0: x8338 CARG: "Turn Me On" ] >                  |
+|                    |   HCONS: < h8352 qeq h8341 h8347 qeq h8339 >                                     |
+|                    |   EQS: < x8351 eq x8340 h8345 eq h8355 i8344 eq x8351 x8346 eq x8338 h8345 eq    |
+|                    | h8350 x8343 eq x8346 >                                                           |
+|                    |   SLOTS: < BODY: h8348 > ]                                                       |
 +--------------------+----------------------------------------------------------------------------------+
-| 35.1               | [ TOP: h16167                                                                    |
-|                    |   INDEX: i16165                                                                  |
-|                    |   RELS: < [ card LBL: h16167 ARG0: i16165 ARG1: u16166 CARG: "35.1" ] >          |
-|                    |   SLOTS: < ARG1: u16166 > ]                                                      |
+| 35.1               | [ TOP: h8358                                                                     |
+|                    |   INDEX: i8356                                                                   |
+|                    |   RELS: < [ card LBL: h8358 ARG0: i8356 ARG1: u8357 CARG: "35.1" ] >             |
+|                    |   SLOTS: < ARG1: u8357 > ]                                                       |
 +--------------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------------------------------+
@@ -145,28 +142,26 @@ GRAPH NAME: WebNLG_test_3triples_MusicalWork_Id656_161_483
 +---------+--------------------+-------+----------------------------------------------------------------------------------+
 | Edge    | Parent             | Child | Generated SEMENT                                                                 |
 +---------+--------------------+-------+----------------------------------------------------------------------------------+
-| runtime | Turn_Me_On_(album) | 35.1  | [ TOP: h16171                                                                    |
-|         |                    |       |   INDEX: e16168 [ e TENSE: tensed ]                                              |
-|         |                    |       |   RELS: < [ _have_v_1 LBL: h16171 ARG0: e16168 ARG1: i16169 ARG2: i16170 ]       |
-|         |                    |       |           [ def_udef_a_q LBL: h16189 ARG0: x16186 RSTR: h16187 BODY: h16188 ]    |
-|         |                    |       |           [ _of_p LBL: h16175 ARG0: e16172 ARG1: u16173 ARG2: i16174 ]           |
-|         |                    |       |           [ number_q LBL: h16184 ARG0: x16181 RSTR: h16182 BODY: h16183 ]        |
-|         |                    |       |           [ card LBL: h16167 ARG0: i16165 ARG1: u16166 CARG: "35.1" ]            |
-|         |                    |       |           [ _total_a_1 LBL: h16178 ARG0: e16176 ARG1: u16177 ]                   |
-|         |                    |       |           [ _runtime_n_1 LBL: h16180 ARG0: x16179 ]                              |
-|         |                    |       |           [ appos LBL: h16154 ARG0: e16151 ARG1: x16152 ARG2: i16153 ]           |
-|         |                    |       |           [ def_udef_a_q LBL: h16163 ARG0: x16160 RSTR: h16161 BODY: h16162 ]    |
-|         |                    |       |           [ _album_n_1 LBL: h16150 ARG0: x16149 ]                                |
-|         |                    |       |           [ explicit_or_proper_q LBL: h16158 ARG0: x16155 RSTR: h16156 BODY:     |
-|         |                    |       | h16157 ]                                                                         |
-|         |                    |       |           [ named LBL: h16148 ARG0: x16147 CARG: "Turn Me On" ] >                |
-|         |                    |       |   HCONS: < h16182 qeq h16167 h16187 qeq h16180 h16161 qeq h16150 h16156 qeq      |
-|         |                    |       | h16148 >                                                                         |
-|         |                    |       |   EQS: < x16181 eq i16165 h16175 eq h16185 i16174 eq x16181 h16178 eq h16180     |
-|         |                    |       | u16177 eq x16179 h16175 eq h16180 u16173 eq x16179 x16186 eq x16179 h16171 eq    |
-|         |                    |       | h16190 i16170 eq x16186 x16160 eq x16149 h16154 eq h16164 i16153 eq x16160       |
-|         |                    |       | x16155 eq x16147 h16154 eq h16159 x16152 eq x16155 h16171 eq h16159 i16169 eq    |
-|         |                    |       | x16155 > ]                                                                       |
+| runtime | Turn_Me_On_(album) | 35.1  | [ TOP: h8362                                                                     |
+|         |                    |       |   INDEX: e8359 [ e TENSE: tensed ]                                               |
+|         |                    |       |   RELS: < [ _have_v_1 LBL: h8362 ARG0: e8359 ARG1: i8360 ARG2: i8361 ]           |
+|         |                    |       |           [ def_udef_a_q LBL: h8380 ARG0: x8377 RSTR: h8378 BODY: h8379 ]        |
+|         |                    |       |           [ _of_p LBL: h8366 ARG0: e8363 ARG1: u8364 ARG2: i8365 ]               |
+|         |                    |       |           [ number_q LBL: h8375 ARG0: x8372 RSTR: h8373 BODY: h8374 ]            |
+|         |                    |       |           [ card LBL: h8358 ARG0: i8356 ARG1: u8357 CARG: "35.1" ]               |
+|         |                    |       |           [ _total_a_1 LBL: h8369 ARG0: e8367 ARG1: u8368 ]                      |
+|         |                    |       |           [ _runtime_n_1 LBL: h8371 ARG0: x8370 ]                                |
+|         |                    |       |           [ appos LBL: h8345 ARG0: e8342 ARG1: x8343 ARG2: i8344 ]               |
+|         |                    |       |           [ def_udef_a_q LBL: h8354 ARG0: x8351 RSTR: h8352 BODY: h8353 ]        |
+|         |                    |       |           [ _album_n_1 LBL: h8341 ARG0: x8340 ]                                  |
+|         |                    |       |           [ explicit_or_proper_q LBL: h8349 ARG0: x8346 RSTR: h8347 BODY: h8348  |
+|         |                    |       | ]                                                                                |
+|         |                    |       |           [ named LBL: h8339 ARG0: x8338 CARG: "Turn Me On" ] >                  |
+|         |                    |       |   HCONS: < h8373 qeq h8358 h8378 qeq h8371 h8352 qeq h8341 h8347 qeq h8339 >     |
+|         |                    |       |   EQS: < x8372 eq i8356 h8366 eq h8376 i8365 eq x8372 h8369 eq h8371 u8368 eq    |
+|         |                    |       | x8370 h8366 eq h8371 u8364 eq x8370 x8377 eq x8370 h8362 eq h8381 i8361 eq x8377 |
+|         |                    |       | x8351 eq x8340 h8345 eq h8355 i8344 eq x8351 x8346 eq x8338 h8345 eq h8350 x8343 |
+|         |                    |       | eq x8346 h8362 eq h8350 i8360 eq x8346 > ]                                       |
 +---------+--------------------+-------+----------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------+

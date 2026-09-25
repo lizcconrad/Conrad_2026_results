@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id956_322_968
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-------------------------------------------------------------------------------------------------------------------------------------+
-|                                                             GOLD OUTPUTS                                                            |
-+------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                            | Generated? |
-+------------------------------------------------------------------------------------------------------------------------+------------+
-| Born in Darlington on January 1st, 1726, Lady Anne Monson lived in the Kingdom of England holding British nationality. | False      |
-| Lady Anne Monson (born in Darlington) on January 1, 1726 is English.                                                   | False      |
-| Lady Anne Monson was born in Darlington, in the Kingdom of England on 1/1/1726.                                        | False      |
-+------------------------------------------------------------------------------------------------------------------------+------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                   GOLD OUTPUTS                                                                  |
++------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                        | Generated? |
++------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Lady Anne Monson is an English woman who resided in India; she passed away 1776-02-18.                                             | False      |
+| Lady Anne Monson whose nationality was with the Kingdom of England, had a residence in India and died on February 18, 1776.        | False      |
+| Lady Anne Monson, a British national, lived in England but spent most of her life in India. She died on the 18th of February 1776. | False      |
++------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +------------------------------------------------------------------------------------------+
 |                                       NODE METRICS                                       |
@@ -56,53 +56,52 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id956_322_968
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h32384                                                                    |
-|               |   INDEX: e32381 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _from_p LBL: h32384 ARG0: e32381 ARG1: u32382 ARG2: u32383 ]         |
-|               |           [ explicit_or_proper_q LBL: h32388 ARG0: x32385 RSTR: h32386 BODY:     |
-|               | h32387 ]                                                                         |
-|               |           [ named LBL: h32380 ARG0: x32379 CARG: "Kingdom of England" ]          |
-|               |           [ explicit_or_proper_q LBL: h32393 ARG0: x32390 RSTR: h32391 BODY:     |
-|               | h32392 ]                                                                         |
-|               |           [ compound LBL: h32373 ARG0: e32370 ARG1: u32371 ARG2: u32372 ]        |
-|               |           [ existential_q LBL: h32377 ARG0: x32374 RSTR: h32375 BODY: h32376 ]   |
-|               |           [ _lady_n_1 LBL: h32369 ARG0: x32368 [ x NUM: sg ] ]                   |
-|               |           [ named LBL: h32367 ARG0: x32366 CARG: "Anne Monson" ] >               |
-|               |   HCONS: < h32386 qeq h32380 h32375 qeq h32369 h32391 qeq h32367 >               |
-|               |   EQS: < x32385 eq x32379 h32384 eq h32389 u32383 eq x32385 x32374 eq x32368     |
-|               | h32373 eq h32378 u32372 eq x32374 h32373 eq h32367 u32371 eq x32366 x32390 eq    |
-|               | x32366 h32384 eq h32394 u32382 eq x32390 > ]                                     |
+| Original      | [ TOP: h1518                                                                     |
+|               |   INDEX: e1515 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _from_p LBL: h1518 ARG0: e1515 ARG1: u1516 ARG2: u1517 ]             |
+|               |           [ explicit_or_proper_q LBL: h1522 ARG0: x1519 RSTR: h1520 BODY: h1521  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1514 ARG0: x1513 CARG: "Kingdom of England" ]            |
+|               |           [ explicit_or_proper_q LBL: h1527 ARG0: x1524 RSTR: h1525 BODY: h1526  |
+|               | ]                                                                                |
+|               |           [ compound LBL: h1507 ARG0: e1504 ARG1: u1505 ARG2: u1506 ]            |
+|               |           [ existential_q LBL: h1511 ARG0: x1508 RSTR: h1509 BODY: h1510 ]       |
+|               |           [ _lady_n_1 LBL: h1503 ARG0: x1502 [ x NUM: sg ] ]                     |
+|               |           [ named LBL: h1501 ARG0: x1500 CARG: "Anne Monson" ] >                 |
+|               |   HCONS: < h1520 qeq h1514 h1509 qeq h1503 h1525 qeq h1501 >                     |
+|               |   EQS: < x1519 eq x1513 h1518 eq h1523 u1517 eq x1519 x1508 eq x1502 h1507 eq    |
+|               | h1512 u1506 eq x1508 h1507 eq h1501 u1505 eq x1500 x1524 eq x1500 h1518 eq h1528 |
+|               | u1516 eq x1524 > ]                                                               |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h32384                                                                    |
-|               |   INDEX: e32381 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _from_p LBL: h32384 ARG0: e32381 ARG1: x32366 ARG2: x32379 ]         |
-|               |           [ explicit_or_proper_q LBL: h32388 ARG0: x32379 RSTR: h32386 BODY:     |
-|               | h32387 ]                                                                         |
-|               |           [ named LBL: h32380 ARG0: x32379 CARG: "Kingdom of England" ]          |
-|               |           [ explicit_or_proper_q LBL: h32393 ARG0: x32366 RSTR: h32391 BODY:     |
-|               | h32392 ]                                                                         |
-|               |           [ compound LBL: h32367 ARG0: e32370 ARG1: x32366 ARG2: x32368 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h32377 ARG0: x32368 RSTR: h32375 BODY: h32376 ]   |
-|               |           [ _lady_n_1 LBL: h32369 ARG0: x32368 ]                                 |
-|               |           [ named LBL: h32367 ARG0: x32366 CARG: "Anne Monson" ] >               |
-|               |   HCONS: < h32386 qeq h32380 h32375 qeq h32369 h32391 qeq h32367 > ]             |
+| EQs Collapsed | [ TOP: h1518                                                                     |
+|               |   INDEX: e1515 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _from_p LBL: h1518 ARG0: e1515 ARG1: x1500 ARG2: x1513 ]             |
+|               |           [ explicit_or_proper_q LBL: h1522 ARG0: x1513 RSTR: h1520 BODY: h1521  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1514 ARG0: x1513 CARG: "Kingdom of England" ]            |
+|               |           [ explicit_or_proper_q LBL: h1527 ARG0: x1500 RSTR: h1525 BODY: h1526  |
+|               | ]                                                                                |
+|               |           [ compound LBL: h1501 ARG0: e1504 ARG1: x1500 ARG2: x1502 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h1511 ARG0: x1502 RSTR: h1509 BODY: h1510 ]       |
+|               |           [ _lady_n_1 LBL: h1503 ARG0: x1502 ]                                   |
+|               |           [ named LBL: h1501 ARG0: x1500 CARG: "Anne Monson" ] >                 |
+|               |   HCONS: < h1520 qeq h1514 h1509 qeq h1503 h1525 qeq h1501 > ]                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h32395                                                                    |
-|               |   INDEX: e32381 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _from_p LBL: h32384 ARG0: e32381 ARG1: x32366 ARG2: x32379 ]         |
-|               |           [ explicit_or_proper_q LBL: h32388 ARG0: x32379 RSTR: h32386 BODY:     |
-|               | h32387 ]                                                                         |
-|               |           [ named LBL: h32380 ARG0: x32379 CARG: "Kingdom of England" ]          |
-|               |           [ explicit_or_proper_q LBL: h32393 ARG0: x32366 RSTR: h32391 BODY:     |
-|               | h32392 ]                                                                         |
-|               |           [ compound LBL: h32367 ARG0: e32370 ARG1: x32366 ARG2: x32368 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h32377 ARG0: x32368 RSTR: h32375 BODY: h32376 ]   |
-|               |           [ _lady_n_1 LBL: h32369 ARG0: x32368 ]                                 |
-|               |           [ named LBL: h32367 ARG0: x32366 CARG: "Anne Monson" ] >               |
-|               |   HCONS: < h32386 qeq h32380 h32375 qeq h32369 h32391 qeq h32367 h32395 qeq      |
-|               | h32384 > ]                                                                       |
+| Prepped       | [ TOP: h1529                                                                     |
+|               |   INDEX: e1515 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _from_p LBL: h1518 ARG0: e1515 ARG1: x1500 ARG2: x1513 ]             |
+|               |           [ explicit_or_proper_q LBL: h1522 ARG0: x1513 RSTR: h1520 BODY: h1521  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1514 ARG0: x1513 CARG: "Kingdom of England" ]            |
+|               |           [ explicit_or_proper_q LBL: h1527 ARG0: x1500 RSTR: h1525 BODY: h1526  |
+|               | ]                                                                                |
+|               |           [ compound LBL: h1501 ARG0: e1504 ARG1: x1500 ARG2: x1502 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h1511 ARG0: x1502 RSTR: h1509 BODY: h1510 ]       |
+|               |           [ _lady_n_1 LBL: h1503 ARG0: x1502 ]                                   |
+|               |           [ named LBL: h1501 ARG0: x1500 CARG: "Anne Monson" ] >                 |
+|               |   HCONS: < h1520 qeq h1514 h1509 qeq h1503 h1525 qeq h1501 h1529 qeq h1518 > ]   |
 +---------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------------------------+
@@ -110,19 +109,19 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id956_322_968
 +--------------------+----------------------------------------------------------------------------------+
 | Node               | Generated SEMENT                                                                 |
 +--------------------+----------------------------------------------------------------------------------+
-| Lady_Anne_Monson   | [ TOP: h32367                                                                    |
-|                    |   INDEX: x32366                                                                  |
-|                    |   RELS: < [ compound LBL: h32373 ARG0: e32370 ARG1: u32371 ARG2: u32372 ]        |
-|                    |           [ existential_q LBL: h32377 ARG0: x32374 RSTR: h32375 BODY: h32376 ]   |
-|                    |           [ _lady_n_1 LBL: h32369 ARG0: x32368 [ x NUM: sg ] ]                   |
-|                    |           [ named LBL: h32367 ARG0: x32366 CARG: "Anne Monson" ] >               |
-|                    |   HCONS: < h32375 qeq h32369 >                                                   |
-|                    |   EQS: < x32374 eq x32368 h32373 eq h32378 u32372 eq x32374 h32373 eq h32367     |
-|                    | u32371 eq x32366 > ]                                                             |
+| Lady_Anne_Monson   | [ TOP: h1501                                                                     |
+|                    |   INDEX: x1500                                                                   |
+|                    |   RELS: < [ compound LBL: h1507 ARG0: e1504 ARG1: u1505 ARG2: u1506 ]            |
+|                    |           [ existential_q LBL: h1511 ARG0: x1508 RSTR: h1509 BODY: h1510 ]       |
+|                    |           [ _lady_n_1 LBL: h1503 ARG0: x1502 [ x NUM: sg ] ]                     |
+|                    |           [ named LBL: h1501 ARG0: x1500 CARG: "Anne Monson" ] >                 |
+|                    |   HCONS: < h1509 qeq h1503 >                                                     |
+|                    |   EQS: < x1508 eq x1502 h1507 eq h1512 u1506 eq x1508 h1507 eq h1501 u1505 eq    |
+|                    | x1500 > ]                                                                        |
 +--------------------+----------------------------------------------------------------------------------+
-| Kingdom_of_England | [ TOP: h32380                                                                    |
-|                    |   INDEX: x32379                                                                  |
-|                    |   RELS: < [ named LBL: h32380 ARG0: x32379 CARG: "Kingdom of England" ] > ]      |
+| Kingdom_of_England | [ TOP: h1514                                                                     |
+|                    |   INDEX: x1513                                                                   |
+|                    |   RELS: < [ named LBL: h1514 ARG0: x1513 CARG: "Kingdom of England" ] > ]        |
 +--------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------------------+
@@ -130,22 +129,22 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id956_322_968
 +-------------+------------------+--------------------+----------------------------------------------------------------------------------+
 | Edge        | Parent           | Child              | Generated SEMENT                                                                 |
 +-------------+------------------+--------------------+----------------------------------------------------------------------------------+
-| nationality | Lady_Anne_Monson | Kingdom_of_England | [ TOP: h32384                                                                    |
-|             |                  |                    |   INDEX: e32381 [ e TENSE: tensed ]                                              |
-|             |                  |                    |   RELS: < [ _from_p LBL: h32384 ARG0: e32381 ARG1: u32382 ARG2: u32383 ]         |
-|             |                  |                    |           [ explicit_or_proper_q LBL: h32388 ARG0: x32385 RSTR: h32386 BODY:     |
-|             |                  |                    | h32387 ]                                                                         |
-|             |                  |                    |           [ named LBL: h32380 ARG0: x32379 CARG: "Kingdom of England" ]          |
-|             |                  |                    |           [ explicit_or_proper_q LBL: h32393 ARG0: x32390 RSTR: h32391 BODY:     |
-|             |                  |                    | h32392 ]                                                                         |
-|             |                  |                    |           [ compound LBL: h32373 ARG0: e32370 ARG1: u32371 ARG2: u32372 ]        |
-|             |                  |                    |           [ existential_q LBL: h32377 ARG0: x32374 RSTR: h32375 BODY: h32376 ]   |
-|             |                  |                    |           [ _lady_n_1 LBL: h32369 ARG0: x32368 [ x NUM: sg ] ]                   |
-|             |                  |                    |           [ named LBL: h32367 ARG0: x32366 CARG: "Anne Monson" ] >               |
-|             |                  |                    |   HCONS: < h32386 qeq h32380 h32375 qeq h32369 h32391 qeq h32367 >               |
-|             |                  |                    |   EQS: < x32385 eq x32379 h32384 eq h32389 u32383 eq x32385 x32374 eq x32368     |
-|             |                  |                    | h32373 eq h32378 u32372 eq x32374 h32373 eq h32367 u32371 eq x32366 x32390 eq    |
-|             |                  |                    | x32366 h32384 eq h32394 u32382 eq x32390 > ]                                     |
+| nationality | Lady_Anne_Monson | Kingdom_of_England | [ TOP: h1518                                                                     |
+|             |                  |                    |   INDEX: e1515 [ e TENSE: tensed ]                                               |
+|             |                  |                    |   RELS: < [ _from_p LBL: h1518 ARG0: e1515 ARG1: u1516 ARG2: u1517 ]             |
+|             |                  |                    |           [ explicit_or_proper_q LBL: h1522 ARG0: x1519 RSTR: h1520 BODY: h1521  |
+|             |                  |                    | ]                                                                                |
+|             |                  |                    |           [ named LBL: h1514 ARG0: x1513 CARG: "Kingdom of England" ]            |
+|             |                  |                    |           [ explicit_or_proper_q LBL: h1527 ARG0: x1524 RSTR: h1525 BODY: h1526  |
+|             |                  |                    | ]                                                                                |
+|             |                  |                    |           [ compound LBL: h1507 ARG0: e1504 ARG1: u1505 ARG2: u1506 ]            |
+|             |                  |                    |           [ existential_q LBL: h1511 ARG0: x1508 RSTR: h1509 BODY: h1510 ]       |
+|             |                  |                    |           [ _lady_n_1 LBL: h1503 ARG0: x1502 [ x NUM: sg ] ]                     |
+|             |                  |                    |           [ named LBL: h1501 ARG0: x1500 CARG: "Anne Monson" ] >                 |
+|             |                  |                    |   HCONS: < h1520 qeq h1514 h1509 qeq h1503 h1525 qeq h1501 >                     |
+|             |                  |                    |   EQS: < x1519 eq x1513 h1518 eq h1523 u1517 eq x1519 x1508 eq x1502 h1507 eq    |
+|             |                  |                    | h1512 u1506 eq x1508 h1507 eq h1501 u1505 eq x1500 x1524 eq x1500 h1518 eq h1528 |
+|             |                  |                    | u1516 eq x1524 > ]                                                               |
 +-------------+------------------+--------------------+----------------------------------------------------------------------------------+
 
 +------------------------------------------------------------------+

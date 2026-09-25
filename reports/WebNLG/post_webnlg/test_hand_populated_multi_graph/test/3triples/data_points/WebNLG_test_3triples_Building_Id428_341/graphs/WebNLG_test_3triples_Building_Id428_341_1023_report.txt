@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Building_Id428_341_1023
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                              GOLD OUTPUTS                                                                             |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                                              | Generated? |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
-| Alan B. Miller Hall (located in United States) is owned by The College of William and Mary and its current tenants are The Mason School of Business.     | False      |
-| The Mason School of Business (located in the United States) are the current tenants of Alan B Miller Hall. The owner of the College is William and Mary. | False      |
-| The Mason School of Business are the current tenants of Alan B Miller Hall, located in the United States and owned by the College of William and Mary.   | False      |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                               GOLD OUTPUTS                                                                               |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                                 | Generated? |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| The College of William and Mary, located in Williamsburg Virginia is the location of the Mason School of Business located inside Alan B Miller Hall.        | False      |
+| The Mason School of Business are the current tenants of Alan B Miller Hall, located in Williamsburg, Virginia and owned by The College of William and Mary. | False      |
+| The Mason School of Business, inside Alan B Miller Hall, is in Williamsburg, Virginia at the College of William and Mary.                                   | False      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +------------------------------------------------------------------------------------------------+
 |                                          NODE METRICS                                          |
@@ -56,93 +56,91 @@ GRAPH NAME: WebNLG_test_3triples_Building_Id428_341_1023
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h34106                                                                    |
-|               |   INDEX: e34103 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h34106 ARG0: e34103 ARG1: p34104 ARG2: i34105 ]        |
-|               |           [ def_udef_a_q LBL: h34115 ARG0: x34112 RSTR: h34113 BODY: h34114 ]    |
-|               |           [ _of_p LBL: h34092 ARG0: e34089 ARG1: u34090 ARG2: i34091 ]           |
-|               |           [ explicit_or_proper_q LBL: h34096 ARG0: x34093 RSTR: h34094 BODY:     |
-|               | h34095 ]                                                                         |
-|               |           [ named LBL: h34086 ARG0: x34085 CARG: "Alan B. Miller Hall" ]         |
-|               |           [ _current_a_1 LBL: h34100 ARG0: i34098 ARG1: u34099 ]                 |
-|               |           [ _tenant_n_1 LBL: h34102 ARG0: x34101 ]                               |
-|               |           [ explicit_or_proper_q LBL: h34110 ARG0: x34107 RSTR: h34108 BODY:     |
-|               | h34109 ]                                                                         |
-|               |           [ named LBL: h34088 ARG0: x34087 CARG: "Mason School of Business" ] >  |
-|               |   HCONS: < h34094 qeq h34086 h34113 qeq h34102 h34108 qeq h34088 >               |
-|               |   EQS: < x34093 eq x34085 h34092 eq h34097 i34091 eq x34093 h34100 eq h34102     |
-|               | u34099 eq x34101 h34092 eq h34102 u34090 eq x34101 x34112 eq x34101 h34106 eq    |
-|               | h34116 i34105 eq x34112 x34107 eq x34087 h34106 eq h34111 p34104 eq x34107 > ]   |
+| Original      | [ TOP: h1749                                                                     |
+|               |   INDEX: e1746 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h1749 ARG0: e1746 ARG1: p1747 ARG2: i1748 ]            |
+|               |           [ def_udef_a_q LBL: h1758 ARG0: x1755 RSTR: h1756 BODY: h1757 ]        |
+|               |           [ _of_p LBL: h1735 ARG0: e1732 ARG1: u1733 ARG2: i1734 ]               |
+|               |           [ explicit_or_proper_q LBL: h1739 ARG0: x1736 RSTR: h1737 BODY: h1738  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1729 ARG0: x1728 CARG: "Alan B. Miller Hall" ]           |
+|               |           [ _current_a_1 LBL: h1743 ARG0: i1741 ARG1: u1742 ]                    |
+|               |           [ _tenant_n_1 LBL: h1745 ARG0: x1744 ]                                 |
+|               |           [ explicit_or_proper_q LBL: h1753 ARG0: x1750 RSTR: h1751 BODY: h1752  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1731 ARG0: x1730 CARG: "Mason School of Business" ] >    |
+|               |   HCONS: < h1737 qeq h1729 h1756 qeq h1745 h1751 qeq h1731 >                     |
+|               |   EQS: < x1736 eq x1728 h1735 eq h1740 i1734 eq x1736 h1743 eq h1745 u1742 eq    |
+|               | x1744 h1735 eq h1745 u1733 eq x1744 x1755 eq x1744 h1749 eq h1759 i1748 eq x1755 |
+|               | x1750 eq x1730 h1749 eq h1754 p1747 eq x1750 > ]                                 |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h34106                                                                    |
-|               |   INDEX: e34103 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h34106 ARG0: e34103 ARG1: x34087 ARG2: x34101 ]        |
-|               |           [ def_udef_a_q LBL: h34115 ARG0: x34101 RSTR: h34113 BODY: h34114 ]    |
-|               |           [ _of_p LBL: h34092 ARG0: e34089 ARG1: x34101 ARG2: x34085 ]           |
-|               |           [ explicit_or_proper_q LBL: h34096 ARG0: x34085 RSTR: h34094 BODY:     |
-|               | h34095 ]                                                                         |
-|               |           [ named LBL: h34086 ARG0: x34085 CARG: "Alan B. Miller Hall" ]         |
-|               |           [ _current_a_1 LBL: h34092 ARG0: i34098 ARG1: x34101 ]                 |
-|               |           [ _tenant_n_1 LBL: h34092 ARG0: x34101 ]                               |
-|               |           [ explicit_or_proper_q LBL: h34110 ARG0: x34087 RSTR: h34108 BODY:     |
-|               | h34109 ]                                                                         |
-|               |           [ named LBL: h34088 ARG0: x34087 CARG: "Mason School of Business" ] >  |
-|               |   HCONS: < h34094 qeq h34086 h34113 qeq h34092 h34108 qeq h34088 > ]             |
+| EQs Collapsed | [ TOP: h1749                                                                     |
+|               |   INDEX: e1746 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h1749 ARG0: e1746 ARG1: x1730 ARG2: x1744 ]            |
+|               |           [ def_udef_a_q LBL: h1758 ARG0: x1744 RSTR: h1756 BODY: h1757 ]        |
+|               |           [ _of_p LBL: h1735 ARG0: e1732 ARG1: x1744 ARG2: x1728 ]               |
+|               |           [ explicit_or_proper_q LBL: h1739 ARG0: x1728 RSTR: h1737 BODY: h1738  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1729 ARG0: x1728 CARG: "Alan B. Miller Hall" ]           |
+|               |           [ _current_a_1 LBL: h1735 ARG0: i1741 ARG1: x1744 ]                    |
+|               |           [ _tenant_n_1 LBL: h1735 ARG0: x1744 ]                                 |
+|               |           [ explicit_or_proper_q LBL: h1753 ARG0: x1730 RSTR: h1751 BODY: h1752  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1731 ARG0: x1730 CARG: "Mason School of Business" ] >    |
+|               |   HCONS: < h1737 qeq h1729 h1756 qeq h1735 h1751 qeq h1731 > ]                   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h34117                                                                    |
-|               |   INDEX: e34103 [ e SF: prop TENSE: tensed ]                                     |
-|               |   RELS: < [ _be_v_id LBL: h34106 ARG0: e34103 ARG1: x34087 ARG2: x34101 ]        |
-|               |           [ def_udef_a_q LBL: h34115 ARG0: x34101 RSTR: h34113 BODY: h34114 ]    |
-|               |           [ _of_p LBL: h34092 ARG0: e34089 ARG1: x34101 ARG2: x34085 ]           |
-|               |           [ explicit_or_proper_q LBL: h34096 ARG0: x34085 RSTR: h34094 BODY:     |
-|               | h34095 ]                                                                         |
-|               |           [ named LBL: h34086 ARG0: x34085 CARG: "Alan B. Miller Hall" ]         |
-|               |           [ _current_a_1 LBL: h34092 ARG0: i34098 ARG1: x34101 ]                 |
-|               |           [ _tenant_n_1 LBL: h34092 ARG0: x34101 ]                               |
-|               |           [ explicit_or_proper_q LBL: h34110 ARG0: x34087 RSTR: h34108 BODY:     |
-|               | h34109 ]                                                                         |
-|               |           [ named LBL: h34088 ARG0: x34087 CARG: "Mason School of Business" ] >  |
-|               |   HCONS: < h34094 qeq h34086 h34113 qeq h34092 h34108 qeq h34088 h34117 qeq      |
-|               | h34106 > ]                                                                       |
+| Prepped       | [ TOP: h1760                                                                     |
+|               |   INDEX: e1746 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h1749 ARG0: e1746 ARG1: x1730 ARG2: x1744 ]            |
+|               |           [ def_udef_a_q LBL: h1758 ARG0: x1744 RSTR: h1756 BODY: h1757 ]        |
+|               |           [ _of_p LBL: h1735 ARG0: e1732 ARG1: x1744 ARG2: x1728 ]               |
+|               |           [ explicit_or_proper_q LBL: h1739 ARG0: x1728 RSTR: h1737 BODY: h1738  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1729 ARG0: x1728 CARG: "Alan B. Miller Hall" ]           |
+|               |           [ _current_a_1 LBL: h1735 ARG0: i1741 ARG1: x1744 ]                    |
+|               |           [ _tenant_n_1 LBL: h1735 ARG0: x1744 ]                                 |
+|               |           [ explicit_or_proper_q LBL: h1753 ARG0: x1730 RSTR: h1751 BODY: h1752  |
+|               | ]                                                                                |
+|               |           [ named LBL: h1731 ARG0: x1730 CARG: "Mason School of Business" ] >    |
+|               |   HCONS: < h1737 qeq h1729 h1756 qeq h1735 h1751 qeq h1731 h1760 qeq h1749 > ]   |
 +---------------+----------------------------------------------------------------------------------+
 
-+-------------------------------------------------------------------------------------------------------------+
-|                                                 NODE SEMENTS                                                |
-+--------------------------+----------------------------------------------------------------------------------+
-| Node                     | Generated SEMENT                                                                 |
-+--------------------------+----------------------------------------------------------------------------------+
-| Alan_B._Miller_Hall      | [ TOP: h34086                                                                    |
-|                          |   INDEX: x34085                                                                  |
-|                          |   RELS: < [ named LBL: h34086 ARG0: x34085 CARG: "Alan B. Miller Hall" ] > ]     |
-+--------------------------+----------------------------------------------------------------------------------+
-| Mason_School_of_Business | [ TOP: h34088                                                                    |
-|                          |   INDEX: x34087                                                                  |
-|                          |   RELS: < [ named LBL: h34088 ARG0: x34087 CARG: "Mason School of Business" ] >  |
-|                          | ]                                                                                |
-+--------------------------+----------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------+
+|                                                NODE SEMENTS                                                |
++--------------------------+---------------------------------------------------------------------------------+
+| Node                     | Generated SEMENT                                                                |
++--------------------------+---------------------------------------------------------------------------------+
+| Alan_B._Miller_Hall      | [ TOP: h1729                                                                    |
+|                          |   INDEX: x1728                                                                  |
+|                          |   RELS: < [ named LBL: h1729 ARG0: x1728 CARG: "Alan B. Miller Hall" ] > ]      |
++--------------------------+---------------------------------------------------------------------------------+
+| Mason_School_of_Business | [ TOP: h1731                                                                    |
+|                          |   INDEX: x1730                                                                  |
+|                          |   RELS: < [ named LBL: h1731 ARG0: x1730 CARG: "Mason School of Business" ] > ] |
++--------------------------+---------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                                    EDGE SEMENTS                                                                    |
 +----------------+---------------------+--------------------------+----------------------------------------------------------------------------------+
 | Edge           | Parent              | Child                    | Generated SEMENT                                                                 |
 +----------------+---------------------+--------------------------+----------------------------------------------------------------------------------+
-| currentTenants | Alan_B._Miller_Hall | Mason_School_of_Business | [ TOP: h34106                                                                    |
-|                |                     |                          |   INDEX: e34103 [ e SF: prop TENSE: tensed ]                                     |
-|                |                     |                          |   RELS: < [ _be_v_id LBL: h34106 ARG0: e34103 ARG1: p34104 ARG2: i34105 ]        |
-|                |                     |                          |           [ def_udef_a_q LBL: h34115 ARG0: x34112 RSTR: h34113 BODY: h34114 ]    |
-|                |                     |                          |           [ _of_p LBL: h34092 ARG0: e34089 ARG1: u34090 ARG2: i34091 ]           |
-|                |                     |                          |           [ explicit_or_proper_q LBL: h34096 ARG0: x34093 RSTR: h34094 BODY:     |
-|                |                     |                          | h34095 ]                                                                         |
-|                |                     |                          |           [ named LBL: h34086 ARG0: x34085 CARG: "Alan B. Miller Hall" ]         |
-|                |                     |                          |           [ _current_a_1 LBL: h34100 ARG0: i34098 ARG1: u34099 ]                 |
-|                |                     |                          |           [ _tenant_n_1 LBL: h34102 ARG0: x34101 ]                               |
-|                |                     |                          |           [ explicit_or_proper_q LBL: h34110 ARG0: x34107 RSTR: h34108 BODY:     |
-|                |                     |                          | h34109 ]                                                                         |
-|                |                     |                          |           [ named LBL: h34088 ARG0: x34087 CARG: "Mason School of Business" ] >  |
-|                |                     |                          |   HCONS: < h34094 qeq h34086 h34113 qeq h34102 h34108 qeq h34088 >               |
-|                |                     |                          |   EQS: < x34093 eq x34085 h34092 eq h34097 i34091 eq x34093 h34100 eq h34102     |
-|                |                     |                          | u34099 eq x34101 h34092 eq h34102 u34090 eq x34101 x34112 eq x34101 h34106 eq    |
-|                |                     |                          | h34116 i34105 eq x34112 x34107 eq x34087 h34106 eq h34111 p34104 eq x34107 > ]   |
+| currentTenants | Alan_B._Miller_Hall | Mason_School_of_Business | [ TOP: h1749                                                                     |
+|                |                     |                          |   INDEX: e1746 [ e SF: prop TENSE: tensed ]                                      |
+|                |                     |                          |   RELS: < [ _be_v_id LBL: h1749 ARG0: e1746 ARG1: p1747 ARG2: i1748 ]            |
+|                |                     |                          |           [ def_udef_a_q LBL: h1758 ARG0: x1755 RSTR: h1756 BODY: h1757 ]        |
+|                |                     |                          |           [ _of_p LBL: h1735 ARG0: e1732 ARG1: u1733 ARG2: i1734 ]               |
+|                |                     |                          |           [ explicit_or_proper_q LBL: h1739 ARG0: x1736 RSTR: h1737 BODY: h1738  |
+|                |                     |                          | ]                                                                                |
+|                |                     |                          |           [ named LBL: h1729 ARG0: x1728 CARG: "Alan B. Miller Hall" ]           |
+|                |                     |                          |           [ _current_a_1 LBL: h1743 ARG0: i1741 ARG1: u1742 ]                    |
+|                |                     |                          |           [ _tenant_n_1 LBL: h1745 ARG0: x1744 ]                                 |
+|                |                     |                          |           [ explicit_or_proper_q LBL: h1753 ARG0: x1750 RSTR: h1751 BODY: h1752  |
+|                |                     |                          | ]                                                                                |
+|                |                     |                          |           [ named LBL: h1731 ARG0: x1730 CARG: "Mason School of Business" ] >    |
+|                |                     |                          |   HCONS: < h1737 qeq h1729 h1756 qeq h1745 h1751 qeq h1731 >                     |
+|                |                     |                          |   EQS: < x1736 eq x1728 h1735 eq h1740 i1734 eq x1736 h1743 eq h1745 u1742 eq    |
+|                |                     |                          | x1744 h1735 eq h1745 u1733 eq x1744 x1755 eq x1744 h1749 eq h1759 i1748 eq x1755 |
+|                |                     |                          | x1750 eq x1730 h1749 eq h1754 p1747 eq x1750 > ]                                 |
 +----------------+---------------------+--------------------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------+

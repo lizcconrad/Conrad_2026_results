@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id302_120_362
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                 GOLD OUTPUTS                                                                 |
-+---------------------------------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                                                     | Generated? |
-+---------------------------------------------------------------------------------------------------------------------------------+------------+
-| Lady Anne Monson, born January 1st, 1726, was a British woman who lived in England. Her professional field of study was botany. | False      |
-| Lady Anne Monson, born on January 1, 1726 in the Kingdom of England, studied botany.                                            | False      |
-| Lady Anne Monson, who was born on January 1, 1726 in England, was a professional botanist.                                      | False      |
-+---------------------------------------------------------------------------------------------------------------------------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                 GOLD OUTPUTS                                                                |
++--------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                    | Generated? |
++--------------------------------------------------------------------------------------------------------------------------------+------------+
+| George Monson was married to Lady Anne Monson, a botanist, who died on February 18, 1776.                                      | False      |
+| Lady Anne Monson is the spouse of George Monson. Her professional field of study was botany, and she died on 18 February 1776. | False      |
+| Lady Anne Monson, a professional botanist who was married to George Monson, died on February 18th, 1776.                       | False      |
++--------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------+
 |                                      NODE METRICS                                      |
@@ -56,113 +56,101 @@ GRAPH NAME: WebNLG_test_3triples_Scientist_Id302_120_362
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h12279                                                                    |
-|               |   INDEX: e12276 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h12262 ARG0: e12259 ARG1: u12260 ARG2: u12261 ]     |
-|               |           [ def_udef_a_q LBL: h12274 ARG0: x12271 RSTR: h12272 BODY: h12273 ]    |
-|               |           [ _field_n_of LBL: h12265 ARG0: x12263 ARG1: i12264 ]                  |
-|               |           [ def_udef_a_q LBL: h12269 ARG0: x12266 RSTR: h12267 BODY: h12268 ]    |
-|               |           [ _botany_n_1 LBL: h12258 ARG0: x12257 ]                               |
-|               |           [ _work_v_1 LBL: h12279 ARG0: e12276 ARG1: i12277 ARG2: i12278 ]       |
-|               |           [ explicit_or_proper_q LBL: h12283 ARG0: x12280 RSTR: h12281 BODY:     |
-|               | h12282 ]                                                                         |
-|               |           [ compound LBL: h12251 ARG0: e12248 ARG1: u12249 ARG2: u12250 ]        |
-|               |           [ existential_q LBL: h12255 ARG0: x12252 RSTR: h12253 BODY: h12254 ]   |
-|               |           [ _lady_n_1 LBL: h12247 ARG0: x12246 [ x NUM: sg ] ]                   |
-|               |           [ named LBL: h12245 ARG0: x12244 CARG: "Anne Monson" ] >               |
-|               |   HCONS: < h12267 qeq h12258 h12272 qeq h12265 h12253 qeq h12247 h12281 qeq      |
-|               | h12245 >                                                                         |
-|               |   EQS: < x12266 eq x12257 h12265 eq h12270 i12264 eq x12266 x12271 eq x12263     |
-|               | h12262 eq h12275 u12261 eq x12271 x12252 eq x12246 h12251 eq h12256 u12250 eq    |
-|               | x12252 h12251 eq h12245 u12249 eq x12244 x12280 eq x12244 h12279 eq h12284       |
-|               | i12277 eq x12280 h12262 eq h12279 u12260 eq e12276 >                             |
-|               |   SLOTS: < ARG2: i12278 > ]                                                      |
+| Original      | [ TOP: h741                                                                      |
+|               |   INDEX: e738 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_state LBL: h724 ARG0: e721 ARG1: u722 ARG2: u723 ]             |
+|               |           [ def_udef_a_q LBL: h736 ARG0: x733 RSTR: h734 BODY: h735 ]            |
+|               |           [ _field_n_of LBL: h727 ARG0: x725 ARG1: i726 ]                        |
+|               |           [ def_udef_a_q LBL: h731 ARG0: x728 RSTR: h729 BODY: h730 ]            |
+|               |           [ _botany_n_1 LBL: h720 ARG0: x719 ]                                   |
+|               |           [ _work_v_1 LBL: h741 ARG0: e738 ARG1: i739 ARG2: i740 ]               |
+|               |           [ explicit_or_proper_q LBL: h745 ARG0: x742 RSTR: h743 BODY: h744 ]    |
+|               |           [ compound LBL: h713 ARG0: e710 ARG1: u711 ARG2: u712 ]                |
+|               |           [ existential_q LBL: h717 ARG0: x714 RSTR: h715 BODY: h716 ]           |
+|               |           [ _lady_n_1 LBL: h709 ARG0: x708 [ x NUM: sg ] ]                       |
+|               |           [ named LBL: h707 ARG0: x706 CARG: "Anne Monson" ] >                   |
+|               |   HCONS: < h729 qeq h720 h734 qeq h727 h715 qeq h709 h743 qeq h707 >             |
+|               |   EQS: < x728 eq x719 h727 eq h732 i726 eq x728 x733 eq x725 h724 eq h737 u723   |
+|               | eq x733 x714 eq x708 h713 eq h718 u712 eq x714 h713 eq h707 u711 eq x706 x742 eq |
+|               | x706 h741 eq h746 i739 eq x742 h724 eq h741 u722 eq e738 >                       |
+|               |   SLOTS: < ARG2: i740 > ]                                                        |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h12262                                                                    |
-|               |   INDEX: e12276 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h12262 ARG0: e12259 ARG1: e12276 ARG2: x12263 ]     |
-|               |           [ def_udef_a_q LBL: h12274 ARG0: x12263 RSTR: h12272 BODY: h12273 ]    |
-|               |           [ _field_n_of LBL: h12265 ARG0: x12263 ARG1: x12257 ]                  |
-|               |           [ def_udef_a_q LBL: h12269 ARG0: x12257 RSTR: h12267 BODY: h12268 ]    |
-|               |           [ _botany_n_1 LBL: h12258 ARG0: x12257 ]                               |
-|               |           [ _work_v_1 LBL: h12262 ARG0: e12276 ARG1: x12244 ARG2: i12278 ]       |
-|               |           [ explicit_or_proper_q LBL: h12283 ARG0: x12244 RSTR: h12281 BODY:     |
-|               | h12282 ]                                                                         |
-|               |           [ compound LBL: h12245 ARG0: e12248 ARG1: x12244 ARG2: x12246 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h12255 ARG0: x12246 RSTR: h12253 BODY: h12254 ]   |
-|               |           [ _lady_n_1 LBL: h12247 ARG0: x12246 ]                                 |
-|               |           [ named LBL: h12245 ARG0: x12244 CARG: "Anne Monson" ] >               |
-|               |   HCONS: < h12267 qeq h12258 h12272 qeq h12265 h12253 qeq h12247 h12281 qeq      |
-|               | h12245 >                                                                         |
-|               |   SLOTS: < ARG2: i12278 > ]                                                      |
+| EQs Collapsed | [ TOP: h724                                                                      |
+|               |   INDEX: e738 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_state LBL: h724 ARG0: e721 ARG1: e738 ARG2: x725 ]             |
+|               |           [ def_udef_a_q LBL: h736 ARG0: x725 RSTR: h734 BODY: h735 ]            |
+|               |           [ _field_n_of LBL: h727 ARG0: x725 ARG1: x719 ]                        |
+|               |           [ def_udef_a_q LBL: h731 ARG0: x719 RSTR: h729 BODY: h730 ]            |
+|               |           [ _botany_n_1 LBL: h720 ARG0: x719 ]                                   |
+|               |           [ _work_v_1 LBL: h724 ARG0: e738 ARG1: x706 ARG2: i740 ]               |
+|               |           [ explicit_or_proper_q LBL: h745 ARG0: x706 RSTR: h743 BODY: h744 ]    |
+|               |           [ compound LBL: h707 ARG0: e710 ARG1: x706 ARG2: x708 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h717 ARG0: x708 RSTR: h715 BODY: h716 ]           |
+|               |           [ _lady_n_1 LBL: h709 ARG0: x708 ]                                     |
+|               |           [ named LBL: h707 ARG0: x706 CARG: "Anne Monson" ] >                   |
+|               |   HCONS: < h729 qeq h720 h734 qeq h727 h715 qeq h709 h743 qeq h707 >             |
+|               |   SLOTS: < ARG2: i740 > ]                                                        |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h12285                                                                    |
-|               |   INDEX: e12276 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_state LBL: h12262 ARG0: e12259 ARG1: e12276 ARG2: x12263 ]     |
-|               |           [ def_udef_a_q LBL: h12274 ARG0: x12263 RSTR: h12272 BODY: h12273 ]    |
-|               |           [ _field_n_of LBL: h12265 ARG0: x12263 ARG1: x12257 ]                  |
-|               |           [ def_udef_a_q LBL: h12269 ARG0: x12257 RSTR: h12267 BODY: h12268 ]    |
-|               |           [ _botany_n_1 LBL: h12258 ARG0: x12257 ]                               |
-|               |           [ _work_v_1 LBL: h12262 ARG0: e12276 ARG1: x12244 ARG2: i12278 ]       |
-|               |           [ explicit_or_proper_q LBL: h12283 ARG0: x12244 RSTR: h12281 BODY:     |
-|               | h12282 ]                                                                         |
-|               |           [ compound LBL: h12245 ARG0: e12248 ARG1: x12244 ARG2: x12246 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h12255 ARG0: x12246 RSTR: h12253 BODY: h12254 ]   |
-|               |           [ _lady_n_1 LBL: h12247 ARG0: x12246 ]                                 |
-|               |           [ named LBL: h12245 ARG0: x12244 CARG: "Anne Monson" ] >               |
-|               |   HCONS: < h12267 qeq h12258 h12272 qeq h12265 h12253 qeq h12247 h12281 qeq      |
-|               | h12245 h12285 qeq h12262 >                                                       |
-|               |   SLOTS: < ARG2: i12278 > ]                                                      |
+| Prepped       | [ TOP: h747                                                                      |
+|               |   INDEX: e738 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _in_p_state LBL: h724 ARG0: e721 ARG1: e738 ARG2: x725 ]             |
+|               |           [ def_udef_a_q LBL: h736 ARG0: x725 RSTR: h734 BODY: h735 ]            |
+|               |           [ _field_n_of LBL: h727 ARG0: x725 ARG1: x719 ]                        |
+|               |           [ def_udef_a_q LBL: h731 ARG0: x719 RSTR: h729 BODY: h730 ]            |
+|               |           [ _botany_n_1 LBL: h720 ARG0: x719 ]                                   |
+|               |           [ _work_v_1 LBL: h724 ARG0: e738 ARG1: x706 ARG2: i740 ]               |
+|               |           [ explicit_or_proper_q LBL: h745 ARG0: x706 RSTR: h743 BODY: h744 ]    |
+|               |           [ compound LBL: h707 ARG0: e710 ARG1: x706 ARG2: x708 [ x NUM: sg ] ]  |
+|               |           [ existential_q LBL: h717 ARG0: x708 RSTR: h715 BODY: h716 ]           |
+|               |           [ _lady_n_1 LBL: h709 ARG0: x708 ]                                     |
+|               |           [ named LBL: h707 ARG0: x706 CARG: "Anne Monson" ] >                   |
+|               |   HCONS: < h729 qeq h720 h734 qeq h727 h715 qeq h709 h743 qeq h707 h747 qeq h724 |
+|               | >                                                                                |
+|               |   SLOTS: < ARG2: i740 > ]                                                        |
 +---------------+----------------------------------------------------------------------------------+
 
-+-----------------------------------------------------------------------------------------------------+
-|                                             NODE SEMENTS                                            |
-+------------------+----------------------------------------------------------------------------------+
-| Node             | Generated SEMENT                                                                 |
-+------------------+----------------------------------------------------------------------------------+
-| Lady_Anne_Monson | [ TOP: h12245                                                                    |
-|                  |   INDEX: x12244                                                                  |
-|                  |   RELS: < [ compound LBL: h12251 ARG0: e12248 ARG1: u12249 ARG2: u12250 ]        |
-|                  |           [ existential_q LBL: h12255 ARG0: x12252 RSTR: h12253 BODY: h12254 ]   |
-|                  |           [ _lady_n_1 LBL: h12247 ARG0: x12246 [ x NUM: sg ] ]                   |
-|                  |           [ named LBL: h12245 ARG0: x12244 CARG: "Anne Monson" ] >               |
-|                  |   HCONS: < h12253 qeq h12247 >                                                   |
-|                  |   EQS: < x12252 eq x12246 h12251 eq h12256 u12250 eq x12252 h12251 eq h12245     |
-|                  | u12249 eq x12244 > ]                                                             |
-+------------------+----------------------------------------------------------------------------------+
-| Botany           | [ TOP: h12258                                                                    |
-|                  |   INDEX: x12257                                                                  |
-|                  |   RELS: < [ _botany_n_1 LBL: h12258 ARG0: x12257 ] > ]                           |
-+------------------+----------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------+
+|                                           NODE SEMENTS                                           |
++------------------+-------------------------------------------------------------------------------+
+| Node             | Generated SEMENT                                                              |
++------------------+-------------------------------------------------------------------------------+
+| Lady_Anne_Monson | [ TOP: h707                                                                   |
+|                  |   INDEX: x706                                                                 |
+|                  |   RELS: < [ compound LBL: h713 ARG0: e710 ARG1: u711 ARG2: u712 ]             |
+|                  |           [ existential_q LBL: h717 ARG0: x714 RSTR: h715 BODY: h716 ]        |
+|                  |           [ _lady_n_1 LBL: h709 ARG0: x708 [ x NUM: sg ] ]                    |
+|                  |           [ named LBL: h707 ARG0: x706 CARG: "Anne Monson" ] >                |
+|                  |   HCONS: < h715 qeq h709 >                                                    |
+|                  |   EQS: < x714 eq x708 h713 eq h718 u712 eq x714 h713 eq h707 u711 eq x706 > ] |
++------------------+-------------------------------------------------------------------------------+
+| Botany           | [ TOP: h720                                                                   |
+|                  |   INDEX: x719                                                                 |
+|                  |   RELS: < [ _botany_n_1 LBL: h720 ARG0: x719 ] > ]                            |
++------------------+-------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------------+
 |                                                           EDGE SEMENTS                                                           |
 +-------------------+------------------+--------+----------------------------------------------------------------------------------+
 | Edge              | Parent           | Child  | Generated SEMENT                                                                 |
 +-------------------+------------------+--------+----------------------------------------------------------------------------------+
-| professionalField | Lady_Anne_Monson | Botany | [ TOP: h12279                                                                    |
-|                   |                  |        |   INDEX: e12276 [ e TENSE: tensed ]                                              |
-|                   |                  |        |   RELS: < [ _in_p_state LBL: h12262 ARG0: e12259 ARG1: u12260 ARG2: u12261 ]     |
-|                   |                  |        |           [ def_udef_a_q LBL: h12274 ARG0: x12271 RSTR: h12272 BODY: h12273 ]    |
-|                   |                  |        |           [ _field_n_of LBL: h12265 ARG0: x12263 ARG1: i12264 ]                  |
-|                   |                  |        |           [ def_udef_a_q LBL: h12269 ARG0: x12266 RSTR: h12267 BODY: h12268 ]    |
-|                   |                  |        |           [ _botany_n_1 LBL: h12258 ARG0: x12257 ]                               |
-|                   |                  |        |           [ _work_v_1 LBL: h12279 ARG0: e12276 ARG1: i12277 ARG2: i12278 ]       |
-|                   |                  |        |           [ explicit_or_proper_q LBL: h12283 ARG0: x12280 RSTR: h12281 BODY:     |
-|                   |                  |        | h12282 ]                                                                         |
-|                   |                  |        |           [ compound LBL: h12251 ARG0: e12248 ARG1: u12249 ARG2: u12250 ]        |
-|                   |                  |        |           [ existential_q LBL: h12255 ARG0: x12252 RSTR: h12253 BODY: h12254 ]   |
-|                   |                  |        |           [ _lady_n_1 LBL: h12247 ARG0: x12246 [ x NUM: sg ] ]                   |
-|                   |                  |        |           [ named LBL: h12245 ARG0: x12244 CARG: "Anne Monson" ] >               |
-|                   |                  |        |   HCONS: < h12267 qeq h12258 h12272 qeq h12265 h12253 qeq h12247 h12281 qeq      |
-|                   |                  |        | h12245 >                                                                         |
-|                   |                  |        |   EQS: < x12266 eq x12257 h12265 eq h12270 i12264 eq x12266 x12271 eq x12263     |
-|                   |                  |        | h12262 eq h12275 u12261 eq x12271 x12252 eq x12246 h12251 eq h12256 u12250 eq    |
-|                   |                  |        | x12252 h12251 eq h12245 u12249 eq x12244 x12280 eq x12244 h12279 eq h12284       |
-|                   |                  |        | i12277 eq x12280 h12262 eq h12279 u12260 eq e12276 >                             |
-|                   |                  |        |   SLOTS: < ARG2: i12278 > ]                                                      |
+| professionalField | Lady_Anne_Monson | Botany | [ TOP: h741                                                                      |
+|                   |                  |        |   INDEX: e738 [ e TENSE: tensed ]                                                |
+|                   |                  |        |   RELS: < [ _in_p_state LBL: h724 ARG0: e721 ARG1: u722 ARG2: u723 ]             |
+|                   |                  |        |           [ def_udef_a_q LBL: h736 ARG0: x733 RSTR: h734 BODY: h735 ]            |
+|                   |                  |        |           [ _field_n_of LBL: h727 ARG0: x725 ARG1: i726 ]                        |
+|                   |                  |        |           [ def_udef_a_q LBL: h731 ARG0: x728 RSTR: h729 BODY: h730 ]            |
+|                   |                  |        |           [ _botany_n_1 LBL: h720 ARG0: x719 ]                                   |
+|                   |                  |        |           [ _work_v_1 LBL: h741 ARG0: e738 ARG1: i739 ARG2: i740 ]               |
+|                   |                  |        |           [ explicit_or_proper_q LBL: h745 ARG0: x742 RSTR: h743 BODY: h744 ]    |
+|                   |                  |        |           [ compound LBL: h713 ARG0: e710 ARG1: u711 ARG2: u712 ]                |
+|                   |                  |        |           [ existential_q LBL: h717 ARG0: x714 RSTR: h715 BODY: h716 ]           |
+|                   |                  |        |           [ _lady_n_1 LBL: h709 ARG0: x708 [ x NUM: sg ] ]                       |
+|                   |                  |        |           [ named LBL: h707 ARG0: x706 CARG: "Anne Monson" ] >                   |
+|                   |                  |        |   HCONS: < h729 qeq h720 h734 qeq h727 h715 qeq h709 h743 qeq h707 >             |
+|                   |                  |        |   EQS: < x728 eq x719 h727 eq h732 i726 eq x728 x733 eq x725 h724 eq h737 u723   |
+|                   |                  |        | eq x733 x714 eq x708 h713 eq h718 u712 eq x714 h713 eq h707 u711 eq x706 x742 eq |
+|                   |                  |        | x706 h741 eq h746 i739 eq x742 h724 eq h741 u722 eq e738 >                       |
+|                   |                  |        |   SLOTS: < ARG2: i740 > ]                                                        |
 +-------------------+------------------+--------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------+

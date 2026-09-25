@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Food_Id961_124_372
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+----------------------------------------------------------------------------------------+
-|                                      GOLD OUTPUTS                                      |
-+---------------------------------------------------------------------------+------------+
-| Gold Output                                                               | Generated? |
-+---------------------------------------------------------------------------+------------+
-| Bionico is a dessert found in Mexico and language of Mexico is Spanish.   | False      |
-| Bionico is a dish served for dessert in Spanish-speaking Mexico.          | False      |
-| Bionico is a popular dessert from the Spanish speaking country of Mexico. | False      |
-+---------------------------------------------------------------------------+------------+
++-------------------------------------------------------------------------------------------------------+
+|                                              GOLD OUTPUTS                                             |
++------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                              | Generated? |
++------------------------------------------------------------------------------------------+------------+
+| Bionico and cookie are both desserts. Bionico is served at the dessert course in Mexico. | False      |
+| Bionico is a dessert, which is found in Mexico. Cookie is also a type of dessert.        | False      |
+| Bionico is a dish found in Mexico served for dessert and cookie is also a dessert.       | False      |
++------------------------------------------------------------------------------------------+------------+
 
 +-------------------------------------------------------------------------------+
 |                                  NODE METRICS                                 |
@@ -51,73 +51,69 @@ GRAPH NAME: WebNLG_test_3triples_Food_Id961_124_372
 | course | Bionico | Dessert | True         | True          | Covered          | Included          |
 +--------+---------+---------+--------------+---------------+------------------+-------------------+
 
-+--------------------------------------------------------------------------------------------------+
-|                                        GENERATED SEMENTS                                         |
-+---------------+----------------------------------------------------------------------------------+
-| Version       | SEMENT                                                                           |
-+---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h2641                                                                     |
-|               |   INDEX: e2638 [ e SF: prop TENSE: tensed ]                                      |
-|               |   RELS: < [ _be_v_id LBL: h2641 ARG0: e2638 ARG1: p2639 ARG2: i2640 ]            |
-|               |           [ def_udef_a_q LBL: h2650 ARG0: x2647 RSTR: h2648 BODY: h2649 ]        |
-|               |           [ _dessert_n_1 LBL: h2637 ARG0: x2636 ]                                |
-|               |           [ def_udef_a_q LBL: h2645 ARG0: x2642 RSTR: h2643 BODY: h2644 ]        |
-|               |           [ unk_n LBL: h2635 ARG0: x2634 [ x IND: - ] CARG: "bionico" ] >        |
-|               |   HCONS: < h2648 qeq h2637 h2643 qeq h2635 >                                     |
-|               |   EQS: < x2647 eq x2636 h2641 eq h2651 i2640 eq x2647 x2642 eq x2634 h2641 eq    |
-|               | h2646 p2639 eq x2642 > ]                                                         |
-+---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h2641                                                                     |
-|               |   INDEX: e2638 [ e SF: prop TENSE: tensed ]                                      |
-|               |   RELS: < [ _be_v_id LBL: h2641 ARG0: e2638 ARG1: x2634 [ x IND: - ] ARG2: x2636 |
-|               | ]                                                                                |
-|               |           [ def_udef_a_q LBL: h2650 ARG0: x2636 RSTR: h2648 BODY: h2649 ]        |
-|               |           [ _dessert_n_1 LBL: h2637 ARG0: x2636 ]                                |
-|               |           [ def_udef_a_q LBL: h2645 ARG0: x2634 RSTR: h2643 BODY: h2644 ]        |
-|               |           [ unk_n LBL: h2635 ARG0: x2634 CARG: "bionico" ] >                     |
-|               |   HCONS: < h2648 qeq h2637 h2643 qeq h2635 > ]                                   |
-+---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h2652                                                                     |
-|               |   INDEX: e2638 [ e SF: prop TENSE: tensed ]                                      |
-|               |   RELS: < [ _be_v_id LBL: h2641 ARG0: e2638 ARG1: x2634 [ x IND: - ] ARG2: x2636 |
-|               | ]                                                                                |
-|               |           [ def_udef_a_q LBL: h2650 ARG0: x2636 RSTR: h2648 BODY: h2649 ]        |
-|               |           [ _dessert_n_1 LBL: h2637 ARG0: x2636 ]                                |
-|               |           [ def_udef_a_q LBL: h2645 ARG0: x2634 RSTR: h2643 BODY: h2644 ]        |
-|               |           [ unk_n LBL: h2635 ARG0: x2634 CARG: "bionico" ] >                     |
-|               |   HCONS: < h2648 qeq h2637 h2643 qeq h2635 h2652 qeq h2641 > ]                   |
-+---------------+----------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------+
+|                                       GENERATED SEMENTS                                        |
++---------------+--------------------------------------------------------------------------------+
+| Version       | SEMENT                                                                         |
++---------------+--------------------------------------------------------------------------------+
+| Original      | [ TOP: h67                                                                     |
+|               |   INDEX: e64 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h67 ARG0: e64 ARG1: p65 ARG2: i66 ]                  |
+|               |           [ def_udef_a_q LBL: h76 ARG0: x73 RSTR: h74 BODY: h75 ]              |
+|               |           [ _dessert_n_1 LBL: h63 ARG0: x62 ]                                  |
+|               |           [ def_udef_a_q LBL: h71 ARG0: x68 RSTR: h69 BODY: h70 ]              |
+|               |           [ unk_n LBL: h61 ARG0: x60 [ x IND: - ] CARG: "bionico" ] >          |
+|               |   HCONS: < h74 qeq h63 h69 qeq h61 >                                           |
+|               |   EQS: < x73 eq x62 h67 eq h77 i66 eq x73 x68 eq x60 h67 eq h72 p65 eq x68 > ] |
++---------------+--------------------------------------------------------------------------------+
+| EQs Collapsed | [ TOP: h67                                                                     |
+|               |   INDEX: e64 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h67 ARG0: e64 ARG1: x60 [ x IND: - ] ARG2: x62 ]     |
+|               |           [ def_udef_a_q LBL: h76 ARG0: x62 RSTR: h74 BODY: h75 ]              |
+|               |           [ _dessert_n_1 LBL: h63 ARG0: x62 ]                                  |
+|               |           [ def_udef_a_q LBL: h71 ARG0: x60 RSTR: h69 BODY: h70 ]              |
+|               |           [ unk_n LBL: h61 ARG0: x60 CARG: "bionico" ] >                       |
+|               |   HCONS: < h74 qeq h63 h69 qeq h61 > ]                                         |
++---------------+--------------------------------------------------------------------------------+
+| Prepped       | [ TOP: h78                                                                     |
+|               |   INDEX: e64 [ e SF: prop TENSE: tensed ]                                      |
+|               |   RELS: < [ _be_v_id LBL: h67 ARG0: e64 ARG1: x60 [ x IND: - ] ARG2: x62 ]     |
+|               |           [ def_udef_a_q LBL: h76 ARG0: x62 RSTR: h74 BODY: h75 ]              |
+|               |           [ _dessert_n_1 LBL: h63 ARG0: x62 ]                                  |
+|               |           [ def_udef_a_q LBL: h71 ARG0: x60 RSTR: h69 BODY: h70 ]              |
+|               |           [ unk_n LBL: h61 ARG0: x60 CARG: "bionico" ] >                       |
+|               |   HCONS: < h74 qeq h63 h69 qeq h61 h78 qeq h67 > ]                             |
++---------------+--------------------------------------------------------------------------------+
 
-+--------------------------------------------------------------------------+
-|                               NODE SEMENTS                               |
-+---------+----------------------------------------------------------------+
-| Node    | Generated SEMENT                                               |
-+---------+----------------------------------------------------------------+
-| Bionico | [ TOP: h2635                                                   |
-|         |   INDEX: x2634 [ x IND: - ]                                    |
-|         |   RELS: < [ unk_n LBL: h2635 ARG0: x2634 CARG: "bionico" ] > ] |
-+---------+----------------------------------------------------------------+
-| Dessert | [ TOP: h2637                                                   |
-|         |   INDEX: x2636                                                 |
-|         |   RELS: < [ _dessert_n_1 LBL: h2637 ARG0: x2636 ] > ]          |
-+---------+----------------------------------------------------------------+
++----------------------------------------------------------------------+
+|                             NODE SEMENTS                             |
++---------+------------------------------------------------------------+
+| Node    | Generated SEMENT                                           |
++---------+------------------------------------------------------------+
+| Bionico | [ TOP: h61                                                 |
+|         |   INDEX: x60 [ x IND: - ]                                  |
+|         |   RELS: < [ unk_n LBL: h61 ARG0: x60 CARG: "bionico" ] > ] |
++---------+------------------------------------------------------------+
+| Dessert | [ TOP: h63                                                 |
+|         |   INDEX: x62                                               |
+|         |   RELS: < [ _dessert_n_1 LBL: h63 ARG0: x62 ] > ]          |
++---------+------------------------------------------------------------+
 
-+---------------------------------------------------------------------------------------------------------------+
-|                                                  EDGE SEMENTS                                                 |
-+--------+---------+---------+----------------------------------------------------------------------------------+
-| Edge   | Parent  | Child   | Generated SEMENT                                                                 |
-+--------+---------+---------+----------------------------------------------------------------------------------+
-| course | Bionico | Dessert | [ TOP: h2641                                                                     |
-|        |         |         |   INDEX: e2638 [ e SF: prop TENSE: tensed ]                                      |
-|        |         |         |   RELS: < [ _be_v_id LBL: h2641 ARG0: e2638 ARG1: p2639 ARG2: i2640 ]            |
-|        |         |         |           [ def_udef_a_q LBL: h2650 ARG0: x2647 RSTR: h2648 BODY: h2649 ]        |
-|        |         |         |           [ _dessert_n_1 LBL: h2637 ARG0: x2636 ]                                |
-|        |         |         |           [ def_udef_a_q LBL: h2645 ARG0: x2642 RSTR: h2643 BODY: h2644 ]        |
-|        |         |         |           [ unk_n LBL: h2635 ARG0: x2634 [ x IND: - ] CARG: "bionico" ] >        |
-|        |         |         |   HCONS: < h2648 qeq h2637 h2643 qeq h2635 >                                     |
-|        |         |         |   EQS: < x2647 eq x2636 h2641 eq h2651 i2640 eq x2647 x2642 eq x2634 h2641 eq    |
-|        |         |         | h2646 p2639 eq x2642 > ]                                                         |
-+--------+---------+---------+----------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------+
+|                                                 EDGE SEMENTS                                                |
++--------+---------+---------+--------------------------------------------------------------------------------+
+| Edge   | Parent  | Child   | Generated SEMENT                                                               |
++--------+---------+---------+--------------------------------------------------------------------------------+
+| course | Bionico | Dessert | [ TOP: h67                                                                     |
+|        |         |         |   INDEX: e64 [ e SF: prop TENSE: tensed ]                                      |
+|        |         |         |   RELS: < [ _be_v_id LBL: h67 ARG0: e64 ARG1: p65 ARG2: i66 ]                  |
+|        |         |         |           [ def_udef_a_q LBL: h76 ARG0: x73 RSTR: h74 BODY: h75 ]              |
+|        |         |         |           [ _dessert_n_1 LBL: h63 ARG0: x62 ]                                  |
+|        |         |         |           [ def_udef_a_q LBL: h71 ARG0: x68 RSTR: h69 BODY: h70 ]              |
+|        |         |         |           [ unk_n LBL: h61 ARG0: x60 [ x IND: - ] CARG: "bionico" ] >          |
+|        |         |         |   HCONS: < h74 qeq h63 h69 qeq h61 >                                           |
+|        |         |         |   EQS: < x73 eq x62 h67 eq h77 i66 eq x73 x68 eq x60 h67 eq h72 p65 eq x68 > ] |
++--------+---------+---------+--------------------------------------------------------------------------------+
 
 +----------------------------------------+
 |         GENERATED ENGLISH TEXT         |

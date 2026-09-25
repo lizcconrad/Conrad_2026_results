@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_MeanOfTransportation_Id204_189_567
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+---------------------------------------------------------------------------------------------------------------------+
-|                                                     GOLD OUTPUTS                                                    |
-+--------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                            | Generated? |
-+--------------------------------------------------------------------------------------------------------+------------+
-| The Pontiac Rageous manufactured by Pontiac was first and last produced in 1997.                       | False      |
-| The Pontiac Rageous was a car manufactured by Pontiac which both began and ended production in 1997.   | False      |
-| The Pontiac Rageous was first produced in 1997, last produced in 1997 and was manufactured by Pontiac. | False      |
-+--------------------------------------------------------------------------------------------------------+------------+
++----------------------------------------------------------------------------------------------------+
+|                                            GOLD OUTPUTS                                            |
++---------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                           | Generated? |
++---------------------------------------------------------------------------------------+------------+
+| Pontiac Rageous was first made in Michigan in 1997 and was last produced in 1997.     | False      |
+| The Pontiac Rageous was produced in Michigan in 1997.                                 | False      |
+| The Pontiac Rageous went into production in Michigan in 1997 and ended the same year. | False      |
++---------------------------------------------------------------------------------------+------------+
 
 +---------------------------------------------------------------------------------------+
 |                                      NODE METRICS                                     |
@@ -56,59 +56,57 @@ GRAPH NAME: WebNLG_test_3triples_MeanOfTransportation_Id204_189_567
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h19064                                                                    |
-|               |   INDEX: e19061 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_temp LBL: h19060 ARG0: e19057 ARG1: u19058 ARG2: i19059 ]      |
-|               |           [ proper_q LBL: h19055 ARG0: x19052 RSTR: h19053 BODY: h19054 ]        |
-|               |           [ yofc LBL: h19051 ARG0: x19050 CARG: "1997" ]                         |
-|               |           [ _go_v_into LBL: h19064 ARG0: e19061 ARG1: i19062 ARG2: i19063 ]      |
-|               |           [ def_udef_a_q LBL: h19076 ARG0: x19073 RSTR: h19074 BODY: h19075 ]    |
-|               |           [ _production_n_of LBL: h19067 ARG0: x19065 ARG1: i19066 ]             |
-|               |           [ def_udef_a_q LBL: h19071 ARG0: x19068 RSTR: h19069 BODY: h19070 ]    |
-|               |           [ compound LBL: h19038 ARG0: e19035 ARG1: u19036 ARG2: u19037 ]        |
-|               |           [ existential_q LBL: h19042 ARG0: x19039 RSTR: h19040 BODY: h19041 ]   |
-|               |           [ named LBL: h19034 ARG0: x19033 [ x NUM: sg ] CARG: "Pontiac" ]       |
-|               |           [ named LBL: h19032 ARG0: x19031 CARG: "Rageous" ] >                   |
-|               |   HCONS: < h19053 qeq h19051 h19074 qeq h19067 h19040 qeq h19034 h19069 qeq      |
-|               | h19032 >                                                                         |
-|               |   EQS: < x19052 eq x19050 h19060 eq h19056 i19059 eq x19052 x19073 eq x19065     |
-|               | h19064 eq h19077 i19063 eq x19073 x19039 eq x19033 h19038 eq h19043 u19037 eq    |
-|               | x19039 h19038 eq h19032 u19036 eq x19031 x19068 eq x19031 h19064 eq h19072       |
-|               | i19062 eq x19068 h19060 eq h19064 u19058 eq e19061 > ]                           |
+| Original      | [ TOP: h3819                                                                     |
+|               |   INDEX: e3816 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_temp LBL: h3815 ARG0: e3812 ARG1: u3813 ARG2: i3814 ]          |
+|               |           [ proper_q LBL: h3810 ARG0: x3807 RSTR: h3808 BODY: h3809 ]            |
+|               |           [ yofc LBL: h3806 ARG0: x3805 CARG: "1997" ]                           |
+|               |           [ _go_v_into LBL: h3819 ARG0: e3816 ARG1: i3817 ARG2: i3818 ]          |
+|               |           [ def_udef_a_q LBL: h3831 ARG0: x3828 RSTR: h3829 BODY: h3830 ]        |
+|               |           [ _production_n_of LBL: h3822 ARG0: x3820 ARG1: i3821 ]                |
+|               |           [ def_udef_a_q LBL: h3826 ARG0: x3823 RSTR: h3824 BODY: h3825 ]        |
+|               |           [ compound LBL: h3793 ARG0: e3790 ARG1: u3791 ARG2: u3792 ]            |
+|               |           [ existential_q LBL: h3797 ARG0: x3794 RSTR: h3795 BODY: h3796 ]       |
+|               |           [ named LBL: h3789 ARG0: x3788 [ x NUM: sg ] CARG: "Pontiac" ]         |
+|               |           [ named LBL: h3787 ARG0: x3786 CARG: "Rageous" ] >                     |
+|               |   HCONS: < h3808 qeq h3806 h3829 qeq h3822 h3795 qeq h3789 h3824 qeq h3787 >     |
+|               |   EQS: < x3807 eq x3805 h3815 eq h3811 i3814 eq x3807 x3828 eq x3820 h3819 eq    |
+|               | h3832 i3818 eq x3828 x3794 eq x3788 h3793 eq h3798 u3792 eq x3794 h3793 eq h3787 |
+|               | u3791 eq x3786 x3823 eq x3786 h3819 eq h3827 i3817 eq x3823 h3815 eq h3819 u3813 |
+|               | eq e3816 > ]                                                                     |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h19056                                                                    |
-|               |   INDEX: e19061 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_temp LBL: h19056 ARG0: e19057 ARG1: e19061 ARG2: x19050 ]      |
-|               |           [ proper_q LBL: h19055 ARG0: x19050 RSTR: h19053 BODY: h19054 ]        |
-|               |           [ yofc LBL: h19051 ARG0: x19050 CARG: "1997" ]                         |
-|               |           [ _go_v_into LBL: h19056 ARG0: e19061 ARG1: x19031 ARG2: x19065 ]      |
-|               |           [ def_udef_a_q LBL: h19076 ARG0: x19065 RSTR: h19074 BODY: h19075 ]    |
-|               |           [ _production_n_of LBL: h19067 ARG0: x19065 ARG1: i19066 ]             |
-|               |           [ def_udef_a_q LBL: h19071 ARG0: x19031 RSTR: h19069 BODY: h19070 ]    |
-|               |           [ compound LBL: h19032 ARG0: e19035 ARG1: x19031 ARG2: x19033 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h19042 ARG0: x19033 RSTR: h19040 BODY: h19041 ]   |
-|               |           [ named LBL: h19034 ARG0: x19033 CARG: "Pontiac" ]                     |
-|               |           [ named LBL: h19032 ARG0: x19031 CARG: "Rageous" ] >                   |
-|               |   HCONS: < h19053 qeq h19051 h19074 qeq h19067 h19040 qeq h19034 h19069 qeq      |
-|               | h19032 > ]                                                                       |
+| EQs Collapsed | [ TOP: h3811                                                                     |
+|               |   INDEX: e3816 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_temp LBL: h3811 ARG0: e3812 ARG1: e3816 ARG2: x3805 ]          |
+|               |           [ proper_q LBL: h3810 ARG0: x3805 RSTR: h3808 BODY: h3809 ]            |
+|               |           [ yofc LBL: h3806 ARG0: x3805 CARG: "1997" ]                           |
+|               |           [ _go_v_into LBL: h3811 ARG0: e3816 ARG1: x3786 ARG2: x3820 ]          |
+|               |           [ def_udef_a_q LBL: h3831 ARG0: x3820 RSTR: h3829 BODY: h3830 ]        |
+|               |           [ _production_n_of LBL: h3822 ARG0: x3820 ARG1: i3821 ]                |
+|               |           [ def_udef_a_q LBL: h3826 ARG0: x3786 RSTR: h3824 BODY: h3825 ]        |
+|               |           [ compound LBL: h3787 ARG0: e3790 ARG1: x3786 ARG2: x3788 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h3797 ARG0: x3788 RSTR: h3795 BODY: h3796 ]       |
+|               |           [ named LBL: h3789 ARG0: x3788 CARG: "Pontiac" ]                       |
+|               |           [ named LBL: h3787 ARG0: x3786 CARG: "Rageous" ] >                     |
+|               |   HCONS: < h3808 qeq h3806 h3829 qeq h3822 h3795 qeq h3789 h3824 qeq h3787 > ]   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h19078                                                                    |
-|               |   INDEX: e19061 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _in_p_temp LBL: h19056 ARG0: e19057 ARG1: e19061 ARG2: x19050 ]      |
-|               |           [ proper_q LBL: h19055 ARG0: x19050 RSTR: h19053 BODY: h19054 ]        |
-|               |           [ yofc LBL: h19051 ARG0: x19050 CARG: "1997" ]                         |
-|               |           [ _go_v_into LBL: h19056 ARG0: e19061 ARG1: x19031 ARG2: x19065 ]      |
-|               |           [ def_udef_a_q LBL: h19076 ARG0: x19065 RSTR: h19074 BODY: h19075 ]    |
-|               |           [ _production_n_of LBL: h19067 ARG0: x19065 ARG1: i19066 ]             |
-|               |           [ def_udef_a_q LBL: h19071 ARG0: x19031 RSTR: h19069 BODY: h19070 ]    |
-|               |           [ compound LBL: h19032 ARG0: e19035 ARG1: x19031 ARG2: x19033 [ x NUM: |
-|               | sg ] ]                                                                           |
-|               |           [ existential_q LBL: h19042 ARG0: x19033 RSTR: h19040 BODY: h19041 ]   |
-|               |           [ named LBL: h19034 ARG0: x19033 CARG: "Pontiac" ]                     |
-|               |           [ named LBL: h19032 ARG0: x19031 CARG: "Rageous" ] >                   |
-|               |   HCONS: < h19053 qeq h19051 h19074 qeq h19067 h19040 qeq h19034 h19069 qeq      |
-|               | h19032 h19078 qeq h19056 > ]                                                     |
+| Prepped       | [ TOP: h3833                                                                     |
+|               |   INDEX: e3816 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _in_p_temp LBL: h3811 ARG0: e3812 ARG1: e3816 ARG2: x3805 ]          |
+|               |           [ proper_q LBL: h3810 ARG0: x3805 RSTR: h3808 BODY: h3809 ]            |
+|               |           [ yofc LBL: h3806 ARG0: x3805 CARG: "1997" ]                           |
+|               |           [ _go_v_into LBL: h3811 ARG0: e3816 ARG1: x3786 ARG2: x3820 ]          |
+|               |           [ def_udef_a_q LBL: h3831 ARG0: x3820 RSTR: h3829 BODY: h3830 ]        |
+|               |           [ _production_n_of LBL: h3822 ARG0: x3820 ARG1: i3821 ]                |
+|               |           [ def_udef_a_q LBL: h3826 ARG0: x3786 RSTR: h3824 BODY: h3825 ]        |
+|               |           [ compound LBL: h3787 ARG0: e3790 ARG1: x3786 ARG2: x3788 [ x NUM: sg  |
+|               | ] ]                                                                              |
+|               |           [ existential_q LBL: h3797 ARG0: x3788 RSTR: h3795 BODY: h3796 ]       |
+|               |           [ named LBL: h3789 ARG0: x3788 CARG: "Pontiac" ]                       |
+|               |           [ named LBL: h3787 ARG0: x3786 CARG: "Rageous" ] >                     |
+|               |   HCONS: < h3808 qeq h3806 h3829 qeq h3822 h3795 qeq h3789 h3824 qeq h3787 h3833 |
+|               | qeq h3811 > ]                                                                    |
 +---------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------+
@@ -116,23 +114,23 @@ GRAPH NAME: WebNLG_test_3triples_MeanOfTransportation_Id204_189_567
 +-----------------+----------------------------------------------------------------------------------+
 | Node            | Generated SEMENT                                                                 |
 +-----------------+----------------------------------------------------------------------------------+
-| Pontiac_Rageous | [ TOP: h19032                                                                    |
-|                 |   INDEX: x19031 [ x QUANT: def_udef_a_q ]                                        |
-|                 |   RELS: < [ compound LBL: h19038 ARG0: e19035 ARG1: u19036 ARG2: u19037 ]        |
-|                 |           [ existential_q LBL: h19042 ARG0: x19039 RSTR: h19040 BODY: h19041 ]   |
-|                 |           [ named LBL: h19034 ARG0: x19033 [ x NUM: sg ] CARG: "Pontiac" ]       |
-|                 |           [ named LBL: h19032 ARG0: x19031 CARG: "Rageous" ] >                   |
-|                 |   HCONS: < h19040 qeq h19034 >                                                   |
-|                 |   EQS: < x19039 eq x19033 h19038 eq h19043 u19037 eq x19039 h19038 eq h19032     |
-|                 | u19036 eq x19031 > ]                                                             |
+| Pontiac_Rageous | [ TOP: h3787                                                                     |
+|                 |   INDEX: x3786 [ x QUANT: def_udef_a_q ]                                         |
+|                 |   RELS: < [ compound LBL: h3793 ARG0: e3790 ARG1: u3791 ARG2: u3792 ]            |
+|                 |           [ existential_q LBL: h3797 ARG0: x3794 RSTR: h3795 BODY: h3796 ]       |
+|                 |           [ named LBL: h3789 ARG0: x3788 [ x NUM: sg ] CARG: "Pontiac" ]         |
+|                 |           [ named LBL: h3787 ARG0: x3786 CARG: "Rageous" ] >                     |
+|                 |   HCONS: < h3795 qeq h3789 >                                                     |
+|                 |   EQS: < x3794 eq x3788 h3793 eq h3798 u3792 eq x3794 h3793 eq h3787 u3791 eq    |
+|                 | x3786 > ]                                                                        |
 +-----------------+----------------------------------------------------------------------------------+
-| 1997            | [ TOP: h19056                                                                    |
-|                 |   INDEX: x19052                                                                  |
-|                 |   RELS: < [ proper_q LBL: h19055 ARG0: x19052 RSTR: h19053 BODY: h19054 ]        |
-|                 |           [ yofc LBL: h19051 ARG0: x19050 CARG: "1997" ] >                       |
-|                 |   HCONS: < h19053 qeq h19051 >                                                   |
-|                 |   EQS: < x19052 eq x19050 >                                                      |
-|                 |   SLOTS: < BODY: h19054 > ]                                                      |
+| 1997            | [ TOP: h3811                                                                     |
+|                 |   INDEX: x3807                                                                   |
+|                 |   RELS: < [ proper_q LBL: h3810 ARG0: x3807 RSTR: h3808 BODY: h3809 ]            |
+|                 |           [ yofc LBL: h3806 ARG0: x3805 CARG: "1997" ] >                         |
+|                 |   HCONS: < h3808 qeq h3806 >                                                     |
+|                 |   EQS: < x3807 eq x3805 >                                                        |
+|                 |   SLOTS: < BODY: h3809 > ]                                                       |
 +-----------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------------+
@@ -140,25 +138,24 @@ GRAPH NAME: WebNLG_test_3triples_MeanOfTransportation_Id204_189_567
 +---------------------+-----------------+-------+----------------------------------------------------------------------------------+
 | Edge                | Parent          | Child | Generated SEMENT                                                                 |
 +---------------------+-----------------+-------+----------------------------------------------------------------------------------+
-| productionStartYear | Pontiac_Rageous | 1997  | [ TOP: h19064                                                                    |
-|                     |                 |       |   INDEX: e19061 [ e TENSE: tensed ]                                              |
-|                     |                 |       |   RELS: < [ _in_p_temp LBL: h19060 ARG0: e19057 ARG1: u19058 ARG2: i19059 ]      |
-|                     |                 |       |           [ proper_q LBL: h19055 ARG0: x19052 RSTR: h19053 BODY: h19054 ]        |
-|                     |                 |       |           [ yofc LBL: h19051 ARG0: x19050 CARG: "1997" ]                         |
-|                     |                 |       |           [ _go_v_into LBL: h19064 ARG0: e19061 ARG1: i19062 ARG2: i19063 ]      |
-|                     |                 |       |           [ def_udef_a_q LBL: h19076 ARG0: x19073 RSTR: h19074 BODY: h19075 ]    |
-|                     |                 |       |           [ _production_n_of LBL: h19067 ARG0: x19065 ARG1: i19066 ]             |
-|                     |                 |       |           [ def_udef_a_q LBL: h19071 ARG0: x19068 RSTR: h19069 BODY: h19070 ]    |
-|                     |                 |       |           [ compound LBL: h19038 ARG0: e19035 ARG1: u19036 ARG2: u19037 ]        |
-|                     |                 |       |           [ existential_q LBL: h19042 ARG0: x19039 RSTR: h19040 BODY: h19041 ]   |
-|                     |                 |       |           [ named LBL: h19034 ARG0: x19033 [ x NUM: sg ] CARG: "Pontiac" ]       |
-|                     |                 |       |           [ named LBL: h19032 ARG0: x19031 CARG: "Rageous" ] >                   |
-|                     |                 |       |   HCONS: < h19053 qeq h19051 h19074 qeq h19067 h19040 qeq h19034 h19069 qeq      |
-|                     |                 |       | h19032 >                                                                         |
-|                     |                 |       |   EQS: < x19052 eq x19050 h19060 eq h19056 i19059 eq x19052 x19073 eq x19065     |
-|                     |                 |       | h19064 eq h19077 i19063 eq x19073 x19039 eq x19033 h19038 eq h19043 u19037 eq    |
-|                     |                 |       | x19039 h19038 eq h19032 u19036 eq x19031 x19068 eq x19031 h19064 eq h19072       |
-|                     |                 |       | i19062 eq x19068 h19060 eq h19064 u19058 eq e19061 > ]                           |
+| productionStartYear | Pontiac_Rageous | 1997  | [ TOP: h3819                                                                     |
+|                     |                 |       |   INDEX: e3816 [ e TENSE: tensed ]                                               |
+|                     |                 |       |   RELS: < [ _in_p_temp LBL: h3815 ARG0: e3812 ARG1: u3813 ARG2: i3814 ]          |
+|                     |                 |       |           [ proper_q LBL: h3810 ARG0: x3807 RSTR: h3808 BODY: h3809 ]            |
+|                     |                 |       |           [ yofc LBL: h3806 ARG0: x3805 CARG: "1997" ]                           |
+|                     |                 |       |           [ _go_v_into LBL: h3819 ARG0: e3816 ARG1: i3817 ARG2: i3818 ]          |
+|                     |                 |       |           [ def_udef_a_q LBL: h3831 ARG0: x3828 RSTR: h3829 BODY: h3830 ]        |
+|                     |                 |       |           [ _production_n_of LBL: h3822 ARG0: x3820 ARG1: i3821 ]                |
+|                     |                 |       |           [ def_udef_a_q LBL: h3826 ARG0: x3823 RSTR: h3824 BODY: h3825 ]        |
+|                     |                 |       |           [ compound LBL: h3793 ARG0: e3790 ARG1: u3791 ARG2: u3792 ]            |
+|                     |                 |       |           [ existential_q LBL: h3797 ARG0: x3794 RSTR: h3795 BODY: h3796 ]       |
+|                     |                 |       |           [ named LBL: h3789 ARG0: x3788 [ x NUM: sg ] CARG: "Pontiac" ]         |
+|                     |                 |       |           [ named LBL: h3787 ARG0: x3786 CARG: "Rageous" ] >                     |
+|                     |                 |       |   HCONS: < h3808 qeq h3806 h3829 qeq h3822 h3795 qeq h3789 h3824 qeq h3787 >     |
+|                     |                 |       |   EQS: < x3807 eq x3805 h3815 eq h3811 i3814 eq x3807 x3828 eq x3820 h3819 eq    |
+|                     |                 |       | h3832 i3818 eq x3828 x3794 eq x3788 h3793 eq h3798 u3792 eq x3794 h3793 eq h3787 |
+|                     |                 |       | u3791 eq x3786 x3823 eq x3786 h3819 eq h3827 i3817 eq x3823 h3815 eq h3819 u3813 |
+|                     |                 |       | eq e3816 > ]                                                                     |
 +---------------------+-----------------+-------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------+

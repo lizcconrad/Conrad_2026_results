@@ -24,15 +24,14 @@ GRAPH NAME: WebNLG_test_3triples_Artist_Id1715_339_1019
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+------------------------------------------------------------------------------------------------------------------------+
-|                                                      GOLD OUTPUTS                                                      |
-+-----------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                               | Generated? |
-+-----------------------------------------------------------------------------------------------------------+------------+
-| Liselotte Grschebina was an Israeli born in the German Empire and died on June 14, 1994.                  | False      |
-| Liselotte Grschebina was an Israeli born in the German Empire who died on June 14, 1994.                  | False      |
-| Liselotte Grschebina was born in the German Empire. She is an Israeli national and died on June 14, 1994. | False      |
-+-----------------------------------------------------------------------------------------------------------+------------+
++------------------------------------------------------------------------------------------------+
+|                                          GOLD OUTPUTS                                          |
++-----------------------------------------------------------------------------------+------------+
+| Gold Output                                                                       | Generated? |
++-----------------------------------------------------------------------------------+------------+
+| Liselotte Grschebina was born in Karlsruhe and died in Israel on June 14th, 1994. | False      |
+| Liselotte Grschebina was born in Karlsruhe and died on June 14th, 1994 in Israel. | False      |
++-----------------------------------------------------------------------------------+------------+
 
 +--------------------------------------------------------------------------------------------+
 |                                        NODE METRICS                                        |
@@ -56,63 +55,58 @@ GRAPH NAME: WebNLG_test_3triples_Artist_Id1715_339_1019
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h33983                                                                    |
-|               |   INDEX: e33981 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h33975 ARG0: e33972 ARG1: u33973 ARG2: i33974 ]      |
-|               |           [ def_udef_a_q LBL: h33979 ARG0: x33976 RSTR: h33977 BODY: h33978 ]    |
-|               |           [ of_p LBL: h33966 ARG0: e33963 ARG1: x33964 ARG2: x33965 ]            |
-|               |           [ def_implicit_q LBL: h33970 ARG0: x33967 RSTR: h33968 BODY: h33969 ]  |
-|               |           [ mofy LBL: h33955 ARG0: x33953 [ x NUM: sg ] ARG1: i33954 CARG: "Jun" |
+| Original      | [ TOP: h4372                                                                     |
+|               |   INDEX: e4370 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _on_p_temp LBL: h4364 ARG0: e4361 ARG1: u4362 ARG2: i4363 ]          |
+|               |           [ def_udef_a_q LBL: h4368 ARG0: x4365 RSTR: h4366 BODY: h4367 ]        |
+|               |           [ of_p LBL: h4355 ARG0: e4352 ARG1: x4353 ARG2: x4354 ]                |
+|               |           [ def_implicit_q LBL: h4359 ARG0: x4356 RSTR: h4357 BODY: h4358 ]      |
+|               |           [ mofy LBL: h4344 ARG0: x4342 [ x NUM: sg ] ARG1: i4343 CARG: "Jun" ]  |
+|               |           [ dofm LBL: h4341 ARG0: x4339 ARG1: i4340 CARG: "14th" ]               |
+|               |           [ proper_q LBL: h4350 ARG0: x4347 RSTR: h4348 BODY: h4349 ]            |
+|               |           [ yofc LBL: h4346 ARG0: x4345 CARG: "1994" ]                           |
+|               |           [ _die_v_1 LBL: h4372 ARG0: e4370 ARG1: i4371 ]                        |
+|               |           [ explicit_or_proper_q LBL: h4376 ARG0: x4373 RSTR: h4374 BODY: h4375  |
 |               | ]                                                                                |
-|               |           [ dofm LBL: h33952 ARG0: x33950 ARG1: i33951 CARG: "14th" ]            |
-|               |           [ proper_q LBL: h33961 ARG0: x33958 RSTR: h33959 BODY: h33960 ]        |
-|               |           [ yofc LBL: h33957 ARG0: x33956 CARG: "1994" ]                         |
-|               |           [ _die_v_1 LBL: h33983 ARG0: e33981 ARG1: i33982 ]                     |
-|               |           [ explicit_or_proper_q LBL: h33987 ARG0: x33984 RSTR: h33985 BODY:     |
-|               | h33986 ]                                                                         |
-|               |           [ named LBL: h33949 ARG0: x33948 CARG: "Liselotte Grschebina" ] >      |
-|               |   HCONS: < h33968 qeq h33955 h33959 qeq h33957 h33977 qeq h33952 h33985 qeq      |
-|               | h33949 >                                                                         |
-|               |   EQS: < x33967 eq x33953 h33966 eq h33971 x33965 eq x33967 x33958 eq x33956     |
-|               | h33952 eq h33962 i33951 eq x33958 h33966 eq h33952 x33964 eq x33950 x33976 eq    |
-|               | x33950 h33975 eq h33980 i33974 eq x33976 x33984 eq x33948 h33983 eq h33988       |
-|               | i33982 eq x33984 h33975 eq h33983 u33973 eq e33981 > ]                           |
+|               |           [ named LBL: h4338 ARG0: x4337 CARG: "Liselotte Grschebina" ] >        |
+|               |   HCONS: < h4357 qeq h4344 h4348 qeq h4346 h4366 qeq h4341 h4374 qeq h4338 >     |
+|               |   EQS: < x4356 eq x4342 h4355 eq h4360 x4354 eq x4356 x4347 eq x4345 h4341 eq    |
+|               | h4351 i4340 eq x4347 h4355 eq h4341 x4353 eq x4339 x4365 eq x4339 h4364 eq h4369 |
+|               | i4363 eq x4365 x4373 eq x4337 h4372 eq h4377 i4371 eq x4373 h4364 eq h4372 u4362 |
+|               | eq e4370 > ]                                                                     |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h33975                                                                    |
-|               |   INDEX: e33981 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h33975 ARG0: e33972 ARG1: e33981 ARG2: x33950 ]      |
-|               |           [ def_udef_a_q LBL: h33979 ARG0: x33950 RSTR: h33977 BODY: h33978 ]    |
-|               |           [ of_p LBL: h33952 ARG0: e33963 ARG1: x33950 ARG2: x33953 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ def_implicit_q LBL: h33970 ARG0: x33953 RSTR: h33968 BODY: h33969 ]  |
-|               |           [ mofy LBL: h33955 ARG0: x33953 ARG1: i33954 CARG: "Jun" ]             |
-|               |           [ dofm LBL: h33952 ARG0: x33950 ARG1: x33956 CARG: "14th" ]            |
-|               |           [ proper_q LBL: h33961 ARG0: x33956 RSTR: h33959 BODY: h33960 ]        |
-|               |           [ yofc LBL: h33957 ARG0: x33956 CARG: "1994" ]                         |
-|               |           [ _die_v_1 LBL: h33975 ARG0: e33981 ARG1: x33948 ]                     |
-|               |           [ explicit_or_proper_q LBL: h33987 ARG0: x33948 RSTR: h33985 BODY:     |
-|               | h33986 ]                                                                         |
-|               |           [ named LBL: h33949 ARG0: x33948 CARG: "Liselotte Grschebina" ] >      |
-|               |   HCONS: < h33968 qeq h33955 h33959 qeq h33957 h33977 qeq h33952 h33985 qeq      |
-|               | h33949 > ]                                                                       |
+| EQs Collapsed | [ TOP: h4364                                                                     |
+|               |   INDEX: e4370 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _on_p_temp LBL: h4364 ARG0: e4361 ARG1: e4370 ARG2: x4339 ]          |
+|               |           [ def_udef_a_q LBL: h4368 ARG0: x4339 RSTR: h4366 BODY: h4367 ]        |
+|               |           [ of_p LBL: h4341 ARG0: e4352 ARG1: x4339 ARG2: x4342 [ x NUM: sg ] ]  |
+|               |           [ def_implicit_q LBL: h4359 ARG0: x4342 RSTR: h4357 BODY: h4358 ]      |
+|               |           [ mofy LBL: h4344 ARG0: x4342 ARG1: i4343 CARG: "Jun" ]                |
+|               |           [ dofm LBL: h4341 ARG0: x4339 ARG1: x4345 CARG: "14th" ]               |
+|               |           [ proper_q LBL: h4350 ARG0: x4345 RSTR: h4348 BODY: h4349 ]            |
+|               |           [ yofc LBL: h4346 ARG0: x4345 CARG: "1994" ]                           |
+|               |           [ _die_v_1 LBL: h4364 ARG0: e4370 ARG1: x4337 ]                        |
+|               |           [ explicit_or_proper_q LBL: h4376 ARG0: x4337 RSTR: h4374 BODY: h4375  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4338 ARG0: x4337 CARG: "Liselotte Grschebina" ] >        |
+|               |   HCONS: < h4357 qeq h4344 h4348 qeq h4346 h4366 qeq h4341 h4374 qeq h4338 > ]   |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h33989                                                                    |
-|               |   INDEX: e33981 [ e TENSE: tensed ]                                              |
-|               |   RELS: < [ _on_p_temp LBL: h33975 ARG0: e33972 ARG1: e33981 ARG2: x33950 ]      |
-|               |           [ def_udef_a_q LBL: h33979 ARG0: x33950 RSTR: h33977 BODY: h33978 ]    |
-|               |           [ of_p LBL: h33952 ARG0: e33963 ARG1: x33950 ARG2: x33953 [ x NUM: sg  |
-|               | ] ]                                                                              |
-|               |           [ def_implicit_q LBL: h33970 ARG0: x33953 RSTR: h33968 BODY: h33969 ]  |
-|               |           [ mofy LBL: h33955 ARG0: x33953 ARG1: i33954 CARG: "Jun" ]             |
-|               |           [ dofm LBL: h33952 ARG0: x33950 ARG1: x33956 CARG: "14th" ]            |
-|               |           [ proper_q LBL: h33961 ARG0: x33956 RSTR: h33959 BODY: h33960 ]        |
-|               |           [ yofc LBL: h33957 ARG0: x33956 CARG: "1994" ]                         |
-|               |           [ _die_v_1 LBL: h33975 ARG0: e33981 ARG1: x33948 ]                     |
-|               |           [ explicit_or_proper_q LBL: h33987 ARG0: x33948 RSTR: h33985 BODY:     |
-|               | h33986 ]                                                                         |
-|               |           [ named LBL: h33949 ARG0: x33948 CARG: "Liselotte Grschebina" ] >      |
-|               |   HCONS: < h33968 qeq h33955 h33959 qeq h33957 h33977 qeq h33952 h33985 qeq      |
-|               | h33949 h33989 qeq h33975 > ]                                                     |
+| Prepped       | [ TOP: h4378                                                                     |
+|               |   INDEX: e4370 [ e TENSE: tensed ]                                               |
+|               |   RELS: < [ _on_p_temp LBL: h4364 ARG0: e4361 ARG1: e4370 ARG2: x4339 ]          |
+|               |           [ def_udef_a_q LBL: h4368 ARG0: x4339 RSTR: h4366 BODY: h4367 ]        |
+|               |           [ of_p LBL: h4341 ARG0: e4352 ARG1: x4339 ARG2: x4342 [ x NUM: sg ] ]  |
+|               |           [ def_implicit_q LBL: h4359 ARG0: x4342 RSTR: h4357 BODY: h4358 ]      |
+|               |           [ mofy LBL: h4344 ARG0: x4342 ARG1: i4343 CARG: "Jun" ]                |
+|               |           [ dofm LBL: h4341 ARG0: x4339 ARG1: x4345 CARG: "14th" ]               |
+|               |           [ proper_q LBL: h4350 ARG0: x4345 RSTR: h4348 BODY: h4349 ]            |
+|               |           [ yofc LBL: h4346 ARG0: x4345 CARG: "1994" ]                           |
+|               |           [ _die_v_1 LBL: h4364 ARG0: e4370 ARG1: x4337 ]                        |
+|               |           [ explicit_or_proper_q LBL: h4376 ARG0: x4337 RSTR: h4374 BODY: h4375  |
+|               | ]                                                                                |
+|               |           [ named LBL: h4338 ARG0: x4337 CARG: "Liselotte Grschebina" ] >        |
+|               |   HCONS: < h4357 qeq h4344 h4348 qeq h4346 h4366 qeq h4341 h4374 qeq h4338 h4378 |
+|               | qeq h4364 > ]                                                                    |
 +---------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------+
@@ -120,22 +114,21 @@ GRAPH NAME: WebNLG_test_3triples_Artist_Id1715_339_1019
 +----------------------+----------------------------------------------------------------------------------+
 | Node                 | Generated SEMENT                                                                 |
 +----------------------+----------------------------------------------------------------------------------+
-| Liselotte_Grschebina | [ TOP: h33949                                                                    |
-|                      |   INDEX: x33948                                                                  |
-|                      |   RELS: < [ named LBL: h33949 ARG0: x33948 CARG: "Liselotte Grschebina" ] > ]    |
+| Liselotte_Grschebina | [ TOP: h4338                                                                     |
+|                      |   INDEX: x4337                                                                   |
+|                      |   RELS: < [ named LBL: h4338 ARG0: x4337 CARG: "Liselotte Grschebina" ] > ]      |
 +----------------------+----------------------------------------------------------------------------------+
-| 1994-06-14           | [ TOP: h33952                                                                    |
-|                      |   INDEX: x33950                                                                  |
-|                      |   RELS: < [ of_p LBL: h33966 ARG0: e33963 ARG1: x33964 ARG2: x33965 ]            |
-|                      |           [ def_implicit_q LBL: h33970 ARG0: x33967 RSTR: h33968 BODY: h33969 ]  |
-|                      |           [ mofy LBL: h33955 ARG0: x33953 [ x NUM: sg ] ARG1: i33954 CARG: "Jun" |
-|                      | ]                                                                                |
-|                      |           [ dofm LBL: h33952 ARG0: x33950 ARG1: i33951 CARG: "14th" ]            |
-|                      |           [ proper_q LBL: h33961 ARG0: x33958 RSTR: h33959 BODY: h33960 ]        |
-|                      |           [ yofc LBL: h33957 ARG0: x33956 CARG: "1994" ] >                       |
-|                      |   HCONS: < h33968 qeq h33955 h33959 qeq h33957 >                                 |
-|                      |   EQS: < x33967 eq x33953 h33966 eq h33971 x33965 eq x33967 x33958 eq x33956     |
-|                      | h33952 eq h33962 i33951 eq x33958 h33966 eq h33952 x33964 eq x33950 > ]          |
+| 1994-06-14           | [ TOP: h4341                                                                     |
+|                      |   INDEX: x4339                                                                   |
+|                      |   RELS: < [ of_p LBL: h4355 ARG0: e4352 ARG1: x4353 ARG2: x4354 ]                |
+|                      |           [ def_implicit_q LBL: h4359 ARG0: x4356 RSTR: h4357 BODY: h4358 ]      |
+|                      |           [ mofy LBL: h4344 ARG0: x4342 [ x NUM: sg ] ARG1: i4343 CARG: "Jun" ]  |
+|                      |           [ dofm LBL: h4341 ARG0: x4339 ARG1: i4340 CARG: "14th" ]               |
+|                      |           [ proper_q LBL: h4350 ARG0: x4347 RSTR: h4348 BODY: h4349 ]            |
+|                      |           [ yofc LBL: h4346 ARG0: x4345 CARG: "1994" ] >                         |
+|                      |   HCONS: < h4357 qeq h4344 h4348 qeq h4346 >                                     |
+|                      |   EQS: < x4356 eq x4342 h4355 eq h4360 x4354 eq x4356 x4347 eq x4345 h4341 eq    |
+|                      | h4351 i4340 eq x4347 h4355 eq h4341 x4353 eq x4339 > ]                           |
 +----------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------------+
@@ -143,27 +136,25 @@ GRAPH NAME: WebNLG_test_3triples_Artist_Id1715_339_1019
 +-----------+----------------------+------------+----------------------------------------------------------------------------------+
 | Edge      | Parent               | Child      | Generated SEMENT                                                                 |
 +-----------+----------------------+------------+----------------------------------------------------------------------------------+
-| deathDate | Liselotte_Grschebina | 1994-06-14 | [ TOP: h33983                                                                    |
-|           |                      |            |   INDEX: e33981 [ e TENSE: tensed ]                                              |
-|           |                      |            |   RELS: < [ _on_p_temp LBL: h33975 ARG0: e33972 ARG1: u33973 ARG2: i33974 ]      |
-|           |                      |            |           [ def_udef_a_q LBL: h33979 ARG0: x33976 RSTR: h33977 BODY: h33978 ]    |
-|           |                      |            |           [ of_p LBL: h33966 ARG0: e33963 ARG1: x33964 ARG2: x33965 ]            |
-|           |                      |            |           [ def_implicit_q LBL: h33970 ARG0: x33967 RSTR: h33968 BODY: h33969 ]  |
-|           |                      |            |           [ mofy LBL: h33955 ARG0: x33953 [ x NUM: sg ] ARG1: i33954 CARG: "Jun" |
+| deathDate | Liselotte_Grschebina | 1994-06-14 | [ TOP: h4372                                                                     |
+|           |                      |            |   INDEX: e4370 [ e TENSE: tensed ]                                               |
+|           |                      |            |   RELS: < [ _on_p_temp LBL: h4364 ARG0: e4361 ARG1: u4362 ARG2: i4363 ]          |
+|           |                      |            |           [ def_udef_a_q LBL: h4368 ARG0: x4365 RSTR: h4366 BODY: h4367 ]        |
+|           |                      |            |           [ of_p LBL: h4355 ARG0: e4352 ARG1: x4353 ARG2: x4354 ]                |
+|           |                      |            |           [ def_implicit_q LBL: h4359 ARG0: x4356 RSTR: h4357 BODY: h4358 ]      |
+|           |                      |            |           [ mofy LBL: h4344 ARG0: x4342 [ x NUM: sg ] ARG1: i4343 CARG: "Jun" ]  |
+|           |                      |            |           [ dofm LBL: h4341 ARG0: x4339 ARG1: i4340 CARG: "14th" ]               |
+|           |                      |            |           [ proper_q LBL: h4350 ARG0: x4347 RSTR: h4348 BODY: h4349 ]            |
+|           |                      |            |           [ yofc LBL: h4346 ARG0: x4345 CARG: "1994" ]                           |
+|           |                      |            |           [ _die_v_1 LBL: h4372 ARG0: e4370 ARG1: i4371 ]                        |
+|           |                      |            |           [ explicit_or_proper_q LBL: h4376 ARG0: x4373 RSTR: h4374 BODY: h4375  |
 |           |                      |            | ]                                                                                |
-|           |                      |            |           [ dofm LBL: h33952 ARG0: x33950 ARG1: i33951 CARG: "14th" ]            |
-|           |                      |            |           [ proper_q LBL: h33961 ARG0: x33958 RSTR: h33959 BODY: h33960 ]        |
-|           |                      |            |           [ yofc LBL: h33957 ARG0: x33956 CARG: "1994" ]                         |
-|           |                      |            |           [ _die_v_1 LBL: h33983 ARG0: e33981 ARG1: i33982 ]                     |
-|           |                      |            |           [ explicit_or_proper_q LBL: h33987 ARG0: x33984 RSTR: h33985 BODY:     |
-|           |                      |            | h33986 ]                                                                         |
-|           |                      |            |           [ named LBL: h33949 ARG0: x33948 CARG: "Liselotte Grschebina" ] >      |
-|           |                      |            |   HCONS: < h33968 qeq h33955 h33959 qeq h33957 h33977 qeq h33952 h33985 qeq      |
-|           |                      |            | h33949 >                                                                         |
-|           |                      |            |   EQS: < x33967 eq x33953 h33966 eq h33971 x33965 eq x33967 x33958 eq x33956     |
-|           |                      |            | h33952 eq h33962 i33951 eq x33958 h33966 eq h33952 x33964 eq x33950 x33976 eq    |
-|           |                      |            | x33950 h33975 eq h33980 i33974 eq x33976 x33984 eq x33948 h33983 eq h33988       |
-|           |                      |            | i33982 eq x33984 h33975 eq h33983 u33973 eq e33981 > ]                           |
+|           |                      |            |           [ named LBL: h4338 ARG0: x4337 CARG: "Liselotte Grschebina" ] >        |
+|           |                      |            |   HCONS: < h4357 qeq h4344 h4348 qeq h4346 h4366 qeq h4341 h4374 qeq h4338 >     |
+|           |                      |            |   EQS: < x4356 eq x4342 h4355 eq h4360 x4354 eq x4356 x4347 eq x4345 h4341 eq    |
+|           |                      |            | h4351 i4340 eq x4347 h4355 eq h4341 x4353 eq x4339 x4365 eq x4339 h4364 eq h4369 |
+|           |                      |            | i4363 eq x4365 x4373 eq x4337 h4372 eq h4377 i4371 eq x4373 h4364 eq h4372 u4362 |
+|           |                      |            | eq e4370 > ]                                                                     |
 +-----------+----------------------+------------+----------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------+

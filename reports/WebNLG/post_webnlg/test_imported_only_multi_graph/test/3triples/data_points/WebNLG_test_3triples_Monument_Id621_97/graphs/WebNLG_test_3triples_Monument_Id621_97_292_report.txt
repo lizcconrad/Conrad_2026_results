@@ -24,15 +24,15 @@ GRAPH NAME: WebNLG_test_3triples_Monument_Id621_97_292
 | Edge Inclusion                  | 1.0   |
 +---------------------------------+-------+
 
-+------------------------------------------------------------------------------------------------------------------------+
-|                                                      GOLD OUTPUTS                                                      |
-+-----------------------------------------------------------------------------------------------------------+------------+
-| Gold Output                                                                                               | Generated? |
-+-----------------------------------------------------------------------------------------------------------+------------+
-| Established in 2000, 11th Mississippi Infantry Monument's location is Adams County, Pennsylvania.         | False      |
-| In 2000, The 11th Mississippi Infantry Monument is located in Adams County, in the state of Pennsylvania. | False      |
-| The 11th Mississippi Infantry Monument, located in Adams County, Pennsylvania was established in 2000.    | False      |
-+-----------------------------------------------------------------------------------------------------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                             GOLD OUTPUTS                                                                            |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Gold Output                                                                                                                                            | Generated? |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| The 11th Mississippi Infantry Monument is in Adams County, Pennsylvania. To the southeast of Adams County, Pennsylvania lies Carroll County, Maryland. | False      |
+| The 11th Mississippi Infantry Monument is located in Adams County, in the state of Pennsylvania which is northwest to Carroll County Maryland.         | False      |
+| The 11th Mississippi Infantry Monument is located in Adams County, the state of Pennsylvania which is located northwest to Carroll County, Maryland.   | False      |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 +----------------------------------------------------------------------------------------------------------+
 |                                               NODE METRICS                                               |
@@ -56,33 +56,30 @@ GRAPH NAME: WebNLG_test_3triples_Monument_Id621_97_292
 +---------------+----------------------------------------------------------------------------------+
 | Version       | SEMENT                                                                           |
 +---------------+----------------------------------------------------------------------------------+
-| Original      | [ TOP: h2006                                                                     |
-|               |   INDEX: e2004 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _located_a_1 LBL: h2006 ARG0: e2004 ARG1: u2005 ]                    |
-|               |           [ explicit_or_proper_q LBL: h2010 ARG0: x2007 RSTR: h2008 BODY: h2009  |
-|               | ]                                                                                |
-|               |           [ named LBL: h1990 ARG0: x1989 CARG: "11th Mississippi Infantry        |
+| Original      | [ TOP: h250                                                                      |
+|               |   INDEX: e248 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _located_a_1 LBL: h250 ARG0: e248 ARG1: u249 ]                       |
+|               |           [ explicit_or_proper_q LBL: h254 ARG0: x251 RSTR: h252 BODY: h253 ]    |
+|               |           [ named LBL: h234 ARG0: x233 CARG: "11th Mississippi Infantry          |
 |               | Monument" ] >                                                                    |
-|               |   HCONS: < h2008 qeq h1990 >                                                     |
-|               |   EQS: < x2007 eq x1989 h2006 eq h2011 u2005 eq x2007 > ]                        |
+|               |   HCONS: < h252 qeq h234 >                                                       |
+|               |   EQS: < x251 eq x233 h250 eq h255 u249 eq x251 > ]                              |
 +---------------+----------------------------------------------------------------------------------+
-| EQs Collapsed | [ TOP: h2006                                                                     |
-|               |   INDEX: e2004 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _located_a_1 LBL: h2006 ARG0: e2004 ARG1: x1989 ]                    |
-|               |           [ explicit_or_proper_q LBL: h2010 ARG0: x1989 RSTR: h2008 BODY: h2009  |
-|               | ]                                                                                |
-|               |           [ named LBL: h1990 ARG0: x1989 CARG: "11th Mississippi Infantry        |
+| EQs Collapsed | [ TOP: h250                                                                      |
+|               |   INDEX: e248 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _located_a_1 LBL: h250 ARG0: e248 ARG1: x233 ]                       |
+|               |           [ explicit_or_proper_q LBL: h254 ARG0: x233 RSTR: h252 BODY: h253 ]    |
+|               |           [ named LBL: h234 ARG0: x233 CARG: "11th Mississippi Infantry          |
 |               | Monument" ] >                                                                    |
-|               |   HCONS: < h2008 qeq h1990 > ]                                                   |
+|               |   HCONS: < h252 qeq h234 > ]                                                     |
 +---------------+----------------------------------------------------------------------------------+
-| Prepped       | [ TOP: h2012                                                                     |
-|               |   INDEX: e2004 [ e TENSE: tensed ]                                               |
-|               |   RELS: < [ _located_a_1 LBL: h2006 ARG0: e2004 ARG1: x1989 ]                    |
-|               |           [ explicit_or_proper_q LBL: h2010 ARG0: x1989 RSTR: h2008 BODY: h2009  |
-|               | ]                                                                                |
-|               |           [ named LBL: h1990 ARG0: x1989 CARG: "11th Mississippi Infantry        |
+| Prepped       | [ TOP: h256                                                                      |
+|               |   INDEX: e248 [ e TENSE: tensed ]                                                |
+|               |   RELS: < [ _located_a_1 LBL: h250 ARG0: e248 ARG1: x233 ]                       |
+|               |           [ explicit_or_proper_q LBL: h254 ARG0: x233 RSTR: h252 BODY: h253 ]    |
+|               |           [ named LBL: h234 ARG0: x233 CARG: "11th Mississippi Infantry          |
 |               | Monument" ] >                                                                    |
-|               |   HCONS: < h2008 qeq h1990 h2012 qeq h2006 > ]                                   |
+|               |   HCONS: < h252 qeq h234 h256 qeq h250 > ]                                       |
 +---------------+----------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------+
@@ -90,21 +87,19 @@ GRAPH NAME: WebNLG_test_3triples_Monument_Id621_97_292
 +------------------------------------+----------------------------------------------------------------------------------+
 | Node                               | Generated SEMENT                                                                 |
 +------------------------------------+----------------------------------------------------------------------------------+
-| 11th_Mississippi_Infantry_Monument | [ TOP: h1990                                                                     |
-|                                    |   INDEX: x1989                                                                   |
-|                                    |   RELS: < [ named LBL: h1990 ARG0: x1989 CARG: "11th Mississippi Infantry        |
+| 11th_Mississippi_Infantry_Monument | [ TOP: h234                                                                      |
+|                                    |   INDEX: x233                                                                    |
+|                                    |   RELS: < [ named LBL: h234 ARG0: x233 CARG: "11th Mississippi Infantry          |
 |                                    | Monument" ] > ]                                                                  |
 +------------------------------------+----------------------------------------------------------------------------------+
-| Adams_County,_Pennsylvania         | [ TOP: h1992                                                                     |
-|                                    |   INDEX: x1991                                                                   |
-|                                    |   RELS: < [ loc_compound LBL: h1998 ARG0: e1995 ARG1: u1996 ARG2: u1997 ]        |
-|                                    |           [ explicit_or_proper_q LBL: h2002 ARG0: x1999 RSTR: h2000 BODY: h2001  |
-|                                    | ]                                                                                |
-|                                    |           [ named LBL: h1994 ARG0: x1993 CARG: "Adams County" ]                  |
-|                                    |           [ named LBL: h1992 ARG0: x1991 CARG: "Pennsylvania" ] >                |
-|                                    |   HCONS: < h2000 qeq h1994 >                                                     |
-|                                    |   EQS: < x1999 eq x1993 h1998 eq h2003 u1997 eq x1999 h1998 eq h1992 u1996 eq    |
-|                                    | x1991 > ]                                                                        |
+| Adams_County,_Pennsylvania         | [ TOP: h236                                                                      |
+|                                    |   INDEX: x235                                                                    |
+|                                    |   RELS: < [ loc_compound LBL: h242 ARG0: e239 ARG1: u240 ARG2: u241 ]            |
+|                                    |           [ explicit_or_proper_q LBL: h246 ARG0: x243 RSTR: h244 BODY: h245 ]    |
+|                                    |           [ named LBL: h238 ARG0: x237 CARG: "Adams County" ]                    |
+|                                    |           [ named LBL: h236 ARG0: x235 CARG: "Pennsylvania" ] >                  |
+|                                    |   HCONS: < h244 qeq h238 >                                                       |
+|                                    |   EQS: < x243 eq x237 h242 eq h247 u241 eq x243 h242 eq h236 u240 eq x235 > ]    |
 +------------------------------------+----------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -112,15 +107,14 @@ GRAPH NAME: WebNLG_test_3triples_Monument_Id621_97_292
 +----------+------------------------------------+----------------------------+----------------------------------------------------------------------------------+
 | Edge     | Parent                             | Child                      | Generated SEMENT                                                                 |
 +----------+------------------------------------+----------------------------+----------------------------------------------------------------------------------+
-| location | 11th_Mississippi_Infantry_Monument | Adams_County,_Pennsylvania | [ TOP: h2006                                                                     |
-|          |                                    |                            |   INDEX: e2004 [ e TENSE: tensed ]                                               |
-|          |                                    |                            |   RELS: < [ _located_a_1 LBL: h2006 ARG0: e2004 ARG1: u2005 ]                    |
-|          |                                    |                            |           [ explicit_or_proper_q LBL: h2010 ARG0: x2007 RSTR: h2008 BODY: h2009  |
-|          |                                    |                            | ]                                                                                |
-|          |                                    |                            |           [ named LBL: h1990 ARG0: x1989 CARG: "11th Mississippi Infantry        |
+| location | 11th_Mississippi_Infantry_Monument | Adams_County,_Pennsylvania | [ TOP: h250                                                                      |
+|          |                                    |                            |   INDEX: e248 [ e TENSE: tensed ]                                                |
+|          |                                    |                            |   RELS: < [ _located_a_1 LBL: h250 ARG0: e248 ARG1: u249 ]                       |
+|          |                                    |                            |           [ explicit_or_proper_q LBL: h254 ARG0: x251 RSTR: h252 BODY: h253 ]    |
+|          |                                    |                            |           [ named LBL: h234 ARG0: x233 CARG: "11th Mississippi Infantry          |
 |          |                                    |                            | Monument" ] >                                                                    |
-|          |                                    |                            |   HCONS: < h2008 qeq h1990 >                                                     |
-|          |                                    |                            |   EQS: < x2007 eq x1989 h2006 eq h2011 u2005 eq x2007 > ]                        |
+|          |                                    |                            |   HCONS: < h252 qeq h234 >                                                       |
+|          |                                    |                            |   EQS: < x251 eq x233 h250 eq h255 u249 eq x251 > ]                              |
 +----------+------------------------------------+----------------------------+----------------------------------------------------------------------------------+
 
 +------------------------+
